@@ -5,15 +5,33 @@ import logoAsset from "@/assets/arcangel-logo.png.asset.json";
 export function SiteFooter() {
   return (
     <footer className="mt-20 border-t border-border bg-sidebar text-sidebar-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
-        <div>
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
+        <div className="lg:col-span-2">
           <div className="flex items-center gap-3">
             <img src={logoAsset.url} alt="Perfumería El Arcángel" className="h-12 w-12 rounded-full bg-white/95 p-1 object-contain" width={48} height={48} />
             <h3 className="font-serif text-2xl">El Arcángel</h3>
           </div>
           <p className="mt-3 max-w-sm text-sm text-sidebar-foreground/70">
-            Perfumería boutique. Fragancias seleccionadas, atención personalizada y envíos en CABA.
+            Perfumes, productos de limpieza y para el cabello. Atención personalizada y envíos por la zona de Gran Bourg.
           </p>
+          <p className="mt-3 text-sm text-sidebar-foreground/70">
+            <span className="block font-medium text-sidebar-foreground">Horarios</span>
+            Lunes a sábado · 9 a 13 h y 16 a 20 h
+          </p>
+        </div>
+
+        <div>
+          <h4 className="text-xs font-semibold uppercase tracking-widest text-sidebar-primary">Sucursales</h4>
+          <ul className="mt-4 space-y-3 text-sm text-sidebar-foreground/80">
+            <li>
+              <div className="font-medium text-sidebar-foreground">Sucursal 1</div>
+              Juan Francisco Seguí 1392, Gran Bourg
+            </li>
+            <li>
+              <div className="font-medium text-sidebar-foreground">Sucursal 2</div>
+              Av. Eva Duarte de Perón 1103, Local 2, Gran Bourg
+            </li>
+          </ul>
         </div>
 
         <div>
@@ -23,9 +41,6 @@ export function SiteFooter() {
             <li><Link to="/productos" className="hover:text-sidebar-primary">Catálogo</Link></li>
             <li><Link to="/carrito" className="hover:text-sidebar-primary">Carrito</Link></li>
           </ul>
-        </div>
-        <div>
-          <h4 className="text-xs font-semibold uppercase tracking-widest text-sidebar-primary">Seguinos</h4>
           <a
             href="https://www.instagram.com/perfumeriaelarcangel/"
             target="_blank"
