@@ -7,7 +7,6 @@ import { useAuth } from "@/lib/auth-context";
 const NAV = [
   { to: "/", label: "Inicio" },
   { to: "/productos", label: "Catálogo" },
-  { to: "/contacto", label: "Contacto" },
 ] as const;
 
 export function SiteHeader() {
