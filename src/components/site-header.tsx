@@ -3,6 +3,8 @@ import { ShoppingBag, Menu, X, User } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart-context";
 import { useAuth } from "@/lib/auth-context";
+import logoAsset from "@/assets/arcangel-logo.png.asset.json";
+
 
 const NAV = [
   { to: "/", label: "Inicio" },
@@ -19,14 +21,19 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="group flex items-center gap-2">
-          <span className="font-serif text-2xl leading-none tracking-tight text-foreground transition-colors group-hover:text-primary">
+        <Link to="/" className="group flex items-center gap-2.5" aria-label="Perfumería El Arcángel — Inicio">
+          <img
+            src={logoAsset.url}
+            alt="Perfumería El Arcángel"
+            className="h-11 w-11 object-contain transition-transform group-hover:scale-105"
+            width={44}
+            height={44}
+          />
+          <span className="hidden font-serif text-xl leading-none tracking-tight text-foreground sm:inline">
             El Arcángel
           </span>
-          <span className="hidden text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:inline">
-            Perfumería
-          </span>
         </Link>
+
 
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((n) => (

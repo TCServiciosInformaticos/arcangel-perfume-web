@@ -1,16 +1,21 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
+import logoAsset from "@/assets/arcangel-logo.png.asset.json";
 
 export function SiteFooter() {
   return (
     <footer className="mt-20 border-t border-border bg-sidebar text-sidebar-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
-          <h3 className="font-serif text-2xl">El Arcángel</h3>
+          <div className="flex items-center gap-3">
+            <img src={logoAsset.url} alt="Perfumería El Arcángel" className="h-12 w-12 rounded-full bg-white/95 p-1 object-contain" width={48} height={48} />
+            <h3 className="font-serif text-2xl">El Arcángel</h3>
+          </div>
           <p className="mt-3 max-w-sm text-sm text-sidebar-foreground/70">
             Perfumería boutique. Fragancias seleccionadas, atención personalizada y envíos en CABA.
           </p>
         </div>
+
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-widest text-sidebar-primary">Navegar</h4>
           <ul className="mt-4 space-y-2 text-sm">
