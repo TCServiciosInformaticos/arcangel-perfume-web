@@ -123,6 +123,39 @@ function HomePage() {
             </div>
           )}
         </section>
+
+        {/* Instagram CTA */}
+        <section className="border-t border-border bg-secondary/40">
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-primary to-sidebar p-8 text-primary-foreground sm:p-12">
+              <div className="absolute -right-8 -top-8 opacity-10">
+                <Instagram className="h-56 w-56" strokeWidth={1.2} />
+              </div>
+              <div className="relative grid items-center gap-8 md:grid-cols-[1fr_auto]">
+                <div>
+                  <span className="text-xs font-medium uppercase tracking-[0.3em] text-primary-foreground/80">
+                    Seguinos
+                  </span>
+                  <h2 className="mt-2 font-serif text-3xl leading-tight sm:text-4xl">
+                    Novedades, promos y lanzamientos en Instagram
+                  </h2>
+                  <p className="mt-3 max-w-xl text-sm text-primary-foreground/85 sm:text-base">
+                    Enterate primero de las nuevas fragancias, descuentos y productos que llegan al local.
+                  </p>
+                </div>
+                <a
+                  href="https://www.instagram.com/perfumeriaelarcangel/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex items-center gap-2 self-start rounded-md bg-primary-foreground px-6 py-3 text-sm font-medium text-primary shadow-sm transition-transform hover:scale-[1.02] md:self-center"
+                >
+                  <Instagram className="h-4 w-4" /> @perfumeriaelarcangel
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
       <SiteFooter />
     </div>
