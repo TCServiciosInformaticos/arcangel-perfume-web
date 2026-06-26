@@ -25,10 +25,10 @@ const featuredQuery = queryOptions({
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Perfumería El Arcángel — Fragancias premium con envío en CABA" },
-      { name: "description", content: "Comprá perfumes y fragancias de marca con envío a domicilio en CABA o retiro en el local. Pago seguro con MercadoPago." },
+      { title: "Perfumería El Arcángel — Perfumes, limpieza y cabello en Gran Bourg" },
+      { name: "description", content: "Perfumes, productos de limpieza y para el cabello. Dos sucursales en Gran Bourg. Comprá online y pagá con MercadoPago, con envíos por la zona." },
       { property: "og:title", content: "Perfumería El Arcángel" },
-      { property: "og:description", content: "Fragancias premium con envío en CABA y pago con MercadoPago." },
+      { property: "og:description", content: "Perfumes, limpieza y cabello en Gran Bourg. Envíos por la zona y pago con MercadoPago." },
       { property: "og:image", content: heroImg },
     ],
   }),
@@ -55,13 +55,13 @@ function HomePage() {
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-sidebar via-sidebar/85 to-sidebar/30" />
           <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
             <span className="text-xs font-medium uppercase tracking-[0.3em] text-sidebar-primary">
-              Perfumería boutique
+              Perfumería · Limpieza · Cabello
             </span>
             <h1 className="mt-4 max-w-2xl font-serif text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
-              El aroma que te define, entregado en tu puerta.
+              Todo lo que tu casa y tu estilo necesitan, en Gran Bourg.
             </h1>
             <p className="mt-6 max-w-xl text-base text-sidebar-foreground/80 sm:text-lg">
-              Selección curada de fragancias originales. Comprá online, pagá con MercadoPago y coordinamos la entrega por WhatsApp.
+              Perfumes, productos de limpieza y para el cabello. Comprá online, pagá con MercadoPago y coordinamos la entrega por WhatsApp.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
@@ -86,8 +86,8 @@ function HomePage() {
         <section className="border-b border-border bg-secondary/30">
           <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:grid-cols-3 sm:px-6 lg:px-8">
             {[
-              { icon: Sparkles, t: "Originales", d: "Solo fragancias auténticas seleccionadas a mano." },
-              { icon: Truck, t: "Envíos en CABA", d: "Coordinamos día y horario por WhatsApp." },
+              { icon: Sparkles, t: "Variedad", d: "Perfumes, limpieza y línea capilar en un mismo lugar." },
+              { icon: Truck, t: "Envíos en la zona", d: "Repartimos por Gran Bourg y alrededores." },
               { icon: ShieldCheck, t: "Pago seguro", d: "Checkout con MercadoPago, todas las tarjetas." },
             ].map(({ icon: Icon, t, d }) => (
               <div key={t} className="flex items-start gap-3">
