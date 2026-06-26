@@ -61,7 +61,7 @@ function HomePage() {
               Todo lo que tu casa y tu estilo necesitan, en Gran Bourg.
             </h1>
             <p className="mt-6 max-w-xl text-base text-sidebar-foreground/80 sm:text-lg">
-              Perfumes, productos de limpieza y para el cabello. Comprá online, pagá con MercadoPago y coordinamos la entrega por WhatsApp.
+              Después de pagar con MercadoPago recibí el producto en tu casa o retiralo por tu sucursal más cercana.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
