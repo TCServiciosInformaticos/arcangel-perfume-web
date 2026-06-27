@@ -16,8 +16,10 @@ import { Route as GraciasRouteImport } from './routes/gracias'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as CarritoRouteImport } from './routes/carrito'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductoSlugRouteImport } from './routes/producto.$slug'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as ApiPublicMercadopagoWebhookRouteImport } from './routes/api/public/mercadopago-webhook'
 
 const ProductosRoute = ProductosRouteImport.update({
@@ -55,6 +57,10 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -64,6 +70,11 @@ const ProductoSlugRoute = ProductoSlugRouteImport.update({
   id: '/producto/$slug',
   path: '/producto/$slug',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const ApiPublicMercadopagoWebhookRoute =
   ApiPublicMercadopagoWebhookRouteImport.update({
@@ -81,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/pago-fallido': typeof PagoFallidoRoute
   '/pago-pendiente': typeof PagoPendienteRoute
   '/productos': typeof ProductosRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/producto/$slug': typeof ProductoSlugRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
@@ -93,12 +105,14 @@ export interface FileRoutesByTo {
   '/pago-fallido': typeof PagoFallidoRoute
   '/pago-pendiente': typeof PagoPendienteRoute
   '/productos': typeof ProductosRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/producto/$slug': typeof ProductoSlugRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
   '/carrito': typeof CarritoRoute
   '/checkout': typeof CheckoutRoute
@@ -106,6 +120,7 @@ export interface FileRoutesById {
   '/pago-fallido': typeof PagoFallidoRoute
   '/pago-pendiente': typeof PagoPendienteRoute
   '/productos': typeof ProductosRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/producto/$slug': typeof ProductoSlugRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
@@ -120,6 +135,7 @@ export interface FileRouteTypes {
     | '/pago-fallido'
     | '/pago-pendiente'
     | '/productos'
+    | '/admin'
     | '/producto/$slug'
     | '/api/public/mercadopago-webhook'
   fileRoutesByTo: FileRoutesByTo
@@ -132,11 +148,13 @@ export interface FileRouteTypes {
     | '/pago-fallido'
     | '/pago-pendiente'
     | '/productos'
+    | '/admin'
     | '/producto/$slug'
     | '/api/public/mercadopago-webhook'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/auth'
     | '/carrito'
     | '/checkout'
@@ -144,12 +162,14 @@ export interface FileRouteTypes {
     | '/pago-fallido'
     | '/pago-pendiente'
     | '/productos'
+    | '/_authenticated/admin'
     | '/producto/$slug'
     | '/api/public/mercadopago-webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   CarritoRoute: typeof CarritoRoute
   CheckoutRoute: typeof CheckoutRoute
@@ -212,6 +232,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -226,6 +253,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductoSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/api/public/mercadopago-webhook': {
       id: '/api/public/mercadopago-webhook'
       path: '/api/public/mercadopago-webhook'
@@ -236,8 +270,20 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   CarritoRoute: CarritoRoute,
   CheckoutRoute: CheckoutRoute,
