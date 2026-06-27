@@ -62,6 +62,8 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   const { data: featured } = useSuspenseQuery(featuredQuery);
+  const { data: sales } = useSuspenseQuery(salesQuery);
+
 
   return (
     <div className="flex min-h-screen flex-col">
