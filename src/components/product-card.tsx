@@ -6,6 +6,7 @@ export type ProductCardData = {
   slug: string;
   name: string;
   price: number | string;
+  compare_at_price?: number | string | null;
   stock: number;
   image_urls: string[];
   category?: { name: string } | null;
@@ -14,6 +15,11 @@ export type ProductCardData = {
 export function ProductCard({ p }: { p: ProductCardData }) {
   const img = p.image_urls?.[0] ?? null;
   const out = p.stock <= 0;
+  const price = Number(p.price);
+  const compare = p.compare_at_price != null ? Number(p.compare_at_price) : null;
+  const onSale = compare != null && compare > price;
+  const discount = onSale ? Math.round(((compare! - price) / compare!) * 100) : 0;
+
   return (
     <Link
       to="/producto/$slug"
@@ -33,6 +39,11 @@ export function ProductCard({ p }: { p: ProductCardData }) {
             El Arcángel
           </div>
         )}
+        {onSale && !out && (
+          <span className="absolute left-3 top-3 rounded-full bg-primary px-2.5 py-0.5 text-xs font-semibold text-primary-foreground shadow-sm">
+            -{discount}%
+          </span>
+        )}
         {out && (
           <span className="absolute left-3 top-3 rounded-full bg-foreground/85 px-2.5 py-0.5 text-xs font-medium text-background">
             Sin stock
@@ -46,7 +57,12 @@ export function ProductCard({ p }: { p: ProductCardData }) {
           </span>
         )}
         <h3 className="font-serif text-lg leading-tight text-foreground">{p.name}</h3>
-        <div className="mt-2 font-medium text-primary">{formatARS(p.price)}</div>
+        <div className="mt-2 flex items-baseline gap-2">
+          <span className="font-medium text-primary">{formatARS(price)}</span>
+          {onSale && (
+            <span className="text-xs text-muted-foreground line-through">{formatARS(compare!)}</span>
+          )}
+        </div>
       </div>
     </Link>
   );
