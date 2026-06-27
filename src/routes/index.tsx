@@ -1,24 +1,43 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { ArrowRight, Sparkles, Truck, ShieldCheck, Instagram } from "lucide-react";
+import { ArrowRight, Sparkles, Truck, ShieldCheck, Instagram, Tag } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ProductCard } from "@/components/product-card";
 import heroImg from "@/assets/hero-perfumes.jpg";
 
+const SELECT = "id, slug, name, price, compare_at_price, stock, image_urls, category:categories(name)";
+
 const featuredQuery = queryOptions({
   queryKey: ["home", "featured"],
   queryFn: async () => {
     const { data, error } = await supabase
       .from("products")
-      .select("id, slug, name, price, stock, image_urls, category:categories(name)")
+      .select(SELECT)
       .eq("is_active", true)
       .order("is_featured", { ascending: false })
       .order("created_at", { ascending: false })
       .limit(8);
     if (error) throw error;
     return data ?? [];
+  },
+});
+
+const salesQuery = queryOptions({
+  queryKey: ["home", "sales"],
+  queryFn: async () => {
+    const { data, error } = await supabase
+      .from("products")
+      .select(SELECT)
+      .eq("is_active", true)
+      .not("compare_at_price", "is", null)
+      .order("created_at", { ascending: false })
+      .limit(8);
+    if (error) throw error;
+    return (data ?? []).filter(
+      (p) => p.compare_at_price != null && Number(p.compare_at_price) > Number(p.price),
+    );
   },
 });
 
@@ -32,9 +51,14 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: heroImg },
     ],
   }),
-  loader: ({ context }) => context.queryClient.ensureQueryData(featuredQuery),
+  loader: ({ context }) =>
+    Promise.all([
+      context.queryClient.ensureQueryData(featuredQuery),
+      context.queryClient.ensureQueryData(salesQuery),
+    ]),
   component: HomePage,
 });
+
 
 function HomePage() {
   const { data: featured } = useSuspenseQuery(featuredQuery);
