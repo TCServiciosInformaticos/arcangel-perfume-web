@@ -1,24 +1,43 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { ArrowRight, Sparkles, Truck, ShieldCheck, Instagram } from "lucide-react";
+import { ArrowRight, Sparkles, Truck, ShieldCheck, Instagram, Tag } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ProductCard } from "@/components/product-card";
 import heroImg from "@/assets/hero-perfumes.jpg";
 
+const SELECT = "id, slug, name, price, compare_at_price, stock, image_urls, category:categories(name)";
+
 const featuredQuery = queryOptions({
   queryKey: ["home", "featured"],
   queryFn: async () => {
     const { data, error } = await supabase
       .from("products")
-      .select("id, slug, name, price, stock, image_urls, category:categories(name)")
+      .select(SELECT)
       .eq("is_active", true)
       .order("is_featured", { ascending: false })
       .order("created_at", { ascending: false })
       .limit(8);
     if (error) throw error;
     return data ?? [];
+  },
+});
+
+const salesQuery = queryOptions({
+  queryKey: ["home", "sales"],
+  queryFn: async () => {
+    const { data, error } = await supabase
+      .from("products")
+      .select(SELECT)
+      .eq("is_active", true)
+      .not("compare_at_price", "is", null)
+      .order("created_at", { ascending: false })
+      .limit(8);
+    if (error) throw error;
+    return (data ?? []).filter(
+      (p) => p.compare_at_price != null && Number(p.compare_at_price) > Number(p.price),
+    );
   },
 });
 
@@ -32,12 +51,19 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: heroImg },
     ],
   }),
-  loader: ({ context }) => context.queryClient.ensureQueryData(featuredQuery),
+  loader: ({ context }) =>
+    Promise.all([
+      context.queryClient.ensureQueryData(featuredQuery),
+      context.queryClient.ensureQueryData(salesQuery),
+    ]),
   component: HomePage,
 });
 
+
 function HomePage() {
   const { data: featured } = useSuspenseQuery(featuredQuery);
+  const { data: sales } = useSuspenseQuery(salesQuery);
+
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -101,8 +127,34 @@ function HomePage() {
           </div>
         </section>
 
+        {/* Ofertas */}
+        {sales.length > 0 && (
+          <section className="border-y border-primary/15 bg-gradient-to-br from-primary/10 via-background to-accent/30">
+            <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+              <div className="flex items-end justify-between">
+                <div>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.3em] text-primary">
+                    <Tag className="h-3.5 w-3.5" /> Ofertas
+                  </span>
+                  <h2 className="mt-2 font-serif text-3xl sm:text-4xl">Promos de la semana</h2>
+                  <p className="mt-2 max-w-xl text-sm text-muted-foreground">
+                    Productos con precio rebajado por tiempo limitado.
+                  </p>
+                </div>
+                <Link to="/productos" className="hidden text-sm font-medium text-primary hover:underline sm:inline">
+                  Ver todo →
+                </Link>
+              </div>
+              <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
+                {sales.map((p) => <ProductCard key={p.id} p={p} />)}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Featured */}
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+
           <div className="flex items-end justify-between">
             <div>
               <span className="text-xs font-medium uppercase tracking-[0.3em] text-primary">Destacados</span>
