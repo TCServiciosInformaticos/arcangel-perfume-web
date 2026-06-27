@@ -211,6 +211,7 @@ function AdminProductos() {
       </div>
 
       <ProductForm
+        key={editing?.id ?? (openForm ? "new" : "closed")}
         open={openForm}
         onOpenChange={setOpenForm}
         product={editing}
@@ -221,6 +222,7 @@ function AdminProductos() {
           qc.invalidateQueries({ queryKey: ["home", "sales"] });
         }}
       />
+
 
       <AlertDialog open={!!toDelete} onOpenChange={(o) => !o && setToDelete(null)}>
         <AlertDialogContent>
