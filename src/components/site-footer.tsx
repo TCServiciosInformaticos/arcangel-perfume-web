@@ -53,7 +53,18 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-sidebar-border/40 py-4 text-center text-xs text-sidebar-foreground/50">
-        © {new Date().getFullYear()} Perfumería El Arcángel. Todos los derechos reservados.
+        <div>© {new Date().getFullYear()} Perfumería El Arcángel. Todos los derechos reservados.</div>
+        <div className="mt-1">
+          Sitio desarrollado por{" "}
+          <a
+            href="https://tcserviciosinformaticos.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="hover:text-sidebar-primary underline-offset-2 hover:underline"
+          >
+            TC Servicios Informáticos
+          </a>
+        </div>
       </div>
     </footer>
   );
