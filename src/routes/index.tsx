@@ -127,8 +127,34 @@ function HomePage() {
           </div>
         </section>
 
+        {/* Ofertas */}
+        {sales.length > 0 && (
+          <section className="border-y border-primary/15 bg-gradient-to-br from-primary/10 via-background to-accent/30">
+            <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+              <div className="flex items-end justify-between">
+                <div>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.3em] text-primary">
+                    <Tag className="h-3.5 w-3.5" /> Ofertas
+                  </span>
+                  <h2 className="mt-2 font-serif text-3xl sm:text-4xl">Promos de la semana</h2>
+                  <p className="mt-2 max-w-xl text-sm text-muted-foreground">
+                    Productos con precio rebajado por tiempo limitado.
+                  </p>
+                </div>
+                <Link to="/productos" className="hidden text-sm font-medium text-primary hover:underline sm:inline">
+                  Ver todo →
+                </Link>
+              </div>
+              <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
+                {sales.map((p) => <ProductCard key={p.id} p={p} />)}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Featured */}
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+
           <div className="flex items-end justify-between">
             <div>
               <span className="text-xs font-medium uppercase tracking-[0.3em] text-primary">Destacados</span>
