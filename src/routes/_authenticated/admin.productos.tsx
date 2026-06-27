@@ -296,12 +296,7 @@ function ProductForm({
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
 
-  // Reset al abrir/cambiar producto
-  useState(() => {});
-  // Sync values when product changes
-  if (open && product && product.id !== (window as any).__lastProductId) {
-    (window as any).__lastProductId = product.id;
-  }
+
 
   async function handleUpload(files: FileList | null) {
     if (!files || files.length === 0) return;
