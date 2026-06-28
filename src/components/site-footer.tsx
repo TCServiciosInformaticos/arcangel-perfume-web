@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import logoAsset from "@/assets/arcangel-logo.png.asset.json";
+
+const logoUrl = "/arcangel-logo.png";
 
 export function SiteFooter() {
   return (
