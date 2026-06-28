@@ -3,7 +3,7 @@ import { ShoppingBag, Menu, X, User } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart-context";
 import { useAuth } from "@/lib/auth-context";
-import logoAsset from "@/assets/arcangel-logo.png.asset.json";
+const logoUrl = "/arcangel-logo.png";
 
 
 const NAV = [
@@ -23,7 +23,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="group flex items-center gap-2.5" aria-label="Perfumería El Arcángel — Inicio">
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt="Perfumería El Arcángel"
             className="h-11 w-11 object-contain transition-transform group-hover:scale-105"
             width={44}
