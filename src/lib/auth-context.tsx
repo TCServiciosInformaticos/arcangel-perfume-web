@@ -27,10 +27,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setState({ user: data.session?.user ?? null, session: data.session, isAdmin, loading: false });
     });
 
-    const sub = supabase.auth.onAuthStateChange(async (event, session) => {
+    const sub = supabase.auth.onAuthStateChange((event, session) => {
       if (event !== "SIGNED_IN" && event !== "SIGNED_OUT" && event !== "USER_UPDATED" && event !== "INITIAL_SESSION") return;
-      const isAdmin = session?.user.id ? await checkAdmin(session.user.id) : false;
-      setState({ user: session?.user ?? null, session, isAdmin, loading: false });
+      // Set basic state synchronously; defer Supabase call to avoid deadlock inside the listener.
+      setState((prev) => ({ user: session?.user ?? null, session, isAdmin: prev.isAdmin, loading: false }));
+      if (!session?.user?.id) {
+        setState({ user: null, session: null, isAdmin: false, loading: false });
+        return;
+      }
+      const uid = session.user.id;
+      setTimeout(() => {
+        checkAdmin(uid).then((isAdmin) => {
+          setState({ user: session.user, session, isAdmin, loading: false });
+        });
+      }, 0);
     });
     unsub = () => sub.data.subscription.unsubscribe();
     return unsub;
