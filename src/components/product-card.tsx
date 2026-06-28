@@ -24,9 +24,9 @@ export function ProductCard({ p }: { p: ProductCardData }) {
     <Link
       to="/producto/$slug"
       params={{ slug: p.slug }}
-      className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg"
+      className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-all hover:-translate-y-0.5 hover:shadow-lg"
     >
-      <div className="relative aspect-[4/5] overflow-hidden bg-secondary/40">
+      <div className="relative aspect-square overflow-hidden bg-secondary">
         {img ? (
           <img
             src={img}
@@ -35,17 +35,17 @@ export function ProductCard({ p }: { p: ProductCardData }) {
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full items-center justify-center font-serif text-3xl text-muted-foreground/40">
+          <div className="flex h-full items-center justify-center text-2xl font-bold text-muted-foreground/40">
             El Arcángel
           </div>
         )}
         {onSale && !out && (
-          <span className="absolute left-3 top-3 rounded-full bg-primary px-2.5 py-0.5 text-xs font-semibold text-primary-foreground shadow-sm">
-            -{discount}%
+          <span className="absolute left-0 top-3 rounded-r-md bg-primary px-2.5 py-1 text-[11px] font-bold uppercase text-primary-foreground shadow-sm">
+            {discount}% OFF
           </span>
         )}
         {out && (
-          <span className="absolute left-3 top-3 rounded-full bg-foreground/85 px-2.5 py-0.5 text-xs font-medium text-background">
+          <span className="absolute left-3 top-3 rounded-md bg-foreground/85 px-2.5 py-0.5 text-xs font-medium text-background">
             Sin stock
           </span>
         )}
@@ -56,13 +56,18 @@ export function ProductCard({ p }: { p: ProductCardData }) {
             {p.category.name}
           </span>
         )}
-        <h3 className="font-serif text-lg leading-tight text-foreground">{p.name}</h3>
-        <div className="mt-2 flex items-baseline gap-2">
-          <span className="font-medium text-primary">{formatARS(price)}</span>
+        <h3 className="line-clamp-2 text-sm font-medium leading-snug text-foreground min-h-[2.5rem]">
+          {p.name}
+        </h3>
+        <div className="mt-2">
           {onSale && (
-            <span className="text-xs text-muted-foreground line-through">{formatARS(compare!)}</span>
+            <div className="text-xs text-muted-foreground line-through">{formatARS(compare!)}</div>
           )}
+          <div className="text-lg font-bold text-primary">{formatARS(price)}</div>
         </div>
+        <span className="mt-2 inline-flex items-center justify-center rounded-md border border-primary px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+          Comprar
+        </span>
       </div>
     </Link>
   );
