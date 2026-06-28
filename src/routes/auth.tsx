@@ -43,7 +43,7 @@ function AuthPage() {
         if (error) throw error;
         toast.success("Cuenta creada. Si es la primera cuenta del sistema, queda como administradora.");
       }
-      navigate({ to: "/admin" });
+      // La redirección la hace el effect cuando la sesión y el rol ya terminaron de cargar.
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Error al autenticar");
     } finally {
