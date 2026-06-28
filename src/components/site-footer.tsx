@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Perfumería El Arcángel" className="h-12 w-12 rounded-full bg-white/95 p-1 object-contain" width={48} height={48} />
+            <img src={logoUrl} alt="Perfumería El Arcángel" className="h-12 w-12 rounded-full bg-white/95 p-1 object-contain" width={48} height={48} />
             <h3 className="font-serif text-2xl">El Arcángel</h3>
           </div>
           <p className="mt-3 max-w-sm text-sm text-sidebar-foreground/70">
