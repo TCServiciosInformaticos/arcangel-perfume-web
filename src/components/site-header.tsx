@@ -3,7 +3,7 @@ import { ShoppingBag, Menu, X, User } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart-context";
 import { useAuth } from "@/lib/auth-context";
-import logoAsset from "@/assets/arcangel-logo.png.asset.json";
+const logoUrl = "/arcangel-logo.png";
 
 
 const NAV = [
