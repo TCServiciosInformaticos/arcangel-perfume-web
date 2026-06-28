@@ -1,0 +1,1 @@
+update public.products set image_urls = array['https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=1200&q=80'] where slug = 'shampoo-keratina-400ml';
