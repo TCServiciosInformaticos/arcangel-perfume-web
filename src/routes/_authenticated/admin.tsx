@@ -24,7 +24,7 @@ function AdminLayout() {
     router.navigate({ to: "/auth" });
   }
 
-  if (loading) {
+  if (loading || !user) {
     return <div className="flex min-h-screen items-center justify-center text-muted-foreground">Cargando…</div>;
   }
 

@@ -15,7 +15,7 @@ export const Route = createFileRoute("/auth")({
 });
 
 function AuthPage() {
-  const { user, loading } = useAuth();
+  const { user, isAdmin, loading } = useAuth();
   const navigate = useNavigate();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
@@ -23,8 +23,8 @@ function AuthPage() {
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
-    if (!loading && user) navigate({ to: "/admin" });
-  }, [loading, user, navigate]);
+    if (!loading && user && isAdmin) navigate({ to: "/admin" });
+  }, [loading, user, isAdmin, navigate]);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -43,7 +43,7 @@ function AuthPage() {
         if (error) throw error;
         toast.success("Cuenta creada. Si es la primera cuenta del sistema, queda como administradora.");
       }
-      navigate({ to: "/admin" });
+      // La redirección la hace el effect cuando la sesión y el rol ya terminaron de cargar.
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Error al autenticar");
     } finally {
