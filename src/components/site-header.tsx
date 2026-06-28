@@ -25,8 +25,9 @@ export function SiteHeader() {
 
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate({ to: "/productos", search: q ? { q } as never : undefined });
+    navigate({ to: "/productos" });
   };
+
 
   return (
     <header className="sticky top-0 z-40 bg-background shadow-sm">
