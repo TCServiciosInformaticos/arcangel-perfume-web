@@ -16,3 +16,4 @@
 - Prepare external catalog imports through scripts/catalog-import.ts with validated prices, explicit discount/rounding options and stored asset URLs before database insertion; preserve differently named source variants as separate product rows, so imported prices and presentations remain unambiguous.
 - Store subcategories separately under one category and enforce product/category membership in the database, so admin edits cannot assign mismatched classifications.
 - Populate the header menu from managed categories and keep catalog filters in validated URL search parameters, so menu links, searches and browser history apply the same selection.
+- Product Excel updates identify existing rows by immutable ID and change only price, absolute stock balance and visibility through an admin-checked SECURITY INVOKER atomic database function; export reads all pages including inactive products so bulk editing cannot silently omit inventory or partially save an invalid file.

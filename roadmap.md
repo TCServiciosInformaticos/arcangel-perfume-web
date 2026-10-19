@@ -1,5 +1,10 @@
 # Flujo de compra
 
+## Actualización por Excel
+- [ ] Exportar todos los artículos con ID, nombre, categoría, marca, precio, stock y activo.
+- [ ] Validar e importar únicamente precio, stock y activo con confirmación y guardado atómico para administradores.
+- [ ] Entregar Excel actual y verificar exportación e importación en el panel.
+
 ## Catálogo cuidado personal Thelma & Louise
 - [x] Obtener los 84 artículos de las dos páginas de cuidado personal con precios, fotos y descripciones.
 - [x] Cargar sus 147 presentaciones en Skin care con descuento del 20%, precios enteros y stock cero; verificar catálogo, ficha y las 147 imágenes.

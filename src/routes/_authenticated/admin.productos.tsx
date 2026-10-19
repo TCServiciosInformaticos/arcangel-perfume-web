@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { formatARS, slugify } from "@/lib/format";
 import { subcategoriesForCategory, validateProductClassification, type SubcategoryOption } from "@/lib/category-selection";
 import { Button } from "@/components/ui/button";
+import { ProductExcelControls } from "@/components/product-excel-controls";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -142,6 +143,8 @@ function AdminProductos() {
           <Plus className="h-4 w-4" /> Nuevo producto
         </Button>
       </div>
+
+      <div className="mt-4"><ProductExcelControls /></div>
 
       <div className="mt-6 overflow-hidden rounded-xl border border-border bg-card">
         {productsQ.isLoading ? (
