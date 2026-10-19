@@ -13,7 +13,7 @@ export function SiteFooter() {
             <h3 className="font-serif text-2xl">El Arcángel</h3>
           </div>
           <p className="mt-3 max-w-sm text-sm text-sidebar-foreground/70">
-            Perfumes, productos de limpieza y para el cabello. Atención personalizada y envíos por la zona de Gran Bourg.
+            Tu perfumería de confianza en Gran Bourg: perfumes, limpieza y cuidado del cabello, con la atención de siempre.
           </p>
           <p className="mt-3 text-sm text-sidebar-foreground/70">
             <span className="block font-medium text-sidebar-foreground">Horarios</span>
