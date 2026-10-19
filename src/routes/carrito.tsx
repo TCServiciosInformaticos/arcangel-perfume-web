@@ -11,6 +11,10 @@ export const Route = createFileRoute("/carrito")({
     meta: [
       { title: "Tu carrito — Perfumería El Arcángel" },
       { name: "description", content: "Revisá los productos en tu carrito y finalizá tu compra." },
+      { property: "og:title", content: "Tu carrito — El Arcángel" },
+      { property: "og:description", content: "Revisá tu pedido antes de pagar con Mercado Pago." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: CartPage,

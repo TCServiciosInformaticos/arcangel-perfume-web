@@ -5,7 +5,14 @@ import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/_authenticated/admin")({
-  head: () => ({ meta: [{ title: "Panel admin · El Arcángel" }] }),
+  head: () => ({ meta: [
+    { title: "Panel admin · El Arcángel" },
+    { name: "description", content: "Administración de la tienda El Arcángel." },
+    { property: "og:title", content: "Panel de administración — El Arcángel" },
+    { property: "og:description", content: "Gestión de la tienda y su catálogo." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+  ] }),
   component: AdminLayout,
 });
 

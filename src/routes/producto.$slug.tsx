@@ -38,7 +38,12 @@ export const Route = createFileRoute("/producto/$slug")({
           { name: "description", content: loaderData.description?.slice(0, 155) ?? `Comprá ${loaderData.name} en Perfumería El Arcángel.` },
           { property: "og:title", content: loaderData.name },
           { property: "og:description", content: loaderData.description?.slice(0, 155) ?? `Comprá ${loaderData.name}.` },
-          ...(loaderData.image_urls?.[0] ? [{ property: "og:image", content: loaderData.image_urls[0] }] : []),
+          { property: "og:type", content: "product" },
+          { name: "twitter:card", content: "summary_large_image" },
+          ...(loaderData.image_urls?.[0]?.startsWith("https://") ? [
+            { property: "og:image", content: loaderData.image_urls[0] },
+            { name: "twitter:image", content: loaderData.image_urls[0] },
+          ] : []),
         ]
       : [],
   }),

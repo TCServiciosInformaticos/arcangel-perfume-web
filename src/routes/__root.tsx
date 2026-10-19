@@ -86,8 +86,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Perfumería El Arcángel — Fragancias premium en CABA" },
       { name: "twitter:description", content: "Catálogo de perfumes y fragancias premium con envío a domicilio en Grand Bourg y retiro en el local. Comprá online y pagá con MercadoPago." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0183b1e8-6504-4df6-a6aa-792f722fc7f5/id-preview-1e09ec70--23873149-1357-4ff5-be84-ddd24ee8a99c.lovable.app-1782504225722.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0183b1e8-6504-4df6-a6aa-792f722fc7f5/id-preview-1e09ec70--23873149-1357-4ff5-be84-ddd24ee8a99c.lovable.app-1782504225722.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

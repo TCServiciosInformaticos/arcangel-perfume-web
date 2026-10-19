@@ -27,7 +27,15 @@ const settingsQuery = queryOptions({
 });
 
 export const Route = createFileRoute("/checkout")({
-  head: () => ({ meta: [{ title: "Checkout — Perfumería El Arcángel" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [
+    { title: "Finalizar compra — Perfumería El Arcángel" },
+    { name: "description", content: "Completá tus datos y pagá tu pedido con Mercado Pago en El Arcángel." },
+    { property: "og:title", content: "Finalizar compra — El Arcángel" },
+    { property: "og:description", content: "Comprá online con entrega por la zona o retiro en el local." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+    { name: "robots", content: "noindex" },
+  ] }),
   loader: ({ context }) => context.queryClient.ensureQueryData(settingsQuery),
   component: CheckoutPage,
 });

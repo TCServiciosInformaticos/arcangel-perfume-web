@@ -33,6 +33,8 @@ export const Route = createFileRoute("/productos")({
       { name: "description", content: "Explorá toda la selección de perfumes y fragancias premium. Comprá online con envío en CABA." },
       { property: "og:title", content: "Catálogo — Perfumería El Arcángel" },
       { property: "og:description", content: "Explorá toda la selección de perfumes y fragancias premium." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(catalogQuery),
