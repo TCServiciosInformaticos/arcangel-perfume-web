@@ -5,7 +5,7 @@ import { useCart } from "@/lib/cart-context";
 import { useAuth } from "@/lib/auth-context";
 import { formatARS } from "@/lib/format";
 
-const logoUrl = "/arcangel-logo.png";
+const logoUrl = "/arcangel-mark.png";
 
 const NAV = ["Perfumes", "Limpieza", "Cabello", "Higiene personal", "Cuidado de la piel", "Ofertas"];
 const MARQUEE = Array.from({ length: 8 }, () => "Envíos por Gran Bourg y alrededores 🚚 / Pagá con MercadoPago 💖 / Lunes a sábado 9 a 13 y 16 a 20 h");
