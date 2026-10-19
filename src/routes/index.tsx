@@ -133,9 +133,9 @@ function HomePage() {
       <main className="flex-1">
         <HeroSlider />
 
-        <section className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-10 gap-y-8 px-4 py-12 sm:px-6 lg:px-8">
+        <section className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-8 px-4 py-12 sm:grid-cols-4 sm:gap-x-8 sm:px-6 lg:px-8">
           {CATEGORIES.map((c) => (
-            <Link key={c.name} to="/productos" className="group flex items-center gap-4">
+            <Link key={c.name} to="/productos" className="group flex flex-col items-center gap-4 text-center">
               <span className="block h-28 w-28 overflow-hidden rounded-full border-2 border-border shadow-sm transition-shadow duration-300 group-hover:shadow-md sm:h-36 sm:w-36">
                 <img src={c.img} alt={c.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
               </span>
