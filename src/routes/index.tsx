@@ -13,6 +13,7 @@ import catCabello from "@/assets/cat-cabello.jpg";
 import catAccesorios from "@/assets/cat-accesorios.jpg";
 import catSkincare from "@/assets/cat-skincare.jpg";
 import catMakeup from "@/assets/cat-makeup.jpg";
+import catHigiene from "@/assets/cat-higiene.jpg";
 
 const SELECT = "id, slug, name, price, compare_at_price, stock, image_urls, category:categories(name)";
 
@@ -91,7 +92,7 @@ const CATEGORIES = [
   { name: "Perfumes", img: catPerfumes },
   { name: "Limpieza", img: catLimpieza },
   { name: "Cabello", img: catCabello },
-  { name: "Higiene personal", img: heroImg },
+  { name: "Higiene personal", img: catHigiene },
   { name: "Accesorios", img: catAccesorios },
   { name: "Skin care", img: catSkincare },
   { name: "Make up", img: catMakeup },
