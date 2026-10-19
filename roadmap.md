@@ -1,9 +1,9 @@
 # Flujo de compra
 
 ## Catálogo Fidelité
-- [ ] Revisar todos los artículos de BM Distribuidora y obtener fotos, descripciones y precios publicados.
-- [ ] Cargar artículos en Cabello con precios de origen y stock cero, sin alterar los productos existentes.
-- [ ] Verificar cantidad importada y fotos en la tienda.
+- [x] Revisar los 87 artículos de las cuatro páginas de BM Distribuidora y obtener fotos, descripciones y precios publicados.
+- [x] Cargar 87 artículos en Cabello con precios de origen y stock cero, sin alterar los cuatro productos existentes.
+- [x] Verificar 87 tarjetas, fotos sin errores y cuatro fichas de producto en la tienda.
 
 - [x] Validar carrito e iniciar pago real sin aprobar pedidos de demostración.
 - [x] Proteger consulta del pedido y verificar pagos de Mercado Pago.
