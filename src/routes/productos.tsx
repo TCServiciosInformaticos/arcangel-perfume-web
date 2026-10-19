@@ -33,9 +33,13 @@ const catalogQuery = queryOptions({
 export const Route = createFileRoute("/productos")({
   validateSearch: catalogSearch,
   head: ({ match }) => {
+    const catalog = (match.loaderData ?? {}) as {
+      categories?: Array<{ id: string; name: string; slug: string }>;
+      subcategories?: Array<{ id: string; name: string; category_id: string }>;
+    };
     const heading = catalogHeading({
-      categories: match.loaderData?.categories ?? [],
-      subcategories: match.loaderData?.subcategories ?? [],
+      categories: catalog.categories ?? [],
+      subcategories: catalog.subcategories ?? [],
       search: match.search,
     });
     const title = `${heading.title} — Perfumería El Arcángel`;

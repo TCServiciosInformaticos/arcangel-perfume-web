@@ -1,4 +1,5 @@
-import { describe, expect, it } from "bun:test";
+import { test } from "node:test";
+import { strict as assert } from "node:assert";
 import { catalogHeading } from "./catalog-navigation";
 
 const categories = [
@@ -9,39 +10,36 @@ const categories = [
 ];
 const subcategories = [{ id: "s1", name: "Fidelité", category_id: "c3" }];
 
-describe("catalogHeading", () => {
-  it("uses the category name for a category that has no custom title", () => {
-    const h = catalogHeading({ categories, subcategories, search: { categoria: "limpieza" }, count: 12 });
-    expect(h.title).toBe("Productos de limpieza");
-    expect(h.title.toLowerCase()).not.toContain("fragancias");
-    expect(h.subtitle).toBe("12 productos disponibles.");
-  });
+test("usa el nombre de la categoría cuando no tiene un título propio", () => {
+  const h = catalogHeading({ categories, subcategories, search: { categoria: "limpieza" }, count: 12 });
+  assert.equal(h.title, "Productos de limpieza");
+  assert.equal(h.title.toLowerCase().includes("fragancias"), false);
+  assert.equal(h.subtitle, "12 productos disponibles.");
+});
 
-  it("keeps the fragrances wording for perfumes", () => {
-    expect(catalogHeading({ categories, subcategories, search: { categoria: "perfumes" }, count: 4 }).title).toBe(
-      "Nuestras fragancias",
-    );
-  });
+test("mantiene la palabra fragancias para perfumes", () => {
+  const h = catalogHeading({ categories, subcategories, search: { categoria: "perfumes" }, count: 4 });
+  assert.equal(h.title, "Nuestras fragancias");
+});
 
-  it("shows the subcategory brand when one is selected", () => {
-    const h = catalogHeading({ categories, subcategories, search: { categoria: "cabello", subcategoria: "s1" }, count: 87 });
-    expect(h.title).toBe("Fidelité");
-    expect(h.subtitle).toBe("87 productos disponibles.");
-  });
+test("muestra la subcategoría o marca cuando está seleccionada", () => {
+  const h = catalogHeading({ categories, subcategories, search: { categoria: "cabello", subcategoria: "s1" }, count: 87 });
+  assert.equal(h.title, "Fidelité");
+  assert.equal(h.subtitle, "87 productos disponibles.");
+});
 
-  it("says ofertas for a category filtered to discounts", () => {
-    const h = catalogHeading({ categories, subcategories, search: { categoria: "limpieza", ofertas: true }, count: 1 });
-    expect(h.title).toBe("Ofertas de Limpieza");
-    expect(h.subtitle).toBe("1 producto con descuento.");
-  });
+test("dice ofertas cuando la categoría está filtrada por descuento", () => {
+  const h = catalogHeading({ categories, subcategories, search: { categoria: "limpieza", ofertas: true }, count: 1 });
+  assert.equal(h.title, "Ofertas de Limpieza");
+  assert.equal(h.subtitle, "1 producto con descuento.");
+});
 
-  it("falls back to the plain category name for a newly created category", () => {
-    expect(catalogHeading({ categories, subcategories, search: { categoria: "novedades" }, count: 0 }).title).toBe("Novedades");
-  });
+test("usa el nombre tal cual para una categoría nueva", () => {
+  const h = catalogHeading({ categories, subcategories, search: { categoria: "novedades" }, count: 0 });
+  assert.equal(h.title, "Novedades");
+});
 
-  it("names the search term when the visitor searched", () => {
-    expect(catalogHeading({ categories, subcategories, search: { q: "keratina" }, count: 2 }).title).toBe(
-      "Resultados para “keratina”",
-    );
-  });
+test("nombra la búsqueda cuando el cliente buscó", () => {
+  const h = catalogHeading({ categories, subcategories, search: { q: "keratina" }, count: 2 });
+  assert.equal(h.title, "Resultados para “keratina”");
 });
