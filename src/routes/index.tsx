@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
-import { ArrowRight, Truck, Percent, ShieldCheck, MessageCircle, Instagram, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Truck, Percent, ShieldCheck, MessageCircle, Instagram } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -75,11 +74,6 @@ const BENEFITS = [
   { icon: MessageCircle, t: "Te ayudamos a elegir", d: "Escribinos por WhatsApp y te asesoramos." },
 ];
 
-const SLIDES = [
-  { img: heroImg, title: "El Arcángel", sub: "Tu perfumería de barrio, ahora también online" },
-  { img: catPerfumes, title: "Perfumes", sub: "La fragancia que te representa está acá" },
-  { img: catCabello, title: "Cabello", sub: "Todo lo que tu pelo necesita, en un solo lugar" },
-];
 
 const PROMOS = [
   { img: catLimpieza, t: "Pedí desde tu casa", d: "Hacé tu compra online y te la acercamos nosotros." },
@@ -101,34 +95,6 @@ function SectionTitle({ title }: { kicker?: string; title: string }) {
   return <h2 className="mb-8 text-3xl font-extrabold uppercase text-foreground">{title}</h2>;
 }
 
-function HeroSlider() {
-  const [i, setI] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setI((v) => (v + 1) % SLIDES.length), 6000);
-    return () => clearInterval(t);
-  }, []);
-  const go = (d: number) => setI((v) => (v + d + SLIDES.length) % SLIDES.length);
-  return (
-    <section className="relative h-[320px] overflow-hidden bg-secondary sm:h-[420px]">
-      {SLIDES.map((s, idx) => (
-        <Link key={s.title} to="/productos" className={`absolute inset-0 transition-opacity duration-700 ${idx === i ? "opacity-100" : "pointer-events-none opacity-0"}`}>
-          <img src={s.img} alt={s.title} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/50 to-transparent" />
-          <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-16">
-            <h1 className="text-5xl font-extrabold lowercase text-primary sm:text-7xl">{s.title}</h1>
-            <p className="mt-4 w-fit bg-card px-4 py-2 text-lg font-semibold text-foreground sm:text-2xl">{s.sub}</p>
-          </div>
-        </Link>
-      ))}
-      <button onClick={() => go(-1)} aria-label="Anterior" className="absolute left-4 top-1/2 -translate-y-1/2 text-foreground">
-        <ChevronLeft className="h-8 w-8" />
-      </button>
-      <button onClick={() => go(1)} aria-label="Siguiente" className="absolute right-4 top-1/2 -translate-y-1/2 text-foreground">
-        <ChevronRight className="h-8 w-8" />
-      </button>
-    </section>
-  );
-}
 
 function HomePage() {
   const { data: featured } = useSuspenseQuery(featuredQuery);
@@ -138,7 +104,6 @@ function HomePage() {
     <div className="flex min-h-screen flex-col bg-card">
       <SiteHeader />
       <main className="flex-1">
-        <HeroSlider />
 
         <section className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-8 px-4 py-12 sm:grid-cols-4 sm:gap-x-6 sm:px-6 lg:grid-cols-7 lg:gap-x-3 lg:px-8">
           {CATEGORIES.map((c) => (
