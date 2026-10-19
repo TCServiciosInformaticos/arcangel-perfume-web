@@ -1,32 +1,18 @@
 import { createServerFn } from "@tanstack/react-start";
-import { z } from "zod";
 
-const CartItemSchema = z.object({
-  productId: z.string().uuid(),
-  quantity: z.number().int().min(1).max(50),
-});
-
-const CheckoutSchema = z.object({
-  items: z.array(CartItemSchema).min(1).max(50),
-  customer_name: z.string().trim().min(2).max(120),
-  customer_email: z.string().trim().email().max(160),
-  customer_whatsapp: z.string().trim().min(6).max(30),
-  delivery_method: z.enum(["pickup", "shipping"]),
-  delivery_street: z.string().trim().max(160).nullable().optional(),
-  delivery_number: z.string().trim().max(20).nullable().optional(),
-  delivery_apartment: z.string().trim().max(40).nullable().optional(),
-  delivery_city: z.string().trim().max(80).nullable().optional(),
-  delivery_zip: z.string().trim().max(20).nullable().optional(),
-  delivery_day: z.string().trim().max(40).nullable().optional(),
-  delivery_time_slot: z.enum(["morning", "afternoon", "evening"]).nullable().optional(),
-  notes: z.string().trim().max(500).nullable().optional(),
-});
-
-export type CheckoutInput = z.infer<typeof CheckoutSchema>;
+import { CheckoutSchema } from "@/lib/checkout-validation";
+export type { CheckoutInput } from "@/lib/checkout-validation";
 
 export const createCheckout = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => CheckoutSchema.parse(data))
   .handler(async ({ data }) => {
+    const accessToken = process.env.MERCADOPAGO_ACCESS_TOKEN;
+    const signingSecret = process.env.ORDER_ACCESS_SECRET;
+    const webhookSecret = process.env.MERCADOPAGO_WEBHOOK_SECRET;
+    if (!accessToken || !signingSecret || !webhookSecret) throw new Error("El pago con Mercado Pago todavía no está habilitado. Tu carrito sigue guardado.");
+    const origin = new URL(process.env.PUBLIC_SITE_URL || "https://arcangel-perfume-web.lovable.app").origin;
+    if (!origin.startsWith("https://")) throw new Error("La dirección de la tienda debe usar HTTPS.");
+    const { signOrderAccess } = await import("@/lib/payment-security.server");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
     // 1) Validate products and compute totals server-side from DB prices
@@ -56,7 +42,9 @@ export const createCheckout = createServerFn({ method: "POST" })
     });
 
     // 2) Shipping cost from settings
-    const { data: settings } = await supabaseAdmin.from("settings").select("shipping_cost, store_name").eq("id", 1).single();
+    const { data: settings, error: settingsError } = await supabaseAdmin.from("settings").select("shipping_cost, store_name, store_whatsapp").eq("id", 1).single();
+    if (settingsError || !settings) throw new Error("No pudimos cargar los datos de la tienda.");
+    if (!/^\d{8,15}$/.test(settings.store_whatsapp.replace(/\D/g, ""))) throw new Error("La tienda necesita configurar su número de WhatsApp antes de recibir pedidos.");
     const shipping_cost = data.delivery_method === "shipping" ? Number(settings?.shipping_cost ?? 0) : 0;
     const total = subtotal + shipping_cost;
 
@@ -87,17 +75,13 @@ export const createCheckout = createServerFn({ method: "POST" })
 
     const itemsRows = validated.map((v) => ({ ...v, order_id: order.id }));
     const { error: iErr } = await supabaseAdmin.from("order_items").insert(itemsRows);
-    if (iErr) throw new Error(iErr.message);
-
-    // 4) Create MercadoPago preference (or fall back to no-payment mode)
-    const accessToken = process.env.MERCADOPAGO_ACCESS_TOKEN;
-    const origin = process.env.PUBLIC_SITE_URL ?? "";
-
-    if (!accessToken) {
-      // No MP configured yet — return a "demo" success so flow still completes during setup.
-      await supabaseAdmin.from("orders").update({ status: "paid" }).eq("id", order.id);
-      return { orderId: order.id, orderNumber: order.order_number, init_point: null, demo: true as const };
+    if (iErr) {
+      await supabaseAdmin.from("orders").update({ status: "cancelled" }).eq("id", order.id);
+      throw new Error("No pudimos guardar los productos del pedido.");
     }
+
+    const token = signOrderAccess(order.id, signingSecret);
+    const returnSearch = `order=${order.id}&token=${token}`;
 
     const prefItems = validated.map((v) => ({
       id: v.product_id,
@@ -124,9 +108,9 @@ export const createCheckout = createServerFn({ method: "POST" })
       },
       external_reference: order.id,
       back_urls: {
-        success: `${origin}/gracias?order=${order.id}`,
-        pending: `${origin}/pago-pendiente?order=${order.id}`,
-        failure: `${origin}/pago-fallido?order=${order.id}`,
+        success: `${origin}/gracias?${returnSearch}`,
+        pending: `${origin}/pago-pendiente?${returnSearch}`,
+        failure: `${origin}/pago-fallido?${returnSearch}`,
       },
       auto_return: "approved",
       notification_url: `${origin}/api/public/mercadopago-webhook`,
@@ -139,18 +123,20 @@ export const createCheckout = createServerFn({ method: "POST" })
       body: JSON.stringify(preferenceBody),
     });
     if (!mpRes.ok) {
-      const txt = await mpRes.text();
-      console.error("MercadoPago preference error:", mpRes.status, txt);
+      console.error("MercadoPago preference error:", mpRes.status);
+      await supabaseAdmin.from("orders").update({ status: "cancelled" }).eq("id", order.id);
       throw new Error("No se pudo iniciar el pago. Probá de nuevo en un momento.");
     }
     const pref = (await mpRes.json()) as { id: string; init_point: string; sandbox_init_point?: string };
-    await supabaseAdmin.from("orders").update({ mp_preference_id: pref.id }).eq("id", order.id);
+    if (!pref.id || !pref.init_point) throw new Error("Mercado Pago no devolvió un enlace de pago válido.");
+    const { error: preferenceError } = await supabaseAdmin.from("orders").update({ mp_preference_id: pref.id }).eq("id", order.id);
+    if (preferenceError) throw new Error("No pudimos asociar el pago a tu pedido.");
 
     const isTest = accessToken.startsWith("TEST-");
     return {
       orderId: order.id,
       orderNumber: order.order_number,
       init_point: isTest ? (pref.sandbox_init_point ?? pref.init_point) : pref.init_point,
-      demo: false as const,
+      token,
     };
   });
