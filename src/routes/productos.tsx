@@ -8,21 +8,24 @@ import { SiteFooter } from "@/components/site-footer";
 import { ProductCard } from "@/components/product-card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { subcategoriesForCategory } from "@/lib/category-selection";
 
 const catalogQuery = queryOptions({
   queryKey: ["catalog"],
   queryFn: async () => {
-    const [products, categories] = await Promise.all([
+    const [products, categories, subcategories] = await Promise.all([
       supabase
         .from("products")
-        .select("id, slug, name, price, stock, image_urls, category_id, category:categories(name)")
+        .select("id, slug, name, price, stock, image_urls, category_id, subcategory_id, category:categories(name)")
         .eq("is_active", true)
         .order("created_at", { ascending: false }),
       supabase.from("categories").select("id, name, slug").order("sort_order"),
+      supabase.from("subcategories").select("id,name,category_id").order("sort_order"),
     ]);
     if (products.error) throw products.error;
     if (categories.error) throw categories.error;
-    return { products: products.data ?? [], categories: categories.data ?? [] };
+    if (subcategories.error) throw subcategories.error;
+    return { products: products.data ?? [], categories: categories.data ?? [], subcategories: subcategories.data ?? [] };
   },
 });
 
@@ -45,11 +48,13 @@ function CatalogPage() {
   const { data } = useSuspenseQuery(catalogQuery);
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<string>("all");
+  const [subcat, setSubcat] = useState("all");
   const [sort, setSort] = useState<string>("recent");
 
   const list = useMemo(() => {
     let l = data.products;
     if (cat !== "all") l = l.filter((p) => p.category_id === cat);
+    if (subcat !== "all") l = l.filter((p) => p.subcategory_id === subcat);
     if (q.trim()) {
       const needle = q.toLowerCase();
       l = l.filter((p) => p.name.toLowerCase().includes(needle));
@@ -57,7 +62,7 @@ function CatalogPage() {
     if (sort === "price-asc") l = [...l].sort((a, b) => Number(a.price) - Number(b.price));
     else if (sort === "price-desc") l = [...l].sort((a, b) => Number(b.price) - Number(a.price));
     return l;
-  }, [data.products, q, cat, sort]);
+  }, [data.products, q, cat, subcat, sort]);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -71,7 +76,7 @@ function CatalogPage() {
         </div>
 
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <div className="grid gap-3 sm:grid-cols-[1fr_auto_auto]">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto_auto]">
             <div className="relative">
               <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
@@ -81,13 +86,20 @@ function CatalogPage() {
                 className="pl-9"
               />
             </div>
-            <Select value={cat} onValueChange={setCat}>
-              <SelectTrigger className="sm:w-48"><SelectValue placeholder="Categoría" /></SelectTrigger>
+            <Select value={cat} onValueChange={(value) => { setCat(value); setSubcat("all"); }}>
+              <SelectTrigger aria-label="Categoría" className="lg:w-48"><SelectValue placeholder="Categoría" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Todas las categorías</SelectItem>
                 {data.categories.map((c) => (
                   <SelectItem key={c.id} value={c.id}>{c.name}</SelectItem>
                 ))}
+              </SelectContent>
+            </Select>
+            <Select value={subcat} onValueChange={setSubcat}>
+              <SelectTrigger aria-label="Subcategoría / marca" className="lg:w-52"><SelectValue placeholder="Subcategoría / marca" /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Todas las subcategorías</SelectItem>
+                {(cat === "all" ? data.subcategories : subcategoriesForCategory(data.subcategories, cat)).map((s) => <SelectItem key={s.id} value={s.id}>{s.name}</SelectItem>)}
               </SelectContent>
             </Select>
             <Select value={sort} onValueChange={setSort}>
