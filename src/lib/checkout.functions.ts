@@ -128,14 +128,17 @@ export const createCheckout = createServerFn({ method: "POST" })
       throw new Error("No se pudo iniciar el pago. Probá de nuevo en un momento.");
     }
     const pref = (await mpRes.json()) as { id: string; init_point: string; sandbox_init_point?: string };
-    if (!pref.id || !pref.init_point) throw new Error("Mercado Pago no devolvió un enlace de pago válido.");
+    // Test credentials (TEST-...) must use the sandbox checkout; otherwise MP rejects the payment.
+    const isTestMode = accessToken.startsWith("TEST-");
+    const checkoutUrl = isTestMode ? pref.sandbox_init_point || pref.init_point : pref.init_point;
+    if (!pref.id || !checkoutUrl) throw new Error("Mercado Pago no devolvió un enlace de pago válido.");
     const { error: preferenceError } = await supabaseAdmin.from("orders").update({ mp_preference_id: pref.id }).eq("id", order.id);
     if (preferenceError) throw new Error("No pudimos asociar el pago a tu pedido.");
 
     return {
       orderId: order.id,
       orderNumber: order.order_number,
-      init_point: pref.init_point,
+      init_point: checkoutUrl,
       token,
     };
   });
