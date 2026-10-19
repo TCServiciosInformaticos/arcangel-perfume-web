@@ -10,6 +10,9 @@ import heroImg from "@/assets/hero-banner-red.jpg";
 import catPerfumes from "@/assets/cat-perfumes.jpg";
 import catLimpieza from "@/assets/cat-limpieza.jpg";
 import catCabello from "@/assets/cat-cabello.jpg";
+import catAccesorios from "@/assets/cat-accesorios.jpg";
+import catSkincare from "@/assets/cat-skincare.jpg";
+import catMakeup from "@/assets/cat-makeup.jpg";
 
 const SELECT = "id, slug, name, price, compare_at_price, stock, image_urls, category:categories(name)";
 
