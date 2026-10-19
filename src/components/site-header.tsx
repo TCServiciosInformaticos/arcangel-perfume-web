@@ -4,10 +4,12 @@ import { useState } from "react";
 import { useCart } from "@/lib/cart-context";
 import { useAuth } from "@/lib/auth-context";
 import { formatARS } from "@/lib/format";
+import { useQuery } from "@tanstack/react-query";
+import { navigationCategoriesQuery } from "@/lib/catalog-navigation";
+import { Button } from "@/components/ui/button";
 
 const logoUrl = "/arcangel-mark.png";
 
-const NAV = ["Perfumes", "Limpieza", "Cabello", "Higiene personal", "Cuidado de la piel", "Ofertas"];
 const MARQUEE = Array.from({ length: 8 }, () => "Envíos por Gran Bourg y alrededores 🚚 / Pagá con MercadoPago 💖 / Lunes a sábado 9 a 13 y 16 a 20 h");
 
 export function SiteHeader() {
@@ -16,10 +18,13 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const navigate = useNavigate();
+  const { data: categories = [] } = useQuery(navigationCategoriesQuery);
+  const nav = [...categories.map((c) => ({ name: c.name, search: { categoria: c.slug } })), { name: "Ofertas", search: { ofertas: true } }];
 
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate({ to: "/productos" });
+    setOpen(false);
+    navigate({ to: "/productos", search: { q: q.trim() || undefined } });
   };
 
   return (
@@ -34,9 +39,9 @@ export function SiteHeader() {
         </div>
 
         <div className="mx-auto flex h-24 max-w-7xl items-center gap-4 px-4 sm:gap-10 sm:px-6 lg:px-8">
-          <button type="button" className="md:hidden" aria-label="Menú" onClick={() => setOpen((v) => !v)}>
+          <Button type="button" variant="ghost" size="icon" className="md:hidden" aria-label="Menú" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          </Button>
           <Link to="/" className="flex shrink-0 items-center" aria-label="Inicio">
             <img src={logoUrl} alt="Perfumería El Arcángel" className="h-16 w-16 object-contain sm:h-20 sm:w-20" width={80} height={80} />
           </Link>
@@ -48,9 +53,9 @@ export function SiteHeader() {
               placeholder="¿Qué estás buscando?"
               className="h-11 w-full border border-border bg-card px-3 text-sm outline-none focus:border-primary"
             />
-            <button type="submit" aria-label="Buscar" className="grid h-11 w-11 shrink-0 place-items-center bg-accent text-primary">
+            <Button type="submit" variant="secondary" size="icon" aria-label="Buscar" className="h-11 w-11 shrink-0 rounded-none bg-accent text-primary">
               <Search className="h-4 w-4" />
-            </button>
+            </Button>
           </form>
 
           <div className="ml-auto flex items-center gap-6">
@@ -67,9 +72,9 @@ export function SiteHeader() {
 
         <div className="bg-secondary">
           <nav className="mx-auto hidden max-w-7xl items-center gap-9 overflow-x-auto px-4 py-5 sm:px-6 md:flex lg:px-8">
-            {NAV.map((n) => (
-              <Link key={n} to="/productos" className="shrink-0 text-sm font-medium uppercase text-primary hover:opacity-70">
-                {n}
+            {nav.map((n) => (
+              <Link key={n.name} to="/productos" search={n.search} className="shrink-0 text-sm font-medium uppercase text-primary hover:opacity-70">
+                {n.name}
               </Link>
             ))}
             {isAdmin && (
@@ -84,8 +89,8 @@ export function SiteHeader() {
               <form onSubmit={onSearch} className="py-2">
                 <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="¿Qué estás buscando?" className="w-full border border-border bg-card px-4 py-3 text-sm outline-none focus:border-primary" />
               </form>
-              {NAV.map((n) => (
-                <Link key={n} to="/productos" onClick={() => setOpen(false)} className="px-2 py-3 text-sm font-medium uppercase text-primary">{n}</Link>
+              {nav.map((n) => (
+                <Link key={n.name} to="/productos" search={n.search} onClick={() => setOpen(false)} className="px-2 py-3 text-sm font-medium uppercase text-primary">{n.name}</Link>
               ))}
               <Link to="/auth" onClick={() => setOpen(false)} className="px-2 py-3 text-sm">Mi cuenta</Link>
               {isAdmin && <Link to="/admin" onClick={() => setOpen(false)} className="px-2 py-3 text-sm font-bold">Admin</Link>}
