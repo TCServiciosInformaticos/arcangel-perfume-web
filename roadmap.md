@@ -1,8 +1,8 @@
 # Flujo de compra
 
 ## Catálogo cuidado personal Thelma & Louise
-- [ ] Obtener todos los artículos de cuidado personal con precios, fotos y descripciones.
-- [ ] Cargar con descuento del 20%, precios enteros y sin inventar stock; verificar en la tienda.
+- [x] Obtener los 84 artículos de las dos páginas de cuidado personal con precios, fotos y descripciones.
+- [x] Cargar sus 147 presentaciones en Skin care con descuento del 20%, precios enteros y stock cero; verificar catálogo, ficha y las 147 imágenes.
 
 ## Categorías y subcategorías
 - [x] Crear subcategorías por categoría y asignar Fidelité a los 87 artículos de Cabello.
