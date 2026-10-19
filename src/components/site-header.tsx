@@ -11,9 +11,7 @@ const NAV = ["Perfumes", "Limpieza", "Cabello", "Higiene personal", "Cuidado de 
 const MARQUEE = Array.from({ length: 8 }, () => "Envíos por Gran Bourg y alrededores 🚚 / Pagá con MercadoPago 💖 / Lunes a sábado 9 a 13 y 16 a 20 h");
 
 export function SiteHeader() {
-  const cart = useCart() as ReturnType<typeof useCart> & { totalAmount?: number; subtotal?: number };
-  const { totalQty } = cart;
-  const total = cart.totalAmount ?? cart.subtotal ?? 0;
+  const { totalQty, subtotal: total } = useCart();
   const { isAdmin } = useAuth();
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
