@@ -46,6 +46,8 @@
   --font-serif: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --color-whatsapp: var(--whatsapp);
+  /* Negro del fondo del logo original */
+  --color-ink: var(--ink);
   --animate-marquee: marquee 40s linear infinite;
   @keyframes marquee {
     from { transform: translateX(0); }
@@ -78,6 +80,7 @@
   --input: oklch(0.92 0.015 340);
   --ring: oklch(0.56 0.221 359.6);
   --whatsapp: oklch(0.72 0.17 150);
+  --ink: oklch(0 0 0);
   /* Ciruela profunda para bandas oscuras */
   --sidebar: oklch(0.17 0.04 340);
   --sidebar-foreground: oklch(0.97 0.008 340);
