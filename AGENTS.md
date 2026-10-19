@@ -13,6 +13,6 @@
 - Guest order reads require an order-scoped HMAC capability verified server-side before privileged access, so knowing an order UUID does not expose customer data.
 - Mercado Pago notifications require its webhook signature and provider-side payment, amount, currency and preference verification; return failures for retry instead of approving demo orders.
 - Payment return pages share OrderConfirmation and expose click-to-chat only after verified payment; opening WhatsApp is not delivery proof and must not set whatsapp_sent.
-- Prepare external catalog imports through scripts/catalog-import.ts with validated prices and stored asset URLs before database insertion, so incomplete source data cannot become sellable inventory.
+- Prepare external catalog imports through scripts/catalog-import.ts with validated prices, explicit discount/rounding options and stored asset URLs before database insertion; preserve differently named source variants as separate product rows, so imported prices and presentations remain unambiguous.
 - Store subcategories separately under one category and enforce product/category membership in the database, so admin edits cannot assign mismatched classifications.
 - Populate the header menu from managed categories and keep catalog filters in validated URL search parameters, so menu links, searches and browser history apply the same selection.
