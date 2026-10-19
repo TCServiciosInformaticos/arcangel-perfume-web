@@ -147,7 +147,7 @@ function HomePage() {
         {sales.length > 0 && (
           <section className="bg-secondary">
             <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-              <SectionTitle title="Ofertas :" />
+              <SectionTitle title="Ofertas" />
               <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
                 {sales.map((p) => <ProductCard key={p.id} p={p} />)}
               </div>
@@ -156,7 +156,7 @@ function HomePage() {
         )}
 
         <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <SectionTitle title="Nuevo en El Arcángel :" />
+          <SectionTitle title="Nuevo en El Arcángel" />
           {featured.length === 0 ? (
             <p className="py-12 text-center text-lg">Pronto cargamos el catálogo</p>
           ) : (
