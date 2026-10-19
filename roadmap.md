@@ -6,3 +6,4 @@
 - [x] Probar validaciones y recorrido público hasta bloqueo por credenciales: 7 pruebas aprobadas, carrito conservado y retorno protegido.
 - [ ] Conectar credenciales de prueba y verificar un pago completo (requiere Access Token de prueba y clave secreta de Webhooks).
 - [x] Aclarar que Public Key no reemplaza la clave secreta de Webhooks.
+- [ ] Orientar al usuario en la pantalla de configuración de Mercado Pago de su captura.
