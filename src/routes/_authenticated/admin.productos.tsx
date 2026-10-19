@@ -37,7 +37,14 @@ import {
 } from "@/components/ui/select";
 
 export const Route = createFileRoute("/_authenticated/admin/productos")({
-  head: () => ({ meta: [{ title: "Productos · Panel admin" }] }),
+  head: () => ({ meta: [
+    { title: "Productos · Panel admin — El Arcángel" },
+    { name: "description", content: "Gestión de artículos y precios de El Arcángel." },
+    { property: "og:title", content: "Administrar productos — El Arcángel" },
+    { property: "og:description", content: "Administración de productos, imágenes y stock." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+  ] }),
   component: AdminProductos,
 });
 

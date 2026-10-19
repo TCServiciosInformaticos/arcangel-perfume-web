@@ -10,7 +10,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/auth")({
-  head: () => ({ meta: [{ title: "Acceso · El Arcángel" }] }),
+  head: () => ({ meta: [
+    { title: "Acceso · El Arcángel" },
+    { name: "description", content: "Acceso a la administración de Perfumería El Arcángel." },
+    { property: "og:title", content: "Acceso al panel — El Arcángel" },
+    { property: "og:description", content: "Ingresá a tu cuenta de administración." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+  ] }),
   component: AuthPage,
 });
 

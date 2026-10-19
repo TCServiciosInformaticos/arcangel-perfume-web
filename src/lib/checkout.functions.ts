@@ -132,11 +132,10 @@ export const createCheckout = createServerFn({ method: "POST" })
     const { error: preferenceError } = await supabaseAdmin.from("orders").update({ mp_preference_id: pref.id }).eq("id", order.id);
     if (preferenceError) throw new Error("No pudimos asociar el pago a tu pedido.");
 
-    const isTest = accessToken.startsWith("TEST-");
     return {
       orderId: order.id,
       orderNumber: order.order_number,
-      init_point: isTest ? (pref.sandbox_init_point ?? pref.init_point) : pref.init_point,
+      init_point: pref.init_point,
       token,
     };
   });

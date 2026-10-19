@@ -7,6 +7,7 @@ const paymentSchema = z.object({
   external_reference: z.string().uuid(),
   currency_id: z.string(),
   transaction_amount: z.number().finite(),
+  order: z.object({ id: z.union([z.string(), z.number()]) }).nullable().optional(),
 });
 
 export async function syncMercadoPagoPayment(paymentId: string, expectedOrderId?: string) {
@@ -25,6 +26,13 @@ export async function syncMercadoPagoPayment(paymentId: string, expectedOrderId?
   const { data: order, error } = await supabaseAdmin.from("orders").select("id, total, status, mp_payment_id, mp_preference_id").eq("id", payment.external_reference).maybeSingle();
   if (error) throw error;
   if (!order || !order.mp_preference_id || !paymentMatchesOrder(payment, order)) throw new Error("El importe del pago no corresponde al pedido.");
+  if (!payment.order?.id) throw new Error("Mercado Pago no informó la referencia de la compra.");
+  const merchantResponse = await fetch(`https://api.mercadopago.com/merchant_orders/${encodeURIComponent(String(payment.order.id))}`, {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  });
+  if (!merchantResponse.ok) throw new Error("No pudimos verificar la referencia de la compra.");
+  const merchant = z.object({ preference_id: z.string(), payments: z.array(z.object({ id: z.union([z.string(), z.number()]) })) }).parse(await merchantResponse.json());
+  if (merchant.preference_id !== order.mp_preference_id || !merchant.payments.some((item) => String(item.id) === paymentId)) throw new Error("El pago no corresponde a esta compra.");
   // Never regress fulfilled/approved orders when older notifications or failed attempts arrive.
   if (["paid", "preparing", "shipped", "delivered"].includes(order.status) && order.mp_payment_id) return;
   const status = payment.status === "approved" ? "paid" : ["rejected", "cancelled"].includes(payment.status) ? "cancelled" : "pending_payment";
