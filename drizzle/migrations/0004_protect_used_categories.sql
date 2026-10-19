@@ -1,0 +1,2 @@
+CREATE OR REPLACE FUNCTION public.prevent_used_category_deletion() RETURNS trigger LANGUAGE plpgsql SET search_path=public AS $$ BEGIN IF EXISTS(SELECT 1 FROM public.products WHERE category_id=OLD.id) THEN RAISE EXCEPTION 'La categoría tiene productos asignados' USING ERRCODE='23503'; END IF; RETURN OLD; END; $$;
+CREATE TRIGGER prevent_used_category_deletion BEFORE DELETE ON public.categories FOR EACH ROW EXECUTE FUNCTION public.prevent_used_category_deletion();
