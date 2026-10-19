@@ -1,10 +1,17 @@
-import { describe, expect, test } from "bun:test";
+import { describe, test } from "node:test";
+import assert from "node:assert/strict";
 import { createHmac } from "node:crypto";
 import { CheckoutSchema, isPaymentConfirmed, paymentMatchesOrder } from "./checkout-validation";
 import { signOrderAccess, verifyOrderAccess, verifyMercadoPagoSignature } from "./payment-security.server";
 import { buildOrderMessage, buildWhatsappLink, type OrderForWhatsapp } from "./whatsapp";
 
 const id = "11111111-1111-4111-8111-111111111111";
+function expect(actual: unknown) {
+  return {
+    toBe: (expected: unknown) => assert.equal(actual, expected),
+    toContain: (expected: string) => assert.ok(typeof actual === "string" && actual.includes(expected)),
+  };
+}
 const purchase = { items: [{ productId: id, quantity: 2 }], customer_name: "Cliente de prueba", customer_email: "cliente@example.com", customer_whatsapp: "+54 9 11 5555 0000", delivery_method: "pickup" as const };
 
 describe("Reglas de compra", () => {
