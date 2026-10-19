@@ -27,3 +27,57 @@ export function catalogSearch(search: Record<string, unknown>): CatalogSearch {
     orden: search.orden === "price-asc" || search.orden === "price-desc" ? search.orden : undefined,
   };
 }
+
+type CatalogOption = { id: string; name: string; slug?: string; category_id?: string };
+
+/** Títulos propios por categoría; si agregás una nueva, usa su nombre tal cual. */
+const CATEGORY_TITLES: Record<string, string> = {
+  perfumes: "Nuestras fragancias",
+  limpieza: "Productos de limpieza",
+  cabello: "Todo para tu cabello",
+  "skin-care": "Cuidado de la piel",
+  "make-up": "Maquillaje",
+  accesorios: "Accesorios",
+};
+
+export type CatalogHeading = { eyebrow: string; title: string; subtitle: string };
+
+export function catalogHeading({
+  categories,
+  subcategories,
+  search,
+  count,
+}: {
+  categories: CatalogOption[];
+  subcategories: CatalogOption[];
+  search: CatalogSearch;
+  count?: number;
+}): CatalogHeading {
+  const category = categories.find((c) => c.slug === search.categoria || c.id === search.categoria);
+  const subcategory = subcategories.find((s) => s.id === search.subcategoria);
+  const products =
+    count === undefined ? "" : `${count} ${count === 1 ? "producto" : "productos"} disponible${count === 1 ? "" : "s"}.`;
+
+  if (search.q?.trim()) {
+    return { eyebrow: "Catálogo", title: `Resultados para “${search.q.trim()}”`, subtitle: products };
+  }
+  if (subcategory) {
+    return { eyebrow: "Catálogo", title: subcategory.name, subtitle: products };
+  }
+  if (category) {
+    const name = category.name;
+    return {
+      eyebrow: "Catálogo",
+      title: search.ofertas ? `Ofertas de ${name}` : CATEGORY_TITLES[category.slug ?? ""] ?? name,
+      subtitle: search.ofertas ? `${products.replace("disponibles", "con descuento")}.`.replace(/\.\.$/, ".") : products,
+    };
+  }
+  if (search.ofertas) {
+    return { eyebrow: "Catálogo", title: "Ofertas", subtitle: products };
+  }
+  return {
+    eyebrow: "Catálogo",
+    title: "Todo el catálogo",
+    subtitle: "Perfumes, limpieza, cabello y más, con envío en la zona y retiro en el local.",
+  };
+}
