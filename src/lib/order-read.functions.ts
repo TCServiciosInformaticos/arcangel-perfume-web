@@ -1,32 +1,36 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import type { OrderForWhatsapp } from "@/lib/whatsapp";
+import { isPaymentConfirmed } from "@/lib/checkout-validation";
 
 export const getOrderForWhatsapp = createServerFn({ method: "POST" })
-  .inputValidator((d: unknown) => z.object({ orderId: z.string().uuid() }).parse(d))
-  .handler(async ({ data }): Promise<{ order: OrderForWhatsapp; storeWhatsapp: string } | null> => {
+  .inputValidator((d: unknown) => z.object({
+    orderId: z.string().uuid(),
+    token: z.string().regex(/^[a-f0-9]{64}$/i),
+    paymentId: z.string().regex(/^\d{1,30}$/).optional(),
+  }).parse(d))
+  .handler(async ({ data }): Promise<{ order: OrderForWhatsapp; status: string; storeWhatsapp: string | null } | null> => {
+    const secret = process.env.ORDER_ACCESS_SECRET;
+    const { verifyOrderAccess } = await import("@/lib/payment-security.server");
+    if (!secret || !verifyOrderAccess(data.orderId, data.token, secret)) throw new Error("El enlace de este pedido no es válido.");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { data: order } = await supabaseAdmin
-      .from("orders")
+    if (data.paymentId) {
+      const { syncMercadoPagoPayment } = await import("@/lib/payment-sync.server");
+      await syncMercadoPagoPayment(data.paymentId, data.orderId);
+    }
+    const { data: order, error } = await supabaseAdmin.from("orders")
       .select("id, order_number, status, customer_name, customer_email, customer_whatsapp, delivery_method, delivery_street, delivery_number, delivery_apartment, delivery_city, delivery_zip, delivery_day, delivery_time_slot, notes, subtotal, shipping_cost, total, mp_payment_id")
-      .eq("id", data.orderId)
-      .maybeSingle();
+      .eq("id", data.orderId).maybeSingle();
+    if (error) throw new Error("No pudimos consultar el pedido.");
     if (!order) return null;
-    const { data: items } = await supabaseAdmin
-      .from("order_items")
-      .select("product_name, quantity, unit_price")
-      .eq("order_id", data.orderId);
-    const { data: settings } = await supabaseAdmin.from("settings").select("store_whatsapp").eq("id", 1).single();
-    return {
-      order: { ...order, items: items ?? [] } as OrderForWhatsapp,
-      storeWhatsapp: settings?.store_whatsapp ?? "5491125124333",
-    };
-  });
-
-export const markOrderWhatsappSent = createServerFn({ method: "POST" })
-  .inputValidator((d: unknown) => z.object({ orderId: z.string().uuid() }).parse(d))
-  .handler(async ({ data }) => {
-    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    await supabaseAdmin.from("orders").update({ whatsapp_sent: true }).eq("id", data.orderId);
-    return { ok: true };
+    const { data: items, error: itemError } = await supabaseAdmin.from("order_items")
+      .select("product_name, quantity, unit_price").eq("order_id", data.orderId);
+    if (itemError) throw new Error("No pudimos consultar los productos del pedido.");
+    let storeWhatsapp: string | null = null;
+    if (isPaymentConfirmed(order.status, order.mp_payment_id)) {
+      const { data: settings, error: settingsError } = await supabaseAdmin.from("settings").select("store_whatsapp").eq("id", 1).single();
+      if (settingsError || !settings?.store_whatsapp) throw new Error("La tienda necesita configurar su WhatsApp.");
+      storeWhatsapp = settings.store_whatsapp;
+    }
+    return { order: { ...order, items: items ?? [] }, status: order.status, storeWhatsapp };
   });

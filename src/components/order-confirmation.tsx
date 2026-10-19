@@ -1,0 +1,76 @@
+import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
+import { queryOptions, useQuery } from "@tanstack/react-query";
+import { CheckCircle2, Clock, Loader2, MessageCircle, XCircle } from "lucide-react";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { getOrderForWhatsapp } from "@/lib/order-read.functions";
+import { buildOrderMessage, buildWhatsappLink } from "@/lib/whatsapp";
+import { isPaymentConfirmed } from "@/lib/checkout-validation";
+import { useCart } from "@/lib/cart-context";
+import { formatARS } from "@/lib/format";
+
+export const orderReturnSearch = z.object({
+  order: z.string().uuid().optional().catch(undefined),
+  token: z.string().regex(/^[a-f0-9]{64}$/i).optional().catch(undefined),
+  payment_id: z.coerce.string().regex(/^\d{1,30}$/).optional().catch(undefined),
+});
+
+export function OrderConfirmation({ order, token, payment_id }: z.infer<typeof orderReturnSearch>) {
+  const readOrder = useServerFn(getOrderForWhatsapp);
+  const { clear } = useCart();
+  const [polls, setPolls] = useState(0);
+  const query = useQuery(queryOptions({
+    queryKey: ["checkout-return", order, token, payment_id],
+    enabled: Boolean(order && token),
+    queryFn: async () => {
+      if (!order || !token) return null;
+      setPolls((value) => value + 1);
+      return readOrder({ data: { orderId: order, token, paymentId: payment_id } });
+    },
+    retry: false,
+    refetchInterval: (q) => q.state.data?.status === "pending_payment" && polls < 20 ? 4000 : false,
+  }));
+  const result = query.data;
+  const paid = result && isPaymentConfirmed(result.status, result.order.mp_payment_id);
+  const cancelled = result?.status === "cancelled";
+  const link = paid && result.storeWhatsapp ? buildWhatsappLink(result.storeWhatsapp, buildOrderMessage(result.order)) : null;
+
+  useEffect(() => {
+    if (!paid || !order) return;
+    const stored = window.sessionStorage.getItem("arcangel-pending-order");
+    if (stored) {
+      try {
+        if (JSON.parse(stored).orderId === order) {
+          clear();
+          window.sessionStorage.removeItem("arcangel-pending-order");
+        }
+      } catch { /* Retain cart if no matching checkout is available. */ }
+    }
+  }, [paid, order, clear]);
+
+  return (
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader />
+      <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-12 text-center sm:px-6">
+        {query.isFetching && !result ? <Loader2 className="mx-auto h-12 w-12 animate-spin text-primary" /> : paid ? <CheckCircle2 className="mx-auto h-14 w-14 text-primary" /> : cancelled ? <XCircle className="mx-auto h-14 w-14 text-destructive" /> : <Clock className="mx-auto h-14 w-14 text-primary" />}
+        <h1 className="mt-4 text-3xl font-bold tracking-normal">{paid ? "¡Gracias por tu compra!" : cancelled ? "El pago no pudo procesarse" : "Confirmación de tu pedido"}</h1>
+        {!order || !token ? <p className="mt-4 text-destructive">Abrí el enlace que recibiste al finalizar la compra para consultar tu pedido.</p> : query.error ? <div className="mt-4"><p role="alert" className="text-destructive">{query.error.message}</p><Button variant="outline" className="mt-4" onClick={() => query.refetch()}>Volver a verificar</Button></div> : query.isFetching && !result ? <p className="mt-4 text-muted-foreground">Verificando el pago con Mercado Pago…</p> : !result ? <p className="mt-4 text-destructive">Pedido no encontrado.</p> : (
+          <>
+            <p className="mt-4 text-muted-foreground">Pedido #{result.order.order_number} · {formatARS(result.order.total)}</p>
+            <p className="mt-4">{paid ? "Pago aprobado por Mercado Pago." : cancelled ? "Tu carrito sigue guardado para volver a intentar el pago." : "Tu pago todavía está pendiente de confirmación de Mercado Pago."}</p>
+            {link && <Button asChild size="lg" className="mt-8 h-auto min-h-12 w-full whitespace-normal bg-whatsapp text-ink hover:bg-whatsapp/90"><a href={link} target="_blank" rel="noopener noreferrer"><MessageCircle /> Enviar pedido al dueño por WhatsApp</a></Button>}
+            {link && <p className="mt-3 text-sm text-muted-foreground">El mensaje queda preparado con tus datos, productos y entrega; tocá Enviar en WhatsApp para confirmarlo.</p>}
+            {!paid && !cancelled && <Button variant="outline" disabled={query.isFetching} className="mt-6" onClick={() => { setPolls(0); query.refetch(); }}>Verificar estado del pago</Button>}
+            {cancelled && <Button asChild className="mt-6"><Link to="/carrito">Volver a intentar</Link></Button>}
+          </>
+        )}
+        <Link to="/productos" className="mt-10 inline-block text-primary underline">Volver al catálogo</Link>
+      </main>
+      <SiteFooter />
+    </div>
+  );
+}
