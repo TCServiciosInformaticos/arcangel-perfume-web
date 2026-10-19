@@ -7,7 +7,7 @@ import { useAuth } from "@/lib/auth-context";
 const logoUrl = "/arcangel-logo.png";
 
 const NAV = ["Perfumes", "Limpieza", "Cabello", "Higiene personal", "Cuidado de la piel", "Ofertas"];
-const MARQUEE = Array.from({ length: 10 }, () => "El Arcángel — Perfumería, limpieza y cabello · Gran Bourg");
+const MARQUEE = Array.from({ length: 10 }, () => "Perfumería El Arcángel · Gran Bourg · Envíos por la zona · Lunes a sábado 9 a 13 y 16 a 20 h");
 
 export function SiteHeader() {
   const { totalQty } = useCart();

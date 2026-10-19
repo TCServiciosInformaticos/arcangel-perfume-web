@@ -65,22 +65,22 @@ export const Route = createFileRoute("/")({
 });
 
 const BENEFITS = [
-  { icon: Truck, t: "Envíos por la zona", d: "Te lo llevamos en Gran Bourg y alrededores." },
-  { icon: Percent, t: "Ofertas todos los meses", d: "Los mejores precios para vos y tu familia." },
-  { icon: ShieldCheck, t: "Pago seguro", d: "Pagá con MercadoPago." },
-  { icon: MessageCircle, t: "Asesoramiento", d: "Atención por WhatsApp de lunes a sábado." },
+  { icon: Truck, t: "Llegamos a tu puerta", d: "Repartimos en Gran Bourg y zonas aledañas." },
+  { icon: Percent, t: "Precios que cuidan tu bolsillo", d: "Promociones nuevas todo el año." },
+  { icon: ShieldCheck, t: "Comprá tranquila", d: "Abonás con MercadoPago, 100% protegido." },
+  { icon: MessageCircle, t: "Te ayudamos a elegir", d: "Escribinos por WhatsApp y te asesoramos." },
 ];
 
 const SLIDES = [
-  { img: heroImg, title: "El Arcángel", sub: "Perfumes, limpieza y cabello al mejor precio" },
-  { img: catPerfumes, title: "Fragancias", sub: "Descubrí perfumes para cada momento" },
-  { img: catCabello, title: "Cuidado del cabello", sub: "Shampoos, acondicionadores y tratamientos" },
+  { img: heroImg, title: "El Arcángel", sub: "Tu perfumería de barrio, ahora también online" },
+  { img: catPerfumes, title: "Perfumes", sub: "La fragancia que te representa está acá" },
+  { img: catCabello, title: "Cabello", sub: "Todo lo que tu pelo necesita, en un solo lugar" },
 ];
 
 const PROMOS = [
-  { img: catLimpieza, t: "Envíos por la zona", d: "Recibí tu pedido en casa, con asesoramiento por WhatsApp." },
-  { img: catPerfumes, t: "Ofertas en seleccionados", d: "Aprovechá descuentos en perfumes por tiempo limitado." },
-  { img: catCabello, t: "Retirá en sucursal", d: "Dos locales en Gran Bourg, de lunes a sábado." },
+  { img: catLimpieza, t: "Pedí desde tu casa", d: "Hacé tu compra online y te la acercamos nosotros." },
+  { img: catPerfumes, t: "Descuentos imperdibles", d: "Perfumes seleccionados con precios especiales." },
+  { img: catCabello, t: "Pasá a retirar", d: "Te esperamos en cualquiera de nuestras dos sucursales." },
 ];
 
 const CATEGORIES = [
@@ -148,7 +148,7 @@ function HomePage() {
 
         {/* Categorías circulares */}
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <SectionTitle kicker="Explorá" title="Comprá por categoría" />
+          <SectionTitle kicker="Nuestros rubros" title="¿Qué estás buscando hoy?" />
           <div className="flex gap-6 overflow-x-auto pb-2 sm:gap-10">
             {CATEGORIES.map((c) => (
               <Link key={c.name} to="/productos" className="group flex w-32 shrink-0 flex-col items-center gap-3 sm:w-40">
@@ -171,7 +171,7 @@ function HomePage() {
                 <h3 className="text-xl font-bold">{p.t}</h3>
                 <p className="mt-1 text-sm opacity-90">{p.d}</p>
                 <span className="mt-4 inline-flex items-center gap-1 rounded-full bg-card px-4 py-2 text-xs font-semibold text-foreground">
-                  Descubrir <ArrowRight className="h-3.5 w-3.5" />
+                  Ver más <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </div>
             </Link>
@@ -181,9 +181,9 @@ function HomePage() {
         {/* Destacados */}
         <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between gap-4">
-            <SectionTitle kicker="Lo más elegido" title="Productos destacados" />
+            <SectionTitle kicker="Favoritos de nuestros clientes" title="Los más pedidos" />
             <Link to="/productos" className="mb-8 hidden items-center gap-1 text-sm font-semibold text-primary sm:inline-flex">
-              Ver todo <ArrowRight className="h-4 w-4" />
+              Ver catálogo completo <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           {featured.length === 0 ? (
@@ -200,7 +200,7 @@ function HomePage() {
         {sales.length > 0 && (
           <section className="bg-secondary">
             <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-              <SectionTitle kicker="Ofertas" title="Promos de la semana" />
+              <SectionTitle kicker="Aprovechá" title="Ofertas vigentes" />
               <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
                 {sales.map((p) => <ProductCard key={p.id} p={p} />)}
               </div>
@@ -226,8 +226,8 @@ function HomePage() {
         <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
           <div className="flex flex-col items-start justify-between gap-6 rounded-3xl bg-sidebar p-8 text-sidebar-foreground sm:p-12 md:flex-row md:items-center">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.3em] text-sidebar-primary">Seguinos</span>
-              <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Novedades y promos en Instagram</h2>
+              <span className="text-xs font-bold uppercase tracking-[0.3em] text-sidebar-primary">Estamos cerca tuyo</span>
+              <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Enterate primero de las novedades en Instagram</h2>
             </div>
             <a href="https://www.instagram.com/perfumeriaelarcangel/" target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground">
               <Instagram className="h-4 w-4" /> @perfumeriaelarcangel
