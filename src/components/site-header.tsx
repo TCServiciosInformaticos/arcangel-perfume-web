@@ -1,173 +1,126 @@
-import { Link, useRouter, useNavigate } from "@tanstack/react-router";
-import { ShoppingCart, Menu, X, User, Search, Instagram, Phone, MapPin } from "lucide-react";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { ShoppingCart, Menu, X, User, Search, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart-context";
 import { useAuth } from "@/lib/auth-context";
 
 const logoUrl = "/arcangel-logo.png";
 
-const NAV = [
-  { to: "/", label: "Inicio" },
-  { to: "/productos", label: "Catálogo" },
-  { to: "/productos", label: "Perfumes" },
-  { to: "/productos", label: "Limpieza" },
-  { to: "/productos", label: "Cabello" },
-] as const;
+const NAV = ["Perfumes", "Limpieza", "Cabello", "Higiene personal", "Cuidado de la piel", "Ofertas"];
+const MARQUEE = Array.from({ length: 10 }, () => "El Arcángel — Perfumería, limpieza y cabello · Gran Bourg");
 
 export function SiteHeader() {
   const { totalQty } = useCart();
   const { isAdmin } = useAuth();
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
-  const router = useRouter();
   const navigate = useNavigate();
-  const pathname = router.state.location.pathname;
 
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
     navigate({ to: "/productos" });
   };
 
+  const iconBtn =
+    "inline-flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:text-primary";
 
   return (
-    <header className="sticky top-0 z-40 bg-background shadow-sm">
-      {/* Top bar */}
-      <div className="bg-sidebar text-sidebar-foreground">
-        <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-4 text-xs sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4">
-            <a
-              href="https://www.instagram.com/perfumeriaelarcangel/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center gap-1.5 opacity-90 hover:text-primary hover:opacity-100"
-            >
-              <Instagram className="h-3.5 w-3.5" />
-              <span className="hidden sm:inline">@perfumeriaelarcangel</span>
-            </a>
-          </div>
-          <div className="hidden items-center gap-4 sm:flex">
-            <span className="inline-flex items-center gap-1.5 opacity-80">
-              <MapPin className="h-3.5 w-3.5" /> Gran Bourg · 2 sucursales
-            </span>
-            <span className="inline-flex items-center gap-1.5 opacity-80">
-              <Phone className="h-3.5 w-3.5" /> Lun a Sáb · 9–13 / 16–20 h
-            </span>
+    <>
+      <header className="sticky top-0 z-40 bg-background/95 backdrop-blur">
+        <div className="overflow-hidden bg-sidebar text-sidebar-foreground">
+          <div className="flex w-max animate-marquee gap-12 whitespace-nowrap py-2 text-[11px] font-semibold uppercase tracking-[0.2em]">
+            {[...MARQUEE, ...MARQUEE].map((t, i) => (
+              <span key={i}>{t}</span>
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* Main row */}
-      <div className="border-b border-border">
-        <div className="mx-auto grid h-20 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 sm:px-6 lg:px-8">
-          <Link to="/" className="group flex items-center gap-2.5 shrink-0" aria-label="Inicio">
-            <img
-              src={logoUrl}
-              alt="Perfumería El Arcángel"
-              className="h-12 w-12 object-contain transition-transform group-hover:scale-105"
-              width={48}
-              height={48}
-            />
-            <div className="hidden sm:block">
-              <div className="text-xs font-medium uppercase tracking-[0.25em] text-muted-foreground">Perfumería</div>
-              <div className="-mt-0.5 text-xl font-bold leading-tight text-primary">El Arcángel</div>
+        <div className="mx-auto flex h-24 max-w-7xl items-center gap-4 px-4 sm:gap-8 sm:px-6 lg:px-8">
+          <button type="button" className={iconBtn} aria-label="Menú" onClick={() => setOpen((v) => !v)}>
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+          <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label="Inicio">
+            <img src={logoUrl} alt="Perfumería El Arcángel" className="h-12 w-12 object-contain" width={48} height={48} />
+            <div className="hidden leading-none sm:block">
+              <div className="text-2xl font-extrabold text-foreground">El Arcángel<span className="text-primary">.</span></div>
+              <div className="mt-1 text-[9px] font-semibold uppercase tracking-[0.3em] text-primary">Perfumería & Hogar</div>
             </div>
           </Link>
 
-          <form onSubmit={onSearch} className="relative mx-auto w-full max-w-2xl min-w-0">
+          <form onSubmit={onSearch} className="relative hidden flex-1 md:block">
+            <Search className="pointer-events-none absolute left-5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder="¿Qué estás buscando?"
-              className="h-11 w-full rounded-full border-2 border-primary/70 bg-background pl-5 pr-12 text-sm outline-none transition-colors focus:border-primary"
+              placeholder="Buscar productos, marcas..."
+              className="h-13 w-full rounded-full border border-border bg-card py-3.5 pl-12 pr-5 text-sm outline-none transition-colors focus:border-primary"
             />
-            <button
-              type="submit"
-              aria-label="Buscar"
-              className="absolute right-1 top-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              <Search className="h-4 w-4" />
-            </button>
           </form>
 
-          <div className="flex items-center gap-1 shrink-0">
-            <Link
-              to="/auth"
-              className="hidden flex-col items-center gap-0.5 rounded-md px-3 py-1.5 text-[11px] font-medium text-foreground hover:text-primary sm:flex"
-              title="Mi cuenta"
-            >
+          <div className="ml-auto flex items-center gap-2">
+            <Link to="/auth" className={`${iconBtn} hidden sm:inline-flex`} aria-label="Mi cuenta">
               <User className="h-5 w-5" />
-              <span>Mi cuenta</span>
             </Link>
-            <Link
-              to="/carrito"
-              className="relative flex flex-col items-center gap-0.5 rounded-md px-3 py-1.5 text-[11px] font-medium text-foreground hover:text-primary"
-              aria-label="Mi carrito"
-            >
-              <span className="relative">
-                <ShoppingCart className="h-5 w-5" />
-                {totalQty > 0 && (
-                  <span className="absolute -right-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-semibold text-primary-foreground">
-                    {totalQty}
-                  </span>
-                )}
-              </span>
-              <span className="hidden sm:inline">Mi carrito</span>
+            <Link to="/carrito" className={`${iconBtn} relative`} aria-label="Mi carrito">
+              <ShoppingCart className="h-5 w-5" />
+              {totalQty > 0 && (
+                <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
+                  {totalQty}
+                </span>
+              )}
             </Link>
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent/30 md:hidden"
-              aria-label="Abrir menú"
-              onClick={() => setOpen((v) => !v)}
-            >
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
           </div>
         </div>
-      </div>
 
-      {/* Nav row */}
-      <div className="hidden border-b border-border bg-background md:block">
-        <nav className="mx-auto flex max-w-7xl items-center justify-center gap-8 px-4 py-3 sm:px-6 lg:px-8">
-          {NAV.map((n, i) => (
-            <Link
-              key={`${n.label}-${i}`}
-              to={n.to}
-              className={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-primary ${
-                pathname === n.to && i === 0 ? "text-primary" : "text-foreground/80"
-              }`}
-            >
-              {n.label}
-            </Link>
-          ))}
-          {isAdmin && (
-            <Link to="/admin" className="text-sm font-medium uppercase tracking-wide text-foreground/80 hover:text-primary">
-              Admin
-            </Link>
-          )}
-        </nav>
-      </div>
-
-      {open && (
-        <div className="border-t border-border bg-background md:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col px-4 py-2">
-            {NAV.map((n, i) => (
+        <div className="border-y border-border">
+          <nav className="mx-auto flex max-w-7xl items-center gap-8 overflow-x-auto px-4 py-4 sm:px-6 lg:px-8">
+            {NAV.map((n) => (
               <Link
-                key={`m-${n.label}-${i}`}
-                to={n.to}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-sm font-medium text-foreground hover:bg-accent/30"
+                key={n}
+                to="/productos"
+                className="shrink-0 text-xs font-bold uppercase tracking-wide text-foreground transition-colors hover:text-primary"
               >
-                {n.label}
+                {n}
               </Link>
             ))}
             {isAdmin && (
-              <Link to="/admin" onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-sm font-medium text-foreground hover:bg-accent/30">
-                Panel admin
+              <Link to="/admin" className="shrink-0 text-xs font-bold uppercase tracking-wide text-primary">
+                Admin
               </Link>
             )}
           </nav>
         </div>
-      )}
-    </header>
+
+        {open && (
+          <div className="border-b border-border bg-background">
+            <nav className="mx-auto flex max-w-7xl flex-col px-4 py-2 sm:px-6 lg:px-8">
+              <form onSubmit={onSearch} className="py-2 md:hidden">
+                <input
+                  value={q}
+                  onChange={(e) => setQ(e.target.value)}
+                  placeholder="Buscar productos..."
+                  className="w-full rounded-full border border-border bg-card px-5 py-3 text-sm outline-none focus:border-primary"
+                />
+              </form>
+              {[{ to: "/", l: "Inicio" }, { to: "/productos", l: "Catálogo" }, { to: "/carrito", l: "Mi carrito" }, { to: "/auth", l: "Mi cuenta" }].map((n) => (
+                <Link key={n.l} to={n.to} onClick={() => setOpen(false)} className="rounded-xl px-3 py-3 text-sm font-medium hover:bg-accent">
+                  {n.l}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+      </header>
+
+      <a
+        href="https://wa.me/5491125124333"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="WhatsApp"
+        className="fixed bottom-6 right-6 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-primary-foreground shadow-lg transition-transform hover:scale-105"
+      >
+        <MessageCircle className="h-6 w-6" />
+      </a>
+    </>
   );
 }
