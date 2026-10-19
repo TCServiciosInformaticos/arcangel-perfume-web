@@ -20,6 +20,7 @@ import { Route as PagoPendienteRouteImport } from './routes/pago-pendiente'
 import { Route as ProductosRouteImport } from './routes/productos'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as ProductoSlugRouteImport } from './routes/producto.$slug'
+import { Route as AuthenticatedAdminCategoriasRouteImport } from './routes/_authenticated/admin.categorias'
 import { Route as AuthenticatedAdminProductosRouteImport } from './routes/_authenticated/admin.productos'
 import { Route as ApiPublicMercadopagoWebhookRouteImport } from './routes/api/public/mercadopago-webhook'
 
@@ -77,6 +78,12 @@ const ProductoSlugRoute = ProductoSlugRouteImport.update({
   path: '/producto/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminCategoriasRoute =
+  AuthenticatedAdminCategoriasRouteImport.update({
+    id: '/categorias',
+    path: '/categorias',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedAdminProductosRoute =
   AuthenticatedAdminProductosRouteImport.update({
     id: '/productos',
@@ -101,6 +108,7 @@ export interface FileRoutesByFullPath {
   '/productos': typeof ProductosRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/producto/$slug': typeof ProductoSlugRoute
+  '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
@@ -115,6 +123,7 @@ export interface FileRoutesByTo {
   '/productos': typeof ProductosRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/producto/$slug': typeof ProductoSlugRoute
+  '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
@@ -131,6 +140,7 @@ export interface FileRoutesById {
   '/productos': typeof ProductosRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/producto/$slug': typeof ProductoSlugRoute
+  '/_authenticated/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
   '/_authenticated/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/productos'
     | '/admin'
     | '/producto/$slug'
+    | '/admin/categorias'
     | '/admin/productos'
     | '/api/public/mercadopago-webhook'
   fileRoutesByTo: FileRoutesByTo
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/productos'
     | '/admin'
     | '/producto/$slug'
+    | '/admin/categorias'
     | '/admin/productos'
     | '/api/public/mercadopago-webhook'
   id:
@@ -176,6 +188,7 @@ export interface FileRouteTypes {
     | '/productos'
     | '/_authenticated/admin'
     | '/producto/$slug'
+    | '/_authenticated/admin/categorias'
     | '/_authenticated/admin/productos'
     | '/api/public/mercadopago-webhook'
   fileRoutesById: FileRoutesById
@@ -273,6 +286,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductoSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/categorias': {
+      id: '/_authenticated/admin/categorias'
+      path: '/categorias'
+      fullPath: '/admin/categorias'
+      preLoaderRoute: typeof AuthenticatedAdminCategoriasRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/productos': {
       id: '/_authenticated/admin/productos'
       path: '/productos'
@@ -291,10 +311,12 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedAdminRouteChildren {
+  AuthenticatedAdminCategoriasRoute: typeof AuthenticatedAdminCategoriasRoute
   AuthenticatedAdminProductosRoute: typeof AuthenticatedAdminProductosRoute
 }
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
+  AuthenticatedAdminCategoriasRoute: AuthenticatedAdminCategoriasRoute,
   AuthenticatedAdminProductosRoute: AuthenticatedAdminProductosRoute,
 }
 
