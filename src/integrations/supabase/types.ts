@@ -370,6 +370,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      update_products_from_excel: { Args: { rows: Json }; Returns: number }
     }
     Enums: {
       app_role: "admin"
