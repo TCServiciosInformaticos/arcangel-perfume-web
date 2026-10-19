@@ -1,5 +1,10 @@
 # Flujo de compra
 
+## Categorías y subcategorías
+- [ ] Crear subcategorías por categoría y asignar Fidelité a los 87 artículos de Cabello.
+- [ ] Permitir crear, editar y eliminar categorías y subcategorías en el panel, y elegirlas en los productos.
+- [ ] Filtrar el catálogo por subcategoría y verificar el recorrido administrativo.
+
 ## Catálogo Fidelité
 - [x] Revisar los 87 artículos de las cuatro páginas de BM Distribuidora y obtener fotos, descripciones y precios publicados.
 - [x] Cargar 87 artículos en Cabello con precios de origen y stock cero, sin alterar los cuatro productos existentes.

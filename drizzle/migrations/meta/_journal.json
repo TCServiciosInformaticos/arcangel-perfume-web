@@ -22,6 +22,13 @@
       "when": 1792428385127,
       "tag": "0002_fix_brands_select",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1792449665211,
+      "tag": "0003_product_subcategories",
+      "breakpoints": true
     }
   ]
 }

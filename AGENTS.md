@@ -14,3 +14,4 @@
 - Mercado Pago notifications require its webhook signature and provider-side payment, amount, currency and preference verification; return failures for retry instead of approving demo orders.
 - Payment return pages share OrderConfirmation and expose click-to-chat only after verified payment; opening WhatsApp is not delivery proof and must not set whatsapp_sent.
 - Prepare external catalog imports through scripts/catalog-import.ts with validated prices and stored asset URLs before database insertion, so incomplete source data cannot become sellable inventory.
+- Store subcategories separately under one category and enforce product/category membership in the database, so admin edits cannot assign mismatched classifications.
