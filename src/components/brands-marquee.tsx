@@ -21,12 +21,15 @@ export function BrandsMarquee() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <div className="group overflow-hidden rounded-2xl border border-border bg-card py-6 shadow-sm">
-        <div className="flex w-max animate-[marquee_40s_linear_infinite] gap-14 group-hover:[animation-play-state:paused]">
+        <div className="flex w-max animate-[marquee_40s_linear_infinite] items-center gap-16 group-hover:[animation-play-state:paused]">
           {items.map((b, i) => (
-            <div key={`${b.id}-${i}`} className="flex shrink-0 items-center gap-3">
-              {b.logo_url && <img src={b.logo_url} alt={b.name} loading="lazy" className="h-10 w-auto object-contain" />}
-              <span className="whitespace-nowrap text-lg font-bold text-foreground">{b.name}</span>
-            </div>
+            <img
+              key={`${b.id}-${i}`}
+              src={b.logo_url}
+              alt={b.name}
+              loading="lazy"
+              className="h-12 w-auto max-w-[140px] shrink-0 object-contain"
+            />
           ))}
         </div>
       </div>
