@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ProductCard } from "@/components/product-card";
+import { BrandsMarquee } from "@/components/brands-marquee";
 import heroImg from "@/assets/hero-banner-red.jpg";
 import catPerfumes from "@/assets/cat-perfumes.jpg";
 import catLimpieza from "@/assets/cat-limpieza.jpg";
@@ -160,6 +161,8 @@ function HomePage() {
             </div>
           </section>
         )}
+
+        <BrandsMarquee />
 
         <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <SectionTitle title="Nuevo en El Arcángel" />
