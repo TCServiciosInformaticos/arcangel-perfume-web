@@ -17,3 +17,5 @@
 - [ ] Conectar credenciales de prueba y verificar un pago completo (requiere Access Token de prueba y clave secreta de Webhooks).
 - [x] Aclarar que Public Key no reemplaza la clave secreta de Webhooks.
 - [x] Orientar al usuario en la captura: modo de prueba, URL indicada, Pagos (legacy) y guardar configuración.
+## Textos del catálogo
+- [x] Que el título bajo "Catálogo" cambie según la categoría, subcategoría, ofertas o búsqueda elegidas.

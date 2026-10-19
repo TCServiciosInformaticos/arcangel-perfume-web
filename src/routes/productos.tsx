@@ -9,7 +9,7 @@ import { ProductCard } from "@/components/product-card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { subcategoriesForCategory } from "@/lib/category-selection";
-import { catalogSearch } from "@/lib/catalog-navigation";
+import { catalogHeading, catalogSearch } from "@/lib/catalog-navigation";
 
 const catalogQuery = queryOptions({
   queryKey: ["catalog"],
@@ -32,16 +32,29 @@ const catalogQuery = queryOptions({
 
 export const Route = createFileRoute("/productos")({
   validateSearch: catalogSearch,
-  head: () => ({
-    meta: [
-      { title: "Catálogo de perfumes — Perfumería El Arcángel" },
-      { name: "description", content: "Explorá toda la selección de perfumes y fragancias premium. Comprá online con envío en CABA." },
-      { property: "og:title", content: "Catálogo — Perfumería El Arcángel" },
-      { property: "og:description", content: "Explorá toda la selección de perfumes y fragancias premium." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: ({ match }) => {
+    const catalog = (match.loaderData ?? {}) as {
+      categories?: Array<{ id: string; name: string; slug: string }>;
+      subcategories?: Array<{ id: string; name: string; category_id: string }>;
+    };
+    const heading = catalogHeading({
+      categories: catalog.categories ?? [],
+      subcategories: catalog.subcategories ?? [],
+      search: match.search,
+    });
+    const title = `${heading.title} — Perfumería El Arcángel`;
+    const description = heading.subtitle || "Explorá el catálogo de El Arcángel con precios, ofertas y envío en la zona.";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+      ],
+    };
+  },
   loader: ({ context }) => context.queryClient.ensureQueryData(catalogQuery),
   component: CatalogPage,
 });
@@ -69,14 +82,24 @@ function CatalogPage() {
     return l;
   }, [data.products, q, cat, subcat, sort, search.ofertas]);
 
+  const heading = catalogHeading({
+    categories: data.categories,
+    subcategories: data.subcategories,
+    search,
+    count: list.length,
+  });
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
         <div className="border-b border-border bg-secondary/30">
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-            <span className="text-xs font-medium uppercase tracking-[0.3em] text-primary">Catálogo</span>
-            <h1 className="mt-2 font-serif text-4xl sm:text-5xl">Nuestras fragancias</h1>
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-primary">{heading.eyebrow}</span>
+            <h1 className="mt-2 font-serif text-4xl sm:text-5xl">{heading.title}</h1>
+            {heading.subtitle ? (
+              <p className="mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">{heading.subtitle}</p>
+            ) : null}
           </div>
         </div>
 
@@ -85,7 +108,7 @@ function CatalogPage() {
             <div className="relative">
               <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
-                placeholder="Buscar perfume…"
+                placeholder="Buscar producto…"
                 value={q}
                 onChange={(e) => navigate({ search: { ...search, q: e.target.value || undefined }, replace: true, resetScroll: false })}
                 className="pl-9"
