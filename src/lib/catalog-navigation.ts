@@ -55,11 +55,14 @@ export function catalogHeading({
 }): CatalogHeading {
   const category = categories.find((c) => c.slug === search.categoria || c.id === search.categoria);
   const subcategory = subcategories.find((s) => s.id === search.subcategoria);
-  const available =
-    count === undefined ? "" : `${count} ${count === 1 ? "producto" : "productos"} ${search.ofertas ? "con descuento" : "disponibles"}.`;
+  const countLine = (word: string) =>
+    count === undefined ? "" : `${count} ${count === 1 ? "producto" : "productos"} ${word}.`;
+  const available = countLine(count === 1 ? "disponible" : "disponibles");
+  const discounted = countLine("con descuento");
+  const found = countLine(count === 1 ? "encontrado" : "encontrados");
 
   if (search.q?.trim()) {
-    return { eyebrow: "Catálogo", title: `Resultados para “${search.q.trim()}”`, subtitle: available };
+    return { eyebrow: "Catálogo", title: `Resultados para “${search.q.trim()}”`, subtitle: found };
   }
   if (subcategory) {
     return { eyebrow: "Catálogo", title: subcategory.name, subtitle: available };
@@ -68,11 +71,11 @@ export function catalogHeading({
     return {
       eyebrow: "Catálogo",
       title: search.ofertas ? `Ofertas de ${category.name}` : CATEGORY_TITLES[category.slug ?? ""] ?? category.name,
-      subtitle: available,
+      subtitle: search.ofertas ? discounted : available,
     };
   }
   if (search.ofertas) {
-    return { eyebrow: "Catálogo", title: "Ofertas", subtitle: available };
+    return { eyebrow: "Catálogo", title: "Ofertas", subtitle: discounted };
   }
   return {
     eyebrow: "Catálogo",

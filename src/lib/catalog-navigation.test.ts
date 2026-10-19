@@ -42,4 +42,10 @@ test("usa el nombre tal cual para una categoría nueva", () => {
 test("nombra la búsqueda cuando el cliente buscó", () => {
   const h = catalogHeading({ categories, subcategories, search: { q: "keratina" }, count: 2 });
   assert.equal(h.title, "Resultados para “keratina”");
+  assert.equal(h.subtitle, "2 productos encontrados.");
+});
+
+test("coincide en singular cuando hay un solo producto", () => {
+  const h = catalogHeading({ categories, subcategories, search: { categoria: "limpieza" }, count: 1 });
+  assert.equal(h.subtitle, "1 producto disponible.");
 });
