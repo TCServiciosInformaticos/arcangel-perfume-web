@@ -25,7 +25,7 @@ export function SiteHeader() {
   return (
     <>
       <header className="sticky top-0 z-40 bg-background">
-        <div className="overflow-hidden bg-accent text-ink">
+        <div className="overflow-hidden bg-accent text-primary">
           <div className="flex w-max animate-marquee gap-10 whitespace-nowrap py-3 text-sm font-medium uppercase">
             {[...MARQUEE, ...MARQUEE].map((t, i) => (
               <span key={i}>{t}</span>
