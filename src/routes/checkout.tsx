@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { useState, type FormEvent } from "react";
 import { z } from "zod";
@@ -48,10 +48,9 @@ const FormSchema = z.object({
 });
 
 function CheckoutPage() {
-  const { items, subtotal, clear } = useCart();
+  const { items, subtotal } = useCart();
   const { data: settings } = useSuspenseQuery(settingsQuery);
   const checkout = useServerFn(createCheckout);
-  const navigate = useNavigate();
   const [method, setMethod] = useState<"pickup" | "shipping">("shipping");
   const [submitting, setSubmitting] = useState(false);
   const [timeSlot, setTimeSlot] = useState<"morning" | "afternoon" | "evening" | "">("");
@@ -95,12 +94,8 @@ function CheckoutPage() {
           items: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
         },
       });
-      clear();
-      if (res.demo || !res.init_point) {
-        navigate({ to: "/gracias", search: { order: res.orderId } });
-      } else {
-        window.location.href = res.init_point;
-      }
+      window.sessionStorage.setItem("arcangel-pending-order", JSON.stringify({ orderId: res.orderId }));
+      window.location.assign(res.init_point);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "No se pudo iniciar el pago");
       setSubmitting(false);
@@ -211,7 +206,7 @@ function CheckoutPage() {
               {submitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Iniciando pago…</> : "Pagar con MercadoPago"}
             </Button>
             <p className="text-center text-xs text-muted-foreground">
-              Al confirmar, te redirigimos a MercadoPago. Cuando el pago esté aprobado, te abrimos WhatsApp con tu pedido para enviárselo a la perfumería.
+              Después del pago aprobado, podrás abrir WhatsApp y enviar tu pedido completo al dueño.
             </p>
           </aside>
         </form>
