@@ -15,3 +15,4 @@
 - Payment return pages share OrderConfirmation and expose click-to-chat only after verified payment; opening WhatsApp is not delivery proof and must not set whatsapp_sent.
 - Prepare external catalog imports through scripts/catalog-import.ts with validated prices and stored asset URLs before database insertion, so incomplete source data cannot become sellable inventory.
 - Store subcategories separately under one category and enforce product/category membership in the database, so admin edits cannot assign mismatched classifications.
+- Populate the header menu from managed categories and keep catalog filters in validated URL search parameters, so menu links, searches and browser history apply the same selection.

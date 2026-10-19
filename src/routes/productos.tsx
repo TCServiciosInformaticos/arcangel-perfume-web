@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Search } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { SiteHeader } from "@/components/site-header";
@@ -9,6 +9,7 @@ import { ProductCard } from "@/components/product-card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { subcategoriesForCategory } from "@/lib/category-selection";
+import { catalogSearch } from "@/lib/catalog-navigation";
 
 const catalogQuery = queryOptions({
   queryKey: ["catalog"],
@@ -16,7 +17,7 @@ const catalogQuery = queryOptions({
     const [products, categories, subcategories] = await Promise.all([
       supabase
         .from("products")
-        .select("id, slug, name, price, stock, image_urls, category_id, subcategory_id, category:categories(name)")
+        .select("id, slug, name, price, compare_at_price, stock, image_urls, category_id, subcategory_id, category:categories(name)")
         .eq("is_active", true)
         .order("created_at", { ascending: false }),
       supabase.from("categories").select("id, name, slug").order("sort_order"),
@@ -30,6 +31,7 @@ const catalogQuery = queryOptions({
 });
 
 export const Route = createFileRoute("/productos")({
+  validateSearch: catalogSearch,
   head: () => ({
     meta: [
       { title: "Catálogo de perfumes — Perfumería El Arcángel" },
@@ -46,15 +48,18 @@ export const Route = createFileRoute("/productos")({
 
 function CatalogPage() {
   const { data } = useSuspenseQuery(catalogQuery);
-  const [q, setQ] = useState("");
-  const [cat, setCat] = useState<string>("all");
-  const [subcat, setSubcat] = useState("all");
-  const [sort, setSort] = useState<string>("recent");
+  const search = Route.useSearch();
+  const navigate = Route.useNavigate();
+  const q = search.q ?? "";
+  const cat = data.categories.find((c) => c.slug === search.categoria || c.id === search.categoria)?.id ?? "all";
+  const subcat = search.subcategoria ?? "all";
+  const sort = search.orden ?? "recent";
 
   const list = useMemo(() => {
     let l = data.products;
     if (cat !== "all") l = l.filter((p) => p.category_id === cat);
     if (subcat !== "all") l = l.filter((p) => p.subcategory_id === subcat);
+    if (search.ofertas) l = l.filter((p) => p.compare_at_price !== null && Number(p.compare_at_price) > Number(p.price));
     if (q.trim()) {
       const needle = q.toLowerCase();
       l = l.filter((p) => p.name.toLowerCase().includes(needle));
@@ -62,7 +67,7 @@ function CatalogPage() {
     if (sort === "price-asc") l = [...l].sort((a, b) => Number(a.price) - Number(b.price));
     else if (sort === "price-desc") l = [...l].sort((a, b) => Number(b.price) - Number(a.price));
     return l;
-  }, [data.products, q, cat, subcat, sort]);
+  }, [data.products, q, cat, subcat, sort, search.ofertas]);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -82,11 +87,11 @@ function CatalogPage() {
               <Input
                 placeholder="Buscar perfume…"
                 value={q}
-                onChange={(e) => setQ(e.target.value)}
+                onChange={(e) => navigate({ search: { ...search, q: e.target.value || undefined }, replace: true, resetScroll: false })}
                 className="pl-9"
               />
             </div>
-            <Select value={cat} onValueChange={(value) => { setCat(value); setSubcat("all"); }}>
+            <Select value={cat} onValueChange={(value) => navigate({ search: { ...search, categoria: data.categories.find((c) => c.id === value)?.slug, subcategoria: undefined }, resetScroll: false })}>
               <SelectTrigger aria-label="Categoría" className="lg:w-48"><SelectValue placeholder="Categoría" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Todas las categorías</SelectItem>
@@ -95,14 +100,14 @@ function CatalogPage() {
                 ))}
               </SelectContent>
             </Select>
-            <Select value={subcat} onValueChange={setSubcat}>
+            <Select value={subcat} onValueChange={(value) => navigate({ search: { ...search, subcategoria: value === "all" ? undefined : value }, resetScroll: false })}>
               <SelectTrigger aria-label="Subcategoría / marca" className="lg:w-52"><SelectValue placeholder="Subcategoría / marca" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Todas las subcategorías</SelectItem>
                 {(cat === "all" ? data.subcategories : subcategoriesForCategory(data.subcategories, cat)).map((s) => <SelectItem key={s.id} value={s.id}>{s.name}</SelectItem>)}
               </SelectContent>
             </Select>
-            <Select value={sort} onValueChange={setSort}>
+            <Select value={sort} onValueChange={(value) => navigate({ search: { ...search, orden: value === "recent" ? undefined : value }, resetScroll: false })}>
               <SelectTrigger className="sm:w-44"><SelectValue /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="recent">Más recientes</SelectItem>
