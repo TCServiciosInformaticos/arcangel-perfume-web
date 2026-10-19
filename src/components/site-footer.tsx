@@ -25,7 +25,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-3 text-sm text-sidebar-foreground/80">
             <li>
               <div className="font-medium text-sidebar-foreground">Sucursal 1</div>
-              Juan Francisco Seguí 1392, Gran Bourg
+              Coronel Bogado 1678, Gran Bourg
             </li>
             <li>
               <div className="font-medium text-sidebar-foreground">Sucursal 2</div>
