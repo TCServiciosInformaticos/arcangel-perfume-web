@@ -1,0 +1,1 @@
+INSERT INTO public.categories (id, name, slug, sort_order) VALUES (gen_random_uuid(), 'Accesorios', 'accesorios', 3), (gen_random_uuid(), 'Skin care', 'skin-care', 4), (gen_random_uuid(), 'Make up', 'make-up', 5) ON CONFLICT (slug) DO NOTHING;
