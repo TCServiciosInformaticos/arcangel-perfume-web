@@ -37,9 +37,8 @@ export function SiteHeader() {
           <button type="button" className="md:hidden" aria-label="Menú" onClick={() => setOpen((v) => !v)}>
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
-          <Link to="/" className="flex shrink-0 items-center gap-2" aria-label="Inicio">
-            <img src={logoUrl} alt="Perfumería El Arcángel" className="h-12 w-12 object-contain" width={48} height={48} />
-            <span className="text-3xl font-medium tracking-tight text-primary">El Arcángel</span>
+          <Link to="/" className="flex shrink-0 items-center" aria-label="Inicio">
+            <img src={logoUrl} alt="Perfumería El Arcángel" className="h-16 w-16 object-contain sm:h-20 sm:w-20" width={80} height={80} />
           </Link>
 
           <form onSubmit={onSearch} className="hidden flex-1 md:flex">
