@@ -8,6 +8,13 @@
       "when": 1792423529666,
       "tag": "0000_add_categorias_accesorios_skincare_makeup",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792428214826,
+      "tag": "0001_create_brands",
+      "breakpoints": true
     }
   ]
 }
