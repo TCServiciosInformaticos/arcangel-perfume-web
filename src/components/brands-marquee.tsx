@@ -29,7 +29,7 @@ export function BrandsMarquee() {
                 src={b.logo_url}
                 alt={b.name}
                 loading="lazy"
-                className="h-12 w-auto max-w-[140px] shrink-0 object-contain"
+                className="h-12 w-auto max-w-[140px] shrink-0 object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
               />
             ) : (
               <span key={`${b.id}-${i}`} className="shrink-0" />
