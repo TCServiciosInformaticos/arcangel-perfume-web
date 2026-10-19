@@ -92,7 +92,7 @@ const CATEGORIES = [
   { name: "Perfumes", img: catPerfumes },
   { name: "Limpieza", img: catLimpieza },
   { name: "Cabello", img: catCabello },
-  { name: "Higiene personal", img: heroImg },
+  { name: "Higiene personal", img: catHigiene },
   { name: "Accesorios", img: catAccesorios },
   { name: "Skin care", img: catSkincare },
   { name: "Make up", img: catMakeup },
