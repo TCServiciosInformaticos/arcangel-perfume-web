@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { Plus, Pencil, Trash2, ImagePlus, X, Upload } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { formatARS, slugify } from "@/lib/format";
+import { subcategoriesForCategory, validateProductClassification, type SubcategoryOption } from "@/lib/category-selection";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -61,6 +62,7 @@ type Product = {
   is_featured: boolean;
   image_urls: string[];
   category_id: string | null;
+  subcategory_id: string | null;
   category?: { name: string } | null;
 };
 
@@ -79,7 +81,7 @@ function AdminProductos() {
       const { data, error } = await supabase
         .from("products")
         .select(
-          "id, slug, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, category_id, category:categories(name)",
+          "id, slug, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, category_id, subcategory_id, category:categories(name)",
         )
         .order("created_at", { ascending: false });
       if (error) throw error;
@@ -93,6 +95,15 @@ function AdminProductos() {
       const { data, error } = await supabase.from("categories").select("id, name, slug").order("name");
       if (error) throw error;
       return (data ?? []) as Category[];
+    },
+  });
+
+  const subcategoriesQ = useQuery({
+    queryKey: ["admin", "subcategories"],
+    queryFn: async () => {
+      const { data, error } = await supabase.from("subcategories").select("id,name,category_id").order("name");
+      if (error) throw error;
+      return data ?? [];
     },
   });
 
@@ -165,7 +176,7 @@ function AdminProductos() {
                       </div>
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-muted-foreground">{p.category?.name ?? "—"}</td>
+                  <td className="px-4 py-3 text-muted-foreground">{p.category?.name ?? "—"}<div className="text-xs">{subcategoriesQ.data?.find((s) => s.id === p.subcategory_id)?.name}</div></td>
                   <td className="px-4 py-3 text-right">
                     <div className="font-medium text-foreground">{formatARS(p.price)}</div>
                     {p.compare_at_price && Number(p.compare_at_price) > Number(p.price) && (
@@ -223,6 +234,7 @@ function AdminProductos() {
         onOpenChange={setOpenForm}
         product={editing}
         categories={categoriesQ.data ?? []}
+        subcategories={subcategoriesQ.data ?? []}
         onSaved={() => {
           qc.invalidateQueries({ queryKey: ["admin", "products"] });
           qc.invalidateQueries({ queryKey: ["home", "featured"] });
@@ -280,12 +292,14 @@ function ProductForm({
   onOpenChange,
   product,
   categories,
+  subcategories,
   onSaved,
 }: {
   open: boolean;
   onOpenChange: (v: boolean) => void;
   product: Product | null;
   categories: Category[];
+  subcategories: SubcategoryOption[];
   onSaved: () => void;
 }) {
   const isEdit = !!product;
@@ -297,6 +311,7 @@ function ProductForm({
   const [compareAt, setCompareAt] = useState(product?.compare_at_price?.toString() ?? "");
   const [stock, setStock] = useState(product?.stock?.toString() ?? "0");
   const [categoryId, setCategoryId] = useState<string>(product?.category_id ?? "none");
+  const [subcategoryId, setSubcategoryId] = useState(product?.subcategory_id ?? "none");
   const [isActive, setIsActive] = useState(product?.is_active ?? true);
   const [isFeatured, setIsFeatured] = useState(product?.is_featured ?? false);
   const [images, setImages] = useState<string[]>(product?.image_urls ?? []);
@@ -339,6 +354,7 @@ function ProductForm({
     e.preventDefault();
     setSaving(true);
     try {
+      validateProductClassification(categoryId === "none" ? null : categoryId, subcategoryId === "none" ? null : subcategoryId, subcategories);
       const payload = {
         name: name.trim(),
         slug: (slug || slugify(name)).trim(),
@@ -347,6 +363,7 @@ function ProductForm({
         compare_at_price: compareAt ? Number(compareAt) : null,
         stock: Number(stock) || 0,
         category_id: categoryId === "none" ? null : categoryId,
+        subcategory_id: subcategoryId === "none" ? null : subcategoryId,
         is_active: isActive,
         is_featured: isFeatured,
         image_urls: images,
@@ -387,6 +404,7 @@ function ProductForm({
             setCompareAt("");
             setStock("0");
             setCategoryId("none");
+            setSubcategoryId("none");
             setIsActive(true);
             setIsFeatured(false);
             setImages([]);
@@ -471,7 +489,7 @@ function ProductForm({
             </div>
             <div>
               <Label>Categoría</Label>
-              <Select value={categoryId} onValueChange={setCategoryId}>
+              <Select value={categoryId} onValueChange={(value) => { setCategoryId(value); setSubcategoryId("none"); }}>
                 <SelectTrigger>
                   <SelectValue placeholder="Seleccionar" />
                 </SelectTrigger>
@@ -482,6 +500,17 @@ function ProductForm({
                       {c.name}
                     </SelectItem>
                   ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="sm:col-span-2">
+              <Label htmlFor="product-subcategory">Subcategoría / marca</Label>
+              <Select value={subcategoryId} onValueChange={setSubcategoryId} disabled={categoryId === "none"}>
+                <SelectTrigger id="product-subcategory"><SelectValue placeholder="Seleccionar" /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="none">Sin subcategoría</SelectItem>
+                  {subcategoriesForCategory(subcategories, categoryId).map((s) => <SelectItem key={s.id} value={s.id}>{s.name}</SelectItem>)}
                 </SelectContent>
               </Select>
             </div>

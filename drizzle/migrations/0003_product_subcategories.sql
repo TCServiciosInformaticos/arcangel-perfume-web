@@ -1,0 +1,11 @@
+CREATE TABLE public.subcategories (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), category_id uuid NOT NULL REFERENCES public.categories(id) ON DELETE RESTRICT, name text NOT NULL, slug text NOT NULL, sort_order integer NOT NULL DEFAULT 0, created_at timestamptz NOT NULL DEFAULT now(), UNIQUE(category_id,slug), UNIQUE(category_id,id));
+GRANT SELECT ON public.subcategories TO anon;
+GRANT SELECT,INSERT,UPDATE,DELETE ON public.subcategories TO authenticated;
+GRANT ALL ON public.subcategories TO service_role;
+ALTER TABLE public.subcategories ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Public read subcategories" ON public.subcategories FOR SELECT TO anon,authenticated USING(true);
+CREATE POLICY "Admins manage subcategories" ON public.subcategories FOR ALL TO authenticated USING(private.has_role(auth.uid(),'admin'::public.app_role)) WITH CHECK(private.has_role(auth.uid(),'admin'::public.app_role));
+ALTER TABLE public.products ADD COLUMN subcategory_id uuid;
+ALTER TABLE public.products ADD CONSTRAINT products_subcategory_category_fkey FOREIGN KEY(category_id,subcategory_id) REFERENCES public.subcategories(category_id,id) ON DELETE RESTRICT;
+ALTER TABLE public.products ADD CONSTRAINT products_subcategory_requires_category CHECK(subcategory_id IS NULL OR category_id IS NOT NULL);
+CREATE INDEX products_subcategory_idx ON public.products(subcategory_id);
