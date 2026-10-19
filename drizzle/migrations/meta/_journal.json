@@ -15,6 +15,13 @@
       "when": 1792428214826,
       "tag": "0001_create_brands",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792428385127,
+      "tag": "0002_fix_brands_select",
+      "breakpoints": true
     }
   ]
 }
