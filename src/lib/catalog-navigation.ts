@@ -10,7 +10,15 @@ export const navigationCategoriesQuery = queryOptions({
   },
 });
 
-export function catalogSearch(search: Record<string, unknown>) {
+type CatalogSearch = {
+  categoria?: string;
+  subcategoria?: string;
+  q?: string;
+  ofertas?: boolean;
+  orden?: string;
+};
+
+export function catalogSearch(search: Record<string, unknown>): CatalogSearch {
   return {
     categoria: typeof search.categoria === "string" ? search.categoria : undefined,
     subcategoria: typeof search.subcategoria === "string" ? search.subcategoria : undefined,
