@@ -1,3 +1,5 @@
+import { branchLabel } from "@/lib/branches";
+
 // Build a wa.me click-to-chat link with a pre-filled message.
 // Phone must be E.164 digits only, no + or spaces.
 export function buildWhatsappLink(phone: string, message: string): string {
@@ -19,6 +21,7 @@ export type OrderForWhatsapp = {
   delivery_day: string | null;
   delivery_time_slot: "morning" | "afternoon" | "evening" | null;
   notes: string | null;
+  pickup_branch?: string | null;
   subtotal: number | string;
   shipping_cost: number | string;
   total: number | string;
@@ -46,7 +49,9 @@ export function buildOrderMessage(o: OrderForWhatsapp): string {
   lines.push(`📱 WhatsApp: ${o.customer_whatsapp}`);
   lines.push("");
   if (o.delivery_method === "pickup") {
-    lines.push("🏬 *Retira en el local*");
+    lines.push("🏬 *Retira en sucursal*");
+    const branch = branchLabel(o.pickup_branch);
+    if (branch) lines.push(`📍 ${branch}`);
   } else {
     lines.push("🚚 *Envío a domicilio*");
     const addr = [

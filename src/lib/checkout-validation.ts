@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { BRANCH_IDS } from "@/lib/branches";
 
 export const CheckoutSchema = z.object({
   items: z.array(z.object({ productId: z.string().uuid(), quantity: z.number().int().min(1).max(50) })).min(1).max(50),
@@ -14,6 +15,7 @@ export const CheckoutSchema = z.object({
   delivery_day: z.string().trim().max(40).nullable().optional(),
   delivery_time_slot: z.enum(["morning", "afternoon", "evening"]).nullable().optional(),
   notes: z.string().trim().max(500).nullable().optional(),
+  pickup_branch: z.enum(BRANCH_IDS).nullable().optional(),
 }).superRefine((data, ctx) => {
   if (new Set(data.items.map((item) => item.productId)).size !== data.items.length) {
     ctx.addIssue({ code: "custom", path: ["items"], message: "El carrito contiene productos repetidos" });
@@ -22,6 +24,9 @@ export const CheckoutSchema = z.object({
     for (const field of ["delivery_street", "delivery_number", "delivery_city"] as const) {
       if (!data[field]) ctx.addIssue({ code: "custom", path: [field], message: "Completá la dirección de envío" });
     }
+  }
+  if (data.delivery_method === "pickup" && !data.pickup_branch) {
+    ctx.addIssue({ code: "custom", path: ["pickup_branch"], message: "Elegí la sucursal de retiro" });
   }
 });
 

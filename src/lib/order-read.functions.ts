@@ -17,7 +17,7 @@ export const getOrderForWhatsapp = createServerFn({ method: "POST" })
     // Payment status is only changed by the signature-verified Mercado Pago webhook.
     // The return page merely reads the current order state (paymentId is ignored).
     const { data: order, error } = await supabaseAdmin.from("orders")
-      .select("id, order_number, status, customer_name, customer_email, customer_whatsapp, delivery_method, delivery_street, delivery_number, delivery_apartment, delivery_city, delivery_zip, delivery_day, delivery_time_slot, notes, subtotal, shipping_cost, total, mp_payment_id")
+      .select("id, order_number, status, customer_name, customer_email, customer_whatsapp, delivery_method, delivery_street, delivery_number, delivery_apartment, delivery_city, delivery_zip, delivery_day, delivery_time_slot, notes, pickup_branch, subtotal, shipping_cost, total, mp_payment_id")
       .eq("id", data.orderId).maybeSingle();
     if (error) throw new Error("No pudimos consultar el pedido.");
     if (!order) return null;
