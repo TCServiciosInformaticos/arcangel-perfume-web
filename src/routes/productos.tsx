@@ -105,7 +105,7 @@ function CatalogPage() {
 
   async function changeQuery(value: string) {
     if (typeof value !== "string") throw new Error("La búsqueda debe ser un texto.");
-    await navigate({ search: { ...search, q: value || undefined }, replace: true, resetScroll: false });
+    await navigate({ search: { ...search, q: value || undefined, pagina: undefined }, replace: true, resetScroll: false });
   }
 
   useWebMCP({
@@ -149,7 +149,7 @@ function CatalogPage() {
                 className="pl-9"
               />
             </div>
-            <Select value={cat} onValueChange={(value) => navigate({ search: { ...search, categoria: data.categories.find((c) => c.id === value)?.slug, subcategoria: undefined }, resetScroll: false })}>
+            <Select value={cat} onValueChange={(value) => navigate({ search: { ...search, categoria: data.categories.find((c) => c.id === value)?.slug, subcategoria: undefined, pagina: undefined }, resetScroll: false })}>
               <SelectTrigger aria-label="Categoría" className="lg:w-48"><SelectValue placeholder="Categoría" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Todas las categorías</SelectItem>
@@ -158,14 +158,14 @@ function CatalogPage() {
                 ))}
               </SelectContent>
             </Select>
-            <Select value={subcat} onValueChange={(value) => navigate({ search: { ...search, subcategoria: value === "all" ? undefined : value }, resetScroll: false })}>
+            <Select value={subcat} onValueChange={(value) => navigate({ search: { ...search, subcategoria: value === "all" ? undefined : value, pagina: undefined }, resetScroll: false })}>
               <SelectTrigger aria-label="Subcategoría / marca" className="lg:w-52"><SelectValue placeholder="Subcategoría / marca" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Todas las subcategorías</SelectItem>
                 {(cat === "all" ? data.subcategories : subcategoriesForCategory(data.subcategories, cat)).map((s) => <SelectItem key={s.id} value={s.id}>{s.name}</SelectItem>)}
               </SelectContent>
             </Select>
-            <Select value={sort} onValueChange={(value) => navigate({ search: { ...search, orden: value === "recent" ? undefined : value }, resetScroll: false })}>
+            <Select value={sort} onValueChange={(value) => navigate({ search: { ...search, orden: value === "recent" ? undefined : value, pagina: undefined }, resetScroll: false })}>
               <SelectTrigger className="sm:w-44"><SelectValue /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="recent">Más recientes</SelectItem>
