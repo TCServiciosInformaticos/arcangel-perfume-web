@@ -29,6 +29,7 @@ export function ProductCard({ p, size = "sm" }: { p: ProductCardData; size?: "sm
             src={img}
             alt={p.name}
             loading="lazy"
+            decoding="async"
             className={`h-full w-full object-contain transition-transform duration-500 group-hover:scale-105 ${lg ? "p-8" : "p-4"}`}
           />
         ) : (
