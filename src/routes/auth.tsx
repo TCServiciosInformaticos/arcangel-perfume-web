@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate, type SearchSchemaInput } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { oauthReturnPath } from "@/lib/oauth-return-path";
 
 export const Route = createFileRoute("/auth")({
-  validateSearch: (search: Record<string, unknown>) => ({ next: oauthReturnPath(search.next) }),
+  validateSearch: (search: SearchSchemaInput & { next?: string }) => ({ next: oauthReturnPath(search.next) }),
   head: () => ({ meta: [
     { title: "Acceso · El Arcángel" },
     { name: "description", content: "Acceso a la administración de Perfumería El Arcángel." },

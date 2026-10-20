@@ -32,7 +32,7 @@ export const Route = createFileRoute("/.lovable/oauth/consent")({
     return { details: data, email: session.session?.user.email };
   },
   pendingComponent: () => <main className="mx-auto max-w-xl px-4 py-20 text-center">Consultando la solicitud de conexión…</main>,
-  errorComponent: ({ error, reset }) => <main className="mx-auto max-w-xl px-4 py-20 text-center"><img src="/arcangel-logo.png" alt="El Arcángel" className="mx-auto h-20 w-20 object-contain" /><h1 className="mt-6 font-serif text-3xl">No pudimos conectar el asistente</h1><p role="alert" className="mt-4 text-muted-foreground">{error.message}</p><Button className="mt-6" onClick={reset}>Reintentar</Button><Link to="/" className="mt-6 block text-primary">Volver a la tienda</Link></main>,
+  errorComponent: ({ error, reset }) => <main className="mx-auto max-w-xl px-4 py-20 text-center"><img src="/arcangel-logo.png" alt="El Arcángel" className="mx-auto h-20 w-20 object-contain" /><h1 className="mt-6 font-serif text-3xl">No pudimos conectar el asistente</h1><p role="alert" className="mt-4 text-muted-foreground">{error instanceof Error ? error.message : "No pudimos consultar la autorización."}</p><Button className="mt-6" onClick={reset}>Reintentar</Button><Link to="/" className="mt-6 block text-primary">Volver a la tienda</Link></main>,
   component: ConsentPage,
 });
 
