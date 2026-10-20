@@ -17,6 +17,8 @@ def apply_published_prices(data):
         price=float(raw)
         if not math.isfinite(price) or price <= 0: raise ValueError("Invalid published price for "+row["source_url"])
         row["source_price"]=price
+        if row["product_type"]=="Eau de toilette 60" or row["product_type"] in {"Estuche","Lata Corazón","Lata Cofre"}: row["product_type"]="Estuches y regalos"
+        if row["product_type"]=="Jabonera con jabón 75gs": row["product_type"]="Jabonera con jabón"
     data["pricing"]="published"
     return data
 if source.get("stage")=="prepared":
