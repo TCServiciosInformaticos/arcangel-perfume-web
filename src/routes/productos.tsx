@@ -20,7 +20,7 @@ const catalogQuery = queryOptions({
     const [products, categories, subcategories] = await Promise.all([
       supabase
         .from("products")
-        .select("id, slug, name, price, compare_at_price, stock, image_urls, category_id, subcategory_id, category:categories(name)")
+        .select("id, slug, name, price, compare_at_price, stock, image_urls, thumbnail_url, category_id, subcategory_id, category:categories(name)")
         .eq("is_active", true)
         .order("created_at", { ascending: false }),
       supabase.from("categories").select("id, name, slug").order("sort_order"),

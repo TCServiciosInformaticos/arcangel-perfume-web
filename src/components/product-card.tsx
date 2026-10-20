@@ -9,12 +9,13 @@ export type ProductCardData = {
   compare_at_price?: number | string | null;
   stock: number;
   image_urls: string[];
+  thumbnail_url?: string | null;
   category?: { name: string } | null;
 };
 
 export function ProductCard({ p, size = "sm" }: { p: ProductCardData; size?: "sm" | "lg" }) {
   const lg = size === "lg";
-  const img = p.image_urls?.[0] ?? null;
+  const img = p.thumbnail_url ?? p.image_urls?.[0] ?? null;
   const out = p.stock <= 0;
   const price = Number(p.price);
   const compare = p.compare_at_price != null ? Number(p.compare_at_price) : null;

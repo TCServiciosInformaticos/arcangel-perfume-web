@@ -212,6 +212,7 @@ export type Database = {
           slug: string
           stock: number
           subcategory_id: string | null
+          thumbnail_url: string | null
           updated_at: string
         }
         Insert: {
@@ -228,6 +229,7 @@ export type Database = {
           slug: string
           stock?: number
           subcategory_id?: string | null
+          thumbnail_url?: string | null
           updated_at?: string
         }
         Update: {
@@ -244,6 +246,7 @@ export type Database = {
           slug?: string
           stock?: number
           subcategory_id?: string | null
+          thumbnail_url?: string | null
           updated_at?: string
         }
         Relationships: [

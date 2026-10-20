@@ -15,7 +15,7 @@ import catSkincare from "@/assets/cat-skincare.jpg";
 import catMakeup from "@/assets/cat-makeup.jpg";
 import catHigiene from "@/assets/cat-higiene.jpg";
 
-const SELECT = "id, slug, name, price, compare_at_price, stock, image_urls, category:categories(name)";
+const SELECT = "id, slug, name, price, compare_at_price, stock, image_urls, thumbnail_url, category:categories(name)";
 
 const featuredQuery = queryOptions({
   queryKey: ["home", "featured"],
