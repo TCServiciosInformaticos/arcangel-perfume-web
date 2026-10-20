@@ -27,21 +27,86 @@ function AuthPage() {
   const { user, isAdmin, loading } = useAuth();
   const navigate = useNavigate();
   const { next } = Route.useSearch();
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
+  const [mode, setMode] = useState<"signin" | "signup" | "forgot" | "reset">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
-    if (!loading && user && isAdmin) {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "PASSWORD_RECOVERY") {
+        setMode("reset");
+      }
+    });
+
+    if (
+      typeof window !== "undefined" &&
+      (window.location.hash.includes("type=recovery") || window.location.search.includes("type=recovery"))
+    ) {
+      setMode("reset");
+    }
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    if (!loading && user && isAdmin && mode !== "reset") {
       const destination = next && next !== "/" ? next : "/admin";
       navigate({ to: destination });
     }
-  }, [loading, user, isAdmin, navigate, next]);
+  }, [loading, user, isAdmin, navigate, next, mode]);
 
   async function handleSignOut() {
     await supabase.auth.signOut();
     toast.info("Sesión cerrada");
+  }
+
+  async function handleForgotPassword(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email.trim()) {
+      toast.error("Por favor ingresá tu email");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+        redirectTo: new URL("/auth", window.location.origin).href,
+      });
+      if (error) throw error;
+      toast.success("Te enviamos un enlace a tu correo para restablecer tu contraseña. Revisá tu bandeja de entrada o spam.");
+      setMode("signin");
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Error al enviar correo de recuperación");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  async function handleResetPassword(e: React.FormEvent) {
+    e.preventDefault();
+    if (newPassword.length < 6) {
+      toast.error("La contraseña debe tener al menos 6 caracteres");
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      toast.error("Las contraseñas no coinciden");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      const { error } = await supabase.auth.updateUser({ password: newPassword });
+      if (error) throw error;
+      toast.success("¡Contraseña actualizada con éxito! Ya podés ingresar.");
+      setMode("signin");
+      const destination = next && next !== "/" ? next : "/admin";
+      navigate({ to: destination });
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Error al restablecer contraseña");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   async function onSubmit(e: React.FormEvent) {
@@ -49,7 +114,7 @@ function AuthPage() {
     setSubmitting(true);
     try {
       if (mode === "signin") {
-        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
         toast.success("Sesión iniciada");
         const destination = next && next !== "/" ? next : "/admin";
@@ -82,7 +147,7 @@ function AuthPage() {
       <SiteHeader />
       <main className="flex flex-1 items-center justify-center px-4 py-16">
         <div className="w-full max-w-md rounded-xl border border-border bg-card p-8 shadow-sm">
-          {!loading && user && !isAdmin ? (
+          {!loading && user && !isAdmin && mode !== "reset" ? (
             <div className="text-center space-y-4">
               <h1 className="font-serif text-2xl text-foreground">Acceso restringido</h1>
               <p className="text-sm text-muted-foreground">
@@ -97,7 +162,7 @@ function AuthPage() {
                 </Link>
               </div>
             </div>
-          ) : !loading && user && isAdmin ? (
+          ) : !loading && user && isAdmin && mode !== "reset" ? (
             <div className="text-center space-y-4">
               <h1 className="font-serif text-2xl text-foreground">Redirigiendo...</h1>
               <p className="text-sm text-muted-foreground">
@@ -107,6 +172,85 @@ function AuthPage() {
                 Ir al panel de administración
               </Button>
             </div>
+          ) : mode === "reset" ? (
+            <>
+              <h1 className="font-serif text-3xl text-foreground">Nueva contraseña</h1>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Ingresá tu nueva clave para tu cuenta de administrador.
+              </p>
+
+              <form className="mt-6 space-y-4" onSubmit={handleResetPassword}>
+                <div>
+                  <Label htmlFor="new-password">Nueva contraseña</Label>
+                  <Input
+                    id="new-password"
+                    type="password"
+                    required
+                    minLength={6}
+                    placeholder="Mínimo 6 caracteres"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="confirm-password">Confirmar contraseña</Label>
+                  <Input
+                    id="confirm-password"
+                    type="password"
+                    required
+                    minLength={6}
+                    placeholder="Repetí tu nueva contraseña"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  />
+                </div>
+                <Button type="submit" className="w-full" disabled={submitting}>
+                  {submitting ? "Guardando…" : "Actualizar contraseña"}
+                </Button>
+              </form>
+
+              <Button
+                variant="link"
+                type="button"
+                onClick={() => setMode("signin")}
+                className="mt-4 w-full text-sm text-primary hover:underline"
+              >
+                ← Volver a ingresar
+              </Button>
+            </>
+          ) : mode === "forgot" ? (
+            <>
+              <h1 className="font-serif text-3xl text-foreground">Recuperar contraseña</h1>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Ingresá el email con el que te registraste y te enviaremos un enlace para restablecer tu clave.
+              </p>
+
+              <form className="mt-6 space-y-4" onSubmit={handleForgotPassword}>
+                <div>
+                  <Label htmlFor="reset-email">Email</Label>
+                  <Input
+                    id="reset-email"
+                    type="email"
+                    required
+                    placeholder="admin@ejemplo.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <Button type="submit" className="w-full" disabled={submitting}>
+                  {submitting ? "Enviando…" : "Enviar enlace de recuperación"}
+                </Button>
+              </form>
+
+              <Button
+                variant="link"
+                type="button"
+                onClick={() => setMode("signin")}
+                className="mt-4 w-full text-sm text-primary hover:underline"
+              >
+                ← Volver al inicio de sesión
+              </Button>
+            </>
           ) : (
             <>
               <h1 className="font-serif text-3xl text-foreground">
@@ -131,7 +275,18 @@ function AuthPage() {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="password">Contraseña</Label>
+                  <div className="flex items-center justify-between">
+                    <Label htmlFor="password">Contraseña</Label>
+                    {mode === "signin" && (
+                      <button
+                        type="button"
+                        onClick={() => setMode("forgot")}
+                        className="text-xs text-primary hover:underline cursor-pointer"
+                      >
+                        ¿Olvidaste tu contraseña?
+                      </button>
+                    )}
+                  </div>
                   <Input
                     id="password"
                     type="password"
