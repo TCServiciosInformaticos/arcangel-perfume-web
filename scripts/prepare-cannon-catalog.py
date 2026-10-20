@@ -20,7 +20,7 @@ def apply_published_prices(data):
     data["pricing"]="published"
     return data
 if source.get("stage")=="prepared":
-    PATH.write_text(json.dumps(apply_published_prices(source),ensure_ascii=False,indent=2)+"\\n")
+    PATH.write_text(json.dumps(apply_published_prices(source),ensure_ascii=False,indent=2)+"\n")
     print("Prepared snapshot uses exact published prices.",flush=True)
     raise SystemExit(0)
 OUT=Path("public/catalog/cannon");OUT.mkdir(parents=True,exist_ok=True)
