@@ -46,7 +46,7 @@ export function SiteFooter() {
                   href={`https://wa.me/${branch.whatsapp}`}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="mt-1 inline-flex items-center gap-2 text-sidebar-primary hover:underline underline-offset-2"
+                  className="mt-1 flex w-fit items-center gap-2 text-sidebar-primary hover:underline underline-offset-2"
                 >
                   <MessageCircle className="h-4 w-4" />
                   {branch.label}
