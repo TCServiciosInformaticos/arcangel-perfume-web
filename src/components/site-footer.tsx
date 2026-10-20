@@ -1,7 +1,22 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 
 const logoUrl = "/arcangel-logo.png";
+
+const branches = [
+  {
+    name: "Sucursal Bogado",
+    address: "Coronel Bogado 1678, Gran Bourg",
+    whatsapp: "5491131448238",
+    label: "+54 9 11 3144-8238",
+  },
+  {
+    name: "Sucursal Perón",
+    address: "Av. Eva Duarte de Perón 1103, Local 2, Gran Bourg",
+    whatsapp: "5491128931359",
+    label: "+54 9 11 2893-1359",
+  },
+];
 
 export function SiteFooter() {
   return (
