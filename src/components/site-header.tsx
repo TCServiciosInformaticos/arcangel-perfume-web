@@ -2,7 +2,6 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { ShoppingCart, Menu, X, User, Search, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart-context";
-import { useAuth } from "@/lib/auth-context";
 import { formatARS } from "@/lib/format";
 import { useQuery } from "@tanstack/react-query";
 import { navigationCategoriesQuery } from "@/lib/catalog-navigation";
