@@ -14,7 +14,6 @@ const MARQUEE = Array.from({ length: 8 }, () => "Envíos por Gran Bourg y alrede
 
 export function SiteHeader() {
   const { totalQty, subtotal: total } = useCart();
-  const { isAdmin } = useAuth();
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const navigate = useNavigate();
