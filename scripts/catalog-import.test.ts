@@ -134,3 +134,12 @@ test('Explicit 45 percent markup adds to source prices, without confusing markup
  assert.equal(prepareCatalogProduct({...p,source_price:6884},images,'limpieza',{markupPercent:45}).price,9981.8);
  for(const value of [-1,NaN,Infinity])assert.throws(()=>prepareCatalogProduct(p,images,'limpieza',{markupPercent:value}));
 });
+
+test('IDI imports use manufacturer 201, immutable IDs, exact prices, and matching stored photographs', () => {
+ const p={name:'IDI esmalte tono 01',description:'Tono 01',source_url:'https://doan.com.ar/index.php?route=product/product&manufacturer_id=201&product_id=123',source_price:4000.12};
+ const images=['/catalog/idi/idi-doan-123.webp'];
+ const row=prepareCatalogProduct(p,images,'make-up');assert.equal(row.slug,'idi-doan-123');assert.equal(row.price,4000.12);assert.equal(row.stock,0);assert.equal(row.is_active,true);
+ assert.throws(()=>prepareCatalogProduct({...p,source_price:0},images,'make-up'));
+ assert.throws(()=>prepareCatalogProduct(p,['/catalog/idi/idi-doan-124.webp'],'make-up'));
+ assert.throws(()=>prepareCatalogProduct({...p,source_url:p.source_url.replace('201','138')},images,'make-up'));
+});
