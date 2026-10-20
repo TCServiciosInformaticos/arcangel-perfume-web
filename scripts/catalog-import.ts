@@ -6,7 +6,8 @@ export type SourceProduct = {
 };
 
 const ISSUE_HOSTS = ["issueprofessional.com", "www.issueprofessional.com"];
-const ZERO_PRICE_HOSTS = ["hancolor.com.ar", "www.hancolor.com.ar", ...ISSUE_HOSTS];
+const CANNON_HOSTS = ["fraganciascannon.com", "www.fraganciascannon.com"];
+const ZERO_PRICE_HOSTS = ["hancolor.com.ar", "www.hancolor.com.ar", ...ISSUE_HOSTS, ...CANNON_HOSTS];
 
 export function prepareCatalogProduct(product: SourceProduct, imageUrls: string[], categoryId: string, options: { discountPercent?: number; roundToPesos?: boolean; allowZeroPrice?: boolean; slugPrefix?: string } = {}) {
   if (!product.name.trim() || !product.description.trim()) throw new Error("Falta nombre o descripción");
@@ -19,7 +20,8 @@ export function prepareCatalogProduct(product: SourceProduct, imageUrls: string[
   const allowedHosts = ["bmdistribuidora.com.ar", "www.bmdistribuidora.com.ar", "thelmaylouise.com.ar", "www.thelmaylouise.com.ar", ...ZERO_PRICE_HOSTS];
   if (!sourceSlug || source.protocol !== "https:" || !allowedHosts.includes(source.hostname)) throw new Error("Origen inválido");
   const storedIssueImage = (url: string) => ISSUE_HOSTS.includes(source.hostname) && /^\/catalog\/issue\/issue-[a-z0-9-]+\.webp$/.test(url);
-  if (imageUrls.length === 0 || imageUrls.some(url => !url.startsWith("/__l5e/assets-v1/") && !storedIssueImage(url))) throw new Error("Faltan imágenes almacenadas");
+  const storedCannonImage = (url: string) => CANNON_HOSTS.includes(source.hostname) && /^\/catalog\/cannon\/cannon-[0-9]+-[a-z0-9-]+\.webp$/.test(url);
+  if (imageUrls.length === 0 || imageUrls.some(url => !url.startsWith("/__l5e/assets-v1/") && !storedIssueImage(url) && !storedCannonImage(url))) throw new Error("Faltan imágenes almacenadas");
   const discount = options.discountPercent ?? 0;
   if (!Number.isFinite(discount) || discount < 0 || discount >= 100) throw new Error("Descuento inválido");
   const adjustedPrice = product.source_price * (1 - discount / 100);
