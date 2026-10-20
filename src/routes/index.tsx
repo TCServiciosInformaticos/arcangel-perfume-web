@@ -15,6 +15,7 @@ import catSkincare from "@/assets/cat-skincare.jpg";
 import catMakeup from "@/assets/cat-makeup.jpg";
 import catHigiene from "@/assets/cat-higiene.jpg";
 import heroPerfumes from "@/assets/hero-perfumes-bodegon.jpg";
+import heroCabello from "@/assets/hero-cabello-vanity.jpg";
 
 const SELECT = "id, slug, name, price, compare_at_price, stock, image_urls, thumbnail_url, category:categories(name)";
 
@@ -80,8 +81,8 @@ const BENEFITS = [
 
 const SLIDES = [
   { img: heroImg, title: "El Arcángel", sub: "Tu perfumería de barrio, ahora también online" },
-  { img: heroPerfumes, title: "Perfumes", sub: "La fragancia que te representa está acá" },
-  { img: catCabello, title: "Cabello", sub: "Todo lo que tu pelo necesita, en un solo lugar" },
+  { img: heroPerfumes, title: "Perfumes", sub: "La fragancia que te representa está acá", mobileObject: "object-[90%_center]" },
+  { img: heroCabello, title: "Cabello", sub: "Todo lo que tu pelo necesita, en un solo lugar", mobileObject: "object-[80%_center]" },
 ];
 
 
