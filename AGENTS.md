@@ -21,3 +21,4 @@
 - Browser-local catalog tools use useWebMCP in the catalog screen and share visible actions; static-name telemetry is fail-open and never records inputs or catalog content.
 - Validate OAuth return paths once at sign-in and preserve the canonical path across sign-in and sign-up, so delegated consent is completed without open redirects.
 - Catalog cards prefer products.thumbnail_url (small WebP) and fall back to image_urls[0]; admin uploads convert to WebP and store a thumbnail, so mobile listings stay light.
+- Read full product tables through collectPages (src/lib/catalog-products.ts) with ranged queries, because the backend caps each request at 1000 rows and an unbounded select silently drops the oldest products from the catalog and the admin list.

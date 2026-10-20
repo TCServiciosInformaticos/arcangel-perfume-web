@@ -13,25 +13,33 @@ import { CATALOG_PAGE_SIZE, catalogHeading, catalogSearch } from "@/lib/catalog-
 import { Button } from "@/components/ui/button";
 import { useWebMCP } from "use-webmcp-tool";
 import { runWebMCPTool } from "@/lib/webmcp-telemetry";
+import { collectPages } from "@/lib/catalog-products";
+
+async function loadProductPage(from: number, to: number) {
+  const { data, error } = await supabase
+    .from("products")
+    .select("id, slug, name, price, compare_at_price, stock, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)")
+    .eq("is_active", true)
+    .order("created_at", { ascending: false })
+    .order("id", { ascending: true })
+    .range(from, to);
+  if (error) throw error;
+  return data ?? [];
+}
 
 const catalogQuery = queryOptions({
   queryKey: ["catalog"],
   queryFn: async () => {
     const [products, categories, subcategories, types] = await Promise.all([
-      supabase
-        .from("products")
-        .select("id, slug, name, price, compare_at_price, stock, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)")
-        .eq("is_active", true)
-        .order("created_at", { ascending: false }),
+      collectPages(loadProductPage),
       supabase.from("categories").select("id, name, slug").order("sort_order"),
       supabase.from("subcategories").select("id,name,category_id").order("sort_order"),
       supabase.from("product_types").select("id,name,subcategory_id").order("sort_order"),
     ]);
     if (types.error) throw types.error;
-    if (products.error) throw products.error;
     if (categories.error) throw categories.error;
     if (subcategories.error) throw subcategories.error;
-    return { products: products.data ?? [], categories: categories.data ?? [], subcategories: subcategories.data ?? [], types: types.data ?? [] };
+    return { products, categories: categories.data ?? [], subcategories: subcategories.data ?? [], types: types.data ?? [] };
   },
 });
 
