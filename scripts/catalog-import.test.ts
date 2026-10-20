@@ -75,3 +75,22 @@ test("Cannon rejects external and cross-source image paths", () => {
   }
   assert.throws(() => prepareCatalogProduct(source, ["/catalog/cannon/cannon-94-kevin.webp"], "perfumes"));
 });
+
+test("Dove Doan products keep immutable IDs and published current prices", () => {
+  const dove = { ...source, source_url: "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=47527", source_price: 4839.98 };
+  const row = prepareCatalogProduct(dove, ["/catalog/dove/dove-doan-47527.webp"], "cabello");
+  assert.equal(row.slug, "dove-doan-47527");
+  assert.equal(row.price, 4839.98);
+  assert.equal(row.stock, 0);
+  assert.equal(row.is_active, true);
+});
+test("Dove rejects wrong manufacturer, product IDs, foreign photos and missing prices", () => {
+  const url = "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=47527";
+  const dove = { ...source, source_url: url, source_price: 4839.98 };
+  const image = ["/catalog/dove/dove-doan-47527.webp"];
+  assert.throws(() => prepareCatalogProduct({ ...dove, source_price: 0 }, image, "cabello"));
+  assert.throws(() => prepareCatalogProduct({ ...dove, source_url: url.replace("138", "139") }, image, "cabello"));
+  assert.throws(() => prepareCatalogProduct({ ...dove, source_url: url.replace("47527", "abc") }, image, "cabello"));
+  assert.throws(() => prepareCatalogProduct(dove, ["/catalog/dove/dove-doan-42927.webp"], "cabello"));
+  assert.throws(() => prepareCatalogProduct(dove, ["https://doan.com.ar/image/image.jpg"], "cabello"));
+});
