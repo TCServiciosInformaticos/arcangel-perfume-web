@@ -111,7 +111,7 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
         </div>
       </div>
 
-      <div className="absolute inset-x-4 bottom-3 flex items-center justify-between sm:inset-x-6 sm:bottom-4">
+      <div className="absolute inset-x-4 bottom-[136px] flex items-center justify-between sm:inset-x-6 sm:bottom-4">
         <Button size="icon" variant="outline" aria-label="Diapositiva anterior" onClick={() => navigate(-1)} className="h-11 w-11 rounded-full bg-card/90 sm:absolute sm:bottom-[170px] sm:left-0">
           <ChevronLeft />
         </Button>
