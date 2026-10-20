@@ -41,11 +41,13 @@ const salesQuery = queryOptions({
       .eq("is_active", true)
       .not("compare_at_price", "is", null)
       .order("created_at", { ascending: false })
-      .limit(8);
+      .limit(15);
     if (error) throw error;
-    return (data ?? []).filter(
-      (p) => p.compare_at_price != null && Number(p.compare_at_price) > Number(p.price),
-    );
+    return (data ?? [])
+      .filter(
+        (p) => p.compare_at_price != null && Number(p.compare_at_price) > Number(p.price),
+      )
+      .slice(0, 9);
   },
 });
 
