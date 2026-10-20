@@ -138,6 +138,7 @@ export type Database = {
           mp_preference_id: string | null
           notes: string | null
           order_number: number
+          pickup_branch: string | null
           shipping_cost: number
           status: Database["public"]["Enums"]["order_status"]
           subtotal: number
@@ -163,6 +164,7 @@ export type Database = {
           mp_preference_id?: string | null
           notes?: string | null
           order_number?: number
+          pickup_branch?: string | null
           shipping_cost?: number
           status?: Database["public"]["Enums"]["order_status"]
           subtotal: number
@@ -188,6 +190,7 @@ export type Database = {
           mp_preference_id?: string | null
           notes?: string | null
           order_number?: number
+          pickup_branch?: string | null
           shipping_cost?: number
           status?: Database["public"]["Enums"]["order_status"]
           subtotal?: number

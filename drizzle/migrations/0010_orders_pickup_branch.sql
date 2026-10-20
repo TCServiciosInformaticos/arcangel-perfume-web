@@ -1,0 +1,1 @@
+ALTER TABLE public.orders ADD COLUMN pickup_branch text CHECK (pickup_branch IS NULL OR pickup_branch IN ('bogado','peron'));
