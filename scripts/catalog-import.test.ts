@@ -94,3 +94,19 @@ test("Dove rejects wrong manufacturer, product IDs, foreign photos and missing p
   assert.throws(() => prepareCatalogProduct(dove, ["/catalog/dove/dove-doan-42927.webp"], "cabello"));
   assert.throws(() => prepareCatalogProduct(dove, ["https://doan.com.ar/image/image.jpg"], "cabello"));
 });
+
+test('Requested Doan brands preserve prices and cannot borrow another brand image', () => {
+ for(const [id,brand] of Object.entries({'304':'nivea','90':'cicatricure','170':'garnier','126':'dermaglos'})){
+  const p={name:brand,description:'Producto publicado',source_price:1234.56,source_url:`https://doan.com.ar/index.php?route=product/product&manufacturer_id=${id}&product_id=123`};
+  const image=`/catalog/${brand}/${brand}-doan-123.webp`;
+  const row=prepareCatalogProduct(p,[image],'category');
+  assert.equal(row.slug,`${brand}-doan-123`);assert.equal(row.price,1234.56);
+  assert.throws(()=>prepareCatalogProduct(p,['/catalog/dove/dove-doan-123.webp'],'category'));
+ }
+});
+test('Frenzzi requires real positive prices and stored photographs', () => {
+ const p={name:'Frenzzi',description:'Producto publicado',source_price:6850,source_url:'https://frenzziargentina.com/producto/scrunchies/'};
+ assert.equal(prepareCatalogProduct(p,['/catalog/frenzzi/frenzzi-9048-scrunchies.webp'],'category',{slugPrefix:'frenzzi-9048-'}).slug,'frenzzi-9048-scrunchies');
+ assert.throws(()=>prepareCatalogProduct({...p,source_price:0},['/catalog/frenzzi/frenzzi-9048-scrunchies.webp'],'category'));
+ assert.throws(()=>prepareCatalogProduct(p,['https://frenzziargentina.com/photo.jpg'],'category'));
+});
