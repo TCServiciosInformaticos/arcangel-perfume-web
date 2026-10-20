@@ -6,6 +6,8 @@ on:
     paths:
       - .github/workflows/prepare-cannon-catalog.yml
       - scripts/prepare-cannon-catalog.py
+      - scripts/validate-cannon-catalog.ts
+      - scripts/catalog-data/cannon.json
 permissions:
   contents: write
 concurrency:
