@@ -34,7 +34,7 @@ export function prepareCatalogProduct(product: SourceProduct, imageUrls: string[
   const discount = options.discountPercent ?? 0;
   if (!Number.isFinite(discount) || discount < 0 || discount >= 100) throw new Error("Descuento inválido");
   const adjustedPrice = product.source_price * (1 - discount / 100);
-  const price = options.roundToPesos ? Math.round(adjustedPrice) : Math.round(adjustedPrice * 100) / 100;
+  const price = options.roundToPesos ? Math.ceil(adjustedPrice) : Math.round(adjustedPrice * 100) / 100;
   if (price < 0 || (price === 0 && !zeroPriceAllowed)) throw new Error("Precio final inválido");
   return {
     name: product.name.trim(),
