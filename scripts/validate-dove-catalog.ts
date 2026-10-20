@@ -11,7 +11,7 @@ assert.equal(new Set(data.products.map((p: any) => p.slug)).size, data.count);
 let photoCount = 0;
 for (const p of data.products) {
   assert.equal(p.brand, "Dove");
-  assert(["cabello", "higiene-personal", "skin-care"].includes(p.category_slug));
+  assert(["cabello", "higiene-personal", "skin-care", "accesorios"].includes(p.category_slug));
   assert(p.product_type.trim());
   const row = prepareCatalogProduct(p, p.image_urls, p.category_slug);
   assert.equal(row.slug, p.slug);
