@@ -76,7 +76,7 @@ const BENEFITS = [
 ];
 
 const SLIDES = [
-  { img: heroImg, title: "El Arcangel", sub: "Tu perfumería de barrio, ahora también online" },
+  { img: heroImg, title: "El Arcángel", sub: "Tu perfumería de barrio, ahora también online" },
   { img: catPerfumes, title: "Perfumes", sub: "La fragancia que te representa está acá" },
   { img: catCabello, title: "Cabello", sub: "Todo lo que tu pelo necesita, en un solo lugar" },
 ];
