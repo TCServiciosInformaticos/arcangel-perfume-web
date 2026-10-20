@@ -37,3 +37,23 @@ test("rechaza precio cero de Han sin autorización explícita", () => {
 test("no permite precio cero en otros orígenes aunque se pida", () => {
   assert.throws(() => prepareCatalogProduct({ ...source, source_price: 0 }, images, "cabello", { allowZeroPrice: true }));
 });
+
+test("Issue requires explicit permission for zero price", () => {
+  const issue = { ...source, source_url: "https://www.issueprofessional.com/shampoo/shampoo-color-protect/", source_price: 0 };
+  const stored = ["/catalog/issue/issue-shampoo-color-protect.webp"];
+  assert.throws(() => prepareCatalogProduct(issue, stored, "cabello"));
+  const row = prepareCatalogProduct(issue, stored, "cabello", { allowZeroPrice: true, slugPrefix: "issue-" });
+  assert.equal(row.price, 0);
+  assert.equal(row.stock, 0);
+  assert.equal(row.is_active, true);
+  assert.equal(row.slug, "issue-shampoo-color-protect");
+});
+test("Issue rejects remote photos and traversal paths", () => {
+  const issue = { ...source, source_url: "https://www.issueprofessional.com/shampoo/shampoo-color-protect/", source_price: 0 };
+  for (const image of ["https://example.com/image.webp", "/catalog/issue/../image.webp", "/catalog/issue/issue-x.webp?x=1"]) {
+    assert.throws(() => prepareCatalogProduct(issue, [image], "cabello", { allowZeroPrice: true }));
+  }
+});
+test("Issue stored images are not accepted for other source hosts", () => {
+  assert.throws(() => prepareCatalogProduct(source, ["/catalog/issue/issue-x.webp"], "cabello"));
+});
