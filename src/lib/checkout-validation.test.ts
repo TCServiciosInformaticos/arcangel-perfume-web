@@ -12,7 +12,7 @@ function expect(actual: unknown) {
     toContain: (expected: string) => assert.ok(typeof actual === "string" && actual.includes(expected)),
   };
 }
-const purchase = { items: [{ productId: id, quantity: 2 }], customer_name: "Cliente de prueba", customer_email: "cliente@example.com", customer_whatsapp: "+54 9 11 5555 0000", delivery_method: "pickup" as const };
+const purchase = { items: [{ productId: id, quantity: 2 }], customer_name: "Cliente de prueba", customer_email: "cliente@example.com", customer_whatsapp: "+54 9 11 5555 0000", delivery_method: "pickup" as const, pickup_branch: "bogado" as const };
 
 describe("Reglas de compra", () => {
   test("WhatsApp se habilita solo con pago confirmado, no por volver a la página", () => {
@@ -31,6 +31,12 @@ describe("Reglas de compra", () => {
     expect(CheckoutSchema.safeParse(purchase).success).toBe(true);
     expect(CheckoutSchema.safeParse({ ...purchase, delivery_method: "shipping" }).success).toBe(false);
     expect(CheckoutSchema.safeParse({ ...purchase, delivery_method: "shipping", delivery_street: "Calle", delivery_number: "12", delivery_city: "Gran Bourg" }).success).toBe(true);
+  });
+  test("retiro en sucursal exige elegir Bogado o Perón", () => {
+    const { pickup_branch, ...sinSucursal } = purchase;
+    expect(CheckoutSchema.safeParse(sinSucursal).success).toBe(false);
+    expect(CheckoutSchema.safeParse({ ...purchase, pickup_branch: "peron" }).success).toBe(true);
+    expect(CheckoutSchema.safeParse({ ...purchase, pickup_branch: "otra" }).success).toBe(false);
   });
   test("no se pueden duplicar líneas para eludir stock", () => {
     expect(CheckoutSchema.safeParse({ ...purchase, items: [purchase.items[0], purchase.items[0]] }).success).toBe(false);
@@ -56,5 +62,11 @@ describe("Reglas de compra", () => {
     expect(url.pathname).toBe("/5491155550000");
     const message = url.searchParams.get("text") ?? "";
     for (const value of ["Cliente de prueba", "cliente@example.com", "+54 9 11 5555 0000", "2× Shampoo", "Calle 12", "Gran Bourg", "martes", "Timbre 2"]) expect(message).toContain(value);
+  });
+  test("WhatsApp de retiro indica la sucursal elegida", () => {
+    const order: OrderForWhatsapp = { ...purchase, order_number: 7, delivery_method: "pickup", pickup_branch: "peron", delivery_street: null, delivery_number: null, delivery_apartment: null, delivery_city: null, delivery_zip: null, delivery_day: null, delivery_time_slot: null, notes: null, subtotal: 5000, shipping_cost: 0, total: 5000, mp_payment_id: "9", items: [{ product_name: "Crema", quantity: 1, unit_price: 5000 }] };
+    const message = buildOrderMessage(order);
+    expect(message).toContain("Sucursal Perón");
+    expect(message).toContain("Eva Duarte de Perón 1103");
   });
 });
