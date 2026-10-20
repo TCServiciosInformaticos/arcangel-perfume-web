@@ -43,6 +43,13 @@
       "when": 1792453015231,
       "tag": "0005_bulk_product_excel_update",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792457695166,
+      "tag": "0006_tighten_public_read_policies",
+      "breakpoints": true
     }
   ]
 }
