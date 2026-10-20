@@ -75,6 +75,7 @@ for url in urls:
     paragraphs = []
     for node in h1.find_all_next(["p", "li", "h2", "h3"]):
         value = node.get_text(" ", strip=True)
+        if "ver producto" in value.lower(): break
         if re.search(r"te puede interesar|seguinos|copyright", value, re.I): break
         if node.name == "p" and node.find_parent("li"): continue
         if value and value not in {"Comprar", "Ver carta de colores", "Descargar carta"} and value not in paragraphs:
@@ -85,6 +86,9 @@ for url in urls:
     words = description.split()
     if len(words) > 180:
         description = " ".join(words[:180]).rsplit(".", 1)[0] + "."
+    if slug in {"issue-acondicionador-neutro-y-detox", "issue-acondicionador-neutro-y-detox-1000"}:
+        # The source mistakenly repeats Color Protect copy on these two pages.
+        description = "Acondicionador de la línea Issue Neutro y Detox, indicado por el fabricante para cabellos naturales y grasos."
     image_meta = doc.find("meta", property="og:image")
     if not image_meta or not image_meta.get("content"):
         raise ValueError("Missing product image: " + url)
