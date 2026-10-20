@@ -9,7 +9,8 @@ import { ProductCard } from "@/components/product-card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { subcategoriesForCategory } from "@/lib/category-selection";
-import { catalogHeading, catalogSearch } from "@/lib/catalog-navigation";
+import { CATALOG_PAGE_SIZE, catalogHeading, catalogSearch } from "@/lib/catalog-navigation";
+import { Button } from "@/components/ui/button";
 import { useWebMCP } from "use-webmcp-tool";
 import { runWebMCPTool } from "@/lib/webmcp-telemetry";
 
@@ -83,6 +84,17 @@ function CatalogPage() {
     else if (sort === "price-desc") l = [...l].sort((a, b) => Number(b.price) - Number(a.price));
     return l;
   }, [data.products, q, cat, subcat, sort, search.ofertas]);
+
+  const totalPages = Math.max(1, Math.ceil(list.length / CATALOG_PAGE_SIZE));
+  const page = Math.min(search.pagina ?? 1, totalPages);
+  const pageItems = list.slice((page - 1) * CATALOG_PAGE_SIZE, page * CATALOG_PAGE_SIZE);
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1)
+    .filter((n) => n === 1 || n === totalPages || Math.abs(n - page) <= 1)
+    .flatMap((n, i, arr) => (i > 0 && n - arr[i - 1] > 1 ? [0, n] : [n]));
+
+  function goToPage(n: number) {
+    navigate({ search: { ...search, pagina: n > 1 ? n : undefined } });
+  }
 
   const heading = catalogHeading({
     categories: data.categories,
@@ -169,9 +181,20 @@ function CatalogPage() {
               <p className="mt-2 text-sm text-muted-foreground">Probá con otros filtros o eliminá la búsqueda.</p>
             </div>
           ) : (
-            <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
-              {list.map((p) => <ProductCard key={p.id} p={p} />)}
-            </div>
+            <>
+              <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
+                {pageItems.map((p) => <ProductCard key={p.id} p={p} />)}
+              </div>
+              {totalPages > 1 && (
+                <nav aria-label="Páginas del catálogo" className="mt-10 flex flex-wrap items-center justify-center gap-2">
+                  <Button variant="outline" size="sm" disabled={page <= 1} onClick={() => goToPage(page - 1)}>Anterior</Button>
+                  {pageNumbers.map((n, i) => n === 0
+                    ? <span key={`gap-${i}`} className="px-1 text-muted-foreground">…</span>
+                    : <Button key={n} size="sm" variant={n === page ? "default" : "outline"} aria-current={n === page ? "page" : undefined} onClick={() => goToPage(n)}>{n}</Button>)}
+                  <Button variant="outline" size="sm" disabled={page >= totalPages} onClick={() => goToPage(page + 1)}>Siguiente</Button>
+                </nav>
+              )}
+            </>
           )}
         </div>
       </main>
