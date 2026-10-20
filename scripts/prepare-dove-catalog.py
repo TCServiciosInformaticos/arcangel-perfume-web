@@ -97,8 +97,24 @@ def prepare(seed):
         tds=tr.find_all("td")
         if len(tds)==2: specs[tds[0].get_text(" ",strip=True)]=tds[1].get_text(" ",strip=True)
     category,typ=classify(name)
-    image_urls=list(dict.fromkeys(secure(a["href"]) for a in doc.select(".thumbnails a.thumbnail[href]")))
-    if not image_urls or any(re.search(r"no[_-]?image|placeholder",u,re.I) for u in image_urls): raise ValueError("No genuine photo: "+name)
+    candidates=[]
+    for a in doc.select(".thumbnails a.thumbnail[href]"):
+        if a["href"].strip(): candidates.append(secure(a["href"]))
+    for img in doc.select(".thumbnails img"):
+        src=img.get("data-src") or img.get("src")
+        if src: candidates.append(secure(src))
+    image_urls=[]
+    image_keys=set()
+    for u in candidates:
+        if "/image/" not in u or re.search(r"no[_-]?image|placeholder|lazyload",u,re.I): continue
+        key=re.sub(r"-[0-9]+x[0-9]+(?=[.][a-zA-Z]+$)","",u.replace("/image/cache/","/image/"))
+        if key not in image_keys: image_keys.add(key);image_urls.append(u)
+    if not image_urls:
+        raw=(doc.select_one("#tab-description") or doc).get_text(" ",strip=True)
+        ean=re.search(r"Código de Barra\s*([0-9]+)",raw,re.I)
+        print("MISSING_IMAGE_DETAILS",name,json.dumps([img.attrs for img in doc.select(".thumbnails img")],ensure_ascii=False),"EAN",ean[1] if ean else None,flush=True)
+        if not ean: raise ValueError("No genuine photo or barcode: "+name)
+        image_urls=[BASE+"/image/catalog/doan/"+ean[1]+".jpg"]
     desc_node=doc.select_one("#tab-description")
     desc_text=desc_node.get_text(" ",strip=True) if desc_node else ""
     barcode=re.search(r"Código de Barra\s*([0-9]+)",desc_text,re.I)
@@ -116,6 +132,8 @@ def prepare(seed):
         small=re.sub(r"-[0-9]+x[0-9]+(?=[.][a-zA-Z]+$)","-228x228",url)
         original=re.sub(r"-[0-9]+x[0-9]+(?=[.][a-zA-Z]+$)","",url.replace("/image/cache/","/image/"))
         candidates.extend([small,original])
+        if "/image/catalog/doan/" in original:
+            candidates.extend([re.sub(r"[.][a-zA-Z]+$",ext,original) for ext in [".png",".jpeg",".webp"]])
         # All candidates identify the same source image, never another product.
         im=None
         for candidate in dict.fromkeys(candidates):
