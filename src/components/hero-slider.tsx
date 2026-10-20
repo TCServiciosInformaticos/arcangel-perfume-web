@@ -87,7 +87,7 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
                     className={`h-full w-full object-cover ${slide.mobileObject ?? "object-center"}`}
                   />
                 </div>
-                <div className="flex flex-1 flex-col justify-center bg-secondary px-5 sm:hidden">
+                <div className="flex flex-1 flex-col justify-center bg-secondary px-5 pb-10 sm:hidden">
                   <h1 className="text-3xl font-extrabold tracking-normal text-primary">{slide.title}</h1>
                   <p className="mt-1.5 max-w-[24rem] text-sm font-semibold leading-relaxed text-foreground">{slide.sub}</p>
                 </div>
@@ -111,11 +111,8 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
         </div>
       </div>
 
-      <div className="absolute inset-x-4 bottom-[136px] flex items-center justify-between sm:inset-x-6 sm:bottom-4">
-        <Button size="icon" variant="outline" aria-label="Diapositiva anterior" onClick={() => navigate(-1)} className="h-11 w-11 rounded-full bg-card/90 sm:absolute sm:bottom-[170px] sm:left-0">
-          <ChevronLeft />
-        </Button>
-        <div className="flex items-center sm:mx-auto" aria-label="Elegir diapositiva">
+      <div className="pointer-events-none absolute inset-x-0 bottom-1 flex justify-center sm:bottom-4">
+        <div className="pointer-events-auto flex items-center rounded-full bg-card/70 px-0.5" aria-label="Elegir diapositiva">
           {slides.map((slide, index) => (
             <Button
               key={slide.title}
@@ -124,21 +121,25 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
               aria-label={`Ver diapositiva ${index + 1}: ${slide.title}`}
               aria-current={index === selected ? "true" : undefined}
               onClick={() => { setPaused(true); api?.scrollTo(index, reducedMotion); }}
-              className="h-11 w-11 rounded-full"
+              className="h-7 w-7 rounded-full sm:h-11 sm:w-11"
             >
-              <span className={`block h-2.5 rounded-full transition-all motion-reduce:transition-none ${index === selected ? "w-6 bg-primary" : "w-2.5 bg-foreground/40"}`} />
+              <span className={`block rounded-full transition-all motion-reduce:transition-none ${index === selected ? "h-2 w-4 bg-primary sm:h-2.5 sm:w-6" : "h-2 w-2 bg-foreground/40 sm:h-2.5 sm:w-2.5"}`} />
             </Button>
           ))}
           {!reducedMotion && (
-            <Button size="icon" variant="ghost" aria-label={paused ? "Reanudar presentación" : "Pausar presentación"} onClick={() => setPaused((value) => !value)} className="h-11 w-11 rounded-full">
+            <Button size="icon" variant="ghost" aria-label={paused ? "Reanudar presentación" : "Pausar presentación"} onClick={() => setPaused((value) => !value)} className="h-7 w-7 rounded-full sm:h-11 sm:w-11">
               {paused ? <Play /> : <Pause />}
             </Button>
           )}
         </div>
-        <Button size="icon" variant="outline" aria-label="Diapositiva siguiente" onClick={() => navigate(1)} className="h-11 w-11 rounded-full bg-card/90 sm:absolute sm:bottom-[170px] sm:right-0">
-          <ChevronRight />
-        </Button>
       </div>
+
+      <Button size="icon" variant="outline" aria-label="Diapositiva anterior" onClick={() => navigate(-1)} className="pointer-events-auto absolute left-2 top-[95px] h-9 w-9 -translate-y-1/2 rounded-full bg-card/90 sm:top-auto sm:bottom-[170px] sm:left-0 sm:h-11 sm:w-11 sm:translate-y-0">
+        <ChevronLeft />
+      </Button>
+      <Button size="icon" variant="outline" aria-label="Diapositiva siguiente" onClick={() => navigate(1)} className="pointer-events-auto absolute right-2 top-[95px] h-9 w-9 -translate-y-1/2 rounded-full bg-card/90 sm:top-auto sm:bottom-[170px] sm:right-0 sm:h-11 sm:w-11 sm:translate-y-0">
+        <ChevronRight />
+      </Button>
     </section>
   );
 }
