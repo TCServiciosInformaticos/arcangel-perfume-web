@@ -89,13 +89,13 @@ const PROMOS = [
 ];
 
 const CATEGORIES = [
-  { name: "Perfumes", img: catPerfumes },
-  { name: "Limpieza", img: catLimpieza },
-  { name: "Cabello", img: catCabello },
-  { name: "Higiene personal", img: catHigiene },
-  { name: "Accesorios", img: catAccesorios },
-  { name: "Skin care", img: catSkincare },
-  { name: "Make up", img: catMakeup },
+  { name: "Perfumes", img: catPerfumes, slug: "perfumes" },
+  { name: "Limpieza", img: catLimpieza, slug: "limpieza" },
+  { name: "Cabello", img: catCabello, slug: "cabello" },
+  { name: "Higiene personal", img: catHigiene, slug: "higiene-personal" },
+  { name: "Accesorios", img: catAccesorios, slug: "accesorios" },
+  { name: "Skin care", img: catSkincare, slug: "skin-care" },
+  { name: "Make up", img: catMakeup, slug: "make-up" },
 ];
 
 function SectionTitle({ title }: { kicker?: string; title: string }) {
