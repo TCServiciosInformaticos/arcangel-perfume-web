@@ -9,8 +9,9 @@ from urllib.request import Request,urlopen
 from bs4 import BeautifulSoup
 from PIL import Image,ImageOps
 BASE="https://doan.com.ar"
-# The manufacturer page identifies this exact EAN and its official product photo.
-OFFICIAL_IMAGES={"7791293051956":"https://assets.unileversolutions.com/v1/144533144.jpg"}
+# Verified exact-EAN fallback: https://soylola.com/shampoo/64316--7791293051956.html
+# The manufacturer CDN is not downloadable from the runner; this supplier lists the same EAN.
+OFFICIAL_IMAGES={"7791293051956":"https://soylola.com/63677-large_default/SHAMPOO%20DOVE%20NUTRICION%20DOY%20PACK%20180%20CC.jpg"}
 URL=BASE+"/index.php?route=product/manufacturer/info&manufacturer_id=138"
 OUT=Path("public/catalog/dove");OUT.mkdir(parents=True,exist_ok=True)
 PATH=Path("scripts/catalog-data/dove.json")
@@ -18,7 +19,7 @@ if PATH.exists() and json.loads(PATH.read_text()).get("stage")=="prepared":
     print("Prepared Dove snapshot already stored.",flush=True);raise SystemExit(0)
 def secure(url):
     p=urlparse(urljoin(BASE,url))
-    if p.hostname=="assets.unileversolutions.com" and url in OFFICIAL_IMAGES.values(): return url
+    if p.hostname=="soylola.com" and url in OFFICIAL_IMAGES.values(): return url
     if p.hostname not in {"doan.com.ar","www.doan.com.ar"}: raise ValueError("Unexpected source host: "+url)
     return urlunparse(p._replace(scheme="https"))
 def fetch(url):
@@ -26,7 +27,7 @@ def fetch(url):
     for attempt in range(3):
         try:
             with urlopen(Request(url,headers={"User-Agent":"Mozilla/5.0 (compatible; ArcangelCatalogImport/1.0)"}),timeout=45) as response:
-                if urlparse(response.url).hostname not in {"doan.com.ar","www.doan.com.ar","assets.unileversolutions.com"}: raise ValueError("Unexpected redirect")
+                if urlparse(response.url).hostname not in {"doan.com.ar","www.doan.com.ar","soylola.com","www.soylola.com"}: raise ValueError("Unexpected redirect")
                 return response.read()
         except Exception:
             if attempt==2: raise
