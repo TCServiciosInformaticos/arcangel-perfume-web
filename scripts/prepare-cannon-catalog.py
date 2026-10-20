@@ -1,5 +1,5 @@
 """Prepare every official Cannon presentation and owned WebP photos; never writes to the database."""
-import ast,io,json,re,time,unicodedata
+import ast,io,json,re,time,unicodedata,math
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor,as_completed
 from pathlib import Path
@@ -10,8 +10,18 @@ from PIL import Image,ImageOps
 BASE="https://www.fraganciascannon.com"
 PATH=Path("scripts/catalog-data/cannon.json")
 source=json.loads(PATH.read_text())
+def apply_published_prices(data):
+    for row in data["products"]:
+        raw=row.get("published_price")
+        if raw is None or isinstance(raw,bool): raise ValueError("No published price for "+row["source_url"])
+        price=float(raw)
+        if not math.isfinite(price) or price <= 0: raise ValueError("Invalid published price for "+row["source_url"])
+        row["source_price"]=price
+    data["pricing"]="published"
+    return data
 if source.get("stage")=="prepared":
-    print("Prepared snapshot already exists; validating only.",flush=True)
+    PATH.write_text(json.dumps(apply_published_prices(source),ensure_ascii=False,indent=2)+"\\n")
+    print("Prepared snapshot uses exact published prices.",flush=True)
     raise SystemExit(0)
 OUT=Path("public/catalog/cannon");OUT.mkdir(parents=True,exist_ok=True)
 def fetch(url):
@@ -121,5 +131,5 @@ with ThreadPoolExecutor(max_workers=4) as ex:
         if len(rows)%20==0: print("PREPARED",len(rows),"of",len(variants),flush=True)
 rows.sort(key=lambda x:int(x["source_id"]))
 assert len(rows)==len(variants) and len({p["slug"] for p in rows})==len(rows)
-PATH.write_text(json.dumps({"stage":"prepared","source":BASE+"/catalogo","fragrances":len(bases),"count":len(rows),"products":rows},ensure_ascii=False,indent=2)+"\n")
+PATH.write_text(json.dumps(apply_published_prices({"stage":"prepared","source":BASE+"/catalogo","fragrances":len(bases),"count":len(rows),"products":rows}),ensure_ascii=False,indent=2)+"\n")
 print("PREPARED_TOTAL",len(rows),"CATEGORIES",dict(Counter(p["category_slug"] for p in rows)),"BRANDS",len({p["brand"] for p in rows}),"TYPES",dict(Counter(p["product_type"] for p in rows)),flush=True)
