@@ -1,5 +1,10 @@
 # Flujo de compra
 
+## Integraciones con asistentes
+- [ ] Agregar MCP protegido con OAuth y consultas de catálogo, categorías y fichas.
+- [ ] Agregar herramientas de lectura y búsqueda en la pantalla del catálogo.
+- [ ] Verificar consentimiento, retorno al iniciar sesión y manifiesto; requiere republicación para uso externo.
+
 ## Actualización por Excel
 - [ ] Exportar todos los artículos con ID, nombre, categoría, marca, precio, stock y activo.
 - [ ] Validar e importar únicamente precio, stock y activo con confirmación y guardado atómico para administradores.

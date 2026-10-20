@@ -10,6 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { subcategoriesForCategory } from "@/lib/category-selection";
 import { catalogHeading, catalogSearch } from "@/lib/catalog-navigation";
+import { useWebMCP } from "use-webmcp-tool";
+import { runWebMCPTool } from "@/lib/webmcp-telemetry";
 
 const catalogQuery = queryOptions({
   queryKey: ["catalog"],
@@ -89,6 +91,27 @@ function CatalogPage() {
     count: list.length,
   });
 
+  async function changeQuery(value: string) {
+    if (typeof value !== "string") throw new Error("La búsqueda debe ser un texto.");
+    await navigate({ search: { ...search, q: value || undefined }, replace: true, resetScroll: false });
+  }
+
+  useWebMCP({
+    name: "read_catalog", description: "Consulta los productos mostrados con los filtros actuales; devuelve hasta 30 resultados con ID, precio en ARS y stock.",
+    annotations: { readOnlyHint: true, untrustedContentHint: true },
+    execute: () => runWebMCPTool("read_catalog", () => list.length === 0 ? "No hay productos en esta vista." : `${list.length} productos; primeros ${Math.min(30, list.length)}:\n${list.slice(0, 30).map((p) => `${p.id}: ${p.name} | ARS ${p.price} | Stock ${p.stock}`).join("\n")}`),
+  });
+  useWebMCP({
+    name: "read_catalog_filters", description: "Consulta la búsqueda, categoría y marca seleccionadas y las categorías disponibles sin cambiar la pantalla.",
+    annotations: { readOnlyHint: true, untrustedContentHint: true },
+    execute: () => runWebMCPTool("read_catalog_filters", () => `Búsqueda: ${q || "ninguna"}; categoría: ${cat}; marca: ${subcat}; orden: ${sort}.\nCategorías: ${data.categories.map((c) => `${c.id}: ${c.name}`).join("; ")}`),
+  });
+  useWebMCP({
+    name: "search_catalog", description: "Cambia el texto del buscador de productos, manteniendo los demás filtros seleccionados.",
+    inputSchema: { type: "object", properties: { query: { type: "string", description: "Texto para buscar; vacío para quitar la búsqueda." } }, required: ["query"], additionalProperties: false },
+    execute: ({ query }: { query: string }) => runWebMCPTool("search_catalog", async () => { await changeQuery(query); return "Búsqueda actualizada."; }),
+  });
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -110,7 +133,7 @@ function CatalogPage() {
               <Input
                 placeholder="Buscar producto…"
                 value={q}
-                onChange={(e) => navigate({ search: { ...search, q: e.target.value || undefined }, replace: true, resetScroll: false })}
+                onChange={(e) => { void changeQuery(e.target.value); }}
                 className="pl-9"
               />
             </div>

@@ -15,11 +15,14 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CarritoRouteImport } from './routes/carrito'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as GraciasRouteImport } from './routes/gracias'
+import { Route as McpRouteImport } from './routes/mcp'
 import { Route as PagoFallidoRouteImport } from './routes/pago-fallido'
 import { Route as PagoPendienteRouteImport } from './routes/pago-pendiente'
 import { Route as ProductosRouteImport } from './routes/productos'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as ProductoSlugRouteImport } from './routes/producto.$slug'
+import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable.oauth.consent'
 import { Route as AuthenticatedAdminCategoriasRouteImport } from './routes/_authenticated/admin.categorias'
 import { Route as AuthenticatedAdminProductosRouteImport } from './routes/_authenticated/admin.productos'
 import { Route as ApiPublicMercadopagoWebhookRouteImport } from './routes/api/public/mercadopago-webhook'
@@ -53,6 +56,11 @@ const GraciasRoute = GraciasRouteImport.update({
   path: '/gracias',
   getParentRoute: () => rootRouteImport,
 } as any)
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PagoFallidoRoute = PagoFallidoRouteImport.update({
   id: '/pago-fallido',
   path: '/pago-fallido',
@@ -68,6 +76,12 @@ const ProductosRoute = ProductosRouteImport.update({
   path: '/productos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -76,6 +90,11 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
 const ProductoSlugRoute = ProductoSlugRouteImport.update({
   id: '/producto/$slug',
   path: '/producto/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DotlovableOauthConsentRoute = DotlovableOauthConsentRouteImport.update({
+  id: '/.lovable/oauth/consent',
+  path: '/.lovable/oauth/consent',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedAdminCategoriasRoute =
@@ -103,11 +122,14 @@ export interface FileRoutesByFullPath {
   '/carrito': typeof CarritoRoute
   '/checkout': typeof CheckoutRoute
   '/gracias': typeof GraciasRoute
+  '/mcp': typeof McpRoute
   '/pago-fallido': typeof PagoFallidoRoute
   '/pago-pendiente': typeof PagoPendienteRoute
   '/productos': typeof ProductosRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/producto/$slug': typeof ProductoSlugRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
@@ -118,11 +140,14 @@ export interface FileRoutesByTo {
   '/carrito': typeof CarritoRoute
   '/checkout': typeof CheckoutRoute
   '/gracias': typeof GraciasRoute
+  '/mcp': typeof McpRoute
   '/pago-fallido': typeof PagoFallidoRoute
   '/pago-pendiente': typeof PagoPendienteRoute
   '/productos': typeof ProductosRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/producto/$slug': typeof ProductoSlugRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
@@ -135,11 +160,14 @@ export interface FileRoutesById {
   '/carrito': typeof CarritoRoute
   '/checkout': typeof CheckoutRoute
   '/gracias': typeof GraciasRoute
+  '/mcp': typeof McpRoute
   '/pago-fallido': typeof PagoFallidoRoute
   '/pago-pendiente': typeof PagoPendienteRoute
   '/productos': typeof ProductosRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/producto/$slug': typeof ProductoSlugRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/_authenticated/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
   '/_authenticated/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
@@ -152,11 +180,14 @@ export interface FileRouteTypes {
     | '/carrito'
     | '/checkout'
     | '/gracias'
+    | '/mcp'
     | '/pago-fallido'
     | '/pago-pendiente'
     | '/productos'
+    | '/.well-known/oauth-protected-resource'
     | '/admin'
     | '/producto/$slug'
+    | '/.lovable/oauth/consent'
     | '/admin/categorias'
     | '/admin/productos'
     | '/api/public/mercadopago-webhook'
@@ -167,11 +198,14 @@ export interface FileRouteTypes {
     | '/carrito'
     | '/checkout'
     | '/gracias'
+    | '/mcp'
     | '/pago-fallido'
     | '/pago-pendiente'
     | '/productos'
+    | '/.well-known/oauth-protected-resource'
     | '/admin'
     | '/producto/$slug'
+    | '/.lovable/oauth/consent'
     | '/admin/categorias'
     | '/admin/productos'
     | '/api/public/mercadopago-webhook'
@@ -183,11 +217,14 @@ export interface FileRouteTypes {
     | '/carrito'
     | '/checkout'
     | '/gracias'
+    | '/mcp'
     | '/pago-fallido'
     | '/pago-pendiente'
     | '/productos'
+    | '/.well-known/oauth-protected-resource'
     | '/_authenticated/admin'
     | '/producto/$slug'
+    | '/.lovable/oauth/consent'
     | '/_authenticated/admin/categorias'
     | '/_authenticated/admin/productos'
     | '/api/public/mercadopago-webhook'
@@ -200,10 +237,13 @@ export interface RootRouteChildren {
   CarritoRoute: typeof CarritoRoute
   CheckoutRoute: typeof CheckoutRoute
   GraciasRoute: typeof GraciasRoute
+  McpRoute: typeof McpRoute
   PagoFallidoRoute: typeof PagoFallidoRoute
   PagoPendienteRoute: typeof PagoPendienteRoute
   ProductosRoute: typeof ProductosRoute
+  Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   ProductoSlugRoute: typeof ProductoSlugRoute
+  DotlovableOauthConsentRoute: typeof DotlovableOauthConsentRoute
   ApiPublicMercadopagoWebhookRoute: typeof ApiPublicMercadopagoWebhookRoute
 }
 
@@ -251,6 +291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GraciasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pago-fallido': {
       id: '/pago-fallido'
       path: '/pago-fallido'
@@ -272,6 +319,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated/admin': {
       id: '/_authenticated/admin'
       path: '/admin'
@@ -284,6 +338,13 @@ declare module '@tanstack/react-router' {
       path: '/producto/$slug'
       fullPath: '/producto/$slug'
       preLoaderRoute: typeof ProductoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.lovable/oauth/consent': {
+      id: '/.lovable/oauth/consent'
+      path: '/.lovable/oauth/consent'
+      fullPath: '/.lovable/oauth/consent'
+      preLoaderRoute: typeof DotlovableOauthConsentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin/categorias': {
@@ -341,10 +402,14 @@ const rootRouteChildren: RootRouteChildren = {
   CarritoRoute: CarritoRoute,
   CheckoutRoute: CheckoutRoute,
   GraciasRoute: GraciasRoute,
+  McpRoute: McpRoute,
   PagoFallidoRoute: PagoFallidoRoute,
   PagoPendienteRoute: PagoPendienteRoute,
   ProductosRoute: ProductosRoute,
+  Char91DotwellKnownChar93OauthProtectedResourceRoute:
+    Char91DotwellKnownChar93OauthProtectedResourceRoute,
   ProductoSlugRoute: ProductoSlugRoute,
+  DotlovableOauthConsentRoute: DotlovableOauthConsentRoute,
   ApiPublicMercadopagoWebhookRoute: ApiPublicMercadopagoWebhookRoute,
 }
 export const routeTree = rootRouteImport
