@@ -8,6 +8,8 @@ assert.equal(new Set(data.products.map((p: any) => p.slug)).size, 34);
 const allowedTypes = new Set(["Tinturas", "Oxidantes", "Decolorantes", "Shampoo", "Acondicionadores", "Máscaras", "Sérums", "Tratamientos para peinar"]);
 for (const p of data.products) {
   assert(allowedTypes.has(p.product_type), p.name);
+  assert(!p.description.includes("Ver producto"), "Related-product text in " + p.name);
+  if (p.slug.startsWith("issue-acondicionador-neutro-y-detox")) assert(!p.description.includes("Color Protect"));
   const row = prepareCatalogProduct(p, p.image_urls, "cabello", { allowZeroPrice: true, slugPrefix: "issue-" });
   assert.equal(row.slug, p.slug);
   assert.equal(row.price, 0);
