@@ -68,12 +68,16 @@ print("SOURCE_TOTAL",expected,flush=True)
 print("SOURCE_NAMES",json.dumps([p["source_name"] for p in listing.values()],ensure_ascii=False),flush=True)
 def classify(name):
     n=unicodedata.normalize("NFKD",name).encode("ascii","ignore").decode().upper()
+    if re.search(r"EXHIB",n): return "accesorios","Exhibidores"
     if re.search(r"\bAC[.\s]|ACOND",n): return "cabello","Acondicionadores"
     if re.search(r"\bSH[.\s]|SHAMPOO",n): return "cabello","Shampoo"
-    if re.search(r"MASC|TRAT|CR[.\s]*PEIN|CREMA.*PEIN",n): return "cabello","Tratamientos capilares"
+    if re.search(r"MASC",n): return "cabello","Máscaras"
+    if re.search(r"TRAT|CR[.\s]*PEIN|CREMA.*PEIN",n): return "cabello","Tratamientos sin enjuague"
+    if re.search(r"OLEO.*(BOND|UV REPAIR)",n): return "cabello","Óleos capilares"
     if re.search(r"JAB",n): return "higiene-personal","Jabones líquidos" if re.search(r"LIQ|DUCH",n) else "Jabones"
-    if re.search(r"DEO|DESOD|ANTITRAN|ROLL|AER[.\s]",n): return "higiene-personal","Desodorantes y antitranspirantes"
-    if re.search(r"CREMA|CR[.\s]|BODY|LOCION|SERUM",n): return "skin-care","Cremas y lociones"
+    if re.search(r"DEO|DESOD|ANTITRAN|ROLL|AER[.\s]|BARRA.*ANT[.\s]|CLINICAL.*BARRA",n): return "higiene-personal","Desodorantes y antitranspirantes"
+    if re.search(r"SERUM",n): return "skin-care","Sérums corporales"
+    if re.search(r"CREMA|CR[.\s]|BODY|LOCION",n): return "skin-care","Cremas y lociones"
     raise ValueError("Unclassified Dove product: "+name)
 def prepare(seed):
     doc=soup(seed["source_url"])
