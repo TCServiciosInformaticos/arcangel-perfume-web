@@ -6,13 +6,14 @@ assert.equal(data.stage, "prepared");
 assert.equal(data.pricing, "published");
 assert.equal(data.fragrances, 109);
 assert.equal(data.products.length, data.count);
-assert(data.count >= 151);
+assert.equal(data.count, 324);
 assert.equal(new Set(data.products.map((p: any) => p.source_id)).size, data.count);
 assert.equal(new Set(data.products.map((p: any) => p.slug)).size, data.count);
 assert.equal(new Set(data.products.map((p: any) => p.brand)).size, 27);
 for (const p of data.products) {
   assert(["perfumes", "higiene-personal", "skin-care", "cabello"].includes(p.category_slug));
   assert(p.brand.trim() && p.product_type.trim());
+  assert(!["Eau de toilette 60", "Jabonera con jabón 75gs"].includes(p.product_type));
   const row = prepareCatalogProduct(p, p.image_urls, p.category_slug, { slugPrefix: "cannon-" + p.source_id + "-" });
   assert.equal(row.slug, p.slug);
   assert.equal(row.price, Math.round(Number(p.published_price) * 100) / 100);
