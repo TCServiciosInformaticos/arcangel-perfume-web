@@ -20,6 +20,7 @@ import heroMakeup from "@/assets/hero-makeup.jpg";
 import heroLimpieza from "@/assets/hero-limpieza.jpg";
 import heroSkincare from "@/assets/hero-skincare.jpg";
 import heroHigiene from "@/assets/hero-higiene.jpg";
+import heroAccesorios from "@/assets/hero-accesorios.jpg";
 
 const SELECT = "id, slug, name, price, compare_at_price, stock, image_urls, thumbnail_url, category:categories(name)";
 
@@ -89,6 +90,7 @@ const SLIDES = [
   { img: heroLimpieza, title: "Limpieza", sub: "Tu casa impecable, sin salir de casa", mobileObject: "object-[90%_center]", search: { categoria: "limpieza" } },
   { img: heroCabello, title: "Cuidado Capilar", sub: "Todo lo que tu pelo necesita, en un solo lugar", mobileObject: "object-[80%_center]", search: { categoria: "cabello" } },
   { img: heroHigiene, title: "Higiene personal", sub: "Cuidado diario para toda la familia", mobileObject: "object-[90%_center]", search: { categoria: "higiene-personal" } },
+  { img: heroAccesorios, title: "Accesorios", sub: "Los detalles que completan tu rutina", mobileObject: "object-[90%_center]", search: { categoria: "accesorios" } },
   { img: heroSkincare, title: "Skin care", sub: "El cuidado que tu piel pide cada día", mobileObject: "object-[90%_center]", search: { categoria: "skin-care" } },
   { img: heroMakeup, title: "Make up", sub: "Los colores que te acompañan todos los días", mobileObject: "object-[90%_center]", search: { categoria: "make-up" } },
 ];
