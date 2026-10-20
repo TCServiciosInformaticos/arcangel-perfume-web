@@ -1,0 +1,43 @@
+name: Validate extracted MV paper catalog
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/validate-mv-paper.yml
+      - scripts/catalog-data/mv-paper-1-8.json
+      - scripts/validate-mv-paper.ts
+      - public/catalog/mv-rep-1-8/**
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Unpack original PDF product images
+        run: python -m zipfile -e scripts/catalog-data/mv-paper-images.zip .
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: |
+          npx --yes tsx@4.20.6 --test scripts/catalog-import.test.ts
+          npx --yes tsx@4.20.6 scripts/validate-mv-paper.ts
+      - name: Store verified catalog audit
+        run: |
+          node --input-type=module <<'JS'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          const data=JSON.parse(readFileSync('scripts/catalog-data/mv-paper-1-8.json','utf8'));
+          writeFileSync('scripts/catalog-data/mv-paper-1-8-validation.json',JSON.stringify({source_sha256:data.source_sha256,verified_products:36,verified_images:72,markup_percent:45,stock:0,is_active:true},null,2)+'\n');
+          JS
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/catalog/mv-rep-1-8 scripts/catalog-data/mv-paper-1-8-validation.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Verify 36 extracted paper products with explicit 45 percent markup"
+            git pull --rebase
+            git push
+          fi

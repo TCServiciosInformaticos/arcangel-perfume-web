@@ -115,3 +115,22 @@ test('Frenzzi requires real positive prices and stored photographs', () => {
  assert.throws(()=>prepareCatalogProduct({...p,source_price:0},['/catalog/frenzzi/frenzzi-9048-scrunchies.webp'],'category'));
  assert.throws(()=>prepareCatalogProduct(p,['https://frenzziargentina.com/photo.jpg'],'category'));
 });
+
+test('MV attached PDF preserves per-package prices and isolates each source card image', () => {
+ const p={name:'Elegante paquete de 12 rollos',description:'Precio por paquete, bulto de 4 paquetes.',source_url:'attachment:mv-rep-1-8/p1-r4-c1',source_price:6070};
+ const images=['/catalog/mv-rep-1-8/mv-rep-1-8-p1-r4-c1.webp'];
+ const row=prepareCatalogProduct(p,images,'limpieza');
+ assert.equal(row.slug,'mv-rep-1-8-p1-r4-c1');assert.equal(row.price,6070);assert.equal(row.stock,0);assert.equal(row.is_active,true);
+ assert.throws(()=>prepareCatalogProduct({...p,source_price:0},images,'limpieza'));
+ assert.throws(()=>prepareCatalogProduct(p,['/catalog/mv-rep-1-8/mv-rep-1-8-p1-r4-c2.webp'],'limpieza'));
+ assert.throws(()=>prepareCatalogProduct({...p,source_url:'attachment:other/p1-r4-c1'},images,'limpieza'));
+ assert.throws(()=>prepareCatalogProduct({...p,source_url:'https://example.com/p1-r4-c1'},images,'limpieza'));
+});
+
+test('Explicit 45 percent markup adds to source prices, without confusing markup with margin', () => {
+ const p={name:'Higienol',description:'Bulto 12 x 4 x 30 m',source_url:'attachment:mv-rep-1-8/p1-r1-c1',source_price:17054};
+ const images=['/catalog/mv-rep-1-8/mv-rep-1-8-p1-r1-c1.webp'];
+ assert.equal(prepareCatalogProduct(p,images,'limpieza',{markupPercent:45}).price,24728.3);
+ assert.equal(prepareCatalogProduct({...p,source_price:6884},images,'limpieza',{markupPercent:45}).price,9981.8);
+ for(const value of [-1,NaN,Infinity])assert.throws(()=>prepareCatalogProduct(p,images,'limpieza',{markupPercent:value}));
+});

@@ -1,0 +1,1089 @@
+{
+  "stage": "prepared",
+  "count": 36,
+  "source_filename": "Lista de Precios Papel Higienico y Rollos de Cocina - MV Rep 1.8.pdf",
+  "source_sha256": "9138f8d3ce41c8baaf2a68bad5520893051aaffa739e4fc7d8ba6e353c147279",
+  "pricing": "published_pdf_plus_45_percent_per_indicated_presentation",
+  "products": [
+    {
+      "name": "Higienol Papel Higiénico Bulto 12 x 4 x 30 m aprox",
+      "slug": "mv-rep-1-8-p1-r1-c1",
+      "description": "Papel Higiénico Bulto 12 x 4 x 30 m aprox.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: H001.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p1-r1-c1",
+      "source_url": "attachment:mv-rep-1-8/p1-r1-c1",
+      "source_page": 1,
+      "source_position": 1,
+      "source_text": "Papel Higiénico Bulto\n12 x 4 x 30 m aprox\nCódigo: H001\n$17.054",
+      "source_code": "H001",
+      "source_price": 17054,
+      "price": 24728.3,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Higienol",
+      "brand_slug": "higienol",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 241,
+      "image_original_size": [
+        240,
+        215
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r1-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r1-c1-thumb.webp"
+    },
+    {
+      "name": "Higienol Papel Higiénico Doble Hoja Bulto 10 x 4 x 30 m",
+      "slug": "mv-rep-1-8-p1-r1-c2",
+      "description": "Papel Higiénico Doble Hoja Bulto 10 x 4 x 30 m.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: H002.",
+      "source_id": "p1-r1-c2",
+      "source_url": "attachment:mv-rep-1-8/p1-r1-c2",
+      "source_page": 1,
+      "source_position": 2,
+      "source_text": "Papel Higiénico Doble Hoja\nBulto 10 x 4 x 30 m\nCódigo: H002\n$21.700",
+      "source_code": "H002",
+      "source_price": 21700,
+      "price": 31465.0,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Higienol",
+      "brand_slug": "higienol",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 240,
+      "image_original_size": [
+        280,
+        274
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r1-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r1-c2-thumb.webp"
+    },
+    {
+      "name": "Higienol Papel Higiénico Bulto 10 x 4 x 80 m aprox",
+      "slug": "mv-rep-1-8-p1-r1-c3",
+      "description": "Papel Higiénico Bulto 10 x 4 x 80 m aprox.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: H003.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p1-r1-c3",
+      "source_url": "attachment:mv-rep-1-8/p1-r1-c3",
+      "source_page": 1,
+      "source_position": 3,
+      "source_text": "Papel Higiénico Bulto\n10 x 4 x 80 m aprox\nCódigo: H003\n$30.800",
+      "source_code": "H003",
+      "source_price": 30800,
+      "price": 44660.0,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Higienol",
+      "brand_slug": "higienol",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 242,
+      "image_original_size": [
+        265,
+        236
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r1-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r1-c3-thumb.webp"
+    },
+    {
+      "name": "Sussex Rollo de Cocina 10 x 3 x 50 paños",
+      "slug": "mv-rep-1-8-p1-r2-c1",
+      "description": "Rollo de Cocina 10 x 3 x 50 paños.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: H004.",
+      "source_id": "p1-r2-c1",
+      "source_url": "attachment:mv-rep-1-8/p1-r2-c1",
+      "source_page": 1,
+      "source_position": 4,
+      "source_text": "Rollo de Cocina \n10 x 3 x 50 paños\nCódigo: H004\n$15.680",
+      "source_code": "H004",
+      "source_price": 15680,
+      "price": 22736.0,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Sussex",
+      "brand_slug": "sussex",
+      "category_slug": "limpieza",
+      "product_type": "Rollos de cocina",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 243,
+      "image_original_size": [
+        200,
+        200
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r2-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r2-c1-thumb.webp"
+    },
+    {
+      "name": "Elegante Rollo de Cocina 8 x 3 x 60 paños",
+      "slug": "mv-rep-1-8-p1-r2-c2",
+      "description": "Rollo de Cocina 8 x 3 x 60 paños.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 928.",
+      "source_id": "p1-r2-c2",
+      "source_url": "attachment:mv-rep-1-8/p1-r2-c2",
+      "source_page": 1,
+      "source_position": 5,
+      "source_text": "Rollo de Cocina \n8 x 3 x 60 paños\nCódigo: 928\n$11.516",
+      "source_code": "928",
+      "source_price": 11516,
+      "price": 16698.2,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Rollos de cocina",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 233,
+      "image_original_size": [
+        200,
+        148
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r2-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r2-c2-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel Higiénico Bulto 12 x 6 x 30 m aprox",
+      "slug": "mv-rep-1-8-p1-r2-c3",
+      "description": "Papel Higiénico Bulto 12 x 6 x 30 m aprox.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 904.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p1-r2-c3",
+      "source_url": "attachment:mv-rep-1-8/p1-r2-c3",
+      "source_page": 1,
+      "source_position": 6,
+      "source_text": "Papel Higiénico Bulto\n12 x 6 x 30 m aprox\nCódigo: 904\n$20.668",
+      "source_code": "904",
+      "source_price": 20668,
+      "price": 29968.6,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 234,
+      "image_original_size": [
+        144,
+        200
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r2-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r2-c3-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel Higiénico Bulto 12 x 6 x 30 m aprox",
+      "slug": "mv-rep-1-8-p1-r3-c1",
+      "description": "Papel Higiénico Bulto 12 x 6 x 30 m aprox.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 907.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p1-r3-c1",
+      "source_url": "attachment:mv-rep-1-8/p1-r3-c1",
+      "source_page": 1,
+      "source_position": 7,
+      "source_text": "Papel Higiénico Bulto\n12 x 6 x 30 m aprox\nCódigo: 907\n$21.450",
+      "source_code": "907",
+      "source_price": 21450,
+      "price": 31102.5,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 239,
+      "image_original_size": [
+        179,
+        179
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r3-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r3-c1-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel Higiénico Bulto 10 x 4 x 80 m aprox",
+      "slug": "mv-rep-1-8-p1-r3-c2",
+      "description": "Papel Higiénico Bulto 10 x 4 x 80 m aprox.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: E914.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p1-r3-c2",
+      "source_url": "attachment:mv-rep-1-8/p1-r3-c2",
+      "source_page": 1,
+      "source_position": 8,
+      "source_text": "Papel Higiénico Bulto\n10 x 4 x 80 m aprox\nCódigo: E914\n$30.025",
+      "source_code": "E914",
+      "source_price": 30025,
+      "price": 43536.25,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 236,
+      "image_original_size": [
+        300,
+        300
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r3-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r3-c2-thumb.webp"
+    },
+    {
+      "name": "Belipel Rollo de Cocina 10 paq x 3 x 40 paños",
+      "slug": "mv-rep-1-8-p1-r3-c3",
+      "description": "Rollo de Cocina 10 paq x 3 x 40 paños.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: E127.",
+      "source_id": "p1-r3-c3",
+      "source_url": "attachment:mv-rep-1-8/p1-r3-c3",
+      "source_page": 1,
+      "source_position": 9,
+      "source_text": "Rollo de Cocina  \n10 paq x 3 x 40 paños\nCódigo: E127\n$9.829",
+      "source_code": "E127",
+      "source_price": 9829,
+      "price": 14252.05,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Belipel",
+      "brand_slug": "belipel",
+      "category_slug": "limpieza",
+      "product_type": "Rollos de cocina",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 244,
+      "image_original_size": [
+        245,
+        164
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r3-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r3-c3-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel higiénico valijita — paquete de 12 rollos x 30 m",
+      "slug": "mv-rep-1-8-p1-r4-c1",
+      "description": "Papel Higiénico Bulto 4 x 12 x 30 m aprox valijita.\n\nPrecio por paquete de 12 rollos de 30 metros. El proveedor también indica bulto de 4 paquetes.\n\nCódigo del proveedor: E917.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p1-r4-c1",
+      "source_url": "attachment:mv-rep-1-8/p1-r4-c1",
+      "source_page": 1,
+      "source_position": 10,
+      "source_text": "Papel Higiénico Bulto 4 x 12 x\n30 m aprox valijita\nCódigo: E917\nPrecio del Paquete $6.070\nBulto x 4 Paquetes",
+      "source_code": "E917",
+      "source_price": 6070,
+      "price": 8801.5,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "paquete",
+      "bulto_packages": 4,
+      "image_xref": 235,
+      "image_original_size": [
+        240,
+        240
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r4-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r4-c1-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel higiénico familiar — paquete de 24 rollos x 50 m",
+      "slug": "mv-rep-1-8-p1-r4-c2",
+      "description": "Papel Higiénico Pack Familiar 24 x 50 m aprox.\n\nPrecio por paquete de 24 rollos de 50 metros. El proveedor también indica bulto de 4 paquetes.\n\nCódigo del proveedor: 1010.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p1-r4-c2",
+      "source_url": "attachment:mv-rep-1-8/p1-r4-c2",
+      "source_page": 1,
+      "source_position": 11,
+      "source_text": "Papel Higiénico Pack Familiar\n24 x 50 m aprox\nCódigo: 1010\nPrecio del Paquete $10.800\nBulto x 4 Paquetes",
+      "source_code": "1010",
+      "source_price": 10800,
+      "price": 15660.0,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "paquete",
+      "bulto_packages": 4,
+      "image_xref": 238,
+      "image_original_size": [
+        240,
+        240
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r4-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r4-c2-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel higiénico  — paquete de 12 rollos x 30 m",
+      "slug": "mv-rep-1-8-p1-r4-c3",
+      "description": "Papel Higiénico 12 x 30 m aprox.\n\nPrecio por paquete de 12 rollos de 30 metros. El proveedor también indica bulto de 4 paquetes.\n\nCódigo del proveedor: 908.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p1-r4-c3",
+      "source_url": "attachment:mv-rep-1-8/p1-r4-c3",
+      "source_page": 1,
+      "source_position": 12,
+      "source_text": "Papel Higiénico \n12 x 30 m aprox\nCódigo: 908\nPrecio del Paquete $3.450\nBulto x 4 Paquetes",
+      "source_code": "908",
+      "source_price": 3450,
+      "price": 5002.5,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "paquete",
+      "bulto_packages": 4,
+      "image_xref": 237,
+      "image_original_size": [
+        224,
+        224
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r4-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p1-r4-c3-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel Higiénico Bulto 12 x 1 x 120 m aprox",
+      "slug": "mv-rep-1-8-p2-r1-c1",
+      "description": "Papel Higiénico Bulto 12 x 1 x 120 m aprox.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 902.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p2-r1-c1",
+      "source_url": "attachment:mv-rep-1-8/p2-r1-c1",
+      "source_page": 2,
+      "source_position": 1,
+      "source_text": "Papel Higiénico Bulto\n12 x 1 x 120 m aprox\nCódigo: 902\n$13.811",
+      "source_code": "902",
+      "source_price": 13811,
+      "price": 20025.95,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 252,
+      "image_original_size": [
+        203,
+        203
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r1-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r1-c1-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel Higiénico Bulto 10 x 4 x 80 m aprox",
+      "slug": "mv-rep-1-8-p2-r1-c2",
+      "description": "Papel Higiénico Bulto 10 x 4 x 80 m aprox.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 916.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p2-r1-c2",
+      "source_url": "attachment:mv-rep-1-8/p2-r1-c2",
+      "source_page": 2,
+      "source_position": 2,
+      "source_text": "Papel Higiénico Bulto\n10 x 4 x 80 m aprox\nCódigo: 916\n$29.050",
+      "source_code": "916",
+      "source_price": 29050,
+      "price": 42122.5,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 251,
+      "image_original_size": [
+        156,
+        152
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r1-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r1-c2-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel Higiénico HD Bulto 10 x 4 x 30 m aprox",
+      "slug": "mv-rep-1-8-p2-r1-c3",
+      "description": "Papel Higiénico HD Bulto 10 x 4 x 30 m aprox.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 915.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p2-r1-c3",
+      "source_url": "attachment:mv-rep-1-8/p2-r1-c3",
+      "source_page": 2,
+      "source_position": 3,
+      "source_text": "Papel Higiénico HD Bulto\n10 x 4 x 30 m aprox\nCódigo: 915\n$19.999",
+      "source_code": "915",
+      "source_price": 19999,
+      "price": 28998.55,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 253,
+      "image_original_size": [
+        240,
+        240
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r1-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r1-c3-thumb.webp"
+    },
+    {
+      "name": "Elegante Rollo de Cocina Bulto 12 x 1 x 200p",
+      "slug": "mv-rep-1-8-p2-r2-c1",
+      "description": "Rollo de Cocina Bulto 12 x 1 x 200p.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 921.",
+      "source_id": "p2-r2-c1",
+      "source_url": "attachment:mv-rep-1-8/p2-r2-c1",
+      "source_page": 2,
+      "source_position": 4,
+      "source_text": "Rollo de Cocina Bulto\n12 x 1 x 200p\nCódigo: 921\n$19.143",
+      "source_code": "921",
+      "source_price": 19143,
+      "price": 27757.35,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Rollos de cocina",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 254,
+      "image_original_size": [
+        144,
+        173
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r2-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r2-c1-thumb.webp"
+    },
+    {
+      "name": "Dicha Rollo de Cocina Bulto 12 x 3 x 40p",
+      "slug": "mv-rep-1-8-p2-r2-c2",
+      "description": "Rollo de Cocina Bulto 12 x 3 x 40p.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 424.",
+      "source_id": "p2-r2-c2",
+      "source_url": "attachment:mv-rep-1-8/p2-r2-c2",
+      "source_page": 2,
+      "source_position": 5,
+      "source_text": "Rollo de Cocina Bulto\n12 x 3 x 40p\nCódigo: 424\n$13.227",
+      "source_code": "424",
+      "source_price": 13227,
+      "price": 19179.15,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Dicha",
+      "brand_slug": "dicha",
+      "category_slug": "limpieza",
+      "product_type": "Rollos de cocina",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 255,
+      "image_original_size": [
+        324,
+        324
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r2-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r2-c2-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel Higienico DH 10 x 4 x 20 m aprox",
+      "slug": "mv-rep-1-8-p2-r2-c3",
+      "description": "Papel Higienico DH 10 x 4 x 20 m aprox.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 910.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p2-r2-c3",
+      "source_url": "attachment:mv-rep-1-8/p2-r2-c3",
+      "source_page": 2,
+      "source_position": 6,
+      "source_text": "Papel Higienico DH \n10 x 4 x 20 m aprox\nCódigo: 910\n$13.558",
+      "source_code": "910",
+      "source_price": 13558,
+      "price": 19659.1,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 256,
+      "image_original_size": [
+        200,
+        170
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r2-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r2-c3-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel higiénico familiar — paquete de 24 rollos x 30 m",
+      "slug": "mv-rep-1-8-p2-r3-c1",
+      "description": "Papel Higiénico Pack Familiar 24 x 30 m aprox.\n\nPrecio por paquete de 24 rollos de 30 metros. El proveedor también indica bulto de 4 paquetes.\n\nCódigo del proveedor: 919.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p2-r3-c1",
+      "source_url": "attachment:mv-rep-1-8/p2-r3-c1",
+      "source_page": 2,
+      "source_position": 7,
+      "source_text": "Papel Higiénico Pack Familiar\n24 x 30 m aprox\nCódigo: 919\nPrecio del Paquete $7.324\n(Bulto x 4 Paquetes)",
+      "source_code": "919",
+      "source_price": 7324,
+      "price": 10619.8,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "paquete",
+      "bulto_packages": 4,
+      "image_xref": 257,
+      "image_original_size": [
+        192,
+        192
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r3-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r3-c1-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel Higiénico Bulto 12 x 4 x 30 m aprox",
+      "slug": "mv-rep-1-8-p2-r3-c2",
+      "description": "Papel Higiénico Bulto 12 x 4 x 30 m aprox.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 900.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p2-r3-c2",
+      "source_url": "attachment:mv-rep-1-8/p2-r3-c2",
+      "source_page": 2,
+      "source_position": 8,
+      "source_text": "Papel Higiénico Bulto\n12 x 4 x 30 m aprox\nCódigo: 900\n$13.736",
+      "source_code": "900",
+      "source_price": 13736,
+      "price": 19917.2,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 258,
+      "image_original_size": [
+        192,
+        190
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r3-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r3-c2-thumb.webp"
+    },
+    {
+      "name": "Elegante Papel Higiénico Triple Hoja Bulto 6 x 4 x 30 m aprox",
+      "slug": "mv-rep-1-8-p2-r3-c3",
+      "description": "Papel Higiénico Triple Hoja Bulto 6 x 4 x 30 m aprox.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 950.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p2-r3-c3",
+      "source_url": "attachment:mv-rep-1-8/p2-r3-c3",
+      "source_page": 2,
+      "source_position": 9,
+      "source_text": "Papel Higiénico Triple Hoja\nBulto 6 x 4 x 30 m aprox\nCódigo: 950\n$17.348",
+      "source_code": "950",
+      "source_price": 17348,
+      "price": 25154.6,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 259,
+      "image_original_size": [
+        240,
+        221
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r3-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r3-c3-thumb.webp"
+    },
+    {
+      "name": "Elegante Rollo de Cocina Bulto 8 x 3 x 50 p",
+      "slug": "mv-rep-1-8-p2-r4-c1",
+      "description": "Rollo de Cocina Bulto 8 x 3 x 50 p.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 927.",
+      "source_id": "p2-r4-c1",
+      "source_url": "attachment:mv-rep-1-8/p2-r4-c1",
+      "source_page": 2,
+      "source_position": 10,
+      "source_text": "Rollo de Cocina Bulto\n8 x 3 x 50 p  \nCódigo: 927\n$10.325",
+      "source_code": "927",
+      "source_price": 10325,
+      "price": 14971.25,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Rollos de cocina",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 260,
+      "image_original_size": [
+        179,
+        179
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r4-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r4-c1-thumb.webp"
+    },
+    {
+      "name": "Elegante Rollo de Cocina Bulto 4 x 3 x 120 p",
+      "slug": "mv-rep-1-8-p2-r4-c2",
+      "description": "Rollo de Cocina Bulto 4 x 3 x 120 p.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 923.",
+      "source_id": "p2-r4-c2",
+      "source_url": "attachment:mv-rep-1-8/p2-r4-c2",
+      "source_page": 2,
+      "source_position": 11,
+      "source_text": "Rollo de Cocina Bulto\n4 x 3 x 120 p\nCódigo: 923\n$10.190",
+      "source_code": "923",
+      "source_price": 10190,
+      "price": 14775.5,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Rollos de cocina",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 261,
+      "image_original_size": [
+        198,
+        120
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r4-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r4-c2-thumb.webp"
+    },
+    {
+      "name": "Elegante Rollo de Cocina Bulto 4 x 3 x 100 p",
+      "slug": "mv-rep-1-8-p2-r4-c3",
+      "description": "Rollo de Cocina Bulto 4 x 3 x 100 p.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 930.",
+      "source_id": "p2-r4-c3",
+      "source_url": "attachment:mv-rep-1-8/p2-r4-c3",
+      "source_page": 2,
+      "source_position": 12,
+      "source_text": "Rollo de Cocina Bulto\n4 x 3 x 100 p\nCódigo: 930\n$11.716",
+      "source_code": "930",
+      "source_price": 11716,
+      "price": 16988.2,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Elegante",
+      "brand_slug": "elegante",
+      "category_slug": "limpieza",
+      "product_type": "Rollos de cocina",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 262,
+      "image_original_size": [
+        200,
+        130
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r4-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p2-r4-c3-thumb.webp"
+    },
+    {
+      "name": "Felpita Papel Higiénico Blanco Prem Con Precorte - 12 x 4 x 30 m",
+      "slug": "mv-rep-1-8-p3-r1-c1",
+      "description": "Papel Higiénico Blanco Prem Con Precorte - 12 x 4 x 30 m.\n\nPrecio por la presentación completa indicada.",
+      "source_id": "p3-r1-c1",
+      "source_url": "attachment:mv-rep-1-8/p3-r1-c1",
+      "source_page": 3,
+      "source_position": 1,
+      "source_text": "Papel Higiénico Blanco  Prem\nCon Precorte - 12 x 4 x 30 m\nCódigo: \n$14.275",
+      "source_code": null,
+      "source_price": 14275,
+      "price": 20698.75,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Felpita",
+      "brand_slug": "felpita",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 269,
+      "image_original_size": [
+        111,
+        98
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r1-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r1-c1-thumb.webp"
+    },
+    {
+      "name": "Felpita Papel Higiénico Blanco DH Prem Con Precorte - 10 x 4 x 30 m",
+      "slug": "mv-rep-1-8-p3-r1-c2",
+      "description": "Papel Higiénico Blanco DH Prem Con Precorte - 10 x 4 x 30 m.\n\nPrecio por la presentación completa indicada.",
+      "source_id": "p3-r1-c2",
+      "source_url": "attachment:mv-rep-1-8/p3-r1-c2",
+      "source_page": 3,
+      "source_position": 2,
+      "source_text": "Papel Higiénico Blanco DH Prem\nCon Precorte - 10 x 4 x 30 m\nCódigo: \n$20.850",
+      "source_code": null,
+      "source_price": 20850,
+      "price": 30232.5,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Felpita",
+      "brand_slug": "felpita",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 270,
+      "image_original_size": [
+        124,
+        104
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r1-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r1-c2-thumb.webp"
+    },
+    {
+      "name": "Felpita Papel Higiénico Blanco Prem Con Precorte - 10 x 4 x 80 m",
+      "slug": "mv-rep-1-8-p3-r1-c3",
+      "description": "Papel Higiénico Blanco Prem Con Precorte - 10 x 4 x 80 m.\n\nPrecio por la presentación completa indicada.",
+      "source_id": "p3-r1-c3",
+      "source_url": "attachment:mv-rep-1-8/p3-r1-c3",
+      "source_page": 3,
+      "source_position": 3,
+      "source_text": "Papel Higiénico Blanco  Prem\nCon Precorte - 10 x 4 x 80 m\nCódigo: \n$27.620",
+      "source_code": null,
+      "source_price": 27620,
+      "price": 40049.0,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Felpita",
+      "brand_slug": "felpita",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 271,
+      "image_original_size": [
+        119,
+        102
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r1-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r1-c3-thumb.webp"
+    },
+    {
+      "name": "Rollo de Cocina Cartabella 10 paq x 3 unid x 120 p",
+      "slug": "mv-rep-1-8-p3-r2-c1",
+      "description": "Rollo de Cocina Cartabella 10 paq x 3 unid x 120 p.\n\nPrecio por la presentación completa indicada.",
+      "source_id": "p3-r2-c1",
+      "source_url": "attachment:mv-rep-1-8/p3-r2-c1",
+      "source_page": 3,
+      "source_position": 4,
+      "source_text": "Rollo de Cocina Cartabella\n10 paq x 3 unid x 120 p\nCódigo: \n$10.976",
+      "source_code": null,
+      "source_price": 10976,
+      "price": 15915.2,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Cartabella",
+      "brand_slug": "cartabella",
+      "category_slug": "limpieza",
+      "product_type": "Rollos de cocina",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 272,
+      "image_original_size": [
+        119,
+        104
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r2-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r2-c1-thumb.webp"
+    },
+    {
+      "name": "Rollo de Cocina Felpita 12 paq x 1 unid x 200 p",
+      "slug": "mv-rep-1-8-p3-r2-c2",
+      "description": "Rollo de Cocina Felpita 12 paq x 1 unid x 200 p.\n\nPrecio por la presentación completa indicada.",
+      "source_id": "p3-r2-c2",
+      "source_url": "attachment:mv-rep-1-8/p3-r2-c2",
+      "source_page": 3,
+      "source_position": 5,
+      "source_text": "Rollo de Cocina Felpita \n12 paq x 1 unid x 200 p\nCódigo: \n$17.920",
+      "source_code": null,
+      "source_price": 17920,
+      "price": 25984.0,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Felpita",
+      "brand_slug": "felpita",
+      "category_slug": "limpieza",
+      "product_type": "Rollos de cocina",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 273,
+      "image_original_size": [
+        95,
+        105
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r2-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r2-c2-thumb.webp"
+    },
+    {
+      "name": "Felpita Papel higiénico SuperPack — paquete de 24 rollos x 30 m",
+      "slug": "mv-rep-1-8-p3-r2-c3",
+      "description": "SuperPack Felpita 3 paq x 24 unid x 30 mts.\n\nPrecio por paquete de 24 rollos de 30 metros. El proveedor también indica bulto de 3 paquetes.",
+      "source_id": "p3-r2-c3",
+      "source_url": "attachment:mv-rep-1-8/p3-r2-c3",
+      "source_page": 3,
+      "source_position": 6,
+      "source_text": "SuperPack Felpita \n3 paq x 24 unid x 30 mts\nCódigo: \nPrecio del Paquete: $6.884\nPrecio del Bulto x 3 paq. $20.652",
+      "source_code": null,
+      "source_price": 6884,
+      "price": 9981.8,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Felpita",
+      "brand_slug": "felpita",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "paquete",
+      "bulto_packages": 3,
+      "image_xref": 274,
+      "image_original_size": [
+        171,
+        148
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r2-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r2-c3-thumb.webp"
+    },
+    {
+      "name": "Nitidess Papel Higiénico Blanco 1 12 x 4 x 30 m",
+      "slug": "mv-rep-1-8-p3-r3-c1",
+      "description": "Papel Higiénico Blanco 1 12 x 4 x 30 m.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: N142.",
+      "source_id": "p3-r3-c1",
+      "source_url": "attachment:mv-rep-1-8/p3-r3-c1",
+      "source_page": 3,
+      "source_position": 7,
+      "source_text": "Papel Higiénico Blanco 1\n12 x 4 x 30 m\nCódigo: N142\n$10.600",
+      "source_code": "N142",
+      "source_price": 10600,
+      "price": 15370.0,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Nitidess",
+      "brand_slug": "nitidess",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 275,
+      "image_original_size": [
+        169,
+        200
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r3-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r3-c1-thumb.webp"
+    },
+    {
+      "name": "Newpel Papel Higienico valijita 12 x 30 m aprox HD",
+      "slug": "mv-rep-1-8-p3-r3-c2",
+      "description": "Papel Higienico valijita 12 x 30 m aprox HD.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 8.\n\nLos metros son aproximados según la lista del proveedor.",
+      "source_id": "p3-r3-c2",
+      "source_url": "attachment:mv-rep-1-8/p3-r3-c2",
+      "source_page": 3,
+      "source_position": 8,
+      "source_text": "Papel Higienico valijita\n12 x 30 m aprox HD\nCódigo: 8\n$5.720",
+      "source_code": "8",
+      "source_price": 5720,
+      "price": 8294.0,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Newpel",
+      "brand_slug": "newpel",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 276,
+      "image_original_size": [
+        110,
+        173
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r3-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r3-c2-thumb.webp"
+    },
+    {
+      "name": "Super Mega Rollo Newpel 12 unid x 200 paños",
+      "slug": "mv-rep-1-8-p3-r3-c3",
+      "description": "Super Mega Rollo Newpel 12 unid x 200 paños.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 27.",
+      "source_id": "p3-r3-c3",
+      "source_url": "attachment:mv-rep-1-8/p3-r3-c3",
+      "source_page": 3,
+      "source_position": 9,
+      "source_text": "Super Mega Rollo Newpel\n12 unid x 200 paños\nCódigo: 27\n$18.300",
+      "source_code": "27",
+      "source_price": 18300,
+      "price": 26535.0,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Newpel",
+      "brand_slug": "newpel",
+      "category_slug": "limpieza",
+      "product_type": "Rollos de cocina",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 277,
+      "image_original_size": [
+        201,
+        198
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r3-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r3-c3-thumb.webp"
+    },
+    {
+      "name": "Papel Higiénico Newpel Hoja Simple x 30 unid x 30 mts",
+      "slug": "mv-rep-1-8-p3-r4-c1",
+      "description": "Papel Higiénico Newpel Hoja Simple x 30 unid x 30 mts.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 1.",
+      "source_id": "p3-r4-c1",
+      "source_url": "attachment:mv-rep-1-8/p3-r4-c1",
+      "source_page": 3,
+      "source_position": 10,
+      "source_text": "Papel Higiénico Newpel Hoja\nSimple x 30 unid x 30 mts\nCódigo: 1\n$8.802",
+      "source_code": "1",
+      "source_price": 8802,
+      "price": 12762.9,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Newpel",
+      "brand_slug": "newpel",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 278,
+      "image_original_size": [
+        118,
+        159
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r4-c1.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r4-c1-thumb.webp"
+    },
+    {
+      "name": "Papel Higienico Newpel Hoja Simple x 30 unid x 60 mts",
+      "slug": "mv-rep-1-8-p3-r4-c2",
+      "description": "Papel Higienico Newpel Hoja Simple x 30 unid x 60 mts.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 10.",
+      "source_id": "p3-r4-c2",
+      "source_url": "attachment:mv-rep-1-8/p3-r4-c2",
+      "source_page": 3,
+      "source_position": 11,
+      "source_text": "Papel Higienico Newpel Hoja\nSimple x 30 unid x 60 mts\nCódigo: 10\n$14.490",
+      "source_code": "10",
+      "source_price": 14490,
+      "price": 21010.5,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Newpel",
+      "brand_slug": "newpel",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 279,
+      "image_original_size": [
+        166,
+        214
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r4-c2.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r4-c2-thumb.webp"
+    },
+    {
+      "name": "Papel Higiénico Newpel Hoja Simple x 30 unid x 50 mts",
+      "slug": "mv-rep-1-8-p3-r4-c3",
+      "description": "Papel Higiénico Newpel Hoja Simple x 30 unid x 50 mts.\n\nPrecio por la presentación completa indicada.\n\nCódigo del proveedor: 5.",
+      "source_id": "p3-r4-c3",
+      "source_url": "attachment:mv-rep-1-8/p3-r4-c3",
+      "source_page": 3,
+      "source_position": 12,
+      "source_text": "Papel Higiénico Newpel Hoja\nSimple x 30 unid x 50 mts\nCódigo: 5\n$11.482",
+      "source_code": "5",
+      "source_price": 11482,
+      "price": 16648.9,
+      "markup_percent": 45,
+      "compare_at_price": null,
+      "brand": "Newpel",
+      "brand_slug": "newpel",
+      "category_slug": "limpieza",
+      "product_type": "Papel higiénico",
+      "price_unit": "presentación indicada",
+      "bulto_packages": null,
+      "image_xref": 280,
+      "image_original_size": [
+        154,
+        232
+      ],
+      "image_urls": [
+        "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r4-c3.webp"
+      ],
+      "thumbnail_url": "/catalog/mv-rep-1-8/mv-rep-1-8-p3-r4-c3-thumb.webp"
+    }
+  ]
+}
