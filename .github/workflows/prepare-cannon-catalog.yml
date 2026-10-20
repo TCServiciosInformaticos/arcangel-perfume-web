@@ -36,7 +36,7 @@ jobs:
         run: |
           if [ ! -f scripts/catalog-data/cannon.json ]; then exit 0; fi
           git fetch origin main
-          if git show origin/main:scripts/catalog-data/cannon.json | python -c 'import json,sys; sys.exit(0 if json.load(sys.stdin).get("stage")=="prepared" else 1)'; then
+          if git show origin/main:scripts/catalog-data/cannon.json | python -c 'import json,sys; sys.exit(0 if json.load(sys.stdin).get("pricing")=="published" else 1)'; then
             echo "Prepared Cannon snapshot already stored; preserving reviewed data."
             exit 0
           fi
