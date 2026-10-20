@@ -15,13 +15,15 @@ import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, A
 const classificationQuery = queryOptions({
   queryKey: ["admin", "classification"],
   queryFn: async () => {
-    const [categories, subcategories] = await Promise.all([
+    const [categories, subcategories, types] = await Promise.all([
       supabase.from("categories").select("id,name,slug,sort_order").order("sort_order").order("name"),
       supabase.from("subcategories").select("id,name,slug,sort_order,category_id").order("sort_order").order("name"),
+      supabase.from("product_types").select("id,name,slug,sort_order,subcategory_id").order("sort_order").order("name"),
     ]);
+    if (types.error) throw types.error;
     if (categories.error) throw categories.error;
     if (subcategories.error) throw subcategories.error;
-    return { categories: categories.data ?? [], subcategories: subcategories.data ?? [] };
+    return { categories: categories.data ?? [], subcategories: subcategories.data ?? [], types: types.data ?? [] };
   },
 });
 
@@ -38,8 +40,8 @@ export const Route = createFileRoute("/_authenticated/admin/categorias")({
   component: AdminCategorias,
 });
 
-type Entry = { id: string; name: string; slug: string; sort_order: number; category_id?: string };
-type Editor = { kind: "categories" | "subcategories"; entry?: Entry; parent?: string };
+type Entry = { id: string; name: string; slug: string; sort_order: number; category_id?: string; subcategory_id?: string };
+type Editor = { kind: "categories" | "subcategories" | "product_types"; entry?: Entry; parent?: string };
 
 function AdminCategorias() {
   const { data } = useSuspenseQuery(classificationQuery);
@@ -54,7 +56,7 @@ function AdminCategorias() {
     mutationFn: async (target: Editor) => {
       if (!target.entry) return;
       const { error } = await supabase.from(target.kind).delete().eq("id", target.entry.id);
-      if (error?.code === "23503") throw new Error("No se puede eliminar: primero reasigná los productos o eliminá sus subcategorías.");
+      if (error?.code === "23503") throw new Error("No se puede eliminar: primero reasigná los productos o eliminá sus marcas y tipos.");
       if (error) throw error;
     },
     onSuccess: () => { refresh(); setDeleting(null); toast.success("Eliminado"); },
@@ -62,9 +64,9 @@ function AdminCategorias() {
   });
   return <div>
     <div className="flex flex-wrap items-center justify-between gap-3">
-      <h1 className="font-serif text-3xl text-foreground">Categorías y subcategorías</h1>
+      <h1 className="font-serif text-3xl text-foreground">Categorías, marcas y tipos</h1>
       <div className="flex flex-wrap gap-2">
-        <Button variant="outline" onClick={() => setEditor({ kind: "subcategories" })} disabled={!data.categories.length}><Plus className="size-4" /> Nueva subcategoría</Button>
+        <Button variant="outline" onClick={() => setEditor({ kind: "subcategories" })} disabled={!data.categories.length}><Plus className="size-4" /> Nueva marca</Button>
         <Button onClick={() => setEditor({ kind: "categories" })}><Plus className="size-4" /> Nueva categoría</Button>
       </div>
     </div>
@@ -73,56 +75,71 @@ function AdminCategorias() {
         <div className="flex items-center justify-between gap-3">
           <h2 className="flex items-center gap-2 text-lg font-semibold"><FolderTree className="size-5 text-primary" />{category.name}</h2>
           <div className="flex gap-1">
-            <Button size="sm" variant="outline" onClick={() => setEditor({ kind: "subcategories", parent: category.id })}><Plus className="size-4" /> Subcategoría</Button>
+            <Button size="sm" variant="outline" onClick={() => setEditor({ kind: "subcategories", parent: category.id })}><Plus className="size-4" /> Marca</Button>
             <Button size="icon" variant="ghost" aria-label={`Editar categoría ${category.name}`} title="Editar categoría" onClick={() => setEditor({ kind: "categories", entry: category })}><Pencil className="size-4" /></Button>
             <Button size="icon" variant="ghost" aria-label={`Eliminar categoría ${category.name}`} title="Eliminar categoría" onClick={() => setDeleting({ kind: "categories", entry: category })}><Trash2 className="size-4 text-destructive" /></Button>
           </div>
         </div>
         <div className="mt-2 ml-7 divide-y divide-border">
           {data.subcategories.filter((s) => s.category_id === category.id).map((s) => <div key={s.id} className="flex items-center justify-between gap-3 py-2">
-            <span>{s.name}</span>
-            <div className="flex gap-1">
-              <Button size="icon" variant="ghost" aria-label={`Editar subcategoría ${s.name}`} title="Editar subcategoría" onClick={() => setEditor({ kind: "subcategories", entry: s })}><Pencil className="size-4" /></Button>
-              <Button size="icon" variant="ghost" aria-label={`Eliminar subcategoría ${s.name}`} title="Eliminar subcategoría" onClick={() => setDeleting({ kind: "subcategories", entry: s })}><Trash2 className="size-4 text-destructive" /></Button>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center justify-between gap-3">
+                <span className="font-medium">{s.name} <span className="text-xs font-normal text-muted-foreground">· marca</span></span>
+                <div className="flex gap-1">
+                  <Button size="sm" variant="ghost" onClick={() => setEditor({ kind: "product_types", parent: s.id })}><Plus className="size-4" /> Tipo</Button>
+                  <Button size="icon" variant="ghost" aria-label={`Editar marca ${s.name}`} title="Editar marca" onClick={() => setEditor({ kind: "subcategories", entry: s })}><Pencil className="size-4" /></Button>
+                  <Button size="icon" variant="ghost" aria-label={`Eliminar marca ${s.name}`} title="Eliminar marca" onClick={() => setDeleting({ kind: "subcategories", entry: s })}><Trash2 className="size-4 text-destructive" /></Button>
+                </div>
+              </div>
+              <div className="ml-6">
+                {data.types.filter((t) => t.subcategory_id === s.id).map((t) => <div key={t.id} className="flex items-center justify-between gap-3 py-1 text-sm">
+                  <span>{t.name}</span>
+                  <div className="flex gap-1">
+                    <Button size="icon" variant="ghost" aria-label={`Editar tipo ${t.name}`} title="Editar tipo" onClick={() => setEditor({ kind: "product_types", entry: t })}><Pencil className="size-4" /></Button>
+                    <Button size="icon" variant="ghost" aria-label={`Eliminar tipo ${t.name}`} title="Eliminar tipo" onClick={() => setDeleting({ kind: "product_types", entry: t })}><Trash2 className="size-4 text-destructive" /></Button>
+                  </div>
+                </div>)}
+              </div>
             </div>
           </div>)}
         </div>
       </section>)}
       {!data.categories.length && <p className="py-8 text-muted-foreground">Sin categorías</p>}
     </div>
-    {editor && <ClassificationForm editor={editor} categories={data.categories} onClose={() => setEditor(null)} onSaved={refresh} />}
+    {editor && <ClassificationForm editor={editor} categories={data.categories} brands={data.subcategories} onClose={() => setEditor(null)} onSaved={refresh} />}
     <AlertDialog open={!!deleting} onOpenChange={(open) => { if (!open) setDeleting(null); }}>
-      <AlertDialogContent><AlertDialogHeader><AlertDialogTitle>¿Eliminar {deleting?.entry?.name}?</AlertDialogTitle><AlertDialogDescription>No se eliminará si tiene productos o subcategorías asignados.</AlertDialogDescription></AlertDialogHeader><AlertDialogFooter><AlertDialogCancel>Cancelar</AlertDialogCancel><AlertDialogAction disabled={remove.isPending} onClick={(event) => { event.preventDefault(); if (deleting) remove.mutate(deleting); }}>Eliminar</AlertDialogAction></AlertDialogFooter></AlertDialogContent>
+      <AlertDialogContent><AlertDialogHeader><AlertDialogTitle>¿Eliminar {deleting?.entry?.name}?</AlertDialogTitle><AlertDialogDescription>No se eliminará si tiene productos, marcas o tipos asignados.</AlertDialogDescription></AlertDialogHeader><AlertDialogFooter><AlertDialogCancel>Cancelar</AlertDialogCancel><AlertDialogAction disabled={remove.isPending} onClick={(event) => { event.preventDefault(); if (deleting) remove.mutate(deleting); }}>Eliminar</AlertDialogAction></AlertDialogFooter></AlertDialogContent>
     </AlertDialog>
   </div>;
 }
 
-function ClassificationForm({ editor, categories, onClose, onSaved }: { editor: Editor; categories: Entry[]; onClose: () => void; onSaved: () => void }) {
+function ClassificationForm({ editor, categories, brands, onClose, onSaved }: { editor: Editor; categories: Entry[]; brands: Entry[]; onClose: () => void; onSaved: () => void }) {
   const [name, setName] = useState(editor.entry?.name ?? "");
-  const [parent, setParent] = useState(editor.entry?.category_id ?? editor.parent ?? categories[0]?.id ?? "");
+  const isType = editor.kind === "product_types";
+  const parents = isType ? brands : categories;
+  const [parent, setParent] = useState(editor.entry?.subcategory_id ?? editor.entry?.category_id ?? editor.parent ?? parents[0]?.id ?? "");
   const [order, setOrder] = useState(editor.entry?.sort_order ?? 0);
   const save = useMutation({
     mutationFn: async () => {
       if (!name.trim() || !slugify(name)) throw new Error("Ingresá un nombre válido");
       const base = { name: name.trim(), slug: slugify(name), sort_order: order };
-      const payload = editor.kind === "subcategories" ? { ...base, category_id: parent } : base;
-      if (editor.kind === "subcategories" && !parent) throw new Error("Elegí una categoría");
-      const result = editor.entry
-        ? await supabase.from(editor.kind).update(payload).eq("id", editor.entry.id)
+      if (editor.kind !== "categories" && !parent) throw new Error(isType ? "Elegí una marca" : "Elegí una categoría");
+      const result = editor.kind === "categories"
+        ? editor.entry ? await supabase.from("categories").update(base).eq("id", editor.entry.id) : await supabase.from("categories").insert(base)
         : editor.kind === "subcategories"
-          ? await supabase.from("subcategories").insert({ ...base, category_id: parent })
-          : await supabase.from("categories").insert(base);
-      if (result.error?.code === "23505") throw new Error("Ya existe una categoría o subcategoría con ese nombre");
+          ? editor.entry ? await supabase.from("subcategories").update(base).eq("id", editor.entry.id) : await supabase.from("subcategories").insert({ ...base, category_id: parent })
+          : editor.entry ? await supabase.from("product_types").update(base).eq("id", editor.entry.id) : await supabase.from("product_types").insert({ ...base, subcategory_id: parent });
+      if (result.error?.code === "23505") throw new Error("Ya existe un elemento con ese nombre en este nivel");
       if (result.error) throw result.error;
     },
     onSuccess: () => { onSaved(); onClose(); toast.success("Guardado"); },
     onError: (error) => toast.error(error.message),
   });
-  const label = editor.kind === "categories" ? "categoría" : "subcategoría";
+  const label = editor.kind === "categories" ? "categoría" : editor.kind === "subcategories" ? "marca" : "tipo de producto";
   return <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}><DialogContent><DialogHeader><DialogTitle>{editor.entry ? "Editar" : "Nueva"} {label}</DialogTitle></DialogHeader>
     <form className="space-y-4" onSubmit={(event) => { event.preventDefault(); save.mutate(); }}>
       <div><Label htmlFor="classification-name">Nombre</Label><Input id="classification-name" value={name} onChange={(event) => setName(event.target.value)} required maxLength={100} /></div>
-      {editor.kind === "subcategories" && <div><Label htmlFor="classification-parent">Categoría</Label><Select value={parent} onValueChange={setParent} disabled={!!editor.entry}><SelectTrigger id="classification-parent"><SelectValue /></SelectTrigger><SelectContent>{categories.map((c) => <SelectItem value={c.id} key={c.id}>{c.name}</SelectItem>)}</SelectContent></Select></div>}
+      {editor.kind !== "categories" && <div><Label htmlFor="classification-parent">{isType ? "Marca" : "Categoría"}</Label><Select value={parent} onValueChange={setParent} disabled={!!editor.entry}><SelectTrigger id="classification-parent"><SelectValue /></SelectTrigger><SelectContent>{parents.map((c) => <SelectItem value={c.id} key={c.id}>{c.name}</SelectItem>)}</SelectContent></Select></div>}
       <div><Label htmlFor="classification-order">Orden</Label><Input id="classification-order" type="number" step="1" value={order} onChange={(event) => setOrder(Number(event.target.value))} required /></div>
       <DialogFooter><Button type="button" variant="outline" onClick={onClose}>Cancelar</Button><Button type="submit" disabled={save.isPending}>{save.isPending ? "Guardando…" : "Guardar"}</Button></DialogFooter>
     </form>
