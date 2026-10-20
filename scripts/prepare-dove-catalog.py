@@ -9,6 +9,8 @@ from urllib.request import Request,urlopen
 from bs4 import BeautifulSoup
 from PIL import Image,ImageOps
 BASE="https://doan.com.ar"
+# The manufacturer page identifies this exact EAN and its official product photo.
+OFFICIAL_IMAGES={"7791293051956":"https://assets.unileversolutions.com/v1/144533144.jpg"}
 URL=BASE+"/index.php?route=product/manufacturer/info&manufacturer_id=138"
 OUT=Path("public/catalog/dove");OUT.mkdir(parents=True,exist_ok=True)
 PATH=Path("scripts/catalog-data/dove.json")
@@ -16,6 +18,7 @@ if PATH.exists() and json.loads(PATH.read_text()).get("stage")=="prepared":
     print("Prepared Dove snapshot already stored.",flush=True);raise SystemExit(0)
 def secure(url):
     p=urlparse(urljoin(BASE,url))
+    if p.hostname=="assets.unileversolutions.com" and url in OFFICIAL_IMAGES.values(): return url
     if p.hostname not in {"doan.com.ar","www.doan.com.ar"}: raise ValueError("Unexpected source host: "+url)
     return urlunparse(p._replace(scheme="https"))
 def fetch(url):
@@ -23,7 +26,7 @@ def fetch(url):
     for attempt in range(3):
         try:
             with urlopen(Request(url,headers={"User-Agent":"Mozilla/5.0 (compatible; ArcangelCatalogImport/1.0)"}),timeout=45) as response:
-                if urlparse(response.url).hostname not in {"doan.com.ar","www.doan.com.ar"}: raise ValueError("Unexpected redirect")
+                if urlparse(response.url).hostname not in {"doan.com.ar","www.doan.com.ar","assets.unileversolutions.com"}: raise ValueError("Unexpected redirect")
                 return response.read()
         except Exception:
             if attempt==2: raise
@@ -114,7 +117,7 @@ def prepare(seed):
         ean=re.search(r"Código de Barra\s*([0-9]+)",raw,re.I)
         print("MISSING_IMAGE_DETAILS",name,json.dumps([img.attrs for img in doc.select(".thumbnails img")],ensure_ascii=False),"EAN",ean[1] if ean else None,flush=True)
         if not ean: raise ValueError("No genuine photo or barcode: "+name)
-        image_urls=[BASE+"/image/catalog/doan/"+ean[1]+".jpg"]
+        image_urls=[OFFICIAL_IMAGES.get(ean[1],BASE+"/image/catalog/doan/"+ean[1]+".jpg")]
     desc_node=doc.select_one("#tab-description")
     desc_text=desc_node.get_text(" ",strip=True) if desc_node else ""
     barcode=re.search(r"Código de Barra\s*([0-9]+)",desc_text,re.I)
