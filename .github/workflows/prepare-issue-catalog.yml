@@ -22,7 +22,14 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install beautifulsoup4==4.14.3 Pillow==12.0.0
       - name: Extract source catalog and store images
-        run: python scripts/prepare-issue-catalog.py
+        run: test -f scripts/catalog-data/issue.json || python scripts/prepare-issue-catalog.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Validate import rules and prepared catalog
+        run: |
+          npx --yes tsx@4.20.6 --test scripts/catalog-import.test.ts
+          npx --yes tsx@4.20.6 scripts/validate-issue-catalog.ts
       - name: Save reviewed import source
         run: |
           git config user.name "github-actions[bot]"
