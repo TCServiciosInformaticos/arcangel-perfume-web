@@ -57,3 +57,21 @@ test("Issue rejects remote photos and traversal paths", () => {
 test("Issue stored images are not accepted for other source hosts", () => {
   assert.throws(() => prepareCatalogProduct(source, ["/catalog/issue/issue-x.webp"], "cabello"));
 });
+
+test("Cannon imports preserve distinct sizes and require explicit zero-price authorization", () => {
+  const cannon = { ...source, source_url: "https://www.fraganciascannon.com/kevin?v=94", source_price: 0 };
+  const image = ["/catalog/cannon/cannon-94-kevin.webp"];
+  assert.throws(() => prepareCatalogProduct(cannon, image, "perfumes"));
+  const row = prepareCatalogProduct(cannon, image, "perfumes", { allowZeroPrice: true, slugPrefix: "cannon-94-" });
+  assert.equal(row.slug, "cannon-94-kevin");
+  assert.equal(row.price, 0);
+  assert.equal(row.stock, 0);
+  assert.equal(row.is_active, true);
+});
+test("Cannon rejects external and cross-source image paths", () => {
+  const cannon = { ...source, source_url: "https://www.fraganciascannon.com/kevin?v=94", source_price: 0 };
+  for (const path of ["https://www.fraganciascannon.com/image.webp", "/catalog/cannon/../image.webp", "/catalog/issue/issue-x.webp"]) {
+    assert.throws(() => prepareCatalogProduct(cannon, [path], "perfumes", { allowZeroPrice: true }));
+  }
+  assert.throws(() => prepareCatalogProduct(source, ["/catalog/cannon/cannon-94-kevin.webp"], "perfumes"));
+});
