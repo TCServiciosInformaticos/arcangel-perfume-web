@@ -1,0 +1,3176 @@
+{
+  "stage": "prepared",
+  "source": "https://doan.com.ar/index.php?route=product/manufacturer/info&manufacturer_id=138",
+  "count": 132,
+  "pricing": "published_current_including_tax",
+  "products": [
+    {
+      "source_id": "2573",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=2573&page=3",
+      "source_price": 3299.98,
+      "compare_at_price": 4704.19,
+      "name": "DOVE DEO ANT. PEPINO 150 m",
+      "slug": "dove-doan-2573",
+      "description": "DOVE DEO ANT. PEPINO 150 m.\n\nFragancia/Tono: PEPINO.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-2573.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-2573-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293048475-500x500.jpg"
+      ],
+      "barcode": "7791293048475",
+      "specifications": {
+        "Fragancia/Tono": "PEPINO",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "4260",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=4260&page=3",
+      "source_price": 3299.98,
+      "compare_at_price": 4704.19,
+      "name": "DOVE DEO ANT. INVISIBLE 150 m",
+      "slug": "dove-doan-4260",
+      "description": "DOVE DEO ANT. INVISIBLE 150 m.\n\nFragancia/Tono: INVISIBLE.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-4260.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-4260-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306241176-500x500.jpg"
+      ],
+      "barcode": "7506306241176",
+      "specifications": {
+        "Fragancia/Tono": "INVISIBLE",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "4261",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=4261&page=7",
+      "source_price": 2983.0,
+      "compare_at_price": null,
+      "name": "DOVE ROLL-ON ANT. x50ml. INVISIBLE",
+      "slug": "dove-doan-4261",
+      "description": "DOVE ROLL-ON ANT. x50ml. INVISIBLE.\n\nFragancia/Tono: INVISIBLE.\n\nMedida: 50 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-4261.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-4261-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/78924529-500x500.jpg"
+      ],
+      "barcode": "78924529",
+      "specifications": {
+        "Fragancia/Tono": "INVISIBLE",
+        "Medida": "50 ml."
+      }
+    },
+    {
+      "source_id": "4969",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=4969&page=4",
+      "source_price": 1559.99,
+      "compare_at_price": 2117.16,
+      "name": "DOVE JAB. EXFOLIANTE 90 G",
+      "slug": "dove-doan-4969",
+      "description": "DOVE JAB. EXFOLIANTE 90 G.\n\nFragancia/Tono: EXFOLIANTE.\n\nMedida: 90 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones",
+      "image_urls": [
+        "/catalog/dove/dove-doan-4969.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-4969-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7898422746827-500x500.jpg"
+      ],
+      "barcode": "7898422746827",
+      "specifications": {
+        "Fragancia/Tono": "EXFOLIANTE",
+        "Medida": "90 Grs"
+      }
+    },
+    {
+      "source_id": "9037",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=9037&page=3",
+      "source_price": 3299.98,
+      "compare_at_price": 4704.19,
+      "name": "DOVE DEO ANT. POMELO 150 m",
+      "slug": "dove-doan-9037",
+      "description": "DOVE DEO ANT. POMELO 150 m.\n\nFragancia/Tono: POMELO.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-9037.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-9037-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293048482-500x500.jpg"
+      ],
+      "barcode": "7791293048482",
+      "specifications": {
+        "Fragancia/Tono": "POMELO",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "14165",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=14165&page=6",
+      "source_price": 3269.99,
+      "compare_at_price": 4704.15,
+      "name": "DOVE MEN DEO ANT. CONFORT PROT. 150 m",
+      "slug": "dove-doan-14165",
+      "description": "DOVE MEN DEO ANT. CONFORT PROT. 150 m.\n\nFragancia/Tono: CONFORT PROT..\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-14165.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-14165-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293012087-500x500.jpg"
+      ],
+      "barcode": "7791293012087",
+      "specifications": {
+        "Fragancia/Tono": "CONFORT PROT.",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "14166",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=14166&page=6",
+      "source_price": 3269.99,
+      "compare_at_price": 4704.15,
+      "name": "DOVE MEN DEO ANT. EXT.FRESH 150 m",
+      "slug": "dove-doan-14166",
+      "description": "DOVE MEN DEO ANT. EXT.FRESH 150 m.\n\nFragancia/Tono: EXT.FRESH.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-14166.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-14166-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293012063-500x500.jpg"
+      ],
+      "barcode": "7791293012063",
+      "specifications": {
+        "Fragancia/Tono": "EXT.FRESH",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "14172",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=14172&page=6",
+      "source_price": 3155.85,
+      "compare_at_price": null,
+      "name": "DOVE MEN ROLL-ON EXT.FRESH 50 m",
+      "slug": "dove-doan-14172",
+      "description": "DOVE MEN ROLL-ON EXT.FRESH 50 m.\n\nFragancia/Tono: EXT.FRESH.\n\nMedida: 50 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-14172.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-14172-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/78925519-500x500.jpg"
+      ],
+      "barcode": "78925519",
+      "specifications": {
+        "Fragancia/Tono": "EXT.FRESH",
+        "Medida": "50 ml."
+      }
+    },
+    {
+      "source_id": "14173",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=14173&page=6",
+      "source_price": 3155.85,
+      "compare_at_price": null,
+      "name": "DOVE MEN ROLL-ON COMFORT PROT. 50 m",
+      "slug": "dove-doan-14173",
+      "description": "DOVE MEN ROLL-ON COMFORT PROT. 50 m.\n\nFragancia/Tono: COMFORT PROT..\n\nMedida: 50 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-14173.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-14173-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/77945532-500x500.jpg"
+      ],
+      "barcode": "77945532",
+      "specifications": {
+        "Fragancia/Tono": "COMFORT PROT.",
+        "Medida": "50 ml."
+      }
+    },
+    {
+      "source_id": "19506",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=19506&page=3",
+      "source_price": 3299.98,
+      "compare_at_price": 4704.4,
+      "name": "DOVE DEO ANT. ORIGINAL 150 m",
+      "slug": "dove-doan-19506",
+      "description": "DOVE DEO ANT. ORIGINAL 150 m.\n\nFragancia/Tono: ORIGINAL.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-19506.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-19506-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306241183-500x500.jpg"
+      ],
+      "barcode": "7506306241183",
+      "specifications": {
+        "Fragancia/Tono": "ORIGINAL",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "19913",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=19913&page=5",
+      "source_price": 2883.97,
+      "compare_at_price": 4751.73,
+      "name": "DOVE JAB.LIQ.P/MANOS x250ml. ORIG.",
+      "slug": "dove-doan-19913",
+      "description": "DOVE JAB.LIQ.P/MANOS x250ml. ORIG..\n\nFragancia/Tono: ORIG..\n\nMedida: 250 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-19913.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-19913-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293046112-500x500.jpg"
+      ],
+      "barcode": "7791293046112",
+      "specifications": {
+        "Fragancia/Tono": "ORIG.",
+        "Medida": "250 ml."
+      }
+    },
+    {
+      "source_id": "22137",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=22137&page=7",
+      "source_price": 2983.88,
+      "compare_at_price": null,
+      "name": "DOVE ROLL-ON ANT. x50ml. ORIGINAL",
+      "slug": "dove-doan-22137",
+      "description": "DOVE ROLL-ON ANT. x50ml. ORIGINAL.\n\nFragancia/Tono: ORIGINAL.\n\nMedida: 50 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-22137.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-22137-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/78924468-500x500.jpg"
+      ],
+      "barcode": "78924468",
+      "specifications": {
+        "Fragancia/Tono": "ORIGINAL",
+        "Medida": "50 ml."
+      }
+    },
+    {
+      "source_id": "22352",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=22352&page=5",
+      "source_price": 2026.99,
+      "compare_at_price": 3339.27,
+      "name": "DOVE JAB.LIQ.REP. x220ml. ORIG.",
+      "slug": "dove-doan-22352",
+      "description": "DOVE JAB.LIQ.REP. x220ml. ORIG..\n\nFragancia/Tono: ORIG..\n\nMedida: 220 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-22352.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-22352-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293046136-500x500.jpg"
+      ],
+      "barcode": "7791293046136",
+      "specifications": {
+        "Fragancia/Tono": "ORIG.",
+        "Medida": "220 ml."
+      }
+    },
+    {
+      "source_id": "22703",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=22703&page=6",
+      "source_price": 3269.99,
+      "compare_at_price": 4704.15,
+      "name": "DOVE MEN DEO ANT. INVIS-DRY 150 m",
+      "slug": "dove-doan-22703",
+      "description": "DOVE MEN DEO ANT. INVIS-DRY 150 m.\n\nFragancia/Tono: INVIS-DRY.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-22703.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-22703-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293022819-500x500.jpg"
+      ],
+      "barcode": "7791293022819",
+      "specifications": {
+        "Fragancia/Tono": "INVIS-DRY",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "23804",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=23804&page=6",
+      "source_price": 8154.63,
+      "compare_at_price": null,
+      "name": "DOVE MEN SH.2EN1 x400ml. FUERZA EXT",
+      "slug": "dove-doan-23804",
+      "description": "DOVE MEN SH.2EN1 x400ml. FUERZA EXT.\n\nFragancia/Tono: FUERZA EXT.\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-23804.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-23804-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293045511-500x500.jpg"
+      ],
+      "barcode": "7791293045511",
+      "specifications": {
+        "Fragancia/Tono": "FUERZA EXT",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "28423",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=28423&page=8",
+      "source_price": 4332.41,
+      "compare_at_price": null,
+      "name": "DOVE SH. RECON.COMP 200 m",
+      "slug": "dove-doan-28423",
+      "description": "DOVE SH. RECON.COMP 200 m.\n\nFragancia/Tono: RECON.COMP.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-28423.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-28423-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293046983-500x500.jpg"
+      ],
+      "barcode": "7791293046983",
+      "specifications": {
+        "Fragancia/Tono": "RECON.COMP",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "28426",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=28426&page=8",
+      "source_price": 4332.41,
+      "compare_at_price": null,
+      "name": "DOVE SH. OLEO NUTRI 200 m",
+      "slug": "dove-doan-28426",
+      "description": "DOVE SH. OLEO NUTRI 200 m.\n\nFragancia/Tono: OLEO NUTRI.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-28426.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-28426-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293046990-500x500.jpg"
+      ],
+      "barcode": "7791293046990",
+      "specifications": {
+        "Fragancia/Tono": "OLEO NUTRI",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "28432",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=28432&page=8",
+      "source_price": 4839.98,
+      "compare_at_price": 7974.42,
+      "name": "DOVE SH. RECON.COMP x400 m",
+      "slug": "dove-doan-28432",
+      "description": "DOVE SH. RECON.COMP x400 m.\n\nFragancia/Tono: RECON.COMP.\n\nMedida: x400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-28432.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-28432-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047102-500x500.jpg"
+      ],
+      "barcode": "7791293047102",
+      "specifications": {
+        "Fragancia/Tono": "RECON.COMP",
+        "Medida": "x400 ml."
+      }
+    },
+    {
+      "source_id": "28435",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=28435&page=8",
+      "source_price": 4839.98,
+      "compare_at_price": 7974.42,
+      "name": "DOVE SH. OLEO NUTRI x400 m",
+      "slug": "dove-doan-28435",
+      "description": "DOVE SH. OLEO NUTRI x400 m.\n\nFragancia/Tono: OLEO NUTRI.\n\nMedida: x400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-28435.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-28435-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047164-500x500.jpg"
+      ],
+      "barcode": "7791293047164",
+      "specifications": {
+        "Fragancia/Tono": "OLEO NUTRI",
+        "Medida": "x400 ml."
+      }
+    },
+    {
+      "source_id": "28449",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=28449",
+      "source_price": 4332.41,
+      "compare_at_price": null,
+      "name": "DOVE AC. RECON.COMP 200 m",
+      "slug": "dove-doan-28449",
+      "description": "DOVE AC. RECON.COMP 200 m.\n\nFragancia/Tono: RECON.COMP.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-28449.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-28449-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047058-500x500.jpg"
+      ],
+      "barcode": "7791293047058",
+      "specifications": {
+        "Fragancia/Tono": "RECON.COMP",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "28452",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=28452",
+      "source_price": 4332.41,
+      "compare_at_price": null,
+      "name": "DOVE AC. OLEO NUTRI 200 m",
+      "slug": "dove-doan-28452",
+      "description": "DOVE AC. OLEO NUTRI 200 m.\n\nFragancia/Tono: OLEO NUTRI.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-28452.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-28452-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047065-500x500.jpg"
+      ],
+      "barcode": "7791293047065",
+      "specifications": {
+        "Fragancia/Tono": "OLEO NUTRI",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "28458",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=28458",
+      "source_price": 4839.98,
+      "compare_at_price": 7974.42,
+      "name": "DOVE AC. RECON.COMP x400 m",
+      "slug": "dove-doan-28458",
+      "description": "DOVE AC. RECON.COMP x400 m.\n\nFragancia/Tono: RECON.COMP.\n\nMedida: x400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-28458.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-28458-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047508-500x500.jpg"
+      ],
+      "barcode": "7791293047508",
+      "specifications": {
+        "Fragancia/Tono": "RECON.COMP",
+        "Medida": "x400 ml."
+      }
+    },
+    {
+      "source_id": "28461",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=28461",
+      "source_price": 4839.98,
+      "compare_at_price": 7974.42,
+      "name": "DOVE AC. OLEO NUTRI x400 m",
+      "slug": "dove-doan-28461",
+      "description": "DOVE AC. OLEO NUTRI x400 m.\n\nFragancia/Tono: OLEO NUTRI.\n\nMedida: x400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-28461.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-28461-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047515-500x500.jpg"
+      ],
+      "barcode": "7791293047515",
+      "specifications": {
+        "Fragancia/Tono": "OLEO NUTRI",
+        "Medida": "x400 ml."
+      }
+    },
+    {
+      "source_id": "31093",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=31093&page=4",
+      "source_price": 1559.99,
+      "compare_at_price": 2117.16,
+      "name": "DOVE JAB. KARI-VAINI 90 G",
+      "slug": "dove-doan-31093",
+      "description": "DOVE JAB. KARI-VAINI 90 G.\n\nFragancia/Tono: KARI-VAINI.\n\nMedida: 90 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones",
+      "image_urls": [
+        "/catalog/dove/dove-doan-31093.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-31093-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150019560-500x500.jpg"
+      ],
+      "barcode": "7891150019560",
+      "specifications": {
+        "Fragancia/Tono": "KARI-VAINI",
+        "Medida": "90 Grs"
+      }
+    },
+    {
+      "source_id": "31107",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=31107&page=9",
+      "source_price": 5831.21,
+      "compare_at_price": null,
+      "name": "DOVE BABY SH. ENRIQ. 200 m",
+      "slug": "dove-doan-31107",
+      "description": "DOVE BABY SH. ENRIQ. 200 m.\n\nFragancia/Tono: ENRIQ..\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-31107.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-31107-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150025929-500x500.jpg"
+      ],
+      "barcode": "7891150025929",
+      "specifications": {
+        "Fragancia/Tono": "ENRIQ.",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "31109",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=31109&page=2",
+      "source_price": 9682.82,
+      "compare_at_price": null,
+      "name": "DOVE BABY SH. x400ml. ENRIQ.",
+      "slug": "dove-doan-31109",
+      "description": "DOVE BABY SH. x400ml. ENRIQ..\n\nFragancia/Tono: ENRIQ..\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-31109.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-31109-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150025950-500x500.jpg"
+      ],
+      "barcode": "7891150025950",
+      "specifications": {
+        "Fragancia/Tono": "ENRIQ.",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "31111",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=31111&page=2",
+      "source_price": 2994.98,
+      "compare_at_price": 5142.72,
+      "name": "DOVE BABY JAB.LIQ. SENSIBLE 200 m",
+      "slug": "dove-doan-31111",
+      "description": "DOVE BABY JAB.LIQ. SENSIBLE 200 m.\n\nFragancia/Tono: SENSIBLE.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-31111.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-31111-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150025967-500x500.jpg"
+      ],
+      "barcode": "7891150025967",
+      "specifications": {
+        "Fragancia/Tono": "SENSIBLE",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "31112",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=31112&page=2",
+      "source_price": 5142.72,
+      "compare_at_price": null,
+      "name": "DOVE BABY JAB.LIQ. ENRIQ. 200 m",
+      "slug": "dove-doan-31112",
+      "description": "DOVE BABY JAB.LIQ. ENRIQ. 200 m.\n\nFragancia/Tono: ENRIQ..\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-31112.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-31112-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150025981-500x500.jpg"
+      ],
+      "barcode": "7891150025981",
+      "specifications": {
+        "Fragancia/Tono": "ENRIQ.",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "31114",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=31114&page=2",
+      "source_price": 2099.98,
+      "compare_at_price": 3604.51,
+      "name": "DOVE BABY JAB.LIQ.REP. SENSIBLE 180 m",
+      "slug": "dove-doan-31114",
+      "description": "DOVE BABY JAB.LIQ.REP. SENSIBLE 180 m.\n\nFragancia/Tono: SENSIBLE.\n\nMedida: 180 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-31114.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-31114-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150035881-500x500.jpg"
+      ],
+      "barcode": "7891150035881",
+      "specifications": {
+        "Fragancia/Tono": "SENSIBLE",
+        "Medida": "180 ml."
+      }
+    },
+    {
+      "source_id": "31115",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=31115&page=2",
+      "source_price": 3604.51,
+      "compare_at_price": null,
+      "name": "DOVE BABY JAB.LIQ.REP. ENRIQ. 180 m",
+      "slug": "dove-doan-31115",
+      "description": "DOVE BABY JAB.LIQ.REP. ENRIQ. 180 m.\n\nFragancia/Tono: ENRIQ..\n\nMedida: 180 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-31115.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-31115-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150035874-500x500.jpg"
+      ],
+      "barcode": "7891150035874",
+      "specifications": {
+        "Fragancia/Tono": "ENRIQ.",
+        "Medida": "180 ml."
+      }
+    },
+    {
+      "source_id": "31117",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=31117&page=2",
+      "source_price": 1889.92,
+      "compare_at_price": null,
+      "name": "DOVE BABY JAB. x75Grs SENSIBLE",
+      "slug": "dove-doan-31117",
+      "description": "DOVE BABY JAB. x75Grs SENSIBLE.\n\nFragancia/Tono: SENSIBLE.\n\nMedida: 75 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones",
+      "image_urls": [
+        "/catalog/dove/dove-doan-31117.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-31117-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150025998-500x500.jpg"
+      ],
+      "barcode": "7891150025998",
+      "specifications": {
+        "Fragancia/Tono": "SENSIBLE",
+        "Medida": "75 Grs"
+      }
+    },
+    {
+      "source_id": "31118",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=31118&page=2",
+      "source_price": 1889.92,
+      "compare_at_price": null,
+      "name": "DOVE BABY JAB. x75Grs ENRIQ.",
+      "slug": "dove-doan-31118",
+      "description": "DOVE BABY JAB. x75Grs ENRIQ..\n\nFragancia/Tono: ENRIQ..\n\nMedida: 75 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones",
+      "image_urls": [
+        "/catalog/dove/dove-doan-31118.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-31118-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150026025-500x500.jpg"
+      ],
+      "barcode": "7891150026025",
+      "specifications": {
+        "Fragancia/Tono": "ENRIQ.",
+        "Medida": "75 Grs"
+      }
+    },
+    {
+      "source_id": "31129",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=31129&page=6",
+      "source_price": 3155.85,
+      "compare_at_price": null,
+      "name": "DOVE MEN ROLL-ON INVISIBLE 50 m",
+      "slug": "dove-doan-31129",
+      "description": "DOVE MEN ROLL-ON INVISIBLE 50 m.\n\nFragancia/Tono: INVISIBLE.\n\nMedida: 50 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-31129.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-31129-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/78933354-500x500.jpg"
+      ],
+      "barcode": "78933354",
+      "specifications": {
+        "Fragancia/Tono": "INVISIBLE",
+        "Medida": "50 ml."
+      }
+    },
+    {
+      "source_id": "33863",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=33863&page=4",
+      "source_price": 1559.99,
+      "compare_at_price": 2117.16,
+      "name": "DOVE JAB. COCO-NUTRI 90 G",
+      "slug": "dove-doan-33863",
+      "description": "DOVE JAB. COCO-NUTRI 90 G.\n\nFragancia/Tono: COCO-NUTRI.\n\nMedida: 90 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones",
+      "image_urls": [
+        "/catalog/dove/dove-doan-33863.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-33863-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150034075-500x500.jpg"
+      ],
+      "barcode": "7891150034075",
+      "specifications": {
+        "Fragancia/Tono": "COCO-NUTRI",
+        "Medida": "90 Grs"
+      }
+    },
+    {
+      "source_id": "34439",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=34439&page=6",
+      "source_price": 8154.63,
+      "compare_at_price": null,
+      "name": "DOVE MEN SH.3EN1 x400ml. SPORTS",
+      "slug": "dove-doan-34439",
+      "description": "DOVE MEN SH.3EN1 x400ml. SPORTS.\n\nFragancia/Tono: SPORTS.\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-34439.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-34439-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293045542-500x500.jpg"
+      ],
+      "barcode": "7791293045542",
+      "specifications": {
+        "Fragancia/Tono": "SPORTS",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "34446",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=34446&page=3",
+      "source_price": 3299.98,
+      "compare_at_price": 4704.19,
+      "name": "DOVE DEO ANT. PERA&ALOE 150 m",
+      "slug": "dove-doan-34446",
+      "description": "DOVE DEO ANT. PERA&ALOE 150 m.\n\nFragancia/Tono: PERA&ALOE.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-34446.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-34446-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293048505-500x500.jpg"
+      ],
+      "barcode": "7791293048505",
+      "specifications": {
+        "Fragancia/Tono": "PERA&ALOE",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "34884",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=34884&page=9",
+      "source_price": 2644.99,
+      "compare_at_price": 2989.55,
+      "name": "DOVE SH.REP.DOY RECON.COMP 180 m",
+      "slug": "dove-doan-34884",
+      "description": "DOVE SH.REP.DOY RECON.COMP 180 m.\n\nFragancia/Tono: RECON.COMP.\n\nMedida: 180 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-34884.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-34884-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293046921-500x500.jpg"
+      ],
+      "barcode": "7791293046921",
+      "specifications": {
+        "Fragancia/Tono": "RECON.COMP",
+        "Medida": "180 ml."
+      }
+    },
+    {
+      "source_id": "34885",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=34885",
+      "source_price": 2644.99,
+      "compare_at_price": 2989.55,
+      "name": "DOVE AC.REP.DOY RECON.COMP 180 m",
+      "slug": "dove-doan-34885",
+      "description": "DOVE AC.REP.DOY RECON.COMP 180 m.\n\nFragancia/Tono: RECON.COMP.\n\nMedida: 180 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-34885.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-34885-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293046938-500x500.jpg"
+      ],
+      "barcode": "7791293046938",
+      "specifications": {
+        "Fragancia/Tono": "RECON.COMP",
+        "Medida": "180 ml."
+      }
+    },
+    {
+      "source_id": "37042",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=37042&page=2",
+      "source_price": 5831.21,
+      "compare_at_price": null,
+      "name": "DOVE BABY SH. CAB.CLARO 200 m",
+      "slug": "dove-doan-37042",
+      "description": "DOVE BABY SH. CAB.CLARO 200 m.\n\nFragancia/Tono: CAB.CLARO.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-37042.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-37042-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150045316-500x500.jpg"
+      ],
+      "barcode": "7891150045316",
+      "specifications": {
+        "Fragancia/Tono": "CAB.CLARO",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "37043",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=37043&page=2",
+      "source_price": 5831.21,
+      "compare_at_price": null,
+      "name": "DOVE BABY AC. x200ml. ENRIQ.",
+      "slug": "dove-doan-37043",
+      "description": "DOVE BABY AC. x200ml. ENRIQ..\n\nFragancia/Tono: ENRIQ..\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-37043.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-37043-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150036390-500x500.jpg"
+      ],
+      "barcode": "7891150036390",
+      "specifications": {
+        "Fragancia/Tono": "ENRIQ.",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "37072",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=37072&page=7",
+      "source_price": 2983.87,
+      "compare_at_price": null,
+      "name": "DOVE ROLL-ON ANT. x50ml. GRANADA",
+      "slug": "dove-doan-37072",
+      "description": "DOVE ROLL-ON ANT. x50ml. GRANADA.\n\nFragancia/Tono: GRANADA.\n\nMedida: 50 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-37072.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-37072-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/78935068-500x500.jpg"
+      ],
+      "barcode": "78935068",
+      "specifications": {
+        "Fragancia/Tono": "GRANADA",
+        "Medida": "50 ml."
+      }
+    },
+    {
+      "source_id": "37074",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=37074&page=3",
+      "source_price": 3299.98,
+      "compare_at_price": 4704.4,
+      "name": "DOVE DEO ANT. GRANADA 150 m",
+      "slug": "dove-doan-37074",
+      "description": "DOVE DEO ANT. GRANADA 150 m.\n\nFragancia/Tono: GRANADA.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-37074.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-37074-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293033266-500x500.jpg"
+      ],
+      "barcode": "7791293033266",
+      "specifications": {
+        "Fragancia/Tono": "GRANADA",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "38085",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=38085&page=2",
+      "source_price": 6054.45,
+      "compare_at_price": null,
+      "name": "DOVE BARRA ANT. INVI-DRY x50Grs",
+      "slug": "dove-doan-38085",
+      "description": "DOVE BARRA ANT. INVI-DRY x50Grs.\n\nFragancia/Tono: INVI-DRY.\n\nMedida: 50 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-38085.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-38085-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/75082741-500x500.jpg"
+      ],
+      "barcode": "75082741",
+      "specifications": {
+        "Fragancia/Tono": "INVI-DRY",
+        "Medida": "50 Grs"
+      }
+    },
+    {
+      "source_id": "40814",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=40814&page=9",
+      "source_price": 4839.98,
+      "compare_at_price": 7974.42,
+      "name": "DOVE SH. REGENE.EXT x400 m",
+      "slug": "dove-doan-40814",
+      "description": "DOVE SH. REGENE.EXT x400 m.\n\nFragancia/Tono: REGENE.EXT.\n\nMedida: x400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-40814.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-40814-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047171-500x500.jpg"
+      ],
+      "barcode": "7791293047171",
+      "specifications": {
+        "Fragancia/Tono": "REGENE.EXT",
+        "Medida": "x400 ml."
+      }
+    },
+    {
+      "source_id": "40817",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=40817&page=8",
+      "source_price": 4332.41,
+      "compare_at_price": null,
+      "name": "DOVE SH. REGENE.EXT 200 m",
+      "slug": "dove-doan-40817",
+      "description": "DOVE SH. REGENE.EXT 200 m.\n\nFragancia/Tono: REGENE.EXT.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-40817.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-40817-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047003-500x500.jpg"
+      ],
+      "barcode": "7791293047003",
+      "specifications": {
+        "Fragancia/Tono": "REGENE.EXT",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "40823",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=40823",
+      "source_price": 4839.98,
+      "compare_at_price": 7974.42,
+      "name": "DOVE AC. REGENE.EXT x400 m",
+      "slug": "dove-doan-40823",
+      "description": "DOVE AC. REGENE.EXT x400 m.\n\nFragancia/Tono: REGENE.EXT.\n\nMedida: x400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-40823.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-40823-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047522-500x500.jpg"
+      ],
+      "barcode": "7791293047522",
+      "specifications": {
+        "Fragancia/Tono": "REGENE.EXT",
+        "Medida": "x400 ml."
+      }
+    },
+    {
+      "source_id": "40824",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=40824",
+      "source_price": 4332.41,
+      "compare_at_price": null,
+      "name": "DOVE AC. REGENE.EXT. 200 m",
+      "slug": "dove-doan-40824",
+      "description": "DOVE AC. REGENE.EXT. 200 m.\n\nFragancia/Tono: REGENE.EXT..\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-40824.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-40824-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047072-500x500.jpg"
+      ],
+      "barcode": "7791293047072",
+      "specifications": {
+        "Fragancia/Tono": "REGENE.EXT.",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "41364",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=41364&page=5",
+      "source_price": 5039.99,
+      "compare_at_price": 5698.46,
+      "name": "DOVE JAB.LIQ.ANTIB. x250ml. CUIDA&PRO",
+      "slug": "dove-doan-41364",
+      "description": "DOVE JAB.LIQ.ANTIB. x250ml. CUIDA&PRO.\n\nFragancia/Tono: CUIDA&PROT.\n\nMedida: 250 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-41364.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-41364-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293046129-500x500.jpg"
+      ],
+      "barcode": "7791293046129",
+      "specifications": {
+        "Fragancia/Tono": "CUIDA&PROT",
+        "Medida": "250 ml."
+      }
+    },
+    {
+      "source_id": "41365",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=41365&page=5",
+      "source_price": 4042.26,
+      "compare_at_price": null,
+      "name": "DOVE JAB.LIQ.REP.ANTIB. x220ml. CUIDA",
+      "slug": "dove-doan-41365",
+      "description": "DOVE JAB.LIQ.REP.ANTIB. x220ml. CUIDA.\n\nFragancia/Tono: CUIDA&PROT.\n\nMedida: 220 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-41365.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-41365-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293046150-500x500.jpg"
+      ],
+      "barcode": "7791293046150",
+      "specifications": {
+        "Fragancia/Tono": "CUIDA&PROT",
+        "Medida": "220 ml."
+      }
+    },
+    {
+      "source_id": "42860",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=42860&page=8",
+      "source_price": 4839.98,
+      "compare_at_price": 7974.42,
+      "name": "DOVE SH. COCO x400 m",
+      "slug": "dove-doan-42860",
+      "description": "DOVE SH. COCO x400 m.\n\nFragancia/Tono: COCO.\n\nMedida: x400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-42860.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-42860-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047447-500x500.jpg"
+      ],
+      "barcode": "7791293047447",
+      "specifications": {
+        "Fragancia/Tono": "COCO",
+        "Medida": "x400 ml."
+      }
+    },
+    {
+      "source_id": "42907",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=42907&page=8",
+      "source_price": 4332.41,
+      "compare_at_price": null,
+      "name": "DOVE SH. COCO RITUA 200 m",
+      "slug": "dove-doan-42907",
+      "description": "DOVE SH. COCO RITUA 200 m.\n\nFragancia/Tono: COCO RITUA.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-42907.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-42907-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047034-500x500.jpg"
+      ],
+      "barcode": "7791293047034",
+      "specifications": {
+        "Fragancia/Tono": "COCO RITUA",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "42908",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=42908",
+      "source_price": 4839.98,
+      "compare_at_price": 7974.42,
+      "name": "DOVE AC. COCO x400 m",
+      "slug": "dove-doan-42908",
+      "description": "DOVE AC. COCO x400 m.\n\nFragancia/Tono: COCO.\n\nMedida: x400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-42908.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-42908-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047492-500x500.jpg"
+      ],
+      "barcode": "7791293047492",
+      "specifications": {
+        "Fragancia/Tono": "COCO",
+        "Medida": "x400 ml."
+      }
+    },
+    {
+      "source_id": "42927",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=42927",
+      "source_price": 4289.0,
+      "compare_at_price": null,
+      "name": "DOVE AC. COCO 200 m",
+      "slug": "dove-doan-42927",
+      "description": "DOVE AC. COCO 200 m.\n\nFragancia/Tono: COCO.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-42927.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-42927-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293047041-500x500.jpg"
+      ],
+      "barcode": "7791293047041",
+      "specifications": {
+        "Fragancia/Tono": "COCO",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "43595",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=43595&page=4",
+      "source_price": 4977.99,
+      "compare_at_price": 6533.58,
+      "name": "DOVE DEO ANT. x250ml. ORIGINAL",
+      "slug": "dove-doan-43595",
+      "description": "DOVE DEO ANT. x250ml. ORIGINAL.\n\nFragancia/Tono: ORIGINAL.\n\nMedida: 250 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-43595.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-43595-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150081239-500x500.jpg"
+      ],
+      "barcode": "7891150081239",
+      "specifications": {
+        "Fragancia/Tono": "ORIGINAL",
+        "Medida": "250 ml."
+      }
+    },
+    {
+      "source_id": "43936",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=43936&page=5",
+      "source_price": 1559.98,
+      "compare_at_price": 2117.16,
+      "name": "DOVE JAB. ORIGINAL x90 Grs",
+      "slug": "dove-doan-43936",
+      "description": "DOVE JAB. ORIGINAL x90 Grs.\n\nFragancia/Tono: ORIGINAL.\n\nMedida: 90 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones",
+      "image_urls": [
+        "/catalog/dove/dove-doan-43936.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-43936-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293051208-500x500.jpg"
+      ],
+      "barcode": "7791293051208",
+      "specifications": {
+        "Fragancia/Tono": "ORIGINAL",
+        "Medida": "90 Grs"
+      }
+    },
+    {
+      "source_id": "43937",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=43937&page=4",
+      "source_price": 1559.99,
+      "compare_at_price": 2117.17,
+      "name": "DOVE JAB. CUIDA&ANTIBAC 90 G",
+      "slug": "dove-doan-43937",
+      "description": "DOVE JAB. CUIDA&ANTIBAC 90 G.\n\nFragancia/Tono: CUIDA&ANTIBAC.\n\nMedida: 90 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones",
+      "image_urls": [
+        "/catalog/dove/dove-doan-43937.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-43937-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150075382-500x500.jpg"
+      ],
+      "barcode": "7891150075382",
+      "specifications": {
+        "Fragancia/Tono": "CUIDA&ANTIBAC",
+        "Medida": "90 Grs"
+      }
+    },
+    {
+      "source_id": "44461",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=44461&page=6",
+      "source_price": 3269.99,
+      "compare_at_price": 4704.15,
+      "name": "DOVE MEN DEO ANT. ENERGY BOOST 150 m",
+      "slug": "dove-doan-44461",
+      "description": "DOVE MEN DEO ANT. ENERGY BOOST 150 m.\n\nFragancia/Tono: ENERGY BOOST.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-44461.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-44461-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306254459-500x500.jpg"
+      ],
+      "barcode": "7506306254459",
+      "specifications": {
+        "Fragancia/Tono": "ENERGY BOOST",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "46939",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=46939&page=5",
+      "source_price": 2026.99,
+      "compare_at_price": 3339.25,
+      "name": "DOVE JAB.LIQ.P/MANOS x220ml. CUI-RECO",
+      "slug": "dove-doan-46939",
+      "description": "DOVE JAB.LIQ.P/MANOS x220ml. CUI-RECO.\n\nFragancia/Tono: CUI-RECONF.\n\nMedida: 220 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-46939.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-46939-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293046143-500x500.jpg"
+      ],
+      "barcode": "7791293046143",
+      "specifications": {
+        "Fragancia/Tono": "CUI-RECONF",
+        "Medida": "220 ml."
+      }
+    },
+    {
+      "source_id": "47411",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=47411&page=6",
+      "source_price": 4530.99,
+      "compare_at_price": 6532.61,
+      "name": "DOVE MEN DEO ANT. CONFORT PROT. x250 ml.",
+      "slug": "dove-doan-47411",
+      "description": "DOVE MEN DEO ANT. CONFORT PROT. x250 ml..\n\nFragancia/Tono: CONFORT PROT..\n\nMedida: 250 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-47411.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-47411-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293051710-500x500.jpg"
+      ],
+      "barcode": "7791293051710",
+      "specifications": {
+        "Fragancia/Tono": "CONFORT PROT.",
+        "Medida": "250 ml."
+      }
+    },
+    {
+      "source_id": "47485",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=47485&page=3",
+      "source_price": 4114.99,
+      "compare_at_price": 7301.9,
+      "name": "DOVE CLINICAL (W) DEO x150ml.",
+      "slug": "dove-doan-47485",
+      "description": "DOVE CLINICAL (W) DEO x150ml..\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-47485.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-47485-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293049618-500x500.jpg"
+      ],
+      "barcode": "7791293049618",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "47527",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=47527",
+      "source_price": 4839.98,
+      "compare_at_price": 7974.42,
+      "name": "DOVE AC. BRILLO x400 m",
+      "slug": "dove-doan-47527",
+      "description": "DOVE AC. BRILLO x400 m.\n\nFragancia/Tono: BRILLO.\n\nMedida: x400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-47527.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-47527-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293050379-500x500.jpg"
+      ],
+      "barcode": "7791293050379",
+      "specifications": {
+        "Fragancia/Tono": "BRILLO",
+        "Medida": "x400 ml."
+      }
+    },
+    {
+      "source_id": "47528",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=47528",
+      "source_price": 4839.98,
+      "compare_at_price": 7974.42,
+      "name": "DOVE AC. HIDRAT. x400 m",
+      "slug": "dove-doan-47528",
+      "description": "DOVE AC. HIDRAT. x400 m.\n\nFragancia/Tono: HIDRAT..\n\nMedida: x400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-47528.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-47528-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293050355-500x500.jpg"
+      ],
+      "barcode": "7791293050355",
+      "specifications": {
+        "Fragancia/Tono": "HIDRAT.",
+        "Medida": "x400 ml."
+      }
+    },
+    {
+      "source_id": "47532",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=47532&page=8",
+      "source_price": 4839.98,
+      "compare_at_price": 7974.42,
+      "name": "DOVE SH. HIDRAT. x400 m",
+      "slug": "dove-doan-47532",
+      "description": "DOVE SH. HIDRAT. x400 m.\n\nFragancia/Tono: HIDRAT..\n\nMedida: x400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-47532.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-47532-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293050324-500x500.jpg"
+      ],
+      "barcode": "7791293050324",
+      "specifications": {
+        "Fragancia/Tono": "HIDRAT.",
+        "Medida": "x400 ml."
+      }
+    },
+    {
+      "source_id": "47751",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=47751&page=6",
+      "source_price": 4114.99,
+      "compare_at_price": 7301.87,
+      "name": "DOVE MEN CLINICAL DEO x150ml.",
+      "slug": "dove-doan-47751",
+      "description": "DOVE MEN CLINICAL DEO x150ml..\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-47751.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-47751-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293049625-500x500.jpg"
+      ],
+      "barcode": "7791293049625",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "48370",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48370&page=6",
+      "source_price": 8154.82,
+      "compare_at_price": null,
+      "name": "DOVE MEN SH.CASPA CONT. x400 ml.",
+      "slug": "dove-doan-48370",
+      "description": "DOVE MEN SH.CASPA CONT. x400 ml..\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48370.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48370-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150023529-500x500.jpg"
+      ],
+      "barcode": "7891150023529",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "48382",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48382&page=3",
+      "source_price": 5044.99,
+      "compare_at_price": 8313.38,
+      "name": "DOVE CR.MASC. x300Grs HIDRAT.",
+      "slug": "dove-doan-48382",
+      "description": "DOVE CR.MASC. x300Grs HIDRAT..\n\nFragancia/Tono: HIDRAT..\n\nMedida: 300 Grs.",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Máscaras",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48382.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48382-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293050881-500x500.jpg"
+      ],
+      "barcode": "7791293050881",
+      "specifications": {
+        "Fragancia/Tono": "HIDRAT.",
+        "Medida": "300 Grs"
+      }
+    },
+    {
+      "source_id": "48387",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48387&page=3",
+      "source_price": 5044.99,
+      "compare_at_price": 8313.38,
+      "name": "DOVE CR.MASC. x300Grs NUTRIT.",
+      "slug": "dove-doan-48387",
+      "description": "DOVE CR.MASC. x300Grs NUTRIT..\n\nFragancia/Tono: NUTRIT..\n\nMedida: 300 Grs.",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Máscaras",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48387.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48387-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293048642-500x500.jpg"
+      ],
+      "barcode": "7791293048642",
+      "specifications": {
+        "Fragancia/Tono": "NUTRIT.",
+        "Medida": "300 Grs"
+      }
+    },
+    {
+      "source_id": "48404",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48404&page=5",
+      "source_price": 1559.99,
+      "compare_at_price": 2117.16,
+      "name": "DOVE JAB. SENSIBLE 90 G",
+      "slug": "dove-doan-48404",
+      "description": "DOVE JAB. SENSIBLE 90 G.\n\nFragancia/Tono: SENSIBLE.\n\nMedida: 90 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48404.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48404-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150095618-500x500.jpg"
+      ],
+      "barcode": "7891150095618",
+      "specifications": {
+        "Fragancia/Tono": "SENSIBLE",
+        "Medida": "90 Grs"
+      }
+    },
+    {
+      "source_id": "48464",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48464&page=3",
+      "source_price": 5044.99,
+      "compare_at_price": 8313.38,
+      "name": "DOVE CR.MASC. x300Grs REGENERACION",
+      "slug": "dove-doan-48464",
+      "description": "DOVE CR.MASC. x300Grs REGENERACION.\n\nFragancia/Tono: REGENERACI.\n\nMedida: 300 Grs.",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Máscaras",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48464.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48464-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293048659-500x500.jpg"
+      ],
+      "barcode": "7791293048659",
+      "specifications": {
+        "Fragancia/Tono": "REGENERACI",
+        "Medida": "300 Grs"
+      }
+    },
+    {
+      "source_id": "48465",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48465&page=3",
+      "source_price": 5044.99,
+      "compare_at_price": 8313.38,
+      "name": "DOVE CR.MASC. x300Grs RECONSTRUCCION",
+      "slug": "dove-doan-48465",
+      "description": "DOVE CR.MASC. x300Grs RECONSTRUCCION.\n\nFragancia/Tono: RECONSTRUC.\n\nMedida: 300 Grs.",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Máscaras",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48465.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48465-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293048635-500x500.jpg"
+      ],
+      "barcode": "7791293048635",
+      "specifications": {
+        "Fragancia/Tono": "RECONSTRUC",
+        "Medida": "300 Grs"
+      }
+    },
+    {
+      "source_id": "48466",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48466&page=3",
+      "source_price": 12603.49,
+      "compare_at_price": null,
+      "name": "DOVE CLINICAL (W) BARRA x58Grs",
+      "slug": "dove-doan-48466",
+      "description": "DOVE CLINICAL (W) BARRA x58Grs.\n\nMedida: 58 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48466.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48466-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/75079437-500x500.jpg"
+      ],
+      "barcode": "75079437",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "58 Grs"
+      }
+    },
+    {
+      "source_id": "48551",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48551&page=9",
+      "source_price": 4722.0,
+      "compare_at_price": 5338.25,
+      "name": "DOVE SH.BOND INT. x200 ml.",
+      "slug": "dove-doan-48551",
+      "description": "DOVE SH.BOND INT. x200 ml..\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48551.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48551-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293051024-500x500.jpg"
+      ],
+      "barcode": "7791293051024",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "48552",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48552&page=9",
+      "source_price": 5427.99,
+      "compare_at_price": 8944.56,
+      "name": "DOVE SH.BOND INT. x400 ml.",
+      "slug": "dove-doan-48552",
+      "description": "DOVE SH.BOND INT. x400 ml..\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48552.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48552-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293051017-500x500.jpg"
+      ],
+      "barcode": "7791293051017",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "48553",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48553",
+      "source_price": 4588.99,
+      "compare_at_price": 7561.56,
+      "name": "DOVE AC.BOND INT. x250 ml.",
+      "slug": "dove-doan-48553",
+      "description": "DOVE AC.BOND INT. x250 ml..\n\nMedida: 250 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48553.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48553-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150097148-500x500.jpg"
+      ],
+      "barcode": "7891150097148",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "250 ml."
+      }
+    },
+    {
+      "source_id": "48554",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48554&page=5",
+      "source_price": 8745.99,
+      "compare_at_price": 14410.74,
+      "name": "DOVE MASC.BOND INT. x250 Grs",
+      "slug": "dove-doan-48554",
+      "description": "DOVE MASC.BOND INT. x250 Grs.\n\nMedida: 250 Grs.",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Máscaras",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48554.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48554-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150097131-500x500.jpg"
+      ],
+      "barcode": "7891150097131",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "250 Grs"
+      }
+    },
+    {
+      "source_id": "48555",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48555&page=6",
+      "source_price": 8999.99,
+      "compare_at_price": 14641.1,
+      "name": "DOVE OLEO BOND INT. x110 ml.",
+      "slug": "dove-doan-48555",
+      "description": "DOVE OLEO BOND INT. x110 ml..\n\nMedida: 110 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Óleos capilares",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48555.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48555-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150097124-500x500.jpg"
+      ],
+      "barcode": "7891150097124",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "110 ml."
+      }
+    },
+    {
+      "source_id": "48557",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48557&page=3",
+      "source_price": 12439.16,
+      "compare_at_price": null,
+      "name": "DOVE CR.BALSAMO P/TALON x90 Grs",
+      "slug": "dove-doan-48557",
+      "description": "DOVE CR.BALSAMO P/TALON x90 Grs.\n\nFragancia/Tono: P/TALON.\n\nMedida: 90 Grs.",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Cremas y lociones",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48557.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48557-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306253162-500x500.jpg"
+      ],
+      "barcode": "7506306253162",
+      "specifications": {
+        "Fragancia/Tono": "P/TALON",
+        "Medida": "90 Grs"
+      }
+    },
+    {
+      "source_id": "48558",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48558&page=8",
+      "source_price": 8087.0,
+      "compare_at_price": 12438.67,
+      "name": "DOVE SERUM CORPORAL CONCENTRAD x100 m",
+      "slug": "dove-doan-48558",
+      "description": "DOVE SERUM CORPORAL CONCENTRAD x100 m.\n\nFragancia/Tono: CONCENTRAD.\n\nMedida: 100 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48558.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48558-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306253070-500x500.jpg"
+      ],
+      "barcode": "7506306253070",
+      "specifications": {
+        "Fragancia/Tono": "CONCENTRAD",
+        "Medida": "100 ml."
+      }
+    },
+    {
+      "source_id": "48560",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48560&page=7",
+      "source_price": 12284.98,
+      "compare_at_price": 18888.64,
+      "name": "DOVE SERUM CORP. HIALURONICO 400 m",
+      "slug": "dove-doan-48560",
+      "description": "DOVE SERUM CORP. HIALURONICO 400 m.\n\nFragancia/Tono: HIALURONIC.\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48560.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48560-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306252851-500x500.jpg"
+      ],
+      "barcode": "7506306252851",
+      "specifications": {
+        "Fragancia/Tono": "HIALURONIC",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "48561",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48561&page=7",
+      "source_price": 12284.98,
+      "compare_at_price": 18888.64,
+      "name": "DOVE SERUM CORP. CERAMIDAS 400 m",
+      "slug": "dove-doan-48561",
+      "description": "DOVE SERUM CORP. CERAMIDAS 400 m.\n\nFragancia/Tono: CERAMIDAS.\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48561.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48561-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306252868-500x500.jpg"
+      ],
+      "barcode": "7506306252868",
+      "specifications": {
+        "Fragancia/Tono": "CERAMIDAS",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "48563",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48563&page=7",
+      "source_price": 7370.0,
+      "compare_at_price": 11338.63,
+      "name": "DOVE SERUM CORP. PANTENOL 200 G",
+      "slug": "dove-doan-48563",
+      "description": "DOVE SERUM CORP. PANTENOL 200 G.\n\nFragancia/Tono: PANTENOL.\n\nMedida: 200 Grs.",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48563.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48563-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306252974-500x500.jpg"
+      ],
+      "barcode": "7506306252974",
+      "specifications": {
+        "Fragancia/Tono": "PANTENOL",
+        "Medida": "200 Grs"
+      }
+    },
+    {
+      "source_id": "48564",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48564&page=7",
+      "source_price": 7370.0,
+      "compare_at_price": 11338.63,
+      "name": "DOVE SERUM CORP. PRO-RETINOL 200 G",
+      "slug": "dove-doan-48564",
+      "description": "DOVE SERUM CORP. PRO-RETINOL 200 G.\n\nFragancia/Tono: PRO-RETINO.\n\nMedida: 200 Grs.",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48564.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48564-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306252820-500x500.jpg"
+      ],
+      "barcode": "7506306252820",
+      "specifications": {
+        "Fragancia/Tono": "PRO-RETINO",
+        "Medida": "200 Grs"
+      }
+    },
+    {
+      "source_id": "48565",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48565&page=7",
+      "source_price": 7370.0,
+      "compare_at_price": 11338.63,
+      "name": "DOVE SERUM CORP. NIACINAMIDA 200 G",
+      "slug": "dove-doan-48565",
+      "description": "DOVE SERUM CORP. NIACINAMIDA 200 G.\n\nFragancia/Tono: NIACINAMID.\n\nMedida: 200 Grs.",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48565.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48565-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306252837-500x500.jpg"
+      ],
+      "barcode": "7506306252837",
+      "specifications": {
+        "Fragancia/Tono": "NIACINAMID",
+        "Medida": "200 Grs"
+      }
+    },
+    {
+      "source_id": "48567",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48567&page=7",
+      "source_price": 12284.98,
+      "compare_at_price": 18897.73,
+      "name": "DOVE SERUM CORP. PANTENOL 400 m",
+      "slug": "dove-doan-48567",
+      "description": "DOVE SERUM CORP. PANTENOL 400 m.\n\nFragancia/Tono: PANTENOL.\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48567.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48567-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306252844-500x500.jpg"
+      ],
+      "barcode": "7506306252844",
+      "specifications": {
+        "Fragancia/Tono": "PANTENOL",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "48568",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48568&page=8",
+      "source_price": 12284.98,
+      "compare_at_price": 18897.73,
+      "name": "DOVE SERUM CORP. PRO-RETINOL 400 m",
+      "slug": "dove-doan-48568",
+      "description": "DOVE SERUM CORP. PRO-RETINOL 400 m.\n\nFragancia/Tono: PRO-RETINO.\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48568.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48568-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306252882-500x500.jpg"
+      ],
+      "barcode": "7506306252882",
+      "specifications": {
+        "Fragancia/Tono": "PRO-RETINO",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "48569",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48569&page=7",
+      "source_price": 12284.98,
+      "compare_at_price": 18897.73,
+      "name": "DOVE SERUM CORP. NIACINAMIDA 400 m",
+      "slug": "dove-doan-48569",
+      "description": "DOVE SERUM CORP. NIACINAMIDA 400 m.\n\nFragancia/Tono: NIACINAMID.\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48569.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48569-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306252875-500x500.jpg"
+      ],
+      "barcode": "7506306252875",
+      "specifications": {
+        "Fragancia/Tono": "NIACINAMID",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "48571",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48571&page=7",
+      "source_price": 7370.0,
+      "compare_at_price": 11333.17,
+      "name": "DOVE SERUM CORP. HIALURONICO 200 m",
+      "slug": "dove-doan-48571",
+      "description": "DOVE SERUM CORP. HIALURONICO 200 m.\n\nFragancia/Tono: HIALURONIC.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48571.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48571-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306252806-500x500.jpg"
+      ],
+      "barcode": "7506306252806",
+      "specifications": {
+        "Fragancia/Tono": "HIALURONIC",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "48572",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48572&page=7",
+      "source_price": 7370.0,
+      "compare_at_price": 11333.17,
+      "name": "DOVE SERUM CORP. PRO-CERAMIDAS 200 m",
+      "slug": "dove-doan-48572",
+      "description": "DOVE SERUM CORP. PRO-CERAMIDAS 200 m.\n\nFragancia/Tono: PRO-CERAMI.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48572.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48572-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7506306252813-500x500.jpg"
+      ],
+      "barcode": "7506306252813",
+      "specifications": {
+        "Fragancia/Tono": "PRO-CERAMI",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "48809",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=48809&page=3",
+      "source_price": 5044.99,
+      "compare_at_price": 8313.38,
+      "name": "DOVE CR.MASC. RITUAL REPARA x300 Grs",
+      "slug": "dove-doan-48809",
+      "description": "DOVE CR.MASC. RITUAL REPARA x300 Grs.\n\nFragancia/Tono: RITUAL REP.\n\nMedida: 300 Grs.",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Máscaras",
+      "image_urls": [
+        "/catalog/dove/dove-doan-48809.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-48809-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293049014-500x500.jpg"
+      ],
+      "barcode": "7791293049014",
+      "specifications": {
+        "Fragancia/Tono": "RITUAL REP",
+        "Medida": "300 Grs"
+      }
+    },
+    {
+      "source_id": "49119",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49119&page=5",
+      "source_price": 4352.99,
+      "compare_at_price": 5906.53,
+      "name": "DOVE JAB. SENSIBLE 3X90 G",
+      "slug": "dove-doan-49119",
+      "description": "DOVE JAB. SENSIBLE 3X90 G.\n\nFragancia/Tono: SENSIBLE.\n\nMedida: 3X90 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49119.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49119-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150095700-500x500.jpg"
+      ],
+      "barcode": "7891150095700",
+      "specifications": {
+        "Fragancia/Tono": "SENSIBLE",
+        "Medida": "3X90 Grs"
+      }
+    },
+    {
+      "source_id": "49372",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49372&page=2",
+      "source_price": 9959.98,
+      "compare_at_price": 15317.51,
+      "name": "DOVE BARRA DEO VIT. COCO x74 G",
+      "slug": "dove-doan-49372",
+      "description": "DOVE BARRA DEO VIT. COCO x74 G.\n\nFragancia/Tono: COCO.\n\nMedida: x74 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49372.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49372-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/079400509062-500x500.jpg"
+      ],
+      "barcode": "0079400509062",
+      "specifications": {
+        "Fragancia/Tono": "COCO",
+        "Medida": "x74 Grs"
+      }
+    },
+    {
+      "source_id": "49373",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49373&page=2",
+      "source_price": 9959.98,
+      "compare_at_price": 15317.51,
+      "name": "DOVE BARRA DEO VIT. FRAMBUESA x74 G",
+      "slug": "dove-doan-49373",
+      "description": "DOVE BARRA DEO VIT. FRAMBUESA x74 G.\n\nFragancia/Tono: FRAMBUESA.\n\nMedida: x74 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49373.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49373-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/079400509048-500x500.jpg"
+      ],
+      "barcode": "0079400509048",
+      "specifications": {
+        "Fragancia/Tono": "FRAMBUESA",
+        "Medida": "x74 Grs"
+      }
+    },
+    {
+      "source_id": "49374",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49374&page=3",
+      "source_price": 9959.98,
+      "compare_at_price": 15317.51,
+      "name": "DOVE BARRA DEO VIT. LAVANDA x74 G",
+      "slug": "dove-doan-49374",
+      "description": "DOVE BARRA DEO VIT. LAVANDA x74 G.\n\nFragancia/Tono: LAVANDA.\n\nMedida: x74 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49374.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49374-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/079400509093-500x500.jpg"
+      ],
+      "barcode": "0079400509093",
+      "specifications": {
+        "Fragancia/Tono": "LAVANDA",
+        "Medida": "x74 Grs"
+      }
+    },
+    {
+      "source_id": "49565",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49565&page=4",
+      "source_price": 3299.98,
+      "compare_at_price": 4703.83,
+      "name": "DOVE DEO ANT. SENSITIVE 150 m",
+      "slug": "dove-doan-49565",
+      "description": "DOVE DEO ANT. SENSITIVE 150 m.\n\nFragancia/Tono: SENSITIVE.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49565.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49565-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293033273-500x500.jpg"
+      ],
+      "barcode": "7791293033273",
+      "specifications": {
+        "Fragancia/Tono": "SENSITIVE",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "49573",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49573&page=7",
+      "source_price": 2983.88,
+      "compare_at_price": null,
+      "name": "DOVE ROLL-ON ANT. DURAZNO x50 ml.",
+      "slug": "dove-doan-49573",
+      "description": "DOVE ROLL-ON ANT. DURAZNO x50 ml..\n\nFragancia/Tono: DURAZNO.\n\nMedida: 50 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49573.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49573-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/78948310-500x500.jpg"
+      ],
+      "barcode": "78948310",
+      "specifications": {
+        "Fragancia/Tono": "DURAZNO",
+        "Medida": "50 ml."
+      }
+    },
+    {
+      "source_id": "49837",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49837&page=4",
+      "source_price": 3052.99,
+      "compare_at_price": 4694.65,
+      "name": "DOVE DEO SERUM CR. SENSIBLE x50 G",
+      "slug": "dove-doan-49837",
+      "description": "DOVE DEO SERUM CR. SENSIBLE x50 G.\n\nFragancia/Tono: SENSIBLE.\n\nMedida: x50 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49837.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49837-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150096790-500x500.jpg"
+      ],
+      "barcode": "7891150096790",
+      "specifications": {
+        "Fragancia/Tono": "SENSIBLE",
+        "Medida": "x50 Grs"
+      }
+    },
+    {
+      "source_id": "49838",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49838&page=4",
+      "source_price": 3052.99,
+      "compare_at_price": 4694.65,
+      "name": "DOVE DEO SERUM CR. OSCURE x50 G",
+      "slug": "dove-doan-49838",
+      "description": "DOVE DEO SERUM CR. OSCURE x50 G.\n\nFragancia/Tono: OSCURE.\n\nMedida: x50 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49838.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49838-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150096783-500x500.jpg"
+      ],
+      "barcode": "7891150096783",
+      "specifications": {
+        "Fragancia/Tono": "OSCURE",
+        "Medida": "x50 Grs"
+      }
+    },
+    {
+      "source_id": "49839",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49839&page=4",
+      "source_price": 3052.99,
+      "compare_at_price": 4694.65,
+      "name": "DOVE DEO SERUM CR. DIARIA x50 G",
+      "slug": "dove-doan-49839",
+      "description": "DOVE DEO SERUM CR. DIARIA x50 G.\n\nFragancia/Tono: DIARIA.\n\nMedida: x50 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49839.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49839-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150094741-500x500.jpg"
+      ],
+      "barcode": "7891150094741",
+      "specifications": {
+        "Fragancia/Tono": "DIARIA",
+        "Medida": "x50 Grs"
+      }
+    },
+    {
+      "source_id": "49849",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49849&page=6",
+      "source_price": 4111.99,
+      "compare_at_price": 6323.82,
+      "name": "DOVE MEN DEO BODY SHEA 150 m",
+      "slug": "dove-doan-49849",
+      "description": "DOVE MEN DEO BODY SHEA 150 m.\n\nFragancia/Tono: SHEA.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49849.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49849-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293051635-500x500.jpg"
+      ],
+      "barcode": "7791293051635",
+      "specifications": {
+        "Fragancia/Tono": "SHEA",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "49850",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49850&page=6",
+      "source_price": 4111.99,
+      "compare_at_price": 6323.82,
+      "name": "DOVE MEN DEO BODY FIG SUEDE 150 m",
+      "slug": "dove-doan-49850",
+      "description": "DOVE MEN DEO BODY FIG SUEDE 150 m.\n\nFragancia/Tono: FIG SUEDE.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49850.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49850-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293051642-500x500.jpg"
+      ],
+      "barcode": "7791293051642",
+      "specifications": {
+        "Fragancia/Tono": "FIG SUEDE",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "49852",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49852&page=4",
+      "source_price": 6751.65,
+      "compare_at_price": null,
+      "name": "DOVE DEO CR. LAVANDA 75 G",
+      "slug": "dove-doan-49852",
+      "description": "DOVE DEO CR. LAVANDA 75 G.\n\nFragancia/Tono: LAVANDA.\n\nMedida: 75 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49852.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49852-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150102811-500x500.jpg"
+      ],
+      "barcode": "7891150102811",
+      "specifications": {
+        "Fragancia/Tono": "LAVANDA",
+        "Medida": "75 Grs"
+      }
+    },
+    {
+      "source_id": "49853",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49853&page=4",
+      "source_price": 6751.65,
+      "compare_at_price": null,
+      "name": "DOVE DEO CR. RASPBERRY 75 G",
+      "slug": "dove-doan-49853",
+      "description": "DOVE DEO CR. RASPBERRY 75 G.\n\nFragancia/Tono: RASPBERRY.\n\nMedida: 75 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49853.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49853-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150102828-500x500.jpg"
+      ],
+      "barcode": "7891150102828",
+      "specifications": {
+        "Fragancia/Tono": "RASPBERRY",
+        "Medida": "75 Grs"
+      }
+    },
+    {
+      "source_id": "49855",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49855&page=4",
+      "source_price": 4111.99,
+      "compare_at_price": 6324.09,
+      "name": "DOVE DEO BODY LAVANDA 150 m",
+      "slug": "dove-doan-49855",
+      "description": "DOVE DEO BODY LAVANDA 150 m.\n\nFragancia/Tono: LAVANDA.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49855.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49855-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293051659-500x500.jpg"
+      ],
+      "barcode": "7791293051659",
+      "specifications": {
+        "Fragancia/Tono": "LAVANDA",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "49856",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=49856&page=4",
+      "source_price": 4111.99,
+      "compare_at_price": 6324.09,
+      "name": "DOVE DEO BODY RASPBERRY 150 m",
+      "slug": "dove-doan-49856",
+      "description": "DOVE DEO BODY RASPBERRY 150 m.\n\nFragancia/Tono: RASPBERRY.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-49856.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-49856-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293051666-500x500.jpg"
+      ],
+      "barcode": "7791293051666",
+      "specifications": {
+        "Fragancia/Tono": "RASPBERRY",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "50143",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50143&page=8",
+      "source_price": 15146.99,
+      "compare_at_price": 22829.08,
+      "name": "DOVE SERUM OLEO HIDRAT. 150 m",
+      "slug": "dove-doan-50143",
+      "description": "DOVE SERUM OLEO HIDRAT. 150 m.\n\nFragancia/Tono: HIDRAT..\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50143.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50143-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150104853-500x500.jpg"
+      ],
+      "barcode": "7891150104853",
+      "specifications": {
+        "Fragancia/Tono": "HIDRAT.",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "50145",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50145&page=8",
+      "source_price": 15146.99,
+      "compare_at_price": 22829.08,
+      "name": "DOVE SERUM OLEO UNIFORME 150 m",
+      "slug": "dove-doan-50145",
+      "description": "DOVE SERUM OLEO UNIFORME 150 m.\n\nFragancia/Tono: UNIFORME.\n\nMedida: 150 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50145.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50145-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150104860-500x500.jpg"
+      ],
+      "barcode": "7891150104860",
+      "specifications": {
+        "Fragancia/Tono": "UNIFORME",
+        "Medida": "150 ml."
+      }
+    },
+    {
+      "source_id": "50146",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50146&page=7",
+      "source_price": 8999.99,
+      "compare_at_price": 14641.1,
+      "name": "DOVE OLEO UV REPAIR x110 ml.",
+      "slug": "dove-doan-50146",
+      "description": "DOVE OLEO UV REPAIR x110 ml..\n\nMedida: 110 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Óleos capilares",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50146.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50146-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150103504-500x500.jpg"
+      ],
+      "barcode": "7891150103504",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "110 ml."
+      }
+    },
+    {
+      "source_id": "50147",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50147&page=5",
+      "source_price": 8745.99,
+      "compare_at_price": 14410.74,
+      "name": "DOVE MASC.UV REPAIR x250 Grs",
+      "slug": "dove-doan-50147",
+      "description": "DOVE MASC.UV REPAIR x250 Grs.\n\nMedida: 250 Grs.",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Máscaras",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50147.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50147-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150103481-500x500.jpg"
+      ],
+      "barcode": "7891150103481",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "250 Grs"
+      }
+    },
+    {
+      "source_id": "50148",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50148",
+      "source_price": 4588.99,
+      "compare_at_price": 7561.56,
+      "name": "DOVE AC.UV REPAIR x250 ml.",
+      "slug": "dove-doan-50148",
+      "description": "DOVE AC.UV REPAIR x250 ml..\n\nMedida: 250 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50148.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50148-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150103474-500x500.jpg"
+      ],
+      "barcode": "7891150103474",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "250 ml."
+      }
+    },
+    {
+      "source_id": "50149",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50149&page=9",
+      "source_price": 4722.0,
+      "compare_at_price": 5338.25,
+      "name": "DOVE SH.UV REPAIR x200 ml.",
+      "slug": "dove-doan-50149",
+      "description": "DOVE SH.UV REPAIR x200 ml..\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50149.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50149-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150104822-500x500.jpg"
+      ],
+      "barcode": "7891150104822",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "50150",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50150&page=9",
+      "source_price": 5427.99,
+      "compare_at_price": 8944.56,
+      "name": "DOVE SH.UV REPAIR x400 ml.",
+      "slug": "dove-doan-50150",
+      "description": "DOVE SH.UV REPAIR x400 ml..\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50150.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50150-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150104839-500x500.jpg"
+      ],
+      "barcode": "7891150104839",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "50365",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50365&page=2",
+      "source_price": 3604.51,
+      "compare_at_price": null,
+      "name": "DOVE BABY JAB.LIQ.REP. GLICERINA 180 m",
+      "slug": "dove-doan-50365",
+      "description": "DOVE BABY JAB.LIQ.REP. GLICERINA 180 m.\n\nFragancia/Tono: GLICERINA.\n\nMedida: 180 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50365.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50365-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150065338-500x500.jpg"
+      ],
+      "barcode": "7891150065338",
+      "specifications": {
+        "Fragancia/Tono": "GLICERINA",
+        "Medida": "180 ml."
+      }
+    },
+    {
+      "source_id": "50366",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50366&page=2",
+      "source_price": 5142.72,
+      "compare_at_price": null,
+      "name": "DOVE BABY JAB.LIQ. GLICERINA 200 m",
+      "slug": "dove-doan-50366",
+      "description": "DOVE BABY JAB.LIQ. GLICERINA 200 m.\n\nFragancia/Tono: GLICERINA.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50366.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50366-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150065291-500x500.jpg"
+      ],
+      "barcode": "7891150065291",
+      "specifications": {
+        "Fragancia/Tono": "GLICERINA",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "50912",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50912&page=4",
+      "source_price": 45101.0,
+      "compare_at_price": 79043.7,
+      "name": "DOVE EXHIB.RE-LANZAMIENTO x8 Un.",
+      "slug": "dove-doan-50912",
+      "description": "DOVE EXHIB.RE-LANZAMIENTO x8 Un..\n\nMedida: 8 Un..",
+      "brand": "Dove",
+      "category_slug": "accesorios",
+      "product_type": "Exhibidores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50912.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50912-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/27791293052377-500x500.jpg"
+      ],
+      "barcode": "27791293052377",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "8 Un."
+      }
+    },
+    {
+      "source_id": "50943",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50943&page=9",
+      "source_price": 8839.0,
+      "compare_at_price": 14565.75,
+      "name": "DOVE TRAT.LEAVE RECON+AMINO 110 m",
+      "slug": "dove-doan-50943",
+      "description": "DOVE TRAT.LEAVE RECON+AMINO 110 m.\n\nFragancia/Tono: RECON+AMINO.\n\nMedida: 110 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos sin enjuague",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50943.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50943-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150102958-500x500.jpg"
+      ],
+      "barcode": "7891150102958",
+      "specifications": {
+        "Fragancia/Tono": "RECON+AMINO",
+        "Medida": "110 ml."
+      }
+    },
+    {
+      "source_id": "50944",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50944&page=9",
+      "source_price": 8839.0,
+      "compare_at_price": 14565.75,
+      "name": "DOVE TRAT.LEAVE NUTRI+OLEOS 110 m",
+      "slug": "dove-doan-50944",
+      "description": "DOVE TRAT.LEAVE NUTRI+OLEOS 110 m.\n\nFragancia/Tono: NUTRI+OLEOS.\n\nMedida: 110 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos sin enjuague",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50944.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50944-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150103122-500x500.jpg"
+      ],
+      "barcode": "7891150103122",
+      "specifications": {
+        "Fragancia/Tono": "NUTRI+OLEOS",
+        "Medida": "110 ml."
+      }
+    },
+    {
+      "source_id": "50957",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50957",
+      "source_price": 2644.99,
+      "compare_at_price": 2989.55,
+      "name": "DOVE AC.REP.DOY REGENERACION 180 m",
+      "slug": "dove-doan-50957",
+      "description": "DOVE AC.REP.DOY REGENERACION 180 m.\n\nFragancia/Tono: REGENERACION.\n\nMedida: 180 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50957.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50957-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293051932-500x500.jpg"
+      ],
+      "barcode": "7791293051932",
+      "specifications": {
+        "Fragancia/Tono": "REGENERACION",
+        "Medida": "180 ml."
+      }
+    },
+    {
+      "source_id": "50958",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50958&page=9",
+      "source_price": 2644.99,
+      "compare_at_price": 2989.55,
+      "name": "DOVE SH.REP.DOY REGENERACION 180 m",
+      "slug": "dove-doan-50958",
+      "description": "DOVE SH.REP.DOY REGENERACION 180 m.\n\nFragancia/Tono: REGENERACION.\n\nMedida: 180 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50958.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50958-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293051925-500x500.jpg"
+      ],
+      "barcode": "7791293051925",
+      "specifications": {
+        "Fragancia/Tono": "REGENERACION",
+        "Medida": "180 ml."
+      }
+    },
+    {
+      "source_id": "50965",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50965&page=5",
+      "source_price": 8999.98,
+      "compare_at_price": 13356.88,
+      "name": "DOVE JAB.LIQ.CORP. ACNE 300 m",
+      "slug": "dove-doan-50965",
+      "description": "DOVE JAB.LIQ.CORP. ACNE 300 m.\n\nFragancia/Tono: ACNE.\n\nMedida: 300 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50965.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50965-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/8934868194286-500x500.jpg"
+      ],
+      "barcode": "8934868194286",
+      "specifications": {
+        "Fragancia/Tono": "ACNE",
+        "Medida": "300 ml."
+      }
+    },
+    {
+      "source_id": "50966",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50966&page=5",
+      "source_price": 8999.98,
+      "compare_at_price": 13356.88,
+      "name": "DOVE JAB.LIQ.CORP. RADIANT 300 m",
+      "slug": "dove-doan-50966",
+      "description": "DOVE JAB.LIQ.CORP. RADIANT 300 m.\n\nFragancia/Tono: RADIANT.\n\nMedida: 300 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50966.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50966-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/8934868194309-500x500.jpg"
+      ],
+      "barcode": "8934868194309",
+      "specifications": {
+        "Fragancia/Tono": "RADIANT",
+        "Medida": "300 ml."
+      }
+    },
+    {
+      "source_id": "50967",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50967&page=5",
+      "source_price": 8999.98,
+      "compare_at_price": 13356.88,
+      "name": "DOVE JAB.LIQ.CORP. INT.HYDRAT. 300 m",
+      "slug": "dove-doan-50967",
+      "description": "DOVE JAB.LIQ.CORP. INT.HYDRAT. 300 m.\n\nFragancia/Tono: INT.HYDRAT..\n\nMedida: 300 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50967.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50967-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/8934868194323-500x500.jpg"
+      ],
+      "barcode": "8934868194323",
+      "specifications": {
+        "Fragancia/Tono": "INT.HYDRAT.",
+        "Medida": "300 ml."
+      }
+    },
+    {
+      "source_id": "50968",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50968&page=5",
+      "source_price": 8999.98,
+      "compare_at_price": 13356.88,
+      "name": "DOVE JAB.LIQ.CORP. UNIFORM SKIN 300 m",
+      "slug": "dove-doan-50968",
+      "description": "DOVE JAB.LIQ.CORP. UNIFORM SKIN 300 m.\n\nFragancia/Tono: UNIFORM SKIN.\n\nMedida: 300 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50968.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50968-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/8934868194347-500x500.jpg"
+      ],
+      "barcode": "8934868194347",
+      "specifications": {
+        "Fragancia/Tono": "UNIFORM SKIN",
+        "Medida": "300 ml."
+      }
+    },
+    {
+      "source_id": "50969",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50969&page=5",
+      "source_price": 8999.98,
+      "compare_at_price": 13356.88,
+      "name": "DOVE JAB.LIQ.CORP. SKIN FIRMING 300 m",
+      "slug": "dove-doan-50969",
+      "description": "DOVE JAB.LIQ.CORP. SKIN FIRMING 300 m.\n\nFragancia/Tono: SKIN FIRMING.\n\nMedida: 300 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones líquidos",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50969.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50969-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/8934868194361-500x500.jpg"
+      ],
+      "barcode": "8934868194361",
+      "specifications": {
+        "Fragancia/Tono": "SKIN FIRMING",
+        "Medida": "300 ml."
+      }
+    },
+    {
+      "source_id": "50981",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50981",
+      "source_price": 2644.99,
+      "compare_at_price": 2989.55,
+      "name": "DOVE AC.REP.DOY NUTRICION 180 m",
+      "slug": "dove-doan-50981",
+      "description": "DOVE AC.REP.DOY NUTRICION 180 m.\n\nFragancia/Tono: NUTRICION.\n\nMedida: 180 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50981.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50981-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7791293051949-500x500.jpg"
+      ],
+      "barcode": "7791293051949",
+      "specifications": {
+        "Fragancia/Tono": "NUTRICION",
+        "Medida": "180 ml."
+      }
+    },
+    {
+      "source_id": "50982",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=50982&page=9",
+      "source_price": 2644.99,
+      "compare_at_price": 2989.55,
+      "name": "DOVE SH.REP.DOY NUTRICION 180 m",
+      "slug": "dove-doan-50982",
+      "description": "DOVE SH.REP.DOY NUTRICION 180 m.\n\nFragancia/Tono: NUTRICION.\n\nMedida: 180 ml..",
+      "brand": "Dove",
+      "category_slug": "cabello",
+      "product_type": "Shampoo",
+      "image_urls": [
+        "/catalog/dove/dove-doan-50982.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-50982-thumb.webp",
+      "source_image_urls": [
+        "https://soylola.com/63677-large_default/SHAMPOO%20DOVE%20NUTRICION%20DOY%20PACK%20180%20CC.jpg"
+      ],
+      "barcode": "7791293051956",
+      "specifications": {
+        "Fragancia/Tono": "NUTRICION",
+        "Medida": "180 ml."
+      }
+    },
+    {
+      "source_id": "51119",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=51119&page=8",
+      "source_price": 13821.99,
+      "compare_at_price": 21257.49,
+      "name": "DOVE SERUM INT. HYALURON 450 G",
+      "slug": "dove-doan-51119",
+      "description": "DOVE SERUM INT. HYALURON 450 G.\n\nFragancia/Tono: HYALURON.\n\nMedida: 450 Grs.",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-51119.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-51119-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150106475-500x500.jpg"
+      ],
+      "barcode": "7891150106475",
+      "specifications": {
+        "Fragancia/Tono": "HYALURON",
+        "Medida": "450 Grs"
+      }
+    },
+    {
+      "source_id": "51120",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=51120&page=8",
+      "source_price": 13821.99,
+      "compare_at_price": 21257.49,
+      "name": "DOVE SERUM INT. NIACINA 450 G",
+      "slug": "dove-doan-51120",
+      "description": "DOVE SERUM INT. NIACINA 450 G.\n\nFragancia/Tono: NIACINA.\n\nMedida: 450 Grs.",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-51120.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-51120-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150106468-500x500.jpg"
+      ],
+      "barcode": "7891150106468",
+      "specifications": {
+        "Fragancia/Tono": "NIACINA",
+        "Medida": "450 Grs"
+      }
+    },
+    {
+      "source_id": "51121",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=51121&page=8",
+      "source_price": 13821.99,
+      "compare_at_price": 21257.49,
+      "name": "DOVE SERUM INT. RETINOL 450 G",
+      "slug": "dove-doan-51121",
+      "description": "DOVE SERUM INT. RETINOL 450 G.\n\nFragancia/Tono: RETINOL.\n\nMedida: 450 Grs.",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-51121.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-51121-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150106482-500x500.jpg"
+      ],
+      "barcode": "7891150106482",
+      "specifications": {
+        "Fragancia/Tono": "RETINOL",
+        "Medida": "450 Grs"
+      }
+    },
+    {
+      "source_id": "51122",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=51122&page=7",
+      "source_price": 7368.98,
+      "compare_at_price": 11333.17,
+      "name": "DOVE SERUM CORP. GLICOLICO x200 ml.",
+      "slug": "dove-doan-51122",
+      "description": "DOVE SERUM CORP. GLICOLICO x200 ml..\n\nFragancia/Tono: GLICOLICO.\n\nMedida: 200 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-51122.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-51122-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150106116-500x500.jpg"
+      ],
+      "barcode": "7891150106116",
+      "specifications": {
+        "Fragancia/Tono": "GLICOLICO",
+        "Medida": "200 ml."
+      }
+    },
+    {
+      "source_id": "51123",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=51123&page=9",
+      "source_price": 12281.98,
+      "compare_at_price": 18888.64,
+      "name": "DOVE SERUM CORP. GLICOLICO x400 ml.",
+      "slug": "dove-doan-51123",
+      "description": "DOVE SERUM CORP. GLICOLICO x400 ml..\n\nFragancia/Tono: GLICOLICO.\n\nMedida: 400 ml..",
+      "brand": "Dove",
+      "category_slug": "skin-care",
+      "product_type": "Sérums corporales",
+      "image_urls": [
+        "/catalog/dove/dove-doan-51123.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-51123-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150106123-500x500.jpg"
+      ],
+      "barcode": "7891150106123",
+      "specifications": {
+        "Fragancia/Tono": "GLICOLICO",
+        "Medida": "400 ml."
+      }
+    },
+    {
+      "source_id": "51563",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=51563&page=4",
+      "source_price": 4352.99,
+      "compare_at_price": 5906.53,
+      "name": "DOVE JAB. ORIGINAL 3X90 G",
+      "slug": "dove-doan-51563",
+      "description": "DOVE JAB. ORIGINAL 3X90 G.\n\nFragancia/Tono: ORIGINAL.\n\nMedida: 3X90 Grs.",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Jabones",
+      "image_urls": [
+        "/catalog/dove/dove-doan-51563.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-51563-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7891150046481-500x500.jpg"
+      ],
+      "barcode": "7891150046481",
+      "specifications": {
+        "Fragancia/Tono": "ORIGINAL",
+        "Medida": "3X90 Grs"
+      }
+    },
+    {
+      "source_id": "760700",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=138&product_id=760700&page=2",
+      "source_price": 6054.45,
+      "compare_at_price": null,
+      "name": "DOVE BARRA ANT. x50ml. ORIGINAL",
+      "slug": "dove-doan-760700",
+      "description": "DOVE BARRA ANT. x50ml. ORIGINAL.\n\nFragancia/Tono: ORIGINAL.\n\nMedida: 50 ml..",
+      "brand": "Dove",
+      "category_slug": "higiene-personal",
+      "product_type": "Desodorantes y antitranspirantes",
+      "image_urls": [
+        "/catalog/dove/dove-doan-760700.webp"
+      ],
+      "thumbnail_url": "/catalog/dove/dove-doan-760700-thumb.webp",
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/75082734-500x500.jpg"
+      ],
+      "barcode": "75082734",
+      "specifications": {
+        "Fragancia/Tono": "ORIGINAL",
+        "Medida": "50 ml."
+      }
+    }
+  ]
+}
