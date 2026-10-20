@@ -18,6 +18,7 @@ import heroPerfumes from "@/assets/hero-perfumes-bodegon.jpg";
 import heroCabello from "@/assets/hero-cabello-vanity.jpg";
 import heroMakeup from "@/assets/hero-makeup.jpg";
 import heroLimpieza from "@/assets/hero-limpieza.jpg";
+import heroSkincare from "@/assets/hero-skincare.jpg";
 
 const SELECT = "id, slug, name, price, compare_at_price, stock, image_urls, thumbnail_url, category:categories(name)";
 
@@ -86,6 +87,7 @@ const SLIDES = [
   { img: heroPerfumes, title: "Perfumes", sub: "La fragancia que te representa está acá", mobileObject: "object-[90%_center]", search: { categoria: "perfumes" } },
   { img: heroLimpieza, title: "Limpieza", sub: "Tu casa impecable, sin salir de casa", mobileObject: "object-[90%_center]", search: { categoria: "limpieza" } },
   { img: heroCabello, title: "Cuidado Capilar", sub: "Todo lo que tu pelo necesita, en un solo lugar", mobileObject: "object-[80%_center]", search: { categoria: "cabello" } },
+  { img: heroSkincare, title: "Skin care", sub: "El cuidado que tu piel pide cada día", mobileObject: "object-[90%_center]", search: { categoria: "skin-care" } },
   { img: heroMakeup, title: "Make up", sub: "Los colores que te acompañan todos los días", mobileObject: "object-[90%_center]", search: { categoria: "make-up" } },
 ];
 
