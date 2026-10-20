@@ -1,4 +1,4 @@
-import { createFileRoute, Link, Outlet, useRouter } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useLocation, useNavigate } from "@tanstack/react-router";
 import { LayoutDashboard, Package, ShoppingBag, LogOut, FolderTree } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
@@ -24,12 +24,13 @@ const NAV = [
 
 function AdminLayout() {
   const { user, isAdmin, loading } = useAuth();
-  const router = useRouter();
-  const pathname = router.state.location.pathname;
+  const location = useLocation();
+  const navigate = useNavigate();
+  const pathname = location.pathname;
 
   async function signOut() {
     await supabase.auth.signOut();
-    router.navigate({ to: "/auth" });
+    navigate({ to: "/auth" });
   }
 
   if (loading || !user) {
@@ -52,7 +53,7 @@ function AdminLayout() {
     );
   }
 
-  const isOverview = pathname === "/admin";
+  const isOverview = pathname === "/admin" || pathname === "/admin/";
 
   return (
     <div className="flex min-h-screen flex-col bg-secondary/30">
@@ -74,7 +75,9 @@ function AdminLayout() {
         <aside className="w-56 shrink-0">
           <nav className="flex flex-col gap-1">
             {NAV.map((n) => {
-              const active = n.exact ? pathname === n.to : pathname.startsWith(n.to);
+              const active = n.exact
+                ? pathname === n.to || pathname === `${n.to}/`
+                : pathname.startsWith(n.to);
               return (
                 <Link
                   key={n.to}
@@ -103,7 +106,7 @@ function AdminOverview() {
     <div>
       <h1 className="font-serif text-3xl text-foreground">Resumen</h1>
       <p className="mt-1 text-sm text-muted-foreground">Gestioná el catálogo desde el menú lateral.</p>
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Link
           to="/admin/productos"
           className="group rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
@@ -111,7 +114,17 @@ function AdminOverview() {
           <Package className="h-7 w-7 text-primary" />
           <h2 className="mt-3 font-serif text-xl text-foreground">Productos</h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Cargá, editá o pausá productos, subí imágenes y marcá ofertas.
+            Cargá, editá o pausá productos, subí imágenes, precios y stock con Excel.
+          </p>
+        </Link>
+        <Link
+          to="/admin/categorias"
+          className="group rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+        >
+          <FolderTree className="h-7 w-7 text-primary" />
+          <h2 className="mt-3 font-serif text-xl text-foreground">Categorías</h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Creá, ordená y gestioná las categorías y marcas/subcategorías del catálogo.
           </p>
         </Link>
         <div className="rounded-xl border border-dashed border-border bg-card/60 p-6">
