@@ -24,7 +24,8 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
 
   useEffect(() => {
     if (!api) return;
-    const update = () => setSelected(api.selectedScrollSnap());
+    const update = () => { setSelected(api.selectedScrollSnap()); console.log("DBG SELECT", api.selectedScrollSnap()); };
+    (window as unknown as { __embla: typeof api }).__embla = api;
     const stop = () => setPaused(true);
     update();
     api.on("select", update).on("reInit", update).on("pointerDown", stop);
@@ -123,7 +124,7 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
               size="icon"
               aria-label={`Ver diapositiva ${index + 1}: ${slide.title}`}
               aria-current={index === selected ? "true" : undefined}
-              onClick={() => { setPaused(true); api?.scrollTo(index, reducedMotion); }}
+              onClick={() => { console.log("DBG DOT", index, "api?", !!api); setPaused(true); api?.scrollTo(index, reducedMotion); }}
               className="h-11 w-11 rounded-full"
             >
               <span className={`block h-2.5 rounded-full transition-all motion-reduce:transition-none ${index === selected ? "w-6 bg-primary" : "w-2.5 bg-foreground/40"}`} />
