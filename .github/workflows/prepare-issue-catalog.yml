@@ -32,6 +32,11 @@ jobs:
           npx --yes tsx@4.20.6 scripts/validate-issue-catalog.ts
       - name: Save reviewed import source
         run: |
+          git fetch origin main
+          if git cat-file -e origin/main:scripts/catalog-data/issue.json 2>/dev/null; then
+            echo "Issue source snapshot is already stored; preserving reviewed data."
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add scripts/catalog-data/issue.json public/catalog/issue
