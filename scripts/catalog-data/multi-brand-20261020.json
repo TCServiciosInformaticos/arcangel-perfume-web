@@ -1,5 +1,5 @@
 {
-  "stage": "metadata",
+  "stage": "prepared",
   "source_counts": {
     "Cicatricure": 35,
     "Dermaglós": 108,
@@ -37,7 +37,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-37555.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-37555-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-37555-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005900954541-500x500.jpg"
     },
     {
       "source_id": "34289",
@@ -64,7 +65,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-34289.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-34289-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-34289-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005900399953-500x500.jpg"
     },
     {
       "source_id": "41270",
@@ -91,7 +93,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-41270.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-41270-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-41270-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005900359261-500x500.jpg"
     },
     {
       "source_id": "34287",
@@ -118,7 +121,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-34287.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-34287-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-34287-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005900399946-500x500.jpg"
     },
     {
       "source_id": "43621",
@@ -145,7 +149,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-43621.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-43621-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-43621-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000040448-500x500.jpg"
     },
     {
       "source_id": "50273",
@@ -172,7 +177,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-50273.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-50273-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-50273-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000128603-500x500.jpg"
     },
     {
       "source_id": "43620",
@@ -199,7 +205,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-43620.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-43620-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-43620-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000040431-500x500.jpg"
     },
     {
       "source_id": "50274",
@@ -226,7 +233,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-50274.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-50274-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-50274-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000120294-500x500.jpg"
     },
     {
       "source_id": "43615",
@@ -253,7 +261,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-43615.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-43615-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-43615-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000040417-500x500.jpg"
     },
     {
       "source_id": "11466",
@@ -280,7 +289,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-11466.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-11466-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-11466-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005808319695-500x500.jpg"
     },
     {
       "source_id": "11476",
@@ -307,7 +317,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-11476.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-11476-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-11476-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005800326134-500x500.jpg"
     },
     {
       "source_id": "11467",
@@ -334,7 +345,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-11467.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-11467-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-11467-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005808315093-500x500.jpg"
     },
     {
       "source_id": "43618",
@@ -361,7 +373,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-43618.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-43618-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-43618-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000040356-500x500.jpg"
     },
     {
       "source_id": "11475",
@@ -388,7 +401,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-11475.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-11475-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-11475-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000011158-500x500.jpg"
     },
     {
       "source_id": "43617",
@@ -415,7 +429,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-43617.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-43617-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-43617-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000040349-500x500.jpg"
     },
     {
       "source_id": "43616",
@@ -442,7 +457,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-43616.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-43616-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-43616-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000040424-500x500.jpg"
     },
     {
       "source_id": "16824",
@@ -469,7 +485,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-16824.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-16824-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-16824-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/42277057-500x500.jpg"
     },
     {
       "source_id": "41276",
@@ -496,7 +513,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-41276.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-41276-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-41276-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/42277095-500x500.jpg"
     },
     {
       "source_id": "41274",
@@ -523,7 +541,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-41274.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-41274-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-41274-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/42389767-500x500.jpg"
     },
     {
       "source_id": "43619",
@@ -550,7 +569,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-43619.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-43619-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-43619-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000040363-500x500.jpg"
     },
     {
       "source_id": "6827",
@@ -577,7 +597,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-6827.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-6827-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-6827-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005900718556-500x500.jpg"
     },
     {
       "source_id": "35118",
@@ -604,7 +625,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-35118.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-35118-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-35118-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/42277071-500x500.jpg"
     },
     {
       "source_id": "33880",
@@ -631,7 +653,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-33880.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-33880-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-33880-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/42429142-500x500.jpg"
     },
     {
       "source_id": "44133",
@@ -658,7 +681,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-44133.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-44133-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-44133-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000023717-500x500.jpg"
     },
     {
       "source_id": "15478",
@@ -685,7 +709,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-15478.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-15478-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-15478-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/42277132-500x500.jpg"
     },
     {
       "source_id": "647601",
@@ -712,7 +737,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-647601.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-647601-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-647601-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005800137556-500x500.jpg"
     },
     {
       "source_id": "372",
@@ -739,7 +765,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-372.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-372-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-372-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005900938534-500x500.jpg"
     },
     {
       "source_id": "647501",
@@ -766,7 +793,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-647501.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-647501-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-647501-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005800137679-500x500.jpg"
     },
     {
       "source_id": "37413",
@@ -793,7 +821,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-37413.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-37413-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-37413-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000050188-500x500.jpg"
     },
     {
       "source_id": "29572",
@@ -820,7 +849,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-29572.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-29572-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-29572-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005808538553-500x500.jpg"
     },
     {
       "source_id": "37414",
@@ -847,7 +877,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-37414.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-37414-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-37414-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005900683830-500x500.jpg"
     },
     {
       "source_id": "37408",
@@ -874,7 +905,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-37408.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-37408-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-37408-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4006000050171-500x500.jpg"
     },
     {
       "source_id": "653101",
@@ -901,7 +933,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-653101.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-653101-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-653101-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005808890590-500x500.jpg"
     },
     {
       "source_id": "646001",
@@ -928,7 +961,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-646001.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-646001-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-646001-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005808229123-500x500.jpg"
     },
     {
       "source_id": "647401",
@@ -955,7 +989,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-647401.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-647401-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-647401-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/8412300813006-500x500.jpg"
     },
     {
       "source_id": "36798",
@@ -982,7 +1017,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-36798.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-36798-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-36798-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005900528223-500x500.jpg"
     },
     {
       "source_id": "50823",
@@ -1009,7 +1045,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-50823.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-50823-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-50823-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798420161007-500x500.jpg"
     },
     {
       "source_id": "50822",
@@ -1036,7 +1073,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-50822.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-50822-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-50822-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798420161014-500x500.jpg"
     },
     {
       "source_id": "653201",
@@ -1063,7 +1101,8 @@
       "image_urls": [
         "/catalog/nivea/nivea-doan-653201.webp"
       ],
-      "thumbnail_url": "/catalog/nivea/nivea-doan-653201-thumb.webp"
+      "thumbnail_url": "/catalog/nivea/nivea-doan-653201-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/4005808515592-500x500.jpg"
     },
     {
       "source_id": "50821",
@@ -1090,7 +1129,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-50821.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-50821-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-50821-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798420161021-500x500.jpg"
     },
     {
       "source_id": "40324",
@@ -1117,7 +1157,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-40324.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-40324-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-40324-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140259978-500x500.jpg"
     },
     {
       "source_id": "30183",
@@ -1144,7 +1185,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-30183.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-30183-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-30183-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140253945-500x500.jpg"
     },
     {
       "source_id": "39389",
@@ -1171,7 +1213,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-39389.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-39389-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-39389-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140259404-500x500.jpg"
     },
     {
       "source_id": "40322",
@@ -1198,7 +1241,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-40322.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-40322-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-40322-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140253372-500x500.jpg"
     },
     {
       "source_id": "42494",
@@ -1225,7 +1269,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-42494.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-42494-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-42494-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140254485-500x500.jpg"
     },
     {
       "source_id": "27696",
@@ -1252,7 +1297,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-27696.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-27696-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-27696-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798420160833-500x500.jpg"
     },
     {
       "source_id": "43218",
@@ -1279,7 +1325,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-43218.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-43218-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-43218-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140255024-500x500.jpg"
     },
     {
       "source_id": "40323",
@@ -1306,7 +1353,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-40323.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-40323-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-40323-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140259985-500x500.jpg"
     },
     {
       "source_id": "47097",
@@ -1333,7 +1381,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-47097.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-47097-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-47097-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140257523-500x500.jpg"
     },
     {
       "source_id": "39009",
@@ -1360,7 +1409,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-39009.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-39009-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-39009-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140259381-500x500.jpg"
     },
     {
       "source_id": "44078",
@@ -1387,7 +1437,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-44078.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-44078-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-44078-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140253297-500x500.jpg"
     },
     {
       "source_id": "31431",
@@ -1414,7 +1465,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-31431.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-31431-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-31431-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140252351-500x500.jpg"
     },
     {
       "source_id": "39013",
@@ -1441,7 +1493,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-39013.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-39013-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-39013-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140259398-500x500.jpg"
     },
     {
       "source_id": "50311",
@@ -1468,7 +1521,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-50311.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-50311-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-50311-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798420160611-500x500.jpg"
     },
     {
       "source_id": "42216",
@@ -1495,7 +1549,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-42216.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-42216-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-42216-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798420160635-500x500.jpg"
     },
     {
       "source_id": "41817",
@@ -1522,7 +1577,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-41817.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-41817-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-41817-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798420160628-500x500.jpg"
     },
     {
       "source_id": "20266",
@@ -1549,7 +1605,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-20266.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-20266-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-20266-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140259114-500x500.jpg"
     },
     {
       "source_id": "49250",
@@ -1576,7 +1633,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-49250.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-49250-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-49250-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/650240072215-500x500.jpg"
     },
     {
       "source_id": "20265",
@@ -1603,7 +1661,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-20265.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-20265-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-20265-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140259107-500x500.jpg"
     },
     {
       "source_id": "50123",
@@ -1630,7 +1689,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-50123.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-50123-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-50123-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/650240073151-500x500.jpg"
     },
     {
       "source_id": "42063",
@@ -1657,7 +1717,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-42063.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-42063-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-42063-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140254034-500x500.jpg"
     },
     {
       "source_id": "44189",
@@ -1684,7 +1745,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-44189.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-44189-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-44189-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140256120-500x500.jpg"
     },
     {
       "source_id": "40420",
@@ -1711,7 +1773,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-40420.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-40420-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-40420-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140253310-500x500.jpg"
     },
     {
       "source_id": "28851",
@@ -1738,7 +1801,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-28851.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-28851-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-28851-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140251651-500x500.jpg"
     },
     {
       "source_id": "51376",
@@ -1765,7 +1829,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-51376.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-51376-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-51376-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/650240077111-500x500.jpg"
     },
     {
       "source_id": "47657",
@@ -1792,7 +1857,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-47657.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-47657-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-47657-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/650240068676-500x500.jpg"
     },
     {
       "source_id": "47163",
@@ -1819,7 +1885,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-47163.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-47163-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-47163-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/650240057434-500x500.jpg"
     },
     {
       "source_id": "43373",
@@ -1846,7 +1913,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-43373.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-43373-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-43373-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7898636190706-500x500.jpg"
     },
     {
       "source_id": "42062",
@@ -1873,7 +1941,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-42062.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-42062-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-42062-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140254027-500x500.jpg"
     },
     {
       "source_id": "42217",
@@ -1900,7 +1969,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-42217.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-42217-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-42217-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140254423-500x500.jpg"
     },
     {
       "source_id": "46943",
@@ -1927,7 +1997,8 @@
       "image_urls": [
         "/catalog/cicatricure/cicatricure-doan-46943.webp"
       ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-46943-thumb.webp"
+      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-46943-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798140256397-500x500.jpg"
     },
     {
       "source_id": "51097",
@@ -1954,7 +2025,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-51097.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-51097-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-51097-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7908966527483-500x500.jpg"
     },
     {
       "source_id": "50897",
@@ -1981,7 +2053,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-50897.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-50897-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-50897-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/3600542641074-500x500.jpg"
     },
     {
       "source_id": "51096",
@@ -2008,7 +2081,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-51096.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-51096-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-51096-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7908966527520-500x500.jpg"
     },
     {
       "source_id": "51095",
@@ -2035,7 +2109,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-51095.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-51095-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-51095-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7908966527445-500x500.jpg"
     },
     {
       "source_id": "37285",
@@ -2062,7 +2137,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-37285.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-37285-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-37285-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552455557-500x500.jpg"
     },
     {
       "source_id": "41572",
@@ -2089,7 +2165,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-41572.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-41572-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-41572-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/3600542326414-500x500.jpg"
     },
     {
       "source_id": "48350",
@@ -2116,7 +2193,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-48350.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-48350-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-48350-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552875416-500x500.jpg"
     },
     {
       "source_id": "51569",
@@ -2143,7 +2221,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-51569.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-51569-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-51569-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/3600542109802-500x500.jpg"
     },
     {
       "source_id": "47486",
@@ -2170,7 +2249,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-47486.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-47486-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-47486-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552842319-500x500.jpg"
     },
     {
       "source_id": "38566",
@@ -2197,7 +2277,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-38566.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-38566-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-38566-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/3600541744523-500x500.jpg"
     },
     {
       "source_id": "50297",
@@ -2224,7 +2305,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-50297.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-50297-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-50297-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552928341-500x500.jpg"
     },
     {
       "source_id": "43186",
@@ -2251,7 +2333,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-43186.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-43186-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-43186-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/3600542081160-500x500.jpg"
     },
     {
       "source_id": "47483",
@@ -2278,7 +2361,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-47483.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-47483-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-47483-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552844047-500x500.jpg"
     },
     {
       "source_id": "50354",
@@ -2305,7 +2389,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-50354.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-50354-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-50354-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/3600542631983-500x500.jpg"
     },
     {
       "source_id": "50353",
@@ -2332,7 +2417,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-50353.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-50353-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-50353-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/3600542630689-500x500.jpg"
     },
     {
       "source_id": "48668",
@@ -2359,7 +2445,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-48668.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-48668-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-48668-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/3600542528122-500x500.jpg"
     },
     {
       "source_id": "49127",
@@ -2386,7 +2473,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-49127.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-49127-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-49127-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552933369-500x500.jpg"
     },
     {
       "source_id": "48354",
@@ -2413,7 +2501,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-48354.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-48354-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-48354-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552875461-500x500.jpg"
     },
     {
       "source_id": "49126",
@@ -2440,7 +2529,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-49126.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-49126-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-49126-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/3600542565943-500x500.jpg"
     },
     {
       "source_id": "47484",
@@ -2467,7 +2557,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-47484.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-47484-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-47484-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7899706194273-500x500.jpg"
     },
     {
       "source_id": "50764",
@@ -2494,7 +2585,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-50764.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-50764-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-50764-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552992311-500x500.jpg"
     },
     {
       "source_id": "44589",
@@ -2521,7 +2613,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-44589.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-44589-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-44589-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552849493-500x500.jpg"
     },
     {
       "source_id": "50908",
@@ -2548,7 +2641,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50908.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50908-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50908-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008405-500x500.jpg"
     },
     {
       "source_id": "50248",
@@ -2575,7 +2669,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-50248.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-50248-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-50248-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552949773-500x500.jpg"
     },
     {
       "source_id": "50250",
@@ -2602,7 +2697,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-50250.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-50250-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-50250-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552933765-500x500.jpg"
     },
     {
       "source_id": "50249",
@@ -2629,7 +2725,8 @@
       "image_urls": [
         "/catalog/garnier/garnier-doan-50249.webp"
       ],
-      "thumbnail_url": "/catalog/garnier/garnier-doan-50249-thumb.webp"
+      "thumbnail_url": "/catalog/garnier/garnier-doan-50249-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552934526-500x500.jpg"
     },
     {
       "source_id": "47723",
@@ -2656,7 +2753,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47723.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47723-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47723-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008252-500x500.jpg"
     },
     {
       "source_id": "41944",
@@ -2683,7 +2781,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-41944.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-41944-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-41944-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007996-500x500.jpg"
     },
     {
       "source_id": "46326",
@@ -2710,7 +2809,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-46326.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-46326-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-46326-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007316-500x500.jpg"
     },
     {
       "source_id": "47724",
@@ -2737,7 +2837,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47724.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47724-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47724-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008276-500x500.jpg"
     },
     {
       "source_id": "47725",
@@ -2764,7 +2865,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47725.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47725-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47725-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008283-500x500.jpg"
     },
     {
       "source_id": "47975",
@@ -2791,7 +2893,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47975.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47975-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47975-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008221-500x500.jpg"
     },
     {
       "source_id": "47719",
@@ -2818,7 +2921,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47719.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47719-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47719-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007392-500x500.jpg"
     },
     {
       "source_id": "47475",
@@ -2845,7 +2949,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47475.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47475-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47475-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007385-500x500.jpg"
     },
     {
       "source_id": "43220",
@@ -2872,7 +2977,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-43220.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-43220-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-43220-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007361-500x500.jpg"
     },
     {
       "source_id": "47966",
@@ -2899,7 +3005,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47966.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47966-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47966-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008207-500x500.jpg"
     },
     {
       "source_id": "38181",
@@ -2926,7 +3033,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-38181.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-38181-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-38181-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007767-500x500.jpg"
     },
     {
       "source_id": "23147",
@@ -2953,7 +3061,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-23147.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-23147-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-23147-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008290-500x500.jpg"
     },
     {
       "source_id": "50589",
@@ -2980,7 +3089,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50589.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50589-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50589-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008757-500x500.jpg"
     },
     {
       "source_id": "50591",
@@ -3007,7 +3117,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50591.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50591-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50591-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008771-500x500.jpg"
     },
     {
       "source_id": "47976",
@@ -3034,7 +3145,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47976.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47976-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47976-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008238-500x500.jpg"
     },
     {
       "source_id": "47974",
@@ -3061,7 +3173,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47974.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47974-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47974-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008214-500x500.jpg"
     },
     {
       "source_id": "50590",
@@ -3088,7 +3201,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50590.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50590-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50590-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008764-500x500.jpg"
     },
     {
       "source_id": "46325",
@@ -3115,7 +3229,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-46325.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-46325-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-46325-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007439-500x500.jpg"
     },
     {
       "source_id": "43219",
@@ -3142,7 +3257,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-43219.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-43219-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-43219-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007415-500x500.jpg"
     },
     {
       "source_id": "48895",
@@ -3169,7 +3285,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-48895.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48895-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48895-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007460-500x500.jpg"
     },
     {
       "source_id": "42838",
@@ -3196,7 +3313,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-42838.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-42838-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-42838-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007958-500x500.jpg"
     },
     {
       "source_id": "48896",
@@ -3223,7 +3341,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-48896.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48896-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48896-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007453-500x500.jpg"
     },
     {
       "source_id": "49883",
@@ -3250,7 +3369,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-49883.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49883-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49883-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008740-500x500.jpg"
     },
     {
       "source_id": "42839",
@@ -3277,7 +3397,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-42839.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-42839-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-42839-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007965-500x500.jpg"
     },
     {
       "source_id": "50735",
@@ -3304,7 +3425,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50735.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50735-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50735-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008627-500x500.jpg"
     },
     {
       "source_id": "50980",
@@ -3331,7 +3453,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50980.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50980-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50980-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008658-500x500.jpg"
     },
     {
       "source_id": "50580",
@@ -3358,7 +3481,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50580.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50580-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50580-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008665-500x500.jpg"
     },
     {
       "source_id": "49882",
@@ -3385,7 +3509,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-49882.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49882-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49882-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008689-500x500.jpg"
     },
     {
       "source_id": "16692",
@@ -3412,7 +3537,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-16692.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-16692-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-16692-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007644-500x500.jpg"
     },
     {
       "source_id": "85",
@@ -3439,7 +3565,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-85.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-85-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-85-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007576-500x500.jpg"
     },
     {
       "source_id": "86",
@@ -3466,7 +3593,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-86.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-86-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-86-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008696-500x500.jpg"
     },
     {
       "source_id": "41945",
@@ -3493,7 +3621,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-41945.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-41945-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-41945-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742005022-500x500.jpg"
     },
     {
       "source_id": "50581",
@@ -3520,7 +3649,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50581.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50581-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50581-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008634-500x500.jpg"
     },
     {
       "source_id": "14379",
@@ -3547,7 +3677,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-14379.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-14379-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-14379-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007606-500x500.jpg"
     },
     {
       "source_id": "14378",
@@ -3574,7 +3705,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-14378.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-14378-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-14378-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007583-500x500.jpg"
     },
     {
       "source_id": "26625",
@@ -3601,7 +3733,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-26625.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-26625-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-26625-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007934-500x500.jpg"
     },
     {
       "source_id": "50907",
@@ -3628,7 +3761,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50907.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50907-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50907-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008801-500x500.jpg"
     },
     {
       "source_id": "48310",
@@ -3655,7 +3789,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-48310.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48310-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48310-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008603-500x500.jpg"
     },
     {
       "source_id": "2282",
@@ -3682,7 +3817,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-2282.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-2282-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-2282-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742005039-500x500.jpg"
     },
     {
       "source_id": "48311",
@@ -3709,7 +3845,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-48311.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48311-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48311-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008610-500x500.jpg"
     },
     {
       "source_id": "44188",
@@ -3736,7 +3873,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-44188.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-44188-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-44188-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007118-500x500.jpg"
     },
     {
       "source_id": "49357",
@@ -3763,7 +3901,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-49357.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49357-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49357-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007149-500x500.jpg"
     },
     {
       "source_id": "50104",
@@ -3790,7 +3929,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50104.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50104-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50104-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007156-500x500.jpg"
     },
     {
       "source_id": "47334",
@@ -3817,7 +3957,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47334.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47334-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47334-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007125-500x500.jpg"
     },
     {
       "source_id": "47333",
@@ -3844,7 +3985,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47333.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47333-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47333-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742107108-500x500.jpg"
     },
     {
       "source_id": "42840",
@@ -3871,7 +4013,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-42840.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-42840-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-42840-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007422-500x500.jpg"
     },
     {
       "source_id": "50736",
@@ -3898,7 +4041,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50736.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50736-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50736-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742107139-500x500.jpg"
     },
     {
       "source_id": "48022",
@@ -3925,7 +4069,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-48022.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48022-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48022-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742005053-500x500.jpg"
     },
     {
       "source_id": "50520",
@@ -3952,7 +4097,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50520.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50520-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50520-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007477-500x500.jpg"
     },
     {
       "source_id": "45965",
@@ -3979,7 +4125,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-45965.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45965-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45965-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008597-500x500.jpg"
     },
     {
       "source_id": "50108",
@@ -4006,7 +4153,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50108.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50108-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50108-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008733-500x500.jpg"
     },
     {
       "source_id": "45962",
@@ -4033,7 +4181,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-45962.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45962-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45962-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742108587-500x500.jpg"
     },
     {
       "source_id": "50106",
@@ -4060,7 +4209,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50106.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50106-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50106-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008719-500x500.jpg"
     },
     {
       "source_id": "45963",
@@ -4087,7 +4237,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-45963.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45963-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45963-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742208522-500x500.jpg"
     },
     {
       "source_id": "50105",
@@ -4114,7 +4265,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50105.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50105-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50105-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008702-500x500.jpg"
     },
     {
       "source_id": "45958",
@@ -4141,7 +4293,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-45958.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45958-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45958-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742208508-500x500.jpg"
     },
     {
       "source_id": "45961",
@@ -4168,7 +4321,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-45961.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45961-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45961-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742208539-500x500.jpg"
     },
     {
       "source_id": "45966",
@@ -4195,7 +4349,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-45966.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45966-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45966-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008542-500x500.jpg"
     },
     {
       "source_id": "45967",
@@ -4222,7 +4377,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-45967.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45967-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45967-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008573-500x500.jpg"
     },
     {
       "source_id": "45960",
@@ -4249,7 +4405,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-45960.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45960-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45960-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008566-500x500.jpg"
     },
     {
       "source_id": "45964",
@@ -4276,7 +4433,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-45964.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45964-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45964-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742108556-500x500.jpg"
     },
     {
       "source_id": "50305",
@@ -4303,7 +4461,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50305.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50305-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50305-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008795-500x500.jpg"
     },
     {
       "source_id": "50107",
@@ -4330,7 +4489,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50107.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50107-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50107-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008726-500x500.jpg"
     },
     {
       "source_id": "45959",
@@ -4357,7 +4517,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-45959.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45959-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-45959-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742108518-500x500.jpg"
     },
     {
       "source_id": "50909",
@@ -4384,7 +4545,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-50909.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50909-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-50909-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008412-500x500.jpg"
     },
     {
       "source_id": "47041",
@@ -4411,7 +4573,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47041.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47041-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47041-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008313-500x500.jpg"
     },
     {
       "source_id": "51329",
@@ -4438,7 +4601,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-51329.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-51329-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-51329-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742005114-500x500.jpg"
     },
     {
       "source_id": "47040",
@@ -4465,7 +4629,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47040.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47040-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47040-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008306-500x500.jpg"
     },
     {
       "source_id": "49033",
@@ -4492,7 +4657,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-49033.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49033-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49033-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004872-500x500.jpg"
     },
     {
       "source_id": "28949",
@@ -4519,7 +4685,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-28949.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-28949-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-28949-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742024603-500x500.jpg"
     },
     {
       "source_id": "3268",
@@ -4546,7 +4713,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-3268.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-3268-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-3268-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003509-500x500.jpg"
     },
     {
       "source_id": "68",
@@ -4573,7 +4741,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-68.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-68-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-68-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003233-500x500.jpg"
     },
     {
       "source_id": "48855",
@@ -4600,7 +4769,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-48855.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48855-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48855-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004865-500x500.jpg"
     },
     {
       "source_id": "23373",
@@ -4627,7 +4797,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-23373.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-23373-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-23373-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003448-500x500.jpg"
     },
     {
       "source_id": "31299",
@@ -4654,7 +4825,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-31299.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-31299-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-31299-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003592-500x500.jpg"
     },
     {
       "source_id": "3272",
@@ -4681,7 +4853,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-3272.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-3272-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-3272-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003516-500x500.jpg"
     },
     {
       "source_id": "37313",
@@ -4708,7 +4881,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-37313.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-37313-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-37313-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003813-500x500.jpg"
     },
     {
       "source_id": "48026",
@@ -4735,7 +4909,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-48026.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48026-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48026-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004858-500x500.jpg"
     },
     {
       "source_id": "34693",
@@ -4762,7 +4937,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-34693.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-34693-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-34693-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742024610-500x500.jpg"
     },
     {
       "source_id": "48023",
@@ -4789,7 +4965,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-48023.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48023-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48023-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004889-500x500.jpg"
     },
     {
       "source_id": "23374",
@@ -4816,7 +4993,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-23374.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-23374-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-23374-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003554-500x500.jpg"
     },
     {
       "source_id": "41612",
@@ -4843,7 +5021,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-41612.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-41612-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-41612-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004568-500x500.jpg"
     },
     {
       "source_id": "44617",
@@ -4870,7 +5049,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-44617.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-44617-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-44617-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004759-500x500.jpg"
     },
     {
       "source_id": "39778",
@@ -4897,7 +5077,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-39778.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-39778-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-39778-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004520-500x500.jpg"
     },
     {
       "source_id": "48027",
@@ -4924,7 +5105,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-48027.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48027-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48027-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004841-500x500.jpg"
     },
     {
       "source_id": "51328",
@@ -4951,7 +5133,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-51328.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-51328-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-51328-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004995-500x500.jpg"
     },
     {
       "source_id": "51327",
@@ -4978,7 +5161,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-51327.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-51327-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-51327-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004988-500x500.jpg"
     },
     {
       "source_id": "49884",
@@ -5005,7 +5189,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-49884.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49884-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49884-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004926-500x500.jpg"
     },
     {
       "source_id": "49885",
@@ -5032,7 +5217,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-49885.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49885-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49885-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004933-500x500.jpg"
     },
     {
       "source_id": "20233",
@@ -5059,7 +5245,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-20233.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-20233-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-20233-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003431-500x500.jpg"
     },
     {
       "source_id": "37581",
@@ -5086,7 +5273,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-37581.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-37581-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-37581-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742024627-500x500.jpg"
     },
     {
       "source_id": "34690",
@@ -5113,7 +5301,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-34690.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-34690-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-34690-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003776-500x500.jpg"
     },
     {
       "source_id": "34689",
@@ -5140,7 +5329,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-34689.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-34689-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-34689-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003738-500x500.jpg"
     },
     {
       "source_id": "49587",
@@ -5167,7 +5357,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-49587.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49587-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49587-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004902-500x500.jpg"
     },
     {
       "source_id": "49586",
@@ -5194,7 +5385,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-49586.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49586-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-49586-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004919-500x500.jpg"
     },
     {
       "source_id": "48638",
@@ -5221,7 +5413,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-48638.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48638-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-48638-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004773-500x500.jpg"
     },
     {
       "source_id": "37312",
@@ -5248,7 +5441,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-37312.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-37312-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-37312-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003790-500x500.jpg"
     },
     {
       "source_id": "47368",
@@ -5275,7 +5469,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-47368.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47368-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-47368-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004766-500x500.jpg"
     },
     {
       "source_id": "43366",
@@ -5302,7 +5497,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-43366.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-43366-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-43366-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742004650-500x500.jpg"
     },
     {
       "source_id": "23371",
@@ -5329,7 +5525,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-23371.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-23371-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-23371-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003707-500x500.jpg"
     },
     {
       "source_id": "59",
@@ -5356,7 +5553,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-59.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-59-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-59-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742003264-500x500.jpg"
     },
     {
       "source_id": "43544",
@@ -5383,7 +5581,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-43544.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-43544-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-43544-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007668-500x500.jpg"
     },
     {
       "source_id": "38182",
@@ -5410,7 +5609,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-38182.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-38182-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-38182-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742007682-500x500.jpg"
     },
     {
       "source_id": "43365",
@@ -5437,7 +5637,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-43365.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-43365-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-43365-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742033667-500x500.jpg"
     },
     {
       "source_id": "39949",
@@ -5464,7 +5665,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-39949.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-39949-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-39949-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742033681-500x500.jpg"
     },
     {
       "source_id": "51558",
@@ -5493,7 +5695,8 @@
       ],
       "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-51558-thumb.webp",
       "image_reference_url": "https://rgmayorista.com/",
-      "image_reference_barcode": "7793742008672"
+      "image_reference_barcode": "7793742008672",
+      "stored_source_image_url": "https://bunny-cdn.ventasxmayor.com/6060d74cdbd6d24cdbd6d26363/public/42841371132564091/1791641504032-cremapielsecax50.jpg"
     },
     {
       "source_id": "51638",
@@ -5520,7 +5723,8 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-51638.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-51638-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-51638-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7793742008788-500x500.jpg"
     },
     {
       "source_id": "10206",
@@ -5543,7 +5747,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-10206-gel-de-chia-fijacion-alta.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-10206-gel-de-chia-fijacion-alta-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-10206-gel-de-chia-fijacion-alta-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/09/gel-de-chia-primaria-1.jpg"
     },
     {
       "source_id": "9008-8097dd22",
@@ -5570,7 +5775,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9008-8097dd22-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9008-8097dd22-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9008-8097dd22-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9009-059369f7",
@@ -5597,7 +5803,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9009-059369f7-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9009-059369f7-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9009-059369f7-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9010-3bfc440a",
@@ -5624,7 +5831,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9010-3bfc440a-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9010-3bfc440a-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9010-3bfc440a-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9011-5a862ac8",
@@ -5651,7 +5859,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9011-5a862ac8-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9011-5a862ac8-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9011-5a862ac8-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9012-95340d82",
@@ -5678,7 +5887,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9012-95340d82-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9012-95340d82-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9012-95340d82-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9013-94acbf78",
@@ -5705,7 +5915,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9013-94acbf78-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9013-94acbf78-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9013-94acbf78-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9014-ce299fa1",
@@ -5732,7 +5943,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9014-ce299fa1-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9014-ce299fa1-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9014-ce299fa1-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9015-f4939376",
@@ -5759,7 +5971,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9015-f4939376-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9015-f4939376-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9015-f4939376-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9008-7d324b24",
@@ -5786,7 +5999,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9008-7d324b24-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9008-7d324b24-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9008-7d324b24-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9009-3de9eb01",
@@ -5813,7 +6027,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9009-3de9eb01-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9009-3de9eb01-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9009-3de9eb01-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9010-a52a4ad9",
@@ -5840,7 +6055,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9010-a52a4ad9-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9010-a52a4ad9-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9010-a52a4ad9-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9011-cf965371",
@@ -5867,7 +6083,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9011-cf965371-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9011-cf965371-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9011-cf965371-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9012-a754943b",
@@ -5894,7 +6111,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9012-a754943b-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9012-a754943b-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9012-a754943b-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9013-99dab853",
@@ -5921,7 +6139,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9013-99dab853-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9013-99dab853-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9013-99dab853-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9014-d5d166ac",
@@ -5948,7 +6167,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9014-d5d166ac-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9014-d5d166ac-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9014-d5d166ac-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9015-1bda5c1c",
@@ -5975,7 +6195,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9015-1bda5c1c-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9015-1bda5c1c-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9015-1bda5c1c-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9008-c164030b",
@@ -6002,7 +6223,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9008-c164030b-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9008-c164030b-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9008-c164030b-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9009-e7026b90",
@@ -6029,7 +6251,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9009-e7026b90-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9009-e7026b90-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9009-e7026b90-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9010-1e9345f1",
@@ -6056,7 +6279,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9010-1e9345f1-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9010-1e9345f1-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9010-1e9345f1-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9011-276eeab9",
@@ -6083,7 +6307,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9011-276eeab9-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9011-276eeab9-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9011-276eeab9-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9012-747680b2",
@@ -6110,7 +6335,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9012-747680b2-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9012-747680b2-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9012-747680b2-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9013-8eae22f1",
@@ -6137,7 +6363,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9013-8eae22f1-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9013-8eae22f1-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9013-8eae22f1-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9014-7e7006d4",
@@ -6164,7 +6391,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9014-7e7006d4-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9014-7e7006d4-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9014-7e7006d4-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "9015-7bcf12f4",
@@ -6191,7 +6419,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9015-7bcf12f4-kit-curly-esencial.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9015-7bcf12f4-kit-curly-esencial-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9015-7bcf12f4-kit-curly-esencial-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/geles-kit-lino-scaled.webp"
     },
     {
       "source_id": "8914",
@@ -6214,7 +6443,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-8914-bolso-artesanal-cebando-flores.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-8914-bolso-artesanal-cebando-flores-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-8914-bolso-artesanal-cebando-flores-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/IMG_8822.webp"
     },
     {
       "source_id": "8909",
@@ -6237,7 +6467,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-8909-neceser-cebando-flores.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-8909-neceser-cebando-flores-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-8909-neceser-cebando-flores-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/DSC01590-scaled.webp"
     },
     {
       "source_id": "9048-8c73e7fd",
@@ -6262,7 +6493,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9048-8c73e7fd-scrunchies-de-saten-cebando-flores.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9048-8c73e7fd-scrunchies-de-saten-cebando-flores-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9048-8c73e7fd-scrunchies-de-saten-cebando-flores-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/IMG_8806-scaled.webp"
     },
     {
       "source_id": "9049-64a8a4bc",
@@ -6287,7 +6519,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-9049-64a8a4bc-scrunchies-de-saten-cebando-flores.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-9049-64a8a4bc-scrunchies-de-saten-cebando-flores-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-9049-64a8a4bc-scrunchies-de-saten-cebando-flores-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/IMG_8806-scaled.webp"
     },
     {
       "source_id": "8903",
@@ -6310,7 +6543,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-8903-cofia-para-rulos-cebando-flores.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-8903-cofia-para-rulos-cebando-flores-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-8903-cofia-para-rulos-cebando-flores-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2026/01/IMG_8807-scaled.webp"
     },
     {
       "source_id": "2436",
@@ -6333,7 +6567,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2436-jabon-exfoliante-lavanda-y-luffa.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2436-jabon-exfoliante-lavanda-y-luffa-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2436-jabon-exfoliante-lavanda-y-luffa-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/11/Jabon-Glicerina-Exfoliante-Lufa.jpg"
     },
     {
       "source_id": "2434",
@@ -6356,7 +6591,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2434-jabion-artesanal-de-coco.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2434-jabion-artesanal-de-coco-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2434-jabion-artesanal-de-coco-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/11/Jabon-de-Coco.jpg"
     },
     {
       "source_id": "2432",
@@ -6379,7 +6615,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2432-luffa.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2432-luffa-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2432-luffa-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/11/Lufa.jpg"
     },
     {
       "source_id": "2430",
@@ -6402,7 +6639,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2430-peine-grande.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2430-peine-grande-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2430-peine-grande-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/11/Diseno-sin-titulo-1.png"
     },
     {
       "source_id": "2428",
@@ -6425,7 +6663,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2428-peine-pequeno.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2428-peine-pequeno-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2428-peine-pequeno-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/11/Diseno-sin-titulo.png"
     },
     {
       "source_id": "2420",
@@ -6448,7 +6687,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2420-funda-para-almohada-de-saten.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2420-funda-para-almohada-de-saten-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2420-funda-para-almohada-de-saten-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/11/neatly-made-bed-scaled-1.jpg"
     },
     {
       "source_id": "2840",
@@ -6471,7 +6711,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2840-curlfusion-crema-gel-de-lino.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2840-curlfusion-crema-gel-de-lino-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2840-curlfusion-crema-gel-de-lino-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/curlfusion-yellow.jpg"
     },
     {
       "source_id": "2412",
@@ -6494,7 +6735,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2412-gel-de-aloe-y-pepino-fijacion-moderada.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2412-gel-de-aloe-y-pepino-fijacion-moderada-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2412-gel-de-aloe-y-pepino-fijacion-moderada-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/gel-de-aloe-yellow.jpg"
     },
     {
       "source_id": "2410",
@@ -6517,7 +6759,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2410-gel-de-lino-finalizador.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2410-gel-de-lino-finalizador-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2410-gel-de-lino-finalizador-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/gel-de-lino-yellow.jpg"
     },
     {
       "source_id": "2408",
@@ -6540,7 +6783,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2408-cascada-de-proteinas-manzanilla-y-vainilla.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2408-cascada-de-proteinas-manzanilla-y-vainilla-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2408-cascada-de-proteinas-manzanilla-y-vainilla-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/cascada-de-proteinas-manzanilla-vainilla-yellow.jpg"
     },
     {
       "source_id": "2406",
@@ -6563,7 +6807,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2406-cascada-de-proteinas-ginseng-y-bambu.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2406-cascada-de-proteinas-ginseng-y-bambu-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2406-cascada-de-proteinas-ginseng-y-bambu-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/cascada-de-proteinas-ginseng-bambu-yellow.jpg"
     },
     {
       "source_id": "2404",
@@ -6586,7 +6831,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2404-cascada-de-proteinas-coco-y-kiwi.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2404-cascada-de-proteinas-coco-y-kiwi-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2404-cascada-de-proteinas-coco-y-kiwi-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/cascada-de-proteinas-coco-kiwi-yellow.jpg"
     },
     {
       "source_id": "2402",
@@ -6609,7 +6855,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2402-cascada-de-proteinas-aloe-y-te-verde.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2402-cascada-de-proteinas-aloe-y-te-verde-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2402-cascada-de-proteinas-aloe-y-te-verde-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/cascada-de-proteinas-aloe-te-verde-yellow.jpg"
     },
     {
       "source_id": "2399",
@@ -6632,7 +6879,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2399-cascada-de-proteinas-chia.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2399-cascada-de-proteinas-chia-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2399-cascada-de-proteinas-chia-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/cascada-de-proteinas-chia-yellow.jpg"
     },
     {
       "source_id": "2397",
@@ -6655,7 +6903,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2397-tonico-capilar-anti-graso.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2397-tonico-capilar-anti-graso-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2397-tonico-capilar-anti-graso-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/tonico-capilar-specific-yellow.jpg"
     },
     {
       "source_id": "2395",
@@ -6678,7 +6927,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2395-tonico-capilar-anti-caida.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2395-tonico-capilar-anti-caida-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2395-tonico-capilar-anti-caida-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/tonico-specific-yellow.jpg"
     },
     {
       "source_id": "2393",
@@ -6701,7 +6951,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2393-tratamiento-acondicionador-specific.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2393-tratamiento-acondicionador-specific-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2393-tratamiento-acondicionador-specific-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/tratamiento-acondicionador-specific-yellow.jpg"
     },
     {
       "source_id": "2391",
@@ -6724,7 +6975,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2391-crema-de-peinar-specific.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2391-crema-de-peinar-specific-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2391-crema-de-peinar-specific-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/crema-de-peinar-specific-yellow.jpg"
     },
     {
       "source_id": "2389",
@@ -6747,7 +6999,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2389-shampoo-anti-graso-specific.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2389-shampoo-anti-graso-specific-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2389-shampoo-anti-graso-specific-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/shampoo-specific-grasos-yellow.jpg"
     },
     {
       "source_id": "2385",
@@ -6770,7 +7023,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2385-shampoo-revitalizador-specific.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2385-shampoo-revitalizador-specific-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2385-shampoo-revitalizador-specific-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/shampoo-specific-revitalizador-yellow.jpg"
     },
     {
       "source_id": "2383",
@@ -6793,7 +7047,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2383-shampoo-cabellos-secos-y-tenidos-specific.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2383-shampoo-cabellos-secos-y-tenidos-specific-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2383-shampoo-cabellos-secos-y-tenidos-specific-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/shampoo-specific-yellow-secos.jpg"
     },
     {
       "source_id": "2381",
@@ -6816,7 +7071,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2381-crema-corporal-cebolla-y-ginseng.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2381-crema-corporal-cebolla-y-ginseng-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2381-crema-corporal-cebolla-y-ginseng-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/crema-corporal-cebolla-y-ginseng-yellow.jpg"
     },
     {
       "source_id": "2379",
@@ -6839,7 +7095,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2379-crema-de-peinar-cebolla-y-ginseng.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2379-crema-de-peinar-cebolla-y-ginseng-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2379-crema-de-peinar-cebolla-y-ginseng-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/crema-de-peinar-cebolla-y-ginseng-yellow.jpg"
     },
     {
       "source_id": "2376",
@@ -6862,7 +7119,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2376-tratamiento-capilar-cebolla-y-ginseng.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2376-tratamiento-capilar-cebolla-y-ginseng-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2376-tratamiento-capilar-cebolla-y-ginseng-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/tratamiento-capilar-cebolla-ginseng-yellow.jpg"
     },
     {
       "source_id": "2374",
@@ -6885,7 +7143,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2374-acondicionador-cebolla-y-ginseng.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2374-acondicionador-cebolla-y-ginseng-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2374-acondicionador-cebolla-y-ginseng-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/acondicionador-cebolla-ginseng-yellow.jpg"
     },
     {
       "source_id": "2372",
@@ -6908,7 +7167,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2372-shampoo-sin-sulfatos-cebolla-y-ginseng.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2372-shampoo-sin-sulfatos-cebolla-y-ginseng-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2372-shampoo-sin-sulfatos-cebolla-y-ginseng-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/shampoo-cebolla-y-ginseng-yellow.jpg"
     },
     {
       "source_id": "2370",
@@ -6931,7 +7191,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2370-crema-corporal-arandanos.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2370-crema-corporal-arandanos-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2370-crema-corporal-arandanos-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/crema-corporal-arandanos-yellow.jpg"
     },
     {
       "source_id": "2368",
@@ -6954,7 +7215,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2368-crema-de-peinar-arandanos.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2368-crema-de-peinar-arandanos-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2368-crema-de-peinar-arandanos-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/crema-de-peinar-arandanos-yellow.jpg"
     },
     {
       "source_id": "2366",
@@ -6977,7 +7239,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2366-tratamiento-capilar-arandanos.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2366-tratamiento-capilar-arandanos-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2366-tratamiento-capilar-arandanos-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/tratamiento-capilar-arandanos-yellow.jpg"
     },
     {
       "source_id": "2364",
@@ -7000,7 +7263,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2364-acondicionador-arandanos.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2364-acondicionador-arandanos-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2364-acondicionador-arandanos-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/acondicionador-arandanos-yellow.jpg"
     },
     {
       "source_id": "2362",
@@ -7023,7 +7287,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2362-shampoo-sin-sulfatos-arandanos.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2362-shampoo-sin-sulfatos-arandanos-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2362-shampoo-sin-sulfatos-arandanos-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/shampoo-arandanos-yellow.jpg"
     },
     {
       "source_id": "2360",
@@ -7046,7 +7311,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2360-crema-corporal-almendras-y-chia.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2360-crema-corporal-almendras-y-chia-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2360-crema-corporal-almendras-y-chia-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/crema-corporal-almendras-y-chia-yellow.jpg"
     },
     {
       "source_id": "2358",
@@ -7069,7 +7335,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2358-crema-de-peinar-almendras-y-chia.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2358-crema-de-peinar-almendras-y-chia-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2358-crema-de-peinar-almendras-y-chia-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/crema-de-peinar-almendras-chia-yellow.jpg"
     },
     {
       "source_id": "2356",
@@ -7092,7 +7359,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2356-tratamiento-capilar-almendras-y-chia.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2356-tratamiento-capilar-almendras-y-chia-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2356-tratamiento-capilar-almendras-y-chia-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/tratamiento-capillar-almendras-y-chia-yellow.jpg"
     },
     {
       "source_id": "2352",
@@ -7115,7 +7383,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-2352-acondicionador-almendras-y-chia.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-2352-acondicionador-almendras-y-chia-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-2352-acondicionador-almendras-y-chia-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/acondicionador-almendras-chia-yellow.jpg"
     },
     {
       "source_id": "1692",
@@ -7138,7 +7407,8 @@
       "image_urls": [
         "/catalog/frenzzi/frenzzi-1692-shampoo-sin-sulfatos-almendras-y-chia.webp"
       ],
-      "thumbnail_url": "/catalog/frenzzi/frenzzi-1692-shampoo-sin-sulfatos-almendras-y-chia-thumb.webp"
+      "thumbnail_url": "/catalog/frenzzi/frenzzi-1692-shampoo-sin-sulfatos-almendras-y-chia-thumb.webp",
+      "stored_source_image_url": "https://frenzziargentina.com/wp-content/uploads/2024/10/shampoo-almendras-y-chia-yellow.jpg"
     }
   ],
   "count": 270,
