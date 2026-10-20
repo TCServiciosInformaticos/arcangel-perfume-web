@@ -17,6 +17,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useCart } from "@/lib/cart-context";
 import { formatARS } from "@/lib/format";
 import { createCheckout } from "@/lib/checkout.functions";
+import { BRANCHES, type BranchId } from "@/lib/branches";
 
 const settingsQuery = queryOptions({
   queryKey: ["settings", "public"],
@@ -62,6 +63,7 @@ function CheckoutPage() {
   const [method, setMethod] = useState<"pickup" | "shipping">("shipping");
   const [submitting, setSubmitting] = useState(false);
   const [timeSlot, setTimeSlot] = useState<"morning" | "afternoon" | "evening" | "">("");
+  const [branch, setBranch] = useState<BranchId | "">("");
 
   const shippingCost = method === "shipping" ? Number(settings?.shipping_cost ?? 0) : 0;
   const total = subtotal + shippingCost;
@@ -93,12 +95,17 @@ function CheckoutPage() {
       toast.error("Completá la dirección de envío");
       return;
     }
+    if (method === "pickup" && !branch) {
+      toast.error("Elegí la sucursal donde vas a retirar");
+      return;
+    }
 
     setSubmitting(true);
     try {
       const res = await checkout({
         data: {
           ...parsed.data,
+          pickup_branch: method === "pickup" ? (branch as BranchId) : null,
           items: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
         },
       });
@@ -153,11 +160,29 @@ function CheckoutPage() {
                 <label className={`flex cursor-pointer items-start gap-3 rounded-md border p-4 ${method === "pickup" ? "border-primary bg-primary/5" : "border-border"}`}>
                   <RadioGroupItem value="pickup" />
                   <div>
-                    <div className="font-medium">Retiro en el local</div>
-                    <div className="text-xs text-muted-foreground">{settings?.pickup_address ?? "Coordinamos por WhatsApp"}</div>
+                    <div className="font-medium">Retiro en sucursal</div>
+                    <div className="text-xs text-muted-foreground">Sin costo · Gran Bourg</div>
                   </div>
                 </label>
               </RadioGroup>
+
+              {method === "pickup" && (
+                <div className="mt-6">
+                  <Label>¿En qué sucursal retirás?<span className="text-destructive"> *</span></Label>
+                  <RadioGroup value={branch} onValueChange={(v) => setBranch(v as BranchId)} className="mt-2 grid gap-3 sm:grid-cols-2">
+                    {BRANCHES.map((b) => (
+                      <label key={b.id} className={`flex cursor-pointer items-start gap-3 rounded-md border p-4 ${branch === b.id ? "border-primary bg-primary/5" : "border-border"}`}>
+                        <RadioGroupItem value={b.id} />
+                        <div>
+                          <div className="font-medium">{b.name}</div>
+                          <div className="text-xs text-muted-foreground">{b.address}</div>
+                        </div>
+                      </label>
+                    ))}
+                  </RadioGroup>
+                  <p className="mt-2 text-xs text-muted-foreground">Lunes a sábado de 9 a 13 y de 16 a 20 h.</p>
+                </div>
+              )}
 
               {method === "shipping" && (
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
