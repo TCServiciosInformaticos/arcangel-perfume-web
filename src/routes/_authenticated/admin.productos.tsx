@@ -7,6 +7,7 @@ import { Plus, Pencil, Trash2, ImagePlus, X, Upload } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { formatARS, slugify } from "@/lib/format";
 import { subcategoriesForCategory, typesForBrand, validateProductClassification, type SubcategoryOption, type ProductTypeOption } from "@/lib/category-selection";
+import { collectPages } from "@/lib/catalog-products";
 import { Button } from "@/components/ui/button";
 import { ProductExcelControls } from "@/components/product-excel-controls";
 import { Input } from "@/components/ui/input";
@@ -82,14 +83,18 @@ function AdminProductos() {
   const productsQ = useQuery({
     queryKey: ["admin", "products"],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("products")
-        .select(
-          "id, slug, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)",
-        )
-        .order("created_at", { ascending: false });
-      if (error) throw error;
-      return (data ?? []) as Product[];
+      return collectPages(async (from, to) => {
+        const { data, error } = await supabase
+          .from("products")
+          .select(
+            "id, slug, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)",
+          )
+          .order("created_at", { ascending: false })
+          .order("id", { ascending: true })
+          .range(from, to);
+        if (error) throw error;
+        return (data ?? []) as Product[];
+      });
     },
   });
 
