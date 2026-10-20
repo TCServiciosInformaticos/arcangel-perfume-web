@@ -6,9 +6,9 @@
 - [ ] Verificar consentimiento, retorno al iniciar sesión y manifiesto; requiere republicación para uso externo.
 
 ## Actualización por Excel
-- [ ] Exportar todos los artículos con ID, nombre, categoría, marca, precio, stock y activo.
-- [ ] Validar e importar únicamente precio, stock y activo con confirmación y guardado atómico para administradores.
-- [ ] Entregar Excel actual y verificar exportación e importación en el panel.
+- [x] Exportar todos los artículos con ID, nombre, categoría, marca, precio, stock y activo.
+- [x] Validar e importar únicamente precio, stock y activo con confirmación y guardado atómico para administradores.
+- [x] Entregar Excel actual y verificar exportación e importación en el panel.
 
 ## Catálogo cuidado personal Thelma & Louise
 - [x] Obtener los 84 artículos de las dos páginas de cuidado personal con precios, fotos y descripciones.
