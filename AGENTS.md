@@ -20,3 +20,4 @@
 - App MCP uses SDK-generated transport routes and managed OAuth with a caller-scoped database factory; only active catalog reads are exposed, preserving RLS and excluding orders, payments and credentials.
 - Browser-local catalog tools use useWebMCP in the catalog screen and share visible actions; static-name telemetry is fail-open and never records inputs or catalog content.
 - Validate OAuth return paths once at sign-in and preserve the canonical path across sign-in and sign-up, so delegated consent is completed without open redirects.
+- Catalog cards prefer products.thumbnail_url (small WebP) and fall back to image_urls[0]; admin uploads convert to WebP and store a thumbnail, so mobile listings stay light.

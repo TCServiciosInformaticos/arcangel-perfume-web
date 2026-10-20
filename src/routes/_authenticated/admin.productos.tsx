@@ -1,3 +1,4 @@
+import { FULL_IMAGE_MAX, THUMB_IMAGE_MAX, resolveThumbnail, toWebp } from "@/lib/image-optimize";
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState, useRef } from "react";
@@ -62,6 +63,7 @@ type Product = {
   is_active: boolean;
   is_featured: boolean;
   image_urls: string[];
+  thumbnail_url?: string | null;
   category_id: string | null;
   subcategory_id: string | null;
   category?: { name: string } | null;
@@ -82,7 +84,7 @@ function AdminProductos() {
       const { data, error } = await supabase
         .from("products")
         .select(
-          "id, slug, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, category_id, subcategory_id, category:categories(name)",
+          "id, slug, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, thumbnail_url, category_id, subcategory_id, category:categories(name)",
         )
         .order("created_at", { ascending: false });
       if (error) throw error;
@@ -318,6 +320,7 @@ function ProductForm({
   const [isActive, setIsActive] = useState(product?.is_active ?? true);
   const [isFeatured, setIsFeatured] = useState(product?.is_featured ?? false);
   const [images, setImages] = useState<string[]>(product?.image_urls ?? []);
+  const [thumbs, setThumbs] = useState<Record<string, string>>({});
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
 
@@ -328,21 +331,27 @@ function ProductForm({
     setUploading(true);
     try {
       const uploaded: string[] = [];
-      for (const file of Array.from(files)) {
-        const ext = file.name.split(".").pop() ?? "jpg";
-        const path = `${crypto.randomUUID()}.${ext}`;
-        const { error: upErr } = await supabase.storage.from(BUCKET).upload(path, file, {
+      const newThumbs: Record<string, string> = {};
+      const put = async (blob: Blob) => {
+        const path = `${crypto.randomUUID()}.webp`;
+        const { error: upErr } = await supabase.storage.from(BUCKET).upload(path, blob, {
           cacheControl: "31536000",
           upsert: false,
-          contentType: file.type,
+          contentType: "image/webp",
         });
         if (upErr) throw upErr;
         const { data: signed, error: signErr } = await supabase.storage
           .from(BUCKET)
           .createSignedUrl(path, SIGNED_URL_TTL);
         if (signErr) throw signErr;
-        uploaded.push(signed.signedUrl);
+        return signed.signedUrl;
+      };
+      for (const file of Array.from(files)) {
+        const full = await put(await toWebp(file, FULL_IMAGE_MAX));
+        newThumbs[full] = await put(await toWebp(file, THUMB_IMAGE_MAX, 0.72));
+        uploaded.push(full);
       }
+      setThumbs((prev) => ({ ...prev, ...newThumbs }));
       setImages((prev) => [...prev, ...uploaded]);
       toast.success(`${uploaded.length} imagen(es) subida(s)`);
     } catch (e) {
@@ -370,6 +379,7 @@ function ProductForm({
         is_active: isActive,
         is_featured: isFeatured,
         image_urls: images,
+        thumbnail_url: resolveThumbnail(images[0], thumbs, { first: product?.image_urls?.[0], thumb: product?.thumbnail_url }),
       };
       if (!payload.name || !payload.slug || isNaN(payload.price)) {
         throw new Error("Completá nombre, slug y precio");
