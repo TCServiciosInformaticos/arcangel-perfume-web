@@ -77,9 +77,6 @@ export function SiteHeader() {
                 {n.name}
               </Link>
             ))}
-            {isAdmin && (
-              <Link to="/admin" className="shrink-0 text-sm font-bold uppercase text-foreground">Admin</Link>
-            )}
           </nav>
         </div>
 
@@ -93,7 +90,6 @@ export function SiteHeader() {
                 <Link key={n.name} to="/productos" search={n.search} onClick={() => setOpen(false)} className="px-2 py-3 text-sm font-medium uppercase text-primary">{n.name}</Link>
               ))}
               <Link to="/auth" onClick={() => setOpen(false)} className="px-2 py-3 text-sm">Mi cuenta</Link>
-              {isAdmin && <Link to="/admin" onClick={() => setOpen(false)} className="px-2 py-3 text-sm font-bold">Admin</Link>}
             </nav>
           </div>
         )}
