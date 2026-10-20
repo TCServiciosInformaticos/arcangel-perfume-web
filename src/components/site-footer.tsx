@@ -37,15 +37,22 @@ export function SiteFooter() {
 
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-widest text-sidebar-primary">Sucursales</h4>
-          <ul className="mt-4 space-y-3 text-sm text-sidebar-foreground/80">
-            <li>
-              <div className="font-medium text-sidebar-foreground">Sucursal 1</div>
-              Coronel Bogado 1678, Gran Bourg
-            </li>
-            <li>
-              <div className="font-medium text-sidebar-foreground">Sucursal 2</div>
-              Av. Eva Duarte de Perón 1103, Local 2, Gran Bourg
-            </li>
+          <ul className="mt-4 space-y-4 text-sm text-sidebar-foreground/80">
+            {branches.map((branch) => (
+              <li key={branch.name}>
+                <div className="font-medium text-sidebar-foreground">{branch.name}</div>
+                {branch.address}
+                <a
+                  href={`https://wa.me/${branch.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="mt-1 inline-flex items-center gap-2 text-sidebar-primary hover:underline underline-offset-2"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  {branch.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
