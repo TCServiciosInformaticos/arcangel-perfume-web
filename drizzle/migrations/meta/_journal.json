@@ -64,6 +64,13 @@
       "when": 1792523984592,
       "tag": "0008_han_as_cabello_subcategory",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1792524392943,
+      "tag": "0009_han_subcategories",
+      "breakpoints": true
     }
   ]
 }
