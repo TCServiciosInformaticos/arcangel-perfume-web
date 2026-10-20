@@ -10,8 +10,11 @@ def get(url):
     with opener.open(Request(url,headers={"User-Agent":"Mozilla/5.0"}),timeout=50) as r: return r.read().decode()
 html=get(BASE+"/catalogo")
 doc=BeautifulSoup(html,"html.parser")
-token=doc.select_one('meta[name="csrf-token"]')["content"]
 livewire=doc.find("script",attrs={"data-update-uri":True})
+meta=doc.select_one('meta[name="csrf-token"]')
+csrf=doc.find(attrs={"data-csrf":True})
+token=meta["content"] if meta else (csrf["data-csrf"] if csrf else None)
+if not token: raise ValueError("No public Livewire CSRF bootstrap token")
 endpoint=urljoin(BASE,livewire["data-update-uri"]) if livewire else BASE+"/livewire-a28e7295/update"
 component=next(el for el in doc.find_all(attrs={"wire:snapshot":True}) if "list-catalog-page" in el["wire:snapshot"])
 snapshot=component["wire:snapshot"]
