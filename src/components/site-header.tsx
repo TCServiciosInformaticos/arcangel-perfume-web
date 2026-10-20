@@ -2,7 +2,6 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { ShoppingCart, Menu, X, User, Search, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart-context";
-import { useAuth } from "@/lib/auth-context";
 import { formatARS } from "@/lib/format";
 import { useQuery } from "@tanstack/react-query";
 import { navigationCategoriesQuery } from "@/lib/catalog-navigation";
@@ -14,7 +13,6 @@ const MARQUEE = Array.from({ length: 8 }, () => "Envíos por Gran Bourg y alrede
 
 export function SiteHeader() {
   const { totalQty, subtotal: total } = useCart();
-  const { isAdmin } = useAuth();
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const navigate = useNavigate();
@@ -77,9 +75,6 @@ export function SiteHeader() {
                 {n.name}
               </Link>
             ))}
-            {isAdmin && (
-              <Link to="/admin" className="shrink-0 text-sm font-bold uppercase text-foreground">Admin</Link>
-            )}
           </nav>
         </div>
 
@@ -93,7 +88,6 @@ export function SiteHeader() {
                 <Link key={n.name} to="/productos" search={n.search} onClick={() => setOpen(false)} className="px-2 py-3 text-sm font-medium uppercase text-primary">{n.name}</Link>
               ))}
               <Link to="/auth" onClick={() => setOpen(false)} className="px-2 py-3 text-sm">Mi cuenta</Link>
-              {isAdmin && <Link to="/admin" onClick={() => setOpen(false)} className="px-2 py-3 text-sm font-bold">Admin</Link>}
             </nav>
           </div>
         )}

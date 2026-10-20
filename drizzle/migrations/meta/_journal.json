@@ -57,6 +57,13 @@
       "when": 1792522648850,
       "tag": "0007_product_thumbnails",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1792523984592,
+      "tag": "0008_han_as_cabello_subcategory",
+      "breakpoints": true
     }
   ]
 }
