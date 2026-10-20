@@ -1930,33 +1930,6 @@
       "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-46943-thumb.webp"
     },
     {
-      "source_id": "51561",
-      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=90&product_id=51561&page=1&limit=100",
-      "manufacturer_id": "90",
-      "name": "CICATRICURE MUEBLE",
-      "slug": "cicatricure-doan-51561",
-      "description": "CICATRICURE MUEBLE.\n\nMedida: 125 ml.",
-      "brand": "Cicatricure",
-      "brand_slug": "cicatricure",
-      "category_slug": "accesorios",
-      "product_type": "Exhibidores y muebles",
-      "source_price": 0.02,
-      "compare_at_price": null,
-      "source_image_urls": [
-        "https://doan.com.ar/var/www/html/www.doan.com.ar/image/catalog/doan/.jpg"
-      ],
-      "barcode": null,
-      "specifications": {
-        "Fragancia/Tono": "",
-        "Medida": "125 ml."
-      },
-      "listing_price": 0.02,
-      "image_urls": [
-        "/catalog/cicatricure/cicatricure-doan-51561.webp"
-      ],
-      "thumbnail_url": "/catalog/cicatricure/cicatricure-doan-51561-thumb.webp"
-    },
-    {
       "source_id": "51097",
       "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=170&product_id=51097&page=1&limit=100",
       "manufacturer_id": "170",
@@ -7166,6 +7139,22 @@
       "thumbnail_url": "/catalog/frenzzi/frenzzi-1692-shampoo-sin-sulfatos-almendras-y-chia-thumb.webp"
     }
   ],
-  "count": 271,
-  "pricing": "published_current_including_tax"
+  "count": 270,
+  "pricing": "published_current_including_tax",
+  "excluded": [
+    {
+      "slug": "cicatricure-doan-51561",
+      "name": "CICATRICURE MUEBLE",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=90&product_id=51561&page=1&limit=100",
+      "source_price": 0.02,
+      "reason": "Exhibidor con precio simbólico de 0.02, sin foto válida ni código de barras; pendiente de revisión."
+    }
+  ],
+  "import_counts": {
+    "Cicatricure": 34,
+    "Dermaglós": 108,
+    "Frenzzi": 66,
+    "Garnier": 25,
+    "Nivea": 37
+  }
 }
