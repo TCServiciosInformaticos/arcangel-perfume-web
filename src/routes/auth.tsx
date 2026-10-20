@@ -8,8 +8,10 @@ import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { oauthReturnPath } from "@/lib/oauth-return-path";
 
 export const Route = createFileRoute("/auth")({
+  validateSearch: (search: Record<string, unknown>) => ({ next: oauthReturnPath(search.next) }),
   head: () => ({ meta: [
     { title: "Acceso · El Arcángel" },
     { name: "description", content: "Acceso a la administración de Perfumería El Arcángel." },
@@ -24,14 +26,18 @@ export const Route = createFileRoute("/auth")({
 function AuthPage() {
   const { user, isAdmin, loading } = useAuth();
   const navigate = useNavigate();
+  const { next } = Route.useSearch();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
-    if (!loading && user && isAdmin) navigate({ to: "/admin" });
-  }, [loading, user, isAdmin, navigate]);
+    if (!loading && user) {
+      if (next !== "/") window.location.assign(next);
+      else if (isAdmin) navigate({ to: "/admin" });
+    }
+  }, [loading, user, isAdmin, navigate, next]);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -40,12 +46,13 @@ function AuthPage() {
       if (mode === "signin") {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
+        if (next !== "/") { window.location.assign(next); return; }
         toast.success("Sesión iniciada");
       } else {
         const { error } = await supabase.auth.signUp({
           email,
           password,
-          options: { emailRedirectTo: `${window.location.origin}/admin` },
+          options: { emailRedirectTo: new URL(next === "/" ? "/admin" : next, window.location.origin).href },
         });
         if (error) throw error;
         toast.success("Cuenta creada. Si es la primera cuenta del sistema, queda como administradora.");
@@ -93,13 +100,14 @@ function AuthPage() {
             </Button>
           </form>
 
-          <button
+          <Button
+            variant="link"
             type="button"
             onClick={() => setMode((m) => (m === "signin" ? "signup" : "signin"))}
             className="mt-4 w-full text-sm text-primary hover:underline"
           >
             {mode === "signin" ? "¿No tenés cuenta? Crear una" : "Ya tengo cuenta, ingresar"}
-          </button>
+          </Button>
 
           <Link to="/" className="mt-6 block text-center text-xs text-muted-foreground hover:text-primary">
             ← Volver al sitio

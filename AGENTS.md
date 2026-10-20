@@ -17,3 +17,6 @@
 - Store subcategories separately under one category and enforce product/category membership in the database, so admin edits cannot assign mismatched classifications.
 - Populate the header menu from managed categories and keep catalog filters in validated URL search parameters, so menu links, searches and browser history apply the same selection.
 - Product Excel updates identify existing rows by immutable ID and change only price, absolute stock balance and visibility through an admin-checked SECURITY INVOKER atomic database function; export reads all pages including inactive products so bulk editing cannot silently omit inventory or partially save an invalid file.
+- App MCP uses SDK-generated transport routes and managed OAuth with a caller-scoped database factory; only active catalog reads are exposed, preserving RLS and excluding orders, payments and credentials.
+- Browser-local catalog tools use useWebMCP in the catalog screen and share visible actions; static-name telemetry is fail-open and never records inputs or catalog content.
+- Validate OAuth return paths once at sign-in and preserve the canonical path across sign-in and sign-up, so delegated consent is completed without open redirects.
