@@ -87,7 +87,7 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/20 sm:via-secondary/50 sm:to-transparent" />
                 <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-6 pb-16 sm:px-20 sm:pb-8">
-                  <h1 className="text-4xl font-extrabold lowercase tracking-normal text-primary sm:text-7xl">{slide.title}</h1>
+                  <h1 className="text-4xl font-extrabold tracking-normal text-primary sm:text-7xl">{slide.title}</h1>
                   <p className="mt-3 max-w-[28rem] text-base font-semibold leading-relaxed text-foreground sm:mt-4 sm:text-2xl">{slide.sub}</p>
                 </div>
               </Link>
