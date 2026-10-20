@@ -33,3 +33,7 @@
 - [x] Orientar al usuario en la captura: modo de prueba, URL indicada, Pagos (legacy) y guardar configuración.
 ## Textos del catálogo
 - [x] Que el título bajo "Catálogo" cambie según la categoría, subcategoría, ofertas o búsqueda elegidas.
+
+## Banner de la portada
+- [x] Mostrar los tres frascos del banner de Perfumes en celular.
+- [x] Probar la imagen nueva de tocador verde en la diapositiva Cabello y verificarla en celular y escritorio.

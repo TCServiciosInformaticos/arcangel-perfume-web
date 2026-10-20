@@ -4,7 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-type Slide = { img: string; title: string; sub: string };
+type Slide = { img: string; title: string; sub: string; mobileObject?: string };
 
 export function HeroSlider({ slides }: { slides: Slide[] }) {
   const [viewportRef, api] = useEmblaCarousel({ loop: true });
@@ -77,18 +77,33 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
               inert={index !== selected}
               className="relative h-[320px] min-w-0 shrink-0 basis-full sm:h-[420px]"
             >
-              <Link to="/productos" draggable={false} className="absolute inset-0 block select-none">
-                <img
-                  src={slide.img}
-                  alt={slide.title}
-                  draggable={false}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/20 sm:via-secondary/50 sm:to-transparent" />
-                <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-6 pb-16 sm:px-20 sm:pb-8">
-                  <h1 className="text-4xl font-extrabold tracking-normal text-primary sm:text-7xl">{slide.title}</h1>
-                  <p className="mt-3 max-w-[28rem] text-base font-semibold leading-relaxed text-foreground sm:mt-4 sm:text-2xl">{slide.sub}</p>
+              <Link to="/productos" draggable={false} className="absolute inset-0 flex flex-col select-none sm:block">
+                <div className="relative h-[190px] shrink-0 overflow-hidden sm:hidden">
+                  <img
+                    src={slide.img}
+                    alt={slide.title}
+                    draggable={false}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    className={`h-full w-full object-cover ${slide.mobileObject ?? "object-center"}`}
+                  />
+                </div>
+                <div className="flex flex-1 flex-col justify-center bg-secondary px-5 sm:hidden">
+                  <h1 className="text-3xl font-extrabold tracking-normal text-primary">{slide.title}</h1>
+                  <p className="mt-1.5 max-w-[24rem] text-sm font-semibold leading-relaxed text-foreground">{slide.sub}</p>
+                </div>
+                <div className="hidden h-full sm:block">
+                  <img
+                    src={slide.img}
+                    alt={slide.title}
+                    draggable={false}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    className="h-full w-full object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/50 to-transparent" />
+                  <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-20 pb-8">
+                    <h1 className="text-7xl font-extrabold tracking-normal text-primary">{slide.title}</h1>
+                    <p className="mt-4 max-w-[28rem] text-2xl font-semibold leading-relaxed text-foreground">{slide.sub}</p>
+                  </div>
                 </div>
               </Link>
             </div>
