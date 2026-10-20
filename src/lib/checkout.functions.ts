@@ -64,6 +64,7 @@ export const createCheckout = createServerFn({ method: "POST" })
         delivery_day: data.delivery_day ?? null,
         delivery_time_slot: data.delivery_time_slot ?? null,
         notes: data.notes ?? null,
+        pickup_branch: data.delivery_method === "pickup" ? data.pickup_branch ?? null : null,
         subtotal,
         shipping_cost,
         total,

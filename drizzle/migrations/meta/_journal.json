@@ -71,6 +71,13 @@
       "when": 1792524392943,
       "tag": "0009_han_subcategories",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1792524611397,
+      "tag": "0010_orders_pickup_branch",
+      "breakpoints": true
     }
   ]
 }
