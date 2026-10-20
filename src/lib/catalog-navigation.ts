@@ -13,6 +13,7 @@ export const navigationCategoriesQuery = queryOptions({
 type CatalogSearch = {
   categoria?: string;
   subcategoria?: string;
+  tipo?: string;
   q?: string;
   ofertas?: boolean;
   orden?: string;
@@ -26,6 +27,7 @@ export function catalogSearch(search: Record<string, unknown>): CatalogSearch {
   return {
     categoria: typeof search.categoria === "string" ? search.categoria : undefined,
     subcategoria: typeof search.subcategoria === "string" ? search.subcategoria : undefined,
+    tipo: typeof search.tipo === "string" ? search.tipo : undefined,
     q: typeof search.q === "string" ? search.q : undefined,
     ofertas: search.ofertas === true || search.ofertas === "true" ? true : undefined,
     orden: search.orden === "price-asc" || search.orden === "price-desc" ? search.orden : undefined,
@@ -50,11 +52,13 @@ export type CatalogHeading = { eyebrow: string; title: string; subtitle: string 
 export function catalogHeading({
   categories,
   subcategories,
+  types = [],
   search,
   count,
 }: {
   categories: CatalogOption[];
   subcategories: CatalogOption[];
+  types?: CatalogOption[];
   search: CatalogSearch;
   count?: number;
 }): CatalogHeading {
@@ -68,6 +72,10 @@ export function catalogHeading({
 
   if (search.q?.trim()) {
     return { eyebrow: "Catálogo", title: `Resultados para “${search.q.trim()}”`, subtitle: found };
+  }
+  const type = subcategory ? types.find((t) => t.id === search.tipo) : undefined;
+  if (subcategory && type) {
+    return { eyebrow: subcategory.name, title: type.name, subtitle: available };
   }
   if (subcategory) {
     return { eyebrow: "Catálogo", title: subcategory.name, subtitle: available };

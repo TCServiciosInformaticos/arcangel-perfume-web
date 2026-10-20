@@ -8,7 +8,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { ProductCard } from "@/components/product-card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { subcategoriesForCategory } from "@/lib/category-selection";
+import { subcategoriesForCategory, typesForBrand } from "@/lib/category-selection";
 import { CATALOG_PAGE_SIZE, catalogHeading, catalogSearch } from "@/lib/catalog-navigation";
 import { Button } from "@/components/ui/button";
 import { useWebMCP } from "use-webmcp-tool";
@@ -17,19 +17,21 @@ import { runWebMCPTool } from "@/lib/webmcp-telemetry";
 const catalogQuery = queryOptions({
   queryKey: ["catalog"],
   queryFn: async () => {
-    const [products, categories, subcategories] = await Promise.all([
+    const [products, categories, subcategories, types] = await Promise.all([
       supabase
         .from("products")
-        .select("id, slug, name, price, compare_at_price, stock, image_urls, thumbnail_url, category_id, subcategory_id, category:categories(name)")
+        .select("id, slug, name, price, compare_at_price, stock, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)")
         .eq("is_active", true)
         .order("created_at", { ascending: false }),
       supabase.from("categories").select("id, name, slug").order("sort_order"),
       supabase.from("subcategories").select("id,name,category_id").order("sort_order"),
+      supabase.from("product_types").select("id,name,subcategory_id").order("sort_order"),
     ]);
+    if (types.error) throw types.error;
     if (products.error) throw products.error;
     if (categories.error) throw categories.error;
     if (subcategories.error) throw subcategories.error;
-    return { products: products.data ?? [], categories: categories.data ?? [], subcategories: subcategories.data ?? [] };
+    return { products: products.data ?? [], categories: categories.data ?? [], subcategories: subcategories.data ?? [], types: types.data ?? [] };
   },
 });
 
@@ -39,10 +41,12 @@ export const Route = createFileRoute("/productos")({
     const catalog = (match.loaderData ?? {}) as {
       categories?: Array<{ id: string; name: string; slug: string }>;
       subcategories?: Array<{ id: string; name: string; category_id: string }>;
+      types?: Array<{ id: string; name: string; subcategory_id: string }>;
     };
     const heading = catalogHeading({
       categories: catalog.categories ?? [],
       subcategories: catalog.subcategories ?? [],
+      types: catalog.types ?? [],
       search: match.search,
     });
     const title = `${heading.title} — Perfumería El Arcángel`;
@@ -69,12 +73,15 @@ function CatalogPage() {
   const q = search.q ?? "";
   const cat = data.categories.find((c) => c.slug === search.categoria || c.id === search.categoria)?.id ?? "all";
   const subcat = search.subcategoria ?? "all";
+  const brandTypes = subcat === "all" ? [] : typesForBrand(data.types, subcat);
+  const tipo = brandTypes.some((t) => t.id === search.tipo) ? search.tipo! : "all";
   const sort = search.orden ?? "recent";
 
   const list = useMemo(() => {
     let l = data.products;
     if (cat !== "all") l = l.filter((p) => p.category_id === cat);
     if (subcat !== "all") l = l.filter((p) => p.subcategory_id === subcat);
+    if (tipo !== "all") l = l.filter((p) => p.product_type_id === tipo);
     if (search.ofertas) l = l.filter((p) => p.compare_at_price !== null && Number(p.compare_at_price) > Number(p.price));
     if (q.trim()) {
       const needle = q.toLowerCase();
@@ -83,7 +90,7 @@ function CatalogPage() {
     if (sort === "price-asc") l = [...l].sort((a, b) => Number(a.price) - Number(b.price));
     else if (sort === "price-desc") l = [...l].sort((a, b) => Number(b.price) - Number(a.price));
     return l;
-  }, [data.products, q, cat, subcat, sort, search.ofertas]);
+  }, [data.products, q, cat, subcat, tipo, sort, search.ofertas]);
 
   const totalPages = Math.max(1, Math.ceil(list.length / CATALOG_PAGE_SIZE));
   const page = Math.min(search.pagina ?? 1, totalPages);
@@ -99,6 +106,7 @@ function CatalogPage() {
   const heading = catalogHeading({
     categories: data.categories,
     subcategories: data.subcategories,
+    types: data.types,
     search,
     count: list.length,
   });
@@ -139,7 +147,7 @@ function CatalogPage() {
         </div>
 
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto_auto]">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto_auto_auto]">
             <div className="relative">
               <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
@@ -149,7 +157,7 @@ function CatalogPage() {
                 className="pl-9"
               />
             </div>
-            <Select value={cat} onValueChange={(value) => navigate({ search: { ...search, categoria: data.categories.find((c) => c.id === value)?.slug, subcategoria: undefined, pagina: undefined }, resetScroll: false })}>
+            <Select value={cat} onValueChange={(value) => navigate({ search: { ...search, categoria: data.categories.find((c) => c.id === value)?.slug, subcategoria: undefined, tipo: undefined, pagina: undefined }, resetScroll: false })}>
               <SelectTrigger aria-label="Categoría" className="lg:w-48"><SelectValue placeholder="Categoría" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Todas las categorías</SelectItem>
@@ -158,13 +166,22 @@ function CatalogPage() {
                 ))}
               </SelectContent>
             </Select>
-            <Select value={subcat} onValueChange={(value) => navigate({ search: { ...search, subcategoria: value === "all" ? undefined : value, pagina: undefined }, resetScroll: false })}>
-              <SelectTrigger aria-label="Subcategoría / marca" className="lg:w-52"><SelectValue placeholder="Subcategoría / marca" /></SelectTrigger>
+            <Select value={subcat} onValueChange={(value) => navigate({ search: { ...search, subcategoria: value === "all" ? undefined : value, tipo: undefined, pagina: undefined }, resetScroll: false })}>
+              <SelectTrigger aria-label="Marca" className="lg:w-52"><SelectValue placeholder="Marca" /></SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Todas las subcategorías</SelectItem>
+                <SelectItem value="all">Todas las marcas</SelectItem>
                 {(cat === "all" ? data.subcategories : subcategoriesForCategory(data.subcategories, cat)).map((s) => <SelectItem key={s.id} value={s.id}>{s.name}</SelectItem>)}
               </SelectContent>
             </Select>
+            {brandTypes.length > 0 && (
+              <Select value={tipo} onValueChange={(value) => navigate({ search: { ...search, tipo: value === "all" ? undefined : value, pagina: undefined }, resetScroll: false })}>
+                <SelectTrigger aria-label="Tipo de producto" className="lg:w-48"><SelectValue placeholder="Tipo de producto" /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">Todos los tipos</SelectItem>
+                  {brandTypes.map((t) => <SelectItem key={t.id} value={t.id}>{t.name}</SelectItem>)}
+                </SelectContent>
+              </Select>
+            )}
             <Select value={sort} onValueChange={(value) => navigate({ search: { ...search, orden: value === "recent" ? undefined : value, pagina: undefined }, resetScroll: false })}>
               <SelectTrigger className="sm:w-44"><SelectValue /></SelectTrigger>
               <SelectContent>
