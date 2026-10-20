@@ -26,4 +26,14 @@ test("reduce un 20% los precios publicados de cuidado personal Thelma & Louise",
 test("redondea el precio descontado a pesos enteros", () => {
   const product = { ...source, source_url: "https://www.thelmaylouise.com.ar/productos/jabon/", source_price: 12345.67 };
   assert.equal(prepareCatalogProduct(product, images, "higiene", { discountPercent: 20, roundToPesos: true }).price, 9877);
+});test("permite precio cero solo para Han cuando está autorizado", () => {
+  const han = { ...source, source_url: "https://hancolor.com.ar/producto/silver-3/", source_price: 0 };
+  assert.equal(prepareCatalogProduct(han, images, "han", { allowZeroPrice: true }).price, 0);
+});
+test("rechaza precio cero de Han sin autorización explícita", () => {
+  const han = { ...source, source_url: "https://hancolor.com.ar/producto/silver-3/", source_price: 0 };
+  assert.throws(() => prepareCatalogProduct(han, images, "han"));
+});
+test("no permite precio cero en otros orígenes aunque se pida", () => {
+  assert.throws(() => prepareCatalogProduct({ ...source, source_price: 0 }, images, "cabello", { allowZeroPrice: true }));
 });
