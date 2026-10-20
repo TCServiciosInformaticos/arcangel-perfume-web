@@ -16,15 +16,20 @@ type CatalogSearch = {
   q?: string;
   ofertas?: boolean;
   orden?: string;
+  pagina?: number;
 };
 
+export const CATALOG_PAGE_SIZE = 24;
+
 export function catalogSearch(search: Record<string, unknown>): CatalogSearch {
+  const page = Number(search.pagina);
   return {
     categoria: typeof search.categoria === "string" ? search.categoria : undefined,
     subcategoria: typeof search.subcategoria === "string" ? search.subcategoria : undefined,
     q: typeof search.q === "string" ? search.q : undefined,
     ofertas: search.ofertas === true || search.ofertas === "true" ? true : undefined,
     orden: search.orden === "price-asc" || search.orden === "price-desc" ? search.orden : undefined,
+    pagina: Number.isInteger(page) && page > 1 ? page : undefined,
   };
 }
 
