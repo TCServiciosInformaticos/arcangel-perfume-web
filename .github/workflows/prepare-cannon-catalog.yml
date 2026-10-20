@@ -1,0 +1,36 @@
+name: Prepare Cannon catalog
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/prepare-cannon-catalog.yml
+      - scripts/prepare-cannon-catalog.py
+permissions:
+  contents: write
+concurrency:
+  group: prepare-cannon-catalog
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install beautifulsoup4==4.14.3 Pillow==12.0.0
+      - name: Prepare official Cannon catalog
+        run: python scripts/prepare-cannon-catalog.py
+      - name: Save source and product images when ready
+        run: |
+          if [ ! -f scripts/catalog-data/cannon.json ]; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/catalog-data/cannon.json public/catalog/cannon
+          if ! git diff --cached --quiet; then
+            git commit -m "Store official Cannon catalog and optimized product images"
+            git pull --rebase
+            git push
+          fi
