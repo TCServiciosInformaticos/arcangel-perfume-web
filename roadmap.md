@@ -40,4 +40,4 @@
 - [x] Cambiar "Cabello" por "Cuidado Capilar" en menú, portada y carrusel.
 - [x] Agregar diapositiva Make up que abre el catálogo filtrado por Make up.
 - [x] Cambiar la foto provisorial de la diapositiva Make up por la imagen subida por la usuaria.
-- [ ] Que cada diapositiva del carrusel abra el catálogo filtrado por su categoría (Perfumes y Cuidado Capilar faltan).
+- [x] Que cada diapositiva del carrusel abra el catálogo filtrado por su categoría.
