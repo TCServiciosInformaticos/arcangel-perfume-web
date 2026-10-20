@@ -110,9 +110,25 @@ def prepare(seed):
     pid=seed["source_id"]
     slug="dove-doan-"+pid
     saved=[]
+    chosen_images=[]
     for i,url in enumerate(image_urls):
-        im=ImageOps.exif_transpose(Image.open(io.BytesIO(fetch(url)))).convert("RGBA")
-        if min(im.size)<100: raise ValueError("Photo too small")
+        candidates=[url]
+        small=re.sub(r"-[0-9]+x[0-9]+(?=[.][a-zA-Z]+$)","-228x228",url)
+        original=re.sub(r"-[0-9]+x[0-9]+(?=[.][a-zA-Z]+$)","",url.replace("/image/cache/","/image/"))
+        candidates.extend([small,original])
+        # All candidates identify the same source image, never another product.
+        im=None
+        for candidate in dict.fromkeys(candidates):
+            try:
+                decoded=ImageOps.exif_transpose(Image.open(io.BytesIO(fetch(candidate)))).convert("RGBA")
+                if min(decoded.size)<100: raise ValueError("Photo too small")
+                im=decoded
+                chosen_images.append(candidate)
+                if candidate!=url: print("RECOVERED_PHOTO",pid,candidate,flush=True)
+                break
+            except Exception as image_error:
+                print("PHOTO_CANDIDATE_FAILED",pid,candidate,type(image_error).__name__,flush=True)
+        if im is None: raise ValueError("No valid real product photo for "+name+"; tried "+str(candidates))
         filename=slug+("-"+str(i) if i else "")
         full=im.copy();full.thumbnail((1200,1200),Image.Resampling.LANCZOS)
         full.save(OUT/(filename+".webp"),"WEBP",quality=85,method=6)
@@ -124,7 +140,7 @@ def prepare(seed):
             "compare_at_price":oldprice if oldprice and oldprice>price else None,
             "name":name,"slug":slug,"description":description,"brand":"Dove","category_slug":category,
             "product_type":typ,"image_urls":saved,"thumbnail_url":"/catalog/dove/"+slug+"-thumb.webp",
-            "source_image_urls":image_urls,"barcode":barcode[1] if barcode else None,"specifications":specs}
+            "source_image_urls":chosen_images,"barcode":barcode[1] if barcode else None,"specifications":specs}
 rows=[]
 with ThreadPoolExecutor(max_workers=4) as ex:
     futures={ex.submit(prepare,p):p for p in listing.values()}
