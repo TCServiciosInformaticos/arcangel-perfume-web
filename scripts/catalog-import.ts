@@ -7,7 +7,7 @@ export type SourceProduct = {
 
 const ISSUE_HOSTS = ["issueprofessional.com", "www.issueprofessional.com"];
 const CANNON_HOSTS = ["fraganciascannon.com", "www.fraganciascannon.com"];
-const ZERO_PRICE_HOSTS = ["hancolor.com.ar", "www.hancolor.com.ar", ...ISSUE_HOSTS, ...CANNON_HOSTS];
+const ZERO_PRICE_HOSTS = ["hancolor.com.ar", "www.hancolor.com.ar", ...ISSUE_HOSTS];
 
 export function prepareCatalogProduct(product: SourceProduct, imageUrls: string[], categoryId: string, options: { discountPercent?: number; roundToPesos?: boolean; allowZeroPrice?: boolean; slugPrefix?: string } = {}) {
   if (!product.name.trim() || !product.description.trim()) throw new Error("Falta nombre o descripción");
@@ -17,7 +17,7 @@ export function prepareCatalogProduct(product: SourceProduct, imageUrls: string[
   if (options.allowZeroPrice && !zeroPriceAllowed) throw new Error("Precio cero no autorizado para este origen");
   if (!Number.isFinite(product.source_price) || product.source_price < 0 || (product.source_price === 0 && !zeroPriceAllowed)) throw new Error("Falta precio publicado válido");
   const sourceSlug = source.pathname.split("/").filter(Boolean).at(-1);
-  const allowedHosts = ["bmdistribuidora.com.ar", "www.bmdistribuidora.com.ar", "thelmaylouise.com.ar", "www.thelmaylouise.com.ar", ...ZERO_PRICE_HOSTS];
+  const allowedHosts = ["bmdistribuidora.com.ar", "www.bmdistribuidora.com.ar", "thelmaylouise.com.ar", "www.thelmaylouise.com.ar", ...ZERO_PRICE_HOSTS, ...CANNON_HOSTS];
   if (!sourceSlug || source.protocol !== "https:" || !allowedHosts.includes(source.hostname)) throw new Error("Origen inválido");
   const storedIssueImage = (url: string) => ISSUE_HOSTS.includes(source.hostname) && /^\/catalog\/issue\/issue-[a-z0-9-]+\.webp$/.test(url);
   const storedCannonImage = (url: string) => CANNON_HOSTS.includes(source.hostname) && /^\/catalog\/cannon\/cannon-[0-9]+-[a-z0-9-]+\.webp$/.test(url);
