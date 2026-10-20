@@ -26,7 +26,7 @@ const featuredQuery = queryOptions({
       .eq("is_active", true)
       .order("is_featured", { ascending: false })
       .order("created_at", { ascending: false })
-      .limit(8);
+      .limit(9);
     if (error) throw error;
     return data ?? [];
   },
