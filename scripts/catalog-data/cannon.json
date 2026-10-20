@@ -7,7 +7,7 @@
     {
       "source_id": "1",
       "source_url": "https://www.fraganciascannon.com/coqueterias?v=1",
-      "source_price": 0,
+      "source_price": 9500.0,
       "published_price": "9500.00",
       "name": "Coqueterias — Eau de toilette 80ml (Vap.)",
       "slug": "cannon-1-coqueterias",
@@ -25,7 +25,7 @@
     {
       "source_id": "4",
       "source_url": "https://www.fraganciascannon.com/coqueterias-flowers?v=4",
-      "source_price": 0,
+      "source_price": 8600.0,
       "published_price": "8600.00",
       "name": "Coqueterias Flowers — Eau de toilette 40ml (Vap.)",
       "slug": "cannon-4-coqueterias-flowers",
@@ -43,7 +43,7 @@
     {
       "source_id": "5",
       "source_url": "https://www.fraganciascannon.com/coqueterias-flowers?v=5",
-      "source_price": 0,
+      "source_price": 4300.0,
       "published_price": "4300.00",
       "name": "Coqueterias Flowers — Desodorante en aerosol 123ml",
       "slug": "cannon-5-coqueterias-flowers",
@@ -61,7 +61,7 @@
     {
       "source_id": "6",
       "source_url": "https://www.fraganciascannon.com/mujercitas?v=6",
-      "source_price": 0,
+      "source_price": 10600.0,
       "published_price": "10600.00",
       "name": "Mujercitas — Eau de parfum 80ml (Vap.)",
       "slug": "cannon-6-mujercitas",
@@ -79,7 +79,7 @@
     {
       "source_id": "7",
       "source_url": "https://www.fraganciascannon.com/mujercitas?v=7",
-      "source_price": 0,
+      "source_price": 8700.0,
       "published_price": "8700.00",
       "name": "Mujercitas — Eau de parfum 40ml (Vap.)",
       "slug": "cannon-7-mujercitas",
@@ -97,7 +97,7 @@
     {
       "source_id": "8",
       "source_url": "https://www.fraganciascannon.com/mujercitas?v=8",
-      "source_price": 0,
+      "source_price": 4300.0,
       "published_price": "4300.00",
       "name": "Mujercitas — Desodorante en aerosol 123ml",
       "slug": "cannon-8-mujercitas",
@@ -115,7 +115,7 @@
     {
       "source_id": "9",
       "source_url": "https://www.fraganciascannon.com/sophie-by-mujercitas?v=9",
-      "source_price": 0,
+      "source_price": 15900.0,
       "published_price": "15900.00",
       "name": "Sophie By Mujercitas — Eau de toilette 50ml (Vap.)",
       "slug": "cannon-9-sophie-by-mujercitas",
@@ -133,7 +133,7 @@
     {
       "source_id": "10",
       "source_url": "https://www.fraganciascannon.com/sophie-by-mujercitas?v=10",
-      "source_price": 0,
+      "source_price": 4300.0,
       "published_price": "4300.00",
       "name": "Sophie By Mujercitas — Desodorante en aerosol 123ml",
       "slug": "cannon-10-sophie-by-mujercitas",
@@ -151,7 +151,7 @@
     {
       "source_id": "11",
       "source_url": "https://www.fraganciascannon.com/julie-by-mujercitas?v=11",
-      "source_price": 0,
+      "source_price": 15900.0,
       "published_price": "15900.00",
       "name": "Julie By Mujercitas — Eau de toilette 50ml (Vap.)",
       "slug": "cannon-11-julie-by-mujercitas",
@@ -169,7 +169,7 @@
     {
       "source_id": "12",
       "source_url": "https://www.fraganciascannon.com/julie-by-mujercitas?v=12",
-      "source_price": 0,
+      "source_price": 4300.0,
       "published_price": "4300.00",
       "name": "Julie By Mujercitas — Desodorante en aerosol 123ml",
       "slug": "cannon-12-julie-by-mujercitas",
@@ -187,7 +187,7 @@
     {
       "source_id": "15",
       "source_url": "https://www.fraganciascannon.com/mujercitas-sunny?v=15",
-      "source_price": 0,
+      "source_price": 9900.0,
       "published_price": "9900.00",
       "name": "Mujercitas Sunny — Eau de toilette 40ml (Vap.)",
       "slug": "cannon-15-mujercitas-sunny",
@@ -205,7 +205,7 @@
     {
       "source_id": "16",
       "source_url": "https://www.fraganciascannon.com/mujercitas-sunny?v=16",
-      "source_price": 0,
+      "source_price": 3600.0,
       "published_price": "3600.00",
       "name": "Mujercitas Sunny — Desodorante en aerosol 102ml",
       "slug": "cannon-16-mujercitas-sunny",
@@ -223,7 +223,7 @@
     {
       "source_id": "17",
       "source_url": "https://www.fraganciascannon.com/mujercitas-sunny?v=17",
-      "source_price": 0,
+      "source_price": 16700.0,
       "published_price": "16700.00",
       "name": "Mujercitas Sunny — Eau de toilette 40ml (Vap.) + Desodorante en aerosol 102ml",
       "slug": "cannon-17-mujercitas-sunny",
@@ -241,7 +241,7 @@
     {
       "source_id": "18",
       "source_url": "https://www.fraganciascannon.com/mujercitas-funny?v=18",
-      "source_price": 0,
+      "source_price": 9900.0,
       "published_price": "9900.00",
       "name": "Mujercitas Funny — Eau de toilette 40ml (Vap.)",
       "slug": "cannon-18-mujercitas-funny",
@@ -259,7 +259,7 @@
     {
       "source_id": "19",
       "source_url": "https://www.fraganciascannon.com/mujercitas-funny?v=19",
-      "source_price": 0,
+      "source_price": 3600.0,
       "published_price": "3600.00",
       "name": "Mujercitas Funny — Desodorante en aerosol 102ml",
       "slug": "cannon-19-mujercitas-funny",
@@ -277,7 +277,7 @@
     {
       "source_id": "20",
       "source_url": "https://www.fraganciascannon.com/mujercitas-funny?v=20",
-      "source_price": 0,
+      "source_price": 16700.0,
       "published_price": "16700.00",
       "name": "Mujercitas Funny — Eau de toilette 40ml (Vap.) + Desodorante en aerosol 102ml",
       "slug": "cannon-20-mujercitas-funny",
@@ -295,7 +295,7 @@
     {
       "source_id": "21",
       "source_url": "https://www.fraganciascannon.com/paco-futbol?v=21",
-      "source_price": 0,
+      "source_price": 13400.0,
       "published_price": "13400.00",
       "name": "Paco Futbol — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-21-paco-futbol",
@@ -313,7 +313,7 @@
     {
       "source_id": "22",
       "source_url": "https://www.fraganciascannon.com/paco-futbol?v=22",
-      "source_price": 0,
+      "source_price": 4400.0,
       "published_price": "4400.00",
       "name": "Paco Futbol — Desodorante en aerosol 150ml",
       "slug": "cannon-22-paco-futbol",
@@ -331,7 +331,7 @@
     {
       "source_id": "24",
       "source_url": "https://www.fraganciascannon.com/pibes?v=24",
-      "source_price": 0,
+      "source_price": 9500.0,
       "published_price": "9500.00",
       "name": "Pibe´s — Colonia 80ml (Vap.)",
       "slug": "cannon-24-pibes",
@@ -349,7 +349,7 @@
     {
       "source_id": "25",
       "source_url": "https://www.fraganciascannon.com/paco?v=25",
-      "source_price": 0,
+      "source_price": 9500.0,
       "published_price": "9500.00",
       "name": "Paco — Eau de toilette 90ml (Vap.)",
       "slug": "cannon-25-paco",
@@ -367,7 +367,7 @@
     {
       "source_id": "26",
       "source_url": "https://www.fraganciascannon.com/paco?v=26",
-      "source_price": 0,
+      "source_price": 8700.0,
       "published_price": "8700.00",
       "name": "Paco — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-26-paco",
@@ -385,7 +385,7 @@
     {
       "source_id": "28",
       "source_url": "https://www.fraganciascannon.com/paco?v=28",
-      "source_price": 0,
+      "source_price": 4400.0,
       "published_price": "4400.00",
       "name": "Paco — Desodorante en aerosol 150ml",
       "slug": "cannon-28-paco",
@@ -403,7 +403,7 @@
     {
       "source_id": "29",
       "source_url": "https://www.fraganciascannon.com/paco-surf?v=29",
-      "source_price": 0,
+      "source_price": 13400.0,
       "published_price": "13400.00",
       "name": "Paco Surf — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-29-paco-surf",
@@ -421,7 +421,7 @@
     {
       "source_id": "31",
       "source_url": "https://www.fraganciascannon.com/paco-surf?v=31",
-      "source_price": 0,
+      "source_price": 4400.0,
       "published_price": "4400.00",
       "name": "Paco Surf — Desodorante en aerosol 150ml",
       "slug": "cannon-31-paco-surf",
@@ -439,7 +439,7 @@
     {
       "source_id": "32",
       "source_url": "https://www.fraganciascannon.com/danielle?v=32",
-      "source_price": 0,
+      "source_price": 9500.0,
       "published_price": "9500.00",
       "name": "Danielle — Eau de toilette 90ml (Vap.)",
       "slug": "cannon-32-danielle",
@@ -457,7 +457,7 @@
     {
       "source_id": "33",
       "source_url": "https://www.fraganciascannon.com/danielle?v=33",
-      "source_price": 0,
+      "source_price": 7000.0,
       "published_price": "7000.00",
       "name": "Danielle — Shampoo 200ml",
       "slug": "cannon-33-danielle",
@@ -475,7 +475,7 @@
     {
       "source_id": "34",
       "source_url": "https://www.fraganciascannon.com/danielle?v=34",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Danielle — Jabonera con jabón 75gs",
       "slug": "cannon-34-danielle",
@@ -493,7 +493,7 @@
     {
       "source_id": "35",
       "source_url": "https://www.fraganciascannon.com/danielle?v=35",
-      "source_price": 0,
+      "source_price": 19000.0,
       "published_price": "19000.00",
       "name": "Danielle — Eau de toilette 90ml + Jabonera con jabón 75gs",
       "slug": "cannon-35-danielle",
@@ -511,7 +511,7 @@
     {
       "source_id": "36",
       "source_url": "https://www.fraganciascannon.com/danielle?v=36",
-      "source_price": 0,
+      "source_price": 19000.0,
       "published_price": "19000.00",
       "name": "Danielle — Eau de toilette 90ml + Shampoo 200ml",
       "slug": "cannon-36-danielle",
@@ -529,7 +529,7 @@
     {
       "source_id": "37",
       "source_url": "https://www.fraganciascannon.com/jolie-danielle?v=37",
-      "source_price": 0,
+      "source_price": 9500.0,
       "published_price": "9500.00",
       "name": "Jolie Danielle — Eau de toilette 90ml (Vap.)",
       "slug": "cannon-37-jolie-danielle",
@@ -547,7 +547,7 @@
     {
       "source_id": "38",
       "source_url": "https://www.fraganciascannon.com/jolie-danielle?v=38",
-      "source_price": 0,
+      "source_price": 19000.0,
       "published_price": "19000.00",
       "name": "Jolie Danielle — Eau de toilette 90ml + Jabonera con jabón 75gs",
       "slug": "cannon-38-jolie-danielle",
@@ -565,7 +565,7 @@
     {
       "source_id": "39",
       "source_url": "https://www.fraganciascannon.com/my-little-danielle?v=39",
-      "source_price": 0,
+      "source_price": 9500.0,
       "published_price": "9500.00",
       "name": "My Little Danielle — Eau de toilette 90ml (Vap.)",
       "slug": "cannon-39-my-little-danielle",
@@ -583,7 +583,7 @@
     {
       "source_id": "42",
       "source_url": "https://www.fraganciascannon.com/my-little-danielle?v=42",
-      "source_price": 0,
+      "source_price": 28600.0,
       "published_price": "28600.00",
       "name": "My Little Danielle — Eau de toilette 90ml + Conejo 00",
       "slug": "cannon-42-my-little-danielle",
@@ -601,7 +601,7 @@
     {
       "source_id": "47",
       "source_url": "https://www.fraganciascannon.com/flower-rose?v=47",
-      "source_price": 0,
+      "source_price": 11900.0,
       "published_price": "11900.00",
       "name": "Flower Rose — Eau de toilette 40ml (Vap.)",
       "slug": "cannon-47-flower-rose",
@@ -619,7 +619,7 @@
     {
       "source_id": "48",
       "source_url": "https://www.fraganciascannon.com/flower-rose?v=48",
-      "source_price": 0,
+      "source_price": 9900.0,
       "published_price": "9900.00",
       "name": "Flower Rose — Eau de cologne 250ml",
       "slug": "cannon-48-flower-rose",
@@ -637,7 +637,7 @@
     {
       "source_id": "49",
       "source_url": "https://www.fraganciascannon.com/flower-rose?v=49",
-      "source_price": 0,
+      "source_price": 4700.0,
       "published_price": "4700.00",
       "name": "Flower Rose — Desodorante en aerosol 123ml",
       "slug": "cannon-49-flower-rose",
@@ -655,7 +655,7 @@
     {
       "source_id": "50",
       "source_url": "https://www.fraganciascannon.com/ciel-love?v=50",
-      "source_price": 0,
+      "source_price": 17700.0,
       "published_price": "17700.00",
       "name": "Ciel Love — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-50-ciel-love",
@@ -673,7 +673,7 @@
     {
       "source_id": "51",
       "source_url": "https://www.fraganciascannon.com/ciel-love?v=51",
-      "source_price": 0,
+      "source_price": 14300.0,
       "published_price": "14300.00",
       "name": "Ciel Love — Eau de toilette 30ml (Vap.)",
       "slug": "cannon-51-ciel-love",
@@ -691,7 +691,7 @@
     {
       "source_id": "52",
       "source_url": "https://www.fraganciascannon.com/ciel-love?v=52",
-      "source_price": 0,
+      "source_price": 4700.0,
       "published_price": "4700.00",
       "name": "Ciel Love — Desodorante en aerosol 123ml",
       "slug": "cannon-52-ciel-love",
@@ -709,7 +709,7 @@
     {
       "source_id": "53",
       "source_url": "https://www.fraganciascannon.com/ciel?v=53",
-      "source_price": 0,
+      "source_price": 17700.0,
       "published_price": "17700.00",
       "name": "Ciel — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-53-ciel",
@@ -727,7 +727,7 @@
     {
       "source_id": "54",
       "source_url": "https://www.fraganciascannon.com/ciel?v=54",
-      "source_price": 0,
+      "source_price": 20000.0,
       "published_price": "20000.00",
       "name": "Ciel — Eau de parfum 80ml (Vap.)",
       "slug": "cannon-54-ciel",
@@ -745,7 +745,7 @@
     {
       "source_id": "55",
       "source_url": "https://www.fraganciascannon.com/ciel?v=55",
-      "source_price": 0,
+      "source_price": 11000.0,
       "published_price": "11000.00",
       "name": "Ciel — Eau de cologne 250ml",
       "slug": "cannon-55-ciel",
@@ -763,7 +763,7 @@
     {
       "source_id": "56",
       "source_url": "https://www.fraganciascannon.com/ciel?v=56",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "Ciel — Desodorante en aerosol 186ml",
       "slug": "cannon-56-ciel",
@@ -781,7 +781,7 @@
     {
       "source_id": "57",
       "source_url": "https://www.fraganciascannon.com/ciel?v=57",
-      "source_price": 0,
+      "source_price": 4800.0,
       "published_price": "4800.00",
       "name": "Ciel — Desodorante en aerosol 123ml",
       "slug": "cannon-57-ciel",
@@ -799,7 +799,7 @@
     {
       "source_id": "64",
       "source_url": "https://www.fraganciascannon.com/ciel-nuit?v=64",
-      "source_price": 0,
+      "source_price": 17700.0,
       "published_price": "17700.00",
       "name": "Ciel Nuit — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-64-ciel-nuit",
@@ -817,7 +817,7 @@
     {
       "source_id": "65",
       "source_url": "https://www.fraganciascannon.com/ciel-nuit?v=65",
-      "source_price": 0,
+      "source_price": 20000.0,
       "published_price": "20000.00",
       "name": "Ciel Nuit — Eau de parfum 80ml (Vap.)",
       "slug": "cannon-65-ciel-nuit",
@@ -835,7 +835,7 @@
     {
       "source_id": "66",
       "source_url": "https://www.fraganciascannon.com/ciel-nuit?v=66",
-      "source_price": 0,
+      "source_price": 11000.0,
       "published_price": "11000.00",
       "name": "Ciel Nuit — Eau de cologne 250ml",
       "slug": "cannon-66-ciel-nuit",
@@ -853,7 +853,7 @@
     {
       "source_id": "67",
       "source_url": "https://www.fraganciascannon.com/ciel-nuit?v=67",
-      "source_price": 0,
+      "source_price": 4800.0,
       "published_price": "4800.00",
       "name": "Ciel Nuit — Desodorante en aerosol 123ml",
       "slug": "cannon-67-ciel-nuit",
@@ -871,7 +871,7 @@
     {
       "source_id": "68",
       "source_url": "https://www.fraganciascannon.com/ciel-nuit?v=68",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "Ciel Nuit — Desodorante en aerosol 186ml",
       "slug": "cannon-68-ciel-nuit",
@@ -889,7 +889,7 @@
     {
       "source_id": "72",
       "source_url": "https://www.fraganciascannon.com/ciel-crystal?v=72",
-      "source_price": 0,
+      "source_price": 22800.0,
       "published_price": "22800.00",
       "name": "Ciel Crystal — Eau de toilette 50ml (Vap.)",
       "slug": "cannon-72-ciel-crystal",
@@ -907,7 +907,7 @@
     {
       "source_id": "73",
       "source_url": "https://www.fraganciascannon.com/ciel-crystal?v=73",
-      "source_price": 0,
+      "source_price": 26400.0,
       "published_price": "26400.00",
       "name": "Ciel Crystal — Eau de toilette 80ml (Vap.)",
       "slug": "cannon-73-ciel-crystal",
@@ -925,7 +925,7 @@
     {
       "source_id": "74",
       "source_url": "https://www.fraganciascannon.com/ciel-crystal?v=74",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "Ciel Crystal — Desodorante en aerosol 186ml",
       "slug": "cannon-74-ciel-crystal",
@@ -943,7 +943,7 @@
     {
       "source_id": "75",
       "source_url": "https://www.fraganciascannon.com/ciel-crystal?v=75",
-      "source_price": 0,
+      "source_price": 4800.0,
       "published_price": "4800.00",
       "name": "Ciel Crystal — Desodorante en aerosol 123ml",
       "slug": "cannon-75-ciel-crystal",
@@ -961,7 +961,7 @@
     {
       "source_id": "76",
       "source_url": "https://www.fraganciascannon.com/ciel-crystal?v=76",
-      "source_price": 0,
+      "source_price": 11000.0,
       "published_price": "11000.00",
       "name": "Ciel Crystal — Eau de cologne 250ml",
       "slug": "cannon-76-ciel-crystal",
@@ -979,7 +979,7 @@
     {
       "source_id": "81",
       "source_url": "https://www.fraganciascannon.com/ciel-noir?v=81",
-      "source_price": 0,
+      "source_price": 22800.0,
       "published_price": "22800.00",
       "name": "Ciel Noir — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-81-ciel-noir",
@@ -997,7 +997,7 @@
     {
       "source_id": "82",
       "source_url": "https://www.fraganciascannon.com/ciel-noir?v=82",
-      "source_price": 0,
+      "source_price": 26400.0,
       "published_price": "26400.00",
       "name": "Ciel Noir — Eau de parfum 80ml (Vap.)",
       "slug": "cannon-82-ciel-noir",
@@ -1015,7 +1015,7 @@
     {
       "source_id": "83",
       "source_url": "https://www.fraganciascannon.com/ciel-noir?v=83",
-      "source_price": 0,
+      "source_price": 4800.0,
       "published_price": "4800.00",
       "name": "Ciel Noir — Desodorante en aerosol 123ml",
       "slug": "cannon-83-ciel-noir",
@@ -1033,7 +1033,7 @@
     {
       "source_id": "84",
       "source_url": "https://www.fraganciascannon.com/ciel-noir?v=84",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "Ciel Noir — Desodorante en aerosol 186ml",
       "slug": "cannon-84-ciel-noir",
@@ -1051,7 +1051,7 @@
     {
       "source_id": "85",
       "source_url": "https://www.fraganciascannon.com/ciel-noir?v=85",
-      "source_price": 0,
+      "source_price": 11000.0,
       "published_price": "11000.00",
       "name": "Ciel Noir — Eau de cologne 250ml",
       "slug": "cannon-85-ciel-noir",
@@ -1069,7 +1069,7 @@
     {
       "source_id": "87",
       "source_url": "https://www.fraganciascannon.com/ciel-magic?v=87",
-      "source_price": 0,
+      "source_price": 22800.0,
       "published_price": "22800.00",
       "name": "Ciel Magic — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-87-ciel-magic",
@@ -1087,7 +1087,7 @@
     {
       "source_id": "88",
       "source_url": "https://www.fraganciascannon.com/ciel-magic?v=88",
-      "source_price": 0,
+      "source_price": 26400.0,
       "published_price": "26400.00",
       "name": "Ciel Magic — Eau de parfum 80ml (Vap.)",
       "slug": "cannon-88-ciel-magic",
@@ -1105,7 +1105,7 @@
     {
       "source_id": "89",
       "source_url": "https://www.fraganciascannon.com/ciel-magic?v=89",
-      "source_price": 0,
+      "source_price": 11000.0,
       "published_price": "11000.00",
       "name": "Ciel Magic — Eau de cologne 250ml",
       "slug": "cannon-89-ciel-magic",
@@ -1123,7 +1123,7 @@
     {
       "source_id": "90",
       "source_url": "https://www.fraganciascannon.com/ciel-magic?v=90",
-      "source_price": 0,
+      "source_price": 4800.0,
       "published_price": "4800.00",
       "name": "Ciel Magic — Desodorante en aerosol 123ml",
       "slug": "cannon-90-ciel-magic",
@@ -1141,7 +1141,7 @@
     {
       "source_id": "91",
       "source_url": "https://www.fraganciascannon.com/ciel-magic?v=91",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "Ciel Magic — Desodorante en aerosol 186ml",
       "slug": "cannon-91-ciel-magic",
@@ -1159,7 +1159,7 @@
     {
       "source_id": "92",
       "source_url": "https://www.fraganciascannon.com/lextreme?v=92",
-      "source_price": 0,
+      "source_price": 11900.0,
       "published_price": "11900.00",
       "name": "L'extreme — Eau de parfum 40ml (Vap.)",
       "slug": "cannon-92-lextreme",
@@ -1177,7 +1177,7 @@
     {
       "source_id": "93",
       "source_url": "https://www.fraganciascannon.com/lextreme?v=93",
-      "source_price": 0,
+      "source_price": 4800.0,
       "published_price": "4800.00",
       "name": "L'extreme — Desodorante en aerosol 123ml",
       "slug": "cannon-93-lextreme",
@@ -1195,7 +1195,7 @@
     {
       "source_id": "94",
       "source_url": "https://www.fraganciascannon.com/kevin?v=94",
-      "source_price": 0,
+      "source_price": 24500.0,
       "published_price": "24500.00",
       "name": "Kevin — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-94-kevin",
@@ -1213,7 +1213,7 @@
     {
       "source_id": "95",
       "source_url": "https://www.fraganciascannon.com/kevin?v=95",
-      "source_price": 0,
+      "source_price": 19000.0,
       "published_price": "19000.00",
       "name": "Kevin — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-95-kevin",
@@ -1231,7 +1231,7 @@
     {
       "source_id": "96",
       "source_url": "https://www.fraganciascannon.com/kevin?v=96",
-      "source_price": 0,
+      "source_price": 11900.0,
       "published_price": "11900.00",
       "name": "Kevin — After Shave 60ml",
       "slug": "cannon-96-kevin",
@@ -1249,7 +1249,7 @@
     {
       "source_id": "97",
       "source_url": "https://www.fraganciascannon.com/kevin?v=97",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Kevin — Desodorante en aerosol 150ml",
       "slug": "cannon-97-kevin",
@@ -1267,7 +1267,7 @@
     {
       "source_id": "98",
       "source_url": "https://www.fraganciascannon.com/kevin?v=98",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Kevin — Desodorante en aerosol 250ml",
       "slug": "cannon-98-kevin",
@@ -1285,7 +1285,7 @@
     {
       "source_id": "99",
       "source_url": "https://www.fraganciascannon.com/kevin?v=99",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Kevin — Antitranspirante sin alcohol en aerosol 177ml",
       "slug": "cannon-99-kevin",
@@ -1303,7 +1303,7 @@
     {
       "source_id": "100",
       "source_url": "https://www.fraganciascannon.com/kevin?v=100",
-      "source_price": 0,
+      "source_price": 11000.0,
       "published_price": "11000.00",
       "name": "Kevin — Eau de cologne 170ml",
       "slug": "cannon-100-kevin",
@@ -1321,7 +1321,7 @@
     {
       "source_id": "101",
       "source_url": "https://www.fraganciascannon.com/kevin-park?v=101",
-      "source_price": 0,
+      "source_price": 20100.0,
       "published_price": "20100.00",
       "name": "Kevin Park — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-101-kevin-park",
@@ -1339,7 +1339,7 @@
     {
       "source_id": "102",
       "source_url": "https://www.fraganciascannon.com/kevin-park?v=102",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Kevin Park — Desodorante en aerosol 150ml",
       "slug": "cannon-102-kevin-park",
@@ -1357,7 +1357,7 @@
     {
       "source_id": "103",
       "source_url": "https://www.fraganciascannon.com/kevin-park?v=103",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Kevin Park — Desodorante en aerosol 250ml",
       "slug": "cannon-103-kevin-park",
@@ -1375,7 +1375,7 @@
     {
       "source_id": "104",
       "source_url": "https://www.fraganciascannon.com/kevin-black?v=104",
-      "source_price": 0,
+      "source_price": 25700.0,
       "published_price": "25700.00",
       "name": "Kevin Black — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-104-kevin-black",
@@ -1393,7 +1393,7 @@
     {
       "source_id": "105",
       "source_url": "https://www.fraganciascannon.com/kevin-black?v=105",
-      "source_price": 0,
+      "source_price": 19900.0,
       "published_price": "19900.00",
       "name": "Kevin Black — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-105-kevin-black",
@@ -1411,7 +1411,7 @@
     {
       "source_id": "106",
       "source_url": "https://www.fraganciascannon.com/kevin-black?v=106",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Kevin Black — Desodorante en aerosol 150ml",
       "slug": "cannon-106-kevin-black",
@@ -1429,7 +1429,7 @@
     {
       "source_id": "107",
       "source_url": "https://www.fraganciascannon.com/kevin-black?v=107",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Kevin Black — Desodorante en aerosol 250ml",
       "slug": "cannon-107-kevin-black",
@@ -1447,7 +1447,7 @@
     {
       "source_id": "108",
       "source_url": "https://www.fraganciascannon.com/kevin-black?v=108",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Kevin Black — Antitranspirante sin alcohol en aerosol 177ml",
       "slug": "cannon-108-kevin-black",
@@ -1465,7 +1465,7 @@
     {
       "source_id": "109",
       "source_url": "https://www.fraganciascannon.com/kevin-spirit?v=109",
-      "source_price": 0,
+      "source_price": 24900.0,
       "published_price": "24900.00",
       "name": "Kevin Spirit — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-109-kevin-spirit",
@@ -1483,7 +1483,7 @@
     {
       "source_id": "110",
       "source_url": "https://www.fraganciascannon.com/kevin-spirit?v=110",
-      "source_price": 0,
+      "source_price": 19600.0,
       "published_price": "19600.00",
       "name": "Kevin Spirit — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-110-kevin-spirit",
@@ -1501,7 +1501,7 @@
     {
       "source_id": "111",
       "source_url": "https://www.fraganciascannon.com/kevin-spirit?v=111",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Kevin Spirit — Desodorante en aerosol 150ml",
       "slug": "cannon-111-kevin-spirit",
@@ -1519,7 +1519,7 @@
     {
       "source_id": "112",
       "source_url": "https://www.fraganciascannon.com/kevin-spirit?v=112",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Kevin Spirit — Desodorante en aerosol 250ml",
       "slug": "cannon-112-kevin-spirit",
@@ -1537,7 +1537,7 @@
     {
       "source_id": "113",
       "source_url": "https://www.fraganciascannon.com/chester-ice?v=113",
-      "source_price": 0,
+      "source_price": 15000.0,
       "published_price": "15000.00",
       "name": "Chester Ice — Eau de toilette 100ml",
       "slug": "cannon-113-chester-ice",
@@ -1555,7 +1555,7 @@
     {
       "source_id": "114",
       "source_url": "https://www.fraganciascannon.com/chester-ice?v=114",
-      "source_price": 0,
+      "source_price": 13900.0,
       "published_price": "13900.00",
       "name": "Chester Ice — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-114-chester-ice",
@@ -1573,7 +1573,7 @@
     {
       "source_id": "115",
       "source_url": "https://www.fraganciascannon.com/chester-ice?v=115",
-      "source_price": 0,
+      "source_price": 11000.0,
       "published_price": "11000.00",
       "name": "Chester Ice — Eau de cologne 60ml",
       "slug": "cannon-115-chester-ice",
@@ -1591,7 +1591,7 @@
     {
       "source_id": "116",
       "source_url": "https://www.fraganciascannon.com/chester-ice?v=116",
-      "source_price": 0,
+      "source_price": 11000.0,
       "published_price": "11000.00",
       "name": "Chester Ice — After Shave 100ml",
       "slug": "cannon-116-chester-ice",
@@ -1609,7 +1609,7 @@
     {
       "source_id": "117",
       "source_url": "https://www.fraganciascannon.com/chester-ice?v=117",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Chester Ice — Desodorante en aerosol 150ml",
       "slug": "cannon-117-chester-ice",
@@ -1627,7 +1627,7 @@
     {
       "source_id": "118",
       "source_url": "https://www.fraganciascannon.com/chester-ice?v=118",
-      "source_price": 0,
+      "source_price": 5800.0,
       "published_price": "5800.00",
       "name": "Chester Ice — Desodorante en aerosol 250ml",
       "slug": "cannon-118-chester-ice",
@@ -1645,7 +1645,7 @@
     {
       "source_id": "120",
       "source_url": "https://www.fraganciascannon.com/chester-ice?v=120",
-      "source_price": 0,
+      "source_price": 11000.0,
       "published_price": "11000.00",
       "name": "Chester Ice — Eau de cologne 170ml",
       "slug": "cannon-120-chester-ice",
@@ -1663,7 +1663,7 @@
     {
       "source_id": "121",
       "source_url": "https://www.fraganciascannon.com/colbert?v=121",
-      "source_price": 0,
+      "source_price": 12700.0,
       "published_price": "12700.00",
       "name": "Colbert — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-121-colbert",
@@ -1681,7 +1681,7 @@
     {
       "source_id": "122",
       "source_url": "https://www.fraganciascannon.com/colbert?v=122",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Colbert — Desodorante en aerosol 250ml",
       "slug": "cannon-122-colbert",
@@ -1699,7 +1699,7 @@
     {
       "source_id": "124",
       "source_url": "https://www.fraganciascannon.com/pino-colbert?v=124",
-      "source_price": 0,
+      "source_price": 12200.0,
       "published_price": "12200.00",
       "name": "Pino Colbert — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-124-pino-colbert",
@@ -1717,7 +1717,7 @@
     {
       "source_id": "125",
       "source_url": "https://www.fraganciascannon.com/pino-colbert?v=125",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Pino Colbert — Desodorante en aerosol 250ml",
       "slug": "cannon-125-pino-colbert",
@@ -1735,7 +1735,7 @@
     {
       "source_id": "126",
       "source_url": "https://www.fraganciascannon.com/pino-colbert?v=126",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Pino Colbert — Desodorante en aerosol 150ml",
       "slug": "cannon-126-pino-colbert",
@@ -1753,7 +1753,7 @@
     {
       "source_id": "127",
       "source_url": "https://www.fraganciascannon.com/colbert-noir?v=127",
-      "source_price": 0,
+      "source_price": 17500.0,
       "published_price": "17500.00",
       "name": "Colbert Noir — Eau de parfum 90ml (Vap.)",
       "slug": "cannon-127-colbert-noir",
@@ -1771,7 +1771,7 @@
     {
       "source_id": "128",
       "source_url": "https://www.fraganciascannon.com/colbert-noir?v=128",
-      "source_price": 0,
+      "source_price": 14500.0,
       "published_price": "14500.00",
       "name": "Colbert Noir — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-128-colbert-noir",
@@ -1789,7 +1789,7 @@
     {
       "source_id": "129",
       "source_url": "https://www.fraganciascannon.com/colbert-noir?v=129",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Colbert Noir — Desodorante en aerosol 250ml",
       "slug": "cannon-129-colbert-noir",
@@ -1807,7 +1807,7 @@
     {
       "source_id": "130",
       "source_url": "https://www.fraganciascannon.com/colbert-noir?v=130",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Colbert Noir — Desodorante en aerosol 150ml",
       "slug": "cannon-130-colbert-noir",
@@ -1825,7 +1825,7 @@
     {
       "source_id": "131",
       "source_url": "https://www.fraganciascannon.com/colbert-us?v=131",
-      "source_price": 0,
+      "source_price": 14500.0,
       "published_price": "14500.00",
       "name": "Colbert US — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-131-colbert-us",
@@ -1843,7 +1843,7 @@
     {
       "source_id": "132",
       "source_url": "https://www.fraganciascannon.com/colbert-us?v=132",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Colbert US — Desodorante en aerosol 250ml",
       "slug": "cannon-132-colbert-us",
@@ -1861,7 +1861,7 @@
     {
       "source_id": "133",
       "source_url": "https://www.fraganciascannon.com/colbert-us?v=133",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Colbert US — Desodorante en aerosol 150ml",
       "slug": "cannon-133-colbert-us",
@@ -1879,7 +1879,7 @@
     {
       "source_id": "134",
       "source_url": "https://www.fraganciascannon.com/acqua-di-colbert?v=134",
-      "source_price": 0,
+      "source_price": 19600.0,
       "published_price": "19600.00",
       "name": "Acqua Di Colbert — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-134-acqua-di-colbert",
@@ -1897,7 +1897,7 @@
     {
       "source_id": "135",
       "source_url": "https://www.fraganciascannon.com/acqua-di-colbert?v=135",
-      "source_price": 0,
+      "source_price": 15500.0,
       "published_price": "15500.00",
       "name": "Acqua Di Colbert — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-135-acqua-di-colbert",
@@ -1915,7 +1915,7 @@
     {
       "source_id": "136",
       "source_url": "https://www.fraganciascannon.com/acqua-di-colbert?v=136",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Acqua Di Colbert — Desodorante en aerosol 150ml",
       "slug": "cannon-136-acqua-di-colbert",
@@ -1933,7 +1933,7 @@
     {
       "source_id": "137",
       "source_url": "https://www.fraganciascannon.com/acqua-di-colbert?v=137",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Acqua Di Colbert — Desodorante en aerosol 250ml",
       "slug": "cannon-137-acqua-di-colbert",
@@ -1951,7 +1951,7 @@
     {
       "source_id": "139",
       "source_url": "https://www.fraganciascannon.com/colbert-space?v=139",
-      "source_price": 0,
+      "source_price": 15900.0,
       "published_price": "15900.00",
       "name": "Colbert Space — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-139-colbert-space",
@@ -1969,7 +1969,7 @@
     {
       "source_id": "141",
       "source_url": "https://www.fraganciascannon.com/colbert-space?v=141",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Colbert Space — Desodorante en aerosol 250ml",
       "slug": "cannon-141-colbert-space",
@@ -1987,7 +1987,7 @@
     {
       "source_id": "142",
       "source_url": "https://www.fraganciascannon.com/colbert-code?v=142",
-      "source_price": 0,
+      "source_price": 25900.0,
       "published_price": "25900.00",
       "name": "Colbert Code — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-142-colbert-code",
@@ -2005,7 +2005,7 @@
     {
       "source_id": "144",
       "source_url": "https://www.fraganciascannon.com/colbert-code?v=144",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Colbert Code — Desodorante en aerosol 250ml",
       "slug": "cannon-144-colbert-code",
@@ -2023,7 +2023,7 @@
     {
       "source_id": "149",
       "source_url": "https://www.fraganciascannon.com/bross-london-warrior?v=149",
-      "source_price": 0,
+      "source_price": 28500.0,
       "published_price": "28500.00",
       "name": "Bross London Warrior — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-149-bross-london-warrior",
@@ -2041,7 +2041,7 @@
     {
       "source_id": "150",
       "source_url": "https://www.fraganciascannon.com/bross-london-warrior?v=150",
-      "source_price": 0,
+      "source_price": 5600.0,
       "published_price": "5600.00",
       "name": "Bross London Warrior — Desodorante en aerosol 150ml",
       "slug": "cannon-150-bross-london-warrior",
@@ -2059,7 +2059,7 @@
     {
       "source_id": "151",
       "source_url": "https://www.fraganciascannon.com/bross-london-blue?v=151",
-      "source_price": 0,
+      "source_price": 28500.0,
       "published_price": "28500.00",
       "name": "Bross London Blue — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-151-bross-london-blue",
@@ -2077,7 +2077,7 @@
     {
       "source_id": "152",
       "source_url": "https://www.fraganciascannon.com/bross-london-blue?v=152",
-      "source_price": 0,
+      "source_price": 5600.0,
       "published_price": "5600.00",
       "name": "Bross London Blue — Desodorante en aerosol 150ml",
       "slug": "cannon-152-bross-london-blue",
@@ -2095,7 +2095,7 @@
     {
       "source_id": "153",
       "source_url": "https://www.fraganciascannon.com/bross-london-classic?v=153",
-      "source_price": 0,
+      "source_price": 28500.0,
       "published_price": "28500.00",
       "name": "Bross London Classic — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-153-bross-london-classic",
@@ -2113,7 +2113,7 @@
     {
       "source_id": "154",
       "source_url": "https://www.fraganciascannon.com/bross-london-classic?v=154",
-      "source_price": 0,
+      "source_price": 5600.0,
       "published_price": "5600.00",
       "name": "Bross London Classic — Desodorante en aerosol 150ml",
       "slug": "cannon-154-bross-london-classic",
@@ -2131,7 +2131,7 @@
     {
       "source_id": "170",
       "source_url": "https://www.fraganciascannon.com/prune-i?v=170",
-      "source_price": 0,
+      "source_price": 28900.0,
       "published_price": "28900.00",
       "name": "Prüne I — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-170-prune-i",
@@ -2149,7 +2149,7 @@
     {
       "source_id": "171",
       "source_url": "https://www.fraganciascannon.com/prune-ii?v=171",
-      "source_price": 0,
+      "source_price": 28900.0,
       "published_price": "28900.00",
       "name": "Prüne II — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-171-prune-ii",
@@ -2167,7 +2167,7 @@
     {
       "source_id": "172",
       "source_url": "https://www.fraganciascannon.com/prune-iii?v=172",
-      "source_price": 0,
+      "source_price": 28900.0,
       "published_price": "28900.00",
       "name": "Prüne III — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-172-prune-iii",
@@ -2185,7 +2185,7 @@
     {
       "source_id": "173",
       "source_url": "https://www.fraganciascannon.com/prune-iv?v=173",
-      "source_price": 0,
+      "source_price": 28900.0,
       "published_price": "28900.00",
       "name": "Prüne IV — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-173-prune-iv",
@@ -2203,7 +2203,7 @@
     {
       "source_id": "174",
       "source_url": "https://www.fraganciascannon.com/prune-ii?v=174",
-      "source_price": 0,
+      "source_price": 32900.0,
       "published_price": "32900.00",
       "name": "Prüne II — Eau de parfum 90ml (Vap.)",
       "slug": "cannon-174-prune-ii",
@@ -2221,7 +2221,7 @@
     {
       "source_id": "175",
       "source_url": "https://www.fraganciascannon.com/prune-iii?v=175",
-      "source_price": 0,
+      "source_price": 32900.0,
       "published_price": "32900.00",
       "name": "Prüne III — Eau de parfum 90ml (Vap.)",
       "slug": "cannon-175-prune-iii",
@@ -2239,7 +2239,7 @@
     {
       "source_id": "176",
       "source_url": "https://www.fraganciascannon.com/prune-i?v=176",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Prüne I — Desodorante en aerosol 123ml",
       "slug": "cannon-176-prune-i",
@@ -2257,7 +2257,7 @@
     {
       "source_id": "177",
       "source_url": "https://www.fraganciascannon.com/prune-ii?v=177",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Prüne II — Desodorante en aerosol 123ml",
       "slug": "cannon-177-prune-ii",
@@ -2275,7 +2275,7 @@
     {
       "source_id": "178",
       "source_url": "https://www.fraganciascannon.com/prune-iii?v=178",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Prüne III — Desodorante en aerosol 123ml",
       "slug": "cannon-178-prune-iii",
@@ -2293,7 +2293,7 @@
     {
       "source_id": "179",
       "source_url": "https://www.fraganciascannon.com/prune-iv?v=179",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Prüne IV — Desodorante en aerosol 123ml",
       "slug": "cannon-179-prune-iv",
@@ -2311,7 +2311,7 @@
     {
       "source_id": "180",
       "source_url": "https://www.fraganciascannon.com/prune-icon?v=180",
-      "source_price": 0,
+      "source_price": 42000.0,
       "published_price": "42000.00",
       "name": "Prüne Icon — Eau de parfum 70ml (Vap.)",
       "slug": "cannon-180-prune-icon",
@@ -2329,7 +2329,7 @@
     {
       "source_id": "181",
       "source_url": "https://www.fraganciascannon.com/prune-icon?v=181",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Prüne Icon — Desodorante en aerosol 123ml",
       "slug": "cannon-181-prune-icon",
@@ -2347,7 +2347,7 @@
     {
       "source_id": "182",
       "source_url": "https://www.fraganciascannon.com/prune-moi?v=182",
-      "source_price": 0,
+      "source_price": 32900.0,
       "published_price": "32900.00",
       "name": "Prüne Moï — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-182-prune-moi",
@@ -2365,7 +2365,7 @@
     {
       "source_id": "183",
       "source_url": "https://www.fraganciascannon.com/prune-moi?v=183",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Prüne Moï — Desodorante en aerosol 123ml",
       "slug": "cannon-183-prune-moi",
@@ -2383,7 +2383,7 @@
     {
       "source_id": "184",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-paula?v=184",
-      "source_price": 0,
+      "source_price": 43400.0,
       "published_price": "43400.00",
       "name": "Paula Cahen D'anvers Paula — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-184-paula-cahen-danvers-paula",
@@ -2401,7 +2401,7 @@
     {
       "source_id": "185",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-paula?v=185",
-      "source_price": 0,
+      "source_price": 34900.0,
       "published_price": "34900.00",
       "name": "Paula Cahen D'anvers Paula — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-185-paula-cahen-danvers-paula",
@@ -2419,7 +2419,7 @@
     {
       "source_id": "187",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-paula?v=187",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Paula Cahen D'anvers Paula — Desodorante en aerosol 123ml",
       "slug": "cannon-187-paula-cahen-danvers-paula",
@@ -2437,7 +2437,7 @@
     {
       "source_id": "189",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-amor?v=189",
-      "source_price": 0,
+      "source_price": 34900.0,
       "published_price": "34900.00",
       "name": "Paula Cahen D'anvers Amor  — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-189-paula-cahen-danvers-amor",
@@ -2455,7 +2455,7 @@
     {
       "source_id": "191",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-amor?v=191",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Paula Cahen D'anvers Amor  — Desodorante en aerosol 123ml",
       "slug": "cannon-191-paula-cahen-danvers-amor",
@@ -2473,7 +2473,7 @@
     {
       "source_id": "193",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-luz?v=193",
-      "source_price": 0,
+      "source_price": 34900.0,
       "published_price": "34900.00",
       "name": "Paula Cahen D'anvers Luz  — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-193-paula-cahen-danvers-luz",
@@ -2491,7 +2491,7 @@
     {
       "source_id": "194",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-luz?v=194",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Paula Cahen D'anvers Luz  — Desodorante en aerosol 123ml",
       "slug": "cannon-194-paula-cahen-danvers-luz",
@@ -2509,7 +2509,7 @@
     {
       "source_id": "196",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-alma?v=196",
-      "source_price": 0,
+      "source_price": 34900.0,
       "published_price": "34900.00",
       "name": "Paula Cahen D'anvers Alma  — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-196-paula-cahen-danvers-alma",
@@ -2527,7 +2527,7 @@
     {
       "source_id": "197",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-alma?v=197",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Paula Cahen D'anvers Alma  — Desodorante en aerosol 123ml",
       "slug": "cannon-197-paula-cahen-danvers-alma",
@@ -2545,7 +2545,7 @@
     {
       "source_id": "201",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-suenos?v=201",
-      "source_price": 0,
+      "source_price": 22800.0,
       "published_price": "22800.00",
       "name": "Paula Cahen D'anvers Sueños  — Agua de colonia 170ml (Vap.)",
       "slug": "cannon-201-paula-cahen-danvers-suenos",
@@ -2563,7 +2563,7 @@
     {
       "source_id": "202",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-flores?v=202",
-      "source_price": 0,
+      "source_price": 22800.0,
       "published_price": "22800.00",
       "name": "Paula Cahen D'anvers Flores  — Agua de colonia 170ml (Vap.)",
       "slug": "cannon-202-paula-cahen-danvers-flores",
@@ -2581,7 +2581,7 @@
     {
       "source_id": "203",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-bosque?v=203",
-      "source_price": 0,
+      "source_price": 22800.0,
       "published_price": "22800.00",
       "name": "Paula Cahen D'anvers Bosque — Agua de colonia 170ml (Vap.)",
       "slug": "cannon-203-paula-cahen-danvers-bosque",
@@ -2599,7 +2599,7 @@
     {
       "source_id": "204",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-en-suenos?v=204",
-      "source_price": 0,
+      "source_price": 16800.0,
       "published_price": "16800.00",
       "name": "Paula Cahen D'anvers En... Sueños — Agua de colonia 100ml (Vap.)",
       "slug": "cannon-204-paula-cahen-danvers-en-suenos",
@@ -2617,7 +2617,7 @@
     {
       "source_id": "205",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-en-el-bosque?v=205",
-      "source_price": 0,
+      "source_price": 16800.0,
       "published_price": "16800.00",
       "name": "Paula Cahen D'anvers En El Bosque... — Agua de colonia 100ml (Vap.)",
       "slug": "cannon-205-paula-cahen-danvers-en-el-bosque",
@@ -2635,7 +2635,7 @@
     {
       "source_id": "206",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-en-el-bosque?v=206",
-      "source_price": 0,
+      "source_price": 16800.0,
       "published_price": "16800.00",
       "name": "Paula Cahen D'anvers En El Bosque... — Agua de colonia 100ml (Vap.)",
       "slug": "cannon-206-paula-cahen-danvers-en-el-bosque",
@@ -2653,7 +2653,7 @@
     {
       "source_id": "207",
       "source_url": "https://www.fraganciascannon.com/caro-cuore?v=207",
-      "source_price": 0,
+      "source_price": 39900.0,
       "published_price": "39900.00",
       "name": "Caro Cuore — Eau de toilette 90ml (Vap.)",
       "slug": "cannon-207-caro-cuore",
@@ -2671,7 +2671,7 @@
     {
       "source_id": "208",
       "source_url": "https://www.fraganciascannon.com/caro-cuore?v=208",
-      "source_price": 0,
+      "source_price": 31900.0,
       "published_price": "31900.00",
       "name": "Caro Cuore — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-208-caro-cuore",
@@ -2689,7 +2689,7 @@
     {
       "source_id": "209",
       "source_url": "https://www.fraganciascannon.com/caro-cuore?v=209",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Caro Cuore — Desodorante en aerosol 123ml",
       "slug": "cannon-209-caro-cuore",
@@ -2707,7 +2707,7 @@
     {
       "source_id": "213",
       "source_url": "https://www.fraganciascannon.com/gino-bogani-pour-femme?v=213",
-      "source_price": 0,
+      "source_price": 37000.0,
       "published_price": "37000.00",
       "name": "Gino Bogani Pour Femme — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-213-gino-bogani-pour-femme",
@@ -2725,7 +2725,7 @@
     {
       "source_id": "215",
       "source_url": "https://www.fraganciascannon.com/gino-bogani-pour-femme?v=215",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Gino Bogani Pour Femme — Desodorante en aerosol 123ml",
       "slug": "cannon-215-gino-bogani-pour-femme",
@@ -2743,7 +2743,7 @@
     {
       "source_id": "216",
       "source_url": "https://www.fraganciascannon.com/gino-bogani-chic-to-cheek?v=216",
-      "source_price": 0,
+      "source_price": 37000.0,
       "published_price": "37000.00",
       "name": "Gino Bogani Chic To Cheek! — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-216-gino-bogani-chic-to-cheek",
@@ -2761,7 +2761,7 @@
     {
       "source_id": "218",
       "source_url": "https://www.fraganciascannon.com/gino-bogani-chic-to-cheek?v=218",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Gino Bogani Chic To Cheek! — Desodorante en aerosol 123ml",
       "slug": "cannon-218-gino-bogani-chic-to-cheek",
@@ -2779,7 +2779,7 @@
     {
       "source_id": "219",
       "source_url": "https://www.fraganciascannon.com/gino-bogani-tout-noir?v=219",
-      "source_price": 0,
+      "source_price": 37000.0,
       "published_price": "37000.00",
       "name": "Gino Bogani Tout Noir  — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-219-gino-bogani-tout-noir",
@@ -2797,7 +2797,7 @@
     {
       "source_id": "221",
       "source_url": "https://www.fraganciascannon.com/gino-bogani-tout-noir?v=221",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Gino Bogani Tout Noir  — Desodorante en aerosol 123ml",
       "slug": "cannon-221-gino-bogani-tout-noir",
@@ -2815,7 +2815,7 @@
     {
       "source_id": "222",
       "source_url": "https://www.fraganciascannon.com/gino-bogani-pour-homme?v=222",
-      "source_price": 0,
+      "source_price": 37900.0,
       "published_price": "37900.00",
       "name": "Gino Bogani Pour Homme — Eau de toilette 90ml (Vap.)",
       "slug": "cannon-222-gino-bogani-pour-homme",
@@ -2833,7 +2833,7 @@
     {
       "source_id": "224",
       "source_url": "https://www.fraganciascannon.com/gino-bogani-pour-homme?v=224",
-      "source_price": 0,
+      "source_price": 5800.0,
       "published_price": "5800.00",
       "name": "Gino Bogani Pour Homme — Desodorante en aerosol 150ml",
       "slug": "cannon-224-gino-bogani-pour-homme",
@@ -2851,7 +2851,7 @@
     {
       "source_id": "225",
       "source_url": "https://www.fraganciascannon.com/gino-bogani-pour-homme-tout-bleu?v=225",
-      "source_price": 0,
+      "source_price": 37900.0,
       "published_price": "37900.00",
       "name": "Gino Bogani Pour Homme Tout Bleu — Eau de toilette 90ml (Vap.)",
       "slug": "cannon-225-gino-bogani-pour-homme-tout-bleu",
@@ -2869,7 +2869,7 @@
     {
       "source_id": "227",
       "source_url": "https://www.fraganciascannon.com/gino-bogani-pour-homme-tout-bleu?v=227",
-      "source_price": 0,
+      "source_price": 5800.0,
       "published_price": "5800.00",
       "name": "Gino Bogani Pour Homme Tout Bleu — Desodorante en aerosol 150ml",
       "slug": "cannon-227-gino-bogani-pour-homme-tout-bleu",
@@ -2887,7 +2887,7 @@
     {
       "source_id": "229",
       "source_url": "https://www.fraganciascannon.com/kevin-metal?v=229",
-      "source_price": 0,
+      "source_price": 28600.0,
       "published_price": "28600.00",
       "name": "Kevin Metal — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-229-kevin-metal",
@@ -2905,7 +2905,7 @@
     {
       "source_id": "231",
       "source_url": "https://www.fraganciascannon.com/kevin-metal?v=231",
-      "source_price": 0,
+      "source_price": 6700.0,
       "published_price": "6700.00",
       "name": "Kevin Metal — Desodorante en aerosol 250ml",
       "slug": "cannon-231-kevin-metal",
@@ -2923,7 +2923,7 @@
     {
       "source_id": "232",
       "source_url": "https://www.fraganciascannon.com/kevin-absolute?v=232",
-      "source_price": 0,
+      "source_price": 35000.0,
       "published_price": "35000.00",
       "name": "Kevin Absolute — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-232-kevin-absolute",
@@ -2941,7 +2941,7 @@
     {
       "source_id": "233",
       "source_url": "https://www.fraganciascannon.com/kevin-absolute?v=233",
-      "source_price": 0,
+      "source_price": 29500.0,
       "published_price": "29500.00",
       "name": "Kevin Absolute — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-233-kevin-absolute",
@@ -2959,7 +2959,7 @@
     {
       "source_id": "235",
       "source_url": "https://www.fraganciascannon.com/kevin-absolute?v=235",
-      "source_price": 0,
+      "source_price": 5800.0,
       "published_price": "5800.00",
       "name": "Kevin Absolute — Desodorante en aerosol 150ml",
       "slug": "cannon-235-kevin-absolute",
@@ -2977,7 +2977,7 @@
     {
       "source_id": "236",
       "source_url": "https://www.fraganciascannon.com/kevin-absolute?v=236",
-      "source_price": 0,
+      "source_price": 6700.0,
       "published_price": "6700.00",
       "name": "Kevin Absolute — Desodorante en aerosol 250ml",
       "slug": "cannon-236-kevin-absolute",
@@ -2995,7 +2995,7 @@
     {
       "source_id": "238",
       "source_url": "https://www.fraganciascannon.com/kevin-platinum?v=238",
-      "source_price": 0,
+      "source_price": 27600.0,
       "published_price": "27600.00",
       "name": "Kevin Platinum — Eau de toilette 50ml (Vap.)",
       "slug": "cannon-238-kevin-platinum",
@@ -3013,7 +3013,7 @@
     {
       "source_id": "239",
       "source_url": "https://www.fraganciascannon.com/kevin-platinum?v=239",
-      "source_price": 0,
+      "source_price": 5800.0,
       "published_price": "5800.00",
       "name": "Kevin Platinum — Desodorante en aerosol 150ml",
       "slug": "cannon-239-kevin-platinum",
@@ -3031,7 +3031,7 @@
     {
       "source_id": "240",
       "source_url": "https://www.fraganciascannon.com/kevin-platinum?v=240",
-      "source_price": 0,
+      "source_price": 6700.0,
       "published_price": "6700.00",
       "name": "Kevin Platinum — Desodorante en aerosol 250ml",
       "slug": "cannon-240-kevin-platinum",
@@ -3049,7 +3049,7 @@
     {
       "source_id": "244",
       "source_url": "https://www.fraganciascannon.com/kevin-freedom?v=244",
-      "source_price": 0,
+      "source_price": 5800.0,
       "published_price": "5800.00",
       "name": "Kevin Freedom — Desodorante en aerosol 150ml",
       "slug": "cannon-244-kevin-freedom",
@@ -3067,7 +3067,7 @@
     {
       "source_id": "245",
       "source_url": "https://www.fraganciascannon.com/kevin-freedom?v=245",
-      "source_price": 0,
+      "source_price": 6700.0,
       "published_price": "6700.00",
       "name": "Kevin Freedom — Desodorante en aerosol 250ml",
       "slug": "cannon-245-kevin-freedom",
@@ -3085,7 +3085,7 @@
     {
       "source_id": "250",
       "source_url": "https://www.fraganciascannon.com/la-dolfina-stud?v=250",
-      "source_price": 0,
+      "source_price": 36900.0,
       "published_price": "36900.00",
       "name": "La Dolfina Stud — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-250-la-dolfina-stud",
@@ -3103,7 +3103,7 @@
     {
       "source_id": "251",
       "source_url": "https://www.fraganciascannon.com/la-dolfina-stud?v=251",
-      "source_price": 0,
+      "source_price": 27900.0,
       "published_price": "27900.00",
       "name": "La Dolfina Stud — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-251-la-dolfina-stud",
@@ -3121,7 +3121,7 @@
     {
       "source_id": "253",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera?v=253",
-      "source_price": 0,
+      "source_price": 41900.0,
       "published_price": "41900.00",
       "name": "Paloma Herrera — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-253-paloma-herrera",
@@ -3139,7 +3139,7 @@
     {
       "source_id": "254",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera?v=254",
-      "source_price": 0,
+      "source_price": 34500.0,
       "published_price": "34500.00",
       "name": "Paloma Herrera — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-254-paloma-herrera",
@@ -3157,7 +3157,7 @@
     {
       "source_id": "256",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera?v=256",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Paloma Herrera — Desodorante en aerosol 123ml",
       "slug": "cannon-256-paloma-herrera",
@@ -3175,7 +3175,7 @@
     {
       "source_id": "257",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-passion?v=257",
-      "source_price": 0,
+      "source_price": 41900.0,
       "published_price": "41900.00",
       "name": "Paloma Herrera Passion — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-257-paloma-herrera-passion",
@@ -3193,7 +3193,7 @@
     {
       "source_id": "258",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-passion?v=258",
-      "source_price": 0,
+      "source_price": 34500.0,
       "published_price": "34500.00",
       "name": "Paloma Herrera Passion — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-258-paloma-herrera-passion",
@@ -3211,7 +3211,7 @@
     {
       "source_id": "260",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-passion?v=260",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Paloma Herrera Passion — Desodorante en aerosol 123ml",
       "slug": "cannon-260-paloma-herrera-passion",
@@ -3229,7 +3229,7 @@
     {
       "source_id": "276",
       "source_url": "https://www.fraganciascannon.com/colbert?v=276",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Colbert — Desodorante en aerosol 150ml",
       "slug": "cannon-276-colbert",
@@ -3247,7 +3247,7 @@
     {
       "source_id": "296",
       "source_url": "https://www.fraganciascannon.com/las-pepas-mito?v=296",
-      "source_price": 0,
+      "source_price": 43400.0,
       "published_price": "43400.00",
       "name": "Las Pepas Mito — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-296-las-pepas-mito",
@@ -3265,7 +3265,7 @@
     {
       "source_id": "300",
       "source_url": "https://www.fraganciascannon.com/colbert-code-bold?v=300",
-      "source_price": 0,
+      "source_price": 16400.0,
       "published_price": "16400.00",
       "name": "Colbert Code Bold — Eau de toilette 50ml (Vap.)",
       "slug": "cannon-300-colbert-code-bold",
@@ -3283,7 +3283,7 @@
     {
       "source_id": "303",
       "source_url": "https://www.fraganciascannon.com/las-pepas-ninfa?v=303",
-      "source_price": 0,
+      "source_price": 43400.0,
       "published_price": "43400.00",
       "name": "Las Pepas Ninfa — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-303-las-pepas-ninfa",
@@ -3301,7 +3301,7 @@
     {
       "source_id": "304",
       "source_url": "https://www.fraganciascannon.com/las-pepas-ninfa?v=304",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Las Pepas Ninfa — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-304-las-pepas-ninfa",
@@ -3319,7 +3319,7 @@
     {
       "source_id": "305",
       "source_url": "https://www.fraganciascannon.com/las-pepas-mito?v=305",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Las Pepas Mito — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-305-las-pepas-mito",
@@ -3337,7 +3337,7 @@
     {
       "source_id": "306",
       "source_url": "https://www.fraganciascannon.com/caro-cuore-amore?v=306",
-      "source_price": 0,
+      "source_price": 39900.0,
       "published_price": "39900.00",
       "name": "Caro Cuore Amore — Eau de toilette 90ml (Vap.)",
       "slug": "cannon-306-caro-cuore-amore",
@@ -3355,7 +3355,7 @@
     {
       "source_id": "307",
       "source_url": "https://www.fraganciascannon.com/caro-cuore-amore?v=307",
-      "source_price": 0,
+      "source_price": 31900.0,
       "published_price": "31900.00",
       "name": "Caro Cuore Amore — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-307-caro-cuore-amore",
@@ -3373,7 +3373,7 @@
     {
       "source_id": "308",
       "source_url": "https://www.fraganciascannon.com/caro-cuore-amore?v=308",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Caro Cuore Amore — Desodorante en aerosol 123ml",
       "slug": "cannon-308-caro-cuore-amore",
@@ -3391,7 +3391,7 @@
     {
       "source_id": "309",
       "source_url": "https://www.fraganciascannon.com/paula-alegria?v=309",
-      "source_price": 0,
+      "source_price": 43400.0,
       "published_price": "43400.00",
       "name": "Paula Alegría — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-309-paula-alegria",
@@ -3409,7 +3409,7 @@
     {
       "source_id": "310",
       "source_url": "https://www.fraganciascannon.com/paula-alegria?v=310",
-      "source_price": 0,
+      "source_price": 34900.0,
       "published_price": "34900.00",
       "name": "Paula Alegría — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-310-paula-alegria",
@@ -3427,7 +3427,7 @@
     {
       "source_id": "311",
       "source_url": "https://www.fraganciascannon.com/paula-alegria?v=311",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Paula Alegría — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-311-paula-alegria",
@@ -3445,7 +3445,7 @@
     {
       "source_id": "312",
       "source_url": "https://www.fraganciascannon.com/cardon-tierra?v=312",
-      "source_price": 0,
+      "source_price": 35500.0,
       "published_price": "35500.00",
       "name": "Cardon Tierra — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-312-cardon-tierra",
@@ -3463,7 +3463,7 @@
     {
       "source_id": "313",
       "source_url": "https://www.fraganciascannon.com/cardon-tierra?v=313",
-      "source_price": 0,
+      "source_price": 5800.0,
       "published_price": "5800.00",
       "name": "Cardon Tierra — Desodorante en aerosol 150ml (Vap.)",
       "slug": "cannon-313-cardon-tierra",
@@ -3481,7 +3481,7 @@
     {
       "source_id": "314",
       "source_url": "https://www.fraganciascannon.com/cardon-mar?v=314",
-      "source_price": 0,
+      "source_price": 5800.0,
       "published_price": "5800.00",
       "name": "Cardon Mar — Desodorante en aerosol 150ml (Vap.)",
       "slug": "cannon-314-cardon-mar",
@@ -3499,7 +3499,7 @@
     {
       "source_id": "315",
       "source_url": "https://www.fraganciascannon.com/cardon-mar?v=315",
-      "source_price": 0,
+      "source_price": 35500.0,
       "published_price": "35500.00",
       "name": "Cardon Mar — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-315-cardon-mar",
@@ -3517,7 +3517,7 @@
     {
       "source_id": "323",
       "source_url": "https://www.fraganciascannon.com/kevin-ice?v=323",
-      "source_price": 0,
+      "source_price": 20900.0,
       "published_price": "20900.00",
       "name": "Kevin Ice — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-323-kevin-ice",
@@ -3535,7 +3535,7 @@
     {
       "source_id": "324",
       "source_url": "https://www.fraganciascannon.com/kevin-ice?v=324",
-      "source_price": 0,
+      "source_price": 17500.0,
       "published_price": "17500.00",
       "name": "Kevin Ice — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-324-kevin-ice",
@@ -3553,7 +3553,7 @@
     {
       "source_id": "325",
       "source_url": "https://www.fraganciascannon.com/kevin-ice?v=325",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Kevin Ice — Desodorante en aerosol 150ml (Vap.)",
       "slug": "cannon-325-kevin-ice",
@@ -3571,7 +3571,7 @@
     {
       "source_id": "326",
       "source_url": "https://www.fraganciascannon.com/kevin-ice?v=326",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Kevin Ice — Desodorante en aerosol 250ml (Vap.)",
       "slug": "cannon-326-kevin-ice",
@@ -3589,7 +3589,7 @@
     {
       "source_id": "327",
       "source_url": "https://www.fraganciascannon.com/cardon-sonada?v=327",
-      "source_price": 0,
+      "source_price": 31900.0,
       "published_price": "31900.00",
       "name": "Cardon Soñada — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-327-cardon-sonada",
@@ -3607,7 +3607,7 @@
     {
       "source_id": "328",
       "source_url": "https://www.fraganciascannon.com/cardon-sonada?v=328",
-      "source_price": 0,
+      "source_price": 5000.0,
       "published_price": "5000.00",
       "name": "Cardon Soñada — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-328-cardon-sonada",
@@ -3625,7 +3625,7 @@
     {
       "source_id": "329",
       "source_url": "https://www.fraganciascannon.com/cardon-viajera?v=329",
-      "source_price": 0,
+      "source_price": 31900.0,
       "published_price": "31900.00",
       "name": "Cardon Viajera — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-329-cardon-viajera",
@@ -3643,7 +3643,7 @@
     {
       "source_id": "330",
       "source_url": "https://www.fraganciascannon.com/cardon-viajera?v=330",
-      "source_price": 0,
+      "source_price": 5000.0,
       "published_price": "5000.00",
       "name": "Cardon Viajera — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-330-cardon-viajera",
@@ -3661,7 +3661,7 @@
     {
       "source_id": "333",
       "source_url": "https://www.fraganciascannon.com/sens-grosellas-rosas?v=333",
-      "source_price": 0,
+      "source_price": 23900.0,
       "published_price": "23900.00",
       "name": "Sens Grosellas-Rosas — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-333-sens-grosellas-rosas",
@@ -3679,7 +3679,7 @@
     {
       "source_id": "334",
       "source_url": "https://www.fraganciascannon.com/sens-vainilla-cassis?v=334",
-      "source_price": 0,
+      "source_price": 23900.0,
       "published_price": "23900.00",
       "name": "Sens Vainilla-Cassis — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-334-sens-vainilla-cassis",
@@ -3697,7 +3697,7 @@
     {
       "source_id": "335",
       "source_url": "https://www.fraganciascannon.com/sens-magnolia-pera?v=335",
-      "source_price": 0,
+      "source_price": 23900.0,
       "published_price": "23900.00",
       "name": "Sens Magnolia-Pera — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-335-sens-magnolia-pera",
@@ -3715,7 +3715,7 @@
     {
       "source_id": "336",
       "source_url": "https://www.fraganciascannon.com/sens-neroli-lima?v=336",
-      "source_price": 0,
+      "source_price": 23900.0,
       "published_price": "23900.00",
       "name": "Sens Neroli-Lima — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-336-sens-neroli-lima",
@@ -3733,7 +3733,7 @@
     {
       "source_id": "337",
       "source_url": "https://www.fraganciascannon.com/sens-verbena-naranja?v=337",
-      "source_price": 0,
+      "source_price": 23900.0,
       "published_price": "23900.00",
       "name": "Sens Verbena-Naranja — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-337-sens-verbena-naranja",
@@ -3751,7 +3751,7 @@
     {
       "source_id": "338",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-fantasy?v=338",
-      "source_price": 0,
+      "source_price": 41900.0,
       "published_price": "41900.00",
       "name": "Paloma Herrera Fantasy — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-338-paloma-herrera-fantasy",
@@ -3769,7 +3769,7 @@
     {
       "source_id": "339",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-fantasy?v=339",
-      "source_price": 0,
+      "source_price": 34500.0,
       "published_price": "34500.00",
       "name": "Paloma Herrera Fantasy — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-339-paloma-herrera-fantasy",
@@ -3787,7 +3787,7 @@
     {
       "source_id": "340",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-fantasy?v=340",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Paloma Herrera Fantasy — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-340-paloma-herrera-fantasy",
@@ -3805,7 +3805,7 @@
     {
       "source_id": "341",
       "source_url": "https://www.fraganciascannon.com/sens-grosellas-rosas?v=341",
-      "source_price": 0,
+      "source_price": 4700.0,
       "published_price": "4700.00",
       "name": "Sens Grosellas-Rosas — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-341-sens-grosellas-rosas",
@@ -3823,7 +3823,7 @@
     {
       "source_id": "342",
       "source_url": "https://www.fraganciascannon.com/sens-higo-ambar?v=342",
-      "source_price": 0,
+      "source_price": 4700.0,
       "published_price": "4700.00",
       "name": "Sens Higo-Ambar — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-342-sens-higo-ambar",
@@ -3841,7 +3841,7 @@
     {
       "source_id": "343",
       "source_url": "https://www.fraganciascannon.com/sens-vainilla-cassis?v=343",
-      "source_price": 0,
+      "source_price": 4700.0,
       "published_price": "4700.00",
       "name": "Sens Vainilla-Cassis — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-343-sens-vainilla-cassis",
@@ -3859,7 +3859,7 @@
     {
       "source_id": "344",
       "source_url": "https://www.fraganciascannon.com/sens-magnolia-pera?v=344",
-      "source_price": 0,
+      "source_price": 4700.0,
       "published_price": "4700.00",
       "name": "Sens Magnolia-Pera — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-344-sens-magnolia-pera",
@@ -3877,7 +3877,7 @@
     {
       "source_id": "345",
       "source_url": "https://www.fraganciascannon.com/sens-neroli-lima?v=345",
-      "source_price": 0,
+      "source_price": 4700.0,
       "published_price": "4700.00",
       "name": "Sens Neroli-Lima — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-345-sens-neroli-lima",
@@ -3895,7 +3895,7 @@
     {
       "source_id": "346",
       "source_url": "https://www.fraganciascannon.com/sens-verbena-naranja?v=346",
-      "source_price": 0,
+      "source_price": 4700.0,
       "published_price": "4700.00",
       "name": "Sens Verbena-Naranja — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-346-sens-verbena-naranja",
@@ -3913,7 +3913,7 @@
     {
       "source_id": "347",
       "source_url": "https://www.fraganciascannon.com/la-martina-bravo?v=347",
-      "source_price": 0,
+      "source_price": 38000.0,
       "published_price": "38000.00",
       "name": "La Martina Bravo — Eau de toilette 80ml (Vap.)",
       "slug": "cannon-347-la-martina-bravo",
@@ -3931,7 +3931,7 @@
     {
       "source_id": "348",
       "source_url": "https://www.fraganciascannon.com/la-martina-rio-negro?v=348",
-      "source_price": 0,
+      "source_price": 38000.0,
       "published_price": "38000.00",
       "name": "La Martina Rio Negro — Eau de toilette 80ml (Vap.)",
       "slug": "cannon-348-la-martina-rio-negro",
@@ -3949,7 +3949,7 @@
     {
       "source_id": "349",
       "source_url": "https://www.fraganciascannon.com/la-martina-rio-negro?v=349",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "La Martina Rio Negro — Desodorante en aerosol 150ml (Vap.)",
       "slug": "cannon-349-la-martina-rio-negro",
@@ -3967,7 +3967,7 @@
     {
       "source_id": "350",
       "source_url": "https://www.fraganciascannon.com/la-martina-bravo?v=350",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "La Martina Bravo — Desodorante en aerosol 150ml (Vap.)",
       "slug": "cannon-350-la-martina-bravo",
@@ -3985,7 +3985,7 @@
     {
       "source_id": "351",
       "source_url": "https://www.fraganciascannon.com/la-martina-rubi?v=351",
-      "source_price": 0,
+      "source_price": 38000.0,
       "published_price": "38000.00",
       "name": "La Martina Rubi — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-351-la-martina-rubi",
@@ -4003,7 +4003,7 @@
     {
       "source_id": "352",
       "source_url": "https://www.fraganciascannon.com/la-martina-rubi?v=352",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "La Martina Rubi — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-352-la-martina-rubi",
@@ -4021,7 +4021,7 @@
     {
       "source_id": "353",
       "source_url": "https://www.fraganciascannon.com/la-martina-esmeralda?v=353",
-      "source_price": 0,
+      "source_price": 38000.0,
       "published_price": "38000.00",
       "name": "La Martina Esmeralda — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-353-la-martina-esmeralda",
@@ -4039,7 +4039,7 @@
     {
       "source_id": "354",
       "source_url": "https://www.fraganciascannon.com/la-martina-esmeralda?v=354",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "La Martina Esmeralda — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-354-la-martina-esmeralda",
@@ -4057,7 +4057,7 @@
     {
       "source_id": "355",
       "source_url": "https://www.fraganciascannon.com/sens-higo-ambar?v=355",
-      "source_price": 0,
+      "source_price": 23900.0,
       "published_price": "23900.00",
       "name": "Sens Higo-Ambar — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-355-sens-higo-ambar",
@@ -4075,7 +4075,7 @@
     {
       "source_id": "356",
       "source_url": "https://www.fraganciascannon.com/ciel?v=356",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "Ciel — Desodorante 0% Alcohol y 0% Aluminio 123ml (Vap.)",
       "slug": "cannon-356-ciel",
@@ -4093,7 +4093,7 @@
     {
       "source_id": "357",
       "source_url": "https://www.fraganciascannon.com/ciel-nuit?v=357",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "Ciel Nuit — Desodorante 0% Alcohol y 0% Aluminio 123ml (Vap.)",
       "slug": "cannon-357-ciel-nuit",
@@ -4111,7 +4111,7 @@
     {
       "source_id": "358",
       "source_url": "https://www.fraganciascannon.com/ciel-crystal?v=358",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "Ciel Crystal — Desodorante 0% Alcohol y 0% Aluminio 123ml (Vap.)",
       "slug": "cannon-358-ciel-crystal",
@@ -4129,7 +4129,7 @@
     {
       "source_id": "359",
       "source_url": "https://www.fraganciascannon.com/kevin?v=359",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Kevin — Desodorante 0% Alcohol y 0% Aluminio 150ml (Vap.)",
       "slug": "cannon-359-kevin",
@@ -4147,7 +4147,7 @@
     {
       "source_id": "362",
       "source_url": "https://www.fraganciascannon.com/ana-pink-by-analia-maiorana?v=362",
-      "source_price": 0,
+      "source_price": 37900.0,
       "published_price": "37900.00",
       "name": "Ana Pink By Analia Maiorana — Eau de parfum 75ml (Vap.)",
       "slug": "cannon-362-ana-pink-by-analia-maiorana",
@@ -4165,7 +4165,7 @@
     {
       "source_id": "363",
       "source_url": "https://www.fraganciascannon.com/ana-pink-by-analia-maiorana?v=363",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Ana Pink By Analia Maiorana — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-363-ana-pink-by-analia-maiorana",
@@ -4183,7 +4183,7 @@
     {
       "source_id": "364",
       "source_url": "https://www.fraganciascannon.com/valeria-by-valeria-mazza?v=364",
-      "source_price": 0,
+      "source_price": 39900.0,
       "published_price": "39900.00",
       "name": "Valeria By Valeria Mazza — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-364-valeria-by-valeria-mazza",
@@ -4201,7 +4201,7 @@
     {
       "source_id": "365",
       "source_url": "https://www.fraganciascannon.com/valeria-by-valeria-mazza?v=365",
-      "source_price": 0,
+      "source_price": 32900.0,
       "published_price": "32900.00",
       "name": "Valeria By Valeria Mazza — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-365-valeria-by-valeria-mazza",
@@ -4219,7 +4219,7 @@
     {
       "source_id": "366",
       "source_url": "https://www.fraganciascannon.com/valeria-by-valeria-mazza?v=366",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Valeria By Valeria Mazza — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-366-valeria-by-valeria-mazza",
@@ -4237,7 +4237,7 @@
     {
       "source_id": "367",
       "source_url": "https://www.fraganciascannon.com/kevin-red?v=367",
-      "source_price": 0,
+      "source_price": 29500.0,
       "published_price": "29500.00",
       "name": "Kevin Red — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-367-kevin-red",
@@ -4255,7 +4255,7 @@
     {
       "source_id": "368",
       "source_url": "https://www.fraganciascannon.com/kevin-red?v=368",
-      "source_price": 0,
+      "source_price": 35000.0,
       "published_price": "35000.00",
       "name": "Kevin Red — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-368-kevin-red",
@@ -4273,7 +4273,7 @@
     {
       "source_id": "369",
       "source_url": "https://www.fraganciascannon.com/kevin-red?v=369",
-      "source_price": 0,
+      "source_price": 5800.0,
       "published_price": "5800.00",
       "name": "Kevin Red — Desodorante en aerosol 150ml (Vap.)",
       "slug": "cannon-369-kevin-red",
@@ -4291,7 +4291,7 @@
     {
       "source_id": "370",
       "source_url": "https://www.fraganciascannon.com/kevin-red?v=370",
-      "source_price": 0,
+      "source_price": 6700.0,
       "published_price": "6700.00",
       "name": "Kevin Red — Desodorante en aerosol 250ml (Vap.)",
       "slug": "cannon-370-kevin-red",
@@ -4309,7 +4309,7 @@
     {
       "source_id": "371",
       "source_url": "https://www.fraganciascannon.com/crandall-legend?v=371",
-      "source_price": 0,
+      "source_price": 21700.0,
       "published_price": "21700.00",
       "name": "Crandall Legend — Eau de toilette 90ml (Vap.)",
       "slug": "cannon-371-crandall-legend",
@@ -4327,7 +4327,7 @@
     {
       "source_id": "373",
       "source_url": "https://www.fraganciascannon.com/ciel-shine?v=373",
-      "source_price": 0,
+      "source_price": 22800.0,
       "published_price": "22800.00",
       "name": "Ciel Shine — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-373-ciel-shine",
@@ -4345,7 +4345,7 @@
     {
       "source_id": "374",
       "source_url": "https://www.fraganciascannon.com/ciel-shine?v=374",
-      "source_price": 0,
+      "source_price": 26400.0,
       "published_price": "26400.00",
       "name": "Ciel Shine — Eau de parfum 80ml (Vap.)",
       "slug": "cannon-374-ciel-shine",
@@ -4363,7 +4363,7 @@
     {
       "source_id": "375",
       "source_url": "https://www.fraganciascannon.com/ciel-shine?v=375",
-      "source_price": 0,
+      "source_price": 4800.0,
       "published_price": "4800.00",
       "name": "Ciel Shine — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-375-ciel-shine",
@@ -4381,7 +4381,7 @@
     {
       "source_id": "376",
       "source_url": "https://www.fraganciascannon.com/ciel-shine?v=376",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "Ciel Shine — Desodorante en aerosol 186ml (Vap.)",
       "slug": "cannon-376-ciel-shine",
@@ -4399,7 +4399,7 @@
     {
       "source_id": "377",
       "source_url": "https://www.fraganciascannon.com/ciel-shine?v=377",
-      "source_price": 0,
+      "source_price": 11000.0,
       "published_price": "11000.00",
       "name": "Ciel Shine — Colonia 250ml",
       "slug": "cannon-377-ciel-shine",
@@ -4417,7 +4417,7 @@
     {
       "source_id": "378",
       "source_url": "https://www.fraganciascannon.com/ana-glam-by-analia-maiorana?v=378",
-      "source_price": 0,
+      "source_price": 37900.0,
       "published_price": "37900.00",
       "name": "Ana Glam By Analia Maiorana — Eau de parfum 75ml (Vap.)",
       "slug": "cannon-378-ana-glam-by-analia-maiorana",
@@ -4435,7 +4435,7 @@
     {
       "source_id": "379",
       "source_url": "https://www.fraganciascannon.com/ana-glam-by-analia-maiorana?v=379",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Ana Glam By Analia Maiorana — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-379-ana-glam-by-analia-maiorana",
@@ -4453,7 +4453,7 @@
     {
       "source_id": "380",
       "source_url": "https://www.fraganciascannon.com/las-pepas-hera?v=380",
-      "source_price": 0,
+      "source_price": 43400.0,
       "published_price": "43400.00",
       "name": "Las Pepas Hera — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-380-las-pepas-hera",
@@ -4471,7 +4471,7 @@
     {
       "source_id": "381",
       "source_url": "https://www.fraganciascannon.com/las-pepas-hera?v=381",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Las Pepas Hera — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-381-las-pepas-hera",
@@ -4489,7 +4489,7 @@
     {
       "source_id": "382",
       "source_url": "https://www.fraganciascannon.com/bross-london-gold?v=382",
-      "source_price": 0,
+      "source_price": 28500.0,
       "published_price": "28500.00",
       "name": "Bross London Gold — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-382-bross-london-gold",
@@ -4507,7 +4507,7 @@
     {
       "source_id": "383",
       "source_url": "https://www.fraganciascannon.com/bross-london-gold?v=383",
-      "source_price": 0,
+      "source_price": 5600.0,
       "published_price": "5600.00",
       "name": "Bross London Gold — Desodorante en aerosol 150ml (Vap.)",
       "slug": "cannon-383-bross-london-gold",
@@ -4525,7 +4525,7 @@
     {
       "source_id": "384",
       "source_url": "https://www.fraganciascannon.com/valeria-velvet-by-valeria-mazza?v=384",
-      "source_price": 0,
+      "source_price": 32900.0,
       "published_price": "32900.00",
       "name": "Valeria Velvet By Valeria Mazza — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-384-valeria-velvet-by-valeria-mazza",
@@ -4543,7 +4543,7 @@
     {
       "source_id": "385",
       "source_url": "https://www.fraganciascannon.com/valeria-velvet-by-valeria-mazza?v=385",
-      "source_price": 0,
+      "source_price": 39900.0,
       "published_price": "39900.00",
       "name": "Valeria Velvet By Valeria Mazza — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-385-valeria-velvet-by-valeria-mazza",
@@ -4561,7 +4561,7 @@
     {
       "source_id": "386",
       "source_url": "https://www.fraganciascannon.com/valeria-velvet-by-valeria-mazza?v=386",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Valeria Velvet By Valeria Mazza — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-386-valeria-velvet-by-valeria-mazza",
@@ -4579,7 +4579,7 @@
     {
       "source_id": "387",
       "source_url": "https://www.fraganciascannon.com/caro-cuore-cuore?v=387",
-      "source_price": 0,
+      "source_price": 31900.0,
       "published_price": "31900.00",
       "name": "Caro Cuore Cuore — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-387-caro-cuore-cuore",
@@ -4597,7 +4597,7 @@
     {
       "source_id": "388",
       "source_url": "https://www.fraganciascannon.com/caro-cuore-cuore?v=388",
-      "source_price": 0,
+      "source_price": 39900.0,
       "published_price": "39900.00",
       "name": "Caro Cuore Cuore — Eau de toilette 90ml (Vap.)",
       "slug": "cannon-388-caro-cuore-cuore",
@@ -4615,7 +4615,7 @@
     {
       "source_id": "389",
       "source_url": "https://www.fraganciascannon.com/caro-cuore-cuore?v=389",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Caro Cuore Cuore — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-389-caro-cuore-cuore",
@@ -4633,7 +4633,7 @@
     {
       "source_id": "392",
       "source_url": "https://www.fraganciascannon.com/la-pasionaria-bebe?v=392",
-      "source_price": 0,
+      "source_price": 11500.0,
       "published_price": "11500.00",
       "name": "La Pasionaria Bebé — Agua de colonia 125ml (Vap.)",
       "slug": "cannon-392-la-pasionaria-bebe",
@@ -4651,7 +4651,7 @@
     {
       "source_id": "393",
       "source_url": "https://www.fraganciascannon.com/la-pasionaria-bebe?v=393",
-      "source_price": 0,
+      "source_price": 17900.0,
       "published_price": "17900.00",
       "name": "La Pasionaria Bebé — Agua de Bienvenida 350ml (Vap.)",
       "slug": "cannon-393-la-pasionaria-bebe",
@@ -4669,7 +4669,7 @@
     {
       "source_id": "394",
       "source_url": "https://www.fraganciascannon.com/historias-n3?v=394",
-      "source_price": 0,
+      "source_price": 26500.0,
       "published_price": "26500.00",
       "name": "Historias N°3 — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-394-historias-n3",
@@ -4687,7 +4687,7 @@
     {
       "source_id": "395",
       "source_url": "https://www.fraganciascannon.com/historias-n1?v=395",
-      "source_price": 0,
+      "source_price": 26500.0,
       "published_price": "26500.00",
       "name": "Historias N°1 — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-395-historias-n1",
@@ -4705,7 +4705,7 @@
     {
       "source_id": "396",
       "source_url": "https://www.fraganciascannon.com/historias-n4?v=396",
-      "source_price": 0,
+      "source_price": 26500.0,
       "published_price": "26500.00",
       "name": "Historias N°4 — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-396-historias-n4",
@@ -4723,7 +4723,7 @@
     {
       "source_id": "397",
       "source_url": "https://www.fraganciascannon.com/historias-n5?v=397",
-      "source_price": 0,
+      "source_price": 26500.0,
       "published_price": "26500.00",
       "name": "Historias N°5 — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-397-historias-n5",
@@ -4741,7 +4741,7 @@
     {
       "source_id": "398",
       "source_url": "https://www.fraganciascannon.com/historias-n6?v=398",
-      "source_price": 0,
+      "source_price": 26500.0,
       "published_price": "26500.00",
       "name": "Historias N°6 — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-398-historias-n6",
@@ -4759,7 +4759,7 @@
     {
       "source_id": "399",
       "source_url": "https://www.fraganciascannon.com/historias-n3?v=399",
-      "source_price": 0,
+      "source_price": 35000.0,
       "published_price": "35000.00",
       "name": "Historias N°3 — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-399-historias-n3",
@@ -4777,7 +4777,7 @@
     {
       "source_id": "400",
       "source_url": "https://www.fraganciascannon.com/historias-n1?v=400",
-      "source_price": 0,
+      "source_price": 35000.0,
       "published_price": "35000.00",
       "name": "Historias N°1 — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-400-historias-n1",
@@ -4795,7 +4795,7 @@
     {
       "source_id": "401",
       "source_url": "https://www.fraganciascannon.com/historias-n4?v=401",
-      "source_price": 0,
+      "source_price": 35000.0,
       "published_price": "35000.00",
       "name": "Historias N°4 — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-401-historias-n4",
@@ -4813,7 +4813,7 @@
     {
       "source_id": "402",
       "source_url": "https://www.fraganciascannon.com/historias-n5?v=402",
-      "source_price": 0,
+      "source_price": 35000.0,
       "published_price": "35000.00",
       "name": "Historias N°5 — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-402-historias-n5",
@@ -4831,7 +4831,7 @@
     {
       "source_id": "403",
       "source_url": "https://www.fraganciascannon.com/historias-n6?v=403",
-      "source_price": 0,
+      "source_price": 35000.0,
       "published_price": "35000.00",
       "name": "Historias N°6 — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-403-historias-n6",
@@ -4849,7 +4849,7 @@
     {
       "source_id": "404",
       "source_url": "https://www.fraganciascannon.com/historias-n3?v=404",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Historias N°3 — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-404-historias-n3",
@@ -4867,7 +4867,7 @@
     {
       "source_id": "405",
       "source_url": "https://www.fraganciascannon.com/historias-n1?v=405",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Historias N°1 — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-405-historias-n1",
@@ -4885,7 +4885,7 @@
     {
       "source_id": "406",
       "source_url": "https://www.fraganciascannon.com/historias-n4?v=406",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Historias N°4 — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-406-historias-n4",
@@ -4903,7 +4903,7 @@
     {
       "source_id": "407",
       "source_url": "https://www.fraganciascannon.com/historias-n5?v=407",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Historias N°5 — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-407-historias-n5",
@@ -4921,7 +4921,7 @@
     {
       "source_id": "408",
       "source_url": "https://www.fraganciascannon.com/historias-n6?v=408",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Historias N°6 — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-408-historias-n6",
@@ -4939,7 +4939,7 @@
     {
       "source_id": "409",
       "source_url": "https://www.fraganciascannon.com/kevin-dubai?v=409",
-      "source_price": 0,
+      "source_price": 35000.0,
       "published_price": "35000.00",
       "name": "Kevin Dubai — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-409-kevin-dubai",
@@ -4957,7 +4957,7 @@
     {
       "source_id": "410",
       "source_url": "https://www.fraganciascannon.com/cannon-musk?v=410",
-      "source_price": 0,
+      "source_price": 5900.0,
       "published_price": "5900.00",
       "name": "Cannon Musk — Desodorante en aerosol 250ml (Vap.)",
       "slug": "cannon-410-cannon-musk",
@@ -4975,7 +4975,7 @@
     {
       "source_id": "411",
       "source_url": "https://www.fraganciascannon.com/cannon-musk?v=411",
-      "source_price": 0,
+      "source_price": 8700.0,
       "published_price": "8700.00",
       "name": "Cannon Musk — Eau de cologne 250ml (Vap.)",
       "slug": "cannon-411-cannon-musk",
@@ -4993,7 +4993,7 @@
     {
       "source_id": "412",
       "source_url": "https://www.fraganciascannon.com/ciel-nuit?v=412",
-      "source_price": 0,
+      "source_price": 15500.0,
       "published_price": "15500.00",
       "name": "Ciel Nuit — Body Mist 120ml (Vap.)",
       "slug": "cannon-412-ciel-nuit",
@@ -5011,7 +5011,7 @@
     {
       "source_id": "413",
       "source_url": "https://www.fraganciascannon.com/crandall-legend?v=413",
-      "source_price": 0,
+      "source_price": 5200.0,
       "published_price": "5200.00",
       "name": "Crandall Legend — Desodorante en aerosol 150ml (Vap.)",
       "slug": "cannon-413-crandall-legend",
@@ -5029,7 +5029,7 @@
     {
       "source_id": "414",
       "source_url": "https://www.fraganciascannon.com/paula-aura?v=414",
-      "source_price": 0,
+      "source_price": 34900.0,
       "published_price": "34900.00",
       "name": "Paula Aura — Eau de toilette 60ml (Vap.)",
       "slug": "cannon-414-paula-aura",
@@ -5047,7 +5047,7 @@
     {
       "source_id": "415",
       "source_url": "https://www.fraganciascannon.com/paula-aura?v=415",
-      "source_price": 0,
+      "source_price": 43400.0,
       "published_price": "43400.00",
       "name": "Paula Aura — Eau de toilette 100ml (Vap.)",
       "slug": "cannon-415-paula-aura",
@@ -5065,7 +5065,7 @@
     {
       "source_id": "416",
       "source_url": "https://www.fraganciascannon.com/paula-aura?v=416",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Paula Aura — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-416-paula-aura",
@@ -5083,7 +5083,7 @@
     {
       "source_id": "417",
       "source_url": "https://www.fraganciascannon.com/paula-aura?v=417",
-      "source_price": 0,
+      "source_price": 42500.0,
       "published_price": "42500.00",
       "name": "Paula Aura — Eau de toilette 60ml (Vap.) + Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-417-paula-aura",
@@ -5101,7 +5101,7 @@
     {
       "source_id": "418",
       "source_url": "https://www.fraganciascannon.com/caro-cuore?v=418",
-      "source_price": 0,
+      "source_price": 18000.0,
       "published_price": "18000.00",
       "name": "Caro Cuore — Body Mist 120ml (Vap.)",
       "slug": "cannon-418-caro-cuore",
@@ -5119,7 +5119,7 @@
     {
       "source_id": "419",
       "source_url": "https://www.fraganciascannon.com/caro-cuore?v=419",
-      "source_price": 0,
+      "source_price": 44900.0,
       "published_price": "44900.00",
       "name": "Caro Cuore — Lata Corazón 60ml+123ml",
       "slug": "cannon-419-caro-cuore",
@@ -5137,7 +5137,7 @@
     {
       "source_id": "420",
       "source_url": "https://www.fraganciascannon.com/caro-cuore-amore?v=420",
-      "source_price": 0,
+      "source_price": 18000.0,
       "published_price": "18000.00",
       "name": "Caro Cuore Amore — Body Mist 120ml (Vap.)",
       "slug": "cannon-420-caro-cuore-amore",
@@ -5155,7 +5155,7 @@
     {
       "source_id": "421",
       "source_url": "https://www.fraganciascannon.com/caro-cuore-amore?v=421",
-      "source_price": 0,
+      "source_price": 44900.0,
       "published_price": "44900.00",
       "name": "Caro Cuore Amore — Lata Corazón 60ml + 123ml (Vap.)",
       "slug": "cannon-421-caro-cuore-amore",
@@ -5173,7 +5173,7 @@
     {
       "source_id": "422",
       "source_url": "https://www.fraganciascannon.com/caro-cuore-cuore?v=422",
-      "source_price": 0,
+      "source_price": 18000.0,
       "published_price": "18000.00",
       "name": "Caro Cuore Cuore — Body Mist 120ml (Vap.)",
       "slug": "cannon-422-caro-cuore-cuore",
@@ -5191,7 +5191,7 @@
     {
       "source_id": "423",
       "source_url": "https://www.fraganciascannon.com/caro-cuore-cuore?v=423",
-      "source_price": 0,
+      "source_price": 44900.0,
       "published_price": "44900.00",
       "name": "Caro Cuore Cuore — Lata Corazón 60ML+123ML",
       "slug": "cannon-423-caro-cuore-cuore",
@@ -5209,7 +5209,7 @@
     {
       "source_id": "424",
       "source_url": "https://www.fraganciascannon.com/kevin-dubai?v=424",
-      "source_price": 0,
+      "source_price": 44500.0,
       "published_price": "44500.00",
       "name": "Kevin Dubai — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-424-kevin-dubai",
@@ -5227,7 +5227,7 @@
     {
       "source_id": "425",
       "source_url": "https://www.fraganciascannon.com/kevin-dubai?v=425",
-      "source_price": 0,
+      "source_price": 5800.0,
       "published_price": "5800.00",
       "name": "Kevin Dubai — Desodorante en aerosol 150ml (Vap.)",
       "slug": "cannon-425-kevin-dubai",
@@ -5245,7 +5245,7 @@
     {
       "source_id": "426",
       "source_url": "https://www.fraganciascannon.com/kevin-dubai?v=426",
-      "source_price": 0,
+      "source_price": 6700.0,
       "published_price": "6700.00",
       "name": "Kevin Dubai — Desodorante en aerosol 250ml (Vap.)",
       "slug": "cannon-426-kevin-dubai",
@@ -5263,7 +5263,7 @@
     {
       "source_id": "427",
       "source_url": "https://www.fraganciascannon.com/ciel?v=427",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Ciel — Crema para manos y cuerpo 90 ml",
       "slug": "cannon-427-ciel",
@@ -5281,7 +5281,7 @@
     {
       "source_id": "428",
       "source_url": "https://www.fraganciascannon.com/ciel-crystal?v=428",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Ciel Crystal — Crema para manos y cuerpo 90ml",
       "slug": "cannon-428-ciel-crystal",
@@ -5299,7 +5299,7 @@
     {
       "source_id": "429",
       "source_url": "https://www.fraganciascannon.com/ciel-nuit?v=429",
-      "source_price": 0,
+      "source_price": 6000.0,
       "published_price": "6000.00",
       "name": "Ciel Nuit — Crema para manos y cuerpo 90ml",
       "slug": "cannon-429-ciel-nuit",
@@ -5317,7 +5317,7 @@
     {
       "source_id": "430",
       "source_url": "https://www.fraganciascannon.com/crandall-legend?v=430",
-      "source_price": 0,
+      "source_price": 5800.0,
       "published_price": "5800.00",
       "name": "Crandall Legend — Desodorante en aerosol 250ml (Vap.)",
       "slug": "cannon-430-crandall-legend",
@@ -5335,7 +5335,7 @@
     {
       "source_id": "431",
       "source_url": "https://www.fraganciascannon.com/sens-magnolia-pera?v=431",
-      "source_price": 0,
+      "source_price": 15500.0,
       "published_price": "15500.00",
       "name": "Sens Magnolia-Pera — Body Mist 120ml (Vap.)",
       "slug": "cannon-431-sens-magnolia-pera",
@@ -5353,7 +5353,7 @@
     {
       "source_id": "432",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-paula?v=432",
-      "source_price": 0,
+      "source_price": 18000.0,
       "published_price": "18000.00",
       "name": "Paula Cahen D'anvers Paula — Body Mist 120ml (Vap.)",
       "slug": "cannon-432-paula-cahen-danvers-paula",
@@ -5371,7 +5371,7 @@
     {
       "source_id": "433",
       "source_url": "https://www.fraganciascannon.com/bross-london-classic?v=433",
-      "source_price": 0,
+      "source_price": 6700.0,
       "published_price": "6700.00",
       "name": "Bross London Classic — Desodorante en aerosol 250ml (Vap.)",
       "slug": "cannon-433-bross-london-classic",
@@ -5389,7 +5389,7 @@
     {
       "source_id": "434",
       "source_url": "https://www.fraganciascannon.com/bross-london-gold?v=434",
-      "source_price": 0,
+      "source_price": 6700.0,
       "published_price": "6700.00",
       "name": "Bross London Gold — Desodorante en aerosol 250ml (Vap.)",
       "slug": "cannon-434-bross-london-gold",
@@ -5407,7 +5407,7 @@
     {
       "source_id": "435",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-paula?v=435",
-      "source_price": 0,
+      "source_price": 42500.0,
       "published_price": "42500.00",
       "name": "Paula Cahen D'anvers Paula — Eau de toilette 60ml (Vap.) + Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-435-paula-cahen-danvers-paula",
@@ -5425,7 +5425,7 @@
     {
       "source_id": "436",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-amor?v=436",
-      "source_price": 0,
+      "source_price": 42500.0,
       "published_price": "42500.00",
       "name": "Paula Cahen D'anvers Amor  — Eau de toilette 60 (Vap.) + Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-436-paula-cahen-danvers-amor",
@@ -5443,7 +5443,7 @@
     {
       "source_id": "437",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-intense?v=437",
-      "source_price": 0,
+      "source_price": 34500.0,
       "published_price": "34500.00",
       "name": "Paloma Herrera Intense — Eau de parfum 60ml (Vap.)",
       "slug": "cannon-437-paloma-herrera-intense",
@@ -5461,7 +5461,7 @@
     {
       "source_id": "438",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-intense?v=438",
-      "source_price": 0,
+      "source_price": 41900.0,
       "published_price": "41900.00",
       "name": "Paloma Herrera Intense — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-438-paloma-herrera-intense",
@@ -5479,7 +5479,7 @@
     {
       "source_id": "439",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-intense?v=439",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Paloma Herrera Intense — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-439-paloma-herrera-intense",
@@ -5497,7 +5497,7 @@
     {
       "source_id": "440",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-intense?v=440",
-      "source_price": 0,
+      "source_price": 42300.0,
       "published_price": "42300.00",
       "name": "Paloma Herrera Intense — Eau de parfum 60ml (Vap.) + Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-440-paloma-herrera-intense",
@@ -5515,7 +5515,7 @@
     {
       "source_id": "441",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-fantasy?v=441",
-      "source_price": 0,
+      "source_price": 42300.0,
       "published_price": "42300.00",
       "name": "Paloma Herrera Fantasy — Eau de parfum 60ml (Vap.) + Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-441-paloma-herrera-fantasy",
@@ -5533,7 +5533,7 @@
     {
       "source_id": "442",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera?v=442",
-      "source_price": 0,
+      "source_price": 42300.0,
       "published_price": "42300.00",
       "name": "Paloma Herrera — Eau de parfum 60ml (Vap.) + Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-442-paloma-herrera",
@@ -5551,7 +5551,7 @@
     {
       "source_id": "443",
       "source_url": "https://www.fraganciascannon.com/paloma-herrera-passion?v=443",
-      "source_price": 0,
+      "source_price": 42300.0,
       "published_price": "42300.00",
       "name": "Paloma Herrera Passion — Eau de parfum 60ml (Vap.) + Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-443-paloma-herrera-passion",
@@ -5569,7 +5569,7 @@
     {
       "source_id": "444",
       "source_url": "https://www.fraganciascannon.com/paula-alegria?v=444",
-      "source_price": 0,
+      "source_price": 42500.0,
       "published_price": "42500.00",
       "name": "Paula Alegría — Eau de toilette 60 (Vap.) + Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-444-paula-alegria",
@@ -5587,7 +5587,7 @@
     {
       "source_id": "445",
       "source_url": "https://www.fraganciascannon.com/ciel-sweet-kiss?v=445",
-      "source_price": 0,
+      "source_price": 22800.0,
       "published_price": "22800.00",
       "name": "Ciel Sweet Kiss — Eau de parfum 50ml (Vap.)",
       "slug": "cannon-445-ciel-sweet-kiss",
@@ -5605,7 +5605,7 @@
     {
       "source_id": "446",
       "source_url": "https://www.fraganciascannon.com/ciel-sweet-kiss?v=446",
-      "source_price": 0,
+      "source_price": 26400.0,
       "published_price": "26400.00",
       "name": "Ciel Sweet Kiss — Eau de parfum 80ml (Vap.)",
       "slug": "cannon-446-ciel-sweet-kiss",
@@ -5623,7 +5623,7 @@
     {
       "source_id": "447",
       "source_url": "https://www.fraganciascannon.com/ciel-sweet-kiss?v=447",
-      "source_price": 0,
+      "source_price": 4800.0,
       "published_price": "4800.00",
       "name": "Ciel Sweet Kiss — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-447-ciel-sweet-kiss",
@@ -5641,7 +5641,7 @@
     {
       "source_id": "448",
       "source_url": "https://www.fraganciascannon.com/ciel-sweet-kiss?v=448",
-      "source_price": 0,
+      "source_price": 5700.0,
       "published_price": "5700.00",
       "name": "Ciel Sweet Kiss — Desodorante en aerosol 186ml (Vap.)",
       "slug": "cannon-448-ciel-sweet-kiss",
@@ -5659,7 +5659,7 @@
     {
       "source_id": "449",
       "source_url": "https://www.fraganciascannon.com/bross-london-hawaii?v=449",
-      "source_price": 0,
+      "source_price": 28500.0,
       "published_price": "28500.00",
       "name": "Bross  London   Hawaii — Eau de parfum 100ml (Vap.)",
       "slug": "cannon-449-bross-london-hawaii",
@@ -5677,7 +5677,7 @@
     {
       "source_id": "450",
       "source_url": "https://www.fraganciascannon.com/bross-london-hawaii?v=450",
-      "source_price": 0,
+      "source_price": 5600.0,
       "published_price": "5600.00",
       "name": "Bross  London   Hawaii — Desodorante en aerosol 150ml (Vap.)",
       "slug": "cannon-450-bross-london-hawaii",
@@ -5695,7 +5695,7 @@
     {
       "source_id": "451",
       "source_url": "https://www.fraganciascannon.com/prune-blanc?v=451",
-      "source_price": 0,
+      "source_price": 42000.0,
       "published_price": "42000.00",
       "name": "Prüne Blanc — Eau de parfum 70ml (Vap.)",
       "slug": "cannon-451-prune-blanc",
@@ -5713,7 +5713,7 @@
     {
       "source_id": "452",
       "source_url": "https://www.fraganciascannon.com/prune-blanc?v=452",
-      "source_price": 0,
+      "source_price": 5500.0,
       "published_price": "5500.00",
       "name": "Prüne Blanc — Desodorante en aerosol 123ml (Vap.)",
       "slug": "cannon-452-prune-blanc",
@@ -5731,7 +5731,7 @@
     {
       "source_id": "453",
       "source_url": "https://www.fraganciascannon.com/paula-alegria?v=453",
-      "source_price": 0,
+      "source_price": 18000.0,
       "published_price": "18000.00",
       "name": "Paula Alegría — Body Mist 130ml (Vap.)",
       "slug": "cannon-453-paula-alegria",
@@ -5749,7 +5749,7 @@
     {
       "source_id": "454",
       "source_url": "https://www.fraganciascannon.com/paula-aura?v=454",
-      "source_price": 0,
+      "source_price": 18000.0,
       "published_price": "18000.00",
       "name": "Paula Aura — Body Mist 130ml (Vap.)",
       "slug": "cannon-454-paula-aura",
@@ -5767,7 +5767,7 @@
     {
       "source_id": "455",
       "source_url": "https://www.fraganciascannon.com/valeria-velvet-by-valeria-mazza?v=455",
-      "source_price": 0,
+      "source_price": 41500.0,
       "published_price": "41500.00",
       "name": "Valeria Velvet By Valeria Mazza — Estuche (EDT  60ml + AER. 123ml )  (Vap.)",
       "slug": "cannon-455-valeria-velvet-by-valeria-mazza",
@@ -5785,7 +5785,7 @@
     {
       "source_id": "456",
       "source_url": "https://www.fraganciascannon.com/paula-cahen-danvers-paula?v=456",
-      "source_price": 0,
+      "source_price": 47500.0,
       "published_price": "47500.00",
       "name": "Paula Cahen D'anvers Paula — Lata Cofre 60ml+123ml",
       "slug": "cannon-456-paula-cahen-danvers-paula",
@@ -5803,7 +5803,7 @@
     {
       "source_id": "457",
       "source_url": "https://www.fraganciascannon.com/paula-alegria?v=457",
-      "source_price": 0,
+      "source_price": 47500.0,
       "published_price": "47500.00",
       "name": "Paula Alegría — Lata Cofre 60ml+123ml",
       "slug": "cannon-457-paula-alegria",
@@ -5821,7 +5821,7 @@
     {
       "source_id": "458",
       "source_url": "https://www.fraganciascannon.com/paula-aura?v=458",
-      "source_price": 0,
+      "source_price": 47500.0,
       "published_price": "47500.00",
       "name": "Paula Aura — Lata Cofre 60ml+123ml",
       "slug": "cannon-458-paula-aura",
@@ -5836,5 +5836,6 @@
       "source_image_url": "https://www.fraganciascannon.com/storage/public-site/products/7791600545185/oGQdIxiCynAovAWncvkXYt0mpXEcLpztbVdr4uPa.webp?v=1792155433",
       "gtin": "7791600545185"
     }
-  ]
+  ],
+  "pricing": "published"
 }
