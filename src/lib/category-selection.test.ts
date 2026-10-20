@@ -11,4 +11,12 @@ test("un producto no puede tener una subcategoría de otra categoría", () => {
 });
 test("una categoría puede tener productos sin subcategoría", () => {
   assert.doesNotThrow(() => validateProductClassification("cabello", null, items));
+});const types = [{ id: "shampoo-han", subcategory_id: "han", name: "Shampoo" }];
+const brands = [...items, { id: "han", category_id: "cabello", name: "Han" }];
+test("el tipo debe pertenecer a la marca elegida", () => {
+  assert.throws(() => validateProductClassification("cabello", "fidelite", brands, "shampoo-han", types));
+  assert.doesNotThrow(() => validateProductClassification("cabello", "han", brands, "shampoo-han", types));
+});
+test("no se puede elegir tipo sin marca", () => {
+  assert.throws(() => validateProductClassification("cabello", null, brands, "shampoo-han", types));
 });

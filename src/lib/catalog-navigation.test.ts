@@ -49,3 +49,12 @@ test("coincide en singular cuando hay un solo producto", () => {
   const h = catalogHeading({ categories, subcategories, search: { categoria: "limpieza" }, count: 1 });
   assert.equal(h.subtitle, "1 producto disponible.");
 });
+
+test("el tipo de producto se lee desde la dirección y titula el catálogo", async () => {
+  const { catalogSearch: parse, catalogHeading: heading } = await import("./catalog-navigation");
+  const s = parse({ subcategoria: "han", tipo: "sh" });
+  assert.equal(s.tipo, "sh");
+  const h = heading({ categories: [], subcategories: [{ id: "han", name: "Han" }], types: [{ id: "sh", name: "Shampoo" }], search: s });
+  assert.equal(h.title, "Shampoo");
+  assert.equal(h.eyebrow, "Han");
+});
