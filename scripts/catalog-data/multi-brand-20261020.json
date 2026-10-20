@@ -5480,7 +5480,7 @@
       "source_price": 21331.2,
       "compare_at_price": 28067.47,
       "source_image_urls": [
-        "https://doan.com.ar/image/catalog/doan/7793742008672.jpg"
+        "https://bunny-cdn.ventasxmayor.com/6060d74cdbd6d24cdbd6d26363/public/42841371132564091/1791641504032-cremapielsecax50.jpg"
       ],
       "barcode": "7793742008672",
       "specifications": {
@@ -5491,7 +5491,9 @@
       "image_urls": [
         "/catalog/dermaglos/dermaglos-doan-51558.webp"
       ],
-      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-51558-thumb.webp"
+      "thumbnail_url": "/catalog/dermaglos/dermaglos-doan-51558-thumb.webp",
+      "image_reference_url": "https://rgmayorista.com/",
+      "image_reference_barcode": "7793742008672"
     },
     {
       "source_id": "51638",
