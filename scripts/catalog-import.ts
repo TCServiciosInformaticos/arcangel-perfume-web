@@ -6,6 +6,7 @@ export type SourceProduct = {
 };
 
 const ISSUE_HOSTS = ["issueprofessional.com", "www.issueprofessional.com"];
+const DOAN_HOSTS = ["doan.com.ar", "www.doan.com.ar"];
 const CANNON_HOSTS = ["fraganciascannon.com", "www.fraganciascannon.com"];
 const ZERO_PRICE_HOSTS = ["hancolor.com.ar", "www.hancolor.com.ar", ...ISSUE_HOSTS];
 
@@ -16,12 +17,16 @@ export function prepareCatalogProduct(product: SourceProduct, imageUrls: string[
   const zeroPriceAllowed = options.allowZeroPrice === true && ZERO_PRICE_HOSTS.includes(source.hostname);
   if (options.allowZeroPrice && !zeroPriceAllowed) throw new Error("Precio cero no autorizado para este origen");
   if (!Number.isFinite(product.source_price) || product.source_price < 0 || (product.source_price === 0 && !zeroPriceAllowed)) throw new Error("Falta precio publicado válido");
-  const sourceSlug = source.pathname.split("/").filter(Boolean).at(-1);
-  const allowedHosts = ["bmdistribuidora.com.ar", "www.bmdistribuidora.com.ar", "thelmaylouise.com.ar", "www.thelmaylouise.com.ar", ...ZERO_PRICE_HOSTS, ...CANNON_HOSTS];
+  const doanProductId = source.searchParams.get("product_id");
+  const isDoan = DOAN_HOSTS.includes(source.hostname);
+  const validDoveSource = source.searchParams.get("route") === "product/product" && source.searchParams.get("manufacturer_id") === "138" && /^[1-9][0-9]*$/.test(doanProductId ?? "");
+  const sourceSlug = isDoan ? (validDoveSource ? "dove-doan-" + doanProductId : undefined) : source.pathname.split("/").filter(Boolean).at(-1);
+  const allowedHosts = ["bmdistribuidora.com.ar", "www.bmdistribuidora.com.ar", "thelmaylouise.com.ar", "www.thelmaylouise.com.ar", ...ZERO_PRICE_HOSTS, ...CANNON_HOSTS, ...DOAN_HOSTS];
   if (!sourceSlug || source.protocol !== "https:" || !allowedHosts.includes(source.hostname)) throw new Error("Origen inválido");
   const storedIssueImage = (url: string) => ISSUE_HOSTS.includes(source.hostname) && /^\/catalog\/issue\/issue-[a-z0-9-]+\.webp$/.test(url);
   const storedCannonImage = (url: string) => CANNON_HOSTS.includes(source.hostname) && /^\/catalog\/cannon\/cannon-[0-9]+-[a-z0-9-]+\.webp$/.test(url);
-  if (imageUrls.length === 0 || imageUrls.some(url => !url.startsWith("/__l5e/assets-v1/") && !storedIssueImage(url) && !storedCannonImage(url))) throw new Error("Faltan imágenes almacenadas");
+  const storedDoveImage = (url: string) => isDoan && validDoveSource && new RegExp("^/catalog/dove/dove-doan-" + doanProductId + "(-[0-9]+)?[.]webp$").test(url);
+  if (imageUrls.length === 0 || imageUrls.some(url => !url.startsWith("/__l5e/assets-v1/") && !storedIssueImage(url) && !storedCannonImage(url) && !storedDoveImage(url))) throw new Error("Faltan imágenes almacenadas");
   const discount = options.discountPercent ?? 0;
   if (!Number.isFinite(discount) || discount < 0 || discount >= 100) throw new Error("Descuento inválido");
   const adjustedPrice = product.source_price * (1 - discount / 100);
