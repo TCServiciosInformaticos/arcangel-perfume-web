@@ -56,10 +56,10 @@ const salesQuery = queryOptions({
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Perfumería El Arcángel — Perfumes, limpieza y cabello en Gran Bourg" },
-      { name: "description", content: "Perfumes, productos de limpieza y para el cabello. Dos sucursales en Gran Bourg. Comprá online y pagá con MercadoPago, con envíos por la zona." },
+      { title: "Perfumería El Arcángel — Perfumes, limpieza y cuidado capilar en Gran Bourg" },
+      { name: "description", content: "Perfumes, productos de limpieza y cuidado capilar. Dos sucursales en Gran Bourg. Comprá online y pagá con MercadoPago, con envíos por la zona." },
       { property: "og:title", content: "Perfumería El Arcángel" },
-      { property: "og:description", content: "Perfumes, limpieza y cabello en Gran Bourg. Envíos por la zona y pago con MercadoPago." },
+      { property: "og:description", content: "Perfumes, limpieza y cuidado capilar en Gran Bourg. Envíos por la zona y pago con MercadoPago." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -82,7 +82,8 @@ const BENEFITS = [
 const SLIDES = [
   { img: heroImg, title: "El Arcángel", sub: "Tu perfumería de barrio, ahora también online" },
   { img: heroPerfumes, title: "Perfumes", sub: "La fragancia que te representa está acá", mobileObject: "object-[90%_center]" },
-  { img: heroCabello, title: "Cabello", sub: "Todo lo que tu pelo necesita, en un solo lugar", mobileObject: "object-[80%_center]" },
+  { img: heroCabello, title: "Cuidado Capilar", sub: "Todo lo que tu pelo necesita, en un solo lugar", mobileObject: "object-[80%_center]" },
+  { img: catMakeup, title: "Make up", sub: "Los colores que te acompañan todos los días", search: { categoria: "make-up" } },
 ];
 
 
@@ -95,7 +96,7 @@ const PROMOS = [
 const CATEGORIES = [
   { name: "Perfumes", img: catPerfumes, slug: "perfumes" },
   { name: "Limpieza", img: catLimpieza, slug: "limpieza" },
-  { name: "Cabello", img: catCabello, slug: "cabello" },
+  { name: "Cuidado Capilar", img: catCabello, slug: "cabello" },
   { name: "Higiene personal", img: catHigiene, slug: "higiene-personal" },
   { name: "Accesorios", img: catAccesorios, slug: "accesorios" },
   { name: "Skin care", img: catSkincare, slug: "skin-care" },

@@ -93,6 +93,6 @@ export function catalogHeading({
   return {
     eyebrow: "Catálogo",
     title: "Todo el catálogo",
-    subtitle: "Perfumes, limpieza, cabello y más, con envío en la zona y retiro en el local.",
+    subtitle: "Perfumes, limpieza, cuidado capilar y más, con envío en la zona y retiro en el local.",
   };
 }
