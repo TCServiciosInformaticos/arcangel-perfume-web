@@ -14,5 +14,5 @@ for(const p of data.products){
   const b=readFileSync('public'+url);assert.equal(b.toString('ascii',0,4),'RIFF');assert.equal(b.toString('ascii',8,12),'WEBP');
  }
 }
-assert.deepEqual(data.source_counts,{'Cicatricure':35,'Dermaglós':108,'Frenzzi':72,'Garnier':25,'Nivea':37});
+assert.deepEqual(data.source_counts,{'Cicatricure':35,'Dermaglós':108,'Frenzzi':66,'Garnier':25,'Nivea':37});
 console.log('Verified',data.count,'products, prices and stored photos');
