@@ -10,7 +10,7 @@ Acceso: `/admin/estadisticas`, desde el menú o el Resumen. La consulta requiere
 - Artículos sin ventas: visibles creados hasta el cierre del período, sin unidades vendidas. Menos vendidos separa los ceros. No existe historial de disponibilidad: el saldo mostrado es actual y no prueba que un producto haya estado disponible durante el período.
 - Alertas: visibles con saldo actual menor o igual al umbral elegido (incluye agotados), independientes de las fechas; conservan filtros de categoría/marca. Umbral inicial 5, ajustable para la consulta.
 - Excel: resumen, evolución, todos los artículos del informe (sin límite de la página visible), categorías, marcas y estados. Lectura únicamente; no cambia precios ni stock.
-- No mide margen ni devoluciones: el sistema aún no registra costos/devoluciones como movimientos contables. Pedidos cancelados no se incluyen. Tampoco representa ventas fuera de la web.
+- El panel general no mide margen ni devoluciones. El margen bruto con costo conocido se consulta en Herramientas de venta → Rentabilidad; no hay registro contable de devoluciones. Pedidos cancelados no se incluyen. Tampoco representa ventas fuera de la web.
 
 ## Validación
 

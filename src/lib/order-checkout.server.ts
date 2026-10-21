@@ -33,6 +33,8 @@ export async function startOrderCheckout(
   payload: CheckoutInput | null,
   existingId?: string,
   requestKey?: string,
+  verifiedUserId?: string,
+  verifiedUserEmail?: string,
 ) {
   const accessToken = process.env.MERCADOPAGO_ACCESS_TOKEN,
     secret = process.env.ORDER_ACCESS_SECRET;
@@ -67,7 +69,9 @@ export async function startOrderCheckout(
     }
   }
   const reserved = await supabaseAdmin.rpc("reserve_order_checkout", {
-    payload: payload as Json,
+    payload: (payload
+      ? { ...payload, verified_user_id: verifiedUserId, verified_user_email: verifiedUserEmail }
+      : null) as Json,
     existing_id: existingId ?? undefined,
     request_key: requestKey ?? undefined,
   });

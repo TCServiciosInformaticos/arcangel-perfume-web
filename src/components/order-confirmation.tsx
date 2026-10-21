@@ -1,3 +1,4 @@
+import { RepeatPurchase } from "@/components/shopping-tools";
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
@@ -211,6 +212,7 @@ export function OrderConfirmation({ order, token, payment_id }: z.infer<typeof o
                 {actionError}
               </p>
             )}
+            {paid && order && token && <RepeatPurchase orderId={order} token={token} />}
             {cancelled && (
               <Button asChild className="mt-6">
                 <Link to="/carrito">Volver a intentar</Link>

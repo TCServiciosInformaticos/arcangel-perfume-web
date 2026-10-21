@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 
 export type CartItem = {
   productId: string;
@@ -47,20 +55,25 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [items, hydrated]);
 
   const addItem = useCallback((item: Omit<CartItem, "quantity">, qty = 1) => {
+    if (item.maxStock <= 0 || !Number.isInteger(qty) || qty <= 0) return;
     setItems((prev) => {
       const existing = prev.find((i) => i.productId === item.productId);
       if (existing) {
-        const next = Math.min(existing.quantity + qty, item.maxStock || 99);
+        const next = Math.min(existing.quantity + qty, Math.min(item.maxStock, 50));
         return prev.map((i) => (i.productId === item.productId ? { ...i, quantity: next } : i));
       }
-      return [...prev, { ...item, quantity: Math.min(qty, item.maxStock || 99) }];
+      return [...prev, { ...item, quantity: Math.min(qty, Math.min(item.maxStock, 50)) }];
     });
   }, []);
 
   const updateQty = useCallback((productId: string, qty: number) => {
     setItems((prev) =>
       prev
-        .map((i) => (i.productId === productId ? { ...i, quantity: Math.max(0, Math.min(qty, i.maxStock || 99)) } : i))
+        .map((i) =>
+          i.productId === productId
+            ? { ...i, quantity: Math.max(0, Math.min(qty, Math.min(i.maxStock, 50))) }
+            : i,
+        )
         .filter((i) => i.quantity > 0),
     );
   }, []);

@@ -47,8 +47,8 @@ function CartPage() {
               {items.map((it) => (
                 <li key={it.productId} className="flex gap-4 p-4">
                   <Link
-                    to="/producto/$slug"
-                    params={{ slug: it.slug }}
+                    to={it.slug ? "/producto/$slug" : "/combos"}
+                    params={it.slug ? { slug: it.slug } : undefined}
                     className="aspect-square h-24 w-24 flex-none overflow-hidden rounded-md bg-secondary/40"
                   >
                     {it.imageUrl ? (
@@ -60,7 +60,11 @@ function CartPage() {
                     )}
                   </Link>
                   <div className="flex flex-1 flex-col">
-                    <Link to="/producto/$slug" params={{ slug: it.slug }} className="font-medium hover:text-primary">
+                    <Link
+                      to={it.slug ? "/producto/$slug" : "/combos"}
+                      params={it.slug ? { slug: it.slug } : undefined}
+                      className="font-medium hover:text-primary"
+                    >
                       {it.name}
                     </Link>
                     <span className="text-sm text-muted-foreground">{formatARS(it.price)}</span>
@@ -68,19 +72,27 @@ function CartPage() {
                       <div className="flex items-center rounded-md border border-border">
                         <button
                           onClick={() => updateQty(it.productId, it.quantity - 1)}
-                          className="px-2 py-1.5 hover:bg-accent/10" aria-label="Restar"
-                        ><Minus className="h-3.5 w-3.5" /></button>
+                          className="px-2 py-1.5 hover:bg-accent/10"
+                          aria-label="Restar"
+                        >
+                          <Minus className="h-3.5 w-3.5" />
+                        </button>
                         <span className="w-8 text-center text-sm">{it.quantity}</span>
                         <button
                           onClick={() => updateQty(it.productId, it.quantity + 1)}
-                          className="px-2 py-1.5 hover:bg-accent/10" aria-label="Sumar"
-                        ><Plus className="h-3.5 w-3.5" /></button>
+                          className="px-2 py-1.5 hover:bg-accent/10"
+                          aria-label="Sumar"
+                        >
+                          <Plus className="h-3.5 w-3.5" />
+                        </button>
                       </div>
                       <button
                         onClick={() => removeItem(it.productId)}
                         className="rounded-md p-2 text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
                         aria-label="Eliminar"
-                      ><Trash2 className="h-4 w-4" /></button>
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </button>
                     </div>
                   </div>
                   <div className="hidden text-right font-medium sm:block">
@@ -109,7 +121,10 @@ function CartPage() {
               <Button asChild className="mt-6 w-full" size="lg">
                 <Link to="/checkout">Continuar al checkout</Link>
               </Button>
-              <Link to="/productos" className="mt-3 block text-center text-sm text-muted-foreground hover:text-foreground">
+              <Link
+                to="/productos"
+                className="mt-3 block text-center text-sm text-muted-foreground hover:text-foreground"
+              >
                 Seguir comprando
               </Link>
             </aside>

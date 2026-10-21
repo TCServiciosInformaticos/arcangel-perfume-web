@@ -30,6 +30,6 @@ test("busca en nombre, slug y descripción con el patrón entre comillas", () =>
   const calls: string[] = [];
   applyAdminProductSearch(fakeRequest(calls), "shampoo secante");
   assert.deepEqual(calls, [
-    'name.ilike."%shampoo secante%",slug.ilike."%shampoo secante%",description.ilike."%shampoo secante%"',
+    'name.ilike."%shampoo secante%",slug.ilike."%shampoo secante%",description.ilike."%shampoo secante%",article_code.ilike."%shampoo secante%",barcode.ilike."%shampoo secante%"',
   ]);
 });

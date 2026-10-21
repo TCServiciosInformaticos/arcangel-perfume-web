@@ -14,6 +14,8 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CarritoRouteImport } from './routes/carrito'
 import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as CombosRouteImport } from './routes/combos'
+import { Route as FavoritosRouteImport } from './routes/favoritos'
 import { Route as GraciasRouteImport } from './routes/gracias'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as PagoFallidoRouteImport } from './routes/pago-fallido'
@@ -25,6 +27,7 @@ import { Route as ProductoSlugRouteImport } from './routes/producto.$slug'
 import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable.oauth.consent'
 import { Route as AuthenticatedAdminCategoriasRouteImport } from './routes/_authenticated/admin.categorias'
 import { Route as AuthenticatedAdminEstadisticasRouteImport } from './routes/_authenticated/admin.estadisticas'
+import { Route as AuthenticatedAdminHerramientasRouteImport } from './routes/_authenticated/admin.herramientas'
 import { Route as AuthenticatedAdminPedidosRouteImport } from './routes/_authenticated/admin.pedidos'
 import { Route as AuthenticatedAdminPoliticaPreciosRouteImport } from './routes/_authenticated/admin.politica-precios'
 import { Route as AuthenticatedAdminProductosRouteImport } from './routes/_authenticated/admin.productos'
@@ -32,6 +35,7 @@ import { Route as AuthenticatedAdminSliderRouteImport } from './routes/_authenti
 import { Route as ApiPublicMercadopagoWebhookRouteImport } from './routes/api/public/mercadopago-webhook'
 import { Route as ApiPublicOrderMaintenanceRouteImport } from './routes/api/public/order-maintenance'
 import { Route as ApiPublicOrderRecoveryEmailsRouteImport } from './routes/api/public/order-recovery-emails'
+import { Route as ApiPublicRestockNotificationsRouteImport } from './routes/api/public/restock-notifications'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -55,6 +59,16 @@ const CarritoRoute = CarritoRouteImport.update({
 const CheckoutRoute = CheckoutRouteImport.update({
   id: '/checkout',
   path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CombosRoute = CombosRouteImport.update({
+  id: '/combos',
+  path: '/combos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritosRoute = FavoritosRouteImport.update({
+  id: '/favoritos',
+  path: '/favoritos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GraciasRoute = GraciasRouteImport.update({
@@ -115,6 +129,12 @@ const AuthenticatedAdminEstadisticasRoute =
     path: '/estadisticas',
     getParentRoute: () => AuthenticatedAdminRoute,
   } as any)
+const AuthenticatedAdminHerramientasRoute =
+  AuthenticatedAdminHerramientasRouteImport.update({
+    id: '/herramientas',
+    path: '/herramientas',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedAdminPedidosRoute =
   AuthenticatedAdminPedidosRouteImport.update({
     id: '/pedidos',
@@ -157,12 +177,20 @@ const ApiPublicOrderRecoveryEmailsRoute =
     path: '/api/public/order-recovery-emails',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicRestockNotificationsRoute =
+  ApiPublicRestockNotificationsRouteImport.update({
+    id: '/api/public/restock-notifications',
+    path: '/api/public/restock-notifications',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/carrito': typeof CarritoRoute
   '/checkout': typeof CheckoutRoute
+  '/combos': typeof CombosRoute
+  '/favoritos': typeof FavoritosRoute
   '/gracias': typeof GraciasRoute
   '/mcp': typeof McpRoute
   '/pago-fallido': typeof PagoFallidoRoute
@@ -174,6 +202,7 @@ export interface FileRoutesByFullPath {
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
   '/admin/estadisticas': typeof AuthenticatedAdminEstadisticasRoute
+  '/admin/herramientas': typeof AuthenticatedAdminHerramientasRoute
   '/admin/pedidos': typeof AuthenticatedAdminPedidosRoute
   '/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
@@ -181,12 +210,15 @@ export interface FileRoutesByFullPath {
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
   '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
+  '/api/public/restock-notifications': typeof ApiPublicRestockNotificationsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/carrito': typeof CarritoRoute
   '/checkout': typeof CheckoutRoute
+  '/combos': typeof CombosRoute
+  '/favoritos': typeof FavoritosRoute
   '/gracias': typeof GraciasRoute
   '/mcp': typeof McpRoute
   '/pago-fallido': typeof PagoFallidoRoute
@@ -198,6 +230,7 @@ export interface FileRoutesByTo {
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
   '/admin/estadisticas': typeof AuthenticatedAdminEstadisticasRoute
+  '/admin/herramientas': typeof AuthenticatedAdminHerramientasRoute
   '/admin/pedidos': typeof AuthenticatedAdminPedidosRoute
   '/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
@@ -205,6 +238,7 @@ export interface FileRoutesByTo {
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
   '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
+  '/api/public/restock-notifications': typeof ApiPublicRestockNotificationsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -213,6 +247,8 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/carrito': typeof CarritoRoute
   '/checkout': typeof CheckoutRoute
+  '/combos': typeof CombosRoute
+  '/favoritos': typeof FavoritosRoute
   '/gracias': typeof GraciasRoute
   '/mcp': typeof McpRoute
   '/pago-fallido': typeof PagoFallidoRoute
@@ -224,6 +260,7 @@ export interface FileRoutesById {
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/_authenticated/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
   '/_authenticated/admin/estadisticas': typeof AuthenticatedAdminEstadisticasRoute
+  '/_authenticated/admin/herramientas': typeof AuthenticatedAdminHerramientasRoute
   '/_authenticated/admin/pedidos': typeof AuthenticatedAdminPedidosRoute
   '/_authenticated/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/_authenticated/admin/productos': typeof AuthenticatedAdminProductosRoute
@@ -231,6 +268,7 @@ export interface FileRoutesById {
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
   '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
+  '/api/public/restock-notifications': typeof ApiPublicRestockNotificationsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -239,6 +277,8 @@ export interface FileRouteTypes {
     | '/auth'
     | '/carrito'
     | '/checkout'
+    | '/combos'
+    | '/favoritos'
     | '/gracias'
     | '/mcp'
     | '/pago-fallido'
@@ -250,6 +290,7 @@ export interface FileRouteTypes {
     | '/.lovable/oauth/consent'
     | '/admin/categorias'
     | '/admin/estadisticas'
+    | '/admin/herramientas'
     | '/admin/pedidos'
     | '/admin/politica-precios'
     | '/admin/productos'
@@ -257,12 +298,15 @@ export interface FileRouteTypes {
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
     | '/api/public/order-recovery-emails'
+    | '/api/public/restock-notifications'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/auth'
     | '/carrito'
     | '/checkout'
+    | '/combos'
+    | '/favoritos'
     | '/gracias'
     | '/mcp'
     | '/pago-fallido'
@@ -274,6 +318,7 @@ export interface FileRouteTypes {
     | '/.lovable/oauth/consent'
     | '/admin/categorias'
     | '/admin/estadisticas'
+    | '/admin/herramientas'
     | '/admin/pedidos'
     | '/admin/politica-precios'
     | '/admin/productos'
@@ -281,6 +326,7 @@ export interface FileRouteTypes {
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
     | '/api/public/order-recovery-emails'
+    | '/api/public/restock-notifications'
   id:
     | '__root__'
     | '/'
@@ -288,6 +334,8 @@ export interface FileRouteTypes {
     | '/auth'
     | '/carrito'
     | '/checkout'
+    | '/combos'
+    | '/favoritos'
     | '/gracias'
     | '/mcp'
     | '/pago-fallido'
@@ -299,6 +347,7 @@ export interface FileRouteTypes {
     | '/.lovable/oauth/consent'
     | '/_authenticated/admin/categorias'
     | '/_authenticated/admin/estadisticas'
+    | '/_authenticated/admin/herramientas'
     | '/_authenticated/admin/pedidos'
     | '/_authenticated/admin/politica-precios'
     | '/_authenticated/admin/productos'
@@ -306,6 +355,7 @@ export interface FileRouteTypes {
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
     | '/api/public/order-recovery-emails'
+    | '/api/public/restock-notifications'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -314,6 +364,8 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   CarritoRoute: typeof CarritoRoute
   CheckoutRoute: typeof CheckoutRoute
+  CombosRoute: typeof CombosRoute
+  FavoritosRoute: typeof FavoritosRoute
   GraciasRoute: typeof GraciasRoute
   McpRoute: typeof McpRoute
   PagoFallidoRoute: typeof PagoFallidoRoute
@@ -325,6 +377,7 @@ export interface RootRouteChildren {
   ApiPublicMercadopagoWebhookRoute: typeof ApiPublicMercadopagoWebhookRoute
   ApiPublicOrderMaintenanceRoute: typeof ApiPublicOrderMaintenanceRoute
   ApiPublicOrderRecoveryEmailsRoute: typeof ApiPublicOrderRecoveryEmailsRoute
+  ApiPublicRestockNotificationsRoute: typeof ApiPublicRestockNotificationsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -362,6 +415,20 @@ declare module '@tanstack/react-router' {
       path: '/checkout'
       fullPath: '/checkout'
       preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/combos': {
+      id: '/combos'
+      path: '/combos'
+      fullPath: '/combos'
+      preLoaderRoute: typeof CombosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favoritos': {
+      id: '/favoritos'
+      path: '/favoritos'
+      fullPath: '/favoritos'
+      preLoaderRoute: typeof FavoritosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gracias': {
@@ -441,6 +508,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminEstadisticasRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/admin/herramientas': {
+      id: '/_authenticated/admin/herramientas'
+      path: '/herramientas'
+      fullPath: '/admin/herramientas'
+      preLoaderRoute: typeof AuthenticatedAdminHerramientasRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/pedidos': {
       id: '/_authenticated/admin/pedidos'
       path: '/pedidos'
@@ -490,12 +564,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicOrderRecoveryEmailsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/restock-notifications': {
+      id: '/api/public/restock-notifications'
+      path: '/api/public/restock-notifications'
+      fullPath: '/api/public/restock-notifications'
+      preLoaderRoute: typeof ApiPublicRestockNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminCategoriasRoute: typeof AuthenticatedAdminCategoriasRoute
   AuthenticatedAdminEstadisticasRoute: typeof AuthenticatedAdminEstadisticasRoute
+  AuthenticatedAdminHerramientasRoute: typeof AuthenticatedAdminHerramientasRoute
   AuthenticatedAdminPedidosRoute: typeof AuthenticatedAdminPedidosRoute
   AuthenticatedAdminPoliticaPreciosRoute: typeof AuthenticatedAdminPoliticaPreciosRoute
   AuthenticatedAdminProductosRoute: typeof AuthenticatedAdminProductosRoute
@@ -505,6 +587,7 @@ interface AuthenticatedAdminRouteChildren {
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminCategoriasRoute: AuthenticatedAdminCategoriasRoute,
   AuthenticatedAdminEstadisticasRoute: AuthenticatedAdminEstadisticasRoute,
+  AuthenticatedAdminHerramientasRoute: AuthenticatedAdminHerramientasRoute,
   AuthenticatedAdminPedidosRoute: AuthenticatedAdminPedidosRoute,
   AuthenticatedAdminPoliticaPreciosRoute:
     AuthenticatedAdminPoliticaPreciosRoute,
@@ -532,6 +615,8 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   CarritoRoute: CarritoRoute,
   CheckoutRoute: CheckoutRoute,
+  CombosRoute: CombosRoute,
+  FavoritosRoute: FavoritosRoute,
   GraciasRoute: GraciasRoute,
   McpRoute: McpRoute,
   PagoFallidoRoute: PagoFallidoRoute,
@@ -544,6 +629,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPublicMercadopagoWebhookRoute: ApiPublicMercadopagoWebhookRoute,
   ApiPublicOrderMaintenanceRoute: ApiPublicOrderMaintenanceRoute,
   ApiPublicOrderRecoveryEmailsRoute: ApiPublicOrderRecoveryEmailsRoute,
+  ApiPublicRestockNotificationsRoute: ApiPublicRestockNotificationsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

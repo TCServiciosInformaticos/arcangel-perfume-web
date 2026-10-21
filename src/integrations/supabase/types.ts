@@ -150,6 +150,7 @@ export type Database = {
       }
       order_items: {
         Row: {
+          unit_cost: number | null
           created_at: string
           id: string
           line_total: number
@@ -502,6 +503,7 @@ export type Database = {
       }
       products: {
         Row: {
+          barcode: string | null
           article_code: string | null
           category_id: string | null
           compare_at_price: number | null

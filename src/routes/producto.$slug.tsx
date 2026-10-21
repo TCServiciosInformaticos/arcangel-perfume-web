@@ -7,6 +7,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
+import { FavoriteButton } from "@/components/favorites";
+import { StockNotice, RelatedProducts } from "@/components/shopping-tools";
 import { formatARS } from "@/lib/format";
 import { useCart } from "@/lib/cart-context";
 
@@ -16,7 +18,9 @@ const productQuery = (slug: string) =>
     queryFn: async () => {
       const { data, error } = await supabase
         .from("products")
-        .select("id, slug, name, description, price, stock, image_urls, is_active, category:categories(name, slug)")
+        .select(
+          "id, slug, name, description, price, stock, image_urls, is_active, category_id, subcategory_id, category:categories(name, slug)",
+        )
         .eq("slug", slug)
         .eq("is_active", true)
         .maybeSingle();
@@ -35,15 +39,25 @@ export const Route = createFileRoute("/producto/$slug")({
     meta: loaderData
       ? [
           { title: `${loaderData.name} — Perfumería El Arcángel` },
-          { name: "description", content: loaderData.description?.slice(0, 155) ?? `Comprá ${loaderData.name} en Perfumería El Arcángel.` },
+          {
+            name: "description",
+            content:
+              loaderData.description?.slice(0, 155) ??
+              `Comprá ${loaderData.name} en Perfumería El Arcángel.`,
+          },
           { property: "og:title", content: loaderData.name },
-          { property: "og:description", content: loaderData.description?.slice(0, 155) ?? `Comprá ${loaderData.name}.` },
+          {
+            property: "og:description",
+            content: loaderData.description?.slice(0, 155) ?? `Comprá ${loaderData.name}.`,
+          },
           { property: "og:type", content: "product" },
           { name: "twitter:card", content: "summary_large_image" },
-          ...(loaderData.image_urls?.[0]?.startsWith("https://") ? [
-            { property: "og:image", content: loaderData.image_urls[0] },
-            { name: "twitter:image", content: loaderData.image_urls[0] },
-          ] : []),
+          ...(loaderData.image_urls?.[0]?.startsWith("https://")
+            ? [
+                { property: "og:image", content: loaderData.image_urls[0] },
+                { name: "twitter:image", content: loaderData.image_urls[0] },
+              ]
+            : []),
         ]
       : [],
   }),
@@ -53,7 +67,9 @@ export const Route = createFileRoute("/producto/$slug")({
       <SiteHeader />
       <main className="mx-auto max-w-3xl px-4 py-24 text-center">
         <h1 className="font-serif text-4xl">Producto no encontrado</h1>
-        <Link to="/productos" className="mt-6 inline-block text-primary underline">Volver al catálogo</Link>
+        <Link to="/productos" className="mt-6 inline-block text-primary underline">
+          Volver al catálogo
+        </Link>
       </main>
       <SiteFooter />
     </div>
@@ -96,7 +112,10 @@ function ProductDetail() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6 lg:px-8">
-        <Link to="/productos" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
+        <Link
+          to="/productos"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+        >
           <ChevronLeft className="h-4 w-4" /> Catálogo
         </Link>
 
@@ -134,17 +153,23 @@ function ProductDetail() {
                 {p.category.name}
               </span>
             )}
+            <div className="mt-3">
+              <FavoriteButton id={p.id} />
+            </div>
             <h1 className="mt-2 font-serif text-4xl leading-tight sm:text-5xl">{p.name}</h1>
             <div className="mt-4 text-3xl font-medium text-primary">{formatARS(p.price)}</div>
 
             {p.description && (
-              <p className="mt-6 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+              <p className="mt-6 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
+                {p.description}
+              </p>
             )}
 
             <div className="mt-8 space-y-4">
               {out ? (
                 <div className="rounded-md border border-border bg-muted px-4 py-3 text-sm text-muted-foreground">
                   Producto sin stock por el momento.
+                  <StockNotice id={p.id} />
                 </div>
               ) : (
                 <>
@@ -175,13 +200,16 @@ function ProductDetail() {
                     <Button size="lg" onClick={onAdd} variant="outline">
                       <ShoppingBag className="mr-2 h-4 w-4" /> Agregar al carrito
                     </Button>
-                    <Button size="lg" onClick={onBuy}>Comprar ahora</Button>
+                    <Button size="lg" onClick={onBuy}>
+                      Comprar ahora
+                    </Button>
                   </div>
                 </>
               )}
             </div>
           </div>
         </div>
+        <RelatedProducts id={p.id} category={p.category_id} brand={p.subcategory_id} />
       </main>
       <SiteFooter />
     </div>

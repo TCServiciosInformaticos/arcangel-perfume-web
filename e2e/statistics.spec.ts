@@ -70,6 +70,24 @@ test.beforeEach(async ({ context, page }) => {
           "access-control-allow-methods": "GET,POST,OPTIONS",
         },
       });
+    const extra: Record<string, unknown> = {
+      "/rest/v1/bundles": [],
+      "/rest/v1/bundle_components": [],
+      "/rest/v1/coupons": [],
+      "/rest/v1/product_costs": null,
+      "/rest/v1/order_picking": [],
+      "/rest/v1/stock_notifications": [],
+      "/rest/v1/rpc/admin_commerce": true,
+      "/rest/v1/rpc/admin_profit_report": { rows: [], known_margin: 0, unknown_cost_units: 3 },
+    };
+    if (Object.prototype.hasOwnProperty.call(extra, path))
+      return route.fulfill({
+        json: extra[path],
+        headers: {
+          "access-control-allow-origin": "http://127.0.0.1:3000",
+          "content-range": "0-0/0",
+        },
+      });
     const json =
       path === "/auth/v1/user"
         ? user
@@ -127,4 +145,40 @@ test("Excel export includes all rows beyond the visible page", async ({ page }) 
   await book.xlsx.readFile(path!);
   expect(book.getWorksheet("Artículos")?.rowCount).toBe(26);
   expect(book.getWorksheet("Resumen")?.getCell("B7").value).toBe(450);
+});
+
+test("admin can prepare a bundle configuration and private costs using local fixtures", async ({
+  page,
+}) => {
+  await page.goto("/admin/herramientas", { waitUntil: "networkidle" });
+  await expect(
+    page.getByRole("heading", { name: "Herramientas de venta", exact: true }),
+  ).toBeVisible();
+  await page.getByLabel("Nombre", { exact: true }).fill("Kit ficticio");
+  await page.getByLabel("Precio final del combo (ARS)").fill("1200");
+  const search = page.getByPlaceholder("Escribí o escaneá y elegí el artículo");
+  await search.fill("prueba");
+  await page.getByRole("button", { name: /^Perfume de prueba ·/ }).click();
+  await search.fill("agotado");
+  await page.getByRole("button", { name: /^Producto agotado de prueba ·/ }).click();
+  const request = page.waitForRequest(
+    (r) => r.url().includes("/rpc/admin_commerce") && r.method() === "POST",
+  );
+  await page.getByRole("button", { name: "Guardar combo", exact: true }).click();
+  const body = (await request).postDataJSON();
+  expect(body.action).toBe("bundle");
+  expect(body.payload.components).toHaveLength(2);
+  expect(body.payload.is_active).toBe(false);
+  await page.getByRole("button", { name: "Costos y escáner", exact: true }).click();
+  await search.fill("prueba");
+  await page.getByRole("button", { name: /^Perfume de prueba ·/ }).click();
+  await page.getByLabel("Costo unitario ARS").fill("650");
+  await page.getByLabel("Código de barras", { exact: true }).fill("7790000000000");
+  const cost = page.waitForRequest(
+    (r) => r.url().includes("/rpc/admin_commerce") && r.method() === "POST",
+  );
+  await page.getByRole("button", { name: "Guardar costo y código" }).click();
+  expect((await cost).postDataJSON().payload.unit_cost).toBe("650");
+  await page.getByRole("button", { name: "Rentabilidad", exact: true }).click();
+  await expect(page.getByText("Unidades sin costo histórico: 3.", { exact: false })).toBeVisible();
 });

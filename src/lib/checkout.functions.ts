@@ -4,11 +4,29 @@ import { CheckoutSchema } from "@/lib/checkout-validation";
 export type { CheckoutInput } from "@/lib/checkout-validation";
 export const createCheckout = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) =>
-    z.object({ checkout: CheckoutSchema, requestKey: z.string().uuid() }).parse(data),
+    z
+      .object({
+        checkout: CheckoutSchema,
+        requestKey: z.string().uuid(),
+        accessToken: z.string().min(20).optional(),
+      })
+      .parse(data),
   )
   .handler(async ({ data }) => {
+    if (
+      !process.env.SUPABASE_URL ||
+      !process.env.SUPABASE_SERVICE_ROLE_KEY ||
+      !process.env.MERCADOPAGO_ACCESS_TOKEN ||
+      !process.env.MERCADOPAGO_WEBHOOK_SECRET ||
+      !process.env.ORDER_ACCESS_SECRET
+    )
+      throw new Error(
+        "El pago todavía no está habilitado. Tu carrito sigue guardado mientras la tienda termina de configurarlo.",
+      );
     const { startOrderCheckout } = await import("./order-checkout.server");
-    return startOrderCheckout(data.checkout, undefined, data.requestKey);
+    const { verifiedShopper } = await import("./commerce.server");
+    const user = await verifiedShopper(data.accessToken);
+    return startOrderCheckout(data.checkout, undefined, data.requestKey, user?.id, user?.email);
   });
 export const resumeOrderCheckout = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) =>

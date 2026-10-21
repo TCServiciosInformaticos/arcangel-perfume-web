@@ -204,7 +204,7 @@ function AdminProductos() {
             id="product-search"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
-            placeholder="Buscar artículo por nombre, URL o descripción…"
+            placeholder="Buscar por nombre, código o código de barras…"
             className="pl-9"
           />
         </div>

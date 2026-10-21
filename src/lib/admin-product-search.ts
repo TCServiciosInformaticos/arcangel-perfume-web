@@ -19,6 +19,6 @@ export function applyAdminProductSearch<R extends Searchable>(request: R, term: 
   const q = normalizeAdminSearch(term);
   if (!q) return request;
   return request.or(
-    `name.ilike."%${q}%",slug.ilike."%${q}%",description.ilike."%${q}%"`,
+    `name.ilike."%${q}%",slug.ilike."%${q}%",description.ilike."%${q}%",article_code.ilike."%${q}%",barcode.ilike."%${q}%"`,
   ) as R;
 }

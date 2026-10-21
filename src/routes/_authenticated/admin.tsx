@@ -8,6 +8,7 @@ import {
   Percent,
   Images,
   BarChart3,
+  Wrench,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
@@ -29,6 +30,7 @@ export const Route = createFileRoute("/_authenticated/admin")({
 
 const NAV = [
   { to: "/admin", label: "Resumen", icon: LayoutDashboard, exact: true },
+  { to: "/admin/herramientas", label: "Herramientas de venta", icon: Wrench, exact: false },
   { to: "/admin/estadisticas", label: "Estadísticas", icon: BarChart3, exact: false },
   { to: "/admin/pedidos", label: "Pedidos", icon: ShoppingBag, exact: false },
   { to: "/admin/slider", label: "Slider", icon: Images, exact: false },

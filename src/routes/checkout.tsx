@@ -22,6 +22,9 @@ import {
 } from "@/components/ui/select";
 import { useCart } from "@/lib/cart-context";
 import { formatARS } from "@/lib/format";
+import { commerce } from "@/lib/commerce-client";
+import { previewCommerceCart } from "@/lib/commerce.functions";
+import { useAuth } from "@/lib/auth-context";
 import { createCheckout, resumeOrderCheckout } from "@/lib/checkout.functions";
 import { BRANCHES, type BranchId } from "@/lib/branches";
 
@@ -76,6 +79,58 @@ const FormSchema = z.object({
 
 function CheckoutPage() {
   const { items, subtotal } = useCart();
+  const { session } = useAuth();
+  const previewCart = useServerFn(previewCommerceCart);
+  const [coupon, setCoupon] = useState("");
+  const [quote, setQuote] = useState<{
+    fingerprint: string;
+    amount: number;
+    discount: number;
+    items: {
+      product_id: string;
+      product_name: string;
+      quantity: number;
+      unit_price: number;
+      line_total: number;
+    }[];
+  } | null>(null);
+  const basket = JSON.stringify({
+    items: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
+    coupon_code: coupon.trim().toUpperCase(),
+  });
+  const validQuote = quote?.fingerprint === basket ? quote : null;
+  const [quoteBusy, setQuoteBusy] = useState(false);
+  async function verifyPrices() {
+    setQuoteBusy(true);
+    try {
+      let q: {
+        amount: number;
+        discount: number;
+        items: {
+          product_id: string;
+          product_name: string;
+          quantity: number;
+          unit_price: number;
+          line_total: number;
+        }[];
+      };
+      if (coupon.trim())
+        q = await previewCart({
+          data: { ...JSON.parse(basket), accessToken: session?.access_token },
+        });
+      else {
+        const r = await commerce.rpc("preview_store_cart", { payload: JSON.parse(basket) });
+        if (r.error) throw new Error(r.error.message);
+        q = r.data as unknown as typeof q;
+      }
+
+      setQuote({ fingerprint: basket, amount: q.amount, discount: q.discount, items: q.items });
+      return q;
+    } finally {
+      setQuoteBusy(false);
+    }
+  }
+
   const { data: settings } = useSuspenseQuery(settingsQuery);
   const checkout = useServerFn(createCheckout);
   const resume = useServerFn(resumeOrderCheckout);
@@ -85,7 +140,7 @@ function CheckoutPage() {
   const [branch, setBranch] = useState<BranchId | "">("");
 
   const shippingCost = method === "shipping" ? Number(settings?.shipping_cost ?? 0) : 0;
-  const total = subtotal + shippingCost;
+  const total = (validQuote?.amount ?? subtotal) + shippingCost;
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -103,7 +158,10 @@ function CheckoutPage() {
       delivery_zip: String(fd.get("delivery_zip") ?? ""),
       delivery_day: String(fd.get("delivery_day") ?? ""),
       delivery_time_slot: (timeSlot || undefined) as
-        "morning" | "afternoon" | "evening" | undefined,
+        | "morning"
+        | "afternoon"
+        | "evening"
+        | undefined,
       notes: String(fd.get("notes") ?? ""),
     };
     const parsed = FormSchema.safeParse(raw);
@@ -127,9 +185,15 @@ function CheckoutPage() {
     try {
       const checkoutData = {
         ...parsed.data,
+        coupon_code: coupon.trim().toUpperCase() || undefined,
         pickup_branch: method === "pickup" ? (branch as BranchId) : null,
         items: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
       };
+      const latest = await verifyPrices();
+      if (Math.round(latest.amount * 100) !== Math.round((validQuote?.amount ?? subtotal) * 100)) {
+        toast.info("Actualizamos los precios y descuentos. Revisá el total y confirmá nuevamente.");
+        return;
+      }
       const fingerprint = JSON.stringify(checkoutData);
       let saved: {
         fingerprint: string;
@@ -148,7 +212,13 @@ function CheckoutPage() {
       const res =
         saved.orderId && saved.token
           ? await resume({ data: { orderId: saved.orderId, token: saved.token } })
-          : await checkout({ data: { checkout: checkoutData, requestKey: saved.requestKey } });
+          : await checkout({
+              data: {
+                checkout: checkoutData,
+                requestKey: saved.requestKey,
+                accessToken: session?.access_token,
+              },
+            });
       window.localStorage.setItem(
         "arcangel-checkout-recovery",
         JSON.stringify({ ...saved, orderId: res.orderId, token: res.token }),
@@ -185,6 +255,43 @@ function CheckoutPage() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
         <h1 className="font-serif text-4xl sm:text-5xl">Checkout</h1>
 
+        <section className="mt-6 space-y-3 rounded-lg border p-4">
+          <Label htmlFor="checkout-coupon">Cupón de descuento</Label>
+          <div className="flex flex-wrap gap-2">
+            <Input
+              id="checkout-coupon"
+              className="max-w-xs"
+              value={coupon}
+              maxLength={30}
+              placeholder="Código de cupón"
+              onChange={(e) => setCoupon(e.target.value.toUpperCase())}
+            />
+            <Button
+              disabled={quoteBusy || !items.length}
+              variant="outline"
+              onClick={async () => {
+                try {
+                  await verifyPrices();
+                  toast.success("Precios y cupón verificados");
+                } catch (e) {
+                  toast.error(e instanceof Error ? e.message : "No se pudo verificar");
+                }
+              }}
+            >
+              Verificar precios y cupón
+            </Button>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            Los cupones requieren una cuenta con email confirmado. Se aplican sobre los artículos
+            elegibles, sin envío.
+          </p>
+          {validQuote && (
+            <p>
+              Artículos: {formatARS(validQuote.amount)} · Descuento:{" "}
+              {formatARS(validQuote.discount)}
+            </p>
+          )}
+        </section>
         <form onSubmit={onSubmit} className="mt-8 grid gap-8 lg:grid-cols-[1fr_360px]">
           <div className="space-y-8">
             <section className="rounded-lg border border-border bg-card p-6">
@@ -326,7 +433,15 @@ function CheckoutPage() {
           <aside className="h-fit space-y-4 rounded-lg border border-border bg-card p-6">
             <h2 className="font-serif text-2xl">Tu pedido</h2>
             <ul className="divide-y divide-border text-sm">
-              {items.map((it) => (
+              {(validQuote
+                ? validQuote.items.map((i, index) => ({
+                    productId: `${i.product_id}-${index}`,
+                    name: i.product_name,
+                    quantity: i.quantity,
+                    price: i.unit_price,
+                  }))
+                : items
+              ).map((it) => (
                 <li key={it.productId} className="flex justify-between py-2">
                   <span className="pr-2">
                     {it.quantity}× {it.name}
@@ -337,8 +452,10 @@ function CheckoutPage() {
             </ul>
             <dl className="space-y-1.5 text-sm">
               <div className="flex justify-between">
-                <dt className="text-muted-foreground">Subtotal</dt>
-                <dd>{formatARS(subtotal)}</dd>
+                <dt className="text-muted-foreground">
+                  {validQuote?.discount ? "Artículos (descuento incluido)" : "Subtotal"}
+                </dt>
+                <dd>{formatARS(validQuote?.amount ?? subtotal)}</dd>
               </div>
               {method === "shipping" && (
                 <div className="flex justify-between">

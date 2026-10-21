@@ -33,6 +33,9 @@ const products = [
   product_type_id: null,
   image_urls: [],
   thumbnail_url: null,
+  barcode: null,
+  article_code: "FIXTURE",
+  updated_at: "2026-01-01T00:00:00Z",
   category,
   created_at: "2026-01-01T00:00:00Z",
 }));
