@@ -1,13 +1,13 @@
 import { FULL_IMAGE_MAX, THUMB_IMAGE_MAX, resolveThumbnail, toWebp } from "@/lib/image-optimize";
 import { createFileRoute } from "@tanstack/react-router";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useState, useRef } from "react";
+import { useQuery, useMutation, useQueryClient, keepPreviousData } from "@tanstack/react-query";
+import { useState, useRef, useEffect } from "react";
 import { toast } from "sonner";
-import { Plus, Pencil, Trash2, ImagePlus, X, Upload } from "lucide-react";
+import { Plus, Pencil, Trash2, ImagePlus, X, Upload, ChevronLeft, ChevronRight } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { formatARS, slugify } from "@/lib/format";
 import { subcategoriesForCategory, typesForBrand, validateProductClassification, type SubcategoryOption, type ProductTypeOption } from "@/lib/category-selection";
-import { collectPages } from "@/lib/catalog-products";
+import { adminPageRange, adminPageCount } from "@/lib/admin-pagination";
 import { Button } from "@/components/ui/button";
 import { ProductExcelControls } from "@/components/product-excel-controls";
 import { Input } from "@/components/ui/input";
@@ -79,24 +79,33 @@ function AdminProductos() {
   const [openForm, setOpenForm] = useState(false);
   const [editing, setEditing] = useState<Product | null>(null);
   const [toDelete, setToDelete] = useState<Product | null>(null);
+  const [page, setPage] = useState(1);
 
   const productsQ = useQuery({
-    queryKey: ["admin", "products"],
+    queryKey: ["admin", "products", page],
+    placeholderData: keepPreviousData,
     queryFn: async () => {
-      return collectPages(async (from, to) => {
-        const { data, error } = await supabase
+        const { from, to } = adminPageRange(page);
+        const { data, error, count } = await supabase
           .from("products")
           .select(
             "id, slug, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)",
+            { count: "exact" },
           )
           .order("created_at", { ascending: false })
           .order("id", { ascending: true })
           .range(from, to);
         if (error) throw error;
-        return (data ?? []) as Product[];
-      });
+        return { products: (data ?? []) as Product[], total: count ?? 0 };
     },
   });
+
+  const total = productsQ.data?.total ?? 0;
+  const pageCount = adminPageCount(total);
+  const products = productsQ.data?.products ?? [];
+  useEffect(() => {
+    if (productsQ.data && !productsQ.isPlaceholderData && page > pageCount) setPage(pageCount);
+  }, [page, pageCount, productsQ.data, productsQ.isPlaceholderData]);
 
   const categoriesQ = useQuery({
     queryKey: ["admin", "categories"],
@@ -153,7 +162,7 @@ function AdminProductos() {
         <div>
           <h1 className="font-serif text-3xl text-foreground">Productos</h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            {productsQ.data?.length ?? 0} producto(s) cargado(s).
+            {total} producto(s) cargado(s).
           </p>
         </div>
         <Button onClick={openNew}>
@@ -163,10 +172,15 @@ function AdminProductos() {
 
       <div className="mt-4"><ProductExcelControls /></div>
 
-      <div className="mt-6 overflow-hidden rounded-xl border border-border bg-card">
+      <div className="mt-6 overflow-x-auto rounded-xl border border-border bg-card" aria-busy={productsQ.isFetching}>
         {productsQ.isLoading ? (
           <div className="p-8 text-center text-sm text-muted-foreground">Cargando…</div>
-        ) : productsQ.data && productsQ.data.length > 0 ? (
+        ) : productsQ.isError ? (
+          <div className="p-8 text-center text-sm text-destructive">
+            <p>No se pudieron cargar los productos.</p>
+            <Button variant="outline" className="mt-3" onClick={() => void productsQ.refetch()}>Reintentar</Button>
+          </div>
+        ) : products.length > 0 ? (
           <table className="w-full text-sm">
             <thead className="border-b border-border bg-secondary/40 text-left text-xs uppercase tracking-wider text-muted-foreground">
               <tr>
@@ -179,12 +193,12 @@ function AdminProductos() {
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
-              {productsQ.data.map((p) => (
+              {products.map((p) => (
                 <tr key={p.id}>
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-3">
-                      {p.image_urls?.[0] ? (
-                        <img src={p.image_urls[0]} alt="" className="h-10 w-10 rounded object-cover" />
+                      {p.thumbnail_url || p.image_urls?.[0] ? (
+                        <img src={p.thumbnail_url || p.image_urls[0]} alt="" loading="lazy" decoding="async" width={40} height={40} className="h-10 w-10 shrink-0 rounded object-cover" />
                       ) : (
                         <div className="flex h-10 w-10 items-center justify-center rounded bg-secondary text-muted-foreground">
                           <ImagePlus className="h-4 w-4" />
@@ -247,6 +261,17 @@ function AdminProductos() {
           </div>
         )}
       </div>
+
+      <nav aria-label="Páginas de productos" className="mt-4 flex flex-wrap items-center justify-between gap-3">
+        <p className="text-sm text-muted-foreground" aria-live="polite">
+          {productsQ.isFetching ? "Cargando…" : total > 0 ? `${adminPageRange(page).from + 1}–${Math.min(adminPageRange(page).to + 1, total)} de ${total}` : "0 artículos"}
+        </p>
+        <div className="flex items-center gap-3">
+          <Button variant="outline" size="icon" aria-label="Página anterior" title="Página anterior" disabled={page <= 1 || productsQ.isFetching} onClick={() => setPage((current) => current - 1)}><ChevronLeft className="size-4" /></Button>
+          <span className="text-sm tabular-nums">Página {page} de {pageCount}</span>
+          <Button variant="outline" size="icon" aria-label="Página siguiente" title="Página siguiente" disabled={page >= pageCount || productsQ.isFetching} onClick={() => setPage((current) => current + 1)}><ChevronRight className="size-4" /></Button>
+        </div>
+      </nav>
 
       <ProductForm
         key={editing?.id ?? (openForm ? "new" : "closed")}
