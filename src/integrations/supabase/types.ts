@@ -44,6 +44,51 @@ export type Database = {
         }
         Relationships: []
       }
+      home_slides: {
+        Row: {
+          id: string
+          title: string
+          subtitle: string
+          alt_text: string
+          image_path: string
+          mobile_position: number
+          destination: string
+          category_id: string | null
+          is_active: boolean
+          sort_order: number
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          title?: string
+          subtitle?: string
+          alt_text?: string
+          image_path?: string
+          mobile_position?: number
+          destination?: string
+          category_id?: string | null
+          is_active?: boolean
+          sort_order?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          title?: string
+          subtitle?: string
+          alt_text?: string
+          image_path?: string
+          mobile_position?: number
+          destination?: string
+          category_id?: string | null
+          is_active?: boolean
+          sort_order?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [{foreignKeyName:"home_slides_category_id_fkey";columns:["category_id"];isOneToOne:false;referencedRelation:"categories";referencedColumns:["id"]}]
+      }
       categories: {
         Row: {
           created_at: string
@@ -637,6 +682,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      save_home_slide: { Args: {slide:Json;expected_updated_at?:string|null}; Returns:string }
+      reorder_home_slides: { Args: {slides:Json}; Returns:undefined }
+      delete_home_slide: { Args: {slide_id:string;expected_updated_at:string}; Returns:undefined }
+
       admin_order_action: {
         Args: { action: string; note?: string; oid: string }
         Returns: undefined

@@ -1,5 +1,13 @@
 import { createFileRoute, Link, Outlet, useLocation, useNavigate } from "@tanstack/react-router";
-import { LayoutDashboard, Package, ShoppingBag, LogOut, FolderTree, Percent } from "lucide-react";
+import {
+  LayoutDashboard,
+  Package,
+  ShoppingBag,
+  LogOut,
+  FolderTree,
+  Percent,
+  Images,
+} from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
@@ -21,6 +29,7 @@ export const Route = createFileRoute("/_authenticated/admin")({
 const NAV = [
   { to: "/admin", label: "Resumen", icon: LayoutDashboard, exact: true },
   { to: "/admin/pedidos", label: "Pedidos", icon: ShoppingBag, exact: false },
+  { to: "/admin/slider", label: "Slider", icon: Images, exact: false },
   { to: "/admin/productos", label: "Productos", icon: Package, exact: false },
   { to: "/admin/categorias", label: "Categorías", icon: FolderTree, exact: false },
   { to: "/admin/politica-precios", label: "Política de Precios", icon: Percent, exact: false },
@@ -146,6 +155,13 @@ function AdminOverview() {
         >
           <Percent className="h-7 w-7 text-primary" />
           <h2 className="mt-3 font-serif text-xl text-foreground">Política de Precios</h2>
+        </Link>
+        <Link to="/admin/slider" className="rounded-xl border border-border bg-card p-6">
+          <Images className="h-7 w-7 text-primary" />
+          <h2 className="mt-3 font-serif text-xl">Slider de inicio</h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Subí imágenes, editá textos y ordená las diapositivas de la portada.
+          </p>
         </Link>
         <Link to="/admin/pedidos" className="rounded-xl border border-border bg-card p-6">
           <ShoppingBag className="h-7 w-7 text-muted-foreground" />
