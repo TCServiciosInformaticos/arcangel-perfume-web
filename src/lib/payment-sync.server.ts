@@ -116,7 +116,7 @@ export async function reconcileOrder(orderId: string) {
   if (result.error) throw result.error;
 }
 export async function reconcilePendingBatch() {
-  const expired = await supabaseAdmin.rpc("expire_order_reservations", {});
+  const expired = await supabaseAdmin.rpc("expire_order_reservations");
   if (expired.error) throw expired.error;
   const { data, error } = await supabaseAdmin
     .from("orders")

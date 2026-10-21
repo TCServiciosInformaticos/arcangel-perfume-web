@@ -68,8 +68,8 @@ export async function startOrderCheckout(
   }
   const reserved = await supabaseAdmin.rpc("reserve_order_checkout", {
     payload: payload as Json,
-    existing_id: existingId ?? null,
-    request_key: requestKey ?? null,
+    existing_id: existingId ?? undefined,
+    request_key: requestKey ?? undefined,
   });
   if (reserved.error) throw new Error(reserved.error.message);
   const { order, attempt, new_attempt } = reservationSchema.parse(reserved.data);

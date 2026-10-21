@@ -70,7 +70,7 @@ export async function processOrderRecoveryEmails() {
     skipped = 0,
     failed = 0;
   for (let i = 0; i < 5; i++) {
-    const claimed = await supabaseAdmin.rpc("claim_order_recovery_email", {});
+    const claimed = await supabaseAdmin.rpc("claim_order_recovery_email");
     if (claimed.error) throw claimed.error;
     if (!claimed.data) break;
     const job = claimSchema.parse(claimed.data);

@@ -29,7 +29,7 @@ export const getOrderForWhatsapp = createServerFn({ method: "POST" })
       if (!secret || !verifyOrderAccess(data.orderId, data.token, secret))
         throw new Error("El enlace de este pedido no es válido.");
       const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-      const expired = await supabaseAdmin.rpc("expire_order_reservations", {});
+      const expired = await supabaseAdmin.rpc("expire_order_reservations");
       if (expired.error) throw new Error("No pudimos actualizar el estado del pedido.");
       // Payment status is only changed by the signature-verified Mercado Pago webhook.
       // The return page merely reads the current order state (paymentId is ignored).

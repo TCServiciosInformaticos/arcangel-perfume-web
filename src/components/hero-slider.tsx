@@ -4,7 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-type Slide = { img: string; title: string; sub: string; mobileObject?: string; search?: { categoria?: string } };
+type Slide = { img: string; title: string; sub: string; mobileObject?: string; search?: { categoria?: string; ofertas?: boolean } };
 
 export function HeroSlider({ slides }: { slides: Slide[] }) {
   const [viewportRef, api] = useEmblaCarousel({ loop: true });
