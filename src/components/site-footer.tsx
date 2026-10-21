@@ -23,7 +23,7 @@ export function SiteFooter() {
   return (
     <footer className="mt-20 border-t border-border bg-sidebar text-sidebar-foreground">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="grid gap-8 border-b border-sidebar-border/60 pb-8 md:grid-cols-[1fr_auto] md:gap-16">
+        <div className="grid gap-10 border-b border-sidebar-border/60 pb-10 sm:grid-cols-2 sm:gap-6 sm:pb-8 lg:gap-10">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
           <div className="flex items-center gap-3">
             <img src={logoUrl} alt="Perfumería El Arcángel" className="h-24 w-24 shrink-0 object-contain" width={96} height={96} />
@@ -39,7 +39,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="md:mr-12 lg:mr-32">
+        <div className="border-t border-sidebar-border/40 pt-8 sm:border-l sm:border-sidebar-border/40 sm:border-t-0 sm:pl-6 sm:pt-0 lg:pl-10">
           <h4 className="text-xs font-semibold uppercase tracking-widest text-sidebar-primary">Navegar</h4>
           <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <li><Link to="/" className="hover:text-sidebar-primary">Inicio</Link></li>
