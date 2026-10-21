@@ -10070,7 +10070,7 @@
       "source_price": 9685.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://doan.com.ar/image/catalog/doan/77994905.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_tinted_foundation_vit_c_102_7501001277321_73028_zoom.webp"
       ],
       "barcode": "77994905",
       "specifications": {
@@ -10081,7 +10081,11 @@
       "image_urls": [
         "/catalog/idi/idi-doan-49389.webp"
       ],
-      "thumbnail_url": "/catalog/idi/idi-doan-49389-thumb.webp"
+      "thumbnail_url": "/catalog/idi/idi-doan-49389-thumb.webp",
+      "image_reference_url": "https://www.anikashop.com.ar/idi-tinted-found-vit-c-102",
+      "image_reference_match": "Manually reviewed brand, product family and explicit shade; supplier barcodes differ.",
+      "image_reference_name": "IDI MAKE UP TINTED FOUNDATION VIT. C 102",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_tinted_foundation_vit_c_102_7501001277321_73028_zoom.webp"
     },
     {
       "source_id": "49390",
@@ -10778,7 +10782,7 @@
       "source_price": 8385.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://doan.com.ar/image/catalog/doan/779932663.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_primer_facial_make_up_skin_silk_vit_c_77992789_76161_zoom.webp"
       ],
       "barcode": "779932663",
       "specifications": {
@@ -10789,7 +10793,11 @@
       "image_urls": [
         "/catalog/idi/idi-doan-50519.webp"
       ],
-      "thumbnail_url": "/catalog/idi/idi-doan-50519-thumb.webp"
+      "thumbnail_url": "/catalog/idi/idi-doan-50519-thumb.webp",
+      "image_reference_url": "https://www.anikashop.com.ar/idi-primer-skin-silk-vit-c",
+      "image_reference_match": "Manually reviewed brand, product family and explicit shade; supplier barcodes differ.",
+      "image_reference_name": "IDI PRIMER FACIAL MAKE UP SKIN SILK +VIT.C",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_primer_facial_make_up_skin_silk_vit_c_77992789_76161_zoom.webp"
     },
     {
       "source_id": "50599",
@@ -10805,7 +10813,7 @@
       "source_price": 34709.99,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://doan.com.ar/image/catalog/doan/7798327602368.jpg"
+        "https://www.farmax.com.ar/thumb/00000IDI-EXH-147729150504005-600x601_400x400.jpg"
       ],
       "barcode": "7798327602368",
       "specifications": {
@@ -10816,7 +10824,10 @@
       "image_urls": [
         "/catalog/idi/idi-doan-50599.webp"
       ],
-      "thumbnail_url": "/catalog/idi/idi-doan-50599-thumb.webp"
+      "thumbnail_url": "/catalog/idi/idi-doan-50599-thumb.webp",
+      "image_reference_url": "https://www.farmax.com.ar/kits-de-cosmetica-idi-exhibidor-barra-labial-hidratante-boost-stick-6-unidades--det--IDI-EXH-147",
+      "image_reference_match": "identical barcode",
+      "stored_source_image_url": "https://www.farmax.com.ar/thumb/00000IDI-EXH-147729150504005-600x601_400x400.jpg"
     },
     {
       "source_id": "50638",
@@ -10859,7 +10870,7 @@
       "source_price": 2859.99,
       "compare_at_price": 3575.01,
       "source_image_urls": [
-        "https://doan.com.ar/image/catalog/doan/779584411.jpg"
+        "https://www.anikashop.com.ar//product_images/v/454/77958754__53031_zoom.jpg"
       ],
       "barcode": "779584411",
       "specifications": {
@@ -10870,7 +10881,11 @@
       "image_urls": [
         "/catalog/idi/idi-doan-50683.webp"
       ],
-      "thumbnail_url": "/catalog/idi/idi-doan-50683-thumb.webp"
+      "thumbnail_url": "/catalog/idi/idi-doan-50683-thumb.webp",
+      "image_reference_url": "https://www.anikashop.com.ar/idi-esm-hipoal-67",
+      "image_reference_match": "Manually reviewed brand, product family and explicit shade; supplier barcodes differ.",
+      "image_reference_name": "IDI ESMALTE HIPOAL.67",
+      "stored_source_image_url": "https://www.anikashop.com.ar//product_images/v/454/77958754__53031_zoom.jpg"
     }
   ],
   "excluded": [
@@ -10890,15 +10905,11 @@
     }
   ],
   "image_failures": [
-    "idi-doan-27990 77947680 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg']",
-    "idi-doan-46367 77961082 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg']",
-    "idi-doan-27991 77947697 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947697.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947697.jpg']",
     "idi-doan-46368 77961099 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg']",
-    "idi-doan-49389 77994905 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77994905.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77994905.jpg']",
     "idi-doan-50138 7798327602412 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602412.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602412.jpg']",
-    "idi-doan-50519 779932663 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/779932663.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/779932663.jpg']",
-    "idi-doan-50599 7798327602368 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602368.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602368.jpg']",
-    "idi-doan-50683 779584411 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/779584411.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/779584411.jpg']",
+    "idi-doan-46367 77961082 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg']",
+    "idi-doan-27990 77947680 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg']",
+    "idi-doan-27991 77947697 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947697.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947697.jpg']",
     "idi-doan-50638 77986832 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77986832.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77986832.jpg']"
   ]
 }
