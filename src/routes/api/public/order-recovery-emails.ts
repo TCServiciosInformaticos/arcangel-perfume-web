@@ -9,7 +9,7 @@ export const Route = createFileRoute("/api/public/order-recovery-emails")({
         if (readiness.ready) {
           try {
             const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-            const enabled = await supabaseAdmin.rpc("get_order_recovery_enabled", {});
+            const enabled = await supabaseAdmin.rpc("get_order_recovery_enabled");
             databaseFeature = !enabled.error && enabled.data === true;
           } catch {
             /* unavailable server configuration */

@@ -136,7 +136,7 @@ function OrdersPage() {
           );
         } else setMessage("Estado consultado en Mercado Pago.");
       } else {
-        const r = await supabase.rpc("admin_order_action", { oid: id, action, note: note ?? null });
+        const r = await supabase.rpc("admin_order_action", { oid: id, action, note: note ?? undefined });
         if (r.error) throw r.error;
         setMessage("Pedido actualizado.");
       }
