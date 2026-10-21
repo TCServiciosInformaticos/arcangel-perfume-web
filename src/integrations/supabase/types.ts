@@ -682,6 +682,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      admin_sales_statistics: {
+        Args: { p_from: string; p_to: string; p_category?: string; p_brand?: string }
+        Returns: Json
+      }
       save_home_slide: { Args: {slide:Json;expected_updated_at?:string|null}; Returns:string }
       reorder_home_slides: { Args: {slides:Json}; Returns:undefined }
       delete_home_slide: { Args: {slide_id:string;expected_updated_at:string}; Returns:undefined }

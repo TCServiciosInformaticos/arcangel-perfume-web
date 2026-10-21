@@ -7,6 +7,7 @@ import {
   FolderTree,
   Percent,
   Images,
+  BarChart3,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/_authenticated/admin")({
 
 const NAV = [
   { to: "/admin", label: "Resumen", icon: LayoutDashboard, exact: true },
+  { to: "/admin/estadisticas", label: "Estadísticas", icon: BarChart3, exact: false },
   { to: "/admin/pedidos", label: "Pedidos", icon: ShoppingBag, exact: false },
   { to: "/admin/slider", label: "Slider", icon: Images, exact: false },
   { to: "/admin/productos", label: "Productos", icon: Package, exact: false },
@@ -129,6 +131,13 @@ function AdminOverview() {
         Gestioná el catálogo desde el menú lateral.
       </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <Link to="/admin/estadisticas" className="rounded-xl border border-border bg-card p-6">
+          <BarChart3 className="h-7 w-7 text-primary" />
+          <h2 className="mt-3 font-serif text-xl">Estadísticas</h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Ventas cobradas, evolución, artículos más vendidos y alertas de stock.
+          </p>
+        </Link>
         <Link
           to="/admin/productos"
           className="group rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
