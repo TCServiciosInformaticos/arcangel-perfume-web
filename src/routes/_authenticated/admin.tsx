@@ -1,5 +1,5 @@
 import { createFileRoute, Link, Outlet, useLocation, useNavigate } from "@tanstack/react-router";
-import { LayoutDashboard, Package, ShoppingBag, LogOut, FolderTree } from "lucide-react";
+import { LayoutDashboard, Package, ShoppingBag, LogOut, FolderTree, Percent } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
@@ -20,6 +20,7 @@ const NAV = [
   { to: "/admin", label: "Resumen", icon: LayoutDashboard, exact: true },
   { to: "/admin/productos", label: "Productos", icon: Package, exact: false },
   { to: "/admin/categorias", label: "Categorías", icon: FolderTree, exact: false },
+  { to: "/admin/politica-precios", label: "Política de Precios", icon: Percent, exact: false },
 ] as const;
 
 function AdminLayout() {
@@ -71,9 +72,9 @@ function AdminLayout() {
         </div>
       </header>
 
-      <div className="mx-auto flex w-full max-w-7xl flex-1 gap-6 px-4 py-8 sm:px-6 lg:px-8">
-        <aside className="w-56 shrink-0">
-          <nav className="flex flex-col gap-1">
+      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-6 px-4 py-8 sm:px-6 lg:flex-row lg:px-8">
+        <aside className="shrink-0 lg:w-56">
+          <nav className="flex flex-wrap gap-1 lg:flex-col">
             {NAV.map((n) => {
               const active = n.exact
                 ? pathname === n.to || pathname === `${n.to}/`
@@ -86,14 +87,14 @@ function AdminLayout() {
                     active ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-accent/30"
                   }`}
                 >
-                  <n.icon className="h-4 w-4" /> {n.label}
+                  <n.icon className="h-4 w-4 shrink-0" /> {n.label}
                 </Link>
               );
             })}
           </nav>
         </aside>
 
-        <main className="flex-1">
+        <main className="min-w-0 flex-1">
           {isOverview ? <AdminOverview /> : <Outlet />}
         </main>
       </div>
@@ -126,6 +127,10 @@ function AdminOverview() {
           <p className="mt-1 text-sm text-muted-foreground">
             Creá, ordená y gestioná las categorías y marcas/subcategorías del catálogo.
           </p>
+        </Link>
+        <Link to="/admin/politica-precios" className="group rounded-md border border-border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-md">
+          <Percent className="h-7 w-7 text-primary" />
+          <h2 className="mt-3 font-serif text-xl text-foreground">Política de Precios</h2>
         </Link>
         <div className="rounded-xl border border-dashed border-border bg-card/60 p-6">
           <ShoppingBag className="h-7 w-7 text-muted-foreground" />
