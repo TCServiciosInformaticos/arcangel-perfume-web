@@ -21,7 +21,9 @@ async function currentProducts() {
   for (let start = 0; ; start += 1000) {
     const { data, error } = await supabase
       .from("products")
-      .select("id,name,price,stock,is_active,subcategory_id,category:categories(name)")
+      .select(
+        "id,name,description,article_code,price,stock,is_active,subcategory_id,category:categories(name)",
+      )
       .order("id")
       .range(start, start + 999);
     if (error) throw error;
@@ -106,6 +108,7 @@ export function ProductExcelControls() {
       await qc.invalidateQueries({ queryKey: ["admin", "products"] });
       await qc.invalidateQueries({ queryKey: ["home"] });
       await qc.invalidateQueries({ queryKey: ["catalog"] });
+      await qc.invalidateQueries({ queryKey: ["product"] });
       toast.success(`${data ?? updates.length} artículo(s) actualizado(s) correctamente`);
       setUpdates(null);
     } catch (e) {
@@ -115,20 +118,40 @@ export function ProductExcelControls() {
     }
   }
 
-  const priceChangesCount = updates?.filter((u) => {
-    const p = products.find((prod) => prod.id === u.id);
-    return p && Number(p.price) !== Number(u.price);
-  }).length ?? 0;
+  const textChangesCount =
+    updates?.filter((u) => {
+      const p = products.find((prod) => prod.id === u.id);
+      return (
+        p &&
+        ((u.name !== undefined && u.name !== p.name) ||
+          (u.description !== undefined && u.description !== (p.description ?? "")))
+      );
+    }).length ?? 0;
 
-  const stockChangesCount = updates?.filter((u) => {
-    const p = products.find((prod) => prod.id === u.id);
-    return p && p.stock !== u.stock;
-  }).length ?? 0;
+  const codeChangesCount =
+    updates?.filter(
+      (u) =>
+        u.article_code !== undefined &&
+        u.article_code !== (products.find((p) => p.id === u.id)?.article_code ?? null),
+    ).length ?? 0;
 
-  const activeChangesCount = updates?.filter((u) => {
-    const p = products.find((prod) => prod.id === u.id);
-    return p && p.is_active !== u.is_active;
-  }).length ?? 0;
+  const priceChangesCount =
+    updates?.filter((u) => {
+      const p = products.find((prod) => prod.id === u.id);
+      return p && Number(p.price) !== Number(u.price);
+    }).length ?? 0;
+
+  const stockChangesCount =
+    updates?.filter((u) => {
+      const p = products.find((prod) => prod.id === u.id);
+      return p && p.stock !== u.stock;
+    }).length ?? 0;
+
+  const activeChangesCount =
+    updates?.filter((u) => {
+      const p = products.find((prod) => prod.id === u.id);
+      return p && p.is_active !== u.is_active;
+    }).length ?? 0;
 
   return (
     <>
@@ -151,6 +174,12 @@ export function ProductExcelControls() {
         />
       </div>
 
+      <p className="mt-2 text-sm text-muted-foreground">
+        Exportá el archivo, editá descripción del artículo, descripción detallada, código, precio,
+        saldo de stock y Visible (Sí/No), e importalo para revisar y aplicar los cambios. El saldo
+        reemplaza el stock actual.
+      </p>
+
       {error && (
         <div className="mt-3 flex items-start gap-2 rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive">
           <AlertCircle className="size-4 shrink-0 mt-0.5" />
@@ -171,12 +200,19 @@ export function ProductExcelControls() {
               Confirmar importación de Excel
             </DialogTitle>
             <DialogDescription>
-              Se detectaron <strong>{updates?.length}</strong> artículo(s) con cambios.
-              Nombres, imágenes y categorías se mantienen intactos.
+              Se detectaron <strong>{updates?.length}</strong> artículo(s) con cambios. Revisá los
+              cambios de descripción, código, precio, saldo de stock y visibilidad antes de
+              aplicarlos.
             </DialogDescription>
           </DialogHeader>
 
           <div className="flex flex-wrap gap-2 text-xs">
+            {codeChangesCount > 0 && (
+              <Badge variant="secondary">Códigos modificados: {codeChangesCount}</Badge>
+            )}
+            {textChangesCount > 0 && (
+              <Badge variant="secondary">Descripciones modificadas: {textChangesCount}</Badge>
+            )}
             {priceChangesCount > 0 && (
               <Badge variant="secondary">Precios modificados: {priceChangesCount}</Badge>
             )}
@@ -184,7 +220,7 @@ export function ProductExcelControls() {
               <Badge variant="secondary">Stock modificado: {stockChangesCount}</Badge>
             )}
             {activeChangesCount > 0 && (
-              <Badge variant="secondary">Estado activo modificado: {activeChangesCount}</Badge>
+              <Badge variant="secondary">Visibilidad modificada: {activeChangesCount}</Badge>
             )}
           </div>
 
@@ -194,8 +230,8 @@ export function ProductExcelControls() {
                 <tr className="border-b border-border text-left">
                   <th className="p-2.5">Artículo</th>
                   <th className="p-2.5">Precio (ARS)</th>
-                  <th className="p-2.5">Stock</th>
-                  <th className="p-2.5">Estado</th>
+                  <th className="p-2.5">Saldo de stock</th>
+                  <th className="p-2.5">Visible</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -207,8 +243,34 @@ export function ProductExcelControls() {
 
                   return (
                     <tr key={u.id} className="hover:bg-muted/40 transition-colors">
-                      <td className="p-2.5 font-medium max-w-xs truncate" title={p?.name}>
-                        {p?.name ?? u.id}
+                      <td className="p-2.5 max-w-sm whitespace-pre-wrap break-words">
+                        {u.name !== undefined && u.name !== p?.name ? (
+                          <>
+                            <div className="text-muted-foreground line-through">{p?.name}</div>
+                            <div className="font-medium text-primary">{u.name}</div>
+                          </>
+                        ) : (
+                          <div className="font-medium">{p?.name ?? u.id}</div>
+                        )}
+                        {u.article_code !== undefined &&
+                          u.article_code !== (p?.article_code ?? null) && (
+                            <div className="mt-1 text-xs">
+                              Código:{" "}
+                              <span className="line-through text-muted-foreground">
+                                {p?.article_code || "Sin código"}
+                              </span>{" "}
+                              → {u.article_code || "Sin código"}
+                            </div>
+                          )}
+                        {u.description !== undefined &&
+                          u.description !== (p?.description ?? "") && (
+                            <div className="mt-2 text-xs">
+                              <div className="text-muted-foreground line-through">
+                                {p?.description || "Sin descripción detallada"}
+                              </div>
+                              <div>{u.description || "Sin descripción detallada"}</div>
+                            </div>
+                          )}
                       </td>
                       <td className="p-2.5">
                         {priceChanged ? (

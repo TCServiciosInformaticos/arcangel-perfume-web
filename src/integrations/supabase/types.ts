@@ -237,6 +237,7 @@ export type Database = {
       }
       products: {
         Row: {
+          article_code: string | null
           category_id: string | null
           compare_at_price: number | null
           created_at: string
@@ -255,6 +256,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          article_code?: string | null
           category_id?: string | null
           compare_at_price?: number | null
           created_at?: string
@@ -273,6 +275,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          article_code?: string | null
           category_id?: string | null
           compare_at_price?: number | null
           created_at?: string
