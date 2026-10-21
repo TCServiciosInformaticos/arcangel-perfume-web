@@ -1,0 +1,2272 @@
+{
+  "stage": "prepared",
+  "count": 78,
+  "source_count": 78,
+  "pricing": "published_current_including_tax",
+  "products": [
+    {
+      "source_id": "6802",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=6802&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE TRAT. COLORVIVE x300 G",
+      "slug": "elvive-doan-6802",
+      "description": "ELVIVE TRAT. COLORVIVE x300 G.\n\nFragancia/Tono: COLORVIVE.\n\nMedida: x300 Grs.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos capilares",
+      "source_price": 10363.05,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902921-500x500.jpg"
+      ],
+      "barcode": "7509552902921",
+      "specifications": {
+        "Fragancia/Tono": "COLORVIVE",
+        "Medida": "x300 Grs"
+      },
+      "listing_price": 10363.05,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-6802.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-6802-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902921-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "10599",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=10599&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE CR.P/PEINAR TOTAL 5 250 m",
+      "slug": "elvive-doan-10599",
+      "description": "ELVIVE CR.P/PEINAR TOTAL 5 250 m.\n\nFragancia/Tono: TOTAL 5.\n\nMedida: 250 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Cremas para peinar",
+      "source_price": 9498.74,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902525-500x500.jpg"
+      ],
+      "barcode": "7509552902525",
+      "specifications": {
+        "Fragancia/Tono": "TOTAL 5",
+        "Medida": "250 ml."
+      },
+      "listing_price": 9498.74,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-10599.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-10599-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902525-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "10600",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=10600&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE TRAT. TOTAL 5 x300 G",
+      "slug": "elvive-doan-10600",
+      "description": "ELVIVE TRAT. TOTAL 5 x300 G.\n\nFragancia/Tono: TOTAL 5.\n\nMedida: x300 Grs.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos capilares",
+      "source_price": 10363.05,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902822-500x500.jpg"
+      ],
+      "barcode": "7509552902822",
+      "specifications": {
+        "Fragancia/Tono": "TOTAL 5",
+        "Medida": "x300 Grs"
+      },
+      "listing_price": 10363.05,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-10600.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-10600-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902822-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "21369",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=21369&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE OLEO EXT. x100ml. SUBLIME",
+      "slug": "elvive-doan-21369",
+      "description": "ELVIVE OLEO EXT. x100ml. SUBLIME.\n\nFragancia/Tono: SUBLIME.\n\nMedida: 100 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Óleos capilares",
+      "source_price": 18947.21,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552874204-500x500.jpg"
+      ],
+      "barcode": "7509552874204",
+      "specifications": {
+        "Fragancia/Tono": "SUBLIME",
+        "Medida": "100 ml."
+      },
+      "listing_price": 18947.21,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-21369.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-21369-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552874204-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "22273",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=22273&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE CR.P/PEINAR K.LISO 250 m",
+      "slug": "elvive-doan-22273",
+      "description": "ELVIVE CR.P/PEINAR K.LISO 250 m.\n\nFragancia/Tono: K.LISO.\n\nMedida: 250 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Cremas para peinar",
+      "source_price": 9498.74,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902884-500x500.jpg"
+      ],
+      "barcode": "7509552902884",
+      "specifications": {
+        "Fragancia/Tono": "K.LISO",
+        "Medida": "250 ml."
+      },
+      "listing_price": 9498.74,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-22273.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-22273-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902884-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "22419",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=22419&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. TOTAL5 x200 m",
+      "slug": "elvive-doan-22419",
+      "description": "ELVIVE SH. TOTAL5 x200 m.\n\nFragancia/Tono: TOTAL5.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902532-500x500.jpg"
+      ],
+      "barcode": "7509552902532",
+      "specifications": {
+        "Fragancia/Tono": "TOTAL5",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-22419.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-22419-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902532-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "22420",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=22420&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. COLOR VIVE x200 m",
+      "slug": "elvive-doan-22420",
+      "description": "ELVIVE SH. COLOR VIVE x200 m.\n\nFragancia/Tono: COLOR VIVE.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552907759-500x500.jpg"
+      ],
+      "barcode": "7509552907759",
+      "specifications": {
+        "Fragancia/Tono": "COLOR VIVE",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-22420.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-22420-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552907759-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "22426",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=22426&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. COLOR VIVE x200 m",
+      "slug": "elvive-doan-22426",
+      "description": "ELVIVE AC. COLOR VIVE x200 m.\n\nFragancia/Tono: COLOR VIVE.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552903423-500x500.jpg"
+      ],
+      "barcode": "7509552903423",
+      "specifications": {
+        "Fragancia/Tono": "COLOR VIVE",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-22426.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-22426-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552903423-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "22427",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=22427&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. TOTAL5 x200 m",
+      "slug": "elvive-doan-22427",
+      "description": "ELVIVE AC. TOTAL5 x200 m.\n\nFragancia/Tono: TOTAL5.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552903416-500x500.jpg"
+      ],
+      "barcode": "7509552903416",
+      "specifications": {
+        "Fragancia/Tono": "TOTAL5",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-22427.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-22427-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552903416-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "22431",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=22431&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. TOTAL5 x400 m",
+      "slug": "elvive-doan-22431",
+      "description": "ELVIVE SH. TOTAL5 x400 m.\n\nFragancia/Tono: TOTAL5.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902518-500x500.jpg"
+      ],
+      "barcode": "7509552902518",
+      "specifications": {
+        "Fragancia/Tono": "TOTAL5",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-22431.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-22431-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902518-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "22432",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=22432&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. 2EN1 TOTAL x400 m",
+      "slug": "elvive-doan-22432",
+      "description": "ELVIVE SH. 2EN1 TOTAL x400 m.\n\nFragancia/Tono: 2EN1 TOTAL.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902501-500x500.jpg"
+      ],
+      "barcode": "7509552902501",
+      "specifications": {
+        "Fragancia/Tono": "2EN1 TOTAL",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-22432.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-22432-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902501-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "22433",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=22433&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. COLOR VIVE x400 m",
+      "slug": "elvive-doan-22433",
+      "description": "ELVIVE SH. COLOR VIVE x400 m.\n\nFragancia/Tono: COLOR VIVE.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552903461-500x500.jpg"
+      ],
+      "barcode": "7509552903461",
+      "specifications": {
+        "Fragancia/Tono": "COLOR VIVE",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-22433.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-22433-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552903461-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "22437",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=22437&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. COLOR VIVE x400 m",
+      "slug": "elvive-doan-22437",
+      "description": "ELVIVE AC. COLOR VIVE x400 m.\n\nFragancia/Tono: COLOR VIVE.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902891-500x500.jpg"
+      ],
+      "barcode": "7509552902891",
+      "specifications": {
+        "Fragancia/Tono": "COLOR VIVE",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-22437.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-22437-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902891-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "22439",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=22439&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. TOTAL5 x400 m",
+      "slug": "elvive-doan-22439",
+      "description": "ELVIVE AC. TOTAL5 x400 m.\n\nFragancia/Tono: TOTAL5.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902815-500x500.jpg"
+      ],
+      "barcode": "7509552902815",
+      "specifications": {
+        "Fragancia/Tono": "TOTAL5",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-22439.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-22439-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902815-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "23953",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=23953&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. TOTAL5 EXT x200 m",
+      "slug": "elvive-doan-23953",
+      "description": "ELVIVE SH. TOTAL5 EXT x200 m.\n\nFragancia/Tono: TOTAL5 EXT.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902402-500x500.jpg"
+      ],
+      "barcode": "7509552902402",
+      "specifications": {
+        "Fragancia/Tono": "TOTAL5 EXT",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-23953.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-23953-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902402-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "23954",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=23954&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. TOTAL5 EXT x200 m",
+      "slug": "elvive-doan-23954",
+      "description": "ELVIVE AC. TOTAL5 EXT x200 m.\n\nFragancia/Tono: TOTAL5 EXT.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902433-500x500.jpg"
+      ],
+      "barcode": "7509552902433",
+      "specifications": {
+        "Fragancia/Tono": "TOTAL5 EXT",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-23954.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-23954-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902433-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "23955",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=23955&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. TOTAL5 EXT x400 m",
+      "slug": "elvive-doan-23955",
+      "description": "ELVIVE SH. TOTAL5 EXT x400 m.\n\nFragancia/Tono: TOTAL5 EXT.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902419-500x500.jpg"
+      ],
+      "barcode": "7509552902419",
+      "specifications": {
+        "Fragancia/Tono": "TOTAL5 EXT",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-23955.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-23955-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902419-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "23956",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=23956&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. TOTAL5 EXT x400 m",
+      "slug": "elvive-doan-23956",
+      "description": "ELVIVE AC. TOTAL5 EXT x400 m.\n\nFragancia/Tono: TOTAL5 EXT.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902440-500x500.jpg"
+      ],
+      "barcode": "7509552902440",
+      "specifications": {
+        "Fragancia/Tono": "TOTAL5 EXT",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-23956.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-23956-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902440-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "25551",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=25551&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE TRAT. TOTAL5 EXT x300 G",
+      "slug": "elvive-doan-25551",
+      "description": "ELVIVE TRAT. TOTAL5 EXT x300 G.\n\nFragancia/Tono: TOTAL5 EXT.\n\nMedida: x300 Grs.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos capilares",
+      "source_price": 10363.05,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902464-500x500.jpg"
+      ],
+      "barcode": "7509552902464",
+      "specifications": {
+        "Fragancia/Tono": "TOTAL5 EXT",
+        "Medida": "x300 Grs"
+      },
+      "listing_price": 10363.05,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-25551.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-25551-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902464-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "26106",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=26106&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. OLEO NUTRI x200 m",
+      "slug": "elvive-doan-26106",
+      "description": "ELVIVE SH. OLEO NUTRI x200 m.\n\nFragancia/Tono: OLEO NUTRI.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552859133-500x500.jpg"
+      ],
+      "barcode": "7509552859133",
+      "specifications": {
+        "Fragancia/Tono": "OLEO NUTRI",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-26106.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-26106-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552859133-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "26107",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=26107&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. OLEO NUTRI x200 m",
+      "slug": "elvive-doan-26107",
+      "description": "ELVIVE AC. OLEO NUTRI x200 m.\n\nFragancia/Tono: OLEO NUTRI.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552791457-500x500.jpg"
+      ],
+      "barcode": "7509552791457",
+      "specifications": {
+        "Fragancia/Tono": "OLEO NUTRI",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-26107.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-26107-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552791457-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "26109",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=26109&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. OLEO COCO* x200 m",
+      "slug": "elvive-doan-26109",
+      "description": "ELVIVE AC. OLEO COCO* x200 m.\n\nFragancia/Tono: OLEO COCO*.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 5134.42,
+      "compare_at_price": 7899.1,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552840353-500x500.jpg"
+      ],
+      "barcode": "7509552840353",
+      "specifications": {
+        "Fragancia/Tono": "OLEO COCO*",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 5134.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-26109.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-26109-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552840353-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "26110",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=26110&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. OLEO NUTRI x400 m",
+      "slug": "elvive-doan-26110",
+      "description": "ELVIVE SH. OLEO NUTRI x400 m.\n\nFragancia/Tono: OLEO NUTRI.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552859126-500x500.jpg"
+      ],
+      "barcode": "7509552859126",
+      "specifications": {
+        "Fragancia/Tono": "OLEO NUTRI",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-26110.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-26110-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552859126-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "26111",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=26111&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. OLEO NUTRI x400 m",
+      "slug": "elvive-doan-26111",
+      "description": "ELVIVE AC. OLEO NUTRI x400 m.\n\nFragancia/Tono: OLEO NUTRI.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552791280-500x500.jpg"
+      ],
+      "barcode": "7509552791280",
+      "specifications": {
+        "Fragancia/Tono": "OLEO NUTRI",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-26111.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-26111-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552791280-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "26115",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=26115&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE TRAT. OLEO COCO x300 G",
+      "slug": "elvive-doan-26115",
+      "description": "ELVIVE TRAT. OLEO COCO x300 G.\n\nFragancia/Tono: OLEO COCO.\n\nMedida: x300 Grs.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos capilares",
+      "source_price": 10363.05,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552851625-500x500.jpg"
+      ],
+      "barcode": "7509552851625",
+      "specifications": {
+        "Fragancia/Tono": "OLEO COCO",
+        "Medida": "x300 Grs"
+      },
+      "listing_price": 10363.05,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-26115.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-26115-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552851625-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "31276",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=31276&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. OLEO RIZOS x200 m",
+      "slug": "elvive-doan-31276",
+      "description": "ELVIVE SH. OLEO RIZOS x200 m.\n\nFragancia/Tono: OLEO RIZOS.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552925883-500x500.jpg"
+      ],
+      "barcode": "7509552925883",
+      "specifications": {
+        "Fragancia/Tono": "OLEO RIZOS",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-31276.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-31276-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552925883-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "31277",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=31277&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. OLEO RIZOS x400 m",
+      "slug": "elvive-doan-31277",
+      "description": "ELVIVE SH. OLEO RIZOS x400 m.\n\nFragancia/Tono: OLEO RIZOS.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552925890-500x500.jpg"
+      ],
+      "barcode": "7509552925890",
+      "specifications": {
+        "Fragancia/Tono": "OLEO RIZOS",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-31277.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-31277-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552925890-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "31279",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=31279&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. OLEO RIZOS x200 m",
+      "slug": "elvive-doan-31279",
+      "description": "ELVIVE AC. OLEO RIZOS x200 m.\n\nFragancia/Tono: OLEO RIZOS.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552925906-500x500.jpg"
+      ],
+      "barcode": "7509552925906",
+      "specifications": {
+        "Fragancia/Tono": "OLEO RIZOS",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-31279.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-31279-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552925906-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "31280",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=31280&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. OLEO RIZOS x400 m",
+      "slug": "elvive-doan-31280",
+      "description": "ELVIVE AC. OLEO RIZOS x400 m.\n\nFragancia/Tono: OLEO RIZOS.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552925913-500x500.jpg"
+      ],
+      "barcode": "7509552925913",
+      "specifications": {
+        "Fragancia/Tono": "OLEO RIZOS",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-31280.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-31280-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552925913-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "31282",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=31282&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE CR.P/PEINAR OLEO RIZOS 250 m",
+      "slug": "elvive-doan-31282",
+      "description": "ELVIVE CR.P/PEINAR OLEO RIZOS 250 m.\n\nFragancia/Tono: OLEO RIZOS.\n\nMedida: 250 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Cremas para peinar",
+      "source_price": 9498.74,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552935615-500x500.jpg"
+      ],
+      "barcode": "7509552935615",
+      "specifications": {
+        "Fragancia/Tono": "OLEO RIZOS",
+        "Medida": "250 ml."
+      },
+      "listing_price": 9498.74,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-31282.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-31282-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552935615-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "35885",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=35885&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE CR.P/PEINAR OLEO COCO x250 ml.",
+      "slug": "elvive-doan-35885",
+      "description": "ELVIVE CR.P/PEINAR OLEO COCO x250 ml.\n\nFragancia/Tono: OLEO COCO.\n\nMedida: 250 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Cremas para peinar",
+      "source_price": 9498.74,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552851618-500x500.jpg"
+      ],
+      "barcode": "7509552851618",
+      "specifications": {
+        "Fragancia/Tono": "OLEO COCO",
+        "Medida": "250 ml."
+      },
+      "listing_price": 9498.74,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-35885.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-35885-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552851618-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "38199",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=38199&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. DREAM LONG x200 m",
+      "slug": "elvive-doan-38199",
+      "description": "ELVIVE SH. DREAM LONG x200 m.\n\nFragancia/Tono: DREAM LONG.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552836585-500x500.jpg"
+      ],
+      "barcode": "7509552836585",
+      "specifications": {
+        "Fragancia/Tono": "DREAM LONG",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-38199.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-38199-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552836585-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "38201",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=38201&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. DREAM LONG x400 m",
+      "slug": "elvive-doan-38201",
+      "description": "ELVIVE SH. DREAM LONG x400 m.\n\nFragancia/Tono: DREAM LONG.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552790191-500x500.jpg"
+      ],
+      "barcode": "7509552790191",
+      "specifications": {
+        "Fragancia/Tono": "DREAM LONG",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-38201.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-38201-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552790191-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "38202",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=38202&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. DREAM LONG x200 m",
+      "slug": "elvive-doan-38202",
+      "description": "ELVIVE AC. DREAM LONG x200 m.\n\nFragancia/Tono: DREAM LONG.\n\nMedida: x200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552836554-500x500.jpg"
+      ],
+      "barcode": "7509552836554",
+      "specifications": {
+        "Fragancia/Tono": "DREAM LONG",
+        "Medida": "x200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-38202.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-38202-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552836554-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "38203",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=38203&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. DREAM LONG x400 m",
+      "slug": "elvive-doan-38203",
+      "description": "ELVIVE AC. DREAM LONG x400 m.\n\nFragancia/Tono: DREAM LONG.\n\nMedida: x400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552790160-500x500.jpg"
+      ],
+      "barcode": "7509552790160",
+      "specifications": {
+        "Fragancia/Tono": "DREAM LONG",
+        "Medida": "x400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-38203.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-38203-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552790160-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "38216",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=38216&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE CR.P/PEINAR DREAM LONG 250 m",
+      "slug": "elvive-doan-38216",
+      "description": "ELVIVE CR.P/PEINAR DREAM LONG 250 m.\n\nFragancia/Tono: DREAM LONG.\n\nMedida: 250 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Cremas para peinar",
+      "source_price": 9498.74,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552836592-500x500.jpg"
+      ],
+      "barcode": "7509552836592",
+      "specifications": {
+        "Fragancia/Tono": "DREAM LONG",
+        "Medida": "250 ml."
+      },
+      "listing_price": 9498.74,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-38216.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-38216-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552836592-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "42712",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=42712&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. HIDRA HIAL 200 m",
+      "slug": "elvive-doan-42712",
+      "description": "ELVIVE SH. HIDRA HIAL 200 m.\n\nFragancia/Tono: HIDRA HIAL.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902112-500x500.jpg"
+      ],
+      "barcode": "7509552902112",
+      "specifications": {
+        "Fragancia/Tono": "HIDRA HIAL",
+        "Medida": "200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-42712.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-42712-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902112-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "42713",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=42713&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. HIDRA HIAL 400 m",
+      "slug": "elvive-doan-42713",
+      "description": "ELVIVE SH. HIDRA HIAL 400 m.\n\nFragancia/Tono: HIDRA HIAL.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902327-500x500.jpg"
+      ],
+      "barcode": "7509552902327",
+      "specifications": {
+        "Fragancia/Tono": "HIDRA HIAL",
+        "Medida": "400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-42713.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-42713-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902327-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "42714",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=42714&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. HIDRA HIAL 200 m",
+      "slug": "elvive-doan-42714",
+      "description": "ELVIVE AC. HIDRA HIAL 200 m.\n\nFragancia/Tono: HIDRA HIAL.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902341-500x500.jpg"
+      ],
+      "barcode": "7509552902341",
+      "specifications": {
+        "Fragancia/Tono": "HIDRA HIAL",
+        "Medida": "200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-42714.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-42714-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902341-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "42715",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=42715&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. HIDRA HIAL 400 m",
+      "slug": "elvive-doan-42715",
+      "description": "ELVIVE AC. HIDRA HIAL 400 m.\n\nFragancia/Tono: HIDRA HIAL.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902358-500x500.jpg"
+      ],
+      "barcode": "7509552902358",
+      "specifications": {
+        "Fragancia/Tono": "HIDRA HIAL",
+        "Medida": "400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-42715.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-42715-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902358-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "42716",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=42716&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE CR.P/PEINAR HID.HIALUR 250 m",
+      "slug": "elvive-doan-42716",
+      "description": "ELVIVE CR.P/PEINAR HID.HIALUR 250 m.\n\nFragancia/Tono: HID.HIALUR.\n\nMedida: 250 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Cremas para peinar",
+      "source_price": 9498.74,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902372-500x500.jpg"
+      ],
+      "barcode": "7509552902372",
+      "specifications": {
+        "Fragancia/Tono": "HID.HIALUR",
+        "Medida": "250 ml."
+      },
+      "listing_price": 9498.74,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-42716.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-42716-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902372-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "42717",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=42717&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE TRAT. HID.HIALUR x300 G",
+      "slug": "elvive-doan-42717",
+      "description": "ELVIVE TRAT. HID.HIALUR x300 G.\n\nFragancia/Tono: HID.HIALUR.\n\nMedida: x300 Grs.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos capilares",
+      "source_price": 10363.05,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552902389-500x500.jpg"
+      ],
+      "barcode": "7509552902389",
+      "specifications": {
+        "Fragancia/Tono": "HID.HIALUR",
+        "Medida": "x300 Grs"
+      },
+      "listing_price": 10363.05,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-42717.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-42717-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552902389-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "46009",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=46009&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC.MATIZADOR x200ml. PURPLE",
+      "slug": "elvive-doan-46009",
+      "description": "ELVIVE AC.MATIZADOR x200ml. PURPLE.\n\nFragancia/Tono: PURPLE.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 5134.42,
+      "compare_at_price": 7899.1,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552816204-500x500.jpg"
+      ],
+      "barcode": "7509552816204",
+      "specifications": {
+        "Fragancia/Tono": "PURPLE",
+        "Medida": "200 ml."
+      },
+      "listing_price": 5134.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-46009.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-46009-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552816204-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "46010",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=46010&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH.MATIZADOR x200ml. PURPLE",
+      "slug": "elvive-doan-46010",
+      "description": "ELVIVE SH.MATIZADOR x200ml. PURPLE.\n\nFragancia/Tono: PURPLE.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 5134.42,
+      "compare_at_price": 7899.1,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552815269-500x500.jpg"
+      ],
+      "barcode": "7509552815269",
+      "specifications": {
+        "Fragancia/Tono": "PURPLE",
+        "Medida": "200 ml."
+      },
+      "listing_price": 5134.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-46010.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-46010-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552815269-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "46510",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=46510&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE TRAT. OLEO REG. x300 G",
+      "slug": "elvive-doan-46510",
+      "description": "ELVIVE TRAT. OLEO REG. x300 G.\n\nFragancia/Tono: OLEO REG.\n\nMedida: x300 Grs.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos capilares",
+      "source_price": 10363.05,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552859119-500x500.jpg"
+      ],
+      "barcode": "7509552859119",
+      "specifications": {
+        "Fragancia/Tono": "OLEO REG.",
+        "Medida": "x300 Grs"
+      },
+      "listing_price": 10363.05,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-46510.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-46510-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552859119-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "47056",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=47056&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. PURE HIALU 200 m",
+      "slug": "elvive-doan-47056",
+      "description": "ELVIVE SH. PURE HIALU 200 m.\n\nFragancia/Tono: PURE HIALU.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552876413-500x500.jpg"
+      ],
+      "barcode": "7509552876413",
+      "specifications": {
+        "Fragancia/Tono": "PURE HIALU",
+        "Medida": "200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-47056.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-47056-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552876413-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "47057",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=47057&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. PURE HIALU 400 m",
+      "slug": "elvive-doan-47057",
+      "description": "ELVIVE SH. PURE HIALU 400 m.\n\nFragancia/Tono: PURE HIALU.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552876444-500x500.jpg"
+      ],
+      "barcode": "7509552876444",
+      "specifications": {
+        "Fragancia/Tono": "PURE HIALU",
+        "Medida": "400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-47057.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-47057-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552876444-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "47058",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=47058&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. PURE HIALU 200 m",
+      "slug": "elvive-doan-47058",
+      "description": "ELVIVE AC. PURE HIALU 200 m.\n\nFragancia/Tono: PURE HIALU.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 4563.29,
+      "compare_at_price": 7020.46,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552876420-500x500.jpg"
+      ],
+      "barcode": "7509552876420",
+      "specifications": {
+        "Fragancia/Tono": "PURE HIALU",
+        "Medida": "200 ml."
+      },
+      "listing_price": 4563.29,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-47058.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-47058-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552876420-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "47059",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=47059&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. PURE HIALU 400 m",
+      "slug": "elvive-doan-47059",
+      "description": "ELVIVE AC. PURE HIALU 400 m.\n\nFragancia/Tono: PURE HIALU.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 6767.55,
+      "compare_at_price": 10411.64,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552876482-500x500.jpg"
+      ],
+      "barcode": "7509552876482",
+      "specifications": {
+        "Fragancia/Tono": "PURE HIALU",
+        "Medida": "400 ml."
+      },
+      "listing_price": 6767.55,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-47059.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-47059-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552876482-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "47060",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=47060&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE TRAT. PURE HIALU x300 G",
+      "slug": "elvive-doan-47060",
+      "description": "ELVIVE TRAT. PURE HIALU x300 G.\n\nFragancia/Tono: PURE HIALU.\n\nMedida: x300 Grs.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos capilares",
+      "source_price": 10363.05,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552876437-500x500.jpg"
+      ],
+      "barcode": "7509552876437",
+      "specifications": {
+        "Fragancia/Tono": "PURE HIALU",
+        "Medida": "x300 Grs"
+      },
+      "listing_price": 10363.05,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-47060.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-47060-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552876437-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "48363",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=48363&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SERUM GLYCO GLOSS x100ml.",
+      "slug": "elvive-doan-48363",
+      "description": "ELVIVE SERUM GLYCO GLOSS x100ml.\n\nMedida: 100 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Sérums capilares",
+      "source_price": 18947.21,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552928877-500x500.jpg"
+      ],
+      "barcode": "7509552928877",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "100 ml."
+      },
+      "listing_price": 18947.21,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-48363.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-48363-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552928877-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "48368",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=48368&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE TRAT. GLYCO GLOSS x300 Grs",
+      "slug": "elvive-doan-48368",
+      "description": "ELVIVE TRAT. GLYCO GLOSS x300 Grs.\n\nFragancia/Tono: GLYCO GLOS.\n\nMedida: 300 Grs.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos capilares",
+      "source_price": 12955.94,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552928853-500x500.jpg"
+      ],
+      "barcode": "7509552928853",
+      "specifications": {
+        "Fragancia/Tono": "GLYCO GLOS",
+        "Medida": "300 Grs"
+      },
+      "listing_price": 12955.94,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-48368.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-48368-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552928853-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "48369",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=48369&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE CR.P/PEINAR GLYCO GLOSS x250 m",
+      "slug": "elvive-doan-48369",
+      "description": "ELVIVE CR.P/PEINAR GLYCO GLOSS x250 m.\n\nFragancia/Tono: GLYCO GLOS.\n\nMedida: 250 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Cremas para peinar",
+      "source_price": 9671.6,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552928860-500x500.jpg"
+      ],
+      "barcode": "7509552928860",
+      "specifications": {
+        "Fragancia/Tono": "GLYCO GLOS",
+        "Medida": "250 ml."
+      },
+      "listing_price": 9671.6,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-48369.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-48369-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552928860-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "48452",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=48452&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. GLYCO GLOSS x200 ml.",
+      "slug": "elvive-doan-48452",
+      "description": "ELVIVE AC. GLYCO GLOSS x200 ml.\n\nFragancia/Tono: GLYCO GLOS.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 5134.42,
+      "compare_at_price": 7899.1,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552930337-500x500.jpg"
+      ],
+      "barcode": "7509552930337",
+      "specifications": {
+        "Fragancia/Tono": "GLYCO GLOS",
+        "Medida": "200 ml."
+      },
+      "listing_price": 5134.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-48452.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-48452-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552930337-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "48453",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=48453&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. GLYCO GLOSS x400 ml.",
+      "slug": "elvive-doan-48453",
+      "description": "ELVIVE AC. GLYCO GLOSS x400 ml.\n\nFragancia/Tono: GLYCO GLOS.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 7614.19,
+      "compare_at_price": 11714.16,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552930344-500x500.jpg"
+      ],
+      "barcode": "7509552930344",
+      "specifications": {
+        "Fragancia/Tono": "GLYCO GLOS",
+        "Medida": "400 ml."
+      },
+      "listing_price": 7614.19,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-48453.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-48453-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552930344-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "48454",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=48454&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. GLYCO GLOSS x200 ml.",
+      "slug": "elvive-doan-48454",
+      "description": "ELVIVE SH. GLYCO GLOSS x200 ml.\n\nFragancia/Tono: GLYCO GLOS.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 5134.42,
+      "compare_at_price": 7899.1,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552937343-500x500.jpg"
+      ],
+      "barcode": "7509552937343",
+      "specifications": {
+        "Fragancia/Tono": "GLYCO GLOS",
+        "Medida": "200 ml."
+      },
+      "listing_price": 5134.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-48454.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-48454-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552937343-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "48455",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=48455&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. GLYCO GLOSS x400 ml.",
+      "slug": "elvive-doan-48455",
+      "description": "ELVIVE SH. GLYCO GLOSS x400 ml.\n\nFragancia/Tono: GLYCO GLOS.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 7614.19,
+      "compare_at_price": 11714.16,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552928846-500x500.jpg"
+      ],
+      "barcode": "7509552928846",
+      "specifications": {
+        "Fragancia/Tono": "GLYCO GLOS",
+        "Medida": "400 ml."
+      },
+      "listing_price": 7614.19,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-48455.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-48455-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552928846-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "49538",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=49538&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. NUEVO LISO x200 ml.",
+      "slug": "elvive-doan-49538",
+      "description": "ELVIVE AC. NUEVO LISO x200 ml.\n\nFragancia/Tono: NUEVO LISO.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 5134.42,
+      "compare_at_price": 7899.1,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552964417-500x500.jpg"
+      ],
+      "barcode": "7509552964417",
+      "specifications": {
+        "Fragancia/Tono": "NUEVO LISO",
+        "Medida": "200 ml."
+      },
+      "listing_price": 5134.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-49538.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-49538-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552964417-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "49539",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=49539&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. NUEVO LISO x400 ml.",
+      "slug": "elvive-doan-49539",
+      "description": "ELVIVE AC. NUEVO LISO x400 ml.\n\nFragancia/Tono: NUEVO LISO.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 7614.19,
+      "compare_at_price": 11714.16,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552964394-500x500.jpg"
+      ],
+      "barcode": "7509552964394",
+      "specifications": {
+        "Fragancia/Tono": "NUEVO LISO",
+        "Medida": "400 ml."
+      },
+      "listing_price": 7614.19,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-49539.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-49539-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552964394-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "49540",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=49540&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. NUEVO LISO x200 ml.",
+      "slug": "elvive-doan-49540",
+      "description": "ELVIVE SH. NUEVO LISO x200 ml.\n\nFragancia/Tono: NUEVO LISO.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 5134.42,
+      "compare_at_price": 7899.1,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552964554-500x500.jpg"
+      ],
+      "barcode": "7509552964554",
+      "specifications": {
+        "Fragancia/Tono": "NUEVO LISO",
+        "Medida": "200 ml."
+      },
+      "listing_price": 5134.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-49540.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-49540-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552964554-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "49541",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=49541&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. NUEVO LISO x400 ml.",
+      "slug": "elvive-doan-49541",
+      "description": "ELVIVE SH. NUEVO LISO x400 ml.\n\nFragancia/Tono: NUEVO LISO.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 7614.19,
+      "compare_at_price": 11714.16,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552964387-500x500.jpg"
+      ],
+      "barcode": "7509552964387",
+      "specifications": {
+        "Fragancia/Tono": "NUEVO LISO",
+        "Medida": "400 ml."
+      },
+      "listing_price": 7614.19,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-49541.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-49541-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552964387-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "49542",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=49542&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE CR.P/PEINAR NUEVO LISO x250 ml",
+      "slug": "elvive-doan-49542",
+      "description": "ELVIVE CR.P/PEINAR NUEVO LISO x250 ml.\n\nFragancia/Tono: NUEVO LISO.\n\nMedida: 250 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Cremas para peinar",
+      "source_price": 9671.6,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552979541-500x500.jpg"
+      ],
+      "barcode": "7509552979541",
+      "specifications": {
+        "Fragancia/Tono": "NUEVO LISO",
+        "Medida": "250 ml."
+      },
+      "listing_price": 9671.6,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-49542.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-49542-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552979541-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "49543",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=49543&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE TRAT. NUEVO LISO x300 Grs",
+      "slug": "elvive-doan-49543",
+      "description": "ELVIVE TRAT. NUEVO LISO x300 Grs.\n\nFragancia/Tono: NUEVO LISO.\n\nMedida: 300 Grs.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos capilares",
+      "source_price": 12955.94,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552964561-500x500.jpg"
+      ],
+      "barcode": "7509552964561",
+      "specifications": {
+        "Fragancia/Tono": "NUEVO LISO",
+        "Medida": "300 Grs"
+      },
+      "listing_price": 12955.94,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-49543.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-49543-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552964561-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "50015",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=50015&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SERUM DREAM LISO x100 ml.",
+      "slug": "elvive-doan-50015",
+      "description": "ELVIVE SERUM DREAM LISO x100 ml.\n\nMedida: 100 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Sérums capilares",
+      "source_price": 18947.21,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7509552979558-500x500.jpg"
+      ],
+      "barcode": "7509552979558",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "100 ml."
+      },
+      "listing_price": 18947.21,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-50015.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-50015-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7509552979558-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "50558",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=50558&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE TRAT. GLYCO CRISTAL x300 Grs",
+      "slug": "elvive-doan-50558",
+      "description": "ELVIVE TRAT. GLYCO CRISTAL x300 Grs.\n\nFragancia/Tono: GLYCO CRISTAL.\n\nMedida: 300 Grs.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos capilares",
+      "source_price": 12955.94,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033338166-500x500.jpg"
+      ],
+      "barcode": "7790033338166",
+      "specifications": {
+        "Fragancia/Tono": "GLYCO CRISTAL",
+        "Medida": "300 Grs"
+      },
+      "listing_price": 12955.94,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-50558.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-50558-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033338166-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "50559",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=50559&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. GLYCO CRYSTAL x200 ml.",
+      "slug": "elvive-doan-50559",
+      "description": "ELVIVE SH. GLYCO CRYSTAL x200 ml.\n\nFragancia/Tono: GLYCO CRYSTAL.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 5134.42,
+      "compare_at_price": 7899.1,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033338203-500x500.jpg"
+      ],
+      "barcode": "7790033338203",
+      "specifications": {
+        "Fragancia/Tono": "GLYCO CRYSTAL",
+        "Medida": "200 ml."
+      },
+      "listing_price": 5134.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-50559.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-50559-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033338203-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "50560",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=50560&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. GLYCO CRYSTAL x400 ml.",
+      "slug": "elvive-doan-50560",
+      "description": "ELVIVE SH. GLYCO CRYSTAL x400 ml.\n\nFragancia/Tono: GLYCO CRYSTAL.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 7614.19,
+      "compare_at_price": 11714.16,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033338197-500x500.jpg"
+      ],
+      "barcode": "7790033338197",
+      "specifications": {
+        "Fragancia/Tono": "GLYCO CRYSTAL",
+        "Medida": "400 ml."
+      },
+      "listing_price": 7614.19,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-50560.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-50560-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033338197-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "50561",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=50561&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. GLYCO CRISTAL x200 ml.",
+      "slug": "elvive-doan-50561",
+      "description": "ELVIVE AC. GLYCO CRISTAL x200 ml.\n\nFragancia/Tono: GLYCO CRISTAL.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 5134.42,
+      "compare_at_price": 7899.1,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033338180-500x500.jpg"
+      ],
+      "barcode": "7790033338180",
+      "specifications": {
+        "Fragancia/Tono": "GLYCO CRISTAL",
+        "Medida": "200 ml."
+      },
+      "listing_price": 5134.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-50561.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-50561-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033338180-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "50562",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=50562&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. GLYCO CRISTAL x400 ml.",
+      "slug": "elvive-doan-50562",
+      "description": "ELVIVE AC. GLYCO CRISTAL x400 ml.\n\nFragancia/Tono: GLYCO CRISTAL.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 7614.19,
+      "compare_at_price": 11714.16,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033338173-500x500.jpg"
+      ],
+      "barcode": "7790033338173",
+      "specifications": {
+        "Fragancia/Tono": "GLYCO CRISTAL",
+        "Medida": "400 ml."
+      },
+      "listing_price": 7614.19,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-50562.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-50562-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033338173-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "50587",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=50587&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE EXHIB.GLYCO CRISTAL x14 Un.",
+      "slug": "elvive-doan-50587",
+      "description": "ELVIVE EXHIB.GLYCO CRISTAL x14 Un.\n\nMedida: 14 Un.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Kits capilares",
+      "source_price": 102730.42,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033347823-500x500.jpg"
+      ],
+      "barcode": "7790033347823",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "14 Un."
+      },
+      "listing_price": 102730.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-50587.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-50587-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033347823-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "51087",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=51087&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. COLLAGEN LIF x200 ml.",
+      "slug": "elvive-doan-51087",
+      "description": "ELVIVE AC. COLLAGEN LIF x200 ml.\n\nFragancia/Tono: COLLAGEN LIF.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 5134.42,
+      "compare_at_price": 7899.1,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033342118-500x500.jpg"
+      ],
+      "barcode": "7790033342118",
+      "specifications": {
+        "Fragancia/Tono": "COLLAGEN LIF",
+        "Medida": "200 ml."
+      },
+      "listing_price": 5134.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-51087.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-51087-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033342118-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "51088",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=51088&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE AC. COLLAGEN LIF x400 ml.",
+      "slug": "elvive-doan-51088",
+      "description": "ELVIVE AC. COLLAGEN LIF x400 ml.\n\nFragancia/Tono: COLLAGEN LIF.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Acondicionadores",
+      "source_price": 7614.19,
+      "compare_at_price": 11714.16,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033342125-500x500.jpg"
+      ],
+      "barcode": "7790033342125",
+      "specifications": {
+        "Fragancia/Tono": "COLLAGEN LIF",
+        "Medida": "400 ml."
+      },
+      "listing_price": 7614.19,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-51088.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-51088-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033342125-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "51089",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=51089&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. COLLAGEN LIF x200 ml.",
+      "slug": "elvive-doan-51089",
+      "description": "ELVIVE SH. COLLAGEN LIF x200 ml.\n\nFragancia/Tono: COLLAGEN LIF.\n\nMedida: 200 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 5134.42,
+      "compare_at_price": 7899.1,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033342101-500x500.jpg"
+      ],
+      "barcode": "7790033342101",
+      "specifications": {
+        "Fragancia/Tono": "COLLAGEN LIF",
+        "Medida": "200 ml."
+      },
+      "listing_price": 5134.42,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-51089.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-51089-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033342101-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "51090",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=51090&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SH. COLLAGEN LIF x400 ml.",
+      "slug": "elvive-doan-51090",
+      "description": "ELVIVE SH. COLLAGEN LIF x400 ml.\n\nFragancia/Tono: COLLAGEN LIF.\n\nMedida: 400 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Shampoos",
+      "source_price": 7614.19,
+      "compare_at_price": 11714.16,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033342095-500x500.jpg"
+      ],
+      "barcode": "7790033342095",
+      "specifications": {
+        "Fragancia/Tono": "COLLAGEN LIF",
+        "Medida": "400 ml."
+      },
+      "listing_price": 7614.19,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-51090.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-51090-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033342095-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "51091",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=51091&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE CR.P/PEINAR COLLAGEN LIF x250 ml.",
+      "slug": "elvive-doan-51091",
+      "description": "ELVIVE CR.P/PEINAR COLLAGEN LIF x250 ml.\n\nFragancia/Tono: COLLAGEN LIF.\n\nMedida: 250 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Cremas para peinar",
+      "source_price": 9671.6,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033342132-500x500.jpg"
+      ],
+      "barcode": "7790033342132",
+      "specifications": {
+        "Fragancia/Tono": "COLLAGEN LIF",
+        "Medida": "250 ml."
+      },
+      "listing_price": 9671.6,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-51091.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-51091-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033342132-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "51092",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=51092&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE TRAT. COLLAGEN LIF x300 Grs",
+      "slug": "elvive-doan-51092",
+      "description": "ELVIVE TRAT. COLLAGEN LIF x300 Grs.\n\nFragancia/Tono: COLLAGEN LIF.\n\nMedida: 300 Grs.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Tratamientos capilares",
+      "source_price": 13820.28,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033342149-500x500.jpg"
+      ],
+      "barcode": "7790033342149",
+      "specifications": {
+        "Fragancia/Tono": "COLLAGEN LIF",
+        "Medida": "300 Grs"
+      },
+      "listing_price": 13820.28,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-51092.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-51092-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033342149-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "51093",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=51093&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE SERUM COLLAGEN LIF x100 ml.",
+      "slug": "elvive-doan-51093",
+      "description": "ELVIVE SERUM COLLAGEN LIF x100 ml.\n\nMedida: 100 ml.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Sérums capilares",
+      "source_price": 18947.21,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033342156-500x500.jpg"
+      ],
+      "barcode": "7790033342156",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "100 ml."
+      },
+      "listing_price": 18947.21,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-51093.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-51093-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033342156-500x500.jpg",
+      "white_background_rendered": true
+    },
+    {
+      "source_id": "51146",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=51146&page=1&limit=100",
+      "manufacturer_id": "145",
+      "name": "ELVIVE EXHIB.COLLAGEN LIFTER x14 Un.",
+      "slug": "elvive-doan-51146",
+      "description": "ELVIVE EXHIB.COLLAGEN LIFTER x14 Un.\n\nMedida: 14 Un.",
+      "brand": "Elvive",
+      "brand_slug": "elvive",
+      "category_slug": "cabello",
+      "product_type": "Kits capilares",
+      "source_price": 123293.86,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/cache/catalog/doan/7790033352858-500x500.jpg"
+      ],
+      "barcode": "7790033352858",
+      "specifications": {
+        "Fragancia/Tono": "",
+        "Medida": "14 Un."
+      },
+      "listing_price": 123293.86,
+      "image_urls": [
+        "/catalog/elvive/elvive-doan-51146.webp"
+      ],
+      "thumbnail_url": "/catalog/elvive/elvive-doan-51146-thumb.webp",
+      "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7790033352858-500x500.jpg",
+      "white_background_rendered": true
+    }
+  ],
+  "excluded": [],
+  "image_failures": []
+}
