@@ -327,7 +327,7 @@ function SlideEditor({
       }
       const r = await supabase.rpc("save_home_slide", {
         slide: { ...parsed.data, id: slide?.id ?? null, image_path: imagePath } as Json,
-        expected_updated_at: slide?.updated_at ?? null,
+        expected_updated_at: slide?.updated_at ?? undefined,
       });
       if (r.error) throw r.error;
       toast.success("Diapositiva guardada.");
