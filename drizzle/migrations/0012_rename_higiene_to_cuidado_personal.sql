@@ -1,0 +1,1 @@
+update public.categories set name = 'Cuidado Personal' where slug = 'higiene-personal';
