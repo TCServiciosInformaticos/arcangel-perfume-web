@@ -1,3 +1,4 @@
+# CI checks for application code and isolated browser fixtures.
 name: Quality checks
 
 on:
