@@ -44,7 +44,8 @@ test("out-of-stock product cannot be added to cart", async ({ page }) => {
   await expect(page.getByRole("button", { name: "Agregar al carrito" })).toHaveCount(0);
 });
 test("slider admin requires sign-in", async ({ page }) => {
-  await page.goto("/admin/slider", { waitUntil: "networkidle" });
+  await page.goto("/admin/slider?vista=prueba", { waitUntil: "networkidle" });
   await expect(page).toHaveURL(/\/auth/);
+  expect(new URL(page.url()).searchParams.get("next")).toBe("/admin/slider?vista=prueba");
   await expect(page.getByRole("heading", { name: "Slider de inicio" })).toHaveCount(0);
 });
