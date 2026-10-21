@@ -7828,7 +7828,7 @@
       "source_price": 8580.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/b/942/10020__09317_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_spray_fijador_matte_fix_77979742_54413_zoom.webp"
       ],
       "barcode": "77979742",
       "specifications": {
@@ -7841,7 +7841,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-43845-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-spray-fijador-matte-fix",
-      "image_reference_barcode": "77979742"
+      "image_reference_barcode": "77979742",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_spray_fijador_matte_fix_77979742_54413_zoom.webp"
     },
     {
       "source_id": "43846",
@@ -8751,7 +8752,7 @@
       "source_price": 2859.99,
       "compare_at_price": 3575.01,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/c/500/21731__15063_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_126_77972514_57470_zoom.webp"
       ],
       "barcode": "77972514",
       "specifications": {
@@ -8764,7 +8765,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-46604-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-esm-hipoal-126",
-      "image_reference_barcode": "77972514"
+      "image_reference_barcode": "77972514",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_126_77972514_57470_zoom.webp"
     },
     {
       "source_id": "46605",
@@ -8808,7 +8810,7 @@
       "source_price": 2859.99,
       "compare_at_price": 3575.01,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/j/580/21736__43714_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_128_77972538_57466_zoom.webp"
       ],
       "barcode": "77972538",
       "specifications": {
@@ -8821,7 +8823,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-46606-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-esm-hipoal-128",
-      "image_reference_barcode": "77972538"
+      "image_reference_barcode": "77972538",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_128_77972538_57466_zoom.webp"
     },
     {
       "source_id": "46607",
@@ -8837,7 +8840,7 @@
       "source_price": 2859.99,
       "compare_at_price": 3575.01,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/y/293/21733__35614_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_129_77981790_57468_zoom.webp"
       ],
       "barcode": "77981790",
       "specifications": {
@@ -8850,7 +8853,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-46607-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-esm-hipoal-129",
-      "image_reference_barcode": "77981790"
+      "image_reference_barcode": "77981790",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_129_77981790_57468_zoom.webp"
     },
     {
       "source_id": "46643",
@@ -9286,7 +9290,7 @@
       "source_price": 2665.0,
       "compare_at_price": 5330.0,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/d/632/23876__81514_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_labial_24hs_n_17_caramel_77978219_62095_zoom.webp"
       ],
       "barcode": "77978219",
       "specifications": {
@@ -9299,7 +9303,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-46970-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-labial-24hs-17",
-      "image_reference_barcode": "77978219"
+      "image_reference_barcode": "77978219",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_labial_24hs_n_17_caramel_77978219_62095_zoom.webp"
     },
     {
       "source_id": "47168",
@@ -9315,7 +9320,7 @@
       "source_price": 2859.99,
       "compare_at_price": 3575.01,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/e/955/product_picture_2154fd3bc67c4cf6b91a57fe4cdd4c05_638254593856022390_0_m__92307_std.png"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_dusty_viol_130_77981875_65966_zoom.webp"
       ],
       "barcode": "77981875",
       "specifications": {
@@ -9328,7 +9333,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-47168-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-esm-hipoal-130-dusty-viol-",
-      "image_reference_barcode": "77981875"
+      "image_reference_barcode": "77981875",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_dusty_viol_130_77981875_65966_zoom.webp"
     },
     {
       "source_id": "47169",
@@ -9344,7 +9350,7 @@
       "source_price": 2859.99,
       "compare_at_price": 3575.01,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/s/416/1__39074_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_stone_131_77981882_61856_zoom.webp"
       ],
       "barcode": "77981882",
       "specifications": {
@@ -9357,7 +9363,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-47169-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-esm-hipoal-131-stone",
-      "image_reference_barcode": "77981882"
+      "image_reference_barcode": "77981882",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_stone_131_77981882_61856_zoom.webp"
     },
     {
       "source_id": "47170",
@@ -9373,7 +9380,7 @@
       "source_price": 2859.99,
       "compare_at_price": 3575.01,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/u/722/1__36137_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_132_mint_in_lov_77981899_61855_zoom.webp"
       ],
       "barcode": "77981899",
       "specifications": {
@@ -9386,7 +9393,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-47170-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-esm-hipoal-132-mint-in-lov",
-      "image_reference_barcode": "77981899"
+      "image_reference_barcode": "77981899",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_132_mint_in_lov_77981899_61855_zoom.webp"
     },
     {
       "source_id": "47171",
@@ -9402,7 +9410,7 @@
       "source_price": 2859.99,
       "compare_at_price": 3575.01,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/m/246/1__07434_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_133_grey_shake_77981424_62079_zoom.webp"
       ],
       "barcode": "77981424",
       "specifications": {
@@ -9415,7 +9423,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-47171-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-esm-hipoal-133-grey-shake",
-      "image_reference_barcode": "77981424"
+      "image_reference_barcode": "77981424",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_133_grey_shake_77981424_62079_zoom.webp"
     },
     {
       "source_id": "47172",
@@ -9431,7 +9440,7 @@
       "source_price": 2859.99,
       "compare_at_price": 3575.01,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/z/982/product_picture_2543ac4a9e9d45548d50695f2acfe2c5_638246049404344802_0_m__17320_std.png"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_134_taupe_77981431_63370_zoom.webp"
       ],
       "barcode": "77981431",
       "specifications": {
@@ -9444,7 +9453,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-47172-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-esm-hipoal-134-taupe",
-      "image_reference_barcode": "77981431"
+      "image_reference_barcode": "77981431",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_134_taupe_77981431_63370_zoom.webp"
     },
     {
       "source_id": "47173",
@@ -9460,7 +9470,7 @@
       "source_price": 2859.99,
       "compare_at_price": 3575.01,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/g/270/53657__54888_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_135_marsala_77981448_63402_zoom.webp"
       ],
       "barcode": "77981448",
       "specifications": {
@@ -9473,7 +9483,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-47173-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-esm-hipoal-135-marsala",
-      "image_reference_barcode": "77981448"
+      "image_reference_barcode": "77981448",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_esmalte_hipoalergenico_135_marsala_77981448_63402_zoom.webp"
     },
     {
       "source_id": "47282",
@@ -9769,7 +9780,7 @@
       "source_price": 8384.34,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/r/185/bab716dd-2843-4b54-9e5c-5bbeac03b873-28ee788188de44755a17317950200236-1024-1024__11180_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_primer_facial_make_up_skin_silk_vit_c_77992789_76161_zoom.webp"
       ],
       "barcode": "77992789",
       "specifications": {
@@ -9782,7 +9793,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-48909-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-primer-skin-silk-vit-c",
-      "image_reference_barcode": "77992789"
+      "image_reference_barcode": "77992789",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_primer_facial_make_up_skin_silk_vit_c_77992789_76161_zoom.webp"
     },
     {
       "source_id": "48910",
@@ -9826,7 +9838,7 @@
       "source_price": 7020.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/t/266/esmalte-idi-base-regeneradora-vit-c__27925_std.png"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_base_regeneradora_de_unas_con_vitamina_c_77985705_76203_zoom.webp"
       ],
       "barcode": "77985705",
       "specifications": {
@@ -9839,7 +9851,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-48911-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-base-regenerad-u",
-      "image_reference_barcode": "77985705"
+      "image_reference_barcode": "77985705",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_base_regeneradora_de_unas_con_vitamina_c_77985705_76203_zoom.webp"
     },
     {
       "source_id": "49038",
@@ -9911,7 +9924,7 @@
       "source_price": 10920.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/k/477/iluminador-idi-perfmatch-glow-stick-01__01842_std.png"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_glow_the_perfect_match_01_77993588_70803_zoom.webp"
       ],
       "barcode": "77993588",
       "specifications": {
@@ -9924,7 +9937,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-49040-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-glow-01",
-      "image_reference_barcode": "77993588"
+      "image_reference_barcode": "77993588",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_glow_the_perfect_match_01_77993588_70803_zoom.webp"
     },
     {
       "source_id": "49041",
@@ -9940,7 +9954,7 @@
       "source_price": 10920.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/x/544/iluminador-idi-perfmatch-glow-stick-02__08570_std.png"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_glow_the_perfect_match_02_77993595_70806_zoom.webp"
       ],
       "barcode": "77993595",
       "specifications": {
@@ -9953,7 +9967,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-49041-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-glow-02",
-      "image_reference_barcode": "77993595"
+      "image_reference_barcode": "77993595",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_glow_the_perfect_match_02_77993595_70806_zoom.webp"
     },
     {
       "source_id": "49043",
@@ -10025,7 +10040,7 @@
       "source_price": 9685.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/e/650/101__17057_std.gif"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_tinted_foundation_vit_c_101_77994899_73029_zoom.webp"
       ],
       "barcode": "77994899",
       "specifications": {
@@ -10038,7 +10053,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-49388-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-tinted-found-vit-c-101",
-      "image_reference_barcode": "77994899"
+      "image_reference_barcode": "77994899",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_tinted_foundation_vit_c_101_77994899_73029_zoom.webp"
     },
     {
       "source_id": "49389",
@@ -10081,7 +10097,7 @@
       "source_price": 9685.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/q/283/103__49072_std.gif"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_tinted_foundation_vit_c_103_77994912_73027_zoom.webp"
       ],
       "barcode": "77994912",
       "specifications": {
@@ -10094,7 +10110,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-49390-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-tinted-found-vit-c-103",
-      "image_reference_barcode": "77994912"
+      "image_reference_barcode": "77994912",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_tinted_foundation_vit_c_103_77994912_73027_zoom.webp"
     },
     {
       "source_id": "49391",
@@ -10110,7 +10127,7 @@
       "source_price": 9685.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/z/790/104__35850_std.gif"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_tinted_foundation_vit_c_104_77994929_73026_zoom.webp"
       ],
       "barcode": "77994929",
       "specifications": {
@@ -10123,7 +10140,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-49391-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-tinted-found-vit-c-104",
-      "image_reference_barcode": "77994929"
+      "image_reference_barcode": "77994929",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_tinted_foundation_vit_c_104_77994929_73026_zoom.webp"
     },
     {
       "source_id": "49576",
@@ -10642,7 +10660,7 @@
       "source_price": 8385.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/f/030/37199__81579_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_delineador_de_cejas_02_77958136_78796_zoom.webp"
       ],
       "barcode": "77958136",
       "specifications": {
@@ -10655,7 +10673,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-50140-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-perfila-y-elevad-cejas-02",
-      "image_reference_barcode": "77958136"
+      "image_reference_barcode": "77958136",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_delineador_de_cejas_02_77958136_78796_zoom.webp"
     },
     {
       "source_id": "50141",
@@ -10671,7 +10690,7 @@
       "source_price": 8385.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/f/797/37184__41886_std.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_delineador_de_cejas_01_77958457_78795_zoom.webp"
       ],
       "barcode": "77958457",
       "specifications": {
@@ -10684,7 +10703,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-50141-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-perfila-y-elevad-cejas-01",
-      "image_reference_barcode": "77958457"
+      "image_reference_barcode": "77958457",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_delineador_de_cejas_01_77958457_78795_zoom.webp"
     },
     {
       "source_id": "50200",
@@ -10728,7 +10748,7 @@
       "source_price": 7735.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/l/995/DELI-PLATEADO__06962_std.gif"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_delineador_liquido_metalico_laser_13_77987341_72905_zoom.webp"
       ],
       "barcode": "77987341",
       "specifications": {
@@ -10741,7 +10761,8 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-50446-thumb.webp",
       "image_reference_url": "https://www.anikashop.com.ar/idi-del-liq-metal-laser-13",
-      "image_reference_barcode": "77987341"
+      "image_reference_barcode": "77987341",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_make_up_delineador_liquido_metalico_laser_13_77987341_72905_zoom.webp"
     },
     {
       "source_id": "50519",
@@ -10869,33 +10890,12 @@
     }
   ],
   "image_failures": [
-    "idi-doan-43845 77979742 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/b/942/10020__09317_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/b/942/10020__09317_std.jpg']",
-    "idi-doan-46604 77972514 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/c/500/21731__15063_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/c/500/21731__15063_std.jpg']",
-    "idi-doan-46606 77972538 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/j/580/21736__43714_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/j/580/21736__43714_std.jpg']",
-    "idi-doan-46607 77981790 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/y/293/21733__35614_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/y/293/21733__35614_std.jpg']",
-    "idi-doan-46368 77961099 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg']",
+    "idi-doan-27990 77947680 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg']",
     "idi-doan-46367 77961082 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg']",
     "idi-doan-27991 77947697 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947697.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947697.jpg']",
-    "idi-doan-27990 77947680 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg']",
-    "idi-doan-47168 77981875 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/e/955/product_picture_2154fd3bc67c4cf6b91a57fe4cdd4c05_638254593856022390_0_m__92307_std.png', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/e/955/product_picture_2154fd3bc67c4cf6b91a57fe4cdd4c05_638254593856022390_0_m__92307_std.png']",
-    "idi-doan-46970 77978219 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/d/632/23876__81514_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/d/632/23876__81514_std.jpg']",
-    "idi-doan-47170 77981899 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/u/722/1__36137_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/u/722/1__36137_std.jpg']",
-    "idi-doan-47169 77981882 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/s/416/1__39074_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/s/416/1__39074_std.jpg']",
-    "idi-doan-47171 77981424 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/m/246/1__07434_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/m/246/1__07434_std.jpg']",
-    "idi-doan-48909 77992789 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/r/185/bab716dd-2843-4b54-9e5c-5bbeac03b873-28ee788188de44755a17317950200236-1024-1024__11180_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/r/185/bab716dd-2843-4b54-9e5c-5bbeac03b873-28ee788188de44755a17317950200236-1024-1024__11180_std.jpg']",
-    "idi-doan-47172 77981431 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/z/982/product_picture_2543ac4a9e9d45548d50695f2acfe2c5_638246049404344802_0_m__17320_std.png', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/z/982/product_picture_2543ac4a9e9d45548d50695f2acfe2c5_638246049404344802_0_m__17320_std.png']",
-    "idi-doan-47173 77981448 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/g/270/53657__54888_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/g/270/53657__54888_std.jpg']",
-    "idi-doan-49040 77993588 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/k/477/iluminador-idi-perfmatch-glow-stick-01__01842_std.png', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/k/477/iluminador-idi-perfmatch-glow-stick-01__01842_std.png']",
-    "idi-doan-48911 77985705 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/t/266/esmalte-idi-base-regeneradora-vit-c__27925_std.png', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/t/266/esmalte-idi-base-regeneradora-vit-c__27925_std.png']",
-    "idi-doan-49388 77994899 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/e/650/101__17057_std.gif', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/e/650/101__17057_std.gif']",
-    "idi-doan-49041 77993595 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/x/544/iluminador-idi-perfmatch-glow-stick-02__08570_std.png', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/x/544/iluminador-idi-perfmatch-glow-stick-02__08570_std.png']",
-    "idi-doan-49391 77994929 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/z/790/104__35850_std.gif', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/z/790/104__35850_std.gif']",
-    "idi-doan-49390 77994912 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/q/283/103__49072_std.gif', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/q/283/103__49072_std.gif']",
+    "idi-doan-46368 77961099 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg']",
     "idi-doan-49389 77994905 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77994905.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77994905.jpg']",
     "idi-doan-50138 7798327602412 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602412.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602412.jpg']",
-    "idi-doan-50141 77958457 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/f/797/37184__41886_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/f/797/37184__41886_std.jpg']",
-    "idi-doan-50446 77987341 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/l/995/DELI-PLATEADO__06962_std.gif', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/l/995/DELI-PLATEADO__06962_std.gif']",
-    "idi-doan-50140 77958136 ['403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/f/030/37199__81579_std.jpg', '403 Client Error: Forbidden for url: https://anika3.nyc3.cdn.digitaloceanspaces.com///product_images/f/030/37199__81579_std.jpg']",
     "idi-doan-50519 779932663 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/779932663.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/779932663.jpg']",
     "idi-doan-50599 7798327602368 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602368.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602368.jpg']",
     "idi-doan-50683 779584411 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/779584411.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/779584411.jpg']",
