@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MessageCircle } from "lucide-react";
+import { BranchMap } from "@/components/branch-map";
 
 const logoUrl = "/arcangel-logo.png";
 
@@ -51,6 +52,7 @@ export function SiteFooter() {
                   <MessageCircle className="h-4 w-4" />
                   {branch.label}
                 </a>
+                <BranchMap name={branch.name} address={branch.address} />
               </li>
             ))}
           </ul>
