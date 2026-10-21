@@ -54,6 +54,18 @@ export async function startOrderCheckout(
     !/^\d{8,15}$/.test(settings.data.store_whatsapp.replace(/\D/g, ""))
   )
     throw new Error("La tienda necesita configurar su WhatsApp.");
+  if (!existingId && requestKey) {
+    const known = await supabaseAdmin
+      .from("orders")
+      .select("id")
+      .eq("checkout_key", requestKey)
+      .maybeSingle();
+    if (known.error) throw new Error("No pudimos verificar el pedido anterior.");
+    if (known.data) {
+      const { reconcileOrder } = await import("./payment-sync.server");
+      await reconcileOrder(known.data.id);
+    }
+  }
   const reserved = await supabaseAdmin.rpc("reserve_order_checkout", {
     payload: payload as Json,
     existing_id: existingId ?? null,
