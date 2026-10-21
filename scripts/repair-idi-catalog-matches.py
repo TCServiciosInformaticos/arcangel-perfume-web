@@ -13,9 +13,15 @@ def farmax(offset):
   e=card.select_one('.dcorta');a=card.select_one('h4 a[href]');im=card.select_one('.image img[src]')
   if e and a and im and 'IDI' in a.get_text().upper():rows[e.get_text(strip=True)]=(urljoin('https://www.farmax.com.ar/',im['src']),urljoin('https://www.farmax.com.ar/',a['href']))
  return rows
-index={}
-with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
- for r in ex.map(farmax,range(0,241,24)):index.update(r)
+index={};session=requests.Session();next_url='https://www.farmax.com.ar/busqueda_avanzada.php?buscar=1&palabra=IDI'
+for page in range(12):
+ r=session.get(next_url,timeout=40);r.raise_for_status();d=BeautifulSoup(r.text,'html.parser')
+ for card in d.select('.product'):
+  e=card.select_one('.dcorta');a=card.select_one('h4 a[href]');im=card.select_one('.image img[src]')
+  if e and a and im and 'IDI' in a.get_text().upper():index[e.get_text(strip=True)]=(urljoin('https://www.farmax.com.ar/',im['src']),urljoin('https://www.farmax.com.ar/',a['href']))
+ more=next((a for a in d.select('.pagination a[href]') if 'Siguiente' in a.get_text()),None)
+ if not more:break
+ next_url=urljoin('https://www.farmax.com.ar/',more['href'])
 # The homepage also lists the fully specified six-piece Boost Stick exhibitor.
 d=get('https://www.farmax.com.ar/')
 for card in d.select('.product'):
