@@ -85,6 +85,13 @@
       "when": 1792525526860,
       "tag": "0011_product_types_second_level",
       "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1792541931242,
+      "tag": "0012_rename_higiene_to_cuidado_personal",
+      "breakpoints": true
     }
   ]
 }
