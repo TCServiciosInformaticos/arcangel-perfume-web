@@ -1,6 +1,6 @@
 {
-  "stage": "images_pending",
-  "count": 387,
+  "stage": "prepared",
+  "count": 384,
   "source_count": 389,
   "pricing": "published_current_including_tax",
   "products": [
@@ -2159,60 +2159,6 @@
       ],
       "thumbnail_url": "/catalog/idi/idi-doan-26567-thumb.webp",
       "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/7798164252313-500x500.jpg"
-    },
-    {
-      "source_id": "27990",
-      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=201&product_id=27990&page=1&limit=100",
-      "manufacturer_id": "201",
-      "name": "IDI * ESM.HIPOAL. 35-NIMET",
-      "slug": "idi-doan-27990",
-      "description": "IDI * ESM.HIPOAL. 35-NIMET.\n\nTono: 35-NIMET.",
-      "brand": "IDI",
-      "brand_slug": "idi",
-      "category_slug": "make-up",
-      "product_type": "Esmaltes de uñas",
-      "source_price": 1787.5,
-      "compare_at_price": 3575.01,
-      "source_image_urls": [
-        "https://doan.com.ar/image/catalog/doan/77947680.jpg"
-      ],
-      "barcode": "77947680",
-      "specifications": {
-        "Fragancia/Tono": "35-NIMET",
-        "Medida": "100 ml."
-      },
-      "listing_price": 1787.5,
-      "image_urls": [
-        "/catalog/idi/idi-doan-27990.webp"
-      ],
-      "thumbnail_url": "/catalog/idi/idi-doan-27990-thumb.webp"
-    },
-    {
-      "source_id": "27991",
-      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=201&product_id=27991&page=1&limit=100",
-      "manufacturer_id": "201",
-      "name": "IDI * ESM.HIPOAL. 36-BUKET",
-      "slug": "idi-doan-27991",
-      "description": "IDI * ESM.HIPOAL. 36-BUKET.\n\nTono: 36-BUKET.",
-      "brand": "IDI",
-      "brand_slug": "idi",
-      "category_slug": "make-up",
-      "product_type": "Esmaltes de uñas",
-      "source_price": 1787.5,
-      "compare_at_price": 3575.01,
-      "source_image_urls": [
-        "https://doan.com.ar/image/catalog/doan/77947697.jpg"
-      ],
-      "barcode": "77947697",
-      "specifications": {
-        "Fragancia/Tono": "36-BUKET",
-        "Medida": ""
-      },
-      "listing_price": 1787.5,
-      "image_urls": [
-        "/catalog/idi/idi-doan-27991.webp"
-      ],
-      "thumbnail_url": "/catalog/idi/idi-doan-27991-thumb.webp"
     },
     {
       "source_id": "28147",
@@ -8418,7 +8364,7 @@
       "source_price": 7150.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://doan.com.ar/image/catalog/doan/77961082.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_laminado_de_cejas_01_blonde_claro_77985491_61062_zoom.webp"
       ],
       "barcode": "77961082",
       "specifications": {
@@ -8429,7 +8375,11 @@
       "image_urls": [
         "/catalog/idi/idi-doan-46367.webp"
       ],
-      "thumbnail_url": "/catalog/idi/idi-doan-46367-thumb.webp"
+      "thumbnail_url": "/catalog/idi/idi-doan-46367-thumb.webp",
+      "image_reference_url": "https://www.anikashop.com.ar/idi-laminado-de-cejas-01-m-cl-",
+      "image_reference_match": "Manually reviewed brand, product family and explicit shade; supplier barcodes differ.",
+      "image_reference_name": "IDI LAMINADO DE CEJAS 01 BLONDE CLARO",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_laminado_de_cejas_01_blonde_claro_77985491_61062_zoom.webp"
     },
     {
       "source_id": "46368",
@@ -8445,7 +8395,7 @@
       "source_price": 7150.0,
       "compare_at_price": null,
       "source_image_urls": [
-        "https://doan.com.ar/image/catalog/doan/77961099.jpg"
+        "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_laminado_de_cejas_02_brown_medio_77985934_61064_zoom.webp"
       ],
       "barcode": "77961099",
       "specifications": {
@@ -8456,7 +8406,11 @@
       "image_urls": [
         "/catalog/idi/idi-doan-46368.webp"
       ],
-      "thumbnail_url": "/catalog/idi/idi-doan-46368-thumb.webp"
+      "thumbnail_url": "/catalog/idi/idi-doan-46368-thumb.webp",
+      "image_reference_url": "https://www.anikashop.com.ar/idi-laminado-de-cejas-02-m-me-",
+      "image_reference_match": "Manually reviewed brand, product family and explicit shade; supplier barcodes differ.",
+      "image_reference_name": "IDI LAMINADO DE CEJAS 02 BROWN MEDIO",
+      "stored_source_image_url": "https://anika3.nyc3.cdn.digitaloceanspaces.com/productos/idi_laminado_de_cejas_02_brown_medio_77985934_61064_zoom.webp"
     },
     {
       "source_id": "46557",
@@ -10624,33 +10578,6 @@
       "stored_source_image_url": "https://doan.com.ar/image/cache/catalog/doan/77994110-500x500.jpg"
     },
     {
-      "source_id": "50138",
-      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=201&product_id=50138&page=3&limit=100",
-      "manufacturer_id": "201",
-      "name": "IDI EXHIB.LIFT&SNATCH P/CEJAS x12 Un.",
-      "slug": "idi-doan-50138",
-      "description": "IDI EXHIB.LIFT&SNATCH P/CEJAS x12 Un.\n\nTono: P/CEJAS.",
-      "brand": "IDI",
-      "brand_slug": "idi",
-      "category_slug": "make-up",
-      "product_type": "Maquillaje para cejas",
-      "source_price": 100619.97,
-      "compare_at_price": null,
-      "source_image_urls": [
-        "https://doan.com.ar/image/catalog/doan/7798327602412.jpg"
-      ],
-      "barcode": "7798327602412",
-      "specifications": {
-        "Fragancia/Tono": "P/CEJAS",
-        "Medida": "12 Un."
-      },
-      "listing_price": 100619.97,
-      "image_urls": [
-        "/catalog/idi/idi-doan-50138.webp"
-      ],
-      "thumbnail_url": "/catalog/idi/idi-doan-50138-thumb.webp"
-    },
-    {
       "source_id": "50140",
       "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=201&product_id=50140&page=1&limit=100",
       "manufacturer_id": "201",
@@ -10843,7 +10770,7 @@
       "source_price": 4939.99,
       "compare_at_price": 6175.01,
       "source_image_urls": [
-        "https://doan.com.ar/image/catalog/doan/77986832.jpg"
+        "https://cdn.batitienda.com/baticloud/images/product_picture_4e88579aad6e46e8bd46c03edabe1011_638966400256996812_0_m.png"
       ],
       "barcode": "77986832",
       "specifications": {
@@ -10854,7 +10781,10 @@
       "image_urls": [
         "/catalog/idi/idi-doan-50638.webp"
       ],
-      "thumbnail_url": "/catalog/idi/idi-doan-50638-thumb.webp"
+      "thumbnail_url": "/catalog/idi/idi-doan-50638-thumb.webp",
+      "image_reference_url": "https://www.farmafullweb.com.ar/shop/product/idi-polvo-compacto-soft-poeder-all-day-06-camel-beige-WS3704383",
+      "image_reference_match": "Reviewed exact brand, product line and shade 06 Camel Beige",
+      "stored_source_image_url": "https://cdn.batitienda.com/baticloud/images/product_picture_4e88579aad6e46e8bd46c03edabe1011_638966400256996812_0_m.png"
     },
     {
       "source_id": "50683",
@@ -10904,12 +10834,91 @@
       "reason": "Ficha de exhibición u obsequio con precio simbólico; no es una oferta comercial verificable."
     }
   ],
-  "image_failures": [
-    "idi-doan-27991 77947697 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947697.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947697.jpg']",
-    "idi-doan-50138 7798327602412 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602412.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602412.jpg']",
-    "idi-doan-27990 77947680 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg']",
-    "idi-doan-46368 77961099 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg']",
-    "idi-doan-50638 77986832 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77986832.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77986832.jpg']",
-    "idi-doan-46367 77961082 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg']"
+  "image_failures": [],
+  "pending_products": [
+    {
+      "source_id": "27990",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=201&product_id=27990&page=1&limit=100",
+      "manufacturer_id": "201",
+      "name": "IDI * ESM.HIPOAL. 35-NIMET",
+      "slug": "idi-doan-27990",
+      "description": "IDI * ESM.HIPOAL. 35-NIMET.\n\nTono: 35-NIMET.",
+      "brand": "IDI",
+      "brand_slug": "idi",
+      "category_slug": "make-up",
+      "product_type": "Esmaltes de uñas",
+      "source_price": 1787.5,
+      "compare_at_price": 3575.01,
+      "source_image_urls": [
+        "https://doan.com.ar/image/catalog/doan/77947680.jpg"
+      ],
+      "barcode": "77947680",
+      "specifications": {
+        "Fragancia/Tono": "35-NIMET",
+        "Medida": "100 ml."
+      },
+      "listing_price": 1787.5,
+      "image_urls": [
+        "/catalog/idi/idi-doan-27990.webp"
+      ],
+      "thumbnail_url": "/catalog/idi/idi-doan-27990-thumb.webp",
+      "pending_reason": "No se encontró una fotografía verificable del producto/presentación en Doan ni en las fuentes alternativas revisadas."
+    },
+    {
+      "source_id": "27991",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=201&product_id=27991&page=1&limit=100",
+      "manufacturer_id": "201",
+      "name": "IDI * ESM.HIPOAL. 36-BUKET",
+      "slug": "idi-doan-27991",
+      "description": "IDI * ESM.HIPOAL. 36-BUKET.\n\nTono: 36-BUKET.",
+      "brand": "IDI",
+      "brand_slug": "idi",
+      "category_slug": "make-up",
+      "product_type": "Esmaltes de uñas",
+      "source_price": 1787.5,
+      "compare_at_price": 3575.01,
+      "source_image_urls": [
+        "https://doan.com.ar/image/catalog/doan/77947697.jpg"
+      ],
+      "barcode": "77947697",
+      "specifications": {
+        "Fragancia/Tono": "36-BUKET",
+        "Medida": ""
+      },
+      "listing_price": 1787.5,
+      "image_urls": [
+        "/catalog/idi/idi-doan-27991.webp"
+      ],
+      "thumbnail_url": "/catalog/idi/idi-doan-27991-thumb.webp",
+      "pending_reason": "No se encontró una fotografía verificable del producto/presentación en Doan ni en las fuentes alternativas revisadas."
+    },
+    {
+      "source_id": "50138",
+      "source_url": "https://doan.com.ar/index.php?route=product/product&manufacturer_id=201&product_id=50138&page=3&limit=100",
+      "manufacturer_id": "201",
+      "name": "IDI EXHIB.LIFT&SNATCH P/CEJAS x12 Un.",
+      "slug": "idi-doan-50138",
+      "description": "IDI EXHIB.LIFT&SNATCH P/CEJAS x12 Un.\n\nTono: P/CEJAS.",
+      "brand": "IDI",
+      "brand_slug": "idi",
+      "category_slug": "make-up",
+      "product_type": "Maquillaje para cejas",
+      "source_price": 100619.97,
+      "compare_at_price": null,
+      "source_image_urls": [
+        "https://doan.com.ar/image/catalog/doan/7798327602412.jpg"
+      ],
+      "barcode": "7798327602412",
+      "specifications": {
+        "Fragancia/Tono": "P/CEJAS",
+        "Medida": "12 Un."
+      },
+      "listing_price": 100619.97,
+      "image_urls": [
+        "/catalog/idi/idi-doan-50138.webp"
+      ],
+      "thumbnail_url": "/catalog/idi/idi-doan-50138-thumb.webp",
+      "pending_reason": "No se encontró una fotografía verificable del producto/presentación en Doan ni en las fuentes alternativas revisadas."
+    }
   ]
 }
