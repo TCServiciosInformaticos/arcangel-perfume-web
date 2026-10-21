@@ -24,9 +24,11 @@ import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/
 import { Route as ProductoSlugRouteImport } from './routes/producto.$slug'
 import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable.oauth.consent'
 import { Route as AuthenticatedAdminCategoriasRouteImport } from './routes/_authenticated/admin.categorias'
+import { Route as AuthenticatedAdminPedidosRouteImport } from './routes/_authenticated/admin.pedidos'
 import { Route as AuthenticatedAdminPoliticaPreciosRouteImport } from './routes/_authenticated/admin.politica-precios'
 import { Route as AuthenticatedAdminProductosRouteImport } from './routes/_authenticated/admin.productos'
 import { Route as ApiPublicMercadopagoWebhookRouteImport } from './routes/api/public/mercadopago-webhook'
+import { Route as ApiPublicOrderMaintenanceRouteImport } from './routes/api/public/order-maintenance'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -104,6 +106,12 @@ const AuthenticatedAdminCategoriasRoute =
     path: '/categorias',
     getParentRoute: () => AuthenticatedAdminRoute,
   } as any)
+const AuthenticatedAdminPedidosRoute =
+  AuthenticatedAdminPedidosRouteImport.update({
+    id: '/pedidos',
+    path: '/pedidos',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedAdminPoliticaPreciosRoute =
   AuthenticatedAdminPoliticaPreciosRouteImport.update({
     id: '/politica-precios',
@@ -122,6 +130,12 @@ const ApiPublicMercadopagoWebhookRoute =
     path: '/api/public/mercadopago-webhook',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicOrderMaintenanceRoute =
+  ApiPublicOrderMaintenanceRouteImport.update({
+    id: '/api/public/order-maintenance',
+    path: '/api/public/order-maintenance',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -138,9 +152,11 @@ export interface FileRoutesByFullPath {
   '/producto/$slug': typeof ProductoSlugRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/admin/pedidos': typeof AuthenticatedAdminPedidosRoute
   '/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
+  '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -157,9 +173,11 @@ export interface FileRoutesByTo {
   '/producto/$slug': typeof ProductoSlugRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/admin/pedidos': typeof AuthenticatedAdminPedidosRoute
   '/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
+  '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -178,9 +196,11 @@ export interface FileRoutesById {
   '/producto/$slug': typeof ProductoSlugRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/_authenticated/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/_authenticated/admin/pedidos': typeof AuthenticatedAdminPedidosRoute
   '/_authenticated/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/_authenticated/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
+  '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -199,9 +219,11 @@ export interface FileRouteTypes {
     | '/producto/$slug'
     | '/.lovable/oauth/consent'
     | '/admin/categorias'
+    | '/admin/pedidos'
     | '/admin/politica-precios'
     | '/admin/productos'
     | '/api/public/mercadopago-webhook'
+    | '/api/public/order-maintenance'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -218,9 +240,11 @@ export interface FileRouteTypes {
     | '/producto/$slug'
     | '/.lovable/oauth/consent'
     | '/admin/categorias'
+    | '/admin/pedidos'
     | '/admin/politica-precios'
     | '/admin/productos'
     | '/api/public/mercadopago-webhook'
+    | '/api/public/order-maintenance'
   id:
     | '__root__'
     | '/'
@@ -238,9 +262,11 @@ export interface FileRouteTypes {
     | '/producto/$slug'
     | '/.lovable/oauth/consent'
     | '/_authenticated/admin/categorias'
+    | '/_authenticated/admin/pedidos'
     | '/_authenticated/admin/politica-precios'
     | '/_authenticated/admin/productos'
     | '/api/public/mercadopago-webhook'
+    | '/api/public/order-maintenance'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -258,6 +284,7 @@ export interface RootRouteChildren {
   ProductoSlugRoute: typeof ProductoSlugRoute
   DotlovableOauthConsentRoute: typeof DotlovableOauthConsentRoute
   ApiPublicMercadopagoWebhookRoute: typeof ApiPublicMercadopagoWebhookRoute
+  ApiPublicOrderMaintenanceRoute: typeof ApiPublicOrderMaintenanceRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -367,6 +394,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminCategoriasRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/admin/pedidos': {
+      id: '/_authenticated/admin/pedidos'
+      path: '/pedidos'
+      fullPath: '/admin/pedidos'
+      preLoaderRoute: typeof AuthenticatedAdminPedidosRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/politica-precios': {
       id: '/_authenticated/admin/politica-precios'
       path: '/politica-precios'
@@ -388,17 +422,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicMercadopagoWebhookRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/order-maintenance': {
+      id: '/api/public/order-maintenance'
+      path: '/api/public/order-maintenance'
+      fullPath: '/api/public/order-maintenance'
+      preLoaderRoute: typeof ApiPublicOrderMaintenanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminCategoriasRoute: typeof AuthenticatedAdminCategoriasRoute
+  AuthenticatedAdminPedidosRoute: typeof AuthenticatedAdminPedidosRoute
   AuthenticatedAdminPoliticaPreciosRoute: typeof AuthenticatedAdminPoliticaPreciosRoute
   AuthenticatedAdminProductosRoute: typeof AuthenticatedAdminProductosRoute
 }
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminCategoriasRoute: AuthenticatedAdminCategoriasRoute,
+  AuthenticatedAdminPedidosRoute: AuthenticatedAdminPedidosRoute,
   AuthenticatedAdminPoliticaPreciosRoute:
     AuthenticatedAdminPoliticaPreciosRoute,
   AuthenticatedAdminProductosRoute: AuthenticatedAdminProductosRoute,
@@ -434,6 +477,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProductoSlugRoute: ProductoSlugRoute,
   DotlovableOauthConsentRoute: DotlovableOauthConsentRoute,
   ApiPublicMercadopagoWebhookRoute: ApiPublicMercadopagoWebhookRoute,
+  ApiPublicOrderMaintenanceRoute: ApiPublicOrderMaintenanceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

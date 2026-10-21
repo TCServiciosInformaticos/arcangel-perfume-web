@@ -5,19 +5,22 @@ import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/_authenticated/admin")({
-  head: () => ({ meta: [
-    { title: "Panel admin · El Arcángel" },
-    { name: "description", content: "Administración de la tienda El Arcángel." },
-    { property: "og:title", content: "Panel de administración — El Arcángel" },
-    { property: "og:description", content: "Gestión de la tienda y su catálogo." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary" },
-  ] }),
+  head: () => ({
+    meta: [
+      { title: "Panel admin · El Arcángel" },
+      { name: "description", content: "Administración de la tienda El Arcángel." },
+      { property: "og:title", content: "Panel de administración — El Arcángel" },
+      { property: "og:description", content: "Gestión de la tienda y su catálogo." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
   component: AdminLayout,
 });
 
 const NAV = [
   { to: "/admin", label: "Resumen", icon: LayoutDashboard, exact: true },
+  { to: "/admin/pedidos", label: "Pedidos", icon: ShoppingBag, exact: false },
   { to: "/admin/productos", label: "Productos", icon: Package, exact: false },
   { to: "/admin/categorias", label: "Categorías", icon: FolderTree, exact: false },
   { to: "/admin/politica-precios", label: "Política de Precios", icon: Percent, exact: false },
@@ -35,7 +38,11 @@ function AdminLayout() {
   }
 
   if (loading || !user) {
-    return <div className="flex min-h-screen items-center justify-center text-muted-foreground">Cargando…</div>;
+    return (
+      <div className="flex min-h-screen items-center justify-center text-muted-foreground">
+        Cargando…
+      </div>
+    );
   }
 
   if (!isAdmin) {
@@ -61,7 +68,10 @@ function AdminLayout() {
       <header className="border-b border-border bg-background">
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link to="/" className="font-serif text-lg text-foreground">
-            El Arcángel <span className="text-xs font-sans font-medium text-muted-foreground">· Panel admin</span>
+            El Arcángel{" "}
+            <span className="text-xs font-sans font-medium text-muted-foreground">
+              · Panel admin
+            </span>
           </Link>
           <div className="flex items-center gap-3">
             <span className="hidden text-xs text-muted-foreground sm:inline">{user?.email}</span>
@@ -84,7 +94,9 @@ function AdminLayout() {
                   key={n.to}
                   to={n.to}
                   className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                    active ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-accent/30"
+                    active
+                      ? "bg-primary text-primary-foreground"
+                      : "text-foreground hover:bg-accent/30"
                   }`}
                 >
                   <n.icon className="h-4 w-4 shrink-0" /> {n.label}
@@ -94,9 +106,7 @@ function AdminLayout() {
           </nav>
         </aside>
 
-        <main className="min-w-0 flex-1">
-          {isOverview ? <AdminOverview /> : <Outlet />}
-        </main>
+        <main className="min-w-0 flex-1">{isOverview ? <AdminOverview /> : <Outlet />}</main>
       </div>
     </div>
   );
@@ -106,7 +116,9 @@ function AdminOverview() {
   return (
     <div>
       <h1 className="font-serif text-3xl text-foreground">Resumen</h1>
-      <p className="mt-1 text-sm text-muted-foreground">Gestioná el catálogo desde el menú lateral.</p>
+      <p className="mt-1 text-sm text-muted-foreground">
+        Gestioná el catálogo desde el menú lateral.
+      </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Link
           to="/admin/productos"
@@ -128,15 +140,20 @@ function AdminOverview() {
             Creá, ordená y gestioná las categorías y marcas/subcategorías del catálogo.
           </p>
         </Link>
-        <Link to="/admin/politica-precios" className="group rounded-md border border-border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-md">
+        <Link
+          to="/admin/politica-precios"
+          className="group rounded-md border border-border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-md"
+        >
           <Percent className="h-7 w-7 text-primary" />
           <h2 className="mt-3 font-serif text-xl text-foreground">Política de Precios</h2>
         </Link>
-        <div className="rounded-xl border border-dashed border-border bg-card/60 p-6">
+        <Link to="/admin/pedidos" className="rounded-xl border border-border bg-card p-6">
           <ShoppingBag className="h-7 w-7 text-muted-foreground" />
           <h2 className="mt-3 font-serif text-xl text-foreground">Pedidos</h2>
-          <p className="mt-1 text-sm text-muted-foreground">Próximamente: listado de pedidos y reenvío por WhatsApp.</p>
-        </div>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Consultá pedidos, pagos, reservas de stock e historial, y recuperá compras pendientes.
+          </p>
+        </Link>
       </div>
     </div>
   );

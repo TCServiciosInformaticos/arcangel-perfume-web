@@ -119,8 +119,113 @@ export type Database = {
           },
         ]
       }
+      order_payment_attempts: {
+        Row: {
+          id: string
+          order_id: string
+          preference_id: string | null
+          checkout_url: string | null
+          payment_id: string | null
+          state: string
+          total: number
+          subtotal: number
+          shipping_cost: number
+          items: Json
+          expires_at: string
+          created_at: string
+          last_error: string | null
+        }
+        Insert: {
+          id?: string
+          order_id?: string
+          preference_id?: string | null
+          checkout_url?: string | null
+          payment_id?: string | null
+          state?: string
+          total?: number
+          subtotal?: number
+          shipping_cost?: number
+          items?: Json
+          expires_at?: string
+          created_at?: string
+          last_error?: string | null
+        }
+        Update: {
+          id?: string
+          order_id?: string
+          preference_id?: string | null
+          checkout_url?: string | null
+          payment_id?: string | null
+          state?: string
+          total?: number
+          subtotal?: number
+          shipping_cost?: number
+          items?: Json
+          expires_at?: string
+          created_at?: string
+          last_error?: string | null
+        }
+        Relationships: []
+      }
+      order_events: {
+        Row: {
+          id: number
+          order_id: string
+          kind: string
+          detail: Json
+          created_at: string
+        }
+        Insert: {
+          id?: number
+          order_id?: string
+          kind?: string
+          detail?: Json
+          created_at?: string
+        }
+        Update: {
+          id?: number
+          order_id?: string
+          kind?: string
+          detail?: Json
+          created_at?: string
+        }
+        Relationships: []
+      }
+      order_stock_reservations: {
+        Row: {
+          order_id: string
+          product_id: string
+          attempt_id: string
+          quantity: number
+          expires_at: string
+        }
+        Insert: {
+          order_id?: string
+          product_id?: string
+          attempt_id?: string
+          quantity?: number
+          expires_at?: string
+        }
+        Update: {
+          order_id?: string
+          product_id?: string
+          attempt_id?: string
+          quantity?: number
+          expires_at?: string
+        }
+        Relationships: []
+      }
       orders: {
         Row: {
+          checkout_key: string | null
+          abandon_at: string
+          reservation_until: string | null
+          stock_committed_at: string | null
+          needs_review: boolean
+          review_reason: string | null
+          last_reconciled_at: string | null
+          archived_at: string | null
+
           created_at: string
           customer_email: string
           customer_name: string
@@ -147,6 +252,15 @@ export type Database = {
           whatsapp_sent: boolean
         }
         Insert: {
+          checkout_key?: string | null
+          abandon_at?: string
+          reservation_until?: string | null
+          stock_committed_at?: string | null
+          needs_review?: boolean
+          review_reason?: string | null
+          last_reconciled_at?: string | null
+          archived_at?: string | null
+
           created_at?: string
           customer_email: string
           customer_name: string
@@ -173,6 +287,15 @@ export type Database = {
           whatsapp_sent?: boolean
         }
         Update: {
+          checkout_key?: string | null
+          abandon_at?: string
+          reservation_until?: string | null
+          stock_committed_at?: string | null
+          needs_review?: boolean
+          review_reason?: string | null
+          last_reconciled_at?: string | null
+          archived_at?: string | null
+
           created_at?: string
           customer_email?: string
           customer_name?: string
@@ -433,12 +556,21 @@ export type Database = {
         }
         Returns: boolean
       }
+      reserve_order_checkout: { Args: {payload: Json; existing_id?: string | null; request_key?: string | null}; Returns: Json }
+      attach_order_preference: { Args: {attempt_id: string; preference: string; checkout: string}; Returns: undefined }
+      fail_order_attempt: { Args: {attempt_id: string}; Returns: undefined }
+      apply_verified_order_payment: { Args: {attempt_id: string; payment: string; provider_status: string}; Returns: undefined }
+      expire_order_reservations: { Args: Record<string, never>; Returns: undefined }
+      admin_order_action: { Args: {oid: string; action: string; note?: string | null}; Returns: undefined }
+      authorize_order_job: { Args: {provided_token: string}; Returns: boolean }
       update_products_from_excel: { Args: { rows: Json }; Returns: number }
     }
     Enums: {
       app_role: "admin"
       delivery_method: "pickup" | "shipping"
       order_status:
+        | "abandoned"
+        | "payment_rejected"
         | "pending_payment"
         | "paid"
         | "preparing"
@@ -576,6 +708,8 @@ export const Constants = {
       app_role: ["admin"],
       delivery_method: ["pickup", "shipping"],
       order_status: [
+        "abandoned",
+        "payment_rejected",
         "pending_payment",
         "paid",
         "preparing",

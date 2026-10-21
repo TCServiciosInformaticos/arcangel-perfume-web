@@ -13,30 +13,48 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useCart } from "@/lib/cart-context";
 import { formatARS } from "@/lib/format";
-import { createCheckout } from "@/lib/checkout.functions";
+import { createCheckout, resumeOrderCheckout } from "@/lib/checkout.functions";
 import { BRANCHES, type BranchId } from "@/lib/branches";
 
 const settingsQuery = queryOptions({
   queryKey: ["settings", "public"],
   queryFn: async () => {
-    const { data } = await supabase.from("settings").select("shipping_cost, shipping_zones, pickup_address, store_name").eq("id", 1).maybeSingle();
+    const { data } = await supabase
+      .from("settings")
+      .select("shipping_cost, shipping_zones, pickup_address, store_name")
+      .eq("id", 1)
+      .maybeSingle();
     return data;
   },
 });
 
 export const Route = createFileRoute("/checkout")({
-  head: () => ({ meta: [
-    { title: "Finalizar compra — Perfumería El Arcángel" },
-    { name: "description", content: "Completá tus datos y pagá tu pedido con Mercado Pago en El Arcángel." },
-    { property: "og:title", content: "Finalizar compra — El Arcángel" },
-    { property: "og:description", content: "Comprá online con entrega por la zona o retiro en el local." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary" },
-    { name: "robots", content: "noindex" },
-  ] }),
+  head: () => ({
+    meta: [
+      { title: "Finalizar compra — Perfumería El Arcángel" },
+      {
+        name: "description",
+        content: "Completá tus datos y pagá tu pedido con Mercado Pago en El Arcángel.",
+      },
+      { property: "og:title", content: "Finalizar compra — El Arcángel" },
+      {
+        property: "og:description",
+        content: "Comprá online con entrega por la zona o retiro en el local.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "robots", content: "noindex" },
+    ],
+  }),
   loader: ({ context }) => context.queryClient.ensureQueryData(settingsQuery),
   component: CheckoutPage,
 });
@@ -60,6 +78,7 @@ function CheckoutPage() {
   const { items, subtotal } = useCart();
   const { data: settings } = useSuspenseQuery(settingsQuery);
   const checkout = useServerFn(createCheckout);
+  const resume = useServerFn(resumeOrderCheckout);
   const [method, setMethod] = useState<"pickup" | "shipping">("shipping");
   const [submitting, setSubmitting] = useState(false);
   const [timeSlot, setTimeSlot] = useState<"morning" | "afternoon" | "evening" | "">("");
@@ -83,7 +102,8 @@ function CheckoutPage() {
       delivery_city: String(fd.get("delivery_city") ?? ""),
       delivery_zip: String(fd.get("delivery_zip") ?? ""),
       delivery_day: String(fd.get("delivery_day") ?? ""),
-      delivery_time_slot: (timeSlot || undefined) as "morning" | "afternoon" | "evening" | undefined,
+      delivery_time_slot: (timeSlot || undefined) as
+        "morning" | "afternoon" | "evening" | undefined,
       notes: String(fd.get("notes") ?? ""),
     };
     const parsed = FormSchema.safeParse(raw);
@@ -91,7 +111,10 @@ function CheckoutPage() {
       toast.error(parsed.error.issues[0]?.message ?? "Revisá el formulario");
       return;
     }
-    if (method === "shipping" && (!parsed.data.delivery_street || !parsed.data.delivery_number || !parsed.data.delivery_city)) {
+    if (
+      method === "shipping" &&
+      (!parsed.data.delivery_street || !parsed.data.delivery_number || !parsed.data.delivery_city)
+    ) {
       toast.error("Completá la dirección de envío");
       return;
     }
@@ -102,14 +125,38 @@ function CheckoutPage() {
 
     setSubmitting(true);
     try {
-      const res = await checkout({
-        data: {
-          ...parsed.data,
-          pickup_branch: method === "pickup" ? (branch as BranchId) : null,
-          items: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
-        },
-      });
-      window.sessionStorage.setItem("arcangel-pending-order", JSON.stringify({ orderId: res.orderId }));
+      const checkoutData = {
+        ...parsed.data,
+        pickup_branch: method === "pickup" ? (branch as BranchId) : null,
+        items: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
+      };
+      const fingerprint = JSON.stringify(checkoutData);
+      let saved: {
+        fingerprint: string;
+        requestKey: string;
+        orderId?: string;
+        token?: string;
+      } | null = null;
+      try {
+        saved = JSON.parse(window.localStorage.getItem("arcangel-checkout-recovery") || "null");
+      } catch {
+        /* start a new checkout */
+      }
+      if (saved?.fingerprint !== fingerprint)
+        saved = { fingerprint, requestKey: crypto.randomUUID() };
+      window.localStorage.setItem("arcangel-checkout-recovery", JSON.stringify(saved));
+      const res =
+        saved.orderId && saved.token
+          ? await resume({ data: { orderId: saved.orderId, token: saved.token } })
+          : await checkout({ data: { checkout: checkoutData, requestKey: saved.requestKey } });
+      window.localStorage.setItem(
+        "arcangel-checkout-recovery",
+        JSON.stringify({ ...saved, orderId: res.orderId, token: res.token }),
+      );
+      window.sessionStorage.setItem(
+        "arcangel-pending-order",
+        JSON.stringify({ orderId: res.orderId }),
+      );
       window.location.assign(res.init_point);
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "No se pudo iniciar el pago");
@@ -123,7 +170,9 @@ function CheckoutPage() {
         <SiteHeader />
         <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-16 text-center">
           <h1 className="font-serif text-3xl">No hay productos en tu carrito</h1>
-          <Link to="/productos" className="mt-6 inline-block text-primary underline">Volver al catálogo</Link>
+          <Link to="/productos" className="mt-6 inline-block text-primary underline">
+            Volver al catálogo
+          </Link>
         </main>
         <SiteFooter />
       </div>
@@ -141,23 +190,51 @@ function CheckoutPage() {
             <section className="rounded-lg border border-border bg-card p-6">
               <h2 className="font-serif text-2xl">Tus datos</h2>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                <Field label="Nombre y apellido" name="customer_name" required autoComplete="name" />
-                <Field label="Email" name="customer_email" type="email" required autoComplete="email" />
-                <Field label="WhatsApp" name="customer_whatsapp" required placeholder="+54 9 11 ..." autoComplete="tel" />
+                <Field
+                  label="Nombre y apellido"
+                  name="customer_name"
+                  required
+                  autoComplete="name"
+                />
+                <Field
+                  label="Email"
+                  name="customer_email"
+                  type="email"
+                  required
+                  autoComplete="email"
+                />
+                <Field
+                  label="WhatsApp"
+                  name="customer_whatsapp"
+                  required
+                  placeholder="+54 9 11 ..."
+                  autoComplete="tel"
+                />
               </div>
             </section>
 
             <section className="rounded-lg border border-border bg-card p-6">
               <h2 className="font-serif text-2xl">Entrega</h2>
-              <RadioGroup value={method} onValueChange={(v) => setMethod(v as "pickup" | "shipping")} className="mt-4 grid gap-3 sm:grid-cols-2">
-                <label className={`flex cursor-pointer items-start gap-3 rounded-md border p-4 ${method === "shipping" ? "border-primary bg-primary/5" : "border-border"}`}>
+              <RadioGroup
+                value={method}
+                onValueChange={(v) => setMethod(v as "pickup" | "shipping")}
+                className="mt-4 grid gap-3 sm:grid-cols-2"
+              >
+                <label
+                  className={`flex cursor-pointer items-start gap-3 rounded-md border p-4 ${method === "shipping" ? "border-primary bg-primary/5" : "border-border"}`}
+                >
                   <RadioGroupItem value="shipping" />
                   <div>
                     <div className="font-medium">Envío a domicilio</div>
-                    <div className="text-xs text-muted-foreground">{settings?.shipping_zones ?? "CABA y alrededores"}{shippingCost > 0 ? ` · ${formatARS(shippingCost)}` : ""}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {settings?.shipping_zones ?? "CABA y alrededores"}
+                      {shippingCost > 0 ? ` · ${formatARS(shippingCost)}` : ""}
+                    </div>
                   </div>
                 </label>
-                <label className={`flex cursor-pointer items-start gap-3 rounded-md border p-4 ${method === "pickup" ? "border-primary bg-primary/5" : "border-border"}`}>
+                <label
+                  className={`flex cursor-pointer items-start gap-3 rounded-md border p-4 ${method === "pickup" ? "border-primary bg-primary/5" : "border-border"}`}
+                >
                   <RadioGroupItem value="pickup" />
                   <div>
                     <div className="font-medium">Retiro en sucursal</div>
@@ -168,10 +245,19 @@ function CheckoutPage() {
 
               {method === "pickup" && (
                 <div className="mt-6">
-                  <Label>¿En qué sucursal retirás?<span className="text-destructive"> *</span></Label>
-                  <RadioGroup value={branch} onValueChange={(v) => setBranch(v as BranchId)} className="mt-2 grid gap-3 sm:grid-cols-2">
+                  <Label>
+                    ¿En qué sucursal retirás?<span className="text-destructive"> *</span>
+                  </Label>
+                  <RadioGroup
+                    value={branch}
+                    onValueChange={(v) => setBranch(v as BranchId)}
+                    className="mt-2 grid gap-3 sm:grid-cols-2"
+                  >
                     {BRANCHES.map((b) => (
-                      <label key={b.id} className={`flex cursor-pointer items-start gap-3 rounded-md border p-4 ${branch === b.id ? "border-primary bg-primary/5" : "border-border"}`}>
+                      <label
+                        key={b.id}
+                        className={`flex cursor-pointer items-start gap-3 rounded-md border p-4 ${branch === b.id ? "border-primary bg-primary/5" : "border-border"}`}
+                      >
                         <RadioGroupItem value={b.id} />
                         <div>
                           <div className="font-medium">{b.name}</div>
@@ -180,24 +266,41 @@ function CheckoutPage() {
                       </label>
                     ))}
                   </RadioGroup>
-                  <p className="mt-2 text-xs text-muted-foreground">Lunes a sábado de 9 a 13 y de 16 a 20 h.</p>
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    Lunes a sábado de 9 a 13 y de 16 a 20 h.
+                  </p>
                 </div>
               )}
 
               {method === "shipping" && (
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  <Field label="Calle" name="delivery_street" required autoComplete="address-line1" />
+                  <Field
+                    label="Calle"
+                    name="delivery_street"
+                    required
+                    autoComplete="address-line1"
+                  />
                   <div className="grid grid-cols-2 gap-4">
                     <Field label="Número" name="delivery_number" required />
                     <Field label="Piso / Depto" name="delivery_apartment" />
                   </div>
-                  <Field label="Localidad" name="delivery_city" required autoComplete="address-level2" />
+                  <Field
+                    label="Localidad"
+                    name="delivery_city"
+                    required
+                    autoComplete="address-level2"
+                  />
                   <Field label="Código postal" name="delivery_zip" autoComplete="postal-code" />
                   <Field label="Día preferido" name="delivery_day" placeholder="Ej: martes 28" />
                   <div className="flex flex-col gap-1.5">
                     <Label>Franja horaria</Label>
-                    <Select value={timeSlot} onValueChange={(v) => setTimeSlot(v as typeof timeSlot)}>
-                      <SelectTrigger><SelectValue placeholder="Elegir franja" /></SelectTrigger>
+                    <Select
+                      value={timeSlot}
+                      onValueChange={(v) => setTimeSlot(v as typeof timeSlot)}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Elegir franja" />
+                      </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="morning">Mañana (9–13 h)</SelectItem>
                         <SelectItem value="afternoon">Tarde (13–18 h)</SelectItem>
@@ -210,7 +313,12 @@ function CheckoutPage() {
 
               <div className="mt-4">
                 <Label htmlFor="notes">Notas (opcional)</Label>
-                <Textarea id="notes" name="notes" placeholder="Timbre, referencias, regalo…" className="mt-1.5" />
+                <Textarea
+                  id="notes"
+                  name="notes"
+                  placeholder="Timbre, referencias, regalo…"
+                  className="mt-1.5"
+                />
               </div>
             </section>
           </div>
@@ -220,15 +328,23 @@ function CheckoutPage() {
             <ul className="divide-y divide-border text-sm">
               {items.map((it) => (
                 <li key={it.productId} className="flex justify-between py-2">
-                  <span className="pr-2">{it.quantity}× {it.name}</span>
+                  <span className="pr-2">
+                    {it.quantity}× {it.name}
+                  </span>
                   <span className="font-medium">{formatARS(it.price * it.quantity)}</span>
                 </li>
               ))}
             </ul>
             <dl className="space-y-1.5 text-sm">
-              <div className="flex justify-between"><dt className="text-muted-foreground">Subtotal</dt><dd>{formatARS(subtotal)}</dd></div>
+              <div className="flex justify-between">
+                <dt className="text-muted-foreground">Subtotal</dt>
+                <dd>{formatARS(subtotal)}</dd>
+              </div>
               {method === "shipping" && (
-                <div className="flex justify-between"><dt className="text-muted-foreground">Envío</dt><dd>{shippingCost > 0 ? formatARS(shippingCost) : "Gratis"}</dd></div>
+                <div className="flex justify-between">
+                  <dt className="text-muted-foreground">Envío</dt>
+                  <dd>{shippingCost > 0 ? formatARS(shippingCost) : "Gratis"}</dd>
+                </div>
               )}
             </dl>
             <div className="flex items-center justify-between border-t border-border pt-3">
@@ -236,7 +352,13 @@ function CheckoutPage() {
               <span className="font-serif text-2xl text-primary">{formatARS(total)}</span>
             </div>
             <Button type="submit" size="lg" className="w-full" disabled={submitting}>
-              {submitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Iniciando pago…</> : "Pagar con MercadoPago"}
+              {submitting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Iniciando pago…
+                </>
+              ) : (
+                "Pagar con MercadoPago"
+              )}
             </Button>
             <p className="text-center text-xs text-muted-foreground">
               Después del pago aprobado, podrás abrir WhatsApp y enviar tu pedido completo al dueño.
@@ -249,11 +371,35 @@ function CheckoutPage() {
   );
 }
 
-function Field({ label, name, type = "text", required, placeholder, autoComplete }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string; autoComplete?: string }) {
+function Field({
+  label,
+  name,
+  type = "text",
+  required,
+  placeholder,
+  autoComplete,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  placeholder?: string;
+  autoComplete?: string;
+}) {
   return (
     <div className="flex flex-col gap-1.5">
-      <Label htmlFor={name}>{label}{required && <span className="text-destructive"> *</span>}</Label>
-      <Input id={name} name={name} type={type} required={required} placeholder={placeholder} autoComplete={autoComplete} />
+      <Label htmlFor={name}>
+        {label}
+        {required && <span className="text-destructive"> *</span>}
+      </Label>
+      <Input
+        id={name}
+        name={name}
+        type={type}
+        required={required}
+        placeholder={placeholder}
+        autoComplete={autoComplete}
+      />
     </div>
   );
 }
