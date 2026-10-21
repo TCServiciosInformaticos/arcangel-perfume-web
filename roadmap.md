@@ -1,5 +1,10 @@
 # Flujo de compra
 
+## Política de Precios
+- [x] Agregar apartado con filtros, selección paginada, porcentaje de aumento/descuento y vista previa.
+- [x] Aplicar precios de forma atómica solo para administradores, con redondeo hacia arriba y protección ante cambios simultáneos.
+- [x] Verificar cálculos y actualización real desde el panel con un artículo temporal eliminado al finalizar, sin modificar precios existentes.
+
 ## Administrador y sucursales
 - [x] Verificar el nombre Cuidado Personal sin cambiar enlaces existentes.
 - [x] Cargar productos del administrador por páginas y conservar la exportación completa; navegación real 1 → 2 → 1 verificada, 24 filas por petición.

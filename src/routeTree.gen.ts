@@ -24,6 +24,7 @@ import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/
 import { Route as ProductoSlugRouteImport } from './routes/producto.$slug'
 import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable.oauth.consent'
 import { Route as AuthenticatedAdminCategoriasRouteImport } from './routes/_authenticated/admin.categorias'
+import { Route as AuthenticatedAdminPoliticaPreciosRouteImport } from './routes/_authenticated/admin.politica-precios'
 import { Route as AuthenticatedAdminProductosRouteImport } from './routes/_authenticated/admin.productos'
 import { Route as ApiPublicMercadopagoWebhookRouteImport } from './routes/api/public/mercadopago-webhook'
 
@@ -103,6 +104,12 @@ const AuthenticatedAdminCategoriasRoute =
     path: '/categorias',
     getParentRoute: () => AuthenticatedAdminRoute,
   } as any)
+const AuthenticatedAdminPoliticaPreciosRoute =
+  AuthenticatedAdminPoliticaPreciosRouteImport.update({
+    id: '/politica-precios',
+    path: '/politica-precios',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedAdminProductosRoute =
   AuthenticatedAdminProductosRouteImport.update({
     id: '/productos',
@@ -131,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/producto/$slug': typeof ProductoSlugRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
@@ -149,6 +157,7 @@ export interface FileRoutesByTo {
   '/producto/$slug': typeof ProductoSlugRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
@@ -169,6 +178,7 @@ export interface FileRoutesById {
   '/producto/$slug': typeof ProductoSlugRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/_authenticated/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/_authenticated/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/_authenticated/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
 }
@@ -189,6 +199,7 @@ export interface FileRouteTypes {
     | '/producto/$slug'
     | '/.lovable/oauth/consent'
     | '/admin/categorias'
+    | '/admin/politica-precios'
     | '/admin/productos'
     | '/api/public/mercadopago-webhook'
   fileRoutesByTo: FileRoutesByTo
@@ -207,6 +218,7 @@ export interface FileRouteTypes {
     | '/producto/$slug'
     | '/.lovable/oauth/consent'
     | '/admin/categorias'
+    | '/admin/politica-precios'
     | '/admin/productos'
     | '/api/public/mercadopago-webhook'
   id:
@@ -226,6 +238,7 @@ export interface FileRouteTypes {
     | '/producto/$slug'
     | '/.lovable/oauth/consent'
     | '/_authenticated/admin/categorias'
+    | '/_authenticated/admin/politica-precios'
     | '/_authenticated/admin/productos'
     | '/api/public/mercadopago-webhook'
   fileRoutesById: FileRoutesById
@@ -354,6 +367,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminCategoriasRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/admin/politica-precios': {
+      id: '/_authenticated/admin/politica-precios'
+      path: '/politica-precios'
+      fullPath: '/admin/politica-precios'
+      preLoaderRoute: typeof AuthenticatedAdminPoliticaPreciosRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/productos': {
       id: '/_authenticated/admin/productos'
       path: '/productos'
@@ -373,11 +393,14 @@ declare module '@tanstack/react-router' {
 
 interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminCategoriasRoute: typeof AuthenticatedAdminCategoriasRoute
+  AuthenticatedAdminPoliticaPreciosRoute: typeof AuthenticatedAdminPoliticaPreciosRoute
   AuthenticatedAdminProductosRoute: typeof AuthenticatedAdminProductosRoute
 }
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminCategoriasRoute: AuthenticatedAdminCategoriasRoute,
+  AuthenticatedAdminPoliticaPreciosRoute:
+    AuthenticatedAdminPoliticaPreciosRoute,
   AuthenticatedAdminProductosRoute: AuthenticatedAdminProductosRoute,
 }
 
