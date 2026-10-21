@@ -86,7 +86,7 @@ function AdminProductos() {
     placeholderData: keepPreviousData,
     queryFn: async () => {
         const { from, to } = adminPageRange(page);
-        const { data, error } = await supabase
+        const { data, error, count } = await supabase
           .from("products")
           .select(
             "id, slug, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)",
