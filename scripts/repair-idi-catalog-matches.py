@@ -29,6 +29,8 @@ for card in d.select('.product'):
  if e and a and im:index[e.get_text(strip=True)]=(urljoin('https://www.farmax.com.ar/',im['src']),urljoin('https://www.farmax.com.ar/',a['href']))
 print('FARMAX_INDEX',len(index),flush=True)
 manual={
+ 'idi-doan-46367':('https://www.anikashop.com.ar/idi-laminado-de-cejas-01-m-cl-',['IDI','LAMINADO','CEJAS','01','BLONDE']),
+ 'idi-doan-46368':('https://www.anikashop.com.ar/idi-laminado-de-cejas-02-m-me-',['IDI','LAMINADO','CEJAS','02','BROWN']),
  'idi-doan-49389':('https://www.anikashop.com.ar/idi-tinted-found-vit-c-102',['TINTED','FOUNDATION','VIT. C','102']),
  'idi-doan-50683':('https://www.anikashop.com.ar/idi-esm-hipoal-67',['IDI','HIPoAL'.upper(),'67']),
  'idi-doan-50519':('https://www.anikashop.com.ar/idi-primer-skin-silk-vit-c',['IDI','PRIMER','SKIN SILK','VIT.C'])}
@@ -40,4 +42,11 @@ for p in data['products']:
   u,terms=manual[p['slug']];d=get(u);title=d.select_one('h1');im=d.select_one('.product-detail__image img[src]')
   assert title and im and all(t in title.get_text().upper() for t in terms),(p['slug'],title)
   p['source_image_urls']=[urljoin(u,im['src'])];p['image_reference_url']=u;p['image_reference_match']='Manually reviewed brand, product family and explicit shade; supplier barcodes differ.';p['image_reference_name']=title.get_text(' ',strip=True);print('NAME_MATCH',p['slug'],flush=True)
+for p in data['products']:
+ if p['slug']=='idi-doan-50638' and p['slug'] in failed:
+  u='https://www.farmafullweb.com.ar/shop/polvos-y-rubores-PC8786?brand=idi-make-up';d=get(u)
+  for a in d.select('a[href]'):
+   title=a.select_one('h3.kw-details-title');im=a.select_one('img[data-src]')
+   if title and im and all(t in title.get_text().upper() for t in ['IDI','POLVO','ALL DAY','06','CAMEL BEIGE']):
+    p['source_image_urls']=[im['data-src']];p['image_reference_url']=urljoin(u,a['href']);p['image_reference_match']='Reviewed exact brand, product line and shade 06 Camel Beige';print('SHADE_MATCH',p['slug'],flush=True);break
 F.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
