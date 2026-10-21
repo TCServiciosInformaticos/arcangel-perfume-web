@@ -22,6 +22,7 @@ const err = (e: unknown) =>
 async function save(action: string, payload: object) {
   const r = await commerce.rpc("admin_commerce", { action, payload: payload as Json });
   if (r.error) throw r.error;
+  return r.data;
 }
 function CommerceAdmin() {
   const [tab, setTab] = useState("combos");
@@ -466,6 +467,7 @@ function CostEditor() {
     [cost, setCost] = useState(""),
     [barcode, setBarcode] = useState(""),
     [busy, setBusy] = useState(false);
+  const [loadedCost, setLoadedCost] = useState<{ id: string; version?: string } | null>(null);
   const current = useQuery({
     queryKey: ["admin", "cost", p?.id],
     enabled: !!p,
@@ -480,8 +482,11 @@ function CostEditor() {
     },
   });
   useEffect(() => {
-    setCost(current.data ? String(current.data.unit_cost) : "");
-  }, [current.data, p?.id]);
+    if (p && current.isSuccess && !current.isFetching && loadedCost?.id !== p.id) {
+      setCost(current.data ? String(current.data.unit_cost) : "");
+      setLoadedCost({ id: p.id, version: current.data?.updated_at });
+    }
+  }, [current.data, current.isSuccess, current.isFetching, p?.id, loadedCost?.id]);
   return (
     <section className="space-y-4 rounded-xl border bg-card p-4">
       <h2 className="font-serif text-2xl">Costos y códigos de barras</h2>
@@ -499,6 +504,8 @@ function CostEditor() {
           if (r.error || !r.data)
             toast.error("Código no encontrado. Buscá el artículo y asignale ese código.");
           else {
+            setLoadedCost(null);
+            void qc.invalidateQueries({ queryKey: ["admin", "cost", r.data.id] });
             setP(r.data);
             setBarcode(r.data.barcode ?? "");
           }
@@ -506,31 +513,37 @@ function CostEditor() {
       />
       <ProductPicker
         onSelect={(p) => {
+          setLoadedCost(null);
+          void qc.invalidateQueries({ queryKey: ["admin", "cost", p.id] });
           setP(p);
           setBarcode(p.barcode ?? "");
         }}
       />
-      {p && (
+      {p && current.isError && (
+        <p role="alert">No se pudo cargar el costo. Volvé a buscar el artículo.</p>
+      )}
+      {p && loadedCost?.id !== p.id && !current.isError && <p role="status">Cargando costo…</p>}
+      {p && loadedCost?.id === p.id && (
         <form
           className="space-y-3"
           onSubmit={async (e) => {
             e.preventDefault();
             setBusy(true);
             try {
-              await save("cost", {
+              const saved = await save("cost", {
                 product_id: p.id,
                 unit_cost: cost,
                 barcode,
-                expected_updated_at: current.data?.updated_at,
+                expected_updated_at: loadedCost.version,
                 expected_product_updated_at: p.updated_at,
               });
+              const version = saved as {
+                cost_updated_at: string | null;
+                product_updated_at: string;
+              };
+              setLoadedCost({ id: p.id, version: version.cost_updated_at ?? undefined });
+              setP({ ...p, barcode: barcode || null, updated_at: version.product_updated_at });
               await qc.invalidateQueries({ queryKey: ["admin", "cost", p.id] });
-              const updated = await supabase
-                .from("products")
-                .select("id,name,price,stock,article_code,barcode,updated_at")
-                .eq("id", p.id)
-                .single();
-              if (updated.data) setP(updated.data);
               toast.success("Costo y código guardados");
             } catch (e) {
               toast.error(err(e));

@@ -77,9 +77,13 @@ test.beforeEach(async ({ context, page }) => {
       "/rest/v1/product_costs": null,
       "/rest/v1/order_picking": [],
       "/rest/v1/stock_notifications": [],
-      "/rest/v1/rpc/admin_commerce": true,
+      "/rest/v1/rpc/admin_commerce": {
+        cost_updated_at: "2026-01-01T00:00:00Z",
+        product_updated_at: "2026-01-01T00:00:00Z",
+      },
       "/rest/v1/rpc/admin_profit_report": { rows: [], known_margin: 0, unknown_cost_units: 3 },
     };
+    if (path === "/rest/v1/product_costs") await new Promise((r) => setTimeout(r, 350));
     if (Object.prototype.hasOwnProperty.call(extra, path))
       return route.fulfill({
         json: extra[path],

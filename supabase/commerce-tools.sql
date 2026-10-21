@@ -107,6 +107,7 @@ BEGIN
   IF version IS NULL OR version IS DISTINCT FROM nullif(payload->>'expected_product_updated_at','')::timestamptz THEN RAISE EXCEPTION 'El artículo cambió; volvé a buscarlo antes de guardar';END IF;
   UPDATE public.products SET barcode=nullif(trim(payload->>'barcode'),'') WHERE id=(payload->>'product_id')::uuid;
   IF nullif(payload->>'unit_cost','') IS NOT NULL THEN INSERT INTO public.product_costs(product_id,unit_cost) VALUES((payload->>'product_id')::uuid,(payload->>'unit_cost')::numeric) ON CONFLICT(product_id) DO UPDATE SET unit_cost=excluded.unit_cost,updated_at=now();END IF;
+  RETURN jsonb_build_object('cost_updated_at',(SELECT updated_at FROM public.product_costs WHERE product_id=(payload->>'product_id')::uuid),'product_updated_at',(SELECT updated_at FROM public.products WHERE id=(payload->>'product_id')::uuid));
  ELSIF action='pick' THEN
   SELECT * INTO item FROM public.order_items WHERE id=(payload->>'item_id')::uuid;
   IF NOT EXISTS(SELECT 1 FROM public.orders WHERE id=item.order_id AND status IN ('paid','preparing') AND stock_committed_at IS NOT NULL AND NOT needs_review) THEN RAISE EXCEPTION 'El pedido debe estar pagado, con stock confirmado y sin revisión pendiente';END IF;
