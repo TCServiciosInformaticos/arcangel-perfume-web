@@ -71,6 +71,38 @@ export type Database = {
         }
         Relationships: []
       }
+      order_events: {
+        Row: {
+          created_at: string
+          detail: Json
+          id: number
+          kind: string
+          order_id: string
+        }
+        Insert: {
+          created_at?: string
+          detail?: Json
+          id?: never
+          kind: string
+          order_id: string
+        }
+        Update: {
+          created_at?: string
+          detail?: Json
+          id?: never
+          kind?: string
+          order_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_events_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       order_items: {
         Row: {
           created_at: string
@@ -121,161 +153,167 @@ export type Database = {
       }
       order_payment_attempts: {
         Row: {
-          id: string
-          order_id: string
-          preference_id: string | null
           checkout_url: string | null
-          payment_id: string | null
-          state: string
-          total: number
-          subtotal: number
-          shipping_cost: number
+          created_at: string
+          expires_at: string
+          id: string
           items: Json
-          expires_at: string
-          created_at: string
           last_error: string | null
+          order_id: string
+          payment_id: string | null
+          preference_id: string | null
+          shipping_cost: number
+          state: string
+          subtotal: number
+          total: number
         }
         Insert: {
-          id?: string
-          order_id?: string
-          preference_id?: string | null
           checkout_url?: string | null
-          payment_id?: string | null
-          state?: string
-          total?: number
-          subtotal?: number
-          shipping_cost?: number
-          items?: Json
-          expires_at?: string
           created_at?: string
-          last_error?: string | null
-        }
-        Update: {
-          id?: string
-          order_id?: string
-          preference_id?: string | null
-          checkout_url?: string | null
-          payment_id?: string | null
-          state?: string
-          total?: number
-          subtotal?: number
-          shipping_cost?: number
-          items?: Json
-          expires_at?: string
-          created_at?: string
-          last_error?: string | null
-        }
-        Relationships: []
-      }
-      order_events: {
-        Row: {
-          id: number
-          order_id: string
-          kind: string
-          detail: Json
-          created_at: string
-        }
-        Insert: {
-          id?: number
-          order_id?: string
-          kind?: string
-          detail?: Json
-          created_at?: string
-        }
-        Update: {
-          id?: number
-          order_id?: string
-          kind?: string
-          detail?: Json
-          created_at?: string
-        }
-        Relationships: []
-      }
-      order_stock_reservations: {
-        Row: {
-          order_id: string
-          product_id: string
-          attempt_id: string
-          quantity: number
           expires_at: string
-        }
-        Insert: {
-          order_id?: string
-          product_id?: string
-          attempt_id?: string
-          quantity?: number
-          expires_at?: string
+          id?: string
+          items: Json
+          last_error?: string | null
+          order_id: string
+          payment_id?: string | null
+          preference_id?: string | null
+          shipping_cost: number
+          state?: string
+          subtotal: number
+          total: number
         }
         Update: {
-          order_id?: string
-          product_id?: string
-          attempt_id?: string
-          quantity?: number
+          checkout_url?: string | null
+          created_at?: string
           expires_at?: string
+          id?: string
+          items?: Json
+          last_error?: string | null
+          order_id?: string
+          payment_id?: string | null
+          preference_id?: string | null
+          shipping_cost?: number
+          state?: string
+          subtotal?: number
+          total?: number
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "order_payment_attempts_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       order_recovery_emails: {
         Row: {
+          attempts: number
+          created_at: string
+          first_send_at: string | null
           id: string
-          order_id: string
-          state: string
-          payload: Json | null
+          last_error: string | null
           lease_token: string | null
           lease_until: string | null
           next_attempt_at: string
-          attempts: number
-          first_send_at: string | null
-          sent_at: string | null
+          order_id: string
+          payload: Json | null
           provider_email_id: string | null
-          last_error: string | null
-          created_at: string
+          sent_at: string | null
+          state: string
         }
         Insert: {
+          attempts?: number
+          created_at?: string
+          first_send_at?: string | null
           id?: string
-          order_id?: string
-          state?: string
-          payload?: Json | null
+          last_error?: string | null
           lease_token?: string | null
           lease_until?: string | null
           next_attempt_at?: string
-          attempts?: number
-          first_send_at?: string | null
-          sent_at?: string | null
+          order_id: string
+          payload?: Json | null
           provider_email_id?: string | null
-          last_error?: string | null
-          created_at?: string
+          sent_at?: string | null
+          state?: string
         }
         Update: {
+          attempts?: number
+          created_at?: string
+          first_send_at?: string | null
           id?: string
-          order_id?: string
-          state?: string
-          payload?: Json | null
+          last_error?: string | null
           lease_token?: string | null
           lease_until?: string | null
           next_attempt_at?: string
-          attempts?: number
-          first_send_at?: string | null
-          sent_at?: string | null
+          order_id?: string
+          payload?: Json | null
           provider_email_id?: string | null
-          last_error?: string | null
-          created_at?: string
+          sent_at?: string | null
+          state?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "order_recovery_emails_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: true
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      order_stock_reservations: {
+        Row: {
+          attempt_id: string
+          expires_at: string
+          order_id: string
+          product_id: string
+          quantity: number
+        }
+        Insert: {
+          attempt_id: string
+          expires_at: string
+          order_id: string
+          product_id: string
+          quantity: number
+        }
+        Update: {
+          attempt_id?: string
+          expires_at?: string
+          order_id?: string
+          product_id?: string
+          quantity?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_stock_reservations_attempt_id_fkey"
+            columns: ["attempt_id"]
+            isOneToOne: false
+            referencedRelation: "order_payment_attempts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "order_stock_reservations_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "order_stock_reservations_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       orders: {
         Row: {
-          recovery_due_at: string
-          recovery_sent_at: string | null
-          checkout_key: string | null
           abandon_at: string
-          reservation_until: string | null
-          stock_committed_at: string | null
-          needs_review: boolean
-          review_reason: string | null
-          last_reconciled_at: string | null
           archived_at: string | null
-
+          checkout_key: string | null
           created_at: string
           customer_email: string
           customer_name: string
@@ -289,30 +327,29 @@ export type Database = {
           delivery_time_slot: Database["public"]["Enums"]["time_slot"] | null
           delivery_zip: string | null
           id: string
+          last_reconciled_at: string | null
           mp_payment_id: string | null
           mp_preference_id: string | null
+          needs_review: boolean
           notes: string | null
           order_number: number
           pickup_branch: string | null
+          recovery_due_at: string
+          recovery_sent_at: string | null
+          reservation_until: string | null
+          review_reason: string | null
           shipping_cost: number
           status: Database["public"]["Enums"]["order_status"]
+          stock_committed_at: string | null
           subtotal: number
           total: number
           updated_at: string
           whatsapp_sent: boolean
         }
         Insert: {
-          recovery_due_at?: string
-          recovery_sent_at?: string | null
-          checkout_key?: string | null
           abandon_at?: string
-          reservation_until?: string | null
-          stock_committed_at?: string | null
-          needs_review?: boolean
-          review_reason?: string | null
-          last_reconciled_at?: string | null
           archived_at?: string | null
-
+          checkout_key?: string | null
           created_at?: string
           customer_email: string
           customer_name: string
@@ -326,30 +363,29 @@ export type Database = {
           delivery_time_slot?: Database["public"]["Enums"]["time_slot"] | null
           delivery_zip?: string | null
           id?: string
+          last_reconciled_at?: string | null
           mp_payment_id?: string | null
           mp_preference_id?: string | null
+          needs_review?: boolean
           notes?: string | null
           order_number?: number
           pickup_branch?: string | null
+          recovery_due_at?: string
+          recovery_sent_at?: string | null
+          reservation_until?: string | null
+          review_reason?: string | null
           shipping_cost?: number
           status?: Database["public"]["Enums"]["order_status"]
+          stock_committed_at?: string | null
           subtotal: number
           total: number
           updated_at?: string
           whatsapp_sent?: boolean
         }
         Update: {
-          recovery_due_at?: string
-          recovery_sent_at?: string | null
-          checkout_key?: string | null
           abandon_at?: string
-          reservation_until?: string | null
-          stock_committed_at?: string | null
-          needs_review?: boolean
-          review_reason?: string | null
-          last_reconciled_at?: string | null
           archived_at?: string | null
-
+          checkout_key?: string | null
           created_at?: string
           customer_email?: string
           customer_name?: string
@@ -363,13 +399,20 @@ export type Database = {
           delivery_time_slot?: Database["public"]["Enums"]["time_slot"] | null
           delivery_zip?: string | null
           id?: string
+          last_reconciled_at?: string | null
           mp_payment_id?: string | null
           mp_preference_id?: string | null
+          needs_review?: boolean
           notes?: string | null
           order_number?: number
           pickup_branch?: string | null
+          recovery_due_at?: string
+          recovery_sent_at?: string | null
+          reservation_until?: string | null
+          review_reason?: string | null
           shipping_cost?: number
           status?: Database["public"]["Enums"]["order_status"]
+          stock_committed_at?: string | null
           subtotal?: number
           total?: number
           updated_at?: string
@@ -594,6 +637,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      admin_order_action: {
+        Args: { action: string; note?: string; oid: string }
+        Returns: undefined
+      }
       apply_price_policy: {
         Args: {
           p_adjust_compare?: boolean
@@ -603,6 +650,39 @@ export type Database = {
         }
         Returns: number
       }
+      apply_verified_order_payment: {
+        Args: { attempt_id: string; payment: string; provider_status: string }
+        Returns: undefined
+      }
+      attach_order_preference: {
+        Args: { attempt_id: string; checkout: string; preference: string }
+        Returns: undefined
+      }
+      authorize_order_job: {
+        Args: { provided_token: string }
+        Returns: boolean
+      }
+      authorize_order_recovery_send: {
+        Args: { eid: string; lease: string }
+        Returns: boolean
+      }
+      claim_order_recovery_email: { Args: never; Returns: Json }
+      expire_order_reservations: { Args: never; Returns: undefined }
+      fail_order_attempt: { Args: { attempt_id: string }; Returns: undefined }
+      fail_order_recovery_email: {
+        Args: {
+          eid: string
+          error_code: string
+          lease: string
+          permanent?: boolean
+        }
+        Returns: undefined
+      }
+      finish_order_recovery_email: {
+        Args: { eid: string; lease: string; provider_id: string }
+        Returns: undefined
+      }
+      get_order_recovery_enabled: { Args: never; Returns: boolean }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -610,36 +690,31 @@ export type Database = {
         }
         Returns: boolean
       }
-      get_order_recovery_enabled: { Args: Record<string, never>; Returns: boolean }
-      claim_order_recovery_email: { Args: Record<string, never>; Returns: Json }
-      prepare_order_recovery_email: { Args: {eid:string;lease:string;body:Json}; Returns: Json }
-      authorize_order_recovery_send: { Args: {eid:string;lease:string}; Returns: boolean }
-      finish_order_recovery_email: { Args: {eid:string;lease:string;provider_id:string}; Returns: undefined }
-      fail_order_recovery_email: { Args: {eid:string;lease:string;error_code:string;permanent?:boolean}; Returns: undefined }
-      reserve_order_checkout: { Args: {payload: Json; existing_id?: string | null; request_key?: string | null}; Returns: Json }
-      attach_order_preference: { Args: {attempt_id: string; preference: string; checkout: string}; Returns: undefined }
-      fail_order_attempt: { Args: {attempt_id: string}; Returns: undefined }
-      apply_verified_order_payment: { Args: {attempt_id: string; payment: string; provider_status: string}; Returns: undefined }
-      expire_order_reservations: { Args: Record<string, never>; Returns: undefined }
-      admin_order_action: { Args: {oid: string; action: string; note?: string | null}; Returns: undefined }
-      authorize_order_job: { Args: {provided_token: string}; Returns: boolean }
+      prepare_order_recovery_email: {
+        Args: { body: Json; eid: string; lease: string }
+        Returns: Json
+      }
+      reserve_order_checkout: {
+        Args: { existing_id?: string; payload: Json; request_key?: string }
+        Returns: Json
+      }
       update_products_from_excel: { Args: { rows: Json }; Returns: number }
     }
     Enums: {
       app_role: "admin"
       delivery_method: "pickup" | "shipping"
       order_status:
-        | "recovery_pending"
-        | "recovery_notified"
-        | "abandoned_final"
-        | "abandoned"
-        | "payment_rejected"
         | "pending_payment"
         | "paid"
         | "preparing"
         | "shipped"
         | "delivered"
         | "cancelled"
+        | "abandoned"
+        | "payment_rejected"
+        | "recovery_pending"
+        | "recovery_notified"
+        | "abandoned_final"
       time_slot: "morning" | "afternoon" | "evening"
     }
     CompositeTypes: {
@@ -771,17 +846,17 @@ export const Constants = {
       app_role: ["admin"],
       delivery_method: ["pickup", "shipping"],
       order_status: [
-        "recovery_pending",
-        "recovery_notified",
-        "abandoned_final",
-        "abandoned",
-        "payment_rejected",
         "pending_payment",
         "paid",
         "preparing",
         "shipped",
         "delivered",
         "cancelled",
+        "abandoned",
+        "payment_rejected",
+        "recovery_pending",
+        "recovery_notified",
+        "abandoned_final",
       ],
       time_slot: ["morning", "afternoon", "evening"],
     },
