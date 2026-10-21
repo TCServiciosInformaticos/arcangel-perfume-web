@@ -24,10 +24,10 @@ export function BranchMap({ name, address }: { name: string; address: string }) 
           loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-          className="h-32 w-full rounded-md border-0 bg-secondary"
+          className="h-40 w-full rounded-md border-0 bg-secondary"
         />
       ) : (
-        <div className="flex h-32 items-center justify-center rounded-md border border-sidebar-border bg-sidebar-accent text-sidebar-primary">
+        <div className="flex h-40 items-center justify-center rounded-md border border-sidebar-border bg-sidebar-accent text-sidebar-primary">
           <MapPin className="size-7" aria-hidden="true" />
         </div>
       )}
