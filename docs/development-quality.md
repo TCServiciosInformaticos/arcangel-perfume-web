@@ -22,3 +22,17 @@ El despliegue automático de Vercel continúa siendo independiente. Este control
 3. Sentry: configurar seguimiento de errores con filtrado de datos personales. No habilitar grabación de sesiones por defecto.
 
 Las cuentas, claves y dominios se configuran directamente en cada proveedor; no deben copiarse a issues, commits, logs ni chats. Revisar cuotas y condiciones antes de habilitar servicios adicionales.
+
+## Pruebas de navegador
+
+```sh
+bun install --frozen-lockfile
+bunx playwright install --with-deps chromium
+npm run test:e2e
+```
+
+Playwright levanta la aplicación en `127.0.0.1:3000` y un servidor de datos ficticios de solo lectura en `127.0.0.1:4174`. No reutiliza servidores existentes. La configuración reemplaza el destino de Supabase para estas pruebas y bloquea solicitudes del navegador a otros hosts. No requiere cuentas, pagos ni claves privadas. Mantener libres esos dos puertos al ejecutar las pruebas.
+
+Los ocho escenarios cubren búsqueda, persistencia del carrito, límite de stock, eliminación del carrito, productos agotados y acceso anónimo al slider admin, en escritorio y celular. No validan un pago real ni la edición autenticada del admin. No se guardan videos ni trazas de sesiones.
+
+El workflow añade `Browser flows (desktop and mobile)`. Para iniciar una ejecución manual: GitHub → Actions → Quality checks → Run workflow → main. Si GitHub no inicia automáticamente una ejecución tras una actualización realizada por la integración, usar esa opción manual. Verificar que ambos jobs estén en verde antes de considerar aprobada la validación.
