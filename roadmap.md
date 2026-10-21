@@ -1,5 +1,10 @@
 # Flujo de compra
 
+## Administrador y sucursales
+- [ ] Verificar el nombre Cuidado Personal sin cambiar enlaces existentes.
+- [ ] Cargar productos del administrador por páginas y conservar la exportación completa.
+- [ ] Agregar un mapa Google Maps debajo de cada sucursal; comprobar en el sitio publicado autorizado.
+
 ## Integraciones con asistentes
 - [ ] Agregar MCP protegido con OAuth y consultas de catálogo, categorías y fichas.
 - [ ] Agregar herramientas de lectura y búsqueda en la pantalla del catálogo.
