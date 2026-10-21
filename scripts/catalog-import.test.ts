@@ -143,3 +143,11 @@ test('IDI imports use manufacturer 201, immutable IDs, exact prices, and matchin
  assert.throws(()=>prepareCatalogProduct(p,['/catalog/idi/idi-doan-124.webp'],'make-up'));
  assert.throws(()=>prepareCatalogProduct({...p,source_url:p.source_url.replace('201','138')},images,'make-up'));
 });
+
+ test('Elvive manufacturer 145 binds stored photographs to each presentation', () => {
+ const p={name:'Elvive shampoo 200 ml',description:'Shampoo 200 ml',source_url:'https://doan.com.ar/index.php?route=product/product&manufacturer_id=145&product_id=123',source_price:4000.12};
+ const images=['/catalog/elvive/elvive-doan-123.webp'];
+ const row=prepareCatalogProduct(p,images,'cabello');assert.equal(row.slug,'elvive-doan-123');assert.equal(row.price,4000.12);assert.equal(row.stock,0);assert.equal(row.is_active,true);
+ assert.throws(()=>prepareCatalogProduct(p,['/catalog/elvive/elvive-doan-124.webp'],'cabello'));
+ assert.throws(()=>prepareCatalogProduct({...p,source_url:p.source_url.replace('145','201')},images,'cabello'));
+});

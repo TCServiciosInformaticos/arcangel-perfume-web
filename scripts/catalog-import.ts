@@ -8,7 +8,7 @@ export type SourceProduct = {
 const ISSUE_HOSTS = ["issueprofessional.com", "www.issueprofessional.com"];
 const DOAN_HOSTS = ["doan.com.ar", "www.doan.com.ar"];
 const FRENZZI_HOSTS = ["frenzziargentina.com", "www.frenzziargentina.com"];
-const DOAN_BRANDS: Record<string, string> = { "138": "dove", "304": "nivea", "90": "cicatricure", "170": "garnier", "126": "dermaglos", "201": "idi" };
+const DOAN_BRANDS: Record<string, string> = { "138": "dove", "304": "nivea", "90": "cicatricure", "170": "garnier", "126": "dermaglos", "201": "idi", "145": "elvive" };
 const CANNON_HOSTS = ["fraganciascannon.com", "www.fraganciascannon.com"];
 const ZERO_PRICE_HOSTS = ["hancolor.com.ar", "www.hancolor.com.ar", ...ISSUE_HOSTS];
 
