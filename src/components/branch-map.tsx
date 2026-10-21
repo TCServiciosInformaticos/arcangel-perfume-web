@@ -27,7 +27,7 @@ export function BranchMap({ name, address }: { name: string; address: string }) 
           className="h-48 w-full rounded-md border-0 bg-secondary"
         />
       ) : (
-        <div className="flex h-40 items-center justify-center rounded-md border border-sidebar-border bg-sidebar-accent text-sidebar-primary">
+        <div className="flex h-48 items-center justify-center rounded-md border border-sidebar-border bg-sidebar-accent text-sidebar-primary">
           <MapPin className="size-7" aria-hidden="true" />
         </div>
       )}
