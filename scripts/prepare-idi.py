@@ -63,13 +63,13 @@ def collect():
 
 def store(p):
  dest=ROOT/'public'/p['image_urls'][0].lstrip('/');thumb=ROOT/'public'/p['thumbnail_url'].lstrip('/')
- if dest.exists() and thumb.exists():return
+ if dest.exists() and thumb.exists() and p.get('white_background_rendered'):return
  errors=[]
  for u in p['source_image_urls']:
   for attempt in range(2):
    try:
     r=requests.get(u,timeout=35,headers={'User-Agent':'Mozilla/5.0'});r.raise_for_status();im=Image.open(io.BytesIO(r.content));im.load();assert min(im.size)>=60
-    im=ImageOps.exif_transpose(im).convert('RGB');dest.parent.mkdir(parents=True,exist_ok=True);full=im.copy();full.thumbnail((1200,1200));full.save(dest,'WEBP',quality=86,method=6);im.thumbnail((360,360));im.save(thumb,'WEBP',quality=78,method=6);p['stored_source_image_url']=u;return
+    im=ImageOps.exif_transpose(im).convert('RGBA');white=Image.new('RGB',im.size,'white');white.paste(im,mask=im.getchannel('A'));im=white;dest.parent.mkdir(parents=True,exist_ok=True);full=im.copy();full.thumbnail((1200,1200));full.save(dest,'WEBP',quality=86,method=6);im.thumbnail((360,360));im.save(thumb,'WEBP',quality=78,method=6);p['stored_source_image_url']=u;p['white_background_rendered']=True;return
    except Exception as e:errors.append(str(e));time.sleep(.3)
  raise ValueError(p['slug']+' '+str(p.get('barcode'))+' '+str(errors))
 
