@@ -41,7 +41,7 @@ export function SiteFooter() {
 
         <div className="border-t border-sidebar-border/40 pt-8 sm:border-l sm:border-sidebar-border/40 sm:border-t-0 sm:pl-6 sm:pt-0 lg:pl-10">
           <h4 className="text-xs font-semibold uppercase tracking-widest text-sidebar-primary">Navegar</h4>
-          <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <ul className="mt-4 flex flex-col gap-2 text-sm">
             <li><Link to="/" className="hover:text-sidebar-primary">Inicio</Link></li>
             <li><Link to="/productos" className="hover:text-sidebar-primary">Catálogo</Link></li>
             <li><Link to="/carrito" className="hover:text-sidebar-primary">Carrito</Link></li>
