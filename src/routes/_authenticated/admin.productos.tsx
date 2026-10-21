@@ -3,11 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient, keepPreviousData } from "@tanstack/react-query";
 import { useState, useRef, useEffect } from "react";
 import { toast } from "sonner";
-import { Plus, Pencil, Trash2, ImagePlus, X, Upload, ChevronLeft, ChevronRight } from "lucide-react";
+import { Plus, Pencil, Trash2, ImagePlus, X, Upload, ChevronLeft, ChevronRight, Search } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { formatARS, slugify } from "@/lib/format";
 import { subcategoriesForCategory, typesForBrand, validateProductClassification, type SubcategoryOption, type ProductTypeOption } from "@/lib/category-selection";
 import { adminPageRange, adminPageCount } from "@/lib/admin-pagination";
+import { applyAdminProductSearch, normalizeAdminSearch } from "@/lib/admin-product-search";
 import { Button } from "@/components/ui/button";
 import { ProductExcelControls } from "@/components/product-excel-controls";
 import { Input } from "@/components/ui/input";
@@ -80,21 +81,36 @@ function AdminProductos() {
   const [editing, setEditing] = useState<Product | null>(null);
   const [toDelete, setToDelete] = useState<Product | null>(null);
   const [page, setPage] = useState(1);
+  const [searchInput, setSearchInput] = useState("");
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    const next = normalizeAdminSearch(searchInput);
+    if (next === search) return;
+    const timer = setTimeout(() => setSearch(next), 300);
+    return () => clearTimeout(timer);
+  }, [searchInput, search]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [search]);
 
   const productsQ = useQuery({
-    queryKey: ["admin", "products", page],
+    queryKey: ["admin", "products", page, search],
     placeholderData: keepPreviousData,
     queryFn: async () => {
         const { from, to } = adminPageRange(page);
-        const { data, error, count } = await supabase
-          .from("products")
-          .select(
-            "id, slug, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)",
-            { count: "exact" },
-          )
-          .order("created_at", { ascending: false })
-          .order("id", { ascending: true })
-          .range(from, to);
+        const { data, error, count } = await applyAdminProductSearch(
+          supabase
+            .from("products")
+            .select(
+              "id, slug, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)",
+              { count: "exact" },
+            )
+            .order("created_at", { ascending: false })
+            .order("id", { ascending: true }),
+          search,
+        ).range(from, to);
         if (error) throw error;
         return { products: (data ?? []) as Product[], total: count ?? 0 };
     },
@@ -162,7 +178,7 @@ function AdminProductos() {
         <div>
           <h1 className="font-serif text-3xl text-foreground">Productos</h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            {total} producto(s) cargado(s).
+            {search ? `${total} artículo(s) para “${search}”.` : `${total} producto(s) cargado(s).`}
           </p>
         </div>
         <Button onClick={openNew}>
@@ -172,7 +188,48 @@ function AdminProductos() {
 
       <div className="mt-4"><ProductExcelControls /></div>
 
-      <div className="mt-6 overflow-x-auto rounded-xl border border-border bg-card" aria-busy={productsQ.isFetching}>
+      <form
+        role="search"
+        className="mt-6 flex flex-wrap items-center gap-2"
+        onSubmit={(e) => {
+          e.preventDefault();
+          setSearch(normalizeAdminSearch(searchInput));
+          setPage(1);
+        }}
+      >
+        <div className="relative min-w-0 flex-1">
+          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+          <Label htmlFor="product-search" className="sr-only">Buscar artículo</Label>
+          <Input
+            id="product-search"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+            placeholder="Buscar artículo por nombre, URL o descripción…"
+            className="pl-9"
+          />
+        </div>
+        <Button type="submit" variant="outline" size="icon" aria-label="Buscar artículos" title="Buscar artículos">
+          <Search className="size-4" />
+        </Button>
+        {(searchInput !== "" || search !== "") && (
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            aria-label="Limpiar búsqueda"
+            title="Limpiar búsqueda"
+            onClick={() => {
+              setSearchInput("");
+              setSearch("");
+              setPage(1);
+            }}
+          >
+            <X className="size-4" />
+          </Button>
+        )}
+      </form>
+
+      <div className="mt-4 overflow-x-auto rounded-xl border border-border bg-card" aria-busy={productsQ.isFetching}>
         {productsQ.isLoading ? (
           <div className="p-8 text-center text-sm text-muted-foreground">Cargando…</div>
         ) : productsQ.isError ? (
@@ -256,8 +313,14 @@ function AdminProductos() {
         ) : (
           <div className="p-12 text-center">
             <Package className="mx-auto h-10 w-10 text-muted-foreground/40" />
-            <p className="mt-3 font-serif text-xl text-foreground">No hay productos todavía</p>
-            <p className="mt-1 text-sm text-muted-foreground">Hacé clic en "Nuevo producto" para empezar.</p>
+            <p className="mt-3 font-serif text-xl text-foreground">
+              {search ? "Sin resultados" : "No hay productos todavía"}
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {search
+                ? `No encontramos artículos para “${search}”. Probá con otra palabra o revisá las mayúsculas.`
+                : 'Hacé clic en "Nuevo producto" para empezar.'}
+            </p>
           </div>
         )}
       </div>
