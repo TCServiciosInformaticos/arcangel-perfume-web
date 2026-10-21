@@ -414,6 +414,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      apply_price_policy: {
+        Args: {
+          p_adjust_compare?: boolean
+          p_mode: string
+          p_percentage: number
+          p_rows: Json
+        }
+        Returns: number
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
