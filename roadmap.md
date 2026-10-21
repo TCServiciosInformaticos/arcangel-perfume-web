@@ -8,6 +8,7 @@
 ## Administrador y sucursales
 - [x] Verificar el nombre Cuidado Personal sin cambiar enlaces existentes.
 - [x] Cargar productos del administrador por páginas y conservar la exportación completa; navegación real 1 → 2 → 1 verificada, 24 filas por petición.
+- [x] Agregar barra de búsqueda en Productos para ubicar un artículo por nombre, URL o descripción; el conteo y las páginas se ajustan a lo encontrado.
 - [x] Agregar un mapa Google Maps debajo de cada sucursal con las direcciones existentes y enlace para abrirlo.
 - [ ] Verificar las ubicaciones de Google Maps; requiere revisión de la usuaria en el sitio publicado autorizado porque el entorno de pruebas no admite mapas en vivo.
 
