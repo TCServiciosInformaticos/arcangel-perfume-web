@@ -10905,11 +10905,11 @@
     }
   ],
   "image_failures": [
-    "idi-doan-46368 77961099 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg']",
-    "idi-doan-50138 7798327602412 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602412.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602412.jpg']",
-    "idi-doan-46367 77961082 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg']",
-    "idi-doan-27990 77947680 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg']",
     "idi-doan-27991 77947697 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947697.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947697.jpg']",
-    "idi-doan-50638 77986832 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77986832.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77986832.jpg']"
+    "idi-doan-50138 7798327602412 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602412.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/7798327602412.jpg']",
+    "idi-doan-27990 77947680 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77947680.jpg']",
+    "idi-doan-46368 77961099 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961099.jpg']",
+    "idi-doan-50638 77986832 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77986832.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77986832.jpg']",
+    "idi-doan-46367 77961082 ['404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg', '404 Client Error: Not Found for url: https://doan.com.ar/image/catalog/doan/77961082.jpg']"
   ]
 }
