@@ -151,7 +151,7 @@ function PricePolicy() {
 
   return <div className="min-w-0 text-foreground">
     <h1 className="font-serif text-3xl">Política de Precios</h1>
-    <fieldset disabled={busy} className="mt-6 grid gap-4 border-y border-border py-5 sm:grid-cols-2 xl:grid-cols-4">
+    <fieldset disabled={busy} className="mt-6 grid min-w-0 gap-4 border-y border-border py-5 sm:grid-cols-2 xl:grid-cols-4">
       <Filter label="Categoría" value={filters.category} options={classification.categories} onChange={(category) => changeFilters({ ...filters, category, brand: "all", type: "all" })} />
       <Filter label="Marca" value={filters.brand} options={brands.map((brand) => ({ id: brand.id, name: `${brand.name} · ${categoryName(brand.category_id)}` }))} onChange={(brand) => changeFilters({ ...filters, brand, type: "all" })} />
       <Filter label="Tipo de producto" value={filters.type} options={types} onChange={(type) => changeFilters({ ...filters, type })} />
@@ -163,7 +163,7 @@ function PricePolicy() {
       </form>
     </fieldset>
 
-    <fieldset disabled={busy} className="flex flex-wrap items-end gap-4 py-5">
+    <fieldset disabled={busy} className="flex min-w-0 flex-wrap items-end gap-4 py-5">
       <div><Label>Operación</Label><div className="mt-1 flex gap-1"><Button variant={mode === "increase" ? "default" : "outline"} onClick={() => setMode("increase")}>Aumento</Button><Button variant={mode === "discount" ? "default" : "outline"} onClick={() => setMode("discount")}>Descuento</Button></div></div>
       <div className="w-40"><Label htmlFor="policy-percent">Porcentaje (%)</Label><Input id="policy-percent" inputMode="decimal" value={percentage} onChange={(event) => setPercentage(event.target.value)} placeholder="Ej. 15" /></div>
       <label className="flex max-w-xs items-center gap-2 pb-2 text-sm"><Checkbox checked={adjustCompare} onCheckedChange={(checked) => setAdjustCompare(checked === true)} />Ajustar también el precio anterior de las ofertas</label>
@@ -173,7 +173,7 @@ function PricePolicy() {
 
     <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
       <span className="text-sm text-muted-foreground">{total} artículos · {selected.size} seleccionados</span>
-      <div className="flex gap-2"><Button variant="outline" size="sm" disabled={busy || products.isFetching || !total} onClick={selectAll}>{busy && <Loader2 className="size-4 animate-spin" />}Seleccionar todos los resultados ({total})</Button><Button variant="ghost" size="sm" disabled={busy || !selected.size} onClick={() => setSelected(new Map())}>Quitar selección</Button></div>
+      <div className="flex max-w-full flex-wrap gap-2"><Button className="h-auto min-h-9 max-w-full whitespace-normal" variant="outline" size="sm" disabled={busy || products.isFetching || !total} onClick={selectAll}>{busy && <Loader2 className="size-4 animate-spin" />}Seleccionar todos los resultados ({total})</Button><Button variant="ghost" size="sm" disabled={busy || !selected.size} onClick={() => setSelected(new Map())}>Quitar selección</Button></div>
     </div>
     <div className="overflow-x-auto rounded-md border border-border bg-card" aria-busy={products.isFetching}>
       <table className="w-full text-sm">
