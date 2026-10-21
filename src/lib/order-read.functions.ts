@@ -36,7 +36,7 @@ export const getOrderForWhatsapp = createServerFn({ method: "POST" })
       const { data: order, error } = await supabaseAdmin
         .from("orders")
         .select(
-          "id, order_number, status, customer_name, customer_email, customer_whatsapp, delivery_method, delivery_street, delivery_number, delivery_apartment, delivery_city, delivery_zip, delivery_day, delivery_time_slot, notes, pickup_branch, subtotal, shipping_cost, total, mp_payment_id, reservation_until, needs_review",
+          "id, order_number, status, customer_name, customer_email, customer_whatsapp, delivery_method, delivery_street, delivery_number, delivery_apartment, delivery_city, delivery_zip, delivery_day, delivery_time_slot, notes, pickup_branch, subtotal, shipping_cost, total, mp_payment_id, reservation_until, needs_review, recovery_sent_at, abandon_at",
         )
         .eq("id", data.orderId)
         .maybeSingle();

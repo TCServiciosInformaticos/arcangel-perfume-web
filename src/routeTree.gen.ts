@@ -29,6 +29,7 @@ import { Route as AuthenticatedAdminPoliticaPreciosRouteImport } from './routes/
 import { Route as AuthenticatedAdminProductosRouteImport } from './routes/_authenticated/admin.productos'
 import { Route as ApiPublicMercadopagoWebhookRouteImport } from './routes/api/public/mercadopago-webhook'
 import { Route as ApiPublicOrderMaintenanceRouteImport } from './routes/api/public/order-maintenance'
+import { Route as ApiPublicOrderRecoveryEmailsRouteImport } from './routes/api/public/order-recovery-emails'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -136,6 +137,12 @@ const ApiPublicOrderMaintenanceRoute =
     path: '/api/public/order-maintenance',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicOrderRecoveryEmailsRoute =
+  ApiPublicOrderRecoveryEmailsRouteImport.update({
+    id: '/api/public/order-recovery-emails',
+    path: '/api/public/order-recovery-emails',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -157,6 +164,7 @@ export interface FileRoutesByFullPath {
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
+  '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -178,6 +186,7 @@ export interface FileRoutesByTo {
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
+  '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -201,6 +210,7 @@ export interface FileRoutesById {
   '/_authenticated/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
+  '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -224,6 +234,7 @@ export interface FileRouteTypes {
     | '/admin/productos'
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
+    | '/api/public/order-recovery-emails'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -245,6 +256,7 @@ export interface FileRouteTypes {
     | '/admin/productos'
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
+    | '/api/public/order-recovery-emails'
   id:
     | '__root__'
     | '/'
@@ -267,6 +279,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/productos'
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
+    | '/api/public/order-recovery-emails'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -285,6 +298,7 @@ export interface RootRouteChildren {
   DotlovableOauthConsentRoute: typeof DotlovableOauthConsentRoute
   ApiPublicMercadopagoWebhookRoute: typeof ApiPublicMercadopagoWebhookRoute
   ApiPublicOrderMaintenanceRoute: typeof ApiPublicOrderMaintenanceRoute
+  ApiPublicOrderRecoveryEmailsRoute: typeof ApiPublicOrderRecoveryEmailsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -429,6 +443,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicOrderMaintenanceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/order-recovery-emails': {
+      id: '/api/public/order-recovery-emails'
+      path: '/api/public/order-recovery-emails'
+      fullPath: '/api/public/order-recovery-emails'
+      preLoaderRoute: typeof ApiPublicOrderRecoveryEmailsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -478,6 +499,7 @@ const rootRouteChildren: RootRouteChildren = {
   DotlovableOauthConsentRoute: DotlovableOauthConsentRoute,
   ApiPublicMercadopagoWebhookRoute: ApiPublicMercadopagoWebhookRoute,
   ApiPublicOrderMaintenanceRoute: ApiPublicOrderMaintenanceRoute,
+  ApiPublicOrderRecoveryEmailsRoute: ApiPublicOrderRecoveryEmailsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

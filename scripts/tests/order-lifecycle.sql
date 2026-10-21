@@ -24,9 +24,9 @@ BEGIN
  PERFORM attach_order_preference(late_attempt,'TEST-PREF-'||late_attempt,'https://www.mercadopago.com.ar/checkout/test');
  UPDATE order_stock_reservations SET expires_at=now()-interval '1 second' WHERE order_id=late_order;
  UPDATE order_payment_attempts SET expires_at=now()-interval '1 second' WHERE id=late_attempt;
- UPDATE orders SET abandon_at=now()-interval '1 second' WHERE id=late_order;
+ UPDATE orders SET abandon_at=now()-interval '1 second',recovery_due_at=now()-interval '1 second' WHERE id=late_order;
  PERFORM expire_order_reservations();
- IF EXISTS(SELECT 1 FROM order_stock_reservations WHERE order_id=late_order) OR (SELECT status FROM orders WHERE id=late_order)<>'abandoned' THEN RAISE EXCEPTION 'Expiry failed'; END IF;
+ IF EXISTS(SELECT 1 FROM order_stock_reservations WHERE order_id=late_order) OR (SELECT status FROM orders WHERE id=late_order) NOT IN ('abandoned','recovery_pending') THEN RAISE EXCEPTION 'Expiry failed'; END IF;
  -- A second customer owns the available units after the first reservation expires.
  r:=reserve_order_checkout(p,NULL,gen_random_uuid());second_order:=(r->'order'->>'id')::uuid;second_attempt:=(r->'attempt'->>'id')::uuid;
  PERFORM apply_verified_order_payment(late_attempt,'TEST-LATE-PAY-'||late_attempt,'approved');

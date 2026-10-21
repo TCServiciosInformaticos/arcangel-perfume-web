@@ -69,7 +69,11 @@ export function OrderConfirmation({ order, token, payment_id }: z.infer<typeof o
       },
       retry: false,
       refetchInterval: (q) =>
-        q.state.data?.status === "pending_payment" && polls < 20 ? 4000 : false,
+        q.state.data &&
+        ["pending_payment", "recovery_notified"].includes(q.state.data.status) &&
+        polls < 20
+          ? 4000
+          : false,
     }),
   );
   const result = query.data;
@@ -154,11 +158,15 @@ export function OrderConfirmation({ order, token, payment_id }: z.infer<typeof o
                 ? "Pago aprobado por Mercado Pago."
                 : cancelled
                   ? "Tu carrito sigue guardado para volver a intentar el pago."
-                  : result.status === "abandoned"
-                    ? "Este pedido venció por falta de pago. Podés retomarlo con los precios y la disponibilidad actuales."
-                    : result.status === "payment_rejected"
-                      ? "Mercado Pago rechazó el intento. Podés volver a pagar este mismo pedido."
-                      : "Tu pago todavía está pendiente de confirmación de Mercado Pago."}
+                  : result.status === "abandoned_final"
+                    ? "El plazo de recuperación de este pedido finalizó. Podés iniciar una nueva compra desde el catálogo."
+                    : result.status === "recovery_notified"
+                      ? "Te enviamos un recordatorio para retomar tu pedido. El plazo es de 24 horas desde el aviso."
+                      : result.status === "abandoned"
+                        ? "Este pedido venció por falta de pago. Podés retomarlo con los precios y la disponibilidad actuales."
+                        : result.status === "payment_rejected"
+                          ? "Mercado Pago rechazó el intento. Podés volver a pagar este mismo pedido."
+                          : "Tu pago todavía está pendiente de confirmación de Mercado Pago."}
             </p>
             {link && (
               <Button

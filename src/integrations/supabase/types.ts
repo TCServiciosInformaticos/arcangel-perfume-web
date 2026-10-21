@@ -215,8 +215,58 @@ export type Database = {
         }
         Relationships: []
       }
+      order_recovery_emails: {
+        Row: {
+          id: string
+          order_id: string
+          state: string
+          payload: Json | null
+          lease_token: string | null
+          lease_until: string | null
+          next_attempt_at: string
+          attempts: number
+          first_send_at: string | null
+          sent_at: string | null
+          provider_email_id: string | null
+          last_error: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          order_id?: string
+          state?: string
+          payload?: Json | null
+          lease_token?: string | null
+          lease_until?: string | null
+          next_attempt_at?: string
+          attempts?: number
+          first_send_at?: string | null
+          sent_at?: string | null
+          provider_email_id?: string | null
+          last_error?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          order_id?: string
+          state?: string
+          payload?: Json | null
+          lease_token?: string | null
+          lease_until?: string | null
+          next_attempt_at?: string
+          attempts?: number
+          first_send_at?: string | null
+          sent_at?: string | null
+          provider_email_id?: string | null
+          last_error?: string | null
+          created_at?: string
+        }
+        Relationships: []
+      }
       orders: {
         Row: {
+          recovery_due_at: string
+          recovery_sent_at: string | null
           checkout_key: string | null
           abandon_at: string
           reservation_until: string | null
@@ -252,6 +302,8 @@ export type Database = {
           whatsapp_sent: boolean
         }
         Insert: {
+          recovery_due_at?: string
+          recovery_sent_at?: string | null
           checkout_key?: string | null
           abandon_at?: string
           reservation_until?: string | null
@@ -287,6 +339,8 @@ export type Database = {
           whatsapp_sent?: boolean
         }
         Update: {
+          recovery_due_at?: string
+          recovery_sent_at?: string | null
           checkout_key?: string | null
           abandon_at?: string
           reservation_until?: string | null
@@ -556,6 +610,12 @@ export type Database = {
         }
         Returns: boolean
       }
+      get_order_recovery_enabled: { Args: Record<string, never>; Returns: boolean }
+      claim_order_recovery_email: { Args: Record<string, never>; Returns: Json }
+      prepare_order_recovery_email: { Args: {eid:string;lease:string;body:Json}; Returns: Json }
+      authorize_order_recovery_send: { Args: {eid:string;lease:string}; Returns: boolean }
+      finish_order_recovery_email: { Args: {eid:string;lease:string;provider_id:string}; Returns: undefined }
+      fail_order_recovery_email: { Args: {eid:string;lease:string;error_code:string;permanent?:boolean}; Returns: undefined }
       reserve_order_checkout: { Args: {payload: Json; existing_id?: string | null; request_key?: string | null}; Returns: Json }
       attach_order_preference: { Args: {attempt_id: string; preference: string; checkout: string}; Returns: undefined }
       fail_order_attempt: { Args: {attempt_id: string}; Returns: undefined }
@@ -569,6 +629,9 @@ export type Database = {
       app_role: "admin"
       delivery_method: "pickup" | "shipping"
       order_status:
+        | "recovery_pending"
+        | "recovery_notified"
+        | "abandoned_final"
         | "abandoned"
         | "payment_rejected"
         | "pending_payment"
@@ -708,6 +771,9 @@ export const Constants = {
       app_role: ["admin"],
       delivery_method: ["pickup", "shipping"],
       order_status: [
+        "recovery_pending",
+        "recovery_notified",
+        "abandoned_final",
         "abandoned",
         "payment_rejected",
         "pending_payment",

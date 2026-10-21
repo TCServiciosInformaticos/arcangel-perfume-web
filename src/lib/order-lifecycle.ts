@@ -1,4 +1,7 @@
 export const orderStatusLabels: Record<string, string> = {
+  recovery_pending: "Recordatorio pendiente",
+  recovery_notified: "Recordatorio enviado",
+  abandoned_final: "Abandonado definitivo",
   pending_payment: "Pendiente de pago",
   payment_rejected: "Pago rechazado",
   abandoned: "Abandonado",
@@ -9,7 +12,13 @@ export const orderStatusLabels: Record<string, string> = {
   delivered: "Entregado",
 };
 export const canResumeOrder = (status: string) =>
-  ["pending_payment", "payment_rejected", "abandoned"].includes(status);
+  [
+    "pending_payment",
+    "payment_rejected",
+    "abandoned",
+    "recovery_pending",
+    "recovery_notified",
+  ].includes(status);
 export function validMercadoPagoCheckout(url: string): boolean {
   try {
     const u = new URL(url);
@@ -48,6 +57,9 @@ export function paymentDecision(
 }
 
 export const orderEventLabels: Record<string, string> = {
+  recovery_email_queued: "Recordatorio por email pendiente",
+  recovery_email_sent: "Recordatorio aceptado por el servicio de correo",
+  abandoned_final: "Abandono definitivo después del recordatorio",
   checkout_reserved: "Reserva y nuevo intento de pago",
   payment_approved: "Pago aprobado",
   payment_rejected: "Intento de pago rechazado o cancelado",

@@ -3,8 +3,15 @@ import assert from "node:assert/strict";
 import { canResumeOrder, validMercadoPagoCheckout, paymentDecision } from "./order-lifecycle";
 import { signOrderAccess, verifyOrderAccess } from "./payment-security.server";
 test("solo los estados impagos recuperables admiten retomar", () => {
-  for (const s of ["pending_payment", "abandoned", "payment_rejected"]) assert(canResumeOrder(s));
-  for (const s of ["paid", "preparing", "shipped", "delivered", "cancelled"])
+  for (const s of [
+    "pending_payment",
+    "abandoned",
+    "payment_rejected",
+    "recovery_pending",
+    "recovery_notified",
+  ])
+    assert(canResumeOrder(s));
+  for (const s of ["paid", "preparing", "shipped", "delivered", "cancelled", "abandoned_final"])
     assert(!canResumeOrder(s));
 });
 test("las redirecciones admiten solamente checkout HTTPS de Mercado Pago", () => {

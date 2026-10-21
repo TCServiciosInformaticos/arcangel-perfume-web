@@ -29,13 +29,22 @@ function OrdersPage() {
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
     [message, setMessage] = useState("");
+  const recoveryStatus = useQuery({
+    queryKey: ["admin", "order-recovery-status"],
+    queryFn: async () => {
+      const r = await fetch("/api/public/order-recovery-emails");
+      if (!r.ok) throw new Error("No se pudo consultar el servicio de correo.");
+      return (await r.json()) as { ready: boolean };
+    },
+    retry: false,
+  });
   const list = useQuery({
     queryKey: ["admin", "orders", term, status, age, archived, page],
     queryFn: async () => {
       let q = supabase
         .from("orders")
         .select(
-          "id,order_number,customer_name,customer_email,customer_whatsapp,status,total,created_at,abandon_at,reservation_until,needs_review,review_reason,archived_at,delivery_method,stock_committed_at,last_reconciled_at",
+          "id,order_number,customer_name,customer_email,customer_whatsapp,status,total,created_at,abandon_at,reservation_until,needs_review,review_reason,archived_at,delivery_method,stock_committed_at,last_reconciled_at,recovery_due_at,recovery_sent_at",
           { count: "exact" },
         )
         .order("created_at", { ascending: false })
@@ -62,7 +71,7 @@ function OrdersPage() {
     queryKey: ["admin", "order", selected],
     enabled: !!selected,
     queryFn: async () => {
-      const [o, i, e, a] = await Promise.all([
+      const [o, i, e, a, mail] = await Promise.all([
         supabase.from("orders").select("*").eq("id", selected!).single(),
         supabase.from("order_items").select("*").eq("order_id", selected!),
         supabase
@@ -75,9 +84,20 @@ function OrdersPage() {
           .select("id,state,total,expires_at,created_at,payment_id")
           .eq("order_id", selected!)
           .order("created_at", { ascending: false }),
+        supabase
+          .from("order_recovery_emails")
+          .select("state,attempts,sent_at,next_attempt_at,last_error")
+          .eq("order_id", selected!)
+          .maybeSingle(),
       ]);
-      for (const r of [o, i, e, a]) if (r.error) throw r.error;
-      return { order: o.data!, items: i.data ?? [], events: e.data ?? [], attempts: a.data ?? [] };
+      for (const r of [o, i, e, a, mail]) if (r.error) throw r.error;
+      return {
+        order: o.data!,
+        items: i.data ?? [],
+        events: e.data ?? [],
+        attempts: a.data ?? [],
+        email: mail.data,
+      };
     },
   });
   async function act(id: string, action: string) {
@@ -139,9 +159,17 @@ function OrdersPage() {
     <div>
       <h1 className="text-3xl font-semibold">Pedidos</h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Reservas de 30 minutos. Sin pago, el pedido se marca abandonado después de 24 horas. El
+        Reservas de 30 minutos. Después de 1 hora sin pagar se prepara un email. El abandono
+        definitivo ocurre 24 horas después de que el servicio de correo acepte el aviso. El
         historial se conserva; archivar no elimina datos personales.
       </p>
+      {!recoveryStatus.data?.ready && !recoveryStatus.isLoading && (
+        <p className="mt-3 rounded border p-3 text-sm">
+          El email automático está pendiente de configuración o activación. Los avisos no se
+          enviarán hasta que el servicio esté listo. Los carritos sin un pedido con email registrado
+          no pueden recibir recordatorios.
+        </p>
+      )}
       <div className="my-5 flex flex-wrap gap-3">
         <Input
           aria-label="Buscar pedido"
@@ -366,9 +394,13 @@ function OrdersPage() {
                         : "Verificar y descontar stock"}
                     </Button>
                   )}
-                  {["abandoned", "cancelled", "payment_rejected", "delivered"].includes(
-                    o.status,
-                  ) && (
+                  {[
+                    "abandoned",
+                    "abandoned_final",
+                    "cancelled",
+                    "payment_rejected",
+                    "delivered",
+                  ].includes(o.status) && (
                     <Button
                       disabled={busy}
                       variant="outline"
@@ -378,6 +410,28 @@ function OrdersPage() {
                     </Button>
                   )}
                 </div>
+                <section className="my-4 rounded border p-3">
+                  <h3 className="font-semibold">Recordatorio por email</h3>
+                  <p className="text-sm">
+                    {o.recovery_sent_at
+                      ? `Aceptado por el servicio de correo: ${date(o.recovery_sent_at)}. Plazo final: ${date(o.abandon_at)}.`
+                      : details.data?.email?.state === "failed" ||
+                          details.data?.email?.state === "review"
+                        ? "Requiere revisión: el aviso no tiene envío confirmado."
+                        : details.data?.email?.state === "sending"
+                          ? "Envío en curso."
+                          : details.data?.email?.state === "cancelled"
+                            ? "Aviso cancelado."
+                            : `A partir de ${date(o.recovery_due_at)}, si el pedido continúa sin pagar.`}
+                  </p>
+                  {details.data?.email?.last_error && (
+                    <p className="text-sm text-destructive">{details.data.email.last_error}</p>
+                  )}
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    La aceptación del proveedor no confirma que el cliente haya leído el email. Si
+                    el envío falla, el plazo de 24 horas todavía no comienza.
+                  </p>
+                </section>
                 <h3 className="font-semibold">Intentos de pago</h3>
                 <ul className="mb-4 text-sm">
                   {details.data?.attempts.map((a) => (
