@@ -21,6 +21,7 @@ import heroLimpieza from "@/assets/hero-limpieza.jpg";
 import heroSkincare from "@/assets/hero-skincare.jpg";
 import heroHigiene from "@/assets/hero-higiene.jpg";
 import heroAccesorios from "@/assets/hero-accesorios.jpg";
+import heroOfertas from "@/assets/hero-ofertas.jpg";
 
 const SELECT = "id, slug, name, price, compare_at_price, stock, image_urls, thumbnail_url, category:categories(name)";
 
@@ -86,6 +87,7 @@ const BENEFITS = [
 
 const SLIDES = [
   { img: heroImg, title: "El Arcángel", sub: "Tu perfumería de barrio, ahora también online" },
+  { img: heroOfertas, title: "Ofertas", sub: "Aprovechá los precios que bajaron, por tiempo limitado", mobileObject: "object-[80%_center]", search: { ofertas: true } },
   { img: heroPerfumes, title: "Perfumes", sub: "La fragancia que te representa está acá", mobileObject: "object-[90%_center]", search: { categoria: "perfumes" } },
   { img: heroLimpieza, title: "Limpieza", sub: "Tu casa impecable, sin salir de casa", mobileObject: "object-[90%_center]", search: { categoria: "limpieza" } },
   { img: heroCabello, title: "Cuidado Capilar", sub: "Todo lo que tu pelo necesita, en un solo lugar", mobileObject: "object-[80%_center]", search: { categoria: "cabello" } },
