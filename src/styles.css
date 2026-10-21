@@ -84,12 +84,13 @@
   /* Ciruela profunda para bandas oscuras */
   --sidebar: oklch(0.17 0.04 340);
   --sidebar-foreground: oklch(0.97 0.008 340);
-  --sidebar-primary: oklch(0.65 0.22 350);
+  /* Magenta exacto del logo (#DB0172) */
+  --sidebar-primary: oklch(0.582 0.233 0.7);
   --sidebar-primary-foreground: oklch(0.99 0 0);
   --sidebar-accent: oklch(0.26 0.06 340);
   --sidebar-accent-foreground: oklch(0.97 0.008 340);
   --sidebar-border: oklch(0.32 0.06 340);
-  --sidebar-ring: oklch(0.65 0.22 350);
+  --sidebar-ring: oklch(0.582 0.233 0.7);
 }
 
 @layer base {
