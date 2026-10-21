@@ -39,7 +39,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="md:mr-10 lg:mr-24">
+        <div className="md:mr-12 lg:mr-32">
           <h4 className="text-xs font-semibold uppercase tracking-widest text-sidebar-primary">Navegar</h4>
           <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <li><Link to="/" className="hover:text-sidebar-primary">Inicio</Link></li>
