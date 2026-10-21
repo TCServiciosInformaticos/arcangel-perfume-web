@@ -1,6 +1,6 @@
-import { createClientOnlyFn } from "@tanstack/react-start";
+import { createIsomorphicFn } from "@tanstack/react-start";
 // The compiler removes these bodies from SSR. Without a DSN, no browser SDK chunk is loaded.
-export const initBrowserMonitoring = createClientOnlyFn(async () => {
+export const initBrowserMonitoring = createIsomorphicFn().client(async () => {
   if (!import.meta.env.PROD || !import.meta.env.VITE_SENTRY_DSN) return;
   try {
     const sdk = await import("./sentry.client");
@@ -9,7 +9,7 @@ export const initBrowserMonitoring = createClientOnlyFn(async () => {
     /* fail open */
   }
 });
-export const captureBrowserError = createClientOnlyFn(async (error: unknown) => {
+export const captureBrowserError = createIsomorphicFn().client(async (error: unknown) => {
   if (!import.meta.env.PROD || !import.meta.env.VITE_SENTRY_DSN) return;
   try {
     const sdk = await import("./sentry.client");
