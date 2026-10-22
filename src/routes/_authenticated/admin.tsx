@@ -9,9 +9,11 @@ import {
   Images,
   BarChart3,
   Wrench,
+  Users,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { canOpenAdminPath } from "@/lib/staff-permissions";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/_authenticated/admin")({
@@ -29,6 +31,7 @@ export const Route = createFileRoute("/_authenticated/admin")({
 });
 
 const NAV = [
+  { to: "/admin/usuarios", label: "Usuarios", icon: Users, exact: false },
   { to: "/admin", label: "Resumen", icon: LayoutDashboard, exact: true },
   { to: "/admin/herramientas", label: "Herramientas de venta", icon: Wrench, exact: false },
   { to: "/admin/estadisticas", label: "Estadísticas", icon: BarChart3, exact: false },
@@ -40,7 +43,7 @@ const NAV = [
 ] as const;
 
 function AdminLayout() {
-  const { user, isAdmin, loading } = useAuth();
+  const { user, isAdmin, modules, loading } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const pathname = location.pathname;
@@ -58,7 +61,7 @@ function AdminLayout() {
     );
   }
 
-  if (!isAdmin) {
+  if (!isAdmin && modules.length === 0) {
     return (
       <div className="flex min-h-screen items-center justify-center px-4">
         <div className="max-w-md text-center">
@@ -98,7 +101,7 @@ function AdminLayout() {
       <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-6 px-4 py-8 sm:px-6 lg:flex-row lg:px-8">
         <aside className="shrink-0 lg:w-56">
           <nav className="flex flex-wrap gap-1 lg:flex-col">
-            {NAV.map((n) => {
+            {NAV.filter((n) => canOpenAdminPath(n.to, isAdmin, modules)).map((n) => {
               const active = n.exact
                 ? pathname === n.to || pathname === `${n.to}/`
                 : pathname.startsWith(n.to);
@@ -119,7 +122,22 @@ function AdminLayout() {
           </nav>
         </aside>
 
-        <main className="min-w-0 flex-1">{isOverview ? <AdminOverview /> : <Outlet />}</main>
+        <main className="min-w-0 flex-1">
+          {!canOpenAdminPath(pathname, isAdmin, modules) ? (
+            <p role="alert">No tenés permiso para acceder a este módulo.</p>
+          ) : isOverview ? (
+            isAdmin ? (
+              <AdminOverview />
+            ) : (
+              <div>
+                <h1 className="font-serif text-3xl">Tu panel</h1>
+                <p className="mt-3">Elegí uno de tus módulos habilitados en el menú.</p>
+              </div>
+            )
+          ) : (
+            <Outlet />
+          )}
+        </main>
       </div>
     </div>
   );

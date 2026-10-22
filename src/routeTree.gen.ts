@@ -32,6 +32,7 @@ import { Route as AuthenticatedAdminPedidosRouteImport } from './routes/_authent
 import { Route as AuthenticatedAdminPoliticaPreciosRouteImport } from './routes/_authenticated/admin.politica-precios'
 import { Route as AuthenticatedAdminProductosRouteImport } from './routes/_authenticated/admin.productos'
 import { Route as AuthenticatedAdminSliderRouteImport } from './routes/_authenticated/admin.slider'
+import { Route as AuthenticatedAdminUsuariosRouteImport } from './routes/_authenticated/admin.usuarios'
 import { Route as ApiPublicMercadopagoWebhookRouteImport } from './routes/api/public/mercadopago-webhook'
 import { Route as ApiPublicOrderMaintenanceRouteImport } from './routes/api/public/order-maintenance'
 import { Route as ApiPublicOrderRecoveryEmailsRouteImport } from './routes/api/public/order-recovery-emails'
@@ -159,6 +160,12 @@ const AuthenticatedAdminSliderRoute =
     path: '/slider',
     getParentRoute: () => AuthenticatedAdminRoute,
   } as any)
+const AuthenticatedAdminUsuariosRoute =
+  AuthenticatedAdminUsuariosRouteImport.update({
+    id: '/usuarios',
+    path: '/usuarios',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const ApiPublicMercadopagoWebhookRoute =
   ApiPublicMercadopagoWebhookRouteImport.update({
     id: '/api/public/mercadopago-webhook',
@@ -207,6 +214,7 @@ export interface FileRoutesByFullPath {
   '/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/admin/slider': typeof AuthenticatedAdminSliderRoute
+  '/admin/usuarios': typeof AuthenticatedAdminUsuariosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
   '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
@@ -235,6 +243,7 @@ export interface FileRoutesByTo {
   '/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/admin/slider': typeof AuthenticatedAdminSliderRoute
+  '/admin/usuarios': typeof AuthenticatedAdminUsuariosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
   '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
@@ -265,6 +274,7 @@ export interface FileRoutesById {
   '/_authenticated/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/_authenticated/admin/productos': typeof AuthenticatedAdminProductosRoute
   '/_authenticated/admin/slider': typeof AuthenticatedAdminSliderRoute
+  '/_authenticated/admin/usuarios': typeof AuthenticatedAdminUsuariosRoute
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
   '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
@@ -295,6 +305,7 @@ export interface FileRouteTypes {
     | '/admin/politica-precios'
     | '/admin/productos'
     | '/admin/slider'
+    | '/admin/usuarios'
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
     | '/api/public/order-recovery-emails'
@@ -323,6 +334,7 @@ export interface FileRouteTypes {
     | '/admin/politica-precios'
     | '/admin/productos'
     | '/admin/slider'
+    | '/admin/usuarios'
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
     | '/api/public/order-recovery-emails'
@@ -352,6 +364,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/politica-precios'
     | '/_authenticated/admin/productos'
     | '/_authenticated/admin/slider'
+    | '/_authenticated/admin/usuarios'
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
     | '/api/public/order-recovery-emails'
@@ -543,6 +556,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminSliderRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/admin/usuarios': {
+      id: '/_authenticated/admin/usuarios'
+      path: '/usuarios'
+      fullPath: '/admin/usuarios'
+      preLoaderRoute: typeof AuthenticatedAdminUsuariosRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/api/public/mercadopago-webhook': {
       id: '/api/public/mercadopago-webhook'
       path: '/api/public/mercadopago-webhook'
@@ -582,6 +602,7 @@ interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminPoliticaPreciosRoute: typeof AuthenticatedAdminPoliticaPreciosRoute
   AuthenticatedAdminProductosRoute: typeof AuthenticatedAdminProductosRoute
   AuthenticatedAdminSliderRoute: typeof AuthenticatedAdminSliderRoute
+  AuthenticatedAdminUsuariosRoute: typeof AuthenticatedAdminUsuariosRoute
 }
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
@@ -593,6 +614,7 @@ const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
     AuthenticatedAdminPoliticaPreciosRoute,
   AuthenticatedAdminProductosRoute: AuthenticatedAdminProductosRoute,
   AuthenticatedAdminSliderRoute: AuthenticatedAdminSliderRoute,
+  AuthenticatedAdminUsuariosRoute: AuthenticatedAdminUsuariosRoute,
 }
 
 const AuthenticatedAdminRouteWithChildren =

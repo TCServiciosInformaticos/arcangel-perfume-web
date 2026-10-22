@@ -24,7 +24,7 @@ export const Route = createFileRoute("/auth")({
 });
 
 function AuthPage() {
-  const { user, isAdmin, loading } = useAuth();
+  const { user, isAdmin, modules, loading } = useAuth();
   const navigate = useNavigate();
   const { next } = Route.useSearch();
   const [mode, setMode] = useState<"signin" | "signup" | "forgot" | "reset">("signin");
@@ -52,11 +52,11 @@ function AuthPage() {
   }, []);
 
   useEffect(() => {
-    if (!loading && user && isAdmin && mode !== "reset") {
+    if (!loading && user && (isAdmin || modules.length > 0) && mode !== "reset") {
       const destination = next && next !== "/" ? next : "/admin";
       navigate({ to: destination });
     }
-  }, [loading, user, isAdmin, navigate, next, mode]);
+  }, [loading, user, isAdmin, modules, navigate, next, mode]);
 
   async function handleSignOut() {
     await supabase.auth.signOut();
@@ -162,7 +162,7 @@ function AuthPage() {
                 </Link>
               </div>
             </div>
-          ) : !loading && user && isAdmin && mode !== "reset" ? (
+          ) : !loading && user && (isAdmin || modules.length > 0) && mode !== "reset" ? (
             <div className="text-center space-y-4">
               <h1 className="font-serif text-2xl text-foreground">Redirigiendo...</h1>
               <p className="text-sm text-muted-foreground">

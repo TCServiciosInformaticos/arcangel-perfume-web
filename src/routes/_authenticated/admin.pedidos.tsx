@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 export const Route = createFileRoute("/_authenticated/admin/pedidos")({ component: OrdersPage });
 const date = (s: string) => new Date(s).toLocaleString("es-AR");
 function OrdersPage() {
-  const { session } = useAuth(),
+  const { session, isAdmin } = useAuth(),
     qc = useQueryClient(),
     manage = useServerFn(manageOrder);
   const [term, setTerm] = useState(""),
@@ -136,7 +136,11 @@ function OrdersPage() {
           );
         } else setMessage("Estado consultado en Mercado Pago.");
       } else {
-        const r = await supabase.rpc("admin_order_action", { oid: id, action, note: note ?? undefined });
+        const r = await supabase.rpc("admin_order_action", {
+          oid: id,
+          action,
+          note: note ?? undefined,
+        });
         if (r.error) throw r.error;
         setMessage("Pedido actualizado.");
       }
@@ -344,18 +348,22 @@ function OrdersPage() {
                     : "Sin reserva vigente"}
                 </p>
                 <div className="my-4 flex flex-wrap gap-2">
-                  <Button disabled={busy} onClick={() => act(o.id, "reconcile")}>
-                    Consultar Mercado Pago
-                  </Button>
+                  {isAdmin && (
+                    <Button disabled={busy} onClick={() => act(o.id, "reconcile")}>
+                      Consultar Mercado Pago
+                    </Button>
+                  )}
                   {canResumeOrder(o.status) && (
                     <>
-                      <Button
-                        disabled={busy}
-                        variant="outline"
-                        onClick={() => act(o.id, "recovery_link")}
-                      >
-                        Copiar enlace para retomar
-                      </Button>
+                      {isAdmin && (
+                        <Button
+                          disabled={busy}
+                          variant="outline"
+                          onClick={() => act(o.id, "recovery_link")}
+                        >
+                          Copiar enlace para retomar
+                        </Button>
+                      )}
                       <Button disabled={busy} variant="outline" onClick={() => act(o.id, "cancel")}>
                         Cancelar pedido
                       </Button>
@@ -381,7 +389,7 @@ function OrdersPage() {
                       Marcar entregado
                     </Button>
                   )}
-                  {o.needs_review && o.status === "paid" && (
+                  {isAdmin && o.needs_review && o.status === "paid" && (
                     <Button
                       disabled={busy}
                       variant="outline"
