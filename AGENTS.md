@@ -22,7 +22,7 @@
 - Validate OAuth return paths once at sign-in and preserve the canonical path across sign-in and sign-up, so delegated consent is completed without open redirects.
 - Catalog cards prefer products.thumbnail_url (small WebP) and fall back to image_urls[0]; admin uploads convert to WebP and store a thumbnail, so mobile listings stay light.
 - Read full product tables through collectPages (src/lib/catalog-products.ts) or equivalent ranged loops for catalog and Excel operations, because the backend caps each request at 1000 rows; the admin list instead fetches only its current page with an exact total and stable created_at/id ordering to keep initial loading light.
-- Render branch maps through lazy Google Maps Embed iframes using the managed browser key only on credential-free authorized origins, so footer maps stay lightweight and preview host access keys are not leaked through referrers.
+- Render branch maps through lazy, keyless Google Maps iframes using only each public branch address. Maps must work on Hostinger without Lovable connector credentials, with an accessible title and a separate directions link.
 - Price policies use an admin-checked SECURITY INVOKER RPC with explicit product IDs, row locks and expected updated_at versions; preview selection is paginated and whole-result selection uses collectPages, so confirmed batches are atomic and stale prices cannot silently overwrite concurrent edits.
 - Admin product search goes through src/lib/admin-product-search.ts, which sanitizes the term and applies one quoted PostgREST or() filter across name, slug and description, so a stray wildcard, quote or comma cannot break the list; keep filtering server-side so the total, the page count and the rows always describe the same selection.
 
