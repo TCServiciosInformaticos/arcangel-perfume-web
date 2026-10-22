@@ -1,20 +1,40 @@
-export const STAFF_MODULES = ["catalogo", "pedidos", "slider"] as const;
+export const STAFF_MODULES = [
+  "usuarios",
+  "resumen",
+  "herramientas",
+  "estadisticas",
+  "pedidos",
+  "slider",
+  "productos",
+  "categorias",
+  "politica-precios",
+] as const;
 export type StaffModule = (typeof STAFF_MODULES)[number];
 export const STAFF_LABELS: Record<StaffModule, string> = {
-  catalogo: "Catálogo: productos, categorías y precios",
-  pedidos: "Pedidos: clientes, pagos e historial",
-  slider: "Slider de inicio",
+  usuarios: "Usuarios",
+  resumen: "Resumen",
+  herramientas: "Herramientas de venta",
+  estadisticas: "Estadísticas",
+  pedidos: "Pedidos",
+  slider: "Slider",
+  productos: "Productos",
+  categorias: "Categorías",
+  "politica-precios": "Política de Precios",
 };
 export function validStaffModules(value: unknown): StaffModule[] {
-  return Array.isArray(value) ? STAFF_MODULES.filter((m) => value.includes(m)) : [];
+  if (!Array.isArray(value)) return [];
+  // Compatibility while an existing deployment or account still uses the old group.
+  const expanded = value.includes("catalogo")
+    ? [...value, "productos", "categorias", "politica-precios"]
+    : value;
+  return STAFF_MODULES.filter((m) => expanded.includes(m));
 }
 export function canOpenAdminPath(path: string, isAdmin: boolean, modules: readonly StaffModule[]) {
   if (isAdmin) return true;
   const route = path.replace(/\/+$/, "");
+  // The landing page is a module chooser when Resumen was not granted.
   if (route === "/admin") return modules.length > 0;
-  if (["/admin/productos", "/admin/categorias", "/admin/politica-precios"].includes(route))
-    return modules.includes("catalogo");
-  if (route === "/admin/pedidos") return modules.includes("pedidos");
-  if (route === "/admin/slider") return modules.includes("slider");
-  return false;
+  return STAFF_MODULES.some(
+    (m) => m !== "resumen" && route === `/admin/${m}` && modules.includes(m),
+  );
 }

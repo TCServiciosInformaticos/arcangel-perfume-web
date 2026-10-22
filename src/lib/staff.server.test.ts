@@ -8,7 +8,7 @@ const input = {
   password: "synthetic-password-123",
   modules: ["slider" as const],
 };
-function fixture(admin: boolean) {
+function fixture(admin: boolean, usersPermission = false) {
   const calls: { created?: object; profile?: object } = {};
   const role = {
     select() {
@@ -38,6 +38,18 @@ function fixture(admin: boolean) {
       if (table === "user_roles") return role;
       assert.equal(table, "staff_accounts");
       return {
+        select() {
+          return this;
+        },
+        eq() {
+          return this;
+        },
+        async maybeSingle() {
+          return {
+            data: usersPermission ? { modules: ["usuarios"], enabled: true } : null,
+            error: null,
+          };
+        },
         async insert(data: object) {
           calls.profile = data;
           return { error: null };
@@ -49,7 +61,7 @@ function fixture(admin: boolean) {
 }
 test("nonadmin cannot create auth accounts or grant modules", async () => {
   const f = fixture(false);
-  await assert.rejects(createEmployee(input, f.client), /Solo el administrador/);
+  await assert.rejects(createEmployee(input, f.client), /permiso de Usuarios/);
   assert.deepEqual(f.calls, {});
 });
 test("owner creates a separate employee without administrator role or password metadata", async () => {
@@ -68,4 +80,10 @@ test("owner creates a separate employee without administrator role or password m
     enabled: true,
   });
   assert.ok(!JSON.stringify(f.calls.profile).includes(input.password));
+});
+
+test("employee with explicit Usuarios permission can create staff without owner role", async () => {
+  const f = fixture(false, true);
+  assert.deepEqual(await createEmployee(input, f.client), { id: "employee-fixture" });
+  assert.ok(f.calls.created);
 });

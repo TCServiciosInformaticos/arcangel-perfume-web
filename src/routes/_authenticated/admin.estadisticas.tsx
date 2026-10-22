@@ -43,7 +43,8 @@ const field = "h-10 w-full rounded-md border border-input bg-background px-3 tex
 const integer = (n: number) => n.toLocaleString("es-AR");
 const shortDate = (s: string) => s.slice(0, 10).split("-").reverse().join("/");
 function SalesDashboard() {
-  const { isAdmin, user } = useAuth();
+  const { isAdmin, modules, user } = useAuth();
+  const canRead = isAdmin || modules.includes("estadisticas");
   const [today] = useState(() => buenosAiresDate());
   const [draft, setDraft] = useState(() => ({
     from: shiftDate(today, -29),
@@ -61,7 +62,7 @@ function SalesDashboard() {
     [page, setPage] = useState(0);
   const lookups = useQuery({
     queryKey: ["admin", "sales-lookups", user?.id],
-    enabled: isAdmin,
+    enabled: canRead,
     queryFn: async () => {
       const [c, b] = await Promise.all([
         supabase.from("categories").select("id,name").order("sort_order"),
@@ -73,7 +74,7 @@ function SalesDashboard() {
   });
   const report = useQuery({
     queryKey: ["admin", "sales-statistics", user?.id, filters],
-    enabled: isAdmin,
+    enabled: canRead,
     staleTime: 60000,
     retry: false,
     queryFn: async () => {

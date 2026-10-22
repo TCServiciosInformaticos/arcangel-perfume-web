@@ -19,7 +19,20 @@ export async function createEmployee(
     .eq("user_id", auth.data.user.id)
     .eq("role", "admin")
     .maybeSingle();
-  if (role.error || !role.data) throw new Error("Solo el administrador puede crear empleados.");
+  if (role.error) throw new Error("No se pudo verificar el permiso de Usuarios.");
+  if (!role.data) {
+    const permission = await (client as unknown as SupabaseClient)
+      .from("staff_accounts")
+      .select("modules,enabled")
+      .eq("user_id", auth.data.user.id)
+      .maybeSingle();
+    if (
+      permission.error ||
+      !permission.data?.enabled ||
+      !permission.data.modules?.includes("usuarios")
+    )
+      throw new Error("No tenés permiso de Usuarios para crear empleados.");
+  }
   const created = await client.auth.admin.createUser({
     email: input.email.toLowerCase(),
     password: input.password,
@@ -31,15 +44,13 @@ export async function createEmployee(
     );
   // Never grant the administrator role. No invitations or email are sent here.
   const db = client as unknown as SupabaseClient;
-  const saved = await db
-    .from("staff_accounts")
-    .insert({
-      user_id: created.data.user.id,
-      name: input.name,
-      email: input.email.toLowerCase(),
-      modules: input.modules,
-      enabled: true,
-    });
+  const saved = await db.from("staff_accounts").insert({
+    user_id: created.data.user.id,
+    name: input.name,
+    email: input.email.toLowerCase(),
+    modules: input.modules,
+    enabled: true,
+  });
   if (saved.error)
     throw new Error(
       "La cuenta fue creada, pero no se habilitó su acceso de empleado. Contactá al administrador antes de volver a intentarlo.",

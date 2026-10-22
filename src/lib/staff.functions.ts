@@ -9,7 +9,7 @@ export const createStaffAccount = createServerFn({ method: "POST" })
         name: z.string().trim().min(2).max(120),
         email: z.string().trim().email().max(254),
         password: z.string().min(12).max(128),
-        modules: z.array(z.enum(STAFF_MODULES)).max(3),
+        modules: z.array(z.enum(STAFF_MODULES)).max(STAFF_MODULES.length),
       })
       .parse(input),
   )

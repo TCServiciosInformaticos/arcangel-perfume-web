@@ -101,7 +101,11 @@ function AdminLayout() {
       <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-6 px-4 py-8 sm:px-6 lg:flex-row lg:px-8">
         <aside className="shrink-0 lg:w-56">
           <nav className="flex flex-wrap gap-1 lg:flex-col">
-            {NAV.filter((n) => canOpenAdminPath(n.to, isAdmin, modules)).map((n) => {
+            {NAV.filter(
+              (n) =>
+                canOpenAdminPath(n.to, isAdmin, modules) &&
+                (n.to !== "/admin" || isAdmin || modules.includes("resumen")),
+            ).map((n) => {
               const active = n.exact
                 ? pathname === n.to || pathname === `${n.to}/`
                 : pathname.startsWith(n.to);
@@ -126,7 +130,7 @@ function AdminLayout() {
           {!canOpenAdminPath(pathname, isAdmin, modules) ? (
             <p role="alert">No tenés permiso para acceder a este módulo.</p>
           ) : isOverview ? (
-            isAdmin ? (
+            isAdmin || modules.includes("resumen") ? (
               <AdminOverview />
             ) : (
               <div>
@@ -144,61 +148,26 @@ function AdminLayout() {
 }
 
 function AdminOverview() {
+  const { isAdmin, modules } = useAuth();
   return (
     <div>
       <h1 className="font-serif text-3xl text-foreground">Resumen</h1>
       <p className="mt-1 text-sm text-muted-foreground">
-        Gestioná el catálogo desde el menú lateral.
+        Accedé a los módulos habilitados para tu cuenta.
       </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <Link to="/admin/estadisticas" className="rounded-xl border border-border bg-card p-6">
-          <BarChart3 className="h-7 w-7 text-primary" />
-          <h2 className="mt-3 font-serif text-xl">Estadísticas</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Ventas cobradas, evolución, artículos más vendidos y alertas de stock.
-          </p>
-        </Link>
-        <Link
-          to="/admin/productos"
-          className="group rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-        >
-          <Package className="h-7 w-7 text-primary" />
-          <h2 className="mt-3 font-serif text-xl text-foreground">Productos</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Cargá, editá o pausá productos, subí imágenes, precios y stock con Excel.
-          </p>
-        </Link>
-        <Link
-          to="/admin/categorias"
-          className="group rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-        >
-          <FolderTree className="h-7 w-7 text-primary" />
-          <h2 className="mt-3 font-serif text-xl text-foreground">Categorías</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Creá, ordená y gestioná las categorías y marcas/subcategorías del catálogo.
-          </p>
-        </Link>
-        <Link
-          to="/admin/politica-precios"
-          className="group rounded-md border border-border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-md"
-        >
-          <Percent className="h-7 w-7 text-primary" />
-          <h2 className="mt-3 font-serif text-xl text-foreground">Política de Precios</h2>
-        </Link>
-        <Link to="/admin/slider" className="rounded-xl border border-border bg-card p-6">
-          <Images className="h-7 w-7 text-primary" />
-          <h2 className="mt-3 font-serif text-xl">Slider de inicio</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Subí imágenes, editá textos y ordená las diapositivas de la portada.
-          </p>
-        </Link>
-        <Link to="/admin/pedidos" className="rounded-xl border border-border bg-card p-6">
-          <ShoppingBag className="h-7 w-7 text-muted-foreground" />
-          <h2 className="mt-3 font-serif text-xl text-foreground">Pedidos</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Consultá pedidos, pagos, reservas de stock e historial, y recuperá compras pendientes.
-          </p>
-        </Link>
+        {NAV.filter((n) => n.to !== "/admin" && canOpenAdminPath(n.to, isAdmin, modules)).map(
+          (n) => (
+            <Link
+              key={n.to}
+              to={n.to}
+              className="rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-md"
+            >
+              <n.icon className="h-7 w-7 text-primary" />
+              <h2 className="mt-3 font-serif text-xl">{n.label}</h2>
+            </Link>
+          ),
+        )}
       </div>
     </div>
   );

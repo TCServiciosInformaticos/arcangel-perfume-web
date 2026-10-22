@@ -30,14 +30,27 @@ function Modules({
               onChange(e.target.checked ? [...value, m] : value.filter((v) => v !== m))
             }
           />
-          {STAFF_LABELS[m]}
+          <span>
+            {STAFF_LABELS[m]}
+            {m === "usuarios" && (
+              <span className="block text-xs text-muted-foreground">
+                Permite crear empleados y asignar permisos a otras cuentas.
+              </span>
+            )}
+            {m === "herramientas" && (
+              <span className="block text-xs text-muted-foreground">
+                Incluye costos y rentabilidad.
+              </span>
+            )}
+          </span>
         </label>
       ))}
     </fieldset>
   );
 }
 function Users() {
-  const { isAdmin, session } = useAuth();
+  const { isAdmin, modules: assignedModules, session } = useAuth();
+  const canManage = isAdmin || assignedModules.includes("usuarios");
   const qc = useQueryClient();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -46,21 +59,20 @@ function Users() {
   const [busy, setBusy] = useState(false);
   const q = useQuery({
     queryKey: ["admin", "staff"],
-    enabled: isAdmin,
+    enabled: canManage,
     queryFn: async () => {
       const r = await staffClient.from("staff_accounts").select("*").order("name");
       if (r.error) throw r.error;
       return r.data;
     },
   });
-  if (!isAdmin) return <p>Solo el administrador puede gestionar usuarios.</p>;
+  if (!canManage) return <p>No tenés permiso para gestionar usuarios.</p>;
   return (
     <div className="space-y-6">
       <h1 className="font-serif text-3xl">Usuarios</h1>
       <p className="text-sm text-muted-foreground">
-        Creá cuentas individuales para el personal. Usuarios, estadísticas y herramientas con costos
-        quedan reservados al administrador. Desactivar una cuenta retira sus permisos de empleado,
-        conservando el historial.
+        Creá cuentas individuales y tildá cada módulo que podrá usar el personal. Desactivar una
+        cuenta retira sus permisos de empleado, conservando el historial.
       </p>
       <form
         className="max-w-xl space-y-4 rounded-xl border bg-card p-5"

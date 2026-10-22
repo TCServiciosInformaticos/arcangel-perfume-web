@@ -26,8 +26,8 @@ async function save(action: string, payload: object) {
 }
 function CommerceAdmin() {
   const [tab, setTab] = useState("combos");
-  const { isAdmin } = useAuth();
-  if (!isAdmin) return null;
+  const { isAdmin, modules } = useAuth();
+  if (!isAdmin && !modules.includes("herramientas")) return null;
   return (
     <div className="space-y-6">
       <h1 className="font-serif text-3xl">Herramientas de venta</h1>
