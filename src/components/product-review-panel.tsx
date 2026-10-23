@@ -137,6 +137,7 @@ export function ProductReviewPanel({ onEdit }: { onEdit: (id: string) => void })
           Marca
           <select
             className="mt-1 h-10 w-full rounded border bg-background px-2"
+            aria-label="Marca"
             value={brand}
             onChange={(e) => {
               setBrand(e.target.value);
@@ -155,6 +156,7 @@ export function ProductReviewPanel({ onEdit }: { onEdit: (id: string) => void })
           Problema
           <select
             className="mt-1 h-10 w-full rounded border bg-background px-2"
+            aria-label="Problema"
             value={issue}
             onChange={(e) => {
               setIssue(e.target.value as ReviewIssue);
@@ -172,6 +174,7 @@ export function ProductReviewPanel({ onEdit }: { onEdit: (id: string) => void })
           Visibilidad
           <select
             className="mt-1 h-10 w-full rounded border bg-background px-2"
+            aria-label="Visibilidad"
             value={visibility}
             onChange={(e) => {
               setVisibility(e.target.value);
