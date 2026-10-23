@@ -1,0 +1,45 @@
+name: Recover legacy product photos
+on:
+  push:
+    branches: [restore-product-assets]
+    paths:
+      - .github/workflows/recover-product-assets.yml
+      - scripts/recover-product-assets.mjs
+      - scripts/catalog-data/legacy-photo-manifest.json
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: recover-legacy-photos
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: restore-product-assets
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "22"
+      - name: Recover and verify all referenced photos
+        run: node scripts/recover-product-assets.mjs
+      - name: Confirm complete static asset coverage
+        run: |
+          node --input-type=module <<'JS'
+          import {readFile,stat} from 'node:fs/promises';
+          const report=JSON.parse(await readFile('docs/legacy-photo-recovery.json','utf8'));
+          if(report.failures.length || report.recovered!==report.expected) throw Error('Incomplete image recovery');
+          for(const f of report.files) if((await stat('public'+f.path)).size!==f.bytes) throw Error('Missing image '+f.path);
+          console.log(`${report.recovered} complete image files ready for Hostinger`);
+          JS
+      - name: Commit recovered public files to the recovery branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- public/__l5e/assets-v1 docs/legacy-photo-recovery.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Restore original product photos as independent static assets'
+            git push origin HEAD:restore-product-assets
+          fi
