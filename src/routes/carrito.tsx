@@ -33,7 +33,9 @@ function CartPage() {
           <div className="mt-10 rounded-lg border border-dashed border-border bg-card p-12 text-center">
             <ShoppingBag className="mx-auto h-10 w-10 text-muted-foreground/50" />
             <p className="mt-4 font-serif text-2xl">Todavía está vacío</p>
-            <p className="mt-2 text-sm text-muted-foreground">Sumá fragancias desde el catálogo.</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Elegí tus productos favoritos y sumalos al carrito.
+            </p>
             <Link
               to="/productos"
               className="mt-6 inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
@@ -111,7 +113,7 @@ function CartPage() {
                 </div>
                 <div className="flex justify-between text-xs text-muted-foreground">
                   <dt>Envío</dt>
-                  <dd>Calculado en el checkout</dd>
+                  <dd>Se calcula en el próximo paso</dd>
                 </div>
               </dl>
               <div className="mt-4 flex justify-between border-t border-border pt-4 text-base">
@@ -119,8 +121,11 @@ function CartPage() {
                 <span className="font-serif text-2xl text-primary">{formatARS(subtotal)}</span>
               </div>
               <Button asChild className="mt-6 w-full" size="lg">
-                <Link to="/checkout">Continuar al checkout</Link>
+                <Link to="/checkout">Continuar con la compra</Link>
               </Button>
+              <p className="mt-3 text-center text-xs text-muted-foreground">
+                Antes de pagar verificaremos los precios y la disponibilidad.
+              </p>
               <Link
                 to="/productos"
                 className="mt-3 block text-center text-sm text-muted-foreground hover:text-foreground"

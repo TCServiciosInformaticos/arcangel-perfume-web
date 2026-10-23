@@ -13,7 +13,8 @@ import { buildOrderMessage, buildWhatsappLink } from "@/lib/whatsapp";
 import { isPaymentConfirmed } from "@/lib/checkout-validation";
 import { useCart } from "@/lib/cart-context";
 import { resumeOrderCheckout, verifyOrderPayment } from "@/lib/checkout.functions";
-import { canResumeOrder, orderStatusLabels } from "@/lib/order-lifecycle";
+import { orderConfirmationCopy } from "@/lib/checkout-copy";
+import { canResumeOrder } from "@/lib/order-lifecycle";
 import { formatARS } from "@/lib/format";
 
 export const orderReturnSearch = z.object({
@@ -80,6 +81,7 @@ export function OrderConfirmation({ order, token, payment_id }: z.infer<typeof o
   const result = query.data;
   const paid = result && isPaymentConfirmed(result.status, result.order.mp_payment_id);
   const cancelled = result?.status === "cancelled";
+  const copy = orderConfirmationCopy(result?.status, !!paid);
   const link =
     paid && result.storeWhatsapp
       ? buildWhatsappLink(result.storeWhatsapp, buildOrderMessage(result.order))
@@ -124,16 +126,11 @@ export function OrderConfirmation({ order, token, payment_id }: z.infer<typeof o
         ) : (
           <Clock className="mx-auto h-14 w-14 text-primary" />
         )}
-        <h1 className="mt-4 text-3xl font-bold tracking-normal">
-          {paid
-            ? "¡Gracias por tu compra!"
-            : cancelled
-              ? "El pago no pudo procesarse"
-              : "Confirmación de tu pedido"}
-        </h1>
+        <h1 className="mt-4 text-3xl font-bold tracking-normal">{copy.title}</h1>
         {!order || !token ? (
           <p className="mt-4 text-destructive">
-            Abrí el enlace que recibiste al finalizar la compra para consultar tu pedido.
+            Para consultar tu pedido, usá el enlace completo de confirmación o de recuperación de la
+            compra.
           </p>
         ) : query.error ? (
           <div className="mt-4">
@@ -145,30 +142,20 @@ export function OrderConfirmation({ order, token, payment_id }: z.infer<typeof o
             </Button>
           </div>
         ) : query.isFetching && !result ? (
-          <p className="mt-4 text-muted-foreground">Verificando el pago con Mercado Pago…</p>
+          <p className="mt-4 text-muted-foreground">
+            Estamos consultando el estado de tu pago. Esperá unos instantes…
+          </p>
         ) : !result ? (
-          <p className="mt-4 text-destructive">Pedido no encontrado.</p>
+          <p className="mt-4 text-destructive">
+            No pudimos encontrar este pedido. Revisá que estés usando el enlace completo.
+          </p>
         ) : (
           <>
             <p className="mt-4 text-muted-foreground">
               Pedido #{result.order.order_number} · {formatARS(result.order.total)}
             </p>
-            <p className="mt-2 font-medium">{orderStatusLabels[result.status] ?? result.status}</p>
-            <p className="mt-4">
-              {paid
-                ? "Pago aprobado por Mercado Pago."
-                : cancelled
-                  ? "Tu carrito sigue guardado para volver a intentar el pago."
-                  : result.status === "abandoned_final"
-                    ? "El plazo de recuperación de este pedido finalizó. Podés iniciar una nueva compra desde el catálogo."
-                    : result.status === "recovery_notified"
-                      ? "Te enviamos un recordatorio para retomar tu pedido. El plazo es de 24 horas desde el aviso."
-                      : result.status === "abandoned"
-                        ? "Este pedido venció por falta de pago. Podés retomarlo con los precios y la disponibilidad actuales."
-                        : result.status === "payment_rejected"
-                          ? "Mercado Pago rechazó el intento. Podés volver a pagar este mismo pedido."
-                          : "Tu pago todavía está pendiente de confirmación de Mercado Pago."}
-            </p>
+            <p className="mt-2 font-medium">{copy.label}</p>
+            <p className="mt-4">{copy.description}</p>
             {link && (
               <Button
                 asChild
@@ -176,14 +163,14 @@ export function OrderConfirmation({ order, token, payment_id }: z.infer<typeof o
                 className="mt-8 h-auto min-h-12 w-full whitespace-normal bg-whatsapp text-ink hover:bg-whatsapp/90"
               >
                 <a href={link} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle /> Enviar pedido al dueño por WhatsApp
+                  <MessageCircle /> Compartir pedido por WhatsApp
                 </a>
               </Button>
             )}
             {link && (
               <p className="mt-3 text-sm text-muted-foreground">
-                El mensaje queda preparado con tus datos, productos y entrega; tocá Enviar en
-                WhatsApp para confirmarlo.
+                Tu pedido ya está registrado. Si necesitás coordinar con nuestro equipo, podés
+                compartir el detalle por WhatsApp. Revisá el mensaje y tocá Enviar para compartirlo.
               </p>
             )}
             {!paid && (
@@ -193,17 +180,17 @@ export function OrderConfirmation({ order, token, payment_id }: z.infer<typeof o
                 className="mt-6"
                 onClick={() => paymentAction("verify")}
               >
-                Verificar estado del pago
+                Consultar estado del pago
               </Button>
             )}
             {canResumeOrder(result.status) && (
               <div className="mt-4">
                 <Button disabled={busy} onClick={() => paymentAction("resume")}>
-                  {busy ? "Verificando…" : "Retomar pago de este pedido"}
+                  {busy ? "Verificando…" : "Continuar con el pago"}
                 </Button>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Al generar un nuevo intento se verifican precios y stock actuales. La reserva dura
-                  30 minutos.
+                  Revisaremos los precios y la disponibilidad. Los productos se reservan durante 30
+                  minutos al iniciar el pago. Si ya pagaste, consultá primero el estado.
                 </p>
               </div>
             )}
@@ -215,7 +202,7 @@ export function OrderConfirmation({ order, token, payment_id }: z.infer<typeof o
             {paid && order && token && <RepeatPurchase orderId={order} token={token} />}
             {cancelled && (
               <Button asChild className="mt-6">
-                <Link to="/carrito">Volver a intentar</Link>
+                <Link to="/carrito">Revisar mi carrito</Link>
               </Button>
             )}
           </>

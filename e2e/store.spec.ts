@@ -49,3 +49,17 @@ test("slider admin requires sign-in", async ({ page }) => {
   expect(new URL(page.url()).searchParams.get("next")).toBe("/admin/slider?vista=prueba");
   await expect(page.getByRole("heading", { name: "Slider de inicio" })).toHaveCount(0);
 });
+test("purchase wording explains the handoff to Mercado Pago", async ({ page }) => {
+  await page.goto("/producto/perfume-prueba", { waitUntil: "networkidle" });
+  await page.getByRole("button", { name: "Agregar al carrito" }).click();
+  await page.goto("/carrito");
+  await page.getByRole("link", { name: "Continuar con la compra", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "Finalizá tu compra", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Continuar a Mercado Pago", exact: true }),
+  ).toBeVisible();
+  await expect(page.getByText(/Te llevaremos a Mercado Pago para elegir cómo pagar/)).toBeVisible();
+  await expect(page.getByText(/dueño/)).toHaveCount(0);
+});

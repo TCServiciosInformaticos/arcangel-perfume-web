@@ -191,7 +191,10 @@ function CheckoutPage() {
       };
       const latest = await verifyPrices();
       if (Math.round(latest.amount * 100) !== Math.round((validQuote?.amount ?? subtotal) * 100)) {
-        toast.info("Actualizamos los precios y descuentos. Revisá el total y confirmá nuevamente.");
+        toast.info(
+          "El total cambió. Revisá los precios y descuentos y volvé a continuar con el pago.",
+        );
+        setSubmitting(false);
         return;
       }
       const fingerprint = JSON.stringify(checkoutData);
@@ -253,7 +256,10 @@ function CheckoutPage() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
-        <h1 className="font-serif text-4xl sm:text-5xl">Checkout</h1>
+        <h1 className="font-serif text-4xl sm:text-5xl">Finalizá tu compra</h1>
+        <p className="mt-3 text-muted-foreground">
+          Completá tus datos, elegí cómo recibir tu pedido y continuá a Mercado Pago.
+        </p>
 
         <section className="mt-6 space-y-3 rounded-lg border p-4">
           <Label htmlFor="checkout-coupon">Cupón de descuento</Label>
@@ -272,18 +278,22 @@ function CheckoutPage() {
               onClick={async () => {
                 try {
                   await verifyPrices();
-                  toast.success("Precios y cupón verificados");
+                  toast.success(
+                    coupon.trim()
+                      ? "Cupón aplicado. Revisá el total de tu compra."
+                      : "Total actualizado.",
+                  );
                 } catch (e) {
                   toast.error(e instanceof Error ? e.message : "No se pudo verificar");
                 }
               }}
             >
-              Verificar precios y cupón
+              {coupon.trim() ? "Aplicar cupón" : "Actualizar total"}
             </Button>
           </div>
           <p className="text-xs text-muted-foreground">
-            Los cupones requieren una cuenta con email confirmado. Se aplican sobre los artículos
-            elegibles, sin envío.
+            Para usar un cupón, iniciá sesión con un correo verificado. El descuento se aplica a los
+            productos incluidos en la promoción y no al envío.
           </p>
           {validQuote && (
             <p>
@@ -304,7 +314,7 @@ function CheckoutPage() {
                   autoComplete="name"
                 />
                 <Field
-                  label="Email"
+                  label="Correo electrónico"
                   name="customer_email"
                   type="email"
                   required
@@ -321,7 +331,7 @@ function CheckoutPage() {
             </section>
 
             <section className="rounded-lg border border-border bg-card p-6">
-              <h2 className="font-serif text-2xl">Entrega</h2>
+              <h2 className="font-serif text-2xl">¿Cómo querés recibir tu pedido?</h2>
               <RadioGroup
                 value={method}
                 onValueChange={(v) => setMethod(v as "pickup" | "shipping")}
@@ -398,15 +408,19 @@ function CheckoutPage() {
                     autoComplete="address-level2"
                   />
                   <Field label="Código postal" name="delivery_zip" autoComplete="postal-code" />
-                  <Field label="Día preferido" name="delivery_day" placeholder="Ej: martes 28" />
+                  <Field
+                    label="Día de entrega preferido (opcional)"
+                    name="delivery_day"
+                    placeholder="Ej: martes 28"
+                  />
                   <div className="flex flex-col gap-1.5">
-                    <Label>Franja horaria</Label>
+                    <Label>Horario preferido (opcional)</Label>
                     <Select
                       value={timeSlot}
                       onValueChange={(v) => setTimeSlot(v as typeof timeSlot)}
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Elegir franja" />
+                        <SelectValue placeholder="Elegí un horario" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="morning">Mañana (9–13 h)</SelectItem>
@@ -419,7 +433,7 @@ function CheckoutPage() {
               )}
 
               <div className="mt-4">
-                <Label htmlFor="notes">Notas (opcional)</Label>
+                <Label htmlFor="notes">Indicaciones para tu pedido (opcional)</Label>
                 <Textarea
                   id="notes"
                   name="notes"
@@ -431,7 +445,7 @@ function CheckoutPage() {
           </div>
 
           <aside className="h-fit space-y-4 rounded-lg border border-border bg-card p-6">
-            <h2 className="font-serif text-2xl">Tu pedido</h2>
+            <h2 className="font-serif text-2xl">Resumen de tu compra</h2>
             <ul className="divide-y divide-border text-sm">
               {(validQuote
                 ? validQuote.items.map((i, index) => ({
@@ -471,14 +485,15 @@ function CheckoutPage() {
             <Button type="submit" size="lg" className="w-full" disabled={submitting}>
               {submitting ? (
                 <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Iniciando pago…
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Preparando tu pago…
                 </>
               ) : (
-                "Pagar con MercadoPago"
+                "Continuar a Mercado Pago"
               )}
             </Button>
             <p className="text-center text-xs text-muted-foreground">
-              Después del pago aprobado, podrás abrir WhatsApp y enviar tu pedido completo al dueño.
+              Te llevaremos a Mercado Pago para elegir cómo pagar. Al volver a la web podrás
+              consultar el estado de tu pedido.
             </p>
           </aside>
         </form>
