@@ -166,11 +166,11 @@ function AdminProductos() {
     },
   });
   useEffect(() => {
-    if (editQ.data && editQ.data.id === editar) {
+    if (editQ.isSuccess && !editQ.isFetching && editQ.data.id === editar) {
       setEditing(editQ.data);
       setOpenForm(true);
     }
-  }, [editQ.data, editar]);
+  }, [editQ.data, editQ.isSuccess, editQ.isFetching, editar]);
   function closeForm(open: boolean) {
     setOpenForm(open);
     if (!open && editar) navigate({ search: { revision, editar: undefined }, replace: true });
@@ -489,7 +489,7 @@ function AdminProductos() {
         </>
       )}
       <ProductForm
-        key={editing?.id ?? (openForm ? "new" : "closed")}
+        key={`${editing?.id ?? "new"}:${openForm ? "open" : "closed"}`}
         open={openForm}
         onOpenChange={closeForm}
         product={editing}

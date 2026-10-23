@@ -286,6 +286,11 @@ test("article review checks photos, filters brands and edits the selected articl
     "Artículo con foto fallida",
   );
   await expect(dialog.getByLabel("Código de artículo", { exact: true })).toHaveValue("00002");
+  await dialog.getByLabel("Código de artículo", { exact: true }).fill("NO-GUARDADO");
+  await dialog.getByRole("button", { name: "Cancelar", exact: true }).click();
+  await expect(dialog).toHaveCount(0);
+  await panel.getByRole("button", { name: "Editar artículo", exact: true }).click();
+  await expect(dialog.getByLabel("Código de artículo", { exact: true })).toHaveValue("00002");
   await dialog.getByLabel("Código de artículo", { exact: true }).fill("000009");
   await dialog.locator('input[type="file"][accept="image/*"]').setInputFiles("public/favicon.png");
   await expect(page.getByText("1 imagen(es) subida(s)", { exact: true })).toBeVisible();
