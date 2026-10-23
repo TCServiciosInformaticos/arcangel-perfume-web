@@ -54,3 +54,18 @@ test("MCP bounds streamed bodies without Content-Length", async () => {
   assert.ok(result instanceof Response);
   assert.equal(result.status, 413);
 });
+
+test("MCP accepts framework Request proxies without native private-field errors", async () => {
+  const original = post('{"jsonrpc":"2.0","id":1,"method":"tools/list"}');
+  const proxy = new Proxy(original, {
+    get(target, property) {
+      const value = Reflect.get(target, property, target);
+      return typeof value === "function" ? value.bind(target) : value;
+    },
+  });
+  const result = await limitMcpRequest(proxy);
+  assert.ok(result instanceof Request);
+  assert.equal(result.method, "POST");
+  assert.equal(result.headers.get("authorization"), "Bearer test");
+  assert.equal((await result.json()).method, "tools/list");
+});

@@ -51,5 +51,13 @@ export async function limitMcpRequest(request: Request): Promise<Request | Respo
   }
   const headers = new Headers(request.headers);
   headers.delete("content-length");
-  return new Request(request, { body: bytes, headers });
+  // TanStack/Nitro can provide a Request proxy. Passing it to the native
+  // constructor triggers Undici private-field checks, so copy public fields.
+  return new Request(request.url, {
+    method: request.method,
+    body: bytes,
+    headers,
+    signal: request.signal,
+    redirect: request.redirect,
+  });
 }
