@@ -105,7 +105,12 @@ createServer(async (req, res) => {
       break;
     case "/rest/v1/products": {
       const slug = url.searchParams.get("slug")?.replace(/^eq\./, "");
-      data = slug ? products.filter((p) => p.slug === slug) : products;
+      data =
+        slug === "foto-fallida-prueba"
+          ? [{ ...products[0], slug, image_urls: ["/broken-product-photo.webp"] }]
+          : slug
+            ? products.filter((p) => p.slug === slug)
+            : products;
       if (req.headers.accept?.includes("vnd.pgrst.object")) data = data[0] ?? null;
       break;
     }

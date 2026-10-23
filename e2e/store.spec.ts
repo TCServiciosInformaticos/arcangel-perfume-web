@@ -116,3 +116,14 @@ test("hero loads only neighboring slides and prioritizes the first image", async
   ).toHaveAttribute("aria-current", "true");
   await expect(hero.locator("img")).toHaveCount(6);
 });
+
+test("product detail shows a replacement when its photo cannot load", async ({ page }) => {
+  await page.route("**/broken-product-photo.webp", (route) =>
+    route.fulfill({ status: 404, body: "Missing" }),
+  );
+  await page.goto("/producto/foto-fallida-prueba");
+  await expect(
+    page.getByRole("img", { name: "Perfume de prueba: imagen no disponible", exact: true }),
+  ).toBeVisible();
+  await expect(page.getByRole("button", { name: "Agregar al carrito" })).toBeVisible();
+});

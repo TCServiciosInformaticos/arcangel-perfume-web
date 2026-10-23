@@ -1,3 +1,4 @@
+import { ProductImage } from "@/components/product-image";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
@@ -54,7 +55,11 @@ function CartPage() {
                     className="aspect-square h-24 w-24 flex-none overflow-hidden rounded-md bg-secondary/40"
                   >
                     {it.imageUrl ? (
-                      <img src={it.imageUrl} alt={it.name} className="h-full w-full object-cover" />
+                      <ProductImage
+                        src={it.imageUrl}
+                        alt={it.name}
+                        className="h-full w-full object-cover"
+                      />
                     ) : (
                       <div className="flex h-full items-center justify-center font-serif text-xs text-muted-foreground/50">
                         El Arcángel

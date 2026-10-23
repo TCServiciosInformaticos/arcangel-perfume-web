@@ -1,15 +1,33 @@
 import { FULL_IMAGE_MAX, THUMB_IMAGE_MAX, resolveThumbnail, toWebp } from "@/lib/image-optimize";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient, keepPreviousData } from "@tanstack/react-query";
 import { useState, useRef, useEffect } from "react";
 import { toast } from "sonner";
-import { Plus, Pencil, Trash2, ImagePlus, X, Upload, ChevronLeft, ChevronRight, Search } from "lucide-react";
+import {
+  Plus,
+  Pencil,
+  Trash2,
+  ImagePlus,
+  X,
+  Upload,
+  ChevronLeft,
+  ChevronRight,
+  Search,
+} from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { formatARS, slugify } from "@/lib/format";
-import { subcategoriesForCategory, typesForBrand, validateProductClassification, type SubcategoryOption, type ProductTypeOption } from "@/lib/category-selection";
+import {
+  subcategoriesForCategory,
+  typesForBrand,
+  validateProductClassification,
+  type SubcategoryOption,
+  type ProductTypeOption,
+} from "@/lib/category-selection";
 import { adminPageRange, adminPageCount } from "@/lib/admin-pagination";
 import { applyAdminProductSearch, normalizeAdminSearch } from "@/lib/admin-product-search";
 import { Button } from "@/components/ui/button";
+import { ProductReviewPanel } from "@/components/product-review-panel";
+import { ProductImage } from "@/components/product-image";
 import { ProductExcelControls } from "@/components/product-excel-controls";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -42,14 +60,24 @@ import {
 } from "@/components/ui/select";
 
 export const Route = createFileRoute("/_authenticated/admin/productos")({
-  head: () => ({ meta: [
-    { title: "Productos · Panel admin — El Arcángel" },
-    { name: "description", content: "Gestión de artículos y precios de El Arcángel." },
-    { property: "og:title", content: "Administrar productos — El Arcángel" },
-    { property: "og:description", content: "Administración de productos, imágenes y stock." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary" },
-  ] }),
+  validateSearch: (search: Record<string, unknown>) => ({
+    revision: search.revision === true || search.revision === "true",
+    editar:
+      typeof search.editar === "string" &&
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(search.editar)
+        ? search.editar
+        : undefined,
+  }),
+  head: () => ({
+    meta: [
+      { title: "Productos · Panel admin — El Arcángel" },
+      { name: "description", content: "Gestión de artículos y precios de El Arcángel." },
+      { property: "og:title", content: "Administrar productos — El Arcángel" },
+      { property: "og:description", content: "Administración de productos, imágenes y stock." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
   component: AdminProductos,
 });
 
@@ -57,6 +85,8 @@ type Category = { id: string; name: string; slug: string };
 type Product = {
   id: string;
   slug: string;
+  article_code: string | null;
+  updated_at: string;
   name: string;
   description: string | null;
   price: number;
@@ -77,6 +107,8 @@ const SIGNED_URL_TTL = 60 * 60 * 24 * 365 * 10; // 10 años
 
 function AdminProductos() {
   const qc = useQueryClient();
+  const { revision, editar } = Route.useSearch();
+  const navigate = Route.useNavigate();
   const [openForm, setOpenForm] = useState(false);
   const [editing, setEditing] = useState<Product | null>(null);
   const [toDelete, setToDelete] = useState<Product | null>(null);
@@ -98,23 +130,51 @@ function AdminProductos() {
   const productsQ = useQuery({
     queryKey: ["admin", "products", page, search],
     placeholderData: keepPreviousData,
+    enabled: !revision,
     queryFn: async () => {
-        const { from, to } = adminPageRange(page);
-        const { data, error, count } = await applyAdminProductSearch(
-          supabase
-            .from("products")
-            .select(
-              "id, slug, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)",
-              { count: "exact" },
-            )
-            .order("created_at", { ascending: false })
-            .order("id", { ascending: true }),
-          search,
-        ).range(from, to);
-        if (error) throw error;
-        return { products: (data ?? []) as Product[], total: count ?? 0 };
+      const { from, to } = adminPageRange(page);
+      const { data, error, count } = await applyAdminProductSearch(
+        supabase
+          .from("products")
+          .select(
+            "id, updated_at, slug, article_code, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)",
+            { count: "exact" },
+          )
+          .order("created_at", { ascending: false })
+          .order("id", { ascending: true }),
+        search,
+      ).range(from, to);
+      if (error) throw error;
+      return { products: (data ?? []) as Product[], total: count ?? 0 };
     },
   });
+
+  const editQ = useQuery({
+    queryKey: ["admin", "product-edit", editar],
+    enabled: !!editar,
+    staleTime: 0,
+    queryFn: async () => {
+      const r = await supabase
+        .from("products")
+        .select(
+          "id,updated_at,slug,article_code,name,description,price,compare_at_price,stock,is_active,is_featured,image_urls,thumbnail_url,category_id,subcategory_id,product_type_id",
+        )
+        .eq("id", editar!)
+        .single();
+      if (r.error) throw r.error;
+      return r.data as Product;
+    },
+  });
+  useEffect(() => {
+    if (editQ.data && editQ.data.id === editar) {
+      setEditing(editQ.data);
+      setOpenForm(true);
+    }
+  }, [editQ.data, editar]);
+  function closeForm(open: boolean) {
+    setOpenForm(open);
+    if (!open && editar) navigate({ search: { revision, editar: undefined }, replace: true });
+  }
 
   const total = productsQ.data?.total ?? 0;
   const pageCount = adminPageCount(total);
@@ -126,7 +186,10 @@ function AdminProductos() {
   const categoriesQ = useQuery({
     queryKey: ["admin", "categories"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("categories").select("id, name, slug").order("name");
+      const { data, error } = await supabase
+        .from("categories")
+        .select("id, name, slug")
+        .order("name");
       if (error) throw error;
       return (data ?? []) as Category[];
     },
@@ -135,7 +198,10 @@ function AdminProductos() {
   const subcategoriesQ = useQuery({
     queryKey: ["admin", "subcategories"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("subcategories").select("id,name,category_id").order("name");
+      const { data, error } = await supabase
+        .from("subcategories")
+        .select("id,name,category_id")
+        .order("name");
       if (error) throw error;
       return data ?? [];
     },
@@ -144,7 +210,11 @@ function AdminProductos() {
   const typesQ = useQuery({
     queryKey: ["admin", "product-types"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("product_types").select("id,name,subcategory_id").order("sort_order").order("name");
+      const { data, error } = await supabase
+        .from("product_types")
+        .select("id,name,subcategory_id")
+        .order("sort_order")
+        .order("name");
       if (error) throw error;
       return data ?? [];
     },
@@ -178,7 +248,11 @@ function AdminProductos() {
         <div>
           <h1 className="font-serif text-3xl text-foreground">Productos</h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            {search ? `${total} artículo(s) para “${search}”.` : `${total} producto(s) cargado(s).`}
+            {revision
+              ? "Fotos, códigos y datos pendientes de revisión."
+              : search
+                ? `${total} artículo(s) para “${search}”.`
+                : `${total} producto(s) cargado(s).`}
           </p>
         </div>
         <Button onClick={openNew}>
@@ -186,178 +260,260 @@ function AdminProductos() {
         </Button>
       </div>
 
-      <div className="mt-4"><ProductExcelControls /></div>
-
-      <form
-        role="search"
-        className="mt-6 flex flex-wrap items-center gap-2"
-        onSubmit={(e) => {
-          e.preventDefault();
-          setSearch(normalizeAdminSearch(searchInput));
-          setPage(1);
-        }}
-      >
-        <div className="relative min-w-0 flex-1">
-          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-          <Label htmlFor="product-search" className="sr-only">Buscar artículo</Label>
-          <Input
-            id="product-search"
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-            placeholder="Buscar por nombre, código o código de barras…"
-            className="pl-9"
-          />
-        </div>
-        <Button type="submit" variant="outline" size="icon" aria-label="Buscar artículos" title="Buscar artículos">
-          <Search className="size-4" />
+      <div className="mt-4 flex flex-wrap gap-3">
+        <ProductExcelControls />
+        <Button variant="outline" asChild>
+          <Link to="/admin/productos" search={{ revision: !revision, editar: undefined }}>
+            {revision ? "Volver al listado" : "Revisar artículos y fotos"}
+          </Link>
         </Button>
-        {(searchInput !== "" || search !== "") && (
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon"
-            aria-label="Limpiar búsqueda"
-            title="Limpiar búsqueda"
-            onClick={() => {
-              setSearchInput("");
-              setSearch("");
+      </div>
+      {editQ.isFetching && editar && (
+        <p role="status" className="mt-3">
+          Cargando artículo para editar…
+        </p>
+      )}
+      {editQ.isError && editar && (
+        <p role="alert" className="mt-3">
+          No se pudo abrir el artículo. Actualizá la página o revisá tus permisos.
+        </p>
+      )}
+      {revision && (
+        <ProductReviewPanel onEdit={(id) => navigate({ search: { revision: true, editar: id } })} />
+      )}
+      {!revision && (
+        <>
+          <form
+            role="search"
+            className="mt-6 flex flex-wrap items-center gap-2"
+            onSubmit={(e) => {
+              e.preventDefault();
+              setSearch(normalizeAdminSearch(searchInput));
               setPage(1);
             }}
           >
-            <X className="size-4" />
-          </Button>
-        )}
-      </form>
+            <div className="relative min-w-0 flex-1">
+              <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+              <Label htmlFor="product-search" className="sr-only">
+                Buscar artículo
+              </Label>
+              <Input
+                id="product-search"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                placeholder="Buscar por nombre, código o código de barras…"
+                className="pl-9"
+              />
+            </div>
+            <Button
+              type="submit"
+              variant="outline"
+              size="icon"
+              aria-label="Buscar artículos"
+              title="Buscar artículos"
+            >
+              <Search className="size-4" />
+            </Button>
+            {(searchInput !== "" || search !== "") && (
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                aria-label="Limpiar búsqueda"
+                title="Limpiar búsqueda"
+                onClick={() => {
+                  setSearchInput("");
+                  setSearch("");
+                  setPage(1);
+                }}
+              >
+                <X className="size-4" />
+              </Button>
+            )}
+          </form>
 
-      <div className="mt-4 overflow-x-auto rounded-xl border border-border bg-card" aria-busy={productsQ.isFetching}>
-        {productsQ.isLoading ? (
-          <div className="p-8 text-center text-sm text-muted-foreground">Cargando…</div>
-        ) : productsQ.isError ? (
-          <div className="p-8 text-center text-sm text-destructive">
-            <p>No se pudieron cargar los productos.</p>
-            <Button variant="outline" className="mt-3" onClick={() => void productsQ.refetch()}>Reintentar</Button>
-          </div>
-        ) : products.length > 0 ? (
-          <table className="w-full text-sm">
-            <thead className="border-b border-border bg-secondary/40 text-left text-xs uppercase tracking-wider text-muted-foreground">
-              <tr>
-                <th className="px-4 py-3 font-medium">Producto</th>
-                <th className="px-4 py-3 font-medium">Categoría</th>
-                <th className="px-4 py-3 font-medium text-right">Precio</th>
-                <th className="px-4 py-3 font-medium text-right">Stock</th>
-                <th className="px-4 py-3 font-medium">Estado</th>
-                <th className="px-4 py-3" />
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border">
-              {products.map((p) => (
-                <tr key={p.id}>
-                  <td className="px-4 py-3">
-                    <div className="flex items-center gap-3">
-                      {p.thumbnail_url || p.image_urls?.[0] ? (
-                        <img src={p.thumbnail_url || p.image_urls[0]} alt="" loading="lazy" decoding="async" width={40} height={40} className="h-10 w-10 shrink-0 rounded object-cover" />
-                      ) : (
-                        <div className="flex h-10 w-10 items-center justify-center rounded bg-secondary text-muted-foreground">
-                          <ImagePlus className="h-4 w-4" />
+          <div
+            className="mt-4 overflow-x-auto rounded-xl border border-border bg-card"
+            aria-busy={productsQ.isFetching}
+          >
+            {productsQ.isLoading ? (
+              <div className="p-8 text-center text-sm text-muted-foreground">Cargando…</div>
+            ) : productsQ.isError ? (
+              <div className="p-8 text-center text-sm text-destructive">
+                <p>No se pudieron cargar los productos.</p>
+                <Button variant="outline" className="mt-3" onClick={() => void productsQ.refetch()}>
+                  Reintentar
+                </Button>
+              </div>
+            ) : products.length > 0 ? (
+              <table className="w-full text-sm">
+                <thead className="border-b border-border bg-secondary/40 text-left text-xs uppercase tracking-wider text-muted-foreground">
+                  <tr>
+                    <th className="px-4 py-3 font-medium">Producto</th>
+                    <th className="px-4 py-3 font-medium">Categoría</th>
+                    <th className="px-4 py-3 font-medium text-right">Precio</th>
+                    <th className="px-4 py-3 font-medium text-right">Stock</th>
+                    <th className="px-4 py-3 font-medium">Estado</th>
+                    <th className="px-4 py-3" />
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {products.map((p) => (
+                    <tr key={p.id}>
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-3">
+                          {p.thumbnail_url || p.image_urls?.[0] ? (
+                            <ProductImage
+                              src={p.thumbnail_url || p.image_urls[0]}
+                              fallbackSrc={p.image_urls[0]}
+                              alt=""
+                              loading="lazy"
+                              decoding="async"
+                              width={40}
+                              height={40}
+                              className="h-10 w-10 shrink-0 rounded object-cover"
+                            />
+                          ) : (
+                            <div className="flex h-10 w-10 items-center justify-center rounded bg-secondary text-muted-foreground">
+                              <ImagePlus className="h-4 w-4" />
+                            </div>
+                          )}
+                          <div>
+                            <div className="font-medium text-foreground">{p.name}</div>
+                            <div className="text-xs text-muted-foreground">{p.slug}</div>
+                          </div>
                         </div>
-                      )}
-                      <div>
-                        <div className="font-medium text-foreground">{p.name}</div>
-                        <div className="text-xs text-muted-foreground">{p.slug}</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-4 py-3 text-muted-foreground">{p.category?.name ?? "—"}<div className="text-xs">{subcategoriesQ.data?.find((s) => s.id === p.subcategory_id)?.name}</div></td>
-                  <td className="px-4 py-3 text-right">
-                    <div className="font-medium text-foreground">{formatARS(p.price)}</div>
-                    {p.compare_at_price && Number(p.compare_at_price) > Number(p.price) && (
-                      <div className="text-xs text-muted-foreground line-through">
-                        {formatARS(p.compare_at_price)}
-                      </div>
-                    )}
-                  </td>
-                  <td className="px-4 py-3 text-right text-foreground">{p.stock}</td>
-                  <td className="px-4 py-3">
-                    <span
-                      className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
-                        p.is_active ? "bg-primary/15 text-primary" : "bg-muted text-muted-foreground"
-                      }`}
-                    >
-                      {p.is_active ? "Activo" : "Pausado"}
-                    </span>
-                    {p.is_featured && (
-                      <span className="ml-1 inline-flex items-center rounded-full bg-accent px-2 py-0.5 text-xs font-medium text-accent-foreground">
-                        Destacado
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-4 py-3">
-                    <div className="flex items-center justify-end gap-1">
-                      <Button variant="ghost" size="sm" onClick={() => openEdit(p)}>
-                        <Pencil className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => setToDelete(p)}
-                        className="text-destructive hover:text-destructive"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : (
-          <div className="p-12 text-center">
-            <Package className="mx-auto h-10 w-10 text-muted-foreground/40" />
-            <p className="mt-3 font-serif text-xl text-foreground">
-              {search ? "Sin resultados" : "No hay productos todavía"}
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {search
-                ? `No encontramos artículos para “${search}”. Probá con otra palabra o revisá las mayúsculas.`
-                : 'Hacé clic en "Nuevo producto" para empezar.'}
-            </p>
+                      </td>
+                      <td className="px-4 py-3 text-muted-foreground">
+                        {p.category?.name ?? "—"}
+                        <div className="text-xs">
+                          {subcategoriesQ.data?.find((s) => s.id === p.subcategory_id)?.name}
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-right">
+                        <div className="font-medium text-foreground">{formatARS(p.price)}</div>
+                        {p.compare_at_price && Number(p.compare_at_price) > Number(p.price) && (
+                          <div className="text-xs text-muted-foreground line-through">
+                            {formatARS(p.compare_at_price)}
+                          </div>
+                        )}
+                      </td>
+                      <td className="px-4 py-3 text-right text-foreground">{p.stock}</td>
+                      <td className="px-4 py-3">
+                        <span
+                          className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
+                            p.is_active
+                              ? "bg-primary/15 text-primary"
+                              : "bg-muted text-muted-foreground"
+                          }`}
+                        >
+                          {p.is_active ? "Activo" : "Pausado"}
+                        </span>
+                        {p.is_featured && (
+                          <span className="ml-1 inline-flex items-center rounded-full bg-accent px-2 py-0.5 text-xs font-medium text-accent-foreground">
+                            Destacado
+                          </span>
+                        )}
+                      </td>
+                      <td className="px-4 py-3">
+                        <div className="flex items-center justify-end gap-1">
+                          <Button variant="ghost" size="sm" onClick={() => openEdit(p)}>
+                            <Pencil className="h-4 w-4" />
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => setToDelete(p)}
+                            className="text-destructive hover:text-destructive"
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <div className="p-12 text-center">
+                <Package className="mx-auto h-10 w-10 text-muted-foreground/40" />
+                <p className="mt-3 font-serif text-xl text-foreground">
+                  {search ? "Sin resultados" : "No hay productos todavía"}
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {search
+                    ? `No encontramos artículos para “${search}”. Probá con otra palabra o revisá las mayúsculas.`
+                    : 'Hacé clic en "Nuevo producto" para empezar.'}
+                </p>
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      <nav aria-label="Páginas de productos" className="mt-4 flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm text-muted-foreground" aria-live="polite">
-          {productsQ.isFetching ? "Cargando…" : total > 0 ? `${adminPageRange(page).from + 1}–${Math.min(adminPageRange(page).to + 1, total)} de ${total}` : "0 artículos"}
-        </p>
-        <div className="flex items-center gap-3">
-          <Button variant="outline" size="icon" aria-label="Página anterior" title="Página anterior" disabled={page <= 1 || productsQ.isFetching} onClick={() => setPage((current) => current - 1)}><ChevronLeft className="size-4" /></Button>
-          <span className="text-sm tabular-nums">Página {page} de {pageCount}</span>
-          <Button variant="outline" size="icon" aria-label="Página siguiente" title="Página siguiente" disabled={page >= pageCount || productsQ.isFetching} onClick={() => setPage((current) => current + 1)}><ChevronRight className="size-4" /></Button>
-        </div>
-      </nav>
-
+          <nav
+            aria-label="Páginas de productos"
+            className="mt-4 flex flex-wrap items-center justify-between gap-3"
+          >
+            <p className="text-sm text-muted-foreground" aria-live="polite">
+              {productsQ.isFetching
+                ? "Cargando…"
+                : total > 0
+                  ? `${adminPageRange(page).from + 1}–${Math.min(adminPageRange(page).to + 1, total)} de ${total}`
+                  : "0 artículos"}
+            </p>
+            <div className="flex items-center gap-3">
+              <Button
+                variant="outline"
+                size="icon"
+                aria-label="Página anterior"
+                title="Página anterior"
+                disabled={page <= 1 || productsQ.isFetching}
+                onClick={() => setPage((current) => current - 1)}
+              >
+                <ChevronLeft className="size-4" />
+              </Button>
+              <span className="text-sm tabular-nums">
+                Página {page} de {pageCount}
+              </span>
+              <Button
+                variant="outline"
+                size="icon"
+                aria-label="Página siguiente"
+                title="Página siguiente"
+                disabled={page >= pageCount || productsQ.isFetching}
+                onClick={() => setPage((current) => current + 1)}
+              >
+                <ChevronRight className="size-4" />
+              </Button>
+            </div>
+          </nav>
+        </>
+      )}
       <ProductForm
         key={editing?.id ?? (openForm ? "new" : "closed")}
         open={openForm}
-        onOpenChange={setOpenForm}
+        onOpenChange={closeForm}
         product={editing}
         categories={categoriesQ.data ?? []}
         subcategories={subcategoriesQ.data ?? []}
         productTypes={typesQ.data ?? []}
         onSaved={() => {
           qc.invalidateQueries({ queryKey: ["admin", "products"] });
+          qc.invalidateQueries({ queryKey: ["admin", "product-review"] });
+          qc.invalidateQueries({ queryKey: ["admin", "product-edit"] });
+          qc.invalidateQueries({ queryKey: ["admin", "business-alerts"] });
+          qc.invalidateQueries({ queryKey: ["catalog"] });
           qc.invalidateQueries({ queryKey: ["home", "featured"] });
           qc.invalidateQueries({ queryKey: ["home", "sales"] });
         }}
       />
-
 
       <AlertDialog open={!!toDelete} onOpenChange={(o) => !o && setToDelete(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>¿Eliminar producto?</AlertDialogTitle>
             <AlertDialogDescription>
-              Vas a eliminar <span className="font-medium">{toDelete?.name}</span>. Esta acción no se puede deshacer.
+              Vas a eliminar <span className="font-medium">{toDelete?.name}</span>. Esta acción no
+              se puede deshacer.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -417,6 +573,7 @@ function ProductForm({
   const fileRef = useRef<HTMLInputElement>(null);
   const [name, setName] = useState(product?.name ?? "");
   const [slug, setSlug] = useState(product?.slug ?? "");
+  const [articleCode, setArticleCode] = useState(product?.article_code ?? "");
   const [description, setDescription] = useState(product?.description ?? "");
   const [price, setPrice] = useState(product?.price?.toString() ?? "");
   const [compareAt, setCompareAt] = useState(product?.compare_at_price?.toString() ?? "");
@@ -430,8 +587,6 @@ function ProductForm({
   const [thumbs, setThumbs] = useState<Record<string, string>>({});
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
-
-
 
   async function handleUpload(files: FileList | null) {
     if (!files || files.length === 0) return;
@@ -473,9 +628,16 @@ function ProductForm({
     e.preventDefault();
     setSaving(true);
     try {
-      validateProductClassification(categoryId === "none" ? null : categoryId, subcategoryId === "none" ? null : subcategoryId, subcategories, typeId === "none" ? null : typeId, productTypes);
+      validateProductClassification(
+        categoryId === "none" ? null : categoryId,
+        subcategoryId === "none" ? null : subcategoryId,
+        subcategories,
+        typeId === "none" ? null : typeId,
+        productTypes,
+      );
       const payload = {
         name: name.trim(),
+        article_code: articleCode.trim() || null,
         slug: (slug || slugify(name)).trim(),
         description: description.trim() || null,
         price: Number(price),
@@ -487,14 +649,27 @@ function ProductForm({
         is_active: isActive,
         is_featured: isFeatured,
         image_urls: images,
-        thumbnail_url: resolveThumbnail(images[0], thumbs, { first: product?.image_urls?.[0], thumb: product?.thumbnail_url }),
+        thumbnail_url: resolveThumbnail(images[0], thumbs, {
+          first: product?.image_urls?.[0],
+          thumb: product?.thumbnail_url,
+        }),
       };
       if (!payload.name || !payload.slug || isNaN(payload.price)) {
         throw new Error("Completá nombre, slug y precio");
       }
       if (isEdit && product) {
-        const { error } = await supabase.from("products").update(payload).eq("id", product.id);
+        const { data, error } = await supabase
+          .from("products")
+          .update(payload)
+          .eq("id", product.id)
+          .eq("updated_at", product.updated_at)
+          .select("id")
+          .maybeSingle();
         if (error) throw error;
+        if (!data)
+          throw new Error(
+            "El artículo cambió mientras lo editabas o ya no tenés permiso. Cerrá el formulario y volvé a abrirlo antes de guardar.",
+          );
         toast.success("Producto actualizado");
       } else {
         const { error } = await supabase.from("products").insert(payload);
@@ -520,6 +695,7 @@ function ProductForm({
           setTimeout(() => {
             setName("");
             setSlug("");
+            setArticleCode("");
             setDescription("");
             setPrice("");
             setCompareAt("");
@@ -542,6 +718,15 @@ function ProductForm({
         </DialogHeader>
 
         <form onSubmit={onSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="product-article-code">Código de artículo</Label>
+            <Input
+              id="product-article-code"
+              value={articleCode}
+              onChange={(e) => setArticleCode(e.target.value)}
+              placeholder="Conserva los ceros iniciales"
+            />
+          </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="sm:col-span-2">
               <Label htmlFor="name">Nombre *</Label>
@@ -557,7 +742,12 @@ function ProductForm({
             </div>
             <div className="sm:col-span-2">
               <Label htmlFor="slug">Slug (URL) *</Label>
-              <Input id="slug" required value={slug} onChange={(e) => setSlug(slugify(e.target.value))} />
+              <Input
+                id="slug"
+                required
+                value={slug}
+                onChange={(e) => setSlug(slugify(e.target.value))}
+              />
               <p className="mt-1 text-xs text-muted-foreground">/producto/{slug || "ejemplo"}</p>
             </div>
             <div className="sm:col-span-2">
@@ -610,7 +800,14 @@ function ProductForm({
             </div>
             <div>
               <Label>Categoría</Label>
-              <Select value={categoryId} onValueChange={(value) => { setCategoryId(value); setSubcategoryId("none"); setTypeId("none"); }}>
+              <Select
+                value={categoryId}
+                onValueChange={(value) => {
+                  setCategoryId(value);
+                  setSubcategoryId("none");
+                  setTypeId("none");
+                }}
+              >
                 <SelectTrigger>
                   <SelectValue placeholder="Seleccionar" />
                 </SelectTrigger>
@@ -627,21 +824,40 @@ function ProductForm({
 
             <div>
               <Label htmlFor="product-subcategory">Marca</Label>
-              <Select value={subcategoryId} onValueChange={(value) => { setSubcategoryId(value); setTypeId("none"); }} disabled={categoryId === "none"}>
-                <SelectTrigger id="product-subcategory"><SelectValue placeholder="Seleccionar" /></SelectTrigger>
+              <Select
+                value={subcategoryId}
+                onValueChange={(value) => {
+                  setSubcategoryId(value);
+                  setTypeId("none");
+                }}
+                disabled={categoryId === "none"}
+              >
+                <SelectTrigger id="product-subcategory">
+                  <SelectValue placeholder="Seleccionar" />
+                </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="none">Sin marca</SelectItem>
-                  {subcategoriesForCategory(subcategories, categoryId).map((s) => <SelectItem key={s.id} value={s.id}>{s.name}</SelectItem>)}
+                  {subcategoriesForCategory(subcategories, categoryId).map((s) => (
+                    <SelectItem key={s.id} value={s.id}>
+                      {s.name}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
             <div>
               <Label htmlFor="product-type">Tipo de producto</Label>
               <Select value={typeId} onValueChange={setTypeId} disabled={subcategoryId === "none"}>
-                <SelectTrigger id="product-type"><SelectValue placeholder="Seleccionar" /></SelectTrigger>
+                <SelectTrigger id="product-type">
+                  <SelectValue placeholder="Seleccionar" />
+                </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="none">Sin tipo</SelectItem>
-                  {typesForBrand(productTypes, subcategoryId).map((t) => <SelectItem key={t.id} value={t.id}>{t.name}</SelectItem>)}
+                  {typesForBrand(productTypes, subcategoryId).map((t) => (
+                    <SelectItem key={t.id} value={t.id}>
+                      {t.name}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
@@ -664,14 +880,31 @@ function ProductForm({
 
           <div>
             <Label>Imágenes</Label>
+            <p className="text-xs text-muted-foreground">
+              Podés quitar una foto que falla y subir su reemplazo. La primera foto es la principal.
+            </p>
             <div className="mt-2 grid grid-cols-3 gap-3 sm:grid-cols-4">
               {images.map((url, i) => (
-                <div key={url} className="group relative aspect-square overflow-hidden rounded-md border border-border bg-secondary">
-                  <img src={url} alt="" className="h-full w-full object-cover" />
+                <div
+                  key={url}
+                  className="group relative aspect-square overflow-hidden rounded-md border border-border bg-secondary"
+                >
+                  <ProductImage src={url} alt="" className="h-full w-full object-cover" />
+                  {i > 0 && (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setImages((prev) => [url, ...prev.filter((_, idx) => idx !== i)])
+                      }
+                      className="absolute inset-x-0 bottom-0 bg-background/95 p-1 text-xs underline"
+                    >
+                      Usar como principal
+                    </button>
+                  )}
                   <button
                     type="button"
                     onClick={() => setImages((prev) => prev.filter((_, idx) => idx !== i))}
-                    className="absolute right-1 top-1 rounded-full bg-background/90 p-1 text-foreground opacity-0 transition-opacity group-hover:opacity-100"
+                    className="absolute right-1 top-1 rounded-full bg-background/90 p-1 text-foreground opacity-100 transition-opacity sm:opacity-0 sm:group-hover:opacity-100"
                     aria-label="Quitar imagen"
                   >
                     <X className="h-3.5 w-3.5" />

@@ -1,3 +1,4 @@
+import { ProductImage } from "@/components/product-image";
 import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { useState } from "react";
@@ -123,7 +124,11 @@ function ProductDetail() {
           <div>
             <div className="aspect-square overflow-hidden rounded-lg border border-border bg-secondary/40">
               {images[activeImg] ? (
-                <img src={images[activeImg]} alt={p.name} className="h-full w-full object-cover" />
+                <ProductImage
+                  src={images[activeImg]}
+                  alt={p.name}
+                  className="h-full w-full object-cover"
+                />
               ) : (
                 <div className="flex h-full items-center justify-center font-serif text-4xl text-muted-foreground/40">
                   El Arcángel
@@ -140,7 +145,7 @@ function ProductDetail() {
                       i === activeImg ? "border-primary" : "border-transparent hover:border-border"
                     }`}
                   >
-                    <img src={url} alt="" className="h-full w-full object-cover" />
+                    <ProductImage src={url} alt="" className="h-full w-full object-cover" />
                   </button>
                 ))}
               </div>

@@ -38,6 +38,13 @@ function Alerts() {
         Estado actual de artículos visibles y pedidos no archivados. Estas alertas informan; no
         cambian precios, stock ni el estado de los pedidos.
       </p>
+      {canOpenAdminPath("/admin/productos", isAdmin, modules) && (
+        <Button variant="outline" asChild>
+          <Link to="/admin/productos" search={{ revision: true, editar: undefined }}>
+            Revisar artículos y fotos
+          </Link>
+        </Button>
+      )}
       <form
         className="flex flex-wrap items-end gap-3"
         onSubmit={(e) => {
@@ -109,9 +116,14 @@ function Alerts() {
                   {canOpenAdminPath(a.route, isAdmin, modules) ? (
                     <Link
                       to={a.route as "/admin/productos" | "/admin/pedidos"}
+                      search={
+                        a.route === "/admin/productos"
+                          ? { revision: true, editar: a.id }
+                          : undefined
+                      }
                       className="text-sm font-medium underline"
                     >
-                      Abrir módulo
+                      {a.route === "/admin/productos" ? "Editar artículo" : "Abrir módulo"}
                     </Link>
                   ) : (
                     <span className="text-xs text-muted-foreground">

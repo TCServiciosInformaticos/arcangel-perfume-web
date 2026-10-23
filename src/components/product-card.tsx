@@ -1,3 +1,4 @@
+import { ProductImage } from "@/components/product-image";
 import { FavoriteButton } from "@/components/favorites";
 import { Link } from "@tanstack/react-router";
 import { formatARS } from "@/lib/format";
@@ -16,7 +17,7 @@ export type ProductCardData = {
 
 export function ProductCard({ p, size = "sm" }: { p: ProductCardData; size?: "sm" | "lg" }) {
   const lg = size === "lg";
-  const img = p.thumbnail_url ?? p.image_urls?.[0] ?? null;
+  const img = p.thumbnail_url?.trim() || p.image_urls?.[0] || null;
   const out = p.stock <= 0;
   const price = Number(p.price);
   const compare = p.compare_at_price != null ? Number(p.compare_at_price) : null;
@@ -31,8 +32,9 @@ export function ProductCard({ p, size = "sm" }: { p: ProductCardData; size?: "sm
       <Link to="/producto/$slug" params={{ slug: p.slug }} className="group flex flex-col">
         <div className="relative aspect-square overflow-hidden bg-card">
           {img ? (
-            <img
+            <ProductImage
               src={img}
+              fallbackSrc={p.image_urls?.[0]}
               alt={p.name}
               loading="lazy"
               decoding="async"

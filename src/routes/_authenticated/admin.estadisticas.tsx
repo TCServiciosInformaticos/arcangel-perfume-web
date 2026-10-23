@@ -554,7 +554,7 @@ function ProductsTable({ products }: { products: SalesProduct[] }) {
           {products.map((p) => (
             <tr key={p.id} className="border-b last:border-0">
               <td className="min-w-48 p-2">
-                <Link to="/admin/productos" className="font-medium hover:underline">
+                <Link to="/admin/productos" search={{ revision: false, editar: undefined }} className="font-medium hover:underline">
                   {p.name}
                 </Link>
                 <p className="text-xs text-muted-foreground">
