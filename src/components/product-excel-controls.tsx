@@ -3,6 +3,10 @@ import { Download, Upload, Loader2, AlertCircle, ArrowRight, CheckCircle2 } from
 import { toast } from "sonner";
 import { useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { operations } from "@/lib/admin-operations-client";
+import { prepareProductPreview } from "@/lib/product-excel-preview";
+import { AdminPager } from "@/components/admin-pager";
+import { Input } from "@/components/ui/input";
 import { formatARS } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -22,7 +26,7 @@ async function currentProducts() {
     const { data, error } = await supabase
       .from("products")
       .select(
-        "id,name,description,article_code,price,stock,is_active,subcategory_id,category:categories(name)",
+        "id,name,description,article_code,price,stock,is_active,updated_at,subcategory_id,category:categories(name)",
       )
       .order("id")
       .range(start, start + 999);
@@ -39,6 +43,15 @@ export function ProductExcelControls() {
   const [updates, setUpdates] = useState<ProductUpdate[] | null>(null);
   const [products, setProducts] = useState<ExcelProduct[]>([]);
   const [error, setError] = useState("");
+  const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(0);
+  const byId = new Map(products.map((p) => [p.id, p]));
+  const visibleUpdates = (updates ?? []).filter((u) =>
+    `${u.name ?? byId.get(u.id)?.name ?? ""} ${u.article_code ?? ""}`
+      .toLocaleLowerCase("es")
+      .includes(search.toLocaleLowerCase("es")),
+  );
 
   async function exportFile() {
     setBusy(true);
@@ -89,6 +102,9 @@ export function ProductExcelControls() {
       }
       setProducts(all);
       setUpdates(changes);
+      setSelected(new Set(changes.map((u) => u.id)));
+      setSearch("");
+      setPage(0);
     } catch (e) {
       setError(e instanceof Error ? e.message : "No se pudo leer el Excel.");
     } finally {
@@ -98,21 +114,26 @@ export function ProductExcelControls() {
   }
 
   async function save() {
-    if (!updates) return;
+    if (!updates || selected.size === 0) return;
+    setError("");
     setBusy(true);
     try {
-      const { data, error: failure } = await supabase.rpc("update_products_from_excel", {
-        rows: updates,
+      const { data, error: failure } = await operations.rpc("admin_apply_product_preview", {
+        rows: prepareProductPreview(updates, products, selected),
       });
       if (failure) throw failure;
       await qc.invalidateQueries({ queryKey: ["admin", "products"] });
       await qc.invalidateQueries({ queryKey: ["home"] });
       await qc.invalidateQueries({ queryKey: ["catalog"] });
       await qc.invalidateQueries({ queryKey: ["product"] });
-      toast.success(`${data ?? updates.length} artículo(s) actualizado(s) correctamente`);
+      toast.success(`${data ?? selected.size} artículo(s) actualizado(s) correctamente`);
       setUpdates(null);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "No se pudo guardar. No se aplicaron cambios.");
+      setError(
+        e && typeof e === "object" && "message" in e
+          ? String(e.message)
+          : "No se pudo guardar. No se aplicaron cambios.",
+      );
     } finally {
       setBusy(false);
     }
@@ -120,7 +141,7 @@ export function ProductExcelControls() {
 
   const textChangesCount =
     updates?.filter((u) => {
-      const p = products.find((prod) => prod.id === u.id);
+      const p = byId.get(u.id);
       return (
         p &&
         ((u.name !== undefined && u.name !== p.name) ||
@@ -131,25 +152,24 @@ export function ProductExcelControls() {
   const codeChangesCount =
     updates?.filter(
       (u) =>
-        u.article_code !== undefined &&
-        u.article_code !== (products.find((p) => p.id === u.id)?.article_code ?? null),
+        u.article_code !== undefined && u.article_code !== (byId.get(u.id)?.article_code ?? null),
     ).length ?? 0;
 
   const priceChangesCount =
     updates?.filter((u) => {
-      const p = products.find((prod) => prod.id === u.id);
+      const p = byId.get(u.id);
       return p && Number(p.price) !== Number(u.price);
     }).length ?? 0;
 
   const stockChangesCount =
     updates?.filter((u) => {
-      const p = products.find((prod) => prod.id === u.id);
+      const p = byId.get(u.id);
       return p && p.stock !== u.stock;
     }).length ?? 0;
 
   const activeChangesCount =
     updates?.filter((u) => {
-      const p = products.find((prod) => prod.id === u.id);
+      const p = byId.get(u.id);
       return p && p.is_active !== u.is_active;
     }).length ?? 0;
 
@@ -193,7 +213,7 @@ export function ProductExcelControls() {
           if (!open && !busy) setUpdates(null);
         }}
       >
-        <DialogContent className="max-w-3xl">
+        <DialogContent className="max-w-4xl max-h-[90dvh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <CheckCircle2 className="size-5 text-primary" />
@@ -224,10 +244,61 @@ export function ProductExcelControls() {
             )}
           </div>
 
-          <div className="max-h-84 overflow-auto rounded-md border border-border">
+          <p className="text-sm">
+            Seleccionados: {selected.size} de {updates?.length}. Solo se aplicarán los artículos
+            tildados. Si alguno cambió en la web desde esta revisión, se cancelará toda la
+            importación.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <label className="flex-1 text-sm">
+              Buscar en la vista previa
+              <Input
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                  setPage(0);
+                }}
+              />
+            </label>
+            <Button
+              type="button"
+              variant="outline"
+              disabled={busy}
+              onClick={() => setSelected(new Set(updates?.map((u) => u.id)))}
+            >
+              Seleccionar todos
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              disabled={busy}
+              onClick={() => setSelected(new Set())}
+            >
+              Quitar selección
+            </Button>
+          </div>
+          {error && (
+            <p role="alert" className="whitespace-pre-wrap text-sm text-destructive">
+              {error}
+            </p>
+          )}
+          <p className="text-xs text-muted-foreground">
+            Precios en cero: {updates?.filter((u) => selected.has(u.id) && u.price === 0).length} ·
+            Saldo en cero: {updates?.filter((u) => selected.has(u.id) && u.stock === 0).length}. El
+            saldo de Excel reemplaza el existente.
+          </p>
+          <AdminPager
+            page={page}
+            total={visibleUpdates.length}
+            size={50}
+            onPage={setPage}
+            busy={busy}
+          />
+          <div className="max-h-72 overflow-auto rounded-md border border-border">
             <table className="w-full text-sm">
               <thead className="sticky top-0 bg-secondary/80 backdrop-blur-xs text-xs uppercase tracking-wider text-muted-foreground">
                 <tr className="border-b border-border text-left">
+                  <th className="p-2.5">Aplicar</th>
                   <th className="p-2.5">Artículo</th>
                   <th className="p-2.5">Precio (ARS)</th>
                   <th className="p-2.5">Saldo de stock</th>
@@ -235,14 +306,30 @@ export function ProductExcelControls() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
-                {updates?.map((u) => {
-                  const p = products.find((prod) => prod.id === u.id);
+                {visibleUpdates.slice(page * 50, page * 50 + 50).map((u) => {
+                  const p = byId.get(u.id);
                   const priceChanged = p && Number(p.price) !== Number(u.price);
                   const stockChanged = p && p.stock !== u.stock;
                   const activeChanged = p && p.is_active !== u.is_active;
 
                   return (
                     <tr key={u.id} className="hover:bg-muted/40 transition-colors">
+                      <td className="p-2.5">
+                        <input
+                          type="checkbox"
+                          aria-label={`Aplicar cambios de ${p?.name ?? u.id}`}
+                          disabled={busy}
+                          checked={selected.has(u.id)}
+                          onChange={(e) =>
+                            setSelected((old) => {
+                              const next = new Set(old);
+                              if (e.target.checked) next.add(u.id);
+                              else next.delete(u.id);
+                              return next;
+                            })
+                          }
+                        />
+                      </td>
                       <td className="p-2.5 max-w-sm whitespace-pre-wrap break-words">
                         {u.name !== undefined && u.name !== p?.name ? (
                           <>
@@ -330,9 +417,9 @@ export function ProductExcelControls() {
             <Button variant="outline" disabled={busy} onClick={() => setUpdates(null)}>
               Cancelar
             </Button>
-            <Button disabled={busy} onClick={save}>
+            <Button disabled={busy || selected.size === 0} onClick={save}>
               {busy ? <Loader2 className="size-4 animate-spin" /> : null}
-              Aplicar cambios ({updates?.length})
+              Aplicar cambios ({selected.size})
             </Button>
           </DialogFooter>
         </DialogContent>

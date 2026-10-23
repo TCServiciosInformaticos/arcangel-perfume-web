@@ -3,7 +3,7 @@ name: Quality checks
 
 on:
   push:
-    branches: [main, hostinger-usuarios]
+    branches: [main, hostinger-usuarios, admin-operations]
     paths-ignore:
       - "public/catalog/**"
       - "scripts/catalog-data/**"

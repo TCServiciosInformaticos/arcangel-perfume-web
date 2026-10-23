@@ -25,9 +25,12 @@ import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } fr
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as ProductoSlugRouteImport } from './routes/producto.$slug'
 import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable.oauth.consent'
+import { Route as AuthenticatedAdminAlertasRouteImport } from './routes/_authenticated/admin.alertas'
 import { Route as AuthenticatedAdminCategoriasRouteImport } from './routes/_authenticated/admin.categorias'
+import { Route as AuthenticatedAdminClientesRouteImport } from './routes/_authenticated/admin.clientes'
 import { Route as AuthenticatedAdminEstadisticasRouteImport } from './routes/_authenticated/admin.estadisticas'
 import { Route as AuthenticatedAdminHerramientasRouteImport } from './routes/_authenticated/admin.herramientas'
+import { Route as AuthenticatedAdminHistorialRouteImport } from './routes/_authenticated/admin.historial'
 import { Route as AuthenticatedAdminPedidosRouteImport } from './routes/_authenticated/admin.pedidos'
 import { Route as AuthenticatedAdminPoliticaPreciosRouteImport } from './routes/_authenticated/admin.politica-precios'
 import { Route as AuthenticatedAdminProductosRouteImport } from './routes/_authenticated/admin.productos'
@@ -118,10 +121,22 @@ const DotlovableOauthConsentRoute = DotlovableOauthConsentRouteImport.update({
   path: '/.lovable/oauth/consent',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminAlertasRoute =
+  AuthenticatedAdminAlertasRouteImport.update({
+    id: '/alertas',
+    path: '/alertas',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedAdminCategoriasRoute =
   AuthenticatedAdminCategoriasRouteImport.update({
     id: '/categorias',
     path: '/categorias',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminClientesRoute =
+  AuthenticatedAdminClientesRouteImport.update({
+    id: '/clientes',
+    path: '/clientes',
     getParentRoute: () => AuthenticatedAdminRoute,
   } as any)
 const AuthenticatedAdminEstadisticasRoute =
@@ -134,6 +149,12 @@ const AuthenticatedAdminHerramientasRoute =
   AuthenticatedAdminHerramientasRouteImport.update({
     id: '/herramientas',
     path: '/herramientas',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminHistorialRoute =
+  AuthenticatedAdminHistorialRouteImport.update({
+    id: '/historial',
+    path: '/historial',
     getParentRoute: () => AuthenticatedAdminRoute,
   } as any)
 const AuthenticatedAdminPedidosRoute =
@@ -207,9 +228,12 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/producto/$slug': typeof ProductoSlugRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
+  '/admin/alertas': typeof AuthenticatedAdminAlertasRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/admin/clientes': typeof AuthenticatedAdminClientesRoute
   '/admin/estadisticas': typeof AuthenticatedAdminEstadisticasRoute
   '/admin/herramientas': typeof AuthenticatedAdminHerramientasRoute
+  '/admin/historial': typeof AuthenticatedAdminHistorialRoute
   '/admin/pedidos': typeof AuthenticatedAdminPedidosRoute
   '/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
@@ -236,9 +260,12 @@ export interface FileRoutesByTo {
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/producto/$slug': typeof ProductoSlugRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
+  '/admin/alertas': typeof AuthenticatedAdminAlertasRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/admin/clientes': typeof AuthenticatedAdminClientesRoute
   '/admin/estadisticas': typeof AuthenticatedAdminEstadisticasRoute
   '/admin/herramientas': typeof AuthenticatedAdminHerramientasRoute
+  '/admin/historial': typeof AuthenticatedAdminHistorialRoute
   '/admin/pedidos': typeof AuthenticatedAdminPedidosRoute
   '/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/admin/productos': typeof AuthenticatedAdminProductosRoute
@@ -267,9 +294,12 @@ export interface FileRoutesById {
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/producto/$slug': typeof ProductoSlugRoute
   '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
+  '/_authenticated/admin/alertas': typeof AuthenticatedAdminAlertasRoute
   '/_authenticated/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/_authenticated/admin/clientes': typeof AuthenticatedAdminClientesRoute
   '/_authenticated/admin/estadisticas': typeof AuthenticatedAdminEstadisticasRoute
   '/_authenticated/admin/herramientas': typeof AuthenticatedAdminHerramientasRoute
+  '/_authenticated/admin/historial': typeof AuthenticatedAdminHistorialRoute
   '/_authenticated/admin/pedidos': typeof AuthenticatedAdminPedidosRoute
   '/_authenticated/admin/politica-precios': typeof AuthenticatedAdminPoliticaPreciosRoute
   '/_authenticated/admin/productos': typeof AuthenticatedAdminProductosRoute
@@ -298,9 +328,12 @@ export interface FileRouteTypes {
     | '/admin'
     | '/producto/$slug'
     | '/.lovable/oauth/consent'
+    | '/admin/alertas'
     | '/admin/categorias'
+    | '/admin/clientes'
     | '/admin/estadisticas'
     | '/admin/herramientas'
+    | '/admin/historial'
     | '/admin/pedidos'
     | '/admin/politica-precios'
     | '/admin/productos'
@@ -327,9 +360,12 @@ export interface FileRouteTypes {
     | '/admin'
     | '/producto/$slug'
     | '/.lovable/oauth/consent'
+    | '/admin/alertas'
     | '/admin/categorias'
+    | '/admin/clientes'
     | '/admin/estadisticas'
     | '/admin/herramientas'
+    | '/admin/historial'
     | '/admin/pedidos'
     | '/admin/politica-precios'
     | '/admin/productos'
@@ -357,9 +393,12 @@ export interface FileRouteTypes {
     | '/_authenticated/admin'
     | '/producto/$slug'
     | '/.lovable/oauth/consent'
+    | '/_authenticated/admin/alertas'
     | '/_authenticated/admin/categorias'
+    | '/_authenticated/admin/clientes'
     | '/_authenticated/admin/estadisticas'
     | '/_authenticated/admin/herramientas'
+    | '/_authenticated/admin/historial'
     | '/_authenticated/admin/pedidos'
     | '/_authenticated/admin/politica-precios'
     | '/_authenticated/admin/productos'
@@ -507,11 +546,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DotlovableOauthConsentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/alertas': {
+      id: '/_authenticated/admin/alertas'
+      path: '/alertas'
+      fullPath: '/admin/alertas'
+      preLoaderRoute: typeof AuthenticatedAdminAlertasRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/categorias': {
       id: '/_authenticated/admin/categorias'
       path: '/categorias'
       fullPath: '/admin/categorias'
       preLoaderRoute: typeof AuthenticatedAdminCategoriasRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/clientes': {
+      id: '/_authenticated/admin/clientes'
+      path: '/clientes'
+      fullPath: '/admin/clientes'
+      preLoaderRoute: typeof AuthenticatedAdminClientesRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
     '/_authenticated/admin/estadisticas': {
@@ -526,6 +579,13 @@ declare module '@tanstack/react-router' {
       path: '/herramientas'
       fullPath: '/admin/herramientas'
       preLoaderRoute: typeof AuthenticatedAdminHerramientasRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/historial': {
+      id: '/_authenticated/admin/historial'
+      path: '/historial'
+      fullPath: '/admin/historial'
+      preLoaderRoute: typeof AuthenticatedAdminHistorialRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
     '/_authenticated/admin/pedidos': {
@@ -595,9 +655,12 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedAdminRouteChildren {
+  AuthenticatedAdminAlertasRoute: typeof AuthenticatedAdminAlertasRoute
   AuthenticatedAdminCategoriasRoute: typeof AuthenticatedAdminCategoriasRoute
+  AuthenticatedAdminClientesRoute: typeof AuthenticatedAdminClientesRoute
   AuthenticatedAdminEstadisticasRoute: typeof AuthenticatedAdminEstadisticasRoute
   AuthenticatedAdminHerramientasRoute: typeof AuthenticatedAdminHerramientasRoute
+  AuthenticatedAdminHistorialRoute: typeof AuthenticatedAdminHistorialRoute
   AuthenticatedAdminPedidosRoute: typeof AuthenticatedAdminPedidosRoute
   AuthenticatedAdminPoliticaPreciosRoute: typeof AuthenticatedAdminPoliticaPreciosRoute
   AuthenticatedAdminProductosRoute: typeof AuthenticatedAdminProductosRoute
@@ -606,9 +669,12 @@ interface AuthenticatedAdminRouteChildren {
 }
 
 const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
+  AuthenticatedAdminAlertasRoute: AuthenticatedAdminAlertasRoute,
   AuthenticatedAdminCategoriasRoute: AuthenticatedAdminCategoriasRoute,
+  AuthenticatedAdminClientesRoute: AuthenticatedAdminClientesRoute,
   AuthenticatedAdminEstadisticasRoute: AuthenticatedAdminEstadisticasRoute,
   AuthenticatedAdminHerramientasRoute: AuthenticatedAdminHerramientasRoute,
+  AuthenticatedAdminHistorialRoute: AuthenticatedAdminHistorialRoute,
   AuthenticatedAdminPedidosRoute: AuthenticatedAdminPedidosRoute,
   AuthenticatedAdminPoliticaPreciosRoute:
     AuthenticatedAdminPoliticaPreciosRoute,

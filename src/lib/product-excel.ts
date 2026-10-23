@@ -1,6 +1,7 @@
 import ExcelJS from "exceljs";
 
 export type ExcelProduct = {
+  updated_at?: string;
   id: string;
   name: string;
   description?: string | null;

@@ -10,6 +10,9 @@ import {
   BarChart3,
   Wrench,
   Users,
+  History,
+  Bell,
+  Contact,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
@@ -31,6 +34,9 @@ export const Route = createFileRoute("/_authenticated/admin")({
 });
 
 const NAV = [
+  { to: "/admin/historial", label: "Historial de cambios", icon: History, exact: false },
+  { to: "/admin/clientes", label: "Clientes", icon: Contact, exact: false },
+  { to: "/admin/alertas", label: "Alertas del negocio", icon: Bell, exact: false },
   { to: "/admin/usuarios", label: "Usuarios", icon: Users, exact: false },
   { to: "/admin", label: "Resumen", icon: LayoutDashboard, exact: true },
   { to: "/admin/herramientas", label: "Herramientas de venta", icon: Wrench, exact: false },

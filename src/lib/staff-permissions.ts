@@ -8,9 +8,15 @@ export const STAFF_MODULES = [
   "productos",
   "categorias",
   "politica-precios",
+  "historial",
+  "clientes",
+  "alertas",
 ] as const;
 export type StaffModule = (typeof STAFF_MODULES)[number];
 export const STAFF_LABELS: Record<StaffModule, string> = {
+  historial: "Historial de cambios",
+  clientes: "Clientes",
+  alertas: "Alertas del negocio",
   usuarios: "Usuarios",
   resumen: "Resumen",
   herramientas: "Herramientas de venta",

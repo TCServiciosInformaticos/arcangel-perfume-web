@@ -65,7 +65,7 @@ test("owner can configure employee modules in Users", async ({ page }) => {
   await page.goto("/admin/usuarios");
   await expect(page.getByRole("heading", { name: "Usuarios", exact: true })).toBeVisible();
   await expect(page.getByRole("button", { name: "Crear empleado" })).toBeVisible();
-  await expect(page.getByRole("checkbox")).toHaveCount(9);
+  await expect(page.getByRole("checkbox")).toHaveCount(12);
   await page.getByRole("checkbox", { name: "Productos", exact: true }).check();
   await expect(page.getByRole("checkbox", { name: "Categorías", exact: true })).not.toBeChecked();
   await expect(
