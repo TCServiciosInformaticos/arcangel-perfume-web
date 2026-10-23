@@ -38,7 +38,7 @@ export function reviewIssues(
   if (p.stock === 0) issues.push("stock");
   return issues;
 }
-/** Load as an image: no CORS fetch, credentials or server-side URL requests. */
+/** Load as an image: no CORS fetch or server-side URL requests. */
 export function probeImage(url: string, signal: AbortSignal, timeoutMs = 8000): Promise<boolean> {
   return new Promise((resolve) => {
     if (signal.aborted) return resolve(false);

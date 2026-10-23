@@ -11,3 +11,5 @@ The review reads a minimal product field list in ranged requests, including inac
 Public product cards retry the main full-size photo when the thumbnail fails. Product detail, gallery, cart and admin previews show a branded “Imagen no disponible” placeholder after their available sources fail. This never hides an article or changes checkout eligibility.
 
 Validation uses synthetic browser fixtures and mocked Storage/database writes; no real products, inventory, payments or emails are modified by tests.
+
+CI browser checks use the Chrome channel preinstalled on the Ubuntu 24.04 GitHub runner. This avoids repeated Chromium downloads and OS-package installation stalls. Local tests retain the normal Playwright browser unless PLAYWRIGHT_CHANNEL=chrome is set. Both desktop and mobile emulation continue to run.

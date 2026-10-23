@@ -7,7 +7,13 @@ export default defineConfig({
   workers: process.env.CI ? 2 : undefined,
   reporter: "list",
   timeout: 30000,
-  use: { baseURL: "http://127.0.0.1:3000", trace: "off", screenshot: "off", video: "off" },
+  use: {
+    channel: process.env.PLAYWRIGHT_CHANNEL === "chrome" ? "chrome" : undefined,
+    baseURL: "http://127.0.0.1:3000",
+    trace: "off",
+    screenshot: "off",
+    video: "off",
+  },
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },
     { name: "mobile", use: { ...devices["iPhone 13"], defaultBrowserType: "chromium" } },
