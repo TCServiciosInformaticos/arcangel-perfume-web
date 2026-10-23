@@ -3,7 +3,7 @@ name: Quality checks
 
 on:
   push:
-    branches: [main, hostinger-usuarios, admin-operations, performance-catalog]
+    branches: [main, hostinger-usuarios, admin-operations, performance-catalog, security-patches]
     paths-ignore:
       - "public/catalog/**"
       - "scripts/catalog-data/**"
@@ -39,6 +39,8 @@ jobs:
           bun-version: "1.3.14"
       - name: Install locked dependencies
         run: bun install --frozen-lockfile
+      - name: Audit locked dependencies
+        run: bun audit
       - name: Run application and catalog tests
         run: npm run test
       - name: Check TypeScript
