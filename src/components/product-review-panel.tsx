@@ -41,6 +41,7 @@ export function ProductReviewPanel({ onEdit }: { onEdit: (id: string) => void })
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState({ done: 0, total: 0 });
   const controller = useRef<AbortController | null>(null);
+  const filterSnapshot = useRef<ImageChecks>(checks);
   useEffect(
     () => () => {
       controller.current?.abort();
@@ -85,7 +86,7 @@ export function ProductReviewPanel({ onEdit }: { onEdit: (id: string) => void })
           .toLocaleLowerCase("es")
           .includes(term.trim().toLocaleLowerCase("es"))) &&
       (visibility === "all" || p.is_active === (visibility === "visible")) &&
-      (issue === "all" || reviewIssues(p, checks).includes(issue)),
+      (issue === "all" || reviewIssues(p, busy ? filterSnapshot.current : checks).includes(issue)),
   );
   const safePage = Math.min(page, Math.max(0, Math.ceil(filtered.length / SIZE) - 1));
   const rows = filtered.slice(safePage * SIZE, (safePage + 1) * SIZE);
@@ -93,6 +94,7 @@ export function ProductReviewPanel({ onEdit }: { onEdit: (id: string) => void })
     if (controller.current) return;
     const abort = new AbortController();
     controller.current = abort;
+    filterSnapshot.current = checks;
     const urls = [...new Set(products.flatMap(productImageUrls))];
     setProgress({ done: 0, total: urls.length });
     setBusy(true);
