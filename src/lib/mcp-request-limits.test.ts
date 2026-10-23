@@ -59,6 +59,9 @@ test("MCP accepts framework Request proxies without native private-field errors"
   const original = post('{"jsonrpc":"2.0","id":1,"method":"tools/list"}');
   const proxy = new Proxy(original, {
     get(target, property) {
+      if (property === "redirect" && target.bodyUsed) {
+        throw new Error("Framework metadata cannot initialize after body consumption");
+      }
       const value = Reflect.get(target, property, target);
       return typeof value === "function" ? value.bind(target) : value;
     },

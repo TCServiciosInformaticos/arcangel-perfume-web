@@ -8,6 +8,12 @@ export async function limitMcpRequest(request: Request): Promise<Request | Respo
   const reject = () => new Response("MCP request exceeds input limits", { status: 413 });
   const length = Number(request.headers.get("content-length"));
   if (Number.isFinite(length) && length > MAX_BYTES) return reject();
+  // Capture lazy framework metadata before consuming its body stream.
+  const url = request.url;
+  const method = request.method;
+  const headers = new Headers(request.headers);
+  const signal = request.signal;
+  const redirect = request.redirect;
   const reader = request.body?.getReader();
   if (!reader) return request;
   const chunks: Uint8Array[] = [];
@@ -49,15 +55,14 @@ export async function limitMcpRequest(request: Request): Promise<Request | Respo
     if (elements > MAX_ELEMENTS) return reject();
     for (const child of children) stack.push({ value: child, depth: depth + 1 });
   }
-  const headers = new Headers(request.headers);
   headers.delete("content-length");
   // TanStack/Nitro can provide a Request proxy. Passing it to the native
   // constructor triggers Undici private-field checks, so copy public fields.
-  return new Request(request.url, {
-    method: request.method,
+  return new Request(url, {
+    method,
     body: bytes,
     headers,
-    signal: request.signal,
-    redirect: request.redirect,
+    signal,
+    redirect,
   });
 }
