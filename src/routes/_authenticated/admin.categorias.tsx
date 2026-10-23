@@ -51,6 +51,8 @@ function AdminCategorias() {
   function refresh() {
     qc.invalidateQueries({ queryKey: ["admin"] });
     qc.invalidateQueries({ queryKey: ["catalog"] });
+    qc.invalidateQueries({ queryKey: ["catalog-lookups"] });
+    qc.invalidateQueries({ queryKey: ["navigation-categories"] });
   }
   const remove = useMutation({
     mutationFn: async (target: Editor) => {

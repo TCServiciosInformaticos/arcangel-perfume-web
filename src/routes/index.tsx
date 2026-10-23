@@ -20,6 +20,7 @@ const SELECT =
 
 const featuredQuery = queryOptions({
   queryKey: ["home", "featured"],
+  staleTime: 30_000,
   queryFn: async () => {
     const { data, error } = await supabase
       .from("products")
@@ -35,6 +36,7 @@ const featuredQuery = queryOptions({
 
 const salesQuery = queryOptions({
   queryKey: ["home", "sales"],
+  staleTime: 30_000,
   queryFn: async () => {
     const { data, error } = await supabase
       .from("products")

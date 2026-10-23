@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type CSSProperties } from "react";
 import { Link } from "@tanstack/react-router";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
@@ -17,6 +17,19 @@ type Slide = {
 export function HeroSlider({ slides }: { slides: Slide[] }) {
   const [viewportRef, api] = useEmblaCarousel({ loop: true });
   const [selected, setSelected] = useState(0);
+  const [loaded, setLoaded] = useState(() => new Set([0, 1, slides.length - 1]));
+  useEffect(() => {
+    if (!slides.length) return;
+    setLoaded(
+      (previous) =>
+        new Set([
+          ...previous,
+          selected,
+          (selected + 1) % slides.length,
+          (selected + slides.length - 1) % slides.length,
+        ]),
+    );
+  }, [selected, slides.length]);
   const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
@@ -96,15 +109,23 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
                 draggable={false}
                 className="absolute inset-0 flex flex-col select-none sm:block"
               >
-                <div className="relative h-[190px] shrink-0 overflow-hidden sm:hidden">
-                  <img
-                    src={slide.img}
-                    alt={slide.alt ?? slide.title}
-                    draggable={false}
-                    loading={index === 0 ? "eager" : "lazy"}
-                    className="h-full w-full object-cover"
-                    style={{ objectPosition: `${slide.mobilePosition ?? 50}% center` }}
-                  />
+                <div className="relative h-[190px] shrink-0 overflow-hidden sm:absolute sm:inset-0 sm:h-full">
+                  {loaded.has(index) && (
+                    <img
+                      src={slide.img}
+                      alt={slide.alt ?? slide.title}
+                      draggable={false}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      fetchPriority={index === 0 ? "high" : "auto"}
+                      decoding="async"
+                      className="h-full w-full object-cover [object-position:var(--mobile-position)] sm:object-center"
+                      style={
+                        {
+                          "--mobile-position": `${slide.mobilePosition ?? 50}% center`,
+                        } as CSSProperties
+                      }
+                    />
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col justify-center bg-secondary px-5 pb-10 sm:hidden">
                   <h1 className="text-3xl font-extrabold tracking-normal text-primary">
@@ -115,13 +136,6 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
                   </p>
                 </div>
                 <div className="hidden h-full sm:block">
-                  <img
-                    src={slide.img}
-                    alt={slide.alt ?? slide.title}
-                    draggable={false}
-                    loading={index === 0 ? "eager" : "lazy"}
-                    className="h-full w-full object-cover object-center"
-                  />
                   <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/50 to-transparent" />
                   <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-20 pb-8">
                     <h1 className="text-7xl font-extrabold tracking-normal text-primary">
@@ -152,6 +166,7 @@ export function HeroSlider({ slides }: { slides: Slide[] }) {
               aria-current={index === selected ? "true" : undefined}
               onClick={() => {
                 setPaused(true);
+                setLoaded((previous) => new Set([...previous, index]));
                 api?.scrollTo(index, reducedMotion);
               }}
               className="h-7 w-7 rounded-full sm:h-11 sm:w-11"

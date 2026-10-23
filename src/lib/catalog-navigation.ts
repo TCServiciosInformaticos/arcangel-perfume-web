@@ -3,8 +3,12 @@ import { supabase } from "@/integrations/supabase/client";
 
 export const navigationCategoriesQuery = queryOptions({
   queryKey: ["navigation-categories"],
+  staleTime: 5 * 60_000,
   queryFn: async () => {
-    const { data, error } = await supabase.from("categories").select("id,name,slug").order("sort_order");
+    const { data, error } = await supabase
+      .from("categories")
+      .select("id,name,slug")
+      .order("sort_order");
     if (error) throw error;
     return data ?? [];
   },
@@ -28,10 +32,10 @@ export function catalogSearch(search: Record<string, unknown>): CatalogSearch {
     categoria: typeof search.categoria === "string" ? search.categoria : undefined,
     subcategoria: typeof search.subcategoria === "string" ? search.subcategoria : undefined,
     tipo: typeof search.tipo === "string" ? search.tipo : undefined,
-    q: typeof search.q === "string" ? search.q : undefined,
+    q: typeof search.q === "string" ? search.q.slice(0, 200) : undefined,
     ofertas: search.ofertas === true || search.ofertas === "true" ? true : undefined,
     orden: search.orden === "price-asc" || search.orden === "price-desc" ? search.orden : undefined,
-    pagina: Number.isInteger(page) && page > 1 ? page : undefined,
+    pagina: Number.isInteger(page) && page > 1 ? Math.min(page, 100000) : undefined,
   };
 }
 
@@ -83,7 +87,9 @@ export function catalogHeading({
   if (category) {
     return {
       eyebrow: "Catálogo",
-      title: search.ofertas ? `Ofertas de ${category.name}` : CATEGORY_TITLES[category.slug ?? ""] ?? category.name,
+      title: search.ofertas
+        ? `Ofertas de ${category.name}`
+        : (CATEGORY_TITLES[category.slug ?? ""] ?? category.name),
       subtitle: search.ofertas ? discounted : available,
     };
   }
@@ -93,6 +99,7 @@ export function catalogHeading({
   return {
     eyebrow: "Catálogo",
     title: "Todo el catálogo",
-    subtitle: "Perfumes, limpieza, cuidado capilar y más, con envío en la zona y retiro en el local.",
+    subtitle:
+      "Perfumes, limpieza, cuidado capilar y más, con envío en la zona y retiro en el local.",
   };
 }

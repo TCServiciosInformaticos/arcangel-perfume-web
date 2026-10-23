@@ -63,3 +63,56 @@ test("purchase wording explains the handoff to Mercado Pago", async ({ page }) =
   await expect(page.getByText(/Te llevaremos a Mercado Pago para elegir cómo pagar/)).toBeVisible();
   await expect(page.getByText(/dueño/)).toHaveCount(0);
 });
+test("catalog fetches and displays only one page at a time", async ({ page }) => {
+  await page.goto("/productos?q=fixture-paginacion", { waitUntil: "networkidle" });
+  await expect(page.locator("main h3")).toHaveCount(24);
+  await expect(
+    page.getByRole("heading", { name: "Fixture paginación 1", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Siguiente", exact: true }).click();
+  await expect(page).toHaveURL(/pagina=2/);
+  await expect(
+    page.getByRole("heading", { name: "Fixture paginación 25", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Fixture paginación 1", exact: true }),
+  ).toHaveCount(0);
+  await expect(page.locator("main h3")).toHaveCount(24);
+});
+test("hero loads only neighboring slides and prioritizes the first image", async ({ page }) => {
+  const names = [
+    "hero-banner-red",
+    "hero-ofertas",
+    "hero-perfumes-bodegon",
+    "hero-limpieza",
+    "hero-cabello-vanity",
+    "hero-higiene",
+    "hero-accesorios",
+    "hero-skincare",
+    "hero-makeup",
+  ];
+  await page.route("http://127.0.0.1:4174/rest/v1/home_slides*", (route) =>
+    route.fulfill({
+      json: names.map((n, i) => ({
+        id: String(i),
+        title: `Slide ${i + 1}`,
+        subtitle: "Fixture",
+        image_path: `builtin:${n}`,
+        mobile_position: 50,
+        destination: "catalog",
+        category: null,
+      })),
+      headers: { "access-control-allow-origin": "http://127.0.0.1:3000" },
+    }),
+  );
+  await page.goto("/", { waitUntil: "networkidle" });
+  const hero = page.getByRole("region", { name: "Destacados de El Arcángel" });
+  await expect(hero).toBeVisible();
+  await expect(hero.locator("img")).toHaveCount(3);
+  await expect(hero.locator('img[fetchpriority="high"]')).toHaveCount(1);
+  await hero.getByRole("button", { name: "Ver diapositiva 5: Slide 5", exact: true }).click();
+  await expect(
+    hero.getByRole("button", { name: "Ver diapositiva 5: Slide 5", exact: true }),
+  ).toHaveAttribute("aria-current", "true");
+  await expect(hero.locator("img")).toHaveCount(6);
+});
