@@ -1,3 +1,4 @@
+import { comingSoonResponse } from "./lib/coming-soon";
 import "./lib/error-capture";
 import { captureServerError } from "./lib/sentry.server";
 
@@ -45,6 +46,8 @@ async function normalizeCatastrophicSsrResponse(
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const holdingPage = comingSoonResponse(request);
+    if (holdingPage) return holdingPage;
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
