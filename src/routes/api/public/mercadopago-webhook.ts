@@ -17,7 +17,15 @@ export const Route = createFileRoute("/api/public/mercadopago-webhook")({
         if (type && type !== "payment") return new Response("ignored", { status: 200 });
         try {
           const { syncMercadoPagoPayment } = await import("@/lib/payment-sync.server");
-          await syncMercadoPagoPayment(paymentId);
+          const orderId = await syncMercadoPagoPayment(paymentId);
+          // Approval and email queue are committed before contacting the mail
+          // provider. The scheduled worker retries email failures independently.
+          try {
+            const { processPaidOrderEmails } = await import("@/lib/paid-order-email.server");
+            await processPaidOrderEmails(orderId);
+          } catch {
+            console.error("Paid-order email queued for retry");
+          }
           return new Response("ok", { status: 200 });
         } catch {
           console.error("Mercado Pago notification could not be processed");

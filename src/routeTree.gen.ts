@@ -39,6 +39,7 @@ import { Route as AuthenticatedAdminUsuariosRouteImport } from './routes/_authen
 import { Route as ApiPublicMercadopagoWebhookRouteImport } from './routes/api/public/mercadopago-webhook'
 import { Route as ApiPublicOrderMaintenanceRouteImport } from './routes/api/public/order-maintenance'
 import { Route as ApiPublicOrderRecoveryEmailsRouteImport } from './routes/api/public/order-recovery-emails'
+import { Route as ApiPublicPaidOrderEmailsRouteImport } from './routes/api/public/paid-order-emails'
 import { Route as ApiPublicRestockNotificationsRouteImport } from './routes/api/public/restock-notifications'
 
 const IndexRoute = IndexRouteImport.update({
@@ -205,6 +206,12 @@ const ApiPublicOrderRecoveryEmailsRoute =
     path: '/api/public/order-recovery-emails',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicPaidOrderEmailsRoute =
+  ApiPublicPaidOrderEmailsRouteImport.update({
+    id: '/api/public/paid-order-emails',
+    path: '/api/public/paid-order-emails',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiPublicRestockNotificationsRoute =
   ApiPublicRestockNotificationsRouteImport.update({
     id: '/api/public/restock-notifications',
@@ -242,6 +249,7 @@ export interface FileRoutesByFullPath {
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
   '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
+  '/api/public/paid-order-emails': typeof ApiPublicPaidOrderEmailsRoute
   '/api/public/restock-notifications': typeof ApiPublicRestockNotificationsRoute
 }
 export interface FileRoutesByTo {
@@ -274,6 +282,7 @@ export interface FileRoutesByTo {
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
   '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
+  '/api/public/paid-order-emails': typeof ApiPublicPaidOrderEmailsRoute
   '/api/public/restock-notifications': typeof ApiPublicRestockNotificationsRoute
 }
 export interface FileRoutesById {
@@ -308,6 +317,7 @@ export interface FileRoutesById {
   '/api/public/mercadopago-webhook': typeof ApiPublicMercadopagoWebhookRoute
   '/api/public/order-maintenance': typeof ApiPublicOrderMaintenanceRoute
   '/api/public/order-recovery-emails': typeof ApiPublicOrderRecoveryEmailsRoute
+  '/api/public/paid-order-emails': typeof ApiPublicPaidOrderEmailsRoute
   '/api/public/restock-notifications': typeof ApiPublicRestockNotificationsRoute
 }
 export interface FileRouteTypes {
@@ -342,6 +352,7 @@ export interface FileRouteTypes {
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
     | '/api/public/order-recovery-emails'
+    | '/api/public/paid-order-emails'
     | '/api/public/restock-notifications'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -374,6 +385,7 @@ export interface FileRouteTypes {
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
     | '/api/public/order-recovery-emails'
+    | '/api/public/paid-order-emails'
     | '/api/public/restock-notifications'
   id:
     | '__root__'
@@ -407,6 +419,7 @@ export interface FileRouteTypes {
     | '/api/public/mercadopago-webhook'
     | '/api/public/order-maintenance'
     | '/api/public/order-recovery-emails'
+    | '/api/public/paid-order-emails'
     | '/api/public/restock-notifications'
   fileRoutesById: FileRoutesById
 }
@@ -429,6 +442,7 @@ export interface RootRouteChildren {
   ApiPublicMercadopagoWebhookRoute: typeof ApiPublicMercadopagoWebhookRoute
   ApiPublicOrderMaintenanceRoute: typeof ApiPublicOrderMaintenanceRoute
   ApiPublicOrderRecoveryEmailsRoute: typeof ApiPublicOrderRecoveryEmailsRoute
+  ApiPublicPaidOrderEmailsRoute: typeof ApiPublicPaidOrderEmailsRoute
   ApiPublicRestockNotificationsRoute: typeof ApiPublicRestockNotificationsRoute
 }
 
@@ -644,6 +658,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicOrderRecoveryEmailsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/paid-order-emails': {
+      id: '/api/public/paid-order-emails'
+      path: '/api/public/paid-order-emails'
+      fullPath: '/api/public/paid-order-emails'
+      preLoaderRoute: typeof ApiPublicPaidOrderEmailsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/restock-notifications': {
       id: '/api/public/restock-notifications'
       path: '/api/public/restock-notifications'
@@ -717,6 +738,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPublicMercadopagoWebhookRoute: ApiPublicMercadopagoWebhookRoute,
   ApiPublicOrderMaintenanceRoute: ApiPublicOrderMaintenanceRoute,
   ApiPublicOrderRecoveryEmailsRoute: ApiPublicOrderRecoveryEmailsRoute,
+  ApiPublicPaidOrderEmailsRoute: ApiPublicPaidOrderEmailsRoute,
   ApiPublicRestockNotificationsRoute: ApiPublicRestockNotificationsRoute,
 }
 export const routeTree = rootRouteImport

@@ -920,6 +920,11 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      claim_paid_order_email: { Args: { oid?: string }; Returns: Json }
+      prepare_paid_order_email: { Args: { eid: string; lease: string; body: Json }; Returns: Json }
+      authorize_paid_order_send: { Args: { eid: string; lease: string }; Returns: boolean }
+      finish_paid_order_email: { Args: { eid: string; lease: string; provider_id: string }; Returns: undefined }
+      fail_paid_order_email: { Args: { eid: string; lease: string; permanent?: boolean }; Returns: undefined }
       admin_commerce: { Args: { action: string; payload: Json }; Returns: Json }
       admin_order_action: {
         Args: { action: string; note?: string; oid: string }

@@ -89,6 +89,7 @@ export async function syncMercadoPagoPayment(paymentId: string, expectedOrderId?
     provider_status: payment.status,
   });
   if (result.error) throw result.error;
+  return attempt.data.order_id;
 }
 export async function reconcileOrder(orderId: string) {
   // Full pagination: do not silently miss an approved payment after failed retries.
