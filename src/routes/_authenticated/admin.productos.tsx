@@ -86,6 +86,7 @@ type Product = {
   id: string;
   slug: string;
   article_code: string | null;
+  barcode: string | null;
   updated_at: string;
   name: string;
   description: string | null;
@@ -137,7 +138,7 @@ function AdminProductos() {
         supabase
           .from("products")
           .select(
-            "id, updated_at, slug, article_code, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)",
+            "id, updated_at, slug, article_code, barcode, name, description, price, compare_at_price, stock, is_active, is_featured, image_urls, thumbnail_url, category_id, subcategory_id, product_type_id, category:categories(name)",
             { count: "exact" },
           )
           .order("created_at", { ascending: false })
@@ -157,7 +158,7 @@ function AdminProductos() {
       const r = await supabase
         .from("products")
         .select(
-          "id,updated_at,slug,article_code,name,description,price,compare_at_price,stock,is_active,is_featured,image_urls,thumbnail_url,category_id,subcategory_id,product_type_id",
+          "id,updated_at,slug,article_code,barcode,name,description,price,compare_at_price,stock,is_active,is_featured,image_urls,thumbnail_url,category_id,subcategory_id,product_type_id",
         )
         .eq("id", editar!)
         .single();
@@ -574,6 +575,7 @@ function ProductForm({
   const [name, setName] = useState(product?.name ?? "");
   const [slug, setSlug] = useState(product?.slug ?? "");
   const [articleCode, setArticleCode] = useState(product?.article_code ?? "");
+  const [barcode, setBarcode] = useState(product?.barcode ?? "");
   const [description, setDescription] = useState(product?.description ?? "");
   const [price, setPrice] = useState(product?.price?.toString() ?? "");
   const [compareAt, setCompareAt] = useState(product?.compare_at_price?.toString() ?? "");
@@ -638,6 +640,7 @@ function ProductForm({
       const payload = {
         name: name.trim(),
         article_code: articleCode.trim() || null,
+        barcode: barcode.trim() || null,
         slug: (slug || slugify(name)).trim(),
         description: description.trim() || null,
         price: Number(price),
@@ -654,6 +657,9 @@ function ProductForm({
           thumb: product?.thumbnail_url,
         }),
       };
+      if (payload.barcode && !/^[0-9]{8,14}$/.test(payload.barcode)) {
+        throw new Error("El código de barras debe tener entre 8 y 14 dígitos.");
+      }
       if (!payload.name || !payload.slug || isNaN(payload.price)) {
         throw new Error("Completá nombre, slug y precio");
       }
@@ -679,7 +685,8 @@ function ProductForm({
       onSaved();
       onOpenChange(false);
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : "Error al guardar");
+      const duplicateBarcode = typeof err === "object" && err !== null && "code" in err && err.code === "23505" && "message" in err && typeof err.message === "string" && err.message.includes("barcode");
+      toast.error(duplicateBarcode ? "Ese código de barras ya está asignado a otro artículo." : err instanceof Error ? err.message : "Error al guardar");
     } finally {
       setSaving(false);
     }
@@ -696,6 +703,7 @@ function ProductForm({
             setName("");
             setSlug("");
             setArticleCode("");
+            setBarcode("");
             setDescription("");
             setPrice("");
             setCompareAt("");
@@ -726,6 +734,21 @@ function ProductForm({
               onChange={(e) => setArticleCode(e.target.value)}
               placeholder="Conserva los ceros iniciales"
             />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="product-barcode">EAN / código de barras</Label>
+            <Input
+              id="product-barcode"
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]{8,14}"
+              maxLength={14}
+              value={barcode}
+              onChange={(e) => setBarcode(e.target.value)}
+              placeholder="8 a 14 dígitos; conserva los ceros iniciales"
+              aria-describedby="product-barcode-help"
+            />
+            <p id="product-barcode-help" className="text-xs text-muted-foreground">Opcional. Se usa en la administración y no se muestra en la tienda.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="sm:col-span-2">

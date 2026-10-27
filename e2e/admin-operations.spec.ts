@@ -292,12 +292,14 @@ test("article review checks photos, filters brands and edits the selected articl
   await panel.getByRole("button", { name: "Editar artículo", exact: true }).click();
   await expect(dialog.getByLabel("Código de artículo", { exact: true })).toHaveValue("00002");
   await dialog.getByLabel("Código de artículo", { exact: true }).fill("000009");
+  await dialog.getByLabel("EAN / código de barras", { exact: true }).fill("0001234567890");
   await dialog.locator('input[type="file"][accept="image/*"]').setInputFiles("public/favicon.png");
   await expect(page.getByText("1 imagen(es) subida(s)", { exact: true })).toBeVisible();
   await dialog.getByRole("button", { name: "Quitar imagen", exact: true }).first().click();
   await dialog.getByRole("button", { name: "Guardar cambios", exact: true }).click();
   await expect(dialog).toHaveCount(0);
   expect(saved?.article_code).toBe("000009");
+  expect(saved?.barcode).toBe("0001234567890");
   expect(saved?.image_urls).toHaveLength(1);
   expect(String(saved?.thumbnail_url)).toContain("product-images");
   expect(saved?.price).toBe(0);
