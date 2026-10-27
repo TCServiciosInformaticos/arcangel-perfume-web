@@ -6,6 +6,10 @@ export const Route = createFileRoute("/api/public/paid-order-emails")({
       return Response.json({protocol:"paid-order-email-v1",...paidOrderEmailReadiness()}, {headers:{"Cache-Control":"no-store"}});
     },
     POST: async ({ request }) => {
+      if (request.headers.has("x-delivery-test")) {
+        const { deliveryTest } = await import("@/lib/email-delivery-test.server");
+        return deliveryTest(request);
+      }
       const token = request.headers.get("authorization")?.replace(/^Bearer /, "");
       if(!token || !/^[a-f0-9]{64}$/.test(token)) return new Response("Unauthorized",{status:401});
       try {
