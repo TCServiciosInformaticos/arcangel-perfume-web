@@ -102,6 +102,10 @@
     "@modelcontextprotocol/server": "2.3.0",
     "esbuild": "0.28.1",
     "body-parser": "2.4.0",
-    "uuid": "11.1.1"
+    "uuid": "11.1.1",
+    "minimatch": "11.0.1"
+  },
+  "patchedDependencies": {
+    "glob@7.2.3": "patches/glob@7.2.3.patch"
   }
 }
