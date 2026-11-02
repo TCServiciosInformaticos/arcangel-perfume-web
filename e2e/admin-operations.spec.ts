@@ -249,10 +249,7 @@ test("article review checks photos, filters brands and edits the selected articl
     const id = new URL(r.request().url()).searchParams.get("id")?.replace(/^eq\./, "");
     if (r.request().method() === "PATCH") {
       saved = r.request().postDataJSON();
-      Object.assign(
-        rows.find((p) => p.id === id)!,
-        saved,
-      );
+      Object.assign(rows.find((p) => p.id === id)!, saved);
       return r.fulfill({ json: { id }, headers });
     }
     return r.fulfill({ json: id ? rows.find((p) => p.id === id) : rows, headers });
@@ -308,4 +305,46 @@ test("article review checks photos, filters brands and edits the selected articl
   await panel.getByLabel("Problema", { exact: true }).selectOption("missing");
   await expect(panel.getByText("Artículo sin foto", { exact: true })).toBeVisible();
   await expect(panel.getByText("Artículo con foto fallida", { exact: true })).toHaveCount(0);
+});
+
+test("el comparador conserva listas al cambiar de sección y recargar", async ({ page }) => {
+  await setup(page);
+  await page.goto("/admin/herramientas");
+  await page.getByRole("button", { name: "Comparar precios" }).click();
+  await page.getByLabel("Archivo de precios", { exact: false }).setInputFiles({
+    name: "Proveedor.csv",
+    mimeType: "text/csv",
+    buffer: Buffer.from("EAN;Producto;Precio\n7791234567890;Jabon prueba;1.234,50\n"),
+  });
+  await page.getByRole("button", { name: "Agregar lista" }).click();
+  await page.getByLabel("Solo artículos con dos o más proveedores").uncheck();
+  await expect(page.getByText("Jabon prueba").first()).toBeVisible();
+  await page.getByRole("button", { name: "Cupones" }).click();
+  await page.getByRole("button", { name: "Comparar precios" }).click();
+  await expect(page.getByText("Jabon prueba").first()).toBeVisible();
+  await page.reload();
+  await expect(page.getByText("Jabon prueba").first()).toBeVisible();
+});
+
+test("Cemafelu selecciona contado en ofertas y lista en las demás filas", async ({ page }) => {
+  await setup(page);
+  await page.goto("/admin/herramientas");
+  await page.getByRole("button", { name: "Comparar precios" }).click();
+  await page.getByLabel("Archivo de precios", { exact: false }).setInputFiles({
+    name: "cemafelu.csv",
+    mimeType: "text/csv",
+    buffer: Buffer.from(
+      "Codigo Barra;Descripcion;Precio Lista;Precio Cdo.;Of.\n7791234567890;Producto oferta;1.000,00;750,00;OF\n7791234567891;Producto normal;2.000,00;1.500,00;\n",
+    ),
+  });
+  await expect(
+    page.getByLabel("Cemafelu: OF usa precio contado; el resto usa precio de lista"),
+  ).toBeChecked();
+  await expect(page.getByRole("row").filter({ hasText: "Producto oferta" })).toContainText("750");
+  await expect(page.getByRole("row").filter({ hasText: "Producto normal" })).toContainText("2.000");
+  await page.getByRole("button", { name: "Agregar lista" }).click();
+  await page.getByLabel("Solo artículos con dos o más proveedores").uncheck();
+  await expect(page.getByText("Producto oferta").first()).toBeVisible();
+  await page.reload();
+  await expect(page.getByText("Producto normal").first()).toBeVisible();
 });
