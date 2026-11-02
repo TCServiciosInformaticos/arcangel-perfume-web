@@ -11,6 +11,7 @@ import { buenosAiresDate, shiftDate, validateSalesDates } from "@/lib/sales-stat
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { SupplierPriceComparison } from "@/components/supplier-price-comparison";
 export const Route = createFileRoute("/_authenticated/admin/herramientas")({
   component: CommerceAdmin,
 });
@@ -36,6 +37,7 @@ function CommerceAdmin() {
           ["combos", "Combos y kits"],
           ["coupons", "Cupones"],
           ["costs", "Costos y escáner"],
+          ["comparison", "Comparar precios"],
           ["picking", "Preparar pedidos"],
           ["margin", "Rentabilidad"],
           ["notices", "Avisos de reposición"],
@@ -51,6 +53,8 @@ function CommerceAdmin() {
         <CouponEditor />
       ) : tab === "costs" ? (
         <CostEditor />
+      ) : tab === "comparison" ? (
+        <SupplierPriceComparison />
       ) : tab === "picking" ? (
         <Picking />
       ) : tab === "margin" ? (
