@@ -1,6 +1,12 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { barcodeValue, priceValue, parseCsv, compareOffers } from "./supplier-price-comparison";
+import {
+  barcodeValue,
+  priceValue,
+  parseCsv,
+  compareOffers,
+  cachedCellValue,
+} from "./supplier-price-comparison";
 
 test("parses Argentine prices without silently accepting foreign or malformed formatting", () => {
   assert.equal(priceValue("$ 1.234,56"), 1234.56);
@@ -45,4 +51,10 @@ test("compares only identical EANs and sorts by unit price", () => {
   const groups = compareOffers(offers);
   assert.equal(groups.length, 2);
   assert.equal(groups.find((x) => x.barcode === "7791234567890")?.rows[0].supplier, "B");
+});
+
+test("reads cached formula results and preserves zero as stock", () => {
+  assert.equal(priceValue(cachedCellValue({ formula: "E12*0.95", result: 1709.3445 })), 1709.3445);
+  assert.equal(cachedCellValue({ formula: "lookup", result: 0 }), 0);
+  assert.equal(cachedCellValue({ formula: "lookup" }), null);
 });

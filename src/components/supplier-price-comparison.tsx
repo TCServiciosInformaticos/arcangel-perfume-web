@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { formatARS } from "@/lib/format";
 import {
   barcodeValue,
+  cachedCellValue,
   priceValue,
   compareOffers,
   parseCsv,
@@ -37,6 +38,8 @@ export function SupplierPriceComparison() {
   const [barcode, setBarcode] = useState(-1);
   const [name, setName] = useState(-1);
   const [price, setPrice] = useState(-1);
+  const [stock, setStock] = useState(-1);
+  const [availableOnly, setAvailableOnly] = useState(true);
   const [batches, setBatches] = useState<Batch[]>([]);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -46,14 +49,16 @@ export function SupplierPriceComparison() {
   const offers = useMemo(() => batches.flatMap((b) => b.offers), [batches]);
   const groups = useMemo(
     () =>
-      compareOffers(offers).filter(
+      compareOffers(
+        availableOnly ? offers.filter((r) => r.stock == null || r.stock > 0) : offers,
+      ).filter(
         (g) =>
           (!onlyMultiple || new Set(g.rows.map((r) => norm(r.supplier))).size >= 2) &&
           `${g.barcode} ${g.rows.map((r) => `${r.name} ${r.supplier}`).join(" ")}`
             .toLowerCase()
             .includes(search.toLowerCase()),
       ),
-    [offers, search, onlyMultiple],
+    [offers, search, onlyMultiple, availableOnly],
   );
   async function openFile(file?: File) {
     if (!file) return;
@@ -83,11 +88,20 @@ export function SupplierPriceComparison() {
       } else throw new Error("Elegí un archivo XLSX o CSV.");
       if (!rows.length || rows.length > 20000)
         throw new Error("El archivo está vacío o supera 20.000 filas.");
-      const h = rows[0];
-      setHeaderRow(1);
-      setBarcode(guess(h, /^(ean|ean13|gtin|codigo de barras|codigo barras|barcode)$/));
+      const candidate = rows
+        .slice(0, 100)
+        .findIndex(
+          (h) =>
+            guess(h, /^(ean|ean13|gtin|codigo de barras|codigo barras?|barcode)$/) >= 0 &&
+            guess(h, /precio|costo|price/) >= 0,
+        );
+      const index = candidate >= 0 ? candidate : 0;
+      const h = rows[index];
+      setHeaderRow(index + 1);
+      setBarcode(guess(h, /^(ean|ean13|gtin|codigo de barras|codigo barras?|barcode)$/));
       setName(guess(h, /^(nombre|articulo|producto|descripcion|description)$/));
       setPrice(guess(h, /^(precio|precio unitario|costo|price|precio final)$/));
+      setStock(guess(h, /^stocks?(\s|$)/));
       setSupplier(file.name.replace(/\.(csv|xlsx)$/i, ""));
       setTable({ name: file.name, rows });
     } catch (e) {
@@ -104,7 +118,8 @@ export function SupplierPriceComparison() {
       price < 0 ||
       barcode === price ||
       name === barcode ||
-      name === price
+      name === price ||
+      (stock >= 0 && [barcode, name, price].includes(stock))
     ) {
       setError("Indicá proveedor y columnas distintas para código de barras y precio.");
       return;
@@ -114,7 +129,10 @@ export function SupplierPriceComparison() {
     table.rows.slice(headerRow).forEach((row, i) => {
       if (row.every((v) => !cellText(v).trim())) return;
       const b = barcodeValue(cellText(row[barcode]));
-      const p = priceValue(row[price]);
+      const p = priceValue(cachedCellValue(row[price]));
+      const stockValue = stock >= 0 ? cachedCellValue(row[stock]) : null;
+      const amount =
+        stockValue == null || String(stockValue).trim() === "" ? null : Number(stockValue);
       if (!b || p === null) {
         rejected++;
         return;
@@ -123,6 +141,7 @@ export function SupplierPriceComparison() {
         barcode: b,
         name: name >= 0 ? cellText(row[name]) : "",
         price: p,
+        stock: amount !== null && Number.isFinite(amount) ? amount : null,
         supplier: supplier.trim(),
         file: table.name,
         row: headerRow + i + 1,
@@ -192,6 +211,7 @@ export function SupplierPriceComparison() {
                 setBarcode(-1);
                 setName(-1);
                 setPrice(-1);
+                setStock(-1);
               }}
             />
           </label>
@@ -200,6 +220,7 @@ export function SupplierPriceComparison() {
               ["Código de barras / EAN", barcode, setBarcode],
               ["Descripción (opcional)", name, setName],
               ["Precio unitario", price, setPrice],
+              ["Stock del proveedor (opcional)", stock, setStock],
             ] as const
           ).map(([label, value, set]) => (
             <label key={label} className="block text-sm">
@@ -236,9 +257,9 @@ export function SupplierPriceComparison() {
                     <td className="p-2">{name >= 0 ? cellText(row[name]) : "—"}</td>
                     <td className="p-2">
                       {price >= 0
-                        ? priceValue(row[price]) === null
+                        ? priceValue(cachedCellValue(row[price])) === null
                           ? "Inválido"
-                          : formatARS(priceValue(row[price])!)
+                          : formatARS(priceValue(cachedCellValue(row[price]))!)
                         : "—"}
                     </td>
                   </tr>
@@ -290,6 +311,14 @@ export function SupplierPriceComparison() {
             />
             Solo artículos con dos o más proveedores
           </label>
+          <label className="flex items-center gap-2 text-sm">
+            <input
+              type="checkbox"
+              checked={availableOnly}
+              onChange={(e) => setAvailableOnly(e.target.checked)}
+            />
+            Excluir ofertas con stock cero o negativo (el stock desconocido se conserva)
+          </label>
           <p className="text-sm">
             {groups.length} artículos encontrados. El precio menor se indica para cada código.
           </p>
@@ -317,7 +346,8 @@ export function SupplierPriceComparison() {
                             r.price === g.rows[0].price ? "font-semibold text-primary" : ""
                           }
                         >
-                          {r.supplier}: {formatARS(r.price)}{" "}
+                          {r.supplier}: {formatARS(r.price)}
+                          {r.stock != null ? ` · Stock ${r.stock}` : " · Stock no informado"}{" "}
                           {r.price === g.rows[0].price ? "· menor precio" : ""}
                           <span className="block text-xs font-normal text-muted-foreground">
                             {r.name} · {r.file}, fila {r.row}

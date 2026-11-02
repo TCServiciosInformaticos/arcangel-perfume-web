@@ -5,6 +5,7 @@ export type Offer = {
   supplier: string;
   file: string;
   row: number;
+  stock?: number | null;
 };
 export function barcodeValue(value: unknown): string {
   const s = String(value ?? "")
@@ -66,4 +67,11 @@ export function parseCsv(text: string): string[][] {
     rows.push(row);
   }
   return rows;
+}
+
+/** Preserve cached numeric Excel formula results instead of parsing them as localized strings. */
+export function cachedCellValue(value: unknown): unknown {
+  if (value && typeof value === "object" && ("result" in value || "formula" in value))
+    return (value as { result?: unknown }).result ?? null;
+  return value;
 }
