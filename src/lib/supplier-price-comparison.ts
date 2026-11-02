@@ -6,6 +6,7 @@ export type Offer = {
   file: string;
   row: number;
   stock?: number | null;
+  conditions?: string;
 };
 export function barcodeValue(value: unknown): string {
   const s = String(value ?? "")

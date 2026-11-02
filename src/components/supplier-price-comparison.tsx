@@ -1,4 +1,7 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+import { applyAdminProductSearch } from "@/lib/admin-product-search";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { formatARS } from "@/lib/format";
@@ -275,6 +278,20 @@ export function SupplierPriceComparison() {
           <Button onClick={add}>Agregar lista</Button>
         </div>
       )}
+      <ManualOffer
+        onAdd={(offer) =>
+          setBatches((old) => [
+            ...old,
+            {
+              id: crypto.randomUUID(),
+              supplier: offer.supplier,
+              file: offer.file,
+              offers: [offer],
+              rejected: 0,
+            },
+          ])
+        }
+      />
       {batches.length > 0 && (
         <>
           <h3 className="font-medium">Listas cargadas</h3>
@@ -336,7 +353,11 @@ export function SupplierPriceComparison() {
                     <td className="p-2">
                       {g.rows[0].name || "Sin descripción"}
                       <br />
-                      <span className="text-muted-foreground">{g.barcode}</span>
+                      <span className="text-muted-foreground">
+                        {g.barcode.startsWith("product:")
+                          ? "Artículo sin EAN registrado"
+                          : g.barcode}
+                      </span>
                     </td>
                     <td className="p-2">
                       {g.rows.map((r, i) => (
@@ -348,9 +369,11 @@ export function SupplierPriceComparison() {
                         >
                           {r.supplier}: {formatARS(r.price)}
                           {r.stock != null ? ` · Stock ${r.stock}` : " · Stock no informado"}{" "}
-                          {r.price === g.rows[0].price ? "· menor precio" : ""}
+                          {r.price === g.rows[0].price ? "· menor precio cargado" : ""}
                           <span className="block text-xs font-normal text-muted-foreground">
-                            {r.name} · {r.file}, fila {r.row}
+                            {r.name} · {r.file}
+                            {r.row > 0 ? `, fila ${r.row}` : ""}
+                            {r.conditions ? ` · ${r.conditions}` : ""}
                           </span>
                         </div>
                       ))}
@@ -366,5 +389,180 @@ export function SupplierPriceComparison() {
         </>
       )}
     </section>
+  );
+}
+
+type CatalogMatch = { id: string; name: string; barcode: string | null };
+function ManualOffer({ onAdd }: { onAdd: (offer: Offer) => void }) {
+  const [description, setDescription] = useState("");
+  const [term, setTerm] = useState("");
+  const [chosen, setChosen] = useState<CatalogMatch | null>(null);
+  const [provider, setProvider] = useState("");
+  const [price, setPrice] = useState("");
+  const [conditions, setConditions] = useState("");
+  const [file, setFile] = useState<File | null>(null);
+  const [error, setError] = useState("");
+  const q = useQuery({
+    queryKey: ["admin", "supplier-match", term],
+    enabled: term.trim().length >= 2,
+    queryFn: async () => {
+      const r = await applyAdminProductSearch(
+        supabase.from("products").select("id,name,barcode").order("name").limit(20),
+        term,
+      );
+      if (r.error) throw r.error;
+      return r.data ?? [];
+    },
+  });
+  const [preview, setPreview] = useState<string | null>(null);
+  useEffect(() => {
+    if (!file) {
+      setPreview(null);
+      return;
+    }
+    const url = URL.createObjectURL(file);
+    setPreview(url);
+    return () => URL.revokeObjectURL(url);
+  }, [file]);
+  function addManual(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError("");
+    const cost = priceValue(price);
+    if (!chosen || !provider.trim() || !description.trim() || cost === null) {
+      setError("Completá proveedor, descripción, precio y confirmá un artículo de la tienda.");
+      return;
+    }
+    onAdd({
+      barcode: barcodeValue(chosen.barcode) || `product:${chosen.id}`,
+      name: chosen.name,
+      supplier: provider.trim(),
+      price: cost,
+      stock: null,
+      file: file?.name ?? "Oferta cargada manualmente",
+      row: 0,
+      conditions: `${description.trim()}${conditions.trim() ? ` · ${conditions.trim()}` : ""}`,
+    });
+    setDescription("");
+    setTerm("");
+    setChosen(null);
+    setPrice("");
+    setConditions("");
+  }
+  return (
+    <details className="rounded border p-4">
+      <summary className="cursor-pointer font-medium">Agregar oferta de un PDF o imagen</summary>
+      <div className="space-y-3 pt-3">
+        <p className="text-sm text-muted-foreground">
+          Abrí el archivo como referencia e ingresá los datos de la oferta. Buscá el artículo y
+          confirmá la presentación exacta. La lectura del documento es manual.
+        </p>
+        <label className="block text-sm">
+          Archivo de referencia (PDF o imagen)
+          <Input
+            type="file"
+            accept="application/pdf,image/*"
+            onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+          />
+        </label>
+        {preview && (
+          <a className="text-sm underline" href={preview} target="_blank" rel="noopener noreferrer">
+            Abrir archivo de referencia
+          </a>
+        )}
+        <form onSubmit={addManual} className="space-y-3">
+          <label className="block text-sm">
+            Proveedor
+            <Input value={provider} onChange={(e) => setProvider(e.target.value)} maxLength={100} />
+          </label>
+          <label className="block text-sm">
+            Descripción tal como figura en el folleto
+            <Input
+              value={description}
+              onChange={(e) => {
+                setDescription(e.target.value);
+                setTerm(e.target.value);
+                setChosen(null);
+              }}
+              maxLength={160}
+            />
+          </label>
+          <label className="block text-sm">
+            Buscar en artículos de la tienda
+            <Input
+              value={term}
+              onChange={(e) => {
+                setTerm(e.target.value);
+                setChosen(null);
+              }}
+              placeholder="Buscá por marca y presentación"
+            />
+          </label>
+          {q.isFetching && (
+            <p role="status" className="text-sm">
+              Buscando artículos…
+            </p>
+          )}
+          {q.isError && <p role="alert">No se pudieron consultar los artículos.</p>}
+          {!chosen && q.data && (
+            <ul className="max-h-52 overflow-auto rounded border">
+              {q.data.map((p) => (
+                <li key={p.id}>
+                  <button
+                    type="button"
+                    className="w-full border-b p-2 text-left text-sm hover:bg-secondary"
+                    onClick={() => {
+                      setChosen(p);
+                      setTerm("");
+                    }}
+                  >
+                    {p.name} · {p.barcode || "Sin EAN"}
+                  </button>
+                </li>
+              ))}
+              {q.data.length === 0 && (
+                <li className="p-2 text-sm">
+                  No se encontraron artículos. Probá con menos palabras.
+                </li>
+              )}
+            </ul>
+          )}
+          {chosen && (
+            <p className="rounded border p-2 text-sm">
+              Artículo seleccionado: <strong>{chosen.name}</strong> · {chosen.barcode || "Sin EAN"}{" "}
+              <button type="button" className="underline" onClick={() => setChosen(null)}>
+                Cambiar
+              </button>
+            </p>
+          )}
+          <label className="block text-sm">
+            Precio efectivo por unidad (ARS)
+            <Input
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              placeholder="Ej.: 2.649,00"
+            />
+          </label>
+          <label className="block text-sm">
+            Condiciones y vigencia
+            <Input
+              value={conditions}
+              onChange={(e) => setConditions(e.target.value)}
+              placeholder="Ej.: compra mínima de 12 unidades, hasta el 06/11"
+              maxLength={300}
+            />
+          </label>
+          <p className="text-xs text-muted-foreground">
+            Revisá que el importe corresponda a la misma unidad, IVA y presentación. Combos con
+            regalos u otras condiciones deben evaluarse por separado.
+          </p>
+          {error && (
+            <p role="alert" className="text-destructive">
+              {error}
+            </p>
+          )}
+          <Button type="submit">Confirmar artículo y agregar oferta</Button>
+        </form>
+      </div>
+    </details>
   );
 }

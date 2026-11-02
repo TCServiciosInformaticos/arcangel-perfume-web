@@ -58,3 +58,35 @@ test("reads cached formula results and preserves zero as stock", () => {
   assert.equal(cachedCellValue({ formula: "lookup", result: 0 }), 0);
   assert.equal(cachedCellValue({ formula: "lookup" }), null);
 });
+
+test("confirmed manual association compares on EAN or catalog id without assigning a barcode", () => {
+  const offers = [
+    {
+      barcode: "product:item-1",
+      name: "Crema 50 ml",
+      price: 200,
+      supplier: "A",
+      file: "a.pdf",
+      row: 0,
+    },
+    {
+      barcode: "product:item-1",
+      name: "Crema 50 ml",
+      price: 150,
+      supplier: "B",
+      file: "b.pdf",
+      row: 0,
+    },
+    {
+      barcode: "product:item-2",
+      name: "Crema 100 ml",
+      price: 100,
+      supplier: "B",
+      file: "b.pdf",
+      row: 0,
+    },
+  ];
+  const groups = compareOffers(offers);
+  assert.equal(groups.length, 2);
+  assert.equal(groups.find((g) => g.barcode === "product:item-1")?.rows[0].price, 150);
+});
