@@ -6,6 +6,7 @@ import {
   parseCsv,
   compareOffers,
   cachedCellValue,
+  cemafeluPrice,
 } from "./supplier-price-comparison";
 
 test("parses Argentine prices without silently accepting foreign or malformed formatting", () => {
@@ -89,4 +90,11 @@ test("confirmed manual association compares on EAN or catalog id without assigni
   const groups = compareOffers(offers);
   assert.equal(groups.length, 2);
   assert.equal(groups.find((g) => g.barcode === "product:item-1")?.rows[0].price, 150);
+});
+
+test("Cemafelu uses cash price only on marked offers and never silently falls back", () => {
+  assert.equal(cemafeluPrice(["OF", 1000, 750], 0, 1, 2), 750);
+  assert.equal(cemafeluPrice(["", 1000, 750], 0, 1, 2), 1000);
+  assert.equal(cemafeluPrice([" of ", 1000, { formula: "x", result: 800 }], 0, 1, 2), 800);
+  assert.equal(cemafeluPrice(["OF", 1000, null], 0, 1, 2), null);
 });

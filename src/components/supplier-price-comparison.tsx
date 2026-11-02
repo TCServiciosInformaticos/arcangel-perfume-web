@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useAuth } from "@/lib/auth-context";
+import { readComparisonSession, writeComparisonSession } from "@/lib/supplier-price-session";
 import { supabase } from "@/integrations/supabase/client";
 import { applyAdminProductSearch } from "@/lib/admin-product-search";
 import { Button } from "@/components/ui/button";
@@ -7,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { formatARS } from "@/lib/format";
 import {
   barcodeValue,
+  cemafeluPrice,
   cachedCellValue,
   priceValue,
   compareOffers,
@@ -41,6 +44,7 @@ export function SupplierPriceComparison() {
   const [barcode, setBarcode] = useState(-1);
   const [name, setName] = useState(-1);
   const [price, setPrice] = useState(-1);
+  const [useCemafeluRule, setUseCemafeluRule] = useState(false);
   const [stock, setStock] = useState(-1);
   const [availableOnly, setAvailableOnly] = useState(true);
   const [batches, setBatches] = useState<Batch[]>([]);
@@ -48,7 +52,101 @@ export function SupplierPriceComparison() {
   const [busy, setBusy] = useState(false);
   const [search, setSearch] = useState("");
   const [onlyMultiple, setOnlyMultiple] = useState(true);
+  const { user } = useAuth();
+  const userId = user?.id;
+  const [restoredUser, setRestoredUser] = useState<string | null>(null);
+  const [storageError, setStorageError] = useState("");
+  useEffect(() => {
+    if (!userId) return;
+    setBatches([]);
+    setTable(null);
+    setSupplier("");
+    setHeaderRow(1);
+    setBarcode(-1);
+    setName(-1);
+    setPrice(-1);
+    setUseCemafeluRule(false);
+    setStock(-1);
+    setSearch("");
+    setOnlyMultiple(true);
+    setAvailableOnly(true);
+    try {
+      const saved = readComparisonSession(window.sessionStorage, userId);
+      if (saved) {
+        if (Array.isArray(saved.batches)) setBatches(saved.batches as Batch[]);
+        if (
+          saved.table &&
+          typeof saved.table === "object" &&
+          Array.isArray((saved.table as Table).rows)
+        )
+          setTable(saved.table as Table);
+        if (typeof saved.supplier === "string") setSupplier(saved.supplier);
+        if (typeof saved.headerRow === "number") setHeaderRow(saved.headerRow);
+        if (typeof saved.barcode === "number") setBarcode(saved.barcode);
+        if (typeof saved.name === "number") setName(saved.name);
+        if (typeof saved.price === "number") setPrice(saved.price);
+        if (typeof saved.useCemafeluRule === "boolean") setUseCemafeluRule(saved.useCemafeluRule);
+        if (typeof saved.stock === "number") setStock(saved.stock);
+        if (typeof saved.search === "string") setSearch(saved.search);
+        if (typeof saved.onlyMultiple === "boolean") setOnlyMultiple(saved.onlyMultiple);
+        if (typeof saved.availableOnly === "boolean") setAvailableOnly(saved.availableOnly);
+      }
+      setStorageError("");
+    } catch {
+      setStorageError("No se pudo recuperar la comparación guardada en esta pestaña.");
+    }
+    setRestoredUser(userId);
+  }, [userId]);
+  useEffect(() => {
+    if (!userId || restoredUser !== userId) return;
+    try {
+      writeComparisonSession(window.sessionStorage, userId, {
+        batches,
+        table,
+        supplier,
+        headerRow,
+        barcode,
+        name,
+        price,
+        useCemafeluRule,
+        stock,
+        search,
+        onlyMultiple,
+        availableOnly,
+      });
+      setStorageError("");
+    } catch {
+      setStorageError(
+        "No se pudo guardar la comparación en esta pestaña. Puede que el navegador no tenga espacio disponible; los datos podrían perderse al salir.",
+      );
+    }
+  }, [
+    userId,
+    restoredUser,
+    batches,
+    table,
+    supplier,
+    headerRow,
+    barcode,
+    name,
+    price,
+    useCemafeluRule,
+    stock,
+    search,
+    onlyMultiple,
+    availableOnly,
+  ]);
+
   const headers = table?.rows[headerRow - 1] ?? [];
+  const promoCol = guess(headers, /^of\.?$/);
+  const listCol = guess(headers, /^precio\s+lista$/);
+  const cashCol = guess(headers, /^precio\s+cdo\.?$/);
+  const canUseCemafeluRule = promoCol >= 0 && listCol >= 0 && cashCol >= 0;
+  const rowPrice = (row: unknown[]) =>
+    useCemafeluRule && canUseCemafeluRule
+      ? cemafeluPrice(row, promoCol, listCol, cashCol)
+      : priceValue(cachedCellValue(row[price]));
+
   const offers = useMemo(() => batches.flatMap((b) => b.offers), [batches]);
   const groups = useMemo(
     () =>
@@ -103,7 +201,17 @@ export function SupplierPriceComparison() {
       setHeaderRow(index + 1);
       setBarcode(guess(h, /^(ean|ean13|gtin|codigo de barras|codigo barras?|barcode)$/));
       setName(guess(h, /^(nombre|articulo|producto|descripcion|description)$/));
-      setPrice(guess(h, /^(precio|precio unitario|costo|price|precio final)$/));
+      const isCemafelu =
+        guess(h, /^of\.?$/) >= 0 &&
+        guess(h, /^precio\s+lista$/) >= 0 &&
+        guess(h, /^precio\s+cdo\.?$/) >= 0;
+      setUseCemafeluRule(isCemafelu);
+      setPrice(
+        guess(
+          h,
+          isCemafelu ? /^precio\s+lista$/ : /^(precio|precio unitario|costo|price|precio final)$/,
+        ),
+      );
       setStock(guess(h, /^stocks?(\s|$)/));
       setSupplier(file.name.replace(/\.(csv|xlsx)$/i, ""));
       setTable({ name: file.name, rows });
@@ -132,7 +240,7 @@ export function SupplierPriceComparison() {
     table.rows.slice(headerRow).forEach((row, i) => {
       if (row.every((v) => !cellText(v).trim())) return;
       const b = barcodeValue(cellText(row[barcode]));
-      const p = priceValue(cachedCellValue(row[price]));
+      const p = rowPrice(row);
       const stockValue = stock >= 0 ? cachedCellValue(row[stock]) : null;
       const amount =
         stockValue == null || String(stockValue).trim() === "" ? null : Number(stockValue);
@@ -175,7 +283,8 @@ export function SupplierPriceComparison() {
       <p className="text-sm text-muted-foreground">
         Cargá una lista por proveedor. Se usa la primera hoja del Excel. Se comparan únicamente
         artículos con el mismo código de barras; verificá que los precios tengan la misma moneda,
-        IVA, unidad y condiciones. Las listas se conservan solo mientras esta pantalla está abierta.
+        IVA, unidad y condiciones. Las listas se guardan en esta pestaña del navegador hasta
+        cerrarla.
       </p>
       <label className="block text-sm">
         Archivo de precios (.xlsx o .csv, hasta 10 MB)
@@ -190,6 +299,11 @@ export function SupplierPriceComparison() {
         />
       </label>
       {busy && <p role="status">Leyendo archivo…</p>}
+      {storageError && (
+        <p role="alert" className="text-destructive">
+          {storageError}
+        </p>
+      )}
       {error && (
         <p role="alert" className="text-destructive">
           {error}
@@ -214,6 +328,7 @@ export function SupplierPriceComparison() {
                 setBarcode(-1);
                 setName(-1);
                 setPrice(-1);
+                setUseCemafeluRule(false);
                 setStock(-1);
               }}
             />
@@ -231,6 +346,7 @@ export function SupplierPriceComparison() {
               <select
                 className="block h-10 w-full rounded border bg-background px-2"
                 value={value}
+                disabled={label === "Precio unitario" && useCemafeluRule && canUseCemafeluRule}
                 onChange={(e) => set(Number(e.target.value))}
               >
                 <option value={-1}>Seleccionar columna</option>
@@ -242,6 +358,19 @@ export function SupplierPriceComparison() {
               </select>
             </label>
           ))}
+          {canUseCemafeluRule && (
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="checkbox"
+                checked={useCemafeluRule}
+                onChange={(e) => {
+                  setUseCemafeluRule(e.target.checked);
+                  if (e.target.checked) setPrice(listCol);
+                }}
+              />
+              Cemafelu: OF usa precio contado; el resto usa precio de lista
+            </label>
+          )}
           <div className="overflow-auto rounded border">
             <table className="w-full text-left text-xs">
               <thead>
@@ -260,9 +389,9 @@ export function SupplierPriceComparison() {
                     <td className="p-2">{name >= 0 ? cellText(row[name]) : "—"}</td>
                     <td className="p-2">
                       {price >= 0
-                        ? priceValue(cachedCellValue(row[price])) === null
+                        ? rowPrice(row) === null
                           ? "Inválido"
-                          : formatARS(priceValue(cachedCellValue(row[price]))!)
+                          : formatARS(rowPrice(row)!)
                         : "—"}
                     </td>
                   </tr>

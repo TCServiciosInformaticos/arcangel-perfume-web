@@ -76,3 +76,14 @@ export function cachedCellValue(value: unknown): unknown {
     return (value as { result?: unknown }).result ?? null;
   return value;
 }
+
+/** Cemafelu: the OF marker chooses cash price; regular rows use list price. */
+export function cemafeluPrice(
+  row: unknown[],
+  marker: number,
+  list: number,
+  cash: number,
+): number | null {
+  const isOffer = /^of\.?$/i.test(String(cachedCellValue(row[marker]) ?? "").trim());
+  return priceValue(cachedCellValue(row[isOffer ? cash : list]));
+}

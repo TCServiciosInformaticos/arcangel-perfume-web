@@ -26,8 +26,25 @@ async function save(action: string, payload: object) {
   return r.data;
 }
 function CommerceAdmin() {
-  const [tab, setTab] = useState("combos");
-  const { isAdmin, modules } = useAuth();
+  const { isAdmin, modules, user } = useAuth();
+  const tabKey = `arcangel:commerce-tab:${user?.id ?? ""}`;
+  const [tab, setTab] = useState(() => {
+    try {
+      if (typeof window !== "undefined" && user?.id)
+        return window.sessionStorage.getItem(tabKey) || "combos";
+    } catch {
+      /* The page remains usable if browser storage is unavailable. */
+    }
+    return "combos";
+  });
+  function chooseTab(next: string) {
+    setTab(next);
+    try {
+      if (user?.id) window.sessionStorage.setItem(tabKey, next);
+    } catch {
+      /* non-fatal */
+    }
+  }
   if (!isAdmin && !modules.includes("herramientas")) return null;
   return (
     <div className="space-y-6">
@@ -42,7 +59,11 @@ function CommerceAdmin() {
           ["margin", "Rentabilidad"],
           ["notices", "Avisos de reposición"],
         ].map(([id, label]) => (
-          <Button key={id} variant={tab === id ? "default" : "outline"} onClick={() => setTab(id)}>
+          <Button
+            key={id}
+            variant={tab === id ? "default" : "outline"}
+            onClick={() => chooseTab(id)}
+          >
             {label}
           </Button>
         ))}
