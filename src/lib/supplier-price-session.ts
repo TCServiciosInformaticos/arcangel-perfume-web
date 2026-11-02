@@ -14,5 +14,16 @@ export function readComparisonSession(
   return parsed as Record<string, unknown>;
 }
 export function writeComparisonSession(storage: Storage, userId: string, snapshot: object): void {
-  storage.setItem(comparisonSessionKey(userId), JSON.stringify(snapshot));
+  const key = comparisonSessionKey(userId);
+  try {
+    storage.setItem(key, JSON.stringify(snapshot));
+  } catch (error) {
+    // Do not restore an outdated set of prices as though it were current.
+    try {
+      storage.removeItem(key);
+    } catch {
+      /* Storage may be unavailable entirely. */
+    }
+    throw error;
+  }
 }

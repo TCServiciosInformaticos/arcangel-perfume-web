@@ -41,8 +41,10 @@ test("comparison survives a screen remount and is separated by user", () => {
 });
 test("storage errors are surfaced so the screen can warn the user", () => {
   const storage = memoryStorage();
+  storage.setItem(comparisonSessionKey("ana"), "old data");
   storage.setItem = () => {
     throw new Error("quota");
   };
   assert.throws(() => writeComparisonSession(storage, "ana", {}), /quota/);
+  assert.equal(storage.getItem(comparisonSessionKey("ana")), null);
 });
