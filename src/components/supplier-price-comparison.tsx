@@ -50,6 +50,8 @@ export function SupplierPriceComparison() {
   const [batches, setBatches] = useState<Batch[]>([]);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const [exporting, setExporting] = useState(false);
+  const [exportError, setExportError] = useState("");
   const [search, setSearch] = useState("");
   const [onlyMultiple, setOnlyMultiple] = useState(true);
   const { user } = useAuth();
@@ -161,6 +163,29 @@ export function SupplierPriceComparison() {
       ),
     [offers, search, onlyMultiple, availableOnly],
   );
+  async function exportResults() {
+    if (!groups.length) return;
+    setExportError("");
+    setExporting(true);
+    try {
+      const { exportSupplierComparison } = await import("@/lib/supplier-comparison-export");
+      const buffer = await exportSupplierComparison(groups);
+      const url = URL.createObjectURL(
+        new Blob([buffer], {
+          type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        }),
+      );
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `comparacion-proveedores-${new Date().toISOString().slice(0, 10)}.xlsx`;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch {
+      setExportError("No se pudo generar el Excel. Probá nuevamente.");
+    } finally {
+      setExporting(false);
+    }
+  }
   async function openFile(file?: File) {
     if (!file) return;
     setError("");
@@ -465,6 +490,24 @@ export function SupplierPriceComparison() {
             />
             Excluir ofertas con stock cero o negativo (el stock desconocido se conserva)
           </label>
+          <div className="flex flex-wrap items-center gap-3">
+            <Button
+              type="button"
+              variant="outline"
+              disabled={!groups.length || exporting}
+              onClick={() => void exportResults()}
+            >
+              {exporting ? "Preparando Excel…" : "Exportar resultados a Excel"}
+            </Button>
+            <span className="text-xs text-muted-foreground">
+              Se exportan todos los resultados de los filtros actuales.
+            </span>
+          </div>
+          {exportError && (
+            <p role="alert" className="text-sm text-destructive">
+              {exportError}
+            </p>
+          )}
           <p className="text-sm">
             {groups.length} artículos encontrados. El precio menor se indica para cada código.
           </p>
