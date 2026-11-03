@@ -1,4 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
+import ExcelJS from "exceljs";
 import { exportProductExcel } from "../src/lib/product-excel";
 const uid = "55555555-5555-4555-8555-555555555555";
 async function setup(page: Page) {
@@ -347,4 +348,37 @@ test("Cemafelu selecciona contado en ofertas y lista en las demás filas", async
   await expect(page.getByText("Producto oferta").first()).toBeVisible();
   await page.reload();
   await expect(page.getByText("Producto normal").first()).toBeVisible();
+});
+
+test("exporta precios filtrados con ganador y detalle", async ({ page }) => {
+  await setup(page);
+  await page.goto("/admin/herramientas");
+  await page.getByRole("button", { name: "Comparar precios" }).click();
+  const input = page.getByLabel("Archivo de precios", { exact: false });
+  for (const [name, price] of [
+    ["Doan.csv", "100,00"],
+    ["Mendi.csv", "90,00"],
+  ]) {
+    await input.setInputFiles({
+      name,
+      mimeType: "text/csv",
+      buffer: Buffer.from(`EAN;Producto;Precio\n7791234567890;Crema prueba;${price}\n`),
+    });
+    await page.getByRole("button", { name: "Agregar lista" }).click();
+  }
+  await expect(page.getByText("Crema prueba").first()).toBeVisible();
+  const pending = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Exportar resultados a Excel" }).click();
+  const download = await pending;
+  const path = await download.path();
+  const book = new ExcelJS.Workbook();
+  await book.xlsx.readFile(path!);
+  expect(book.worksheets.map((s) => s.name)).toEqual([
+    "Comparación",
+    "Detalle de ofertas",
+    "Cómo leer",
+  ]);
+  expect(book.worksheets[0].getCell("C2").value).toBe(90);
+  expect(book.worksheets[0].getCell("D2").value).toBe("Mendi");
+  expect(book.worksheets[1].rowCount).toBe(3);
 });
