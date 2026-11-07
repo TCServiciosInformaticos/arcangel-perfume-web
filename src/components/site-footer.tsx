@@ -45,6 +45,9 @@ export function SiteFooter() {
             <li><Link to="/" className="hover:text-sidebar-primary">Inicio</Link></li>
             <li><Link to="/productos" className="hover:text-sidebar-primary">Catálogo</Link></li>
             <li><Link to="/carrito" className="hover:text-sidebar-primary">Carrito</Link></li>
+            <li><a href="/about.html" className="hover:text-sidebar-primary">Sobre nosotros</a></li>
+            <li><a href="/contacto.html" className="hover:text-sidebar-primary">Contacto</a></li>
+            <li><a href="/terms.html" className="hover:text-sidebar-primary">Términos y condiciones</a></li>
           </ul>
           <a
             href="https://www.instagram.com/perfumeriaelarcangel/"
