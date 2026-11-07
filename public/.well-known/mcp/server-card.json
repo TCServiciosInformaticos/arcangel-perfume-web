@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "el-arc-ngel-online",
+    "title": "El Arcángel Online",
+    "version": "0.1.0"
+  },
+  "description": "Consulta de solo lectura del catálogo; requiere autorización OAuth.",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "/mcp"
+  },
+  "capabilities": {
+    "tools": {}
+  },
+  "authentication": {
+    "required": true,
+    "schemes": [
+      "bearer",
+      "oauth2"
+    ]
+  }
+}
