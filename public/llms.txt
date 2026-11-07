@@ -3,6 +3,9 @@
 Perfumería en Gran Bourg, Argentina. La tienda online está en preparación.
 
 - [Inicio](https://www.perfumeriaelarcangel.com.ar/): información de la tienda.
+- [Sobre nosotros](https://www.perfumeriaelarcangel.com.ar/sobre-nosotros.html)
+- [Contacto](https://www.perfumeriaelarcangel.com.ar/contacto.html)
+- [Términos en preparación](https://www.perfumeriaelarcangel.com.ar/terminos.html)
 - [Instagram](https://www.instagram.com/perfumeriaelarcangel/): perfil oficial.
 
 - Correo de contacto: ventas@perfumeriaelarcangel.com.ar
