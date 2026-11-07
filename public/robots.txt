@@ -1,0 +1,12 @@
+User-agent: *
+Content-Signal: search=yes, ai-train=no
+Disallow: /admin
+Disallow: /api/
+Disallow: /auth
+Disallow: /checkout
+Disallow: /carrito
+Disallow: /gracias
+Disallow: /pago-pendiente
+Disallow: /pago-fallido
+
+Sitemap: https://www.perfumeriaelarcangel.com.ar/sitemap.xml
