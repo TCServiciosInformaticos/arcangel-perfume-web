@@ -13,20 +13,31 @@ export function comingSoonResponse(request: Request): Response | null {
   if (/^\/(admin|auth|api|mcp|gracias|pago-pendiente|pago-fallido)(\/|$)/.test(path)
     || path.startsWith("/.") || path.startsWith("/_")
     || /\.[a-z0-9]+$/i.test(path)) return null;
-  return new Response(request.method === "HEAD" ? null : comingSoonHtml, {
+  const wantsMarkdown = path === "/" && (request.headers.get("accept") ?? "").split(",").some((part) => {
+    const [mediaType, ...params] = part.trim().toLowerCase().split(";");
+    const quality = params.map((p) => p.trim()).find((p) => p.startsWith("q="));
+    return mediaType === "text/markdown" && (!quality || Number(quality.slice(2)) > 0);
+  });
+  return new Response(request.method === "HEAD" ? null : wantsMarkdown ? comingSoonMarkdown : comingSoonHtml, {
     status: 200,
     headers: {
-      "content-type": "text/html; charset=utf-8",
+      "content-type": wantsMarkdown ? "text/markdown; charset=utf-8" : "text/html; charset=utf-8",
+      "vary": "Accept",
+      "link": '</llms.txt>; rel="describedby"; type="text/plain"',
       "cache-control": "no-store",
       "x-robots-tag": "noindex, nofollow",
     },
   });
 }
 
+const comingSoonMarkdown = `# Perfumería El Arcángel\n\nNuestra tienda online está en preparación. Perfumería, belleza y cuidado personal en Gran Bourg.\n\n[Instagram](https://www.instagram.com/perfumeriaelarcangel/)\n`; 
+
 const comingSoonHtml = `<!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Próximamente · Perfumería El Arcángel</title>
 <meta name="description" content="Estamos preparando nuestra tienda online. Muy pronto vas a poder comprar tus productos favoritos en Perfumería El Arcángel.">
+<link rel="canonical" href="https://www.perfumeriaelarcangel.com.ar/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.perfumeriaelarcangel.com.ar/#organizacion","name":"Perfumería El Arcángel","url":"https://www.perfumeriaelarcangel.com.ar/","sameAs":["https://www.instagram.com/perfumeriaelarcangel/"]},{"@type":"WebSite","@id":"https://www.perfumeriaelarcangel.com.ar/#sitio","name":"Perfumería El Arcángel","url":"https://www.perfumeriaelarcangel.com.ar/","publisher":{"@id":"https://www.perfumeriaelarcangel.com.ar/#organizacion"},"inLanguage":"es-AR"}]}</script>
 <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#ce0874">
 <style>
 *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;background:#fcf7fa;color:#291526;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:32px 20px}
@@ -40,4 +51,9 @@ p{max-width:480px;margin:0 auto;color:#735c6e;font-size:18px;line-height:1.7}.cl
 <div class="label">Nuestra tienda online</div><h1>Muy pronto,<br><span>más cerca tuyo.</span></h1>
 <p>Estamos preparando un nuevo espacio para que encuentres tus productos favoritos de perfumería, belleza y cuidado personal.</p>
 <p class="closing">Próximamente en Perfumería El Arcángel.<br>¡Gracias por acompañarnos!</p>
-</main></body></html>`;
+<p class="closing"><a href="https://www.instagram.com/perfumeriaelarcangel/">Seguinos en Instagram</a></p>
+</main><script>
+if (navigator.modelContext && typeof navigator.modelContext.registerTool === "function") {
+  try { navigator.modelContext.registerTool({name:"informacion_tienda",description:"Consulta información pública sobre la tienda online",inputSchema:{type:"object",properties:{},additionalProperties:false},execute:async()=>({content:[{type:"text",text:"Perfumería El Arcángel está en Gran Bourg. La tienda online está en preparación. Perfil: https://www.instagram.com/perfumeriaelarcangel/"}]})}); } catch (_) { /* La página funciona aunque WebMCP no esté disponible. */ }
+}
+</script></body></html>`;
