@@ -30,14 +30,14 @@ export function comingSoonResponse(request: Request): Response | null {
   });
 }
 
-const comingSoonMarkdown = `# Perfumería El Arcángel\n\nNuestra tienda online está en preparación. Perfumería, belleza y cuidado personal en Gran Bourg.\n\n[Instagram](https://www.instagram.com/perfumeriaelarcangel/)\n`; 
+const comingSoonMarkdown = `# Perfumería El Arcángel\n\nNuestra tienda online está en preparación. Perfumería, belleza y cuidado personal en Gran Bourg.\n\n[Instagram](https://www.instagram.com/perfumeriaelarcangel/)\n\nContacto: ventas@perfumeriaelarcangel.com.ar\n\nSucursal Bogado: Coronel Bogado 1678, Gran Bourg. WhatsApp: +54 9 11 3144-8238.\n\nSucursal Perón: Av. Eva Duarte de Perón 1103, Local 2, Gran Bourg. WhatsApp: +54 9 11 2893-1359.\n`; 
 
 const comingSoonHtml = `<!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Próximamente · Perfumería El Arcángel</title>
 <meta name="description" content="Estamos preparando nuestra tienda online. Muy pronto vas a poder comprar tus productos favoritos en Perfumería El Arcángel.">
 <link rel="canonical" href="https://www.perfumeriaelarcangel.com.ar/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.perfumeriaelarcangel.com.ar/#organizacion","name":"Perfumería El Arcángel","url":"https://www.perfumeriaelarcangel.com.ar/","sameAs":["https://www.instagram.com/perfumeriaelarcangel/"]},{"@type":"WebSite","@id":"https://www.perfumeriaelarcangel.com.ar/#sitio","name":"Perfumería El Arcángel","url":"https://www.perfumeriaelarcangel.com.ar/","publisher":{"@id":"https://www.perfumeriaelarcangel.com.ar/#organizacion"},"inLanguage":"es-AR"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.perfumeriaelarcangel.com.ar/#organizacion","name":"Perfumería El Arcángel","url":"https://www.perfumeriaelarcangel.com.ar/","email":"ventas@perfumeriaelarcangel.com.ar","sameAs":["https://www.instagram.com/perfumeriaelarcangel/"],"department":[{"@type":"Store","name":"Sucursal Bogado","address":{"@type":"PostalAddress","streetAddress":"Coronel Bogado 1678","addressLocality":"Gran Bourg","addressCountry":"AR"},"telephone":"+54 9 11 3144-8238"},{"@type":"Store","name":"Sucursal Perón","address":{"@type":"PostalAddress","streetAddress":"Av. Eva Duarte de Perón 1103, Local 2","addressLocality":"Gran Bourg","addressCountry":"AR"},"telephone":"+54 9 11 2893-1359"}]},{"@type":"WebSite","@id":"https://www.perfumeriaelarcangel.com.ar/#sitio","name":"Perfumería El Arcángel","url":"https://www.perfumeriaelarcangel.com.ar/","publisher":{"@id":"https://www.perfumeriaelarcangel.com.ar/#organizacion"},"inLanguage":"es-AR"}]}</script>
 <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#ce0874">
 <style>
 *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;background:#fcf7fa;color:#291526;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:32px 20px}
@@ -51,7 +51,7 @@ p{max-width:480px;margin:0 auto;color:#735c6e;font-size:18px;line-height:1.7}.cl
 <div class="label">Nuestra tienda online</div><h1>Muy pronto,<br><span>más cerca tuyo.</span></h1>
 <p>Estamos preparando un nuevo espacio para que encuentres tus productos favoritos de perfumería, belleza y cuidado personal.</p>
 <p class="closing">Próximamente en Perfumería El Arcángel.<br>¡Gracias por acompañarnos!</p>
-<p class="closing"><a href="https://www.instagram.com/perfumeriaelarcangel/">Seguinos en Instagram</a></p>
+<p class="closing">Contacto: <a href="mailto:ventas@perfumeriaelarcangel.com.ar">ventas@perfumeriaelarcangel.com.ar</a><br><a href="https://www.instagram.com/perfumeriaelarcangel/">Seguinos en Instagram</a></p>
 </main><script>
 if (navigator.modelContext && typeof navigator.modelContext.registerTool === "function") {
   try { navigator.modelContext.registerTool({name:"informacion_tienda",description:"Consulta información pública sobre la tienda online",inputSchema:{type:"object",properties:{},additionalProperties:false},execute:async()=>({content:[{type:"text",text:"Perfumería El Arcángel está en Gran Bourg. La tienda online está en preparación. Perfil: https://www.instagram.com/perfumeriaelarcangel/"}]})}); } catch (_) { /* La página funciona aunque WebMCP no esté disponible. */ }
